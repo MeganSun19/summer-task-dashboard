@@ -16,6 +16,7 @@ for file in \
   app.js \
   cloud-store.js \
   supabase-config.js \
+  world-map.svg \
   乌龙头像.png \
   哈小浪.png
 do

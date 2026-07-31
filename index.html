@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5b942" />
     <title>双星学习岛</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260731-7" />
   </head>
   <body>
     <main class="app-shell">
@@ -70,13 +70,59 @@
         </section>
         <div id="taskList" class="task-list"></div>
 
+        <section class="world-section" aria-labelledby="worldMapTitle">
+          <div class="section-heading world-heading">
+            <div><p class="eyebrow">两个人都完成，世界就亮一点</p><h2 id="worldMapTitle">双星世界地图</h2></div>
+            <span id="worldProgressText" class="world-progress-text">0/195 个国家</span>
+          </div>
+          <div class="world-card">
+            <div class="world-summary">
+              <div><strong id="jointDays">0</strong><span>共同完成日</span></div>
+              <p id="worldMessage"></p>
+            </div>
+            <div id="worldMap" class="world-map" role="img" aria-label="双人共同完成任务后逐国点亮的真实世界地图">
+              <span id="worldMapLoading" class="world-map-loading">正在展开世界地图…</span>
+            </div>
+            <div class="world-progress"><div id="worldProgressBar"></div></div>
+            <div id="worldTrail" class="world-trail"></div>
+            <div id="nextCountries" class="next-countries"></div>
+            <p class="map-credit">国家边界地图来自 Wikimedia Commons（Public domain）</p>
+          </div>
+        </section>
+
+        <section class="garden-game" aria-labelledby="gardenGameTitle">
+          <div class="section-heading game-heading">
+            <div><p id="gardenGameEyebrow" class="eyebrow">兄弟合力，共守 12 波</p><h2 id="gardenGameTitle">双人联合花园防线</h2></div>
+            <span id="battleStatus" class="battle-status">0/12 波</span>
+          </div>
+          <div class="battle-card">
+            <div id="battleLane" class="battle-lane" aria-live="polite"></div>
+            <div class="battle-meter"><div id="battleBar"></div></div>
+            <p id="battleMessage" class="battle-message"></p>
+            <div id="jointSkills" class="joint-skills" aria-label="合力技能进度"></div>
+            <div id="characterInteraction" class="character-interaction" aria-live="polite"></div>
+          </div>
+          <div class="team-gardens">
+            <div class="garden-title"><strong>两支植物小队</strong><span>同时守卫；当前角色的小队可点击收回</span></div>
+            <div class="team-garden-grid">
+              <section class="team-garden brother-team" aria-label="哥哥的植物小队">
+                <div class="team-garden-label"><img src="./乌龙头像.png" alt=""><strong>哥哥 · 乌龙</strong></div>
+                <div id="brotherGardenSlots" class="garden-slots"></div>
+              </section>
+              <section class="team-garden younger-team" aria-label="弟弟的植物小队">
+                <div class="team-garden-label"><img src="./哈小浪.png" alt=""><strong>弟弟 · 哈小浪</strong></div>
+                <div id="youngerGardenSlots" class="garden-slots"></div>
+              </section>
+            </div>
+          </div>
+        </section>
+
         <section class="rewards-section">
           <div class="section-heading reward-heading">
-            <div><p class="eyebrow">阳光可以换奖励</p><h2>奖励中心</h2></div>
-            <span class="sun-balance"><b id="rewardBalance">0</b> ☀ 可用</span>
+            <div><p class="eyebrow">阳光只累积，永远不扣除</p><h2>阳光植物商店</h2></div>
+            <span class="sun-balance"><b id="rewardBalance">0</b> ☀ 累计</span>
           </div>
           <div id="rewardList" class="reward-list"></div>
-          <div id="kidRedemptions" class="kid-redemptions"></div>
         </section>
 
         <section id="finishCard" class="finish-card" hidden>
@@ -98,9 +144,38 @@
 
         <div id="familyOverview" class="family-overview"></div>
 
+        <div class="plan-tools">
+          <section class="panel plan-tool-panel">
+            <div class="panel-title">
+              <div><p class="eyebrow">长期默认</p><h2>总体任务</h2></div>
+              <select id="overallKid" aria-label="总体任务适用孩子"></select>
+            </div>
+            <p class="plan-help">控制这个孩子以后每天默认出现哪些项目。RAZ 书目、古诗和练习内容仍会按日期自动变化。</p>
+            <form id="overallTaskEditor" class="overall-task-editor"></form>
+            <div class="plan-actions">
+              <button id="saveOverallPlan" class="primary-action" type="button">保存总体任务</button>
+              <button id="resetOverallPlan" class="quiet-action" type="button">恢复原始总体任务</button>
+            </div>
+          </section>
+
+          <section class="panel plan-tool-panel">
+            <div class="panel-title"><div><p class="eyebrow">特殊时期</p><h2>日期区间计划</h2></div></div>
+            <p class="plan-help">一次安排一段日期；区间结束后自动回到总体任务，不影响以前的完成记录。</p>
+            <div class="range-grid">
+              <label>适用孩子<select id="rangeKid"><option value="brother">哥哥</option><option value="younger">弟弟</option><option value="both">哥哥和弟弟</option></select></label>
+              <label>计划模板<select id="rangePreset"><option value="hand-recovery">手部休养 · 全部改为口头任务</option><option value="overall">总体任务 · 恢复普通安排</option></select></label>
+              <label>开始日期<input id="rangeStart" type="date"></label>
+              <label>结束日期<input id="rangeEnd" type="date"></label>
+            </div>
+            <div id="rangePreview" class="range-preview"></div>
+            <button id="applyRangePlan" class="primary-action" type="button">应用到日期区间</button>
+            <div id="planPeriodList" class="plan-period-list"></div>
+          </section>
+        </div>
+
         <div class="parent-layout">
           <section class="panel">
-            <div class="panel-title"><div><p class="eyebrow">编辑计划</p><h2 id="editorTitle">当天任务</h2></div><select id="editorKid"></select></div>
+            <div class="panel-title"><div><p class="eyebrow">单日微调</p><h2 id="editorTitle">当天任务</h2></div><select id="editorKid"></select></div>
             <form id="taskEditor" class="task-editor"></form>
           </section>
           <aside class="panel notes-panel">
@@ -112,32 +187,12 @@
           </aside>
         </div>
 
-        <section class="panel reward-admin">
-          <div class="panel-title">
-            <div><p class="eyebrow">阳光奖励</p><h2>兑换审核与奖励设置</h2></div>
-          </div>
-          <div class="reward-admin-grid">
-            <div>
-              <h3>待处理申请</h3>
-              <div id="redemptionQueue" class="redemption-queue"></div>
-            </div>
-            <div>
-              <h3>奖励清单</h3>
-              <form id="rewardForm" class="reward-form">
-                <input id="rewardName" required maxlength="24" placeholder="奖励名称，例如：选择今晚的故事">
-                <input id="rewardCost" required type="number" min="10" step="10" placeholder="所需阳光">
-                <button class="primary-action" type="submit">添加奖励</button>
-              </form>
-              <div id="rewardAdminList" class="reward-admin-list"></div>
-            </div>
-          </div>
-        </section>
       </section>
     </main>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
     <script src="./supabase-config.js?v=20260731-1"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="./cloud-store.js?v=20260731-1"></script>
-    <script src="./app.js?v=20260731-1"></script>
+    <script src="./app.js?v=20260731-7"></script>
   </body>
 </html>

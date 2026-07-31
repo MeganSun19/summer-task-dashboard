@@ -216,11 +216,25 @@ const profiles = [
   { id: "younger", name: "弟弟", character: "哈小浪", avatar: "./哈小浪.png", color: "#4b8fd5", soft: "#e7f2ff" }
 ];
 
-const defaultRewards = [
-  { id: "story", icon: "📖", name: "选择今晚的故事", cost: 30 },
-  { id: "cartoon", icon: "📺", name: "动画时间 20 分钟", cost: 60 },
-  { id: "family-game", icon: "🎲", name: "选择一次家庭游戏", cost: 100 },
-  { id: "surprise", icon: "🎁", name: "兑换一个小惊喜", cost: 150 }
+const plants = [
+  { id: "sunflower", icon: "🌻", name: "向日葵", unlockAt: 10, power: "给小队加油" },
+  { id: "peashooter", icon: "🫛", name: "豌豆射手", unlockAt: 30, power: "发射豌豆" },
+  { id: "wallnut", icon: "🌰", name: "坚果墙", unlockAt: 60, power: "守住花园" },
+  { id: "snowpea", icon: "❄️", name: "寒冰射手", unlockAt: 100, power: "冻住僵尸" },
+  { id: "cherry", icon: "🍒", name: "樱桃炸弹", unlockAt: 160, power: "清理一大片" },
+  { id: "melon", icon: "🍉", name: "西瓜投手", unlockAt: 240, power: "投出大西瓜" }
+];
+
+const countryCodes = (`CN MN KP KR JP RU KZ KG TJ UZ TM AF PK IN NP BT BD LK MV MM LA VN KH TH MY SG ID BN PH TL IR IQ TR GE AM AZ SY LB IL PS JO SA YE OM AE QA BH KW UA BY MD RO BG GR MK RS BA ME AL HR SI HU SK PL LT LV EE FI SE NO DK DE CZ AT IT CH LI FR BE NL LU GB IE ES PT AD MC SM VA IS MT CY EG LY TN DZ MA MR ML NE TD SD SS ER DJ ET SO KE UG RW BI TZ CD CG GA GQ CM NG BJ TG GH BF CI LR SL GN GW GM SN CV CF AO ZM MW MZ ZW BW NA ZA LS SZ MG KM MU SC ST PG AU NZ FJ SB VU WS TO TV KI NR PW FM MH CA US MX GT BZ SV HN NI CR PA CO VE GY SR BR EC PE BO PY CL AR UY CU JM HT DO BS KN AG DM LC VC BB GD TT`).split(" ");
+
+const COUNTRIES_PER_JOINT_DAY = 1;
+const WORLD_MAP_URL = "./world-map.svg?v=20260731-2";
+const regionNames = typeof Intl.DisplayNames === "function" ? new Intl.DisplayNames(["zh-CN"], { type: "region" }) : null;
+const jointSkills = [
+  { at: 3, icon: "✨", name: "双星鼓舞" },
+  { at: 6, icon: "🌿", name: "藤蔓联结" },
+  { at: 9, icon: "⚡", name: "双星连击" },
+  { at: 12, icon: "🛡️", name: "守护结界" }
 ];
 
 const categories = {
@@ -229,8 +243,12 @@ const categories = {
   poem: { icon: "诗", color: "#b98222", soft: "#fff2c7", minutes: 10 },
   math: { icon: "×", color: "#df746e", soft: "#ffedeb", minutes: 15 },
   reading: { icon: "读", color: "#7e69c8", soft: "#f0edff", minutes: 20 },
-  listening: { icon: "▶", color: "#2e9a9a", soft: "#e3f7f6", minutes: 15 }
+  listening: { icon: "▶", color: "#2e9a9a", soft: "#e3f7f6", minutes: 15 },
+  retelling: { icon: "说", color: "#48a978", soft: "#e6f6ec", minutes: 15 },
+  speaking: { icon: "Talk", color: "#df746e", soft: "#ffedeb", minutes: 15 }
 };
+
+const defaultTaskIds = ["raz", "writing", "poem", "math", "reading", "listening"];
 
 let state = loadState();
 ensureState(state);
@@ -243,9 +261,12 @@ let toastTimer;
 const refs = Object.fromEntries([
   "kidSwitcher", "kidView", "parentView", "avatar", "dateLabel", "kidName", "encouragement",
   "progressBar", "progressText", "sunCount", "streakCount", "timeEstimate", "taskList", "finishCard",
-  "rewardBalance", "rewardList", "kidRedemptions", "datePicker", "familyOverview", "editorKid", "editorTitle",
-  "taskEditor", "mistakeBox", "parentNote", "redemptionQueue", "rewardAdminList", "rewardForm", "rewardName",
-  "rewardCost", "toast", "cloudStatus", "cloudSetup", "closeCloudSetup", "cloudSetupMessage", "cloudSetupForms",
+  "rewardBalance", "rewardList", "battleStatus", "battleLane", "battleBar", "battleMessage", "jointSkills", "characterInteraction",
+  "brotherGardenSlots", "youngerGardenSlots",
+  "worldProgressText", "jointDays", "worldMessage", "worldMap", "worldMapLoading", "worldProgressBar", "worldTrail", "nextCountries",
+  "datePicker", "familyOverview", "editorKid", "editorTitle", "taskEditor", "mistakeBox", "parentNote",
+  "gardenGameEyebrow", "overallKid", "overallTaskEditor", "rangeKid", "rangePreset", "rangeStart", "rangeEnd", "rangePreview", "planPeriodList",
+  "toast", "cloudStatus", "cloudSetup", "closeCloudSetup", "cloudSetupMessage", "cloudSetupForms",
   "createFamilyForm", "joinFamilyForm", "familyName", "createFamilyPin", "familyInviteCode", "joinFamilyPin",
   "cloudConnectedInfo", "connectedInviteCode"
 ].map((id) => [id, document.getElementById(id)]));
@@ -263,11 +284,21 @@ refs.datePicker.addEventListener("change", (event) => {
 });
 refs.editorKid.addEventListener("change", (event) => {
   editorKid = event.target.value;
-  renderEditor();
+  render();
+});
+refs.overallKid.addEventListener("change", (event) => {
+  editorKid = event.target.value;
+  render();
 });
 document.getElementById("saveParent").addEventListener("click", saveParentEdits);
 document.getElementById("resetDay").addEventListener("click", resetCurrentDay);
-refs.rewardForm.addEventListener("submit", addReward);
+document.getElementById("saveOverallPlan").addEventListener("click", saveOverallPlan);
+document.getElementById("resetOverallPlan").addEventListener("click", resetOverallPlan);
+document.getElementById("applyRangePlan").addEventListener("click", applyRangePlan);
+refs.rangePreset.addEventListener("change", renderRangePreview);
+refs.rangeKid.addEventListener("change", renderRangePreview);
+refs.rangeStart.addEventListener("change", renderRangePreview);
+refs.rangeEnd.addEventListener("change", renderRangePreview);
 refs.cloudStatus.addEventListener("click", () => {
   refs.cloudSetup.hidden = !refs.cloudSetup.hidden;
 });
@@ -279,7 +310,10 @@ refs.joinFamilyForm.addEventListener("submit", joinCloudFamily);
 
 renderKidSwitcher();
 renderEditorKidOptions();
+refs.rangeStart.value = toISODate(addDays(new Date(), 1));
+refs.rangeEnd.value = toISODate(addDays(new Date(), 10));
 render();
+loadWorldMap();
 initializeCloud();
 
 function loadState() {
@@ -296,8 +330,13 @@ function ensureState(current) {
   current.days ||= { brother: {}, younger: {} };
   current.days.brother ||= {};
   current.days.younger ||= {};
-  current.rewards ||= structuredClone(defaultRewards);
-  current.redemptions ||= [];
+  current.gardens ||= { brother: [], younger: [] };
+  current.gardens.brother ||= [];
+  current.gardens.younger ||= [];
+  current.taskSettings ||= { brother: {}, younger: {} };
+  current.taskSettings.brother ||= {};
+  current.taskSettings.younger ||= {};
+  current.planPeriods ||= [];
 }
 
 function saveState() {
@@ -394,29 +433,45 @@ function setCloudFormsDisabled(disabled) {
 function getDay(kidId, date) {
   state.days[kidId] ||= {};
   if (!state.days[kidId][date]) {
-    state.days[kidId][date] = buildDefaultDay(date);
+    state.days[kidId][date] = buildDefaultDay(date, kidId);
     saveState();
   }
   return state.days[kidId][date];
 }
 
-function buildDefaultDay(date) {
+function buildDefaultDay(date, kidId = editorKid) {
+  return {
+    tasks: applyOverallSettings(kidId, buildRawTasks(date)),
+    mistakes: "",
+    note: "",
+    planScope: "overall"
+  };
+}
+
+function buildRawTasks(date) {
   const index = dayOffset(state.startDate, date);
   const cycle = modulo(index, 28);
   const weekCycle = modulo(index, 7);
   const raz = razPlan[cycle];
-  return {
-    tasks: [
+  return [
       task("raz", "英语 RAZ", raz.books, raz.words, `先听一遍音频；自己指读；找出目标词；最后说一句。${raz.note}`, false),
       task("writing", "写字练习", writingTasks[weekCycle], ["坐姿", "笔顺", "整洁"], "摆好坐姿；慢慢写；写完圈出最满意的 3 个字。"),
       task("poem", "古诗背诵", poems[cycle], ["读顺", "理解", "背诵"], "先读 3 遍；遮住一句试着背；卡住就看一眼再来。"),
       task("math", "数学练习", mathTasks[modulo(index, mathTasks.length)], ["口答", "订正"], "先独立完成；把不会的题圈起来；最后只检查圈出的题。"),
       task("reading", "课外阅读", readingTasks[weekCycle], ["安静读", "说一句"], "定时安静阅读；结束后说一个人物或一件发生的事。"),
       task("listening", "英语听力", weekCycle === 6 ? "自选 Big Muzzy 或英文西游记一集" : "Big Muzzy / 英文西游记 15 分钟", ["只听", "不考试"], "选一段播放；专心听完；告诉家人你听到了谁。")
-    ],
-    mistakes: "",
-    note: ""
-  };
+    ];
+}
+
+function applyOverallSettings(kidId, tasks) {
+  const settings = state.taskSettings?.[kidId] || {};
+  return tasks
+    .filter((item) => settings[item.id]?.enabled !== false)
+    .map((item) => ({
+      ...item,
+      title: settings[item.id]?.title || item.title,
+      instruction: settings[item.id]?.instruction || item.instruction
+    }));
 }
 
 function task(id, title, detail, tags, instruction, done = false) {
@@ -428,8 +483,10 @@ function render() {
   renderKidSwitcher();
   renderKidView();
   renderFamilyOverview();
+  renderOverallEditor();
+  renderRangePreview();
+  renderPlanPeriods();
   renderEditor();
-  renderRewardAdmin();
 }
 
 function renderKidSwitcher() {
@@ -450,8 +507,11 @@ function renderKidSwitcher() {
 }
 
 function renderEditorKidOptions() {
-  refs.editorKid.innerHTML = profiles.map((profile) => `<option value="${profile.id}">${profile.name}</option>`).join("");
+  const options = profiles.map((profile) => `<option value="${profile.id}">${profile.name}</option>`).join("");
+  refs.editorKid.innerHTML = options;
+  refs.overallKid.innerHTML = options;
   refs.editorKid.value = editorKid;
+  refs.overallKid.value = editorKid;
 }
 
 function renderKidView() {
@@ -474,6 +534,8 @@ function renderKidView() {
   refs.encouragement.textContent = encouragement(done, total);
   refs.finishCard.hidden = done !== total;
   renderTasks(day);
+  renderSharedWorld();
+  renderBattle();
   renderRewards();
 }
 
@@ -508,42 +570,238 @@ function toggleTask(item) {
 }
 
 function renderRewards() {
-  const balance = availableSun(activeKid);
-  refs.rewardList.innerHTML = state.rewards.map((reward) => {
-    const enough = balance >= reward.cost;
+  const totalSun = earnedSun(activeKid);
+  const squad = state.gardens[activeKid];
+  refs.rewardList.innerHTML = plants.map((plant) => {
+    const unlocked = totalSun >= plant.unlockAt;
+    const planted = squad.includes(plant.id);
+    const squadFull = squad.length >= 5;
     return `<article class="reward-card">
-      <div class="reward-icon">${escapeHTML(reward.icon || "🎁")}</div>
-      <h3>${escapeHTML(reward.name)}</h3>
-      <span class="reward-cost">${reward.cost} ☀</span>
-      <button class="reward-button" type="button" data-reward="${escapeAttr(reward.id)}" ${enough ? "" : "disabled"}>
-        ${enough ? "申请兑换" : `还差 ${reward.cost - balance}`}
+      <div class="reward-icon">${plant.icon}</div>
+      <h3>${escapeHTML(plant.name)}</h3>
+      <p class="plant-power">${escapeHTML(plant.power)}</p>
+      <span class="reward-cost">${unlocked ? "✓ 已永久解锁" : `${plant.unlockAt} ☀ 解锁`}</span>
+      <button class="reward-button" type="button" data-plant="${plant.id}" ${(!unlocked || (squadFull && !planted)) ? "disabled" : ""}>
+        ${planted ? "已出战 · 点击收回" : unlocked ? (squadFull ? "小队已满" : "加入小队") : `还差 ${plant.unlockAt - totalSun} ☀`}
       </button>
     </article>`;
   }).join("");
-  refs.rewardList.querySelectorAll("[data-reward]").forEach((button) => {
-    button.addEventListener("click", () => requestReward(button.dataset.reward));
+  refs.rewardList.querySelectorAll("[data-plant]").forEach((button) => {
+    button.addEventListener("click", () => togglePlant(button.dataset.plant));
   });
-  const recent = state.redemptions.filter((item) => item.kidId === activeKid).slice(-3).reverse();
-  refs.kidRedemptions.innerHTML = recent.map((item) => `
-    <div class="redemption-note"><span>${escapeHTML(item.rewardName)} · ${item.cost} ☀</span><strong>${redemptionStatus(item.status)}</strong></div>
-  `).join("");
 }
 
-function requestReward(rewardId) {
-  const reward = state.rewards.find((item) => item.id === rewardId);
-  if (!reward || availableSun(activeKid) < reward.cost) return;
-  state.redemptions.push({
-    id: `redeem-${Date.now()}`,
-    kidId: activeKid,
-    rewardId: reward.id,
-    rewardName: reward.name,
-    cost: reward.cost,
-    status: "pending",
-    createdAt: new Date().toISOString()
-  });
+function togglePlant(plantId) {
+  const plant = plants.find((item) => item.id === plantId);
+  const squad = state.gardens[activeKid];
+  const index = squad.indexOf(plantId);
+  if (!plant) return;
+  if (index >= 0) squad.splice(index, 1);
+  else if (earnedSun(activeKid) >= plant.unlockAt && squad.length < 5) squad.push(plantId);
+  else return;
   saveState();
-  showToast("兑换申请已交给家长，阳光暂时保留");
+  showToast(index >= 0 ? `${plant.name}回到植物商店啦` : `${plant.name}加入小队，阳光没有减少`);
   render();
+}
+
+function renderBattle() {
+  const battle = sharedBattleProgress(selectedDate);
+  const { brotherDone, youngerDone, brotherTotal, youngerTotal, done, total } = battle;
+  const percent = total ? Math.round(done / total * 100) : 0;
+  const skillSteps = jointSkills.map((skill, index) => ({ ...skill, at: Math.max(1, Math.round(total * (index + 1) / jointSkills.length)) }));
+  const brotherSquad = resolvedSquad("brother");
+  const youngerSquad = resolvedSquad("younger");
+  renderGardenSquad("brother", refs.brotherGardenSlots, brotherSquad);
+  renderGardenSquad("younger", refs.youngerGardenSlots, youngerSquad);
+  refs.battleBar.style.width = `${percent}%`;
+  refs.gardenGameEyebrow.textContent = `兄弟合力，共守 ${total} 波`;
+  refs.battleStatus.textContent = done === total ? "联合守卫成功！" : `${done}/${total} 波`;
+  refs.battleStatus.classList.toggle("won", done === total);
+  const peas = Array.from({ length: Math.min(done, total) }, () => "<span class=\"pea\">●</span>").join("");
+  const zombieLeft = Math.min(84, 30 + percent * 0.54);
+  refs.battleLane.innerHTML = `
+    <div class="battle-team battle-team-brother"><b>哥哥 ${brotherDone}/${brotherTotal}</b><div class="battle-plants" aria-label="哥哥出战植物">${battleDefenders(brotherSquad).map(plantIcon).join("")}</div></div>
+    <div class="battle-team battle-team-younger"><b>弟弟 ${youngerDone}/${youngerTotal}</b><div class="battle-plants" aria-label="弟弟出战植物">${battleDefenders(youngerSquad).map(plantIcon).join("")}</div></div>
+    <div class="pea-stream">${peas}</div>
+    ${done === total ? `<div class="zombie defeated" style="left:${zombieLeft}%">💥</div>` : `<div class="zombie" style="left:${zombieLeft}%">🧟</div>`}
+    <div class="garden-gate">🏡</div>`;
+  refs.jointSkills.innerHTML = skillSteps.map((skill) => {
+    const unlocked = done >= skill.at;
+    return `<div class="joint-skill ${unlocked ? "unlocked" : ""}"><span>${skill.icon}</span><strong>${escapeHTML(skill.name)}</strong><small>${unlocked ? "已触发" : `${skill.at} 波触发`}</small></div>`;
+  }).join("");
+  refs.characterInteraction.innerHTML = characterInteraction(battle, skillSteps);
+  refs.battleMessage.textContent = done === total
+    ? `${total} 项共同进度全部完成，两支小队一起守住花园！`
+    : done === 0
+      ? "哥哥和弟弟完成的每一项都会汇入同一条防线。"
+      : `两人已经合力击退 ${done} 波，再完成 ${total - done} 项就能守住花园。`;
+}
+
+function sharedBattleProgress(date) {
+  const brotherDay = getDay("brother", date);
+  const youngerDay = getDay("younger", date);
+  const brotherDone = brotherDay.tasks.filter((item) => item.done).length;
+  const youngerDone = youngerDay.tasks.filter((item) => item.done).length;
+  const brotherTotal = brotherDay.tasks.length;
+  const youngerTotal = youngerDay.tasks.length;
+  return { brotherDone, youngerDone, brotherTotal, youngerTotal, done: brotherDone + youngerDone, total: brotherTotal + youngerTotal };
+}
+
+function resolvedSquad(kidId) {
+  return state.gardens[kidId].map((id) => plants.find((plant) => plant.id === id)).filter(Boolean);
+}
+
+function battleDefenders(squad) {
+  return squad.length ? squad : [{ icon: "🌱", name: "小幼苗" }];
+}
+
+function plantIcon(plant) {
+  return `<span title="${escapeAttr(plant.name)}">${plant.icon}</span>`;
+}
+
+function renderGardenSquad(kidId, container, squad) {
+  const editable = kidId === activeKid;
+  container.closest(".team-garden").classList.toggle("active", editable);
+  container.innerHTML = [0, 1, 2, 3, 4].map((index) => {
+    const plant = squad[index];
+    if (!plant) return `<div class="garden-slot"><span>＋</span><small>空位</small></div>`;
+    return editable
+      ? `<button class="garden-slot filled" type="button" data-planted="${plant.id}" title="点击收回${escapeAttr(plant.name)}"><span>${plant.icon}</span><small>${escapeHTML(plant.name)}</small></button>`
+      : `<div class="garden-slot filled" title="${escapeAttr(plant.name)}"><span>${plant.icon}</span><small>${escapeHTML(plant.name)}</small></div>`;
+  }).join("");
+  container.querySelectorAll("[data-planted]").forEach((button) => {
+    button.addEventListener("click", () => togglePlant(button.dataset.planted));
+  });
+}
+
+function characterInteraction({ brotherDone, youngerDone, brotherTotal, youngerTotal, done, total }, skillSteps) {
+  if (done === total) return `<span>🐱 乌龙：守住啦！</span><b>🙌</b><span>🐶 哈小浪：我们的合力最厉害！</span>`;
+  if (done === 0) return `<span>🐱 乌龙：我守左边！</span><b>🤝</b><span>🐶 哈小浪：我守右边！</span>`;
+  if (brotherDone === brotherTotal && youngerDone < youngerTotal) return `<span>🐱 乌龙：我的小队来支援你！</span><b>💫</b><span>🐶 哈小浪：收到，一起守到最后！</span>`;
+  if (youngerDone === youngerTotal && brotherDone < brotherTotal) return `<span>🐶 哈小浪：我的小队来支援你！</span><b>💫</b><span>🐱 乌龙：收到，一起守到最后！</span>`;
+  const nextSkill = skillSteps.find((skill) => done < skill.at) || skillSteps[skillSteps.length - 1];
+  return `<span>🐱 乌龙：豌豆准备！</span><b>⚔️</b><span>🐶 哈小浪：再 ${Math.max(0, nextSkill.at - done)} 项触发${escapeHTML(nextSkill.name)}！</span>`;
+}
+
+function renderSharedWorld() {
+  const jointDates = jointCompletionDates();
+  const litCount = Math.min(countryCodes.length, jointDates.length * COUNTRIES_PER_JOINT_DAY);
+  const percent = Math.round(litCount / countryCodes.length * 100);
+  const brotherDay = getDay("brother", selectedDate);
+  const youngerDay = getDay("younger", selectedDate);
+  const brotherDone = brotherDay.tasks.filter((item) => item.done).length;
+  const youngerDone = youngerDay.tasks.filter((item) => item.done).length;
+  const brotherComplete = isDayComplete(brotherDay);
+  const youngerComplete = isDayComplete(youngerDay);
+
+  refs.jointDays.textContent = jointDates.length;
+  refs.worldProgressText.textContent = `${litCount}/${countryCodes.length} 个国家`;
+  refs.worldProgressBar.style.width = `${percent}%`;
+  decorateWorldMap(litCount);
+  renderWorldTrail(litCount);
+
+  if (litCount === countryCodes.length) {
+    refs.worldMessage.textContent = "整个世界都被双星点亮啦！";
+    refs.nextCountries.innerHTML = `<strong>🌍 世界点亮完成</strong><span>每一个共同完成日都算数。</span>`;
+    return;
+  }
+
+  if (brotherComplete && youngerComplete) {
+    const todayIndex = jointDates.indexOf(selectedDate);
+    const start = todayIndex >= 0 ? todayIndex : Math.max(0, litCount - 1);
+    const todayCode = countryCodes[start];
+    refs.worldMessage.textContent = `今天双星会合，共同点亮 ${countryName(todayCode)}！`;
+  } else if (brotherComplete) {
+    refs.worldMessage.textContent = `哥哥已就位，弟弟再完成 ${youngerDay.tasks.length - youngerDone} 项就能一起点亮世界。`;
+  } else if (youngerComplete) {
+    refs.worldMessage.textContent = `弟弟已就位，哥哥再完成 ${brotherDay.tasks.length - brotherDone} 项就能一起点亮世界。`;
+  } else {
+    refs.worldMessage.textContent = `哥哥完成 ${brotherDone}/${brotherDay.tasks.length}，弟弟完成 ${youngerDone}/${youngerDay.tasks.length}；两人都完成就点亮 1 个国家。`;
+  }
+
+  const upcomingCode = countryCodes[litCount];
+  refs.nextCountries.innerHTML = upcomingCode
+    ? `<strong>下一站</strong><span>${countryFlag(upcomingCode)} ${escapeHTML(countryName(upcomingCode))}</span><small>还剩 ${countryCodes.length - litCount} 个国家</small>`
+    : "";
+}
+
+async function loadWorldMap() {
+  try {
+    const response = await fetch(WORLD_MAP_URL, { cache: "no-cache" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const source = await response.text();
+    const svg = new DOMParser().parseFromString(source, "image/svg+xml").documentElement;
+    svg.removeAttribute("width");
+    svg.removeAttribute("height");
+    svg.setAttribute("viewBox", "0 0 2754 1398");
+    svg.setAttribute("aria-hidden", "true");
+    refs.worldMap.replaceChildren(document.importNode(svg, true));
+    decorateWorldMap(Math.min(countryCodes.length, jointCompletionDates().length));
+  } catch (error) {
+    console.warn("World map failed to load.", error);
+    renderWorldMapFallback();
+  }
+}
+
+function renderWorldMapFallback() {
+  const image = document.createElement("img");
+  const note = document.createElement("span");
+  image.className = "world-map-fallback";
+  image.alt = "世界地图（兼容模式）";
+  note.className = "world-map-compat-note";
+  note.textContent = "正在用兼容模式展开地图…";
+  image.addEventListener("load", () => {
+    note.textContent = "兼容模式 · 点亮进度以上方数字和足迹为准";
+  }, { once: true });
+  image.addEventListener("error", () => {
+    note.textContent = "地图图片加载失败，请检查当前网络后重试";
+  }, { once: true });
+  image.src = WORLD_MAP_URL;
+  refs.worldMap.replaceChildren(image, note);
+}
+
+function decorateWorldMap(litCount) {
+  const svg = refs.worldMap.querySelector("svg");
+  if (!svg) return;
+  svg.querySelectorAll(".world-lit, .world-recent, .world-current").forEach((element) => element.classList.remove("world-lit", "world-recent", "world-current"));
+  countryCodes.slice(0, litCount).forEach((code, index) => {
+    svg.querySelectorAll(`.landxx.${code.toLowerCase()}`).forEach((element) => {
+      element.classList.add("world-lit");
+      if (index >= litCount - 5) element.classList.add("world-recent");
+      if (index === litCount - 1) element.classList.add("world-current");
+    });
+  });
+}
+
+function renderWorldTrail(litCount) {
+  if (litCount === 0) {
+    refs.worldTrail.innerHTML = `<strong>扩张起点</strong><span class="next">${countryFlag("CN")} 中国</span>`;
+    return;
+  }
+  const start = Math.max(0, litCount - 4);
+  const trail = countryCodes.slice(start, Math.min(countryCodes.length, litCount + 1));
+  refs.worldTrail.innerHTML = `<strong>最近足迹</strong>${trail.map((code, index) => {
+    const isNext = start + index === litCount;
+    return `${index ? "<i>→</i>" : ""}<span class="${isNext ? "next" : "done"}">${countryFlag(code)} ${escapeHTML(countryName(code))}</span>`;
+  }).join("")}`;
+}
+
+function countryName(code) {
+  return regionNames?.of(code) || code;
+}
+
+function countryFlag(code) {
+  return String.fromCodePoint(...code.split("").map((character) => 127397 + character.charCodeAt(0)));
+}
+
+function jointCompletionDates() {
+  return Object.keys(state.days.brother || {})
+    .filter((date) => isDayComplete(state.days.brother[date]) && isDayComplete(state.days.younger?.[date]))
+    .sort();
+}
+
+function isDayComplete(day) {
+  return Boolean(day?.tasks?.length && day.tasks.every((item) => item.done));
 }
 
 function renderFamilyOverview() {
@@ -555,7 +813,7 @@ function renderFamilyOverview() {
     return `<article class="overview-card" style="--kid-color:${profile.color};--kid-soft:${profile.soft}">
       <div class="overview-top"><span class="overview-name"><span class="kid-mini"><img src="${profile.avatar}" data-kid="${profile.id}" alt=""></span>${profile.name}</span><span class="overview-status">${status}</span></div>
       <div class="overview-progress"><div style="width:${percent}%"></div></div>
-      <div class="overview-meta"><span>${done}/${day.tasks.length} 项</span><span>${availableSun(profile.id)} 可用阳光</span></div>
+      <div class="overview-meta"><span>${done}/${day.tasks.length} 项</span><span>${earnedSun(profile.id)} 累计阳光</span></div>
     </article>`;
   }).join("");
 }
@@ -569,6 +827,7 @@ function renderEditor() {
     <details class="edit-row">
       <summary>${escapeHTML(item.title)} · ${item.done ? "已完成" : "未完成"}</summary>
       <div class="edit-fields">
+        <label class="completion-check"><input type="checkbox" data-field="done" data-index="${index}" ${item.done ? "checked" : ""}><span>这项已完成（可用于登记补做）</span></label>
         <div class="edit-grid">
           <label>任务名称<input data-field="title" data-index="${index}" value="${escapeAttr(item.title)}"></label>
           <label>关键词<input data-field="tags" data-index="${index}" value="${escapeAttr((item.tags || []).join(", "))}"></label>
@@ -581,68 +840,203 @@ function renderEditor() {
   refs.parentNote.value = day.note || "";
 }
 
+function renderOverallEditor() {
+  const settings = state.taskSettings[editorKid] || {};
+  refs.overallKid.value = editorKid;
+  refs.overallTaskEditor.innerHTML = buildRawTasks(selectedDate).map((item) => {
+    const setting = settings[item.id] || {};
+    const enabled = setting.enabled !== false;
+    return `<div class="overall-task-row ${enabled ? "" : "disabled"}">
+      <label class="overall-task-toggle"><input type="checkbox" data-overall-id="${item.id}" data-overall-field="enabled" ${enabled ? "checked" : ""}><span>显示</span></label>
+      <input data-overall-id="${item.id}" data-overall-field="title" aria-label="${escapeAttr(item.title)}的总体名称" value="${escapeAttr(setting.title || item.title)}">
+      <input data-overall-id="${item.id}" data-overall-field="instruction" aria-label="${escapeAttr(item.title)}的总体步骤" value="${escapeAttr(setting.instruction || item.instruction)}">
+    </div>`;
+  }).join("");
+  refs.overallTaskEditor.querySelectorAll('[data-overall-field="enabled"]').forEach((checkbox) => {
+    checkbox.addEventListener("change", () => checkbox.closest(".overall-task-row").classList.toggle("disabled", !checkbox.checked));
+  });
+}
+
+function saveOverallPlan() {
+  const draft = {};
+  refs.overallTaskEditor.querySelectorAll("[data-overall-id]").forEach((field) => {
+    const id = field.dataset.overallId;
+    draft[id] ||= {};
+    draft[id][field.dataset.overallField] = field.dataset.overallField === "enabled" ? field.checked : field.value.trim();
+  });
+  if (!Object.values(draft).some((item) => item.enabled)) {
+    showToast("总体任务至少保留一项");
+    return;
+  }
+  const defaults = Object.fromEntries(buildRawTasks(selectedDate).map((item) => [item.id, item]));
+  const next = Object.fromEntries(defaultTaskIds.map((id) => {
+    const item = { enabled: draft[id].enabled };
+    if (draft[id].title && draft[id].title !== defaults[id].title) item.title = draft[id].title;
+    if (draft[id].instruction && draft[id].instruction !== defaults[id].instruction) item.instruction = draft[id].instruction;
+    return [id, item];
+  }));
+  state.taskSettings[editorKid] = next;
+  refreshGeneratedFutureDays(editorKid);
+  saveState();
+  showToast(`${profileById(editorKid).name}的总体任务已保存`);
+  render();
+}
+
+function resetOverallPlan() {
+  if (!window.confirm(`恢复${profileById(editorKid).name}的原始总体任务？日期区间和已完成记录不会被删除。`)) return;
+  state.taskSettings[editorKid] = {};
+  refreshGeneratedFutureDays(editorKid);
+  saveState();
+  showToast("已恢复原始总体任务");
+  render();
+}
+
+function refreshGeneratedFutureDays(kidId) {
+  const today = toISODate(new Date());
+  Object.entries(state.days[kidId] || {}).forEach(([date, day]) => {
+    if (date < today || day.planPeriodId || day.planScope === "day" || day.tasks.some((item) => item.done)) return;
+    state.days[kidId][date] = preserveDayNotes(buildDefaultDay(date, kidId), day);
+  });
+}
+
+function renderRangePreview() {
+  if (!refs.rangePreview) return;
+  const target = refs.rangeKid.value === "both" ? "哥哥和弟弟" : profileById(refs.rangeKid.value).name;
+  const start = refs.rangeStart.value;
+  const end = refs.rangeEnd.value;
+  const preset = refs.rangePreset.value;
+  refs.rangePreview.textContent = preset === "hand-recovery"
+    ? `${target}：${displayDateRange(start, end)}使用手部休养计划；写字和书面数学将替换为中文口述与英语口语。`
+    : `${target}：${displayDateRange(start, end)}按当前总体任务重新生成。`;
+}
+
+function applyRangePlan() {
+  const start = refs.rangeStart.value;
+  const end = refs.rangeEnd.value;
+  const dates = datesBetween(start, end);
+  if (!dates.length) {
+    showToast("请选择正确的开始和结束日期");
+    return;
+  }
+  if (dates.length > 62) {
+    showToast("一次最多安排 62 天");
+    return;
+  }
+  const kidIds = refs.rangeKid.value === "both" ? ["brother", "younger"] : [refs.rangeKid.value];
+  const hasCompleted = kidIds.some((kidId) => dates.some((date) => state.days[kidId]?.[date]?.tasks?.some((item) => item.done)));
+  if (hasCompleted && !window.confirm("所选日期已有完成记录。继续会保留同名任务的完成状态，但被替换的任务需要重新确认，是否继续？")) return;
+
+  const preset = refs.rangePreset.value;
+  const periodId = `period-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+  kidIds.forEach((kidId) => {
+    dates.forEach((date) => {
+      const existing = state.days[kidId]?.[date];
+      const next = preset === "hand-recovery" ? buildHandRecoveryDay(date, kidId) : buildDefaultDay(date, kidId);
+      next.planScope = "range";
+      next.planPeriodId = periodId;
+      state.days[kidId][date] = preserveDayState(next, existing);
+    });
+  });
+  state.planPeriods.push({ id: periodId, kidIds, startDate: start, endDate: end, preset });
+  saveState();
+  showToast(`已安排 ${dates.length} 天，两个手机会自动同步`);
+  render();
+}
+
+function buildHandRecoveryDay(date, kidId) {
+  const base = buildRawTasks(date).map((item) => {
+    const setting = state.taskSettings[kidId]?.[item.id] || {};
+    return { ...item, title: setting.title || item.title, instruction: setting.instruction || item.instruction };
+  });
+  const tasks = base.map((item) => {
+    if (item.id === "writing") return task("retelling", "中文朗读与复述", "朗读一段喜欢的故事，再口头讲出发生了什么", ["朗读", "复述", "不动笔"], "舒服地坐好；朗读 10–15 分钟；最后用自己的话讲一遍，不需要写字。");
+    if (item.id === "math") return task("speaking", "英语口语练习", "复述今天的 RAZ，或用目标句型说 3 句话", ["开口说", "RAZ", "不动笔"], "先跟读今天的句子；再合上书说一遍；最后任选 3 个词造句。");
+    return item;
+  });
+  return { tasks, mistakes: "", note: "", planScope: "range" };
+}
+
+function renderPlanPeriods() {
+  refs.planPeriodList.innerHTML = state.planPeriods.slice().reverse().map((period) => {
+    const kids = period.kidIds.map((kidId) => profileById(kidId).name).join("和");
+    const name = period.preset === "hand-recovery" ? "手部休养" : "总体任务";
+    return `<div class="plan-period-item"><div><strong>${escapeHTML(name)} · ${escapeHTML(kids)}</strong><span>${escapeHTML(displayDateRange(period.startDate, period.endDate))}</span></div><button type="button" data-remove-period="${escapeAttr(period.id)}">取消安排</button></div>`;
+  }).join("");
+  refs.planPeriodList.querySelectorAll("[data-remove-period]").forEach((button) => {
+    button.addEventListener("click", () => removePlanPeriod(button.dataset.removePeriod));
+  });
+}
+
+function removePlanPeriod(periodId) {
+  const period = state.planPeriods.find((item) => item.id === periodId);
+  if (!period || !window.confirm("取消这段安排并恢复总体任务？已经完成的同名任务会继续保留。")) return;
+  datesBetween(period.startDate, period.endDate).forEach((date) => {
+    period.kidIds.forEach((kidId) => {
+      const existing = state.days[kidId]?.[date];
+      if (existing?.planPeriodId !== periodId) return;
+      state.days[kidId][date] = preserveDayState(buildDefaultDay(date, kidId), existing);
+    });
+  });
+  state.planPeriods = state.planPeriods.filter((item) => item.id !== periodId);
+  saveState();
+  showToast("日期区间已恢复总体任务");
+  render();
+}
+
+function preserveDayState(next, existing) {
+  if (!existing) return next;
+  const completedIds = new Set(existing.tasks.filter((item) => item.done).map((item) => item.id));
+  next.tasks.forEach((item) => { item.done = completedIds.has(item.id); });
+  return preserveDayNotes(next, existing);
+}
+
+function preserveDayNotes(next, existing) {
+  next.mistakes = existing?.mistakes || "";
+  next.note = existing?.note || next.note || "";
+  return next;
+}
+
+function datesBetween(start, end) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(start || "") || !/^\d{4}-\d{2}-\d{2}$/.test(end || "") || start > end) return [];
+  const dates = [];
+  let cursor = parseISODate(start);
+  const finish = parseISODate(end);
+  while (cursor <= finish && dates.length <= 62) {
+    dates.push(toISODate(cursor));
+    cursor = addDays(cursor, 1);
+  }
+  return dates;
+}
+
+function displayDateRange(start, end) {
+  if (!start || !end) return "请选择日期";
+  return `${start.slice(5).replace("-", "月")}日–${end.slice(5).replace("-", "月")}日`;
+}
+
 function saveParentEdits() {
   const day = getDay(editorKid, selectedDate);
   refs.taskEditor.querySelectorAll("[data-field]").forEach((field) => {
     const item = day.tasks[Number(field.dataset.index)];
     if (!item) return;
-    item[field.dataset.field] = field.dataset.field === "tags"
-      ? field.value.split(",").map((value) => value.trim()).filter(Boolean)
-      : field.value.trim();
+    item[field.dataset.field] = field.dataset.field === "done"
+      ? field.checked
+      : field.dataset.field === "tags"
+        ? field.value.split(",").map((value) => value.trim()).filter(Boolean)
+        : field.value.trim();
   });
   day.mistakes = refs.mistakeBox.value.trim();
   day.note = refs.parentNote.value.trim();
+  day.planScope = "day";
+  delete day.planPeriodId;
   saveState();
-  showToast("当天计划已保存");
+  showToast("当天计划与补做状态已保存");
   render();
 }
 
 function resetCurrentDay() {
-  state.days[editorKid][selectedDate] = buildDefaultDay(selectedDate);
+  state.days[editorKid][selectedDate] = buildDefaultDay(selectedDate, editorKid);
   saveState();
   showToast("已恢复默认任务");
-  render();
-}
-
-function renderRewardAdmin() {
-  const pending = state.redemptions.filter((item) => item.status === "pending").slice().reverse();
-  refs.redemptionQueue.innerHTML = pending.length ? pending.map((item) => {
-    const profile = profileById(item.kidId);
-    return `<div class="queue-item">
-      <div><strong>${profile.name}申请：${escapeHTML(item.rewardName)}</strong><small>${item.cost} 阳光 · ${formatTime(item.createdAt)}</small></div>
-      <div class="queue-actions">
-        <button class="approve-action" type="button" data-redemption="${item.id}" data-action="approved">同意</button>
-        <button class="reject-action" type="button" data-redemption="${item.id}" data-action="rejected">退回</button>
-      </div>
-    </div>`;
-  }).join("") : `<div class="queue-empty">目前没有待处理申请</div>`;
-  refs.redemptionQueue.querySelectorAll("[data-redemption]").forEach((button) => {
-    button.addEventListener("click", () => resolveRedemption(button.dataset.redemption, button.dataset.action));
-  });
-  refs.rewardAdminList.innerHTML = state.rewards.map((reward) => `
-    <div class="admin-reward"><strong>${escapeHTML(reward.icon || "🎁")} ${escapeHTML(reward.name)}</strong><span>${reward.cost} 阳光</span></div>
-  `).join("");
-}
-
-function addReward(event) {
-  event.preventDefault();
-  const name = refs.rewardName.value.trim();
-  const cost = Number(refs.rewardCost.value);
-  if (!name || !Number.isFinite(cost) || cost < 10) return;
-  state.rewards.push({ id: `reward-${Date.now()}`, icon: "🎁", name, cost: Math.round(cost / 10) * 10 });
-  refs.rewardForm.reset();
-  saveState();
-  showToast("新奖励已添加");
-  render();
-}
-
-function resolveRedemption(id, status) {
-  const redemption = state.redemptions.find((item) => item.id === id);
-  if (!redemption || redemption.status !== "pending") return;
-  redemption.status = status;
-  redemption.resolvedAt = new Date().toISOString();
-  saveState();
-  showToast(status === "approved" ? "已同意兑换" : "已退回，阳光已经返还");
   render();
 }
 
@@ -664,23 +1058,8 @@ function earnedSun(kidId) {
   return Object.values(state.days[kidId] || {}).reduce((sum, day) => sum + day.tasks.filter((item) => item.done).length * 10, 0);
 }
 
-function spentSun(kidId) {
-  return state.redemptions
-    .filter((item) => item.kidId === kidId && item.status !== "rejected")
-    .reduce((sum, item) => sum + item.cost, 0);
-}
-
 function availableSun(kidId) {
-  return Math.max(0, earnedSun(kidId) - spentSun(kidId));
-}
-
-function redemptionStatus(status) {
-  return { pending: "等待家长确认", approved: "兑换成功", rejected: "已退回阳光" }[status] || status;
-}
-
-function formatTime(value) {
-  const date = new Date(value);
-  return `${date.getMonth() + 1}/${date.getDate()} ${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}`;
+  return earnedSun(kidId);
 }
 
 function streakFor(kidId, date) {
