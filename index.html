@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5b942" />
+    <title>双星学习岛</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <button id="homeButton" class="brand" type="button" aria-label="返回今日">
+          <span class="brand-mark">☀</span>
+          <span><small>双星学习岛</small><strong>今天自己来！</strong></span>
+        </button>
+        <div class="topbar-actions">
+          <button id="cloudStatus" class="cloud-status local" type="button">● 本地模式</button>
+          <button id="parentEntry" class="parent-entry" type="button">家长中心</button>
+        </div>
+      </header>
+
+      <nav id="kidSwitcher" class="kid-switcher" aria-label="选择孩子"></nav>
+
+      <section id="cloudSetup" class="cloud-setup" hidden>
+        <div class="cloud-setup-heading">
+          <div><p class="eyebrow">多设备同步</p><h2>连接家庭空间</h2></div>
+          <button id="closeCloudSetup" class="quiet-action" type="button">关闭</button>
+        </div>
+        <p id="cloudSetupMessage" class="cloud-setup-message">第一次使用请创建家庭空间；其他手机用邀请码和家长 PIN 加入。</p>
+        <div id="cloudSetupForms" class="cloud-setup-grid">
+          <form id="createFamilyForm" class="cloud-form">
+            <h3>这台是第一台设备</h3>
+            <label>家庭名称<input id="familyName" required maxlength="40" value="双星学习岛"></label>
+            <label>设置家长 PIN<input id="createFamilyPin" required type="password" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" placeholder="4–8 位数字"></label>
+            <button class="primary-action" type="submit">创建并上传本地数据</button>
+          </form>
+          <form id="joinFamilyForm" class="cloud-form">
+            <h3>这台是其他设备</h3>
+            <label>家庭邀请码<input id="familyInviteCode" required maxlength="8" autocapitalize="characters" placeholder="8 位邀请码"></label>
+            <label>家长 PIN<input id="joinFamilyPin" required type="password" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" placeholder="4–8 位数字"></label>
+            <button class="primary-action" type="submit">加入并载入家庭数据</button>
+          </form>
+        </div>
+        <div id="cloudConnectedInfo" class="cloud-connected-info" hidden>
+          <span>家庭邀请码</span><strong id="connectedInviteCode">—</strong>
+          <small>在其他手机上输入这个邀请码和家长 PIN，即可载入同一份数据。</small>
+        </div>
+      </section>
+
+      <section id="kidView" class="view-panel active">
+        <section class="hero-card">
+          <div id="avatar" class="avatar" aria-hidden="true"></div>
+          <div class="hero-copy">
+            <p id="dateLabel" class="eyebrow"></p>
+            <h1><span id="kidName"></span>，今天也能自己完成</h1>
+            <p id="encouragement" class="encouragement"></p>
+            <div class="progress-track" aria-label="今日进度"><div id="progressBar"></div></div>
+            <div class="hero-stats">
+              <span><b id="progressText">0/0</b> 今日任务</span>
+              <span><b id="sunCount">0</b> ☀ 阳光</span>
+              <span><b id="streakCount">0</b> 连续天数</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-heading">
+          <div><p class="eyebrow">按顺序做就好</p><h2>今日任务</h2></div>
+          <span id="timeEstimate" class="time-pill"></span>
+        </section>
+        <div id="taskList" class="task-list"></div>
+
+        <section class="rewards-section">
+          <div class="section-heading reward-heading">
+            <div><p class="eyebrow">阳光可以换奖励</p><h2>奖励中心</h2></div>
+            <span class="sun-balance"><b id="rewardBalance">0</b> ☀ 可用</span>
+          </div>
+          <div id="rewardList" class="reward-list"></div>
+          <div id="kidRedemptions" class="kid-redemptions"></div>
+        </section>
+
+        <section id="finishCard" class="finish-card" hidden>
+          <div class="celebration">🎉</div>
+          <h2>今日任务全部完成！</h2>
+          <p>你让学习岛充满了能量，也给兄弟的花园加了一束阳光。</p>
+        </section>
+      </section>
+
+      <section id="parentView" class="view-panel">
+        <div class="parent-header">
+          <div><p class="eyebrow">只处理需要帮助的事</p><h1>家长总览</h1></div>
+          <div class="date-nav">
+            <button id="prevDay" type="button" aria-label="前一天">‹</button>
+            <input id="datePicker" type="date" />
+            <button id="nextDay" type="button" aria-label="后一天">›</button>
+          </div>
+        </div>
+
+        <div id="familyOverview" class="family-overview"></div>
+
+        <div class="parent-layout">
+          <section class="panel">
+            <div class="panel-title"><div><p class="eyebrow">编辑计划</p><h2 id="editorTitle">当天任务</h2></div><select id="editorKid"></select></div>
+            <form id="taskEditor" class="task-editor"></form>
+          </section>
+          <aside class="panel notes-panel">
+            <p class="eyebrow">学习记录</p><h2>只记关键问题</h2>
+            <label>错词 / 错题<textarea id="mistakeBox" rows="5" placeholder="例如：greater / 7×8"></textarea></label>
+            <label>明天需要注意<textarea id="parentNote" rows="4" placeholder="留空也可以"></textarea></label>
+            <button id="saveParent" class="primary-action" type="button">保存计划</button>
+            <button id="resetDay" class="quiet-action" type="button">恢复当天默认任务</button>
+          </aside>
+        </div>
+
+        <section class="panel reward-admin">
+          <div class="panel-title">
+            <div><p class="eyebrow">阳光奖励</p><h2>兑换审核与奖励设置</h2></div>
+          </div>
+          <div class="reward-admin-grid">
+            <div>
+              <h3>待处理申请</h3>
+              <div id="redemptionQueue" class="redemption-queue"></div>
+            </div>
+            <div>
+              <h3>奖励清单</h3>
+              <form id="rewardForm" class="reward-form">
+                <input id="rewardName" required maxlength="24" placeholder="奖励名称，例如：选择今晚的故事">
+                <input id="rewardCost" required type="number" min="10" step="10" placeholder="所需阳光">
+                <button class="primary-action" type="submit">添加奖励</button>
+              </form>
+              <div id="rewardAdminList" class="reward-admin-list"></div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./supabase-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./cloud-store.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
