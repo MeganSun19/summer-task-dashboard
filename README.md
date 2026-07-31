@@ -139,7 +139,7 @@ RAZ 日计划以以下工作簿为准：
 
 ## 技术与部署目标
 
-- 静态前端部署到 Vercel Hobby。
+- 静态前端部署到 CloudBase 免费体验环境的静态网站托管。
 - Supabase 负责云端存储与多手机同步。
 - 工作台不依赖家中电脑保持开机。
 - 家人可从任意手机打开同一个家庭空间。
@@ -172,7 +172,7 @@ RAZ 日计划以以下工作簿为准：
 - [x] Realtime 多设备状态更新和 revision 冲突保护。
 - [ ] 家庭、成员、计划、每日任务、完成记录、奖励表。
 - [ ] 将迁移期的 JSON 状态拆分为计划、任务、完成记录和奖励表。
-- [ ] 在真实 Supabase 项目执行 SQL 并完成双设备验证。
+- [x] 在真实 Supabase 项目执行 SQL 并完成双设备验证。
 
 ### 阶段 3：自主学习闭环
 
@@ -213,7 +213,30 @@ python3 -m http.server 4173
 
 然后访问 `http://127.0.0.1:4173`。
 
-直接打开 `index.html` 也能使用，但本地服务器更接近 Vercel 的实际运行方式。
+直接打开 `index.html` 也能使用，但本地服务器更接近 CloudBase 的实际运行方式。
+
+## CloudBase 部署
+
+当前 CloudBase 环境：
+
+- 环境 ID：`twin-start-island-d7dxg7911b0684`
+- 线上地址：`https://twin-start-island-d7dxg7911b0684-1461490716.tcloudbaseapp.com/`
+- 地域：上海
+- 套餐：免费体验版
+
+部署前先登录 CloudBase CLI：
+
+```bash
+npx --yes --package=@cloudbase/cli@latest cloudbase login
+```
+
+然后运行：
+
+```bash
+./deploy-cloudbase.sh
+```
+
+脚本只上传网页运行所需的 7 个文件，不会上传 `.git`、SQL、README 或原始素材。
 
 ## Supabase 初始化
 
@@ -232,4 +255,4 @@ python3 -m http.server 4173
 
 ## 当前下一步
 
-在 Supabase Dashboard 执行 `supabase-schema.sql` 并启用匿名登录，然后用两台设备完成创建家庭、加入家庭、任务打卡和实时同步验证。
+双设备云同步已验收通过。下一步先确认奖励机制的完整范围，再完善实现并进行双设备验证。

@@ -312,7 +312,7 @@ async function initializeCloud() {
     onRemoteState: applyRemoteState,
     onStatus: updateCloudStatus
   });
-  if (result.needsSetup) refs.cloudSetup.hidden = false;
+  if (result.needsSetup || result.error) refs.cloudSetup.hidden = false;
 }
 
 function applyRemoteState(remoteState, meta = {}) {

@@ -153,7 +153,9 @@ begin
 
   insert into public.family_members (family_id, user_id, access_role)
   values (matched_family.id, current_user_id, 'device')
-  on conflict (family_id, user_id) do nothing;
+  -- RETURNS TABLE 也声明了名为 family_id 的输出变量。使用约束名可以避免
+  -- PL/pgSQL 将 ON CONFLICT 中的 family_id 解析为不明确引用（SQLSTATE 42702）。
+  on conflict on constraint family_members_pkey do nothing;
 
   select family_states.revision into state_revision
   from public.family_states

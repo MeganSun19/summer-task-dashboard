@@ -19,37 +19,44 @@
     callbacks = nextCallbacks;
     const config = window.SUPABASE_CONFIG;
     if (!config?.url || !config?.publishableKey || !window.supabase?.createClient) {
-      emitStatus("local", "本地模式");
-      return { available: false };
+      const error = Object.assign(new Error("Supabase 客户端或公开配置未加载"), {
+        code: "CLIENT_NOT_READY"
+      });
+      emitStatus("local", friendlyError(error, "加载云端组件"));
+      return { available: false, error, phase: "加载云端组件" };
     }
 
     client = window.supabase.createClient(config.url, config.publishableKey, {
       auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false }
     });
 
+    let phase = "读取登录状态";
     try {
       let { data: sessionData, error: sessionError } = await client.auth.getSession();
       if (sessionError) throw sessionError;
       if (!sessionData.session) {
+        phase = "匿名登录";
         const result = await client.auth.signInAnonymously();
         if (result.error) throw result.error;
         sessionData = { session: result.data.session };
       }
 
+      phase = "读取家庭成员关系";
       if (!familyId) await restoreFamilyMembership();
       if (!familyId) {
         emitStatus("setup", "等待创建或加入家庭");
         return { available: true, needsSetup: true };
       }
 
+      phase = "载入家庭数据";
       await loadRemoteState();
       subscribeToRemoteState();
       emitStatus("synced", "云端已同步");
       return { available: true, connected: true, familyId, inviteCode, revision };
     } catch (error) {
       console.warn("Supabase initialization failed; using local storage.", error);
-      emitStatus("local", friendlyError(error));
-      return { available: false, error };
+      emitStatus("local", friendlyError(error, phase));
+      return { available: false, error, phase };
     }
   }
 
@@ -179,13 +186,28 @@
     return nextState;
   }
 
-  function friendlyError(error) {
+  function friendlyError(error, phase = "云端操作") {
     const message = String(error?.message || error || "");
     if (message.includes("Anonymous sign-ins are disabled")) return "请先启用 Supabase 匿名登录";
     if (message.includes("Could not find the function") || message.includes("schema cache")) return "请先执行 Supabase 初始化 SQL";
     if (message.includes("INVALID_INVITE_OR_PIN")) return "邀请码或家长 PIN 不正确";
     if (message.includes("INVALID_PIN")) return "PIN 需要使用 4–8 位数字";
-    return "云端暂不可用，正在使用本地模式";
+    return diagnosticError(error, phase);
+  }
+
+  function diagnosticError(error, phase) {
+    const code = cleanDiagnosticPart(error?.code || error?.name || "UNKNOWN", 48);
+    const status = Number.isFinite(Number(error?.status)) ? ` / HTTP ${Number(error.status)}` : "";
+    const message = cleanDiagnosticPart(error?.message || error || "未知错误", 180);
+    return `${phase}失败 [${code}${status}]：${message}。当前数据仍保存在本机。`;
+  }
+
+  function cleanDiagnosticPart(value, maxLength) {
+    return String(value)
+      .replace(/https?:\/\/\S+/gi, "[URL]")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, maxLength);
   }
 
   window.CloudStore = {
