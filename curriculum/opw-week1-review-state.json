@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-04T06:11:43.498Z",
+  "sourceReviewResults": "opw-week1-review-results-2026-08-04.json",
+  "policy": {
+    "verified": "Only clips marked verified by the human reviewer are ready for child use.",
+    "corrections": "Boundary errors use exact machine word timestamps; word errors use a different isolated-word candidate and require a second human pass."
+  },
+  "summary": {
+    "reviewed": 6,
+    "verified": 14,
+    "pendingSecondPass": 0,
+    "excludedAfterSecondPass": 4,
+    "tightenedBoundaries": 0,
+    "replacementCandidates": 0
+  },
+  "verifiedItems": [
+    {
+      "itemId": "l2-d1-t12-w27",
+      "level": 2,
+      "sectionId": "unit-1",
+      "sectionTitle": "a am an",
+      "focusPatterns": [
+        "a",
+        "am",
+        "an"
+      ],
+      "disc": 1,
+      "track": 12,
+      "sourceFile": "OPW_SB2_Disc1_Track12.mp3",
+      "word": "Pan.",
+      "normalizedWord": "pan",
+      "confidence": 0.8999,
+      "wordTimestamp": {
+        "startSeconds": 40.82,
+        "endSeconds": 41.52
+      },
+      "clip": {
+        "startSeconds": 40.67,
+        "endSeconds": 41.72
+      },
+      "verifiedAt": "2026-08-04T04:55:03.912Z",
+      "verificationSource": "week1-human-review"
+    },
+    {
+      "itemId": "l2-d1-t22-w14",
+      "level": 2,
+      "sectionId": "unit-2",
+      "sectionTitle": "ad ag ap at",
+      "focusPatterns": [
+        "ad",
+        "ag",
+        "ap",
+        "at"
+      ],
+      "disc": 1,
+      "track": 22,
+      "sourceFile": "OPW_SB2_Disc1_Track22.mp3",
+      "word": "Map.",
+      "normalizedWord": "map",
+      "confidence": 0.9365,
+      "wordTimestamp": {
+        "startSeconds": 24.26,
+        "endSeconds": 24.76
+      },
+      "clip": {
+        "startSeconds": 24.11,
+        "endSeconds": 24.96
+      },
+      "verifiedAt": "2026-08-04T04:55:18.346Z",
+      "verificationSource": "week1-human-review"
+    },
+    {
+      "itemId": "l2-d1-t24-w11",
+      "level": 2,
+      "sectionId": "unit-2",
+      "sectionTitle": "ad ag ap at",
+      "focusPatterns": [
+        "ad",
+        "ag",
+        "ap",
+        "at"
+      ],
+      "disc": 1,
+      "track": 24,
+      "sourceFile": "OPW_SB2_Disc1_Track24.mp3",
+      "word": "cap",
+      "normalizedWord": "cap",
+      "confidence": 0.7817,
+      "wordTimestamp": {
+        "startSeconds": 57.16,
+        "endSeconds": 57.64
+      },
+      "clip": {
+        "startSeconds": 57.01,
+        "endSeconds": 57.84
+      },
+      "verifiedAt": "2026-08-04T04:55:07.387Z",
+      "verificationSource": "week1-human-review"
+    },
+    {
+      "itemId": "l2-d1-t30-w17",
+      "level": 2,
+      "sectionId": "unit-2",
+      "sectionTitle": "ad ag ap at",
+      "focusPatterns": [
+        "ad",
+        "ag",
+        "ap",
+        "at"
+      ],
+      "disc": 1,
+      "track": 30,
+      "sourceFile": "OPW_SB2_Disc1_Track30.mp3",
+      "word": "tap",
+      "normalizedWord": "tap",
+      "confidence": 0.8384,
+      "wordTimestamp": {
+        "startSeconds": 34.24,
+        "endSeconds": 37.3
+      },
+      "clip": {
+        "startSeconds": 34.09,
+        "endSeconds": 37.5
+      },
+      "verifiedAt": "2026-08-04T04:55:21.296Z",
+      "verificationSource": "week1-human-review"
+    },
+    {
+      "itemId": "l2-d1-t30-w25",
+      "level": 2,
+      "sectionId": "unit-2",
+      "sectionTitle": "ad ag ap at",
+      "focusPatterns": [
+        "ad",
+        "ag",
+        "ap",
+        "at"
+      ],
+      "disc": 1,
+      "track": 30,
+      "sourceFile": "OPW_SB2_Disc1_Track30.mp3",
+      "word": "Hat",
+      "normalizedWord": "hat",
+      "confidence": 0.9243,
+      "wordTimestamp": {
+        "startSeconds": 55.54,
+        "endSeconds": 58.16
+      },
+      "clip": {
+        "startSeconds": 55.39,
+        "endSeconds": 58.36
+      },
+      "verifiedAt": "2026-08-04T04:55:16.445Z",
+      "verificationSource": "week1-human-review"
+    },
+    {
+      "itemId": "l2-d1-t36-w18",
+      "level": 2,
+      "sectionId": "unit-3",
+      "sectionTitle": "e et en ed",
+      "focusPatterns": [
+        "e",
+        "et",
+        "en",
+        "ed"
+      ],
+      "disc": 1,
+      "track": 36,
+      "sourceFile": "OPW_SB2_Disc1_Track36.mp3",
+      "word": "Ten.",
+      "normalizedWord": "ten",
+      "confidence": 0.9126,
+      "wordTimestamp": {
+        "startSeconds": 39.64,
+        "endSeconds": 40.46
+      },
+      "clip": {
+        "startSeconds": 39.49,
+        "endSeconds": 40.66
+      },
+      "verifiedAt": "2026-08-04T04:56:41.620Z",
+      "verificationSource": "week1-human-review"
+    },
+    {
+      "itemId": "l2-d1-t48-w11",
+      "level": 2,
+      "sectionId": "unit-3",
+      "sectionTitle": "e et en ed",
+      "focusPatterns": [
+        "e",
+        "et",
+        "en",
+        "ed"
+      ],
+      "disc": 1,
+      "track": 48,
+      "sourceFile": "OPW_SB2_Disc1_Track48.mp3",
+      "word": "hen.",
+      "normalizedWord": "hen",
+      "confidence": 0.918,
+      "wordTimestamp": {
+        "startSeconds": 9.96,
+        "endSeconds": 10.76
+      },
+      "clip": {
+        "startSeconds": 9.81,
+        "endSeconds": 10.96
+      },
+      "verifiedAt": "2026-08-04T04:55:53.937Z",
+      "verificationSource": "week1-human-review"
+    },
+    {
+      "itemId": "l2-d2-t13-w16",
+      "level": 2,
+      "sectionId": "unit-5",
+      "sectionTitle": "in ig it ix",
+      "focusPatterns": [
+        "in",
+        "ig",
+        "it",
+        "ix"
+      ],
+      "disc": 2,
+      "track": 13,
+      "sourceFile": "OPW_SB2_Disc2_Track13.mp3",
+      "word": "Hit.",
+      "normalizedWord": "hit",
+      "confidence": 0.7549,
+      "wordTimestamp": {
+        "startSeconds": 20.44,
+        "endSeconds": 20.86
+      },
+      "clip": {
+        "startSeconds": 20.29,
+        "endSeconds": 21.06
+      },
+      "verifiedAt": "2026-08-04T04:55:22.962Z",
+      "verificationSource": "week1-human-review"
+    },
+    {
+      "itemId": "l2-d2-t18-w9",
+      "level": 2,
+      "sectionId": "unit-6",
+      "sectionTitle": "o ot op",
+      "focusPatterns": [
+        "o",
+        "ot",
+        "op"
+      ],
+      "disc": 2,
+      "track": 18,
+      "sourceFile": "OPW_SB2_Disc2_Track18.mp3",
+      "word": "Log.",
+      "normalizedWord": "log",
+      "confidence": 0.9424,
+      "wordTimestamp": {
+        "startSeconds": 18.78,
+        "endSeconds": 19.38
+      },
+      "clip": {
+        "startSeconds": 18.63,
+        "endSeconds": 19.58
+      },
+      "verifiedAt": "2026-08-04T04:56:48.486Z",
+      "verificationSource": "week1-human-review"
+    },
+    {
+      "itemId": "l2-d2-t26-w23",
+      "level": 2,
+      "sectionId": "unit-6",
+      "sectionTitle": "o ot op",
+      "focusPatterns": [
+        "o",
+        "ot",
+        "op"
+      ],
+      "disc": 2,
+      "track": 26,
+      "sourceFile": "OPW_SB2_Disc2_Track26.mp3",
+      "word": "-hop",
+      "normalizedWord": "hop",
+      "confidence": 0.8335,
+      "wordTimestamp": {
+        "startSeconds": 38.8,
+        "endSeconds": 40.04
+      },
+      "clip": {
+        "startSeconds": 38.65,
+        "endSeconds": 40.24
+      },
+      "verifiedAt": "2026-08-04T04:56:46.703Z",
+      "verificationSource": "week1-human-review"
+    },
+    {
+      "itemId": "l2-d2-t30-w10",
+      "level": 2,
+      "sectionId": "unit-6",
+      "sectionTitle": "o ot op",
+      "focusPatterns": [
+        "o",
+        "ot",
+        "op"
+      ],
+      "disc": 2,
+      "track": 30,
+      "sourceFile": "OPW_SB2_Disc2_Track30.mp3",
+      "word": "Fox.",
+      "normalizedWord": "fox",
+      "confidence": 0.8521,
+      "wordTimestamp": {
+        "startSeconds": 9.24,
+        "endSeconds": 9.76
+      },
+      "clip": {
+        "startSeconds": 9.09,
+        "endSeconds": 9.96
+      },
+      "verifiedAt": "2026-08-04T04:56:43.453Z",
+      "verificationSource": "week1-human-review"
+    },
+    {
+      "itemId": "l2-d2-t59-w9",
+      "level": 2,
+      "sectionId": "unit-8",
+      "sectionTitle": "ut ub um un",
+      "focusPatterns": [
+        "ut",
+        "ub",
+        "um",
+        "un"
+      ],
+      "disc": 2,
+      "track": 59,
+      "sourceFile": "OPW_SB2_Disc2_Track59.mp3",
+      "word": "Run.",
+      "normalizedWord": "run",
+      "confidence": 0.9907,
+      "wordTimestamp": {
+        "startSeconds": 14.28,
+        "endSeconds": 14.9
+      },
+      "clip": {
+        "startSeconds": 14.13,
+        "endSeconds": 15.1
+      },
+      "verifiedAt": "2026-08-04T04:56:50.233Z",
+      "verificationSource": "week1-human-review"
+    },
+    {
+      "itemId": "l2-d1-t43-w27-r2",
+      "level": 2,
+      "sectionId": "unit-3",
+      "sectionTitle": "e et en ed",
+      "focusPatterns": [
+        "e",
+        "et",
+        "en",
+        "ed"
+      ],
+      "disc": 1,
+      "track": 43,
+      "sourceFile": "OPW_SB2_Disc1_Track43.mp3",
+      "word": "Red",
+      "normalizedWord": "red",
+      "confidence": 0.8154,
+      "wordTimestamp": {
+        "startSeconds": 39.62,
+        "endSeconds": 40.82
+      },
+      "clip": {
+        "startSeconds": 39.62,
+        "endSeconds": 40.82
+      },
+      "verifiedAt": "2026-08-04T06:09:51.982Z",
+      "verificationSource": "week1-human-review"
+    },
+    {
+      "itemId": "l2-d2-t31-w58-r2",
+      "level": 2,
+      "sectionId": "review-3",
+      "sectionTitle": "Review 3",
+      "focusPatterns": [],
+      "disc": 2,
+      "track": 31,
+      "sourceFile": "OPW_SB2_Disc2_Track31.mp3",
+      "word": "pin,",
+      "normalizedWord": "pin",
+      "confidence": 0.7593,
+      "wordTimestamp": {
+        "startSeconds": 63.36,
+        "endSeconds": 64.04
+      },
+      "clip": {
+        "startSeconds": 63.36,
+        "endSeconds": 64.04
+      },
+      "verifiedAt": "2026-08-04T06:09:36.402Z",
+      "verificationSource": "week1-human-review"
+    }
+  ],
+  "correctionItems": [],
+  "excludedWords": [
+    {
+      "normalizedWord": "man",
+      "itemId": "l2-d1-t16-w11-r2",
+      "status": "boundary-error",
+      "reviewerNote": "音频还是后面多了一个音，音频是man with.. 多了一个with",
+      "excludedAt": "2026-08-04T06:08:13.284Z",
+      "reason": "failed-second-pass"
+    },
+    {
+      "normalizedWord": "pet",
+      "itemId": "l2-d1-t48-w10-r2",
+      "status": "boundary-error",
+      "reviewerNote": "音频后面多音，pet hand ...",
+      "excludedAt": "2026-08-04T06:09:49.464Z",
+      "reason": "failed-second-pass"
+    },
+    {
+      "normalizedWord": "in",
+      "itemId": "l2-d2-t16-w15-r2",
+      "status": "boundary-error",
+      "reviewerNote": "音频不对，隐约能听到in开头的，但是后面还有别的音，太快。",
+      "excludedAt": "2026-08-04T06:09:07.936Z",
+      "reason": "failed-second-pass"
+    },
+    {
+      "normalizedWord": "it",
+      "itemId": "l2-d2-t16-w22-r2",
+      "status": "boundary-error",
+      "reviewerNote": "音频后边多音，it with.. 后面多了with的音",
+      "excludedAt": "2026-08-04T06:09:29.969Z",
+      "reason": "failed-second-pass"
+    }
+  ]
+}

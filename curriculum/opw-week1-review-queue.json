@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "generatedOn": "2026-08-04",
+  "title": "首周课程最小试听审核清单",
+  "sourceCourse": "week1-course.json",
+  "sourceQueue": "opw-listening-review-priority.json",
+  "sourceReviewResults": "opw-week1-review-results-2026-08-04.json",
+  "policy": {
+    "scope": "one best Level 2/3 candidate only for each first-week word not already covered by a Level 1 verified clip",
+    "ordering": "course day, then course word",
+    "completionRule": "Only verified results may replace pending-review sources in the child course."
+  },
+  "summary": {
+    "total": 0,
+    "byLevel": {
+      "2": 0,
+      "3": 0
+    },
+    "byDisc": {
+      "1": 0,
+      "2": 0
+    }
+  },
+  "items": []
+}

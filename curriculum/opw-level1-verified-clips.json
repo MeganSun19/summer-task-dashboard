@@ -1,0 +1,3881 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-04T02:55:33.123Z",
+  "sourceCatalog": "opw-full-audio-catalog.json",
+  "sourceQueue": "opw-listening-review-priority.json",
+  "sourceReviewResults": "opw-listening-review-results-2026-08-04 (1).json",
+  "policy": {
+    "included": "Level 1 P0 candidates marked verified after human listening review",
+    "excluded": "word-error, boundary-error, and skipped candidates are omitted from items",
+    "originalAudio": "Oxford MP3 files are referenced only and are never modified or deleted"
+  },
+  "summary": {
+    "reviewedLevel1P0": 188,
+    "verified": 143,
+    "excluded": 45,
+    "excludedWordError": 42,
+    "excludedBoundaryError": 3,
+    "verifiedOnSecondPass": 11
+  },
+  "items": [
+    {
+      "itemId": "l1-d1-t3-w5",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 3,
+      "sourceFile": "OPW_SB1_Disc1_Track03.mp3",
+      "word": "B",
+      "normalizedWord": "b",
+      "confidence": 0.4353,
+      "wordTimestamp": {
+        "startSeconds": 4.4,
+        "endSeconds": 4.98
+      },
+      "clip": {
+        "startSeconds": 4.25,
+        "endSeconds": 5.18
+      },
+      "verifiedAt": "2026-08-04T02:24:21.918Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t4-w2",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 4,
+      "sourceFile": "OPW_SB1_Disc1_Track04.mp3",
+      "word": "B.",
+      "normalizedWord": "b",
+      "confidence": 0.4705,
+      "wordTimestamp": {
+        "startSeconds": 1.94,
+        "endSeconds": 2.46
+      },
+      "clip": {
+        "startSeconds": 1.79,
+        "endSeconds": 2.66
+      },
+      "verifiedAt": "2026-08-04T02:23:52.935Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t4-w14",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 4,
+      "sourceFile": "OPW_SB1_Disc1_Track04.mp3",
+      "word": "Ant.",
+      "normalizedWord": "ant",
+      "confidence": 0.6011,
+      "wordTimestamp": {
+        "startSeconds": 27.82,
+        "endSeconds": 29.46
+      },
+      "clip": {
+        "startSeconds": 27.67,
+        "endSeconds": 29.66
+      },
+      "verifiedAt": "2026-08-04T02:23:57.452Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t5-w1",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 5,
+      "sourceFile": "OPW_SB1_Disc1_Track05.mp3",
+      "word": "five.",
+      "normalizedWord": "five",
+      "confidence": 0.5068,
+      "wordTimestamp": {
+        "startSeconds": 0.64,
+        "endSeconds": 1.66
+      },
+      "clip": {
+        "startSeconds": 0.49,
+        "endSeconds": 1.86
+      },
+      "verifiedAt": "2026-08-04T02:23:59.651Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t5-w23",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 5,
+      "sourceFile": "OPW_SB1_Disc1_Track05.mp3",
+      "word": "Cup",
+      "normalizedWord": "cup",
+      "confidence": 0.5435,
+      "wordTimestamp": {
+        "startSeconds": 34.98,
+        "endSeconds": 36.26
+      },
+      "clip": {
+        "startSeconds": 34.83,
+        "endSeconds": 36.46
+      },
+      "verifiedAt": "2026-08-04T02:24:03.457Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t6-w7",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 6,
+      "sourceFile": "OPW_SB1_Disc1_Track06.mp3",
+      "word": "ex",
+      "normalizedWord": "ex",
+      "confidence": 0.0024,
+      "wordTimestamp": {
+        "startSeconds": 34.3,
+        "endSeconds": 34.44
+      },
+      "clip": {
+        "startSeconds": 34.15,
+        "endSeconds": 34.64
+      },
+      "verifiedAt": "2026-08-04T02:24:06.435Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t6-w16",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 6,
+      "sourceFile": "OPW_SB1_Disc1_Track06.mp3",
+      "word": "apple",
+      "normalizedWord": "apple",
+      "confidence": 0.2996,
+      "wordTimestamp": {
+        "startSeconds": 43.2,
+        "endSeconds": 44.24
+      },
+      "clip": {
+        "startSeconds": 43.05,
+        "endSeconds": 44.44
+      },
+      "verifiedAt": "2026-08-04T02:24:09.568Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t6-w18",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 6,
+      "sourceFile": "OPW_SB1_Disc1_Track06.mp3",
+      "word": "acts",
+      "normalizedWord": "acts",
+      "confidence": 0.2598,
+      "wordTimestamp": {
+        "startSeconds": 45.5,
+        "endSeconds": 46.64
+      },
+      "clip": {
+        "startSeconds": 45.35,
+        "endSeconds": 46.84
+      },
+      "verifiedAt": "2026-08-04T02:24:12.018Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t8-w2",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 8,
+      "sourceFile": "OPW_SB1_Disc1_Track08.mp3",
+      "word": "B.",
+      "normalizedWord": "b",
+      "confidence": 0.4243,
+      "wordTimestamp": {
+        "startSeconds": 2.02,
+        "endSeconds": 2.42
+      },
+      "clip": {
+        "startSeconds": 1.87,
+        "endSeconds": 2.62
+      },
+      "verifiedAt": "2026-08-04T02:24:36.384Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t8-w7",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 8,
+      "sourceFile": "OPW_SB1_Disc1_Track08.mp3",
+      "word": "There.",
+      "normalizedWord": "there",
+      "confidence": 0.5317,
+      "wordTimestamp": {
+        "startSeconds": 8.16,
+        "endSeconds": 8.7
+      },
+      "clip": {
+        "startSeconds": 8.01,
+        "endSeconds": 8.9
+      },
+      "verifiedAt": "2026-08-04T02:24:38.834Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t9-w6",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 9,
+      "sourceFile": "OPW_SB1_Disc1_Track09.mp3",
+      "word": "banana",
+      "normalizedWord": "banana",
+      "confidence": 0.0185,
+      "wordTimestamp": {
+        "startSeconds": 30,
+        "endSeconds": 31.34
+      },
+      "clip": {
+        "startSeconds": 29.85,
+        "endSeconds": 31.54
+      },
+      "verifiedAt": "2026-08-04T02:24:42.084Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t9-w7",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 9,
+      "sourceFile": "OPW_SB1_Disc1_Track09.mp3",
+      "word": "bird",
+      "normalizedWord": "bird",
+      "confidence": 0.5996,
+      "wordTimestamp": {
+        "startSeconds": 34.2,
+        "endSeconds": 35.6
+      },
+      "clip": {
+        "startSeconds": 34.05,
+        "endSeconds": 35.8
+      },
+      "verifiedAt": "2026-08-04T02:24:44.884Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t10-w4",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 10,
+      "sourceFile": "OPW_SB1_Disc1_Track10.mp3",
+      "word": "C,",
+      "normalizedWord": "c",
+      "confidence": 0.5811,
+      "wordTimestamp": {
+        "startSeconds": 2.46,
+        "endSeconds": 3.52
+      },
+      "clip": {
+        "startSeconds": 2.31,
+        "endSeconds": 3.72
+      },
+      "verifiedAt": "2026-08-04T02:24:52.267Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t12-w6",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 12,
+      "sourceFile": "OPW_SB1_Disc1_Track12.mp3",
+      "word": "Computer!",
+      "normalizedWord": "computer",
+      "confidence": 0.5693,
+      "wordTimestamp": {
+        "startSeconds": 30.28,
+        "endSeconds": 31.44
+      },
+      "clip": {
+        "startSeconds": 30.13,
+        "endSeconds": 31.64
+      },
+      "verifiedAt": "2026-08-04T02:24:55.351Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t12-w7",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 12,
+      "sourceFile": "OPW_SB1_Disc1_Track12.mp3",
+      "word": "Car!",
+      "normalizedWord": "car",
+      "confidence": 0.522,
+      "wordTimestamp": {
+        "startSeconds": 35.16,
+        "endSeconds": 35.4
+      },
+      "clip": {
+        "startSeconds": 35.01,
+        "endSeconds": 35.6
+      },
+      "verifiedAt": "2026-08-04T02:24:57.284Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t12-w10",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 12,
+      "sourceFile": "OPW_SB1_Disc1_Track12.mp3",
+      "word": "Cat!",
+      "normalizedWord": "cat",
+      "confidence": 0.6455,
+      "wordTimestamp": {
+        "startSeconds": 43.4,
+        "endSeconds": 43.66
+      },
+      "clip": {
+        "startSeconds": 43.25,
+        "endSeconds": 43.86
+      },
+      "verifiedAt": "2026-08-04T02:24:59.268Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t12-w11",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 12,
+      "sourceFile": "OPW_SB1_Disc1_Track12.mp3",
+      "word": "Cup!",
+      "normalizedWord": "cup",
+      "confidence": 0.0029,
+      "wordTimestamp": {
+        "startSeconds": 44.46,
+        "endSeconds": 44.82
+      },
+      "clip": {
+        "startSeconds": 44.31,
+        "endSeconds": 45.02
+      },
+      "verifiedAt": "2026-08-04T02:25:01.050Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t13-w3",
+      "level": 1,
+      "sectionId": "unit-1",
+      "sectionTitle": "Aa Bb Cc",
+      "focusPatterns": [
+        "Aa",
+        "Bb",
+        "Cc"
+      ],
+      "disc": 1,
+      "track": 13,
+      "sourceFile": "OPW_SB1_Disc1_Track13.mp3",
+      "word": "A,",
+      "normalizedWord": "a",
+      "confidence": 0.5503,
+      "wordTimestamp": {
+        "startSeconds": 2.74,
+        "endSeconds": 3.62
+      },
+      "clip": {
+        "startSeconds": 2.59,
+        "endSeconds": 3.82
+      },
+      "verifiedAt": "2026-08-04T02:25:04.800Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t16-w15",
+      "level": 1,
+      "sectionId": "unit-2",
+      "sectionTitle": "Dd Ee Ff",
+      "focusPatterns": [
+        "Dd",
+        "Ee",
+        "Ff"
+      ],
+      "disc": 1,
+      "track": 16,
+      "sourceFile": "OPW_SB1_Disc1_Track16.mp3",
+      "word": "Doll.",
+      "normalizedWord": "doll",
+      "confidence": 0.4717,
+      "wordTimestamp": {
+        "startSeconds": 26.78,
+        "endSeconds": 27.36
+      },
+      "clip": {
+        "startSeconds": 26.63,
+        "endSeconds": 27.56
+      },
+      "verifiedAt": "2026-08-04T02:25:06.884Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t16-w20",
+      "level": 1,
+      "sectionId": "unit-2",
+      "sectionTitle": "Dd Ee Ff",
+      "focusPatterns": [
+        "Dd",
+        "Ee",
+        "Ff"
+      ],
+      "disc": 1,
+      "track": 16,
+      "sourceFile": "OPW_SB1_Disc1_Track16.mp3",
+      "word": "duck",
+      "normalizedWord": "duck",
+      "confidence": 0.4661,
+      "wordTimestamp": {
+        "startSeconds": 35.72,
+        "endSeconds": 37.4
+      },
+      "clip": {
+        "startSeconds": 35.57,
+        "endSeconds": 37.6
+      },
+      "verifiedAt": "2026-08-04T02:25:09.718Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t17-w2",
+      "level": 1,
+      "sectionId": "unit-2",
+      "sectionTitle": "Dd Ee Ff",
+      "focusPatterns": [
+        "Dd",
+        "Ee",
+        "Ff"
+      ],
+      "disc": 1,
+      "track": 17,
+      "sourceFile": "OPW_SB1_Disc1_Track17.mp3",
+      "word": "D.",
+      "normalizedWord": "d",
+      "confidence": 0.5771,
+      "wordTimestamp": {
+        "startSeconds": 2.36,
+        "endSeconds": 2.76
+      },
+      "clip": {
+        "startSeconds": 2.21,
+        "endSeconds": 2.96
+      },
+      "verifiedAt": "2026-08-04T02:25:12.476Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t17-w16",
+      "level": 1,
+      "sectionId": "unit-2",
+      "sectionTitle": "Dd Ee Ff",
+      "focusPatterns": [
+        "Dd",
+        "Ee",
+        "Ff"
+      ],
+      "disc": 1,
+      "track": 17,
+      "sourceFile": "OPW_SB1_Disc1_Track17.mp3",
+      "word": "Doll.",
+      "normalizedWord": "doll",
+      "confidence": 0.4263,
+      "wordTimestamp": {
+        "startSeconds": 20.26,
+        "endSeconds": 20.8
+      },
+      "clip": {
+        "startSeconds": 20.11,
+        "endSeconds": 21
+      },
+      "verifiedAt": "2026-08-04T02:25:14.397Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t17-w22",
+      "level": 1,
+      "sectionId": "unit-2",
+      "sectionTitle": "Dd Ee Ff",
+      "focusPatterns": [
+        "Dd",
+        "Ee",
+        "Ff"
+      ],
+      "disc": 1,
+      "track": 17,
+      "sourceFile": "OPW_SB1_Disc1_Track17.mp3",
+      "word": "Bannana.",
+      "normalizedWord": "bannana",
+      "confidence": 0.3481,
+      "wordTimestamp": {
+        "startSeconds": 35.5,
+        "endSeconds": 36.58
+      },
+      "clip": {
+        "startSeconds": 35.35,
+        "endSeconds": 36.78
+      },
+      "verifiedAt": "2026-08-04T02:25:16.255Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t17-w38",
+      "level": 1,
+      "sectionId": "unit-2",
+      "sectionTitle": "Dd Ee Ff",
+      "focusPatterns": [
+        "Dd",
+        "Ee",
+        "Ff"
+      ],
+      "disc": 1,
+      "track": 17,
+      "sourceFile": "OPW_SB1_Disc1_Track17.mp3",
+      "word": "Axe",
+      "normalizedWord": "axe",
+      "confidence": 0.3103,
+      "wordTimestamp": {
+        "startSeconds": 71.34,
+        "endSeconds": 72.84
+      },
+      "clip": {
+        "startSeconds": 71.19,
+        "endSeconds": 73.04
+      },
+      "verifiedAt": "2026-08-04T02:25:21.909Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t17-w45",
+      "level": 1,
+      "sectionId": "unit-2",
+      "sectionTitle": "Dd Ee Ff",
+      "focusPatterns": [
+        "Dd",
+        "Ee",
+        "Ff"
+      ],
+      "disc": 1,
+      "track": 17,
+      "sourceFile": "OPW_SB1_Disc1_Track17.mp3",
+      "word": "Duck.",
+      "normalizedWord": "duck",
+      "confidence": 0.645,
+      "wordTimestamp": {
+        "startSeconds": 84.18,
+        "endSeconds": 86.26
+      },
+      "clip": {
+        "startSeconds": 84.03,
+        "endSeconds": 86.46
+      },
+      "verifiedAt": "2026-08-04T02:25:25.734Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t18-w8",
+      "level": 1,
+      "sectionId": "unit-2",
+      "sectionTitle": "Dd Ee Ff",
+      "focusPatterns": [
+        "Dd",
+        "Ee",
+        "Ff"
+      ],
+      "disc": 1,
+      "track": 18,
+      "sourceFile": "OPW_SB1_Disc1_Track18.mp3",
+      "word": "Duck!",
+      "normalizedWord": "duck",
+      "confidence": 0.0193,
+      "wordTimestamp": {
+        "startSeconds": 34.1,
+        "endSeconds": 34.3
+      },
+      "clip": {
+        "startSeconds": 33.95,
+        "endSeconds": 34.5
+      },
+      "verifiedAt": "2026-08-04T02:25:32.514Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t18-w10",
+      "level": 1,
+      "sectionId": "unit-2",
+      "sectionTitle": "Dd Ee Ff",
+      "focusPatterns": [
+        "Dd",
+        "Ee",
+        "Ff"
+      ],
+      "disc": 1,
+      "track": 18,
+      "sourceFile": "OPW_SB1_Disc1_Track18.mp3",
+      "word": "Dog!",
+      "normalizedWord": "dog",
+      "confidence": 0.0206,
+      "wordTimestamp": {
+        "startSeconds": 42.08,
+        "endSeconds": 42.66
+      },
+      "clip": {
+        "startSeconds": 41.93,
+        "endSeconds": 42.86
+      },
+      "verifiedAt": "2026-08-04T02:25:34.264Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t19-w4",
+      "level": 1,
+      "sectionId": "unit-2",
+      "sectionTitle": "Dd Ee Ff",
+      "focusPatterns": [
+        "Dd",
+        "Ee",
+        "Ff"
+      ],
+      "disc": 1,
+      "track": 19,
+      "sourceFile": "OPW_SB1_Disc1_Track19.mp3",
+      "word": "E.",
+      "normalizedWord": "e",
+      "confidence": 0.3884,
+      "wordTimestamp": {
+        "startSeconds": 3,
+        "endSeconds": 4.06
+      },
+      "clip": {
+        "startSeconds": 2.85,
+        "endSeconds": 4.26
+      },
+      "verifiedAt": "2026-08-04T02:25:44.817Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t21-w26",
+      "level": 1,
+      "sectionId": "unit-2",
+      "sectionTitle": "Dd Ee Ff",
+      "focusPatterns": [
+        "Dd",
+        "Ee",
+        "Ff"
+      ],
+      "disc": 1,
+      "track": 21,
+      "sourceFile": "OPW_SB1_Disc1_Track21.mp3",
+      "word": "Desk",
+      "normalizedWord": "desk",
+      "confidence": 0.3777,
+      "wordTimestamp": {
+        "startSeconds": 39.22,
+        "endSeconds": 40.66
+      },
+      "clip": {
+        "startSeconds": 39.07,
+        "endSeconds": 40.86
+      },
+      "verifiedAt": "2026-08-04T02:25:46.734Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t22-w6",
+      "level": 1,
+      "sectionId": "unit-2",
+      "sectionTitle": "Dd Ee Ff",
+      "focusPatterns": [
+        "Dd",
+        "Ee",
+        "Ff"
+      ],
+      "disc": 1,
+      "track": 22,
+      "sourceFile": "OPW_SB1_Disc1_Track22.mp3",
+      "word": "Elbow,",
+      "normalizedWord": "elbow",
+      "confidence": 0.2136,
+      "wordTimestamp": {
+        "startSeconds": 32.22,
+        "endSeconds": 33.16
+      },
+      "clip": {
+        "startSeconds": 31.72,
+        "endSeconds": 33.81
+      },
+      "verifiedAt": "2026-08-04T02:44:19.518Z",
+      "verificationPass": 2
+    },
+    {
+      "itemId": "l1-d1-t26-w4",
+      "level": 1,
+      "sectionId": "unit-2",
+      "sectionTitle": "Dd Ee Ff",
+      "focusPatterns": [
+        "Dd",
+        "Ee",
+        "Ff"
+      ],
+      "disc": 1,
+      "track": 26,
+      "sourceFile": "OPW_SB1_Disc1_Track26.mp3",
+      "word": "D",
+      "normalizedWord": "d",
+      "confidence": 0.4646,
+      "wordTimestamp": {
+        "startSeconds": 2.86,
+        "endSeconds": 3.56
+      },
+      "clip": {
+        "startSeconds": 2.71,
+        "endSeconds": 3.76
+      },
+      "verifiedAt": "2026-08-04T02:26:10.546Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t27-w13",
+      "level": 1,
+      "sectionId": "unit-2",
+      "sectionTitle": "Dd Ee Ff",
+      "focusPatterns": [
+        "Dd",
+        "Ee",
+        "Ff"
+      ],
+      "disc": 1,
+      "track": 27,
+      "sourceFile": "OPW_SB1_Disc1_Track27.mp3",
+      "word": "Doll.",
+      "normalizedWord": "doll",
+      "confidence": 0.5605,
+      "wordTimestamp": {
+        "startSeconds": 19.74,
+        "endSeconds": 20.26
+      },
+      "clip": {
+        "startSeconds": 19.59,
+        "endSeconds": 20.46
+      },
+      "verifiedAt": "2026-08-04T02:26:12.113Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t30-w15",
+      "level": 1,
+      "sectionId": "review-1",
+      "sectionTitle": "Review 1",
+      "focusPatterns": [],
+      "disc": 1,
+      "track": 30,
+      "sourceFile": "OPW_SB1_Disc1_Track30.mp3",
+      "word": "Cup.",
+      "normalizedWord": "cup",
+      "confidence": 0.3298,
+      "wordTimestamp": {
+        "startSeconds": 26.8,
+        "endSeconds": 27.18
+      },
+      "clip": {
+        "startSeconds": 26.65,
+        "endSeconds": 27.38
+      },
+      "verifiedAt": "2026-08-04T02:26:13.958Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t31-w25",
+      "level": 1,
+      "sectionId": "review-1",
+      "sectionTitle": "Review 1",
+      "focusPatterns": [],
+      "disc": 1,
+      "track": 31,
+      "sourceFile": "OPW_SB1_Disc1_Track31.mp3",
+      "word": "angry",
+      "normalizedWord": "angry",
+      "confidence": 0.5273,
+      "wordTimestamp": {
+        "startSeconds": 35.82,
+        "endSeconds": 37.22
+      },
+      "clip": {
+        "startSeconds": 35.67,
+        "endSeconds": 37.42
+      },
+      "verifiedAt": "2026-08-04T02:26:17.679Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t31-w26",
+      "level": 1,
+      "sectionId": "review-1",
+      "sectionTitle": "Review 1",
+      "focusPatterns": [],
+      "disc": 1,
+      "track": 31,
+      "sourceFile": "OPW_SB1_Disc1_Track31.mp3",
+      "word": "ant",
+      "normalizedWord": "ant",
+      "confidence": 0.5488,
+      "wordTimestamp": {
+        "startSeconds": 37.22,
+        "endSeconds": 39.2
+      },
+      "clip": {
+        "startSeconds": 37.07,
+        "endSeconds": 39.4
+      },
+      "verifiedAt": "2026-08-04T02:26:19.659Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t34-w8",
+      "level": 1,
+      "sectionId": "unit-3",
+      "sectionTitle": "Gg Hh Ii",
+      "focusPatterns": [
+        "Gg",
+        "Hh",
+        "Ii"
+      ],
+      "disc": 1,
+      "track": 34,
+      "sourceFile": "OPW_SB1_Disc1_Track34.mp3",
+      "word": "G.",
+      "normalizedWord": "g",
+      "confidence": 0.106,
+      "wordTimestamp": {
+        "startSeconds": 6.08,
+        "endSeconds": 6.22
+      },
+      "clip": {
+        "startSeconds": 5.93,
+        "endSeconds": 6.42
+      },
+      "verifiedAt": "2026-08-04T02:26:26.646Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t34-w30",
+      "level": 1,
+      "sectionId": "unit-3",
+      "sectionTitle": "Gg Hh Ii",
+      "focusPatterns": [
+        "Gg",
+        "Hh",
+        "Ii"
+      ],
+      "disc": 1,
+      "track": 34,
+      "sourceFile": "OPW_SB1_Disc1_Track34.mp3",
+      "word": "There.",
+      "normalizedWord": "there",
+      "confidence": 0.4524,
+      "wordTimestamp": {
+        "startSeconds": 56.88,
+        "endSeconds": 57.92
+      },
+      "clip": {
+        "startSeconds": 56.73,
+        "endSeconds": 58.12
+      },
+      "verifiedAt": "2026-08-04T02:26:28.864Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t34-w32",
+      "level": 1,
+      "sectionId": "unit-3",
+      "sectionTitle": "Gg Hh Ii",
+      "focusPatterns": [
+        "Gg",
+        "Hh",
+        "Ii"
+      ],
+      "disc": 1,
+      "track": 34,
+      "sourceFile": "OPW_SB1_Disc1_Track34.mp3",
+      "word": "Desk.",
+      "normalizedWord": "desk",
+      "confidence": 0.5796,
+      "wordTimestamp": {
+        "startSeconds": 62.5,
+        "endSeconds": 62.52
+      },
+      "clip": {
+        "startSeconds": 62,
+        "endSeconds": 63.17
+      },
+      "verifiedAt": "2026-08-04T02:45:35.014Z",
+      "verificationPass": 2
+    },
+    {
+      "itemId": "l1-d1-t34-w38",
+      "level": 1,
+      "sectionId": "unit-3",
+      "sectionTitle": "Gg Hh Ii",
+      "focusPatterns": [
+        "Gg",
+        "Hh",
+        "Ii"
+      ],
+      "disc": 1,
+      "track": 34,
+      "sourceFile": "OPW_SB1_Disc1_Track34.mp3",
+      "word": "Dog.",
+      "normalizedWord": "dog",
+      "confidence": 0.0002,
+      "wordTimestamp": {
+        "startSeconds": 78.54,
+        "endSeconds": 78.72
+      },
+      "clip": {
+        "startSeconds": 78.39,
+        "endSeconds": 78.92
+      },
+      "verifiedAt": "2026-08-04T02:26:35.146Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t35-w31",
+      "level": 1,
+      "sectionId": "unit-3",
+      "sectionTitle": "Gg Hh Ii",
+      "focusPatterns": [
+        "Gg",
+        "Hh",
+        "Ii"
+      ],
+      "disc": 1,
+      "track": 35,
+      "sourceFile": "OPW_SB1_Disc1_Track35.mp3",
+      "word": "gorilla,",
+      "normalizedWord": "gorilla",
+      "confidence": 0.4263,
+      "wordTimestamp": {
+        "startSeconds": 63.58,
+        "endSeconds": 64.2
+      },
+      "clip": {
+        "startSeconds": 63.43,
+        "endSeconds": 64.4
+      },
+      "verifiedAt": "2026-08-04T02:26:50.646Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t36-w4",
+      "level": 1,
+      "sectionId": "unit-3",
+      "sectionTitle": "Gg Hh Ii",
+      "focusPatterns": [
+        "Gg",
+        "Hh",
+        "Ii"
+      ],
+      "disc": 1,
+      "track": 36,
+      "sourceFile": "OPW_SB1_Disc1_Track36.mp3",
+      "word": "H.",
+      "normalizedWord": "h",
+      "confidence": 0.6055,
+      "wordTimestamp": {
+        "startSeconds": 3,
+        "endSeconds": 3.94
+      },
+      "clip": {
+        "startSeconds": 2.85,
+        "endSeconds": 4.14
+      },
+      "verifiedAt": "2026-08-04T02:26:52.858Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t36-w13",
+      "level": 1,
+      "sectionId": "unit-3",
+      "sectionTitle": "Gg Hh Ii",
+      "focusPatterns": [
+        "Gg",
+        "Hh",
+        "Ii"
+      ],
+      "disc": 1,
+      "track": 36,
+      "sourceFile": "OPW_SB1_Disc1_Track36.mp3",
+      "word": "Huh.",
+      "normalizedWord": "huh",
+      "confidence": 0.1738,
+      "wordTimestamp": {
+        "startSeconds": 13.5,
+        "endSeconds": 13.7
+      },
+      "clip": {
+        "startSeconds": 13.35,
+        "endSeconds": 13.9
+      },
+      "verifiedAt": "2026-08-04T02:26:54.746Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t40-w4",
+      "level": 1,
+      "sectionId": "unit-3",
+      "sectionTitle": "Gg Hh Ii",
+      "focusPatterns": [
+        "Gg",
+        "Hh",
+        "Ii"
+      ],
+      "disc": 1,
+      "track": 40,
+      "sourceFile": "OPW_SB1_Disc1_Track40.mp3",
+      "word": "I.",
+      "normalizedWord": "i",
+      "confidence": 0.416,
+      "wordTimestamp": {
+        "startSeconds": 2.74,
+        "endSeconds": 3.9
+      },
+      "clip": {
+        "startSeconds": 2.59,
+        "endSeconds": 4.1
+      },
+      "verifiedAt": "2026-08-04T02:26:56.725Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t41-w10",
+      "level": 1,
+      "sectionId": "unit-3",
+      "sectionTitle": "Gg Hh Ii",
+      "focusPatterns": [
+        "Gg",
+        "Hh",
+        "Ii"
+      ],
+      "disc": 1,
+      "track": 41,
+      "sourceFile": "OPW_SB1_Disc1_Track41.mp3",
+      "word": "Inc.",
+      "normalizedWord": "inc",
+      "confidence": 0.5527,
+      "wordTimestamp": {
+        "startSeconds": 18.78,
+        "endSeconds": 19.12
+      },
+      "clip": {
+        "startSeconds": 18.63,
+        "endSeconds": 19.32
+      },
+      "verifiedAt": "2026-08-04T02:26:58.541Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t41-w15",
+      "level": 1,
+      "sectionId": "unit-3",
+      "sectionTitle": "Gg Hh Ii",
+      "focusPatterns": [
+        "Gg",
+        "Hh",
+        "Ii"
+      ],
+      "disc": 1,
+      "track": 41,
+      "sourceFile": "OPW_SB1_Disc1_Track41.mp3",
+      "word": "igloo",
+      "normalizedWord": "igloo",
+      "confidence": 0.457,
+      "wordTimestamp": {
+        "startSeconds": 27.12,
+        "endSeconds": 29.18
+      },
+      "clip": {
+        "startSeconds": 26.97,
+        "endSeconds": 29.38
+      },
+      "verifiedAt": "2026-08-04T02:27:01.720Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t42-w6",
+      "level": 1,
+      "sectionId": "unit-3",
+      "sectionTitle": "Gg Hh Ii",
+      "focusPatterns": [
+        "Gg",
+        "Hh",
+        "Ii"
+      ],
+      "disc": 1,
+      "track": 42,
+      "sourceFile": "OPW_SB1_Disc1_Track42.mp3",
+      "word": "Ink,",
+      "normalizedWord": "ink",
+      "confidence": 0.1555,
+      "wordTimestamp": {
+        "startSeconds": 30.14,
+        "endSeconds": 31.2
+      },
+      "clip": {
+        "startSeconds": 29.99,
+        "endSeconds": 31.4
+      },
+      "verifiedAt": "2026-08-04T02:27:04.270Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t43-w4",
+      "level": 1,
+      "sectionId": "unit-3",
+      "sectionTitle": "Gg Hh Ii",
+      "focusPatterns": [
+        "Gg",
+        "Hh",
+        "Ii"
+      ],
+      "disc": 1,
+      "track": 43,
+      "sourceFile": "OPW_SB1_Disc1_Track43.mp3",
+      "word": "G",
+      "normalizedWord": "g",
+      "confidence": 0.4976,
+      "wordTimestamp": {
+        "startSeconds": 2.72,
+        "endSeconds": 3.44
+      },
+      "clip": {
+        "startSeconds": 2.57,
+        "endSeconds": 3.64
+      },
+      "verifiedAt": "2026-08-04T02:27:07.104Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t43-w15",
+      "level": 1,
+      "sectionId": "unit-3",
+      "sectionTitle": "Gg Hh Ii",
+      "focusPatterns": [
+        "Gg",
+        "Hh",
+        "Ii"
+      ],
+      "disc": 1,
+      "track": 43,
+      "sourceFile": "OPW_SB1_Disc1_Track43.mp3",
+      "word": "Inc.",
+      "normalizedWord": "inc",
+      "confidence": 0.6128,
+      "wordTimestamp": {
+        "startSeconds": 19.24,
+        "endSeconds": 19.62
+      },
+      "clip": {
+        "startSeconds": 19.09,
+        "endSeconds": 19.82
+      },
+      "verifiedAt": "2026-08-04T02:27:08.545Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t47-w6",
+      "level": 1,
+      "sectionId": "unit-4",
+      "sectionTitle": "Jj Kk Ll",
+      "focusPatterns": [
+        "Jj",
+        "Kk",
+        "Ll"
+      ],
+      "disc": 1,
+      "track": 47,
+      "sourceFile": "OPW_SB1_Disc1_Track47.mp3",
+      "word": "jam",
+      "normalizedWord": "jam",
+      "confidence": 0.0426,
+      "wordTimestamp": {
+        "startSeconds": 30.14,
+        "endSeconds": 30.88
+      },
+      "clip": {
+        "startSeconds": 29.99,
+        "endSeconds": 31.08
+      },
+      "verifiedAt": "2026-08-04T02:27:10.571Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t47-w52",
+      "level": 1,
+      "sectionId": "unit-4",
+      "sectionTitle": "Jj Kk Ll",
+      "focusPatterns": [
+        "Jj",
+        "Kk",
+        "Ll"
+      ],
+      "disc": 1,
+      "track": 47,
+      "sourceFile": "OPW_SB1_Disc1_Track47.mp3",
+      "word": "juice.",
+      "normalizedWord": "juice",
+      "confidence": 0.2406,
+      "wordTimestamp": {
+        "startSeconds": 63.44,
+        "endSeconds": 64.06
+      },
+      "clip": {
+        "startSeconds": 63.29,
+        "endSeconds": 64.26
+      },
+      "verifiedAt": "2026-08-04T02:27:12.250Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t48-w4",
+      "level": 1,
+      "sectionId": "unit-4",
+      "sectionTitle": "Jj Kk Ll",
+      "focusPatterns": [
+        "Jj",
+        "Kk",
+        "Ll"
+      ],
+      "disc": 1,
+      "track": 48,
+      "sourceFile": "OPW_SB1_Disc1_Track48.mp3",
+      "word": "K.",
+      "normalizedWord": "k",
+      "confidence": 0.2529,
+      "wordTimestamp": {
+        "startSeconds": 3,
+        "endSeconds": 4.04
+      },
+      "clip": {
+        "startSeconds": 2.85,
+        "endSeconds": 4.24
+      },
+      "verifiedAt": "2026-08-04T02:27:13.930Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t49-w11",
+      "level": 1,
+      "sectionId": "unit-4",
+      "sectionTitle": "Jj Kk Ll",
+      "focusPatterns": [
+        "Jj",
+        "Kk",
+        "Ll"
+      ],
+      "disc": 1,
+      "track": 49,
+      "sourceFile": "OPW_SB1_Disc1_Track49.mp3",
+      "word": "Key.",
+      "normalizedWord": "key",
+      "confidence": 0.5127,
+      "wordTimestamp": {
+        "startSeconds": 19.74,
+        "endSeconds": 20.56
+      },
+      "clip": {
+        "startSeconds": 19.59,
+        "endSeconds": 20.76
+      },
+      "verifiedAt": "2026-08-04T02:27:16.032Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t50-w5",
+      "level": 1,
+      "sectionId": "unit-4",
+      "sectionTitle": "Jj Kk Ll",
+      "focusPatterns": [
+        "Jj",
+        "Kk",
+        "Ll"
+      ],
+      "disc": 1,
+      "track": 50,
+      "sourceFile": "OPW_SB1_Disc1_Track50.mp3",
+      "word": "K.",
+      "normalizedWord": "k",
+      "confidence": 0.6118,
+      "wordTimestamp": {
+        "startSeconds": 5.58,
+        "endSeconds": 6.38
+      },
+      "clip": {
+        "startSeconds": 5.43,
+        "endSeconds": 6.58
+      },
+      "verifiedAt": "2026-08-04T02:27:20.813Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t51-w6",
+      "level": 1,
+      "sectionId": "unit-4",
+      "sectionTitle": "Jj Kk Ll",
+      "focusPatterns": [
+        "Jj",
+        "Kk",
+        "Ll"
+      ],
+      "disc": 1,
+      "track": 51,
+      "sourceFile": "OPW_SB1_Disc1_Track51.mp3",
+      "word": "Kangaroo,",
+      "normalizedWord": "kangaroo",
+      "confidence": 0.5278,
+      "wordTimestamp": {
+        "startSeconds": 30.08,
+        "endSeconds": 31.48
+      },
+      "clip": {
+        "startSeconds": 29.93,
+        "endSeconds": 31.68
+      },
+      "verifiedAt": "2026-08-04T02:27:26.763Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t51-w15",
+      "level": 1,
+      "sectionId": "unit-4",
+      "sectionTitle": "Jj Kk Ll",
+      "focusPatterns": [
+        "Jj",
+        "Kk",
+        "Ll"
+      ],
+      "disc": 1,
+      "track": 51,
+      "sourceFile": "OPW_SB1_Disc1_Track51.mp3",
+      "word": "King",
+      "normalizedWord": "king",
+      "confidence": 0.5298,
+      "wordTimestamp": {
+        "startSeconds": 43.06,
+        "endSeconds": 44.14
+      },
+      "clip": {
+        "startSeconds": 42.91,
+        "endSeconds": 44.34
+      },
+      "verifiedAt": "2026-08-04T02:27:42.044Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t54-w7",
+      "level": 1,
+      "sectionId": "unit-4",
+      "sectionTitle": "Jj Kk Ll",
+      "focusPatterns": [
+        "Jj",
+        "Kk",
+        "Ll"
+      ],
+      "disc": 1,
+      "track": 54,
+      "sourceFile": "OPW_SB1_Disc1_Track54.mp3",
+      "word": "lee,",
+      "normalizedWord": "lee",
+      "confidence": 0.5967,
+      "wordTimestamp": {
+        "startSeconds": 31.28,
+        "endSeconds": 32.26
+      },
+      "clip": {
+        "startSeconds": 31.13,
+        "endSeconds": 32.46
+      },
+      "verifiedAt": "2026-08-04T02:27:45.971Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t54-w12",
+      "level": 1,
+      "sectionId": "unit-4",
+      "sectionTitle": "Jj Kk Ll",
+      "focusPatterns": [
+        "Jj",
+        "Kk",
+        "Ll"
+      ],
+      "disc": 1,
+      "track": 54,
+      "sourceFile": "OPW_SB1_Disc1_Track54.mp3",
+      "word": "Lion,",
+      "normalizedWord": "lion",
+      "confidence": 0.5718,
+      "wordTimestamp": {
+        "startSeconds": 38.7,
+        "endSeconds": 38.82
+      },
+      "clip": {
+        "startSeconds": 38.2,
+        "endSeconds": 39.47
+      },
+      "verifiedAt": "2026-08-04T02:48:19.616Z",
+      "verificationPass": 2
+    },
+    {
+      "itemId": "l1-d1-t54-w14",
+      "level": 1,
+      "sectionId": "unit-4",
+      "sectionTitle": "Jj Kk Ll",
+      "focusPatterns": [
+        "Jj",
+        "Kk",
+        "Ll"
+      ],
+      "disc": 1,
+      "track": 54,
+      "sourceFile": "OPW_SB1_Disc1_Track54.mp3",
+      "word": "Lemon,",
+      "normalizedWord": "lemon",
+      "confidence": 0.2944,
+      "wordTimestamp": {
+        "startSeconds": 42.22,
+        "endSeconds": 42.82
+      },
+      "clip": {
+        "startSeconds": 42.07,
+        "endSeconds": 43.02
+      },
+      "verifiedAt": "2026-08-04T02:27:50.833Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t54-w16",
+      "level": 1,
+      "sectionId": "unit-4",
+      "sectionTitle": "Jj Kk Ll",
+      "focusPatterns": [
+        "Jj",
+        "Kk",
+        "Ll"
+      ],
+      "disc": 1,
+      "track": 54,
+      "sourceFile": "OPW_SB1_Disc1_Track54.mp3",
+      "word": "leaf,",
+      "normalizedWord": "leaf",
+      "confidence": 0.3362,
+      "wordTimestamp": {
+        "startSeconds": 44.12,
+        "endSeconds": 45
+      },
+      "clip": {
+        "startSeconds": 43.97,
+        "endSeconds": 45.2
+      },
+      "verifiedAt": "2026-08-04T02:27:52.396Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t55-w4",
+      "level": 1,
+      "sectionId": "unit-4",
+      "sectionTitle": "Jj Kk Ll",
+      "focusPatterns": [
+        "Jj",
+        "Kk",
+        "Ll"
+      ],
+      "disc": 1,
+      "track": 55,
+      "sourceFile": "OPW_SB1_Disc1_Track55.mp3",
+      "word": "J,",
+      "normalizedWord": "j",
+      "confidence": 0.3555,
+      "wordTimestamp": {
+        "startSeconds": 2.92,
+        "endSeconds": 3.92
+      },
+      "clip": {
+        "startSeconds": 2.77,
+        "endSeconds": 4.12
+      },
+      "verifiedAt": "2026-08-04T02:27:54.536Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t55-w12",
+      "level": 1,
+      "sectionId": "unit-4",
+      "sectionTitle": "Jj Kk Ll",
+      "focusPatterns": [
+        "Jj",
+        "Kk",
+        "Ll"
+      ],
+      "disc": 1,
+      "track": 55,
+      "sourceFile": "OPW_SB1_Disc1_Track55.mp3",
+      "word": "Key.",
+      "normalizedWord": "key",
+      "confidence": 0.5718,
+      "wordTimestamp": {
+        "startSeconds": 12.7,
+        "endSeconds": 13.36
+      },
+      "clip": {
+        "startSeconds": 12.55,
+        "endSeconds": 13.56
+      },
+      "verifiedAt": "2026-08-04T02:27:56.053Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t59-w16",
+      "level": 1,
+      "sectionId": "review-2",
+      "sectionTitle": "Review 2",
+      "focusPatterns": [],
+      "disc": 1,
+      "track": 59,
+      "sourceFile": "OPW_SB1_Disc1_Track59.mp3",
+      "word": "igloo",
+      "normalizedWord": "igloo",
+      "confidence": 0.645,
+      "wordTimestamp": {
+        "startSeconds": 26.86,
+        "endSeconds": 28.86
+      },
+      "clip": {
+        "startSeconds": 26.71,
+        "endSeconds": 29.06
+      },
+      "verifiedAt": "2026-08-04T02:28:09.046Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d1-t59-w19",
+      "level": 1,
+      "sectionId": "review-2",
+      "sectionTitle": "Review 2",
+      "focusPatterns": [],
+      "disc": 1,
+      "track": 59,
+      "sourceFile": "OPW_SB1_Disc1_Track59.mp3",
+      "word": "gorilla",
+      "normalizedWord": "gorilla",
+      "confidence": 0.4919,
+      "wordTimestamp": {
+        "startSeconds": 34.2,
+        "endSeconds": 36.22
+      },
+      "clip": {
+        "startSeconds": 34.05,
+        "endSeconds": 36.42
+      },
+      "verifiedAt": "2026-08-04T02:28:11.938Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t2-w17",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 2,
+      "sourceFile": "OPW_SB1_Disc2_Track02.mp3",
+      "word": "Mary",
+      "normalizedWord": "mary",
+      "confidence": 0.3579,
+      "wordTimestamp": {
+        "startSeconds": 15.9,
+        "endSeconds": 16.6
+      },
+      "clip": {
+        "startSeconds": 15.75,
+        "endSeconds": 16.8
+      },
+      "verifiedAt": "2026-08-04T02:28:14.594Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t2-w18",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 2,
+      "sourceFile": "OPW_SB1_Disc2_Track02.mp3",
+      "word": "Monkey.",
+      "normalizedWord": "monkey",
+      "confidence": 0.4011,
+      "wordTimestamp": {
+        "startSeconds": 16.6,
+        "endSeconds": 17.3
+      },
+      "clip": {
+        "startSeconds": 16.45,
+        "endSeconds": 17.5
+      },
+      "verifiedAt": "2026-08-04T02:28:16.595Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t3-w7",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 3,
+      "sourceFile": "OPW_SB1_Disc2_Track03.mp3",
+      "word": "Monkey.",
+      "normalizedWord": "monkey",
+      "confidence": 0.4736,
+      "wordTimestamp": {
+        "startSeconds": 9,
+        "endSeconds": 9.2
+      },
+      "clip": {
+        "startSeconds": 8.85,
+        "endSeconds": 9.4
+      },
+      "verifiedAt": "2026-08-04T02:28:18.946Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t4-w8",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 4,
+      "sourceFile": "OPW_SB1_Disc2_Track04.mp3",
+      "word": "Monkey.",
+      "normalizedWord": "monkey",
+      "confidence": 0.645,
+      "wordTimestamp": {
+        "startSeconds": 9.54,
+        "endSeconds": 9.78
+      },
+      "clip": {
+        "startSeconds": 9.39,
+        "endSeconds": 9.98
+      },
+      "verifiedAt": "2026-08-04T02:28:21.296Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t5-w6",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 5,
+      "sourceFile": "OPW_SB1_Disc2_Track05.mp3",
+      "word": "milk",
+      "normalizedWord": "milk",
+      "confidence": 0.125,
+      "wordTimestamp": {
+        "startSeconds": 31.1,
+        "endSeconds": 32.5
+      },
+      "clip": {
+        "startSeconds": 30.95,
+        "endSeconds": 32.7
+      },
+      "verifiedAt": "2026-08-04T02:28:24.356Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t6-w4",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 6,
+      "sourceFile": "OPW_SB1_Disc2_Track06.mp3",
+      "word": "N.",
+      "normalizedWord": "n",
+      "confidence": 0.2815,
+      "wordTimestamp": {
+        "startSeconds": 2.88,
+        "endSeconds": 3.84
+      },
+      "clip": {
+        "startSeconds": 2.73,
+        "endSeconds": 4.04
+      },
+      "verifiedAt": "2026-08-04T02:28:37.046Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t7-w12",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 7,
+      "sourceFile": "OPW_SB1_Disc2_Track07.mp3",
+      "word": "Net.",
+      "normalizedWord": "net",
+      "confidence": 0.0724,
+      "wordTimestamp": {
+        "startSeconds": 25.26,
+        "endSeconds": 26.26
+      },
+      "clip": {
+        "startSeconds": 24.76,
+        "endSeconds": 26.91
+      },
+      "verifiedAt": "2026-08-04T02:50:04.614Z",
+      "verificationPass": 2
+    },
+    {
+      "itemId": "l1-d2-t7-w20",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 7,
+      "sourceFile": "OPW_SB1_Disc2_Track07.mp3",
+      "word": "Nose.",
+      "normalizedWord": "nose",
+      "confidence": 0.4001,
+      "wordTimestamp": {
+        "startSeconds": 43.36,
+        "endSeconds": 43.92
+      },
+      "clip": {
+        "startSeconds": 43.21,
+        "endSeconds": 44.12
+      },
+      "verifiedAt": "2026-08-04T02:28:45.612Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t8-w6",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 8,
+      "sourceFile": "OPW_SB1_Disc2_Track08.mp3",
+      "word": "Net,",
+      "normalizedWord": "net",
+      "confidence": 0.0194,
+      "wordTimestamp": {
+        "startSeconds": 30,
+        "endSeconds": 31.26
+      },
+      "clip": {
+        "startSeconds": 29.85,
+        "endSeconds": 31.46
+      },
+      "verifiedAt": "2026-08-04T02:28:48.641Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t9-w4",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 9,
+      "sourceFile": "OPW_SB1_Disc2_Track09.mp3",
+      "word": "O.",
+      "normalizedWord": "o",
+      "confidence": 0.6006,
+      "wordTimestamp": {
+        "startSeconds": 2.88,
+        "endSeconds": 4.06
+      },
+      "clip": {
+        "startSeconds": 2.73,
+        "endSeconds": 4.26
+      },
+      "verifiedAt": "2026-08-04T02:28:51.211Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t9-w14",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 9,
+      "sourceFile": "OPW_SB1_Disc2_Track09.mp3",
+      "word": "Oh.",
+      "normalizedWord": "oh",
+      "confidence": 0.1109,
+      "wordTimestamp": {
+        "startSeconds": 14.28,
+        "endSeconds": 14.72
+      },
+      "clip": {
+        "startSeconds": 13.78,
+        "endSeconds": 15.37
+      },
+      "verifiedAt": "2026-08-04T02:50:07.931Z",
+      "verificationPass": 2
+    },
+    {
+      "itemId": "l1-d2-t10-w12",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 10,
+      "sourceFile": "OPW_SB1_Disc2_Track10.mp3",
+      "word": "Ox.",
+      "normalizedWord": "ox",
+      "confidence": 0.6465,
+      "wordTimestamp": {
+        "startSeconds": 22.84,
+        "endSeconds": 23.4
+      },
+      "clip": {
+        "startSeconds": 22.69,
+        "endSeconds": 23.6
+      },
+      "verifiedAt": "2026-08-04T02:28:57.206Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t10-w22",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 10,
+      "sourceFile": "OPW_SB1_Disc2_Track10.mp3",
+      "word": "Ostrich",
+      "normalizedWord": "ostrich",
+      "confidence": 0.5913,
+      "wordTimestamp": {
+        "startSeconds": 51.22,
+        "endSeconds": 52.04
+      },
+      "clip": {
+        "startSeconds": 50.72,
+        "endSeconds": 52.69
+      },
+      "verifiedAt": "2026-08-04T02:50:12.947Z",
+      "verificationPass": 2
+    },
+    {
+      "itemId": "l1-d2-t11-w6",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 11,
+      "sourceFile": "OPW_SB1_Disc2_Track11.mp3",
+      "word": "Olive,",
+      "normalizedWord": "olive",
+      "confidence": 0.0009,
+      "wordTimestamp": {
+        "startSeconds": 30.02,
+        "endSeconds": 31.26
+      },
+      "clip": {
+        "startSeconds": 29.87,
+        "endSeconds": 31.46
+      },
+      "verifiedAt": "2026-08-04T02:29:03.452Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t11-w9",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 11,
+      "sourceFile": "OPW_SB1_Disc2_Track11.mp3",
+      "word": "Ox,",
+      "normalizedWord": "ox",
+      "confidence": 0.1222,
+      "wordTimestamp": {
+        "startSeconds": 34.86,
+        "endSeconds": 35.08
+      },
+      "clip": {
+        "startSeconds": 34.36,
+        "endSeconds": 35.73
+      },
+      "verifiedAt": "2026-08-04T02:50:16.164Z",
+      "verificationPass": 2
+    },
+    {
+      "itemId": "l1-d2-t11-w14",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 11,
+      "sourceFile": "OPW_SB1_Disc2_Track11.mp3",
+      "word": "Ostrage,",
+      "normalizedWord": "ostrage",
+      "confidence": 0.1425,
+      "wordTimestamp": {
+        "startSeconds": 41.98,
+        "endSeconds": 43.16
+      },
+      "clip": {
+        "startSeconds": 41.83,
+        "endSeconds": 43.36
+      },
+      "verifiedAt": "2026-08-04T02:29:09.310Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t11-w27",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 11,
+      "sourceFile": "OPW_SB1_Disc2_Track11.mp3",
+      "word": "Ostrich,",
+      "normalizedWord": "ostrich",
+      "confidence": 0.1783,
+      "wordTimestamp": {
+        "startSeconds": 59.52,
+        "endSeconds": 60.2
+      },
+      "clip": {
+        "startSeconds": 59.37,
+        "endSeconds": 60.4
+      },
+      "verifiedAt": "2026-08-04T02:29:11.697Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t12-w4",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 12,
+      "sourceFile": "OPW_SB1_Disc2_Track12.mp3",
+      "word": "M",
+      "normalizedWord": "m",
+      "confidence": 0.366,
+      "wordTimestamp": {
+        "startSeconds": 2.72,
+        "endSeconds": 3.6
+      },
+      "clip": {
+        "startSeconds": 2.57,
+        "endSeconds": 3.8
+      },
+      "verifiedAt": "2026-08-04T02:29:13.527Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t12-w15",
+      "level": 1,
+      "sectionId": "unit-5",
+      "sectionTitle": "Mm Nn Oo",
+      "focusPatterns": [
+        "Mm",
+        "Nn",
+        "Oo"
+      ],
+      "disc": 2,
+      "track": 12,
+      "sourceFile": "OPW_SB1_Disc2_Track12.mp3",
+      "word": "Monkey.",
+      "normalizedWord": "monkey",
+      "confidence": 0.4744,
+      "wordTimestamp": {
+        "startSeconds": 19.06,
+        "endSeconds": 19.58
+      },
+      "clip": {
+        "startSeconds": 18.91,
+        "endSeconds": 19.78
+      },
+      "verifiedAt": "2026-08-04T02:29:15.074Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t14-w37",
+      "level": 1,
+      "sectionId": "unit-6",
+      "sectionTitle": "Pp Qq Rr",
+      "focusPatterns": [
+        "Pp",
+        "Qq",
+        "Rr"
+      ],
+      "disc": 2,
+      "track": 14,
+      "sourceFile": "OPW_SB1_Disc2_Track14.mp3",
+      "word": "Pup,",
+      "normalizedWord": "pup",
+      "confidence": 0.1824,
+      "wordTimestamp": {
+        "startSeconds": 31.84,
+        "endSeconds": 33.98
+      },
+      "clip": {
+        "startSeconds": 31.69,
+        "endSeconds": 34.18
+      },
+      "verifiedAt": "2026-08-04T02:29:19.245Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t15-w11",
+      "level": 1,
+      "sectionId": "unit-6",
+      "sectionTitle": "Pp Qq Rr",
+      "focusPatterns": [
+        "Pp",
+        "Qq",
+        "Rr"
+      ],
+      "disc": 2,
+      "track": 15,
+      "sourceFile": "OPW_SB1_Disc2_Track15.mp3",
+      "word": "Pen.",
+      "normalizedWord": "pen",
+      "confidence": 0.623,
+      "wordTimestamp": {
+        "startSeconds": 19.76,
+        "endSeconds": 21.12
+      },
+      "clip": {
+        "startSeconds": 19.61,
+        "endSeconds": 21.32
+      },
+      "verifiedAt": "2026-08-04T02:29:20.819Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t15-w15",
+      "level": 1,
+      "sectionId": "unit-6",
+      "sectionTitle": "Pp Qq Rr",
+      "focusPatterns": [
+        "Pp",
+        "Qq",
+        "Rr"
+      ],
+      "disc": 2,
+      "track": 15,
+      "sourceFile": "OPW_SB1_Disc2_Track15.mp3",
+      "word": "Panda",
+      "normalizedWord": "panda",
+      "confidence": 0.5684,
+      "wordTimestamp": {
+        "startSeconds": 35.24,
+        "endSeconds": 36.64
+      },
+      "clip": {
+        "startSeconds": 34.74,
+        "endSeconds": 37.29
+      },
+      "verifiedAt": "2026-08-04T02:50:20.064Z",
+      "verificationPass": 2
+    },
+    {
+      "itemId": "l1-d2-t16-w7",
+      "level": 1,
+      "sectionId": "unit-6",
+      "sectionTitle": "Pp Qq Rr",
+      "focusPatterns": [
+        "Pp",
+        "Qq",
+        "Rr"
+      ],
+      "disc": 2,
+      "track": 16,
+      "sourceFile": "OPW_SB1_Disc2_Track16.mp3",
+      "word": "P.",
+      "normalizedWord": "p",
+      "confidence": 0.0976,
+      "wordTimestamp": {
+        "startSeconds": 6.18,
+        "endSeconds": 6.52
+      },
+      "clip": {
+        "startSeconds": 6.03,
+        "endSeconds": 6.72
+      },
+      "verifiedAt": "2026-08-04T02:29:25.648Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t16-w12",
+      "level": 1,
+      "sectionId": "unit-6",
+      "sectionTitle": "Pp Qq Rr",
+      "focusPatterns": [
+        "Pp",
+        "Qq",
+        "Rr"
+      ],
+      "disc": 2,
+      "track": 16,
+      "sourceFile": "OPW_SB1_Disc2_Track16.mp3",
+      "word": "Nut.",
+      "normalizedWord": "nut",
+      "confidence": 0.4431,
+      "wordTimestamp": {
+        "startSeconds": 13.4,
+        "endSeconds": 13.8
+      },
+      "clip": {
+        "startSeconds": 13.25,
+        "endSeconds": 14
+      },
+      "verifiedAt": "2026-08-04T02:29:27.732Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t16-w21",
+      "level": 1,
+      "sectionId": "unit-6",
+      "sectionTitle": "Pp Qq Rr",
+      "focusPatterns": [
+        "Pp",
+        "Qq",
+        "Rr"
+      ],
+      "disc": 2,
+      "track": 16,
+      "sourceFile": "OPW_SB1_Disc2_Track16.mp3",
+      "word": "Panda.",
+      "normalizedWord": "panda",
+      "confidence": 0.5205,
+      "wordTimestamp": {
+        "startSeconds": 32.04,
+        "endSeconds": 32.44
+      },
+      "clip": {
+        "startSeconds": 31.89,
+        "endSeconds": 32.64
+      },
+      "verifiedAt": "2026-08-04T02:29:29.519Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t17-w6",
+      "level": 1,
+      "sectionId": "unit-6",
+      "sectionTitle": "Pp Qq Rr",
+      "focusPatterns": [
+        "Pp",
+        "Qq",
+        "Rr"
+      ],
+      "disc": 2,
+      "track": 17,
+      "sourceFile": "OPW_SB1_Disc2_Track17.mp3",
+      "word": "Peach,",
+      "normalizedWord": "peach",
+      "confidence": 0.0185,
+      "wordTimestamp": {
+        "startSeconds": 33.1,
+        "endSeconds": 33.54
+      },
+      "clip": {
+        "startSeconds": 32.6,
+        "endSeconds": 34.19
+      },
+      "verifiedAt": "2026-08-04T02:50:55.918Z",
+      "verificationPass": 2
+    },
+    {
+      "itemId": "l1-d2-t17-w33",
+      "level": 1,
+      "sectionId": "unit-6",
+      "sectionTitle": "Pp Qq Rr",
+      "focusPatterns": [
+        "Pp",
+        "Qq",
+        "Rr"
+      ],
+      "disc": 2,
+      "track": 17,
+      "sourceFile": "OPW_SB1_Disc2_Track17.mp3",
+      "word": "Panda,",
+      "normalizedWord": "panda",
+      "confidence": 0.1034,
+      "wordTimestamp": {
+        "startSeconds": 62.94,
+        "endSeconds": 63.3
+      },
+      "clip": {
+        "startSeconds": 62.79,
+        "endSeconds": 63.5
+      },
+      "verifiedAt": "2026-08-04T02:29:43.706Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t17-w37",
+      "level": 1,
+      "sectionId": "unit-6",
+      "sectionTitle": "Pp Qq Rr",
+      "focusPatterns": [
+        "Pp",
+        "Qq",
+        "Rr"
+      ],
+      "disc": 2,
+      "track": 17,
+      "sourceFile": "OPW_SB1_Disc2_Track17.mp3",
+      "word": "pineapple,",
+      "normalizedWord": "pineapple",
+      "confidence": 0.4116,
+      "wordTimestamp": {
+        "startSeconds": 65.16,
+        "endSeconds": 65.58
+      },
+      "clip": {
+        "startSeconds": 65.01,
+        "endSeconds": 65.78
+      },
+      "verifiedAt": "2026-08-04T02:29:46.963Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t18-w14",
+      "level": 1,
+      "sectionId": "unit-6",
+      "sectionTitle": "Pp Qq Rr",
+      "focusPatterns": [
+        "Pp",
+        "Qq",
+        "Rr"
+      ],
+      "disc": 2,
+      "track": 18,
+      "sourceFile": "OPW_SB1_Disc2_Track18.mp3",
+      "word": "Qu",
+      "normalizedWord": "qu",
+      "confidence": 0.1346,
+      "wordTimestamp": {
+        "startSeconds": 14.44,
+        "endSeconds": 14.58
+      },
+      "clip": {
+        "startSeconds": 14.29,
+        "endSeconds": 14.78
+      },
+      "verifiedAt": "2026-08-04T02:29:49.128Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t20-w6",
+      "level": 1,
+      "sectionId": "unit-6",
+      "sectionTitle": "Pp Qq Rr",
+      "focusPatterns": [
+        "Pp",
+        "Qq",
+        "Rr"
+      ],
+      "disc": 2,
+      "track": 20,
+      "sourceFile": "OPW_SB1_Disc2_Track20.mp3",
+      "word": "Queen,",
+      "normalizedWord": "queen",
+      "confidence": 0.1436,
+      "wordTimestamp": {
+        "startSeconds": 31.66,
+        "endSeconds": 32.38
+      },
+      "clip": {
+        "startSeconds": 31.16,
+        "endSeconds": 33.03
+      },
+      "verifiedAt": "2026-08-04T02:51:18.684Z",
+      "verificationPass": 2
+    },
+    {
+      "itemId": "l1-d2-t21-w4",
+      "level": 1,
+      "sectionId": "unit-6",
+      "sectionTitle": "Pp Qq Rr",
+      "focusPatterns": [
+        "Pp",
+        "Qq",
+        "Rr"
+      ],
+      "disc": 2,
+      "track": 21,
+      "sourceFile": "OPW_SB1_Disc2_Track21.mp3",
+      "word": "R.",
+      "normalizedWord": "r",
+      "confidence": 0.4995,
+      "wordTimestamp": {
+        "startSeconds": 3.06,
+        "endSeconds": 4.06
+      },
+      "clip": {
+        "startSeconds": 2.91,
+        "endSeconds": 4.26
+      },
+      "verifiedAt": "2026-08-04T02:29:55.902Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t23-w6",
+      "level": 1,
+      "sectionId": "unit-6",
+      "sectionTitle": "Pp Qq Rr",
+      "focusPatterns": [
+        "Pp",
+        "Qq",
+        "Rr"
+      ],
+      "disc": 2,
+      "track": 23,
+      "sourceFile": "OPW_SB1_Disc2_Track23.mp3",
+      "word": "Rabbit,",
+      "normalizedWord": "rabbit",
+      "confidence": 0.2617,
+      "wordTimestamp": {
+        "startSeconds": 30.32,
+        "endSeconds": 31.4
+      },
+      "clip": {
+        "startSeconds": 30.17,
+        "endSeconds": 31.6
+      },
+      "verifiedAt": "2026-08-04T02:30:00.702Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t27-w19",
+      "level": 1,
+      "sectionId": "review-3",
+      "sectionTitle": "Review 3",
+      "focusPatterns": [],
+      "disc": 2,
+      "track": 27,
+      "sourceFile": "OPW_SB1_Disc2_Track27.mp3",
+      "word": "Yes,",
+      "normalizedWord": "yes",
+      "confidence": 0.6377,
+      "wordTimestamp": {
+        "startSeconds": 30.08,
+        "endSeconds": 31.28
+      },
+      "clip": {
+        "startSeconds": 29.93,
+        "endSeconds": 31.48
+      },
+      "verifiedAt": "2026-08-04T02:30:07.945Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t27-w41",
+      "level": 1,
+      "sectionId": "review-3",
+      "sectionTitle": "Review 3",
+      "focusPatterns": [],
+      "disc": 2,
+      "track": 27,
+      "sourceFile": "OPW_SB1_Disc2_Track27.mp3",
+      "word": "No.",
+      "normalizedWord": "no",
+      "confidence": 0.2067,
+      "wordTimestamp": {
+        "startSeconds": 50.32,
+        "endSeconds": 50.92
+      },
+      "clip": {
+        "startSeconds": 50.17,
+        "endSeconds": 51.12
+      },
+      "verifiedAt": "2026-08-04T02:30:10.318Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t28-w16",
+      "level": 1,
+      "sectionId": "review-3",
+      "sectionTitle": "Review 3",
+      "focusPatterns": [],
+      "disc": 2,
+      "track": 28,
+      "sourceFile": "OPW_SB1_Disc2_Track28.mp3",
+      "word": "Pen.",
+      "normalizedWord": "pen",
+      "confidence": 0.4968,
+      "wordTimestamp": {
+        "startSeconds": 32.48,
+        "endSeconds": 33.18
+      },
+      "clip": {
+        "startSeconds": 32.33,
+        "endSeconds": 33.38
+      },
+      "verifiedAt": "2026-08-04T02:30:11.994Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t30-w4",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 30,
+      "sourceFile": "OPW_SB1_Disc2_Track30.mp3",
+      "word": "-T",
+      "normalizedWord": "t",
+      "confidence": 0.5049,
+      "wordTimestamp": {
+        "startSeconds": 4.42,
+        "endSeconds": 5.52
+      },
+      "clip": {
+        "startSeconds": 4.27,
+        "endSeconds": 5.72
+      },
+      "verifiedAt": "2026-08-04T02:30:14.327Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t32-w6",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 32,
+      "sourceFile": "OPW_SB1_Disc2_Track32.mp3",
+      "word": "socks",
+      "normalizedWord": "socks",
+      "confidence": 0.1126,
+      "wordTimestamp": {
+        "startSeconds": 31.38,
+        "endSeconds": 32.78
+      },
+      "clip": {
+        "startSeconds": 31.23,
+        "endSeconds": 32.98
+      },
+      "verifiedAt": "2026-08-04T02:30:16.847Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t32-w8",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 32,
+      "sourceFile": "OPW_SB1_Disc2_Track32.mp3",
+      "word": "seal",
+      "normalizedWord": "seal",
+      "confidence": 0.4502,
+      "wordTimestamp": {
+        "startSeconds": 39.58,
+        "endSeconds": 40.98
+      },
+      "clip": {
+        "startSeconds": 39.43,
+        "endSeconds": 41.18
+      },
+      "verifiedAt": "2026-08-04T02:30:19.812Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t32-w10",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 32,
+      "sourceFile": "OPW_SB1_Disc2_Track32.mp3",
+      "word": "soap",
+      "normalizedWord": "soap",
+      "confidence": 0.1666,
+      "wordTimestamp": {
+        "startSeconds": 44,
+        "endSeconds": 45.62
+      },
+      "clip": {
+        "startSeconds": 43.85,
+        "endSeconds": 45.82
+      },
+      "verifiedAt": "2026-08-04T02:30:22.694Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t32-w11",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 32,
+      "sourceFile": "OPW_SB1_Disc2_Track32.mp3",
+      "word": "sun",
+      "normalizedWord": "sun",
+      "confidence": 0.5439,
+      "wordTimestamp": {
+        "startSeconds": 45.62,
+        "endSeconds": 47.12
+      },
+      "clip": {
+        "startSeconds": 45.47,
+        "endSeconds": 47.32
+      },
+      "verifiedAt": "2026-08-04T02:30:24.894Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t33-w4",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 33,
+      "sourceFile": "OPW_SB1_Disc2_Track33.mp3",
+      "word": "T,",
+      "normalizedWord": "t",
+      "confidence": 0.5347,
+      "wordTimestamp": {
+        "startSeconds": 3,
+        "endSeconds": 3.9
+      },
+      "clip": {
+        "startSeconds": 2.85,
+        "endSeconds": 4.1
+      },
+      "verifiedAt": "2026-08-04T02:30:27.028Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t34-w10",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 34,
+      "sourceFile": "OPW_SB1_Disc2_Track34.mp3",
+      "word": "Tent.",
+      "normalizedWord": "tent",
+      "confidence": 0.583,
+      "wordTimestamp": {
+        "startSeconds": 22.46,
+        "endSeconds": 23.02
+      },
+      "clip": {
+        "startSeconds": 22.31,
+        "endSeconds": 23.22
+      },
+      "verifiedAt": "2026-08-04T02:30:28.635Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t35-w6",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 35,
+      "sourceFile": "OPW_SB1_Disc2_Track35.mp3",
+      "word": "Teacher,",
+      "normalizedWord": "teacher",
+      "confidence": 0.0906,
+      "wordTimestamp": {
+        "startSeconds": 30.68,
+        "endSeconds": 31.72
+      },
+      "clip": {
+        "startSeconds": 30.53,
+        "endSeconds": 31.92
+      },
+      "verifiedAt": "2026-08-04T02:30:30.012Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t36-w4",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 36,
+      "sourceFile": "OPW_SB1_Disc2_Track36.mp3",
+      "word": "U,",
+      "normalizedWord": "u",
+      "confidence": 0.4329,
+      "wordTimestamp": {
+        "startSeconds": 2.68,
+        "endSeconds": 3.68
+      },
+      "clip": {
+        "startSeconds": 2.53,
+        "endSeconds": 3.88
+      },
+      "verifiedAt": "2026-08-04T02:30:35.352Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t36-w14",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 36,
+      "sourceFile": "OPW_SB1_Disc2_Track36.mp3",
+      "word": "uh,",
+      "normalizedWord": "uh",
+      "confidence": 0.5933,
+      "wordTimestamp": {
+        "startSeconds": 16.58,
+        "endSeconds": 17.08
+      },
+      "clip": {
+        "startSeconds": 16.43,
+        "endSeconds": 17.28
+      },
+      "verifiedAt": "2026-08-04T02:30:37.063Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t37-w16",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 37,
+      "sourceFile": "OPW_SB1_Disc2_Track37.mp3",
+      "word": "Uncle.",
+      "normalizedWord": "uncle",
+      "confidence": 0.5859,
+      "wordTimestamp": {
+        "startSeconds": 32.42,
+        "endSeconds": 32.96
+      },
+      "clip": {
+        "startSeconds": 32.27,
+        "endSeconds": 33.16
+      },
+      "verifiedAt": "2026-08-04T02:30:38.361Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t38-w9",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 38,
+      "sourceFile": "OPW_SB1_Disc2_Track38.mp3",
+      "word": "Uncle.",
+      "normalizedWord": "uncle",
+      "confidence": 0.4255,
+      "wordTimestamp": {
+        "startSeconds": 9.1,
+        "endSeconds": 9.54
+      },
+      "clip": {
+        "startSeconds": 8.95,
+        "endSeconds": 9.74
+      },
+      "verifiedAt": "2026-08-04T02:30:39.913Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t38-w12",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 38,
+      "sourceFile": "OPW_SB1_Disc2_Track38.mp3",
+      "word": "Unpire.",
+      "normalizedWord": "unpire",
+      "confidence": 0.3447,
+      "wordTimestamp": {
+        "startSeconds": 16.56,
+        "endSeconds": 17.26
+      },
+      "clip": {
+        "startSeconds": 16.41,
+        "endSeconds": 17.46
+      },
+      "verifiedAt": "2026-08-04T02:30:41.611Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t39-w6",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 39,
+      "sourceFile": "OPW_SB1_Disc2_Track39.mp3",
+      "word": "Up,",
+      "normalizedWord": "up",
+      "confidence": 0.0166,
+      "wordTimestamp": {
+        "startSeconds": 31.28,
+        "endSeconds": 31.96
+      },
+      "clip": {
+        "startSeconds": 31.13,
+        "endSeconds": 32.16
+      },
+      "verifiedAt": "2026-08-04T02:30:45.644Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t40-w4",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 40,
+      "sourceFile": "OPW_SB1_Disc2_Track40.mp3",
+      "word": "V.",
+      "normalizedWord": "v",
+      "confidence": 0.3384,
+      "wordTimestamp": {
+        "startSeconds": 2.58,
+        "endSeconds": 3.98
+      },
+      "clip": {
+        "startSeconds": 2.43,
+        "endSeconds": 4.18
+      },
+      "verifiedAt": "2026-08-04T02:30:47.361Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t41-w7",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 41,
+      "sourceFile": "OPW_SB1_Disc2_Track41.mp3",
+      "word": "Van.",
+      "normalizedWord": "van",
+      "confidence": 0.354,
+      "wordTimestamp": {
+        "startSeconds": 8.72,
+        "endSeconds": 9.54
+      },
+      "clip": {
+        "startSeconds": 8.57,
+        "endSeconds": 9.74
+      },
+      "verifiedAt": "2026-08-04T02:30:49.310Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t41-w11",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 41,
+      "sourceFile": "OPW_SB1_Disc2_Track41.mp3",
+      "word": "Vet.",
+      "normalizedWord": "vet",
+      "confidence": 0.6221,
+      "wordTimestamp": {
+        "startSeconds": 21.68,
+        "endSeconds": 22.34
+      },
+      "clip": {
+        "startSeconds": 21.53,
+        "endSeconds": 22.54
+      },
+      "verifiedAt": "2026-08-04T02:30:50.832Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t42-w12",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 42,
+      "sourceFile": "OPW_SB1_Disc2_Track42.mp3",
+      "word": "Sun.",
+      "normalizedWord": "sun",
+      "confidence": 0.3691,
+      "wordTimestamp": {
+        "startSeconds": 17.56,
+        "endSeconds": 18.08
+      },
+      "clip": {
+        "startSeconds": 17.41,
+        "endSeconds": 18.28
+      },
+      "verifiedAt": "2026-08-04T02:30:52.244Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t42-w18",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 42,
+      "sourceFile": "OPW_SB1_Disc2_Track42.mp3",
+      "word": "Vest.",
+      "normalizedWord": "vest",
+      "confidence": 0.5303,
+      "wordTimestamp": {
+        "startSeconds": 27.3,
+        "endSeconds": 27.56
+      },
+      "clip": {
+        "startSeconds": 27.15,
+        "endSeconds": 27.76
+      },
+      "verifiedAt": "2026-08-04T02:30:54.239Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t42-w21",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 42,
+      "sourceFile": "OPW_SB1_Disc2_Track42.mp3",
+      "word": "tent",
+      "normalizedWord": "tent",
+      "confidence": 0.5703,
+      "wordTimestamp": {
+        "startSeconds": 34.26,
+        "endSeconds": 35.66
+      },
+      "clip": {
+        "startSeconds": 33.76,
+        "endSeconds": 36.31
+      },
+      "verifiedAt": "2026-08-04T02:51:52.967Z",
+      "verificationPass": 2
+    },
+    {
+      "itemId": "l1-d2-t42-w36",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 42,
+      "sourceFile": "OPW_SB1_Disc2_Track42.mp3",
+      "word": "Leaf.",
+      "normalizedWord": "leaf",
+      "confidence": 0.2377,
+      "wordTimestamp": {
+        "startSeconds": 74.78,
+        "endSeconds": 75
+      },
+      "clip": {
+        "startSeconds": 74.63,
+        "endSeconds": 75.2
+      },
+      "verifiedAt": "2026-08-04T02:30:59.127Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t43-w29",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 43,
+      "sourceFile": "OPW_SB1_Disc2_Track43.mp3",
+      "word": "van",
+      "normalizedWord": "van",
+      "confidence": 0.3889,
+      "wordTimestamp": {
+        "startSeconds": 62.78,
+        "endSeconds": 63.36
+      },
+      "clip": {
+        "startSeconds": 62.63,
+        "endSeconds": 63.56
+      },
+      "verifiedAt": "2026-08-04T02:31:04.394Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t44-w4",
+      "level": 1,
+      "sectionId": "unit-7",
+      "sectionTitle": "Ss Tt Uu Vv",
+      "focusPatterns": [
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv"
+      ],
+      "disc": 2,
+      "track": 44,
+      "sourceFile": "OPW_SB1_Disc2_Track44.mp3",
+      "word": "S,",
+      "normalizedWord": "s",
+      "confidence": 0.3359,
+      "wordTimestamp": {
+        "startSeconds": 2.98,
+        "endSeconds": 3.88
+      },
+      "clip": {
+        "startSeconds": 2.83,
+        "endSeconds": 4.08
+      },
+      "verifiedAt": "2026-08-04T02:31:06.226Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t48-w20",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 48,
+      "sourceFile": "OPW_SB1_Disc2_Track48.mp3",
+      "word": "Web.",
+      "normalizedWord": "web",
+      "confidence": 0.6084,
+      "wordTimestamp": {
+        "startSeconds": 35.96,
+        "endSeconds": 36.64
+      },
+      "clip": {
+        "startSeconds": 35.81,
+        "endSeconds": 36.84
+      },
+      "verifiedAt": "2026-08-04T02:31:13.904Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t49-w6",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 49,
+      "sourceFile": "OPW_SB1_Disc2_Track49.mp3",
+      "word": "Water!",
+      "normalizedWord": "water",
+      "confidence": 0.5581,
+      "wordTimestamp": {
+        "startSeconds": 30,
+        "endSeconds": 30.84
+      },
+      "clip": {
+        "startSeconds": 29.85,
+        "endSeconds": 31.04
+      },
+      "verifiedAt": "2026-08-04T02:31:16.021Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t49-w13",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 49,
+      "sourceFile": "OPW_SB1_Disc2_Track49.mp3",
+      "word": "Web!",
+      "normalizedWord": "web",
+      "confidence": 0.0107,
+      "wordTimestamp": {
+        "startSeconds": 42.32,
+        "endSeconds": 42.76
+      },
+      "clip": {
+        "startSeconds": 42.17,
+        "endSeconds": 42.96
+      },
+      "verifiedAt": "2026-08-04T02:31:21.584Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t50-w4",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 50,
+      "sourceFile": "OPW_SB1_Disc2_Track50.mp3",
+      "word": "X,",
+      "normalizedWord": "x",
+      "confidence": 0.4141,
+      "wordTimestamp": {
+        "startSeconds": 2.86,
+        "endSeconds": 4.02
+      },
+      "clip": {
+        "startSeconds": 2.71,
+        "endSeconds": 4.22
+      },
+      "verifiedAt": "2026-08-04T02:31:24.451Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t52-w60",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 52,
+      "sourceFile": "OPW_SB1_Disc2_Track52.mp3",
+      "word": "six?",
+      "normalizedWord": "six",
+      "confidence": 0.3887,
+      "wordTimestamp": {
+        "startSeconds": 66.22,
+        "endSeconds": 66.5
+      },
+      "clip": {
+        "startSeconds": 66.07,
+        "endSeconds": 66.7
+      },
+      "verifiedAt": "2026-08-04T02:31:29.054Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t53-w4",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 53,
+      "sourceFile": "OPW_SB1_Disc2_Track53.mp3",
+      "word": "Y.",
+      "normalizedWord": "y",
+      "confidence": 0.3264,
+      "wordTimestamp": {
+        "startSeconds": 2.96,
+        "endSeconds": 4.16
+      },
+      "clip": {
+        "startSeconds": 2.81,
+        "endSeconds": 4.36
+      },
+      "verifiedAt": "2026-08-04T02:31:31.110Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t54-w7",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 54,
+      "sourceFile": "OPW_SB1_Disc2_Track54.mp3",
+      "word": "Yo",
+      "normalizedWord": "yo",
+      "confidence": 0.5161,
+      "wordTimestamp": {
+        "startSeconds": 9.88,
+        "endSeconds": 10.2
+      },
+      "clip": {
+        "startSeconds": 9.73,
+        "endSeconds": 10.4
+      },
+      "verifiedAt": "2026-08-04T02:31:36.327Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t54-w15",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 54,
+      "sourceFile": "OPW_SB1_Disc2_Track54.mp3",
+      "word": "Yac.",
+      "normalizedWord": "yac",
+      "confidence": 0.4355,
+      "wordTimestamp": {
+        "startSeconds": 24.08,
+        "endSeconds": 24.6
+      },
+      "clip": {
+        "startSeconds": 23.93,
+        "endSeconds": 24.8
+      },
+      "verifiedAt": "2026-08-04T02:31:38.010Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t54-w26",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 54,
+      "sourceFile": "OPW_SB1_Disc2_Track54.mp3",
+      "word": "Yacht.",
+      "normalizedWord": "yacht",
+      "confidence": 0.5684,
+      "wordTimestamp": {
+        "startSeconds": 50.7,
+        "endSeconds": 51.52
+      },
+      "clip": {
+        "startSeconds": 50.55,
+        "endSeconds": 51.72
+      },
+      "verifiedAt": "2026-08-04T02:31:40.712Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t56-w6",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 56,
+      "sourceFile": "OPW_SB1_Disc2_Track56.mp3",
+      "word": "Yogurt",
+      "normalizedWord": "yogurt",
+      "confidence": 0.582,
+      "wordTimestamp": {
+        "startSeconds": 31.02,
+        "endSeconds": 32.16
+      },
+      "clip": {
+        "startSeconds": 30.87,
+        "endSeconds": 32.36
+      },
+      "verifiedAt": "2026-08-04T02:31:51.600Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t56-w29",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 56,
+      "sourceFile": "OPW_SB1_Disc2_Track56.mp3",
+      "word": "Yacht!",
+      "normalizedWord": "yacht",
+      "confidence": 0.4277,
+      "wordTimestamp": {
+        "startSeconds": 61.16,
+        "endSeconds": 61.7
+      },
+      "clip": {
+        "startSeconds": 61.01,
+        "endSeconds": 61.9
+      },
+      "verifiedAt": "2026-08-04T02:31:53.811Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t56-w34",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 56,
+      "sourceFile": "OPW_SB1_Disc2_Track56.mp3",
+      "word": "yo",
+      "normalizedWord": "yo",
+      "confidence": 0.4792,
+      "wordTimestamp": {
+        "startSeconds": 63.3,
+        "endSeconds": 63.52
+      },
+      "clip": {
+        "startSeconds": 63.15,
+        "endSeconds": 63.72
+      },
+      "verifiedAt": "2026-08-04T02:31:55.320Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t56-w40",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 56,
+      "sourceFile": "OPW_SB1_Disc2_Track56.mp3",
+      "word": "yak.",
+      "normalizedWord": "yak",
+      "confidence": 0.3796,
+      "wordTimestamp": {
+        "startSeconds": 65.52,
+        "endSeconds": 65.84
+      },
+      "clip": {
+        "startSeconds": 65.37,
+        "endSeconds": 66.04
+      },
+      "verifiedAt": "2026-08-04T02:31:56.792Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t57-w4",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 57,
+      "sourceFile": "OPW_SB1_Disc2_Track57.mp3",
+      "word": "z,",
+      "normalizedWord": "z",
+      "confidence": 0.2014,
+      "wordTimestamp": {
+        "startSeconds": 2.7,
+        "endSeconds": 3.64
+      },
+      "clip": {
+        "startSeconds": 2.55,
+        "endSeconds": 3.84
+      },
+      "verifiedAt": "2026-08-04T02:31:59.042Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t60-w3",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 60,
+      "sourceFile": "OPW_SB1_Disc2_Track60.mp3",
+      "word": "W",
+      "normalizedWord": "w",
+      "confidence": 0.5034,
+      "wordTimestamp": {
+        "startSeconds": 2.92,
+        "endSeconds": 3.7
+      },
+      "clip": {
+        "startSeconds": 2.77,
+        "endSeconds": 3.9
+      },
+      "verifiedAt": "2026-08-04T02:32:06.703Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t60-w4",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 60,
+      "sourceFile": "OPW_SB1_Disc2_Track60.mp3",
+      "word": "X",
+      "normalizedWord": "x",
+      "confidence": 0.3289,
+      "wordTimestamp": {
+        "startSeconds": 3.7,
+        "endSeconds": 4.54
+      },
+      "clip": {
+        "startSeconds": 3.55,
+        "endSeconds": 4.74
+      },
+      "verifiedAt": "2026-08-04T02:32:08.928Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t60-w18",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 60,
+      "sourceFile": "OPW_SB1_Disc2_Track60.mp3",
+      "word": "Web",
+      "normalizedWord": "web",
+      "confidence": 0.644,
+      "wordTimestamp": {
+        "startSeconds": 27,
+        "endSeconds": 28.12
+      },
+      "clip": {
+        "startSeconds": 26.85,
+        "endSeconds": 28.32
+      },
+      "verifiedAt": "2026-08-04T02:32:11.083Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t61-w16",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 61,
+      "sourceFile": "OPW_SB1_Disc2_Track61.mp3",
+      "word": "Wolf.",
+      "normalizedWord": "wolf",
+      "confidence": 0.6055,
+      "wordTimestamp": {
+        "startSeconds": 36.18,
+        "endSeconds": 36.66
+      },
+      "clip": {
+        "startSeconds": 36.03,
+        "endSeconds": 36.86
+      },
+      "verifiedAt": "2026-08-04T02:32:12.645Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t62-w28",
+      "level": 1,
+      "sectionId": "unit-8",
+      "sectionTitle": "Ww Xx Yy Zz",
+      "focusPatterns": [
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "disc": 2,
+      "track": 62,
+      "sourceFile": "OPW_SB1_Disc2_Track62.mp3",
+      "word": "yo",
+      "normalizedWord": "yo",
+      "confidence": 0.5791,
+      "wordTimestamp": {
+        "startSeconds": 25.46,
+        "endSeconds": 25.76
+      },
+      "clip": {
+        "startSeconds": 25.31,
+        "endSeconds": 25.96
+      },
+      "verifiedAt": "2026-08-04T02:32:14.086Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t63-w51",
+      "level": 1,
+      "sectionId": "review-4",
+      "sectionTitle": "Review 4",
+      "focusPatterns": [],
+      "disc": 2,
+      "track": 63,
+      "sourceFile": "OPW_SB1_Disc2_Track63.mp3",
+      "word": "yo",
+      "normalizedWord": "yo",
+      "confidence": 0.6064,
+      "wordTimestamp": {
+        "startSeconds": 47.72,
+        "endSeconds": 47.98
+      },
+      "clip": {
+        "startSeconds": 47.57,
+        "endSeconds": 48.18
+      },
+      "verifiedAt": "2026-08-04T02:32:15.828Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t64-w7",
+      "level": 1,
+      "sectionId": "review-4",
+      "sectionTitle": "Review 4",
+      "focusPatterns": [],
+      "disc": 2,
+      "track": 64,
+      "sourceFile": "OPW_SB1_Disc2_Track64.mp3",
+      "word": "soap.",
+      "normalizedWord": "soap",
+      "confidence": 0.1956,
+      "wordTimestamp": {
+        "startSeconds": 9.16,
+        "endSeconds": 9.5
+      },
+      "clip": {
+        "startSeconds": 9.01,
+        "endSeconds": 9.7
+      },
+      "verifiedAt": "2026-08-04T02:32:17.401Z",
+      "verificationPass": 1
+    },
+    {
+      "itemId": "l1-d2-t64-w13",
+      "level": 1,
+      "sectionId": "review-4",
+      "sectionTitle": "Review 4",
+      "focusPatterns": [],
+      "disc": 2,
+      "track": 64,
+      "sourceFile": "OPW_SB1_Disc2_Track64.mp3",
+      "word": "Yac.",
+      "normalizedWord": "yac",
+      "confidence": 0.4062,
+      "wordTimestamp": {
+        "startSeconds": 25.18,
+        "endSeconds": 25.76
+      },
+      "clip": {
+        "startSeconds": 25.03,
+        "endSeconds": 25.96
+      },
+      "verifiedAt": "2026-08-04T02:32:18.884Z",
+      "verificationPass": 1
+    }
+  ]
+}

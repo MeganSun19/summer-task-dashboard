@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "modules": [
+    {
+      "id": "englishIsland",
+      "title": "英语岛 · 今日课程",
+      "detail": "自然拼读 + 心词句中认读与独立拼写 + RAZ 复习",
+      "tags": ["自然拼读", "心词必拼", "RAZ按表复习"],
+      "instruction": "进入英语岛，按顺序完成自然拼读、心词拼写和当天 RAZ 阅读；全部互动轮次完成后再返回勾选任务。",
+      "presentation": { "icon": "🔤", "color": "#3d8b68", "soft": "#e8f7ef", "minutes": 45 },
+      "activity": { "type": "course", "renderer": "english-course", "source": "./curriculum/english-course.json" }
+    },
+    {
+      "id": "writing",
+      "title": "写字练习",
+      "details": [
+        "写字练习 1 页，注意坐姿和笔顺", "写字练习 1 页，圈出最满意的 3 个字",
+        "写字练习 1 页，重写 3 个不稳的字", "写字练习 1 页，保持字距",
+        "写字练习 1 页，慢一点写", "写字练习半页 + 订正", "写字休整或补漏"
+      ],
+      "cycle": "week",
+      "tags": ["坐姿", "笔顺", "整洁"],
+      "instruction": "摆好坐姿；慢慢写；写完圈出最满意的 3 个字。",
+      "presentation": { "icon": "字", "color": "#48a978", "soft": "#e6f6ec", "minutes": 15 }
+    },
+    {
+      "id": "poem",
+      "title": "古诗背诵",
+      "detail": "内容来自暑假计划课程总表",
+      "contentKey": "poem",
+      "tags": ["读顺", "理解", "背诵"],
+      "instruction": "先读 3 遍；遮住一句试着背；卡住就看一眼再来。",
+      "presentation": { "icon": "诗", "color": "#b98222", "soft": "#fff2c7", "minutes": 10 }
+    },
+    {
+      "id": "math",
+      "title": "数学 · 今日安排",
+      "detail": "请先查看家长今天填写的数学内容",
+      "tags": ["家长填写", "按需练习", "订正"],
+      "instruction": "按家长当天填写的内容完成；不会的题先圈出，再检查和订正。",
+      "presentation": { "icon": "×", "color": "#df746e", "soft": "#ffedeb", "minutes": 15 }
+    },
+    {
+      "id": "reading",
+      "title": "课外阅读",
+      "details": [
+        "中文阅读 20 分钟，说一句内容", "中文阅读 20 分钟，说一个人物", "中文阅读 20 分钟，说一个喜欢的情节",
+        "中文阅读 20 分钟，画一个关键词", "中文阅读 25 分钟", "亲子共读 15 分钟", "自由阅读"
+      ],
+      "cycle": "week",
+      "tags": ["安静读", "说一句"],
+      "instruction": "定时安静阅读；结束后说一个人物或一件发生的事。",
+      "presentation": { "icon": "读", "color": "#7e69c8", "soft": "#f0edff", "minutes": 20 }
+    },
+    {
+      "id": "listening",
+      "title": "英语听力",
+      "details": [
+        "Big Muzzy / 英文西游记 15 分钟", "Big Muzzy / 英文西游记 15 分钟", "Big Muzzy / 英文西游记 15 分钟",
+        "Big Muzzy / 英文西游记 15 分钟", "Big Muzzy / 英文西游记 15 分钟", "Big Muzzy / 英文西游记 15 分钟",
+        "自选 Big Muzzy 或英文西游记一集"
+      ],
+      "cycle": "week",
+      "tags": ["只听", "不考试"],
+      "instruction": "选一段播放；专心听完；告诉家人你听到了谁。",
+      "presentation": { "icon": "▶", "color": "#2e9a9a", "soft": "#e3f7f6", "minutes": 15 }
+    },
+    {
+      "id": "familyTask",
+      "title": "家庭任务",
+      "detail": "家长发布的临时安排",
+      "tags": ["临时任务"],
+      "instruction": "按卡片步骤完成；完成后点右边的按钮。",
+      "presentation": { "icon": "★", "color": "#e28b37", "soft": "#fff1df", "minutes": 10 },
+      "scheduledOnly": true
+    }
+  ]
+}

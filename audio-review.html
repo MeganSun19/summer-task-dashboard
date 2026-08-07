@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oxford 课程音频人工审核</title>
+    <link rel="stylesheet" href="./styles.css?v=20260805-review-1" />
+    <style>
+      body { min-height: 100vh; }
+      .review-shell { width: min(920px, calc(100% - 28px)); margin: 28px auto; }
+      .review-week-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+      .review-week-nav a { padding: 9px 14px; border: 1px solid var(--line); border-radius: 999px; background: white; color: var(--ink); font-weight: 850; text-decoration: none; }
+      .review-week-nav a[aria-current="page"] { border-color: var(--ink); background: var(--ink); color: white; }
+      .review-intro { margin: 0 0 16px; color: var(--muted); line-height: 1.6; }
+      .audio-review-card audio { width: 100%; }
+    </style>
+  </head>
+  <body>
+    <main class="review-shell">
+      <p class="eyebrow">仅限本机 · 结果保存在当前浏览器</p>
+      <h1>Oxford 课程音频人工审核</h1>
+      <p class="review-intro">选择周次，点击“重听片段”，再标注正确、单词错误、边界错误或暂时跳过。完成后导出 JSON。</p>
+      <nav class="review-week-nav" aria-label="选择审核周次">
+        <a href="?week=2" data-review-week="2">第 2 周</a>
+        <a href="?week=3" data-review-week="3">第 3 周</a>
+        <a href="?week=4" data-review-week="4">第 4 周</a>
+      </nav>
+
+      <section class="panel audio-review-panel" aria-labelledby="audioReviewTitle">
+        <div class="panel-title">
+          <div><p class="eyebrow">逐段试听</p><h2 id="audioReviewTitle">候选片段</h2></div>
+          <span id="audioReviewStatus" class="audio-status">正在载入…</span>
+        </div>
+        <div class="audio-review-queue-actions">
+          <label class="quiet-action" for="audioReviewQueueInput">导入其他清单</label>
+          <input id="audioReviewQueueInput" type="file" accept=".json,application/json" hidden />
+          <span>通常无需导入，页面会自动读取所选周次。</span>
+        </div>
+        <div class="audio-review-filters">
+          <label>优先级<select id="audioReviewPriority"><option value="all">全部</option><option value="0">P0</option><option value="1">P1</option><option value="2">P2</option></select></label>
+          <label>Level<select id="audioReviewLevel"><option value="all">全部</option><option value="1">Level 1</option><option value="2">Level 2</option><option value="3">Level 3</option></select></label>
+          <label>Disc<select id="audioReviewDisc"><option value="all">全部</option><option value="1">Disc 1</option><option value="2">Disc 2</option></select></label>
+          <label>状态<select id="audioReviewState"><option value="pending">待审核</option><option value="issues">问题待复核</option><option value="reviewed">已审核</option><option value="all">全部</option></select></label>
+        </div>
+        <div class="audio-review-card">
+          <div class="audio-review-heading"><span id="audioReviewPosition">—</span><span id="audioReviewReason">正在载入</span></div>
+          <div id="audioReviewWord" class="audio-review-word">—</div>
+          <p id="audioReviewMeta" class="audio-review-meta"></p>
+          <audio id="audioReviewPlayer" controls preload="metadata"></audio>
+          <div class="audio-review-navigation">
+            <button id="audioReviewPrevious" class="quiet-action" type="button">上一条</button>
+            <button id="audioReviewReplay" class="primary-action" type="button">重听片段</button>
+            <button id="audioReviewNext" class="quiet-action" type="button">下一条</button>
+          </div>
+          <label>备注<textarea id="audioReviewNote" rows="2" placeholder="可写实际听到的词或边界问题"></textarea></label>
+          <div id="audioReviewActions" class="audio-review-actions">
+            <button type="button" data-review-status="verified">正确</button>
+            <button type="button" data-review-status="word-error">单词错误</button>
+            <button type="button" data-review-status="boundary-error">边界错误</button>
+            <button type="button" data-review-status="skipped">暂时跳过</button>
+          </div>
+          <p class="audio-review-choice-help">单词正确但有截断或夹带其他读音，标为“边界错误”。</p>
+          <p id="audioReviewFeedback" class="audio-review-feedback" aria-live="polite"></p>
+        </div>
+        <div class="audio-review-footer-actions">
+          <button id="undoAudioReview" class="quiet-action" type="button">撤销最近标注</button>
+          <button id="exportAudioReviews" class="primary-action" type="button">导出审核结果 JSON</button>
+        </div>
+        <script id="audioReviewExportPayload" type="application/json"></script>
+      </section>
+    </main>
+    <script>
+      const week = [2, 3, 4].includes(Number(new URLSearchParams(location.search).get("week")))
+        ? Number(new URLSearchParams(location.search).get("week")) : 4;
+      if (!location.search) location.replace(`?week=${week}`);
+      document.querySelector(`[data-review-week="${week}"]`)?.setAttribute("aria-current", "page");
+      document.title = `第 ${week} 周 · Oxford 课程音频人工审核`;
+    </script>
+    <script src="./audio-review-core.js?v=20260805-review-1"></script>
+    <script src="./audio-review-ui.js?v=20260805-review-2"></script>
+  </body>
+</html>

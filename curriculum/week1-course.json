@@ -1,0 +1,725 @@
+{
+  "schemaVersion": 1,
+  "generatedOn": "2026-08-04",
+  "title": "首周英语岛课程：短元音起步",
+  "policy": {
+    "courseOrder": "Our teaching sequence; Oxford levels are source libraries only.",
+    "dailyStructure": "one phonics focus, 4-6 decodable words, heart-word review, one RAZ anchor book, and one listening activity",
+    "audioRule": "Only human-verified clips are ready; pending candidates must be reviewed before child use.",
+    "razSource": "../outputs/raz_bf_catalog/raz_b_to_f_catalog.xlsx · 4-Week Plan · Week 1"
+  },
+  "initialHeartWordReview": [
+    "a",
+    "the",
+    "is"
+  ],
+  "summary": {
+    "days": 7,
+    "uniquePhonicsWords": 24,
+    "verifiedWords": 20,
+    "pendingReviewWords": 0,
+    "unavailableWords": 4
+  },
+  "days": [
+    {
+      "day": 1,
+      "focus": "短元音 a：听出 /æ/，从左到右拼 CVC 词",
+      "phonics": {
+        "pattern": "short-a",
+        "words": [
+          {
+            "word": "ant",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d1-t4-w14",
+              "level": 1,
+              "disc": 1,
+              "track": 4,
+              "sourceFile": "OPW_SB1_Disc1_Track04.mp3",
+              "clip": {
+                "startSeconds": 27.67,
+                "endSeconds": 29.66
+              }
+            }
+          },
+          {
+            "word": "cat",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d1-t12-w10",
+              "level": 1,
+              "disc": 1,
+              "track": 12,
+              "sourceFile": "OPW_SB1_Disc1_Track12.mp3",
+              "clip": {
+                "startSeconds": 43.25,
+                "endSeconds": 43.86
+              }
+            }
+          },
+          {
+            "word": "man",
+            "audio": {
+              "status": "unavailable"
+            }
+          },
+          {
+            "word": "pan",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t12-w27",
+              "level": 2,
+              "disc": 1,
+              "track": 12,
+              "sourceFile": "OPW_SB2_Disc1_Track12.mp3",
+              "clip": {
+                "startSeconds": 40.67,
+                "endSeconds": 41.72
+              }
+            }
+          }
+        ],
+        "activity": "先逐音拼读，再听一个词，从当天 4 个词中选出听到的词。"
+      },
+      "heartWords": {
+        "new": "I",
+        "review": [
+          "a",
+          "the",
+          "is"
+        ]
+      },
+      "raz": {
+        "focus": "自我和基础句型",
+        "anchorBook": "B-51 I Read a Book",
+        "supportingBooks": [
+          "B-53 You and I",
+          "B-98 This Turtle"
+        ],
+        "targetWords": [
+          "I",
+          "you",
+          "and",
+          "a",
+          "book",
+          "read",
+          "this",
+          "see"
+        ],
+        "sentenceFrames": [
+          "I read a book.",
+          "You and I see..."
+        ],
+        "parentTask": "读前把目标词写在便签上；读中让孩子每见一次就点一下。"
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "missing-source"
+      }
+    },
+    {
+      "day": 2,
+      "focus": "短元音 a：比较 -at 与 -ap 词族",
+      "phonics": {
+        "pattern": "short-a-at-ap",
+        "words": [
+          {
+            "word": "hat",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t30-w25",
+              "level": 2,
+              "disc": 1,
+              "track": 30,
+              "sourceFile": "OPW_SB2_Disc1_Track30.mp3",
+              "clip": {
+                "startSeconds": 55.39,
+                "endSeconds": 58.36
+              }
+            }
+          },
+          {
+            "word": "map",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t22-w14",
+              "level": 2,
+              "disc": 1,
+              "track": 22,
+              "sourceFile": "OPW_SB2_Disc1_Track22.mp3",
+              "clip": {
+                "startSeconds": 24.11,
+                "endSeconds": 24.96
+              }
+            }
+          },
+          {
+            "word": "cap",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t24-w11",
+              "level": 2,
+              "disc": 1,
+              "track": 24,
+              "sourceFile": "OPW_SB2_Disc1_Track24.mp3",
+              "clip": {
+                "startSeconds": 57.01,
+                "endSeconds": 57.84
+              }
+            }
+          },
+          {
+            "word": "tap",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t30-w17",
+              "level": 2,
+              "disc": 1,
+              "track": 30,
+              "sourceFile": "OPW_SB2_Disc1_Track30.mp3",
+              "clip": {
+                "startSeconds": 34.09,
+                "endSeconds": 37.5
+              }
+            }
+          }
+        ],
+        "activity": "先逐音拼读，再听一个词，从当天 4 个词中选出听到的词。"
+      },
+      "heartWords": {
+        "new": "you",
+        "review": [
+          "I",
+          "a",
+          "the"
+        ]
+      },
+      "raz": {
+        "focus": "can/go 动作句型",
+        "anchorBook": "B-81 You Can Go",
+        "supportingBooks": [
+          "B-50 Go Animals Go",
+          "B-19 Animals Can Move"
+        ],
+        "targetWords": [
+          "can",
+          "go",
+          "move",
+          "animals",
+          "fast",
+          "slow",
+          "up",
+          "down"
+        ],
+        "sentenceFrames": [
+          "I can go.",
+          "Animals can move."
+        ],
+        "parentTask": "读后做动作：go, move, up, down，让词和动作连起来。"
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      }
+    },
+    {
+      "day": 3,
+      "focus": "短元音 i：拼读 i 与 -in/-it 词形",
+      "phonics": {
+        "pattern": "short-i",
+        "words": [
+          {
+            "word": "in",
+            "audio": {
+              "status": "unavailable"
+            }
+          },
+          {
+            "word": "it",
+            "audio": {
+              "status": "unavailable"
+            }
+          },
+          {
+            "word": "hit",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t13-w16",
+              "level": 2,
+              "disc": 2,
+              "track": 13,
+              "sourceFile": "OPW_SB2_Disc2_Track13.mp3",
+              "clip": {
+                "startSeconds": 20.29,
+                "endSeconds": 21.06
+              }
+            }
+          },
+          {
+            "word": "pin",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t31-w58-r2",
+              "level": 2,
+              "disc": 2,
+              "track": 31,
+              "sourceFile": "OPW_SB2_Disc2_Track31.mp3",
+              "clip": {
+                "startSeconds": 63.36,
+                "endSeconds": 64.04
+              }
+            }
+          }
+        ],
+        "activity": "先逐音拼读，再听一个词，从当天 4 个词中选出听到的词。"
+      },
+      "heartWords": {
+        "new": "where",
+        "review": [
+          "I",
+          "you",
+          "is"
+        ]
+      },
+      "raz": {
+        "focus": "is/where/水和地点",
+        "anchorBook": "B-11 Where Is Water?",
+        "supportingBooks": [
+          "B-84 Where?",
+          "C-41 Get In"
+        ],
+        "targetWords": [
+          "where",
+          "is",
+          "water",
+          "in",
+          "here",
+          "there",
+          "get",
+          "it"
+        ],
+        "sentenceFrames": [
+          "Where is...?",
+          "It is in..."
+        ],
+        "parentTask": "家长问 Where is water? 孩子用 It is... 回答，可中英混合。"
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "missing-source"
+      }
+    },
+    {
+      "day": 4,
+      "focus": "短元音 e：拼读 -en/-et/-ed 词形",
+      "phonics": {
+        "pattern": "short-e",
+        "words": [
+          {
+            "word": "hen",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t48-w11",
+              "level": 2,
+              "disc": 1,
+              "track": 48,
+              "sourceFile": "OPW_SB2_Disc1_Track48.mp3",
+              "clip": {
+                "startSeconds": 9.81,
+                "endSeconds": 10.96
+              }
+            }
+          },
+          {
+            "word": "pet",
+            "audio": {
+              "status": "unavailable"
+            }
+          },
+          {
+            "word": "red",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t43-w27-r2",
+              "level": 2,
+              "disc": 1,
+              "track": 43,
+              "sourceFile": "OPW_SB2_Disc1_Track43.mp3",
+              "clip": {
+                "startSeconds": 39.62,
+                "endSeconds": 40.82
+              }
+            }
+          },
+          {
+            "word": "ten",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t36-w18",
+              "level": 2,
+              "disc": 1,
+              "track": 36,
+              "sourceFile": "OPW_SB2_Disc1_Track36.mp3",
+              "clip": {
+                "startSeconds": 39.49,
+                "endSeconds": 40.66
+              }
+            }
+          }
+        ],
+        "activity": "先逐音拼读，再听一个词，从当天 4 个词中选出听到的词。"
+      },
+      "heartWords": {
+        "new": "what",
+        "review": [
+          "where",
+          "I",
+          "you"
+        ]
+      },
+      "raz": {
+        "focus": "what/these/动物特征",
+        "anchorBook": "B-15 What Has These Feet?",
+        "supportingBooks": [
+          "B-16 What Has These Stripes?",
+          "B-17 What Has These Spots?"
+        ],
+        "targetWords": [
+          "what",
+          "has",
+          "these",
+          "feet",
+          "stripes",
+          "spots",
+          "animal",
+          "have"
+        ],
+        "sentenceFrames": [
+          "What has these...?",
+          "It has..."
+        ],
+        "parentTask": "不要解释语法，直接让孩子找 these 和 has。"
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "missing-source"
+      }
+    },
+    {
+      "day": 5,
+      "focus": "短元音 o：拼读 -og/-op/-ox 词形",
+      "phonics": {
+        "pattern": "short-o",
+        "words": [
+          {
+            "word": "dog",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d1-t18-w10",
+              "level": 1,
+              "disc": 1,
+              "track": 18,
+              "sourceFile": "OPW_SB1_Disc1_Track18.mp3",
+              "clip": {
+                "startSeconds": 41.93,
+                "endSeconds": 42.86
+              }
+            }
+          },
+          {
+            "word": "fox",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t30-w10",
+              "level": 2,
+              "disc": 2,
+              "track": 30,
+              "sourceFile": "OPW_SB2_Disc2_Track30.mp3",
+              "clip": {
+                "startSeconds": 9.09,
+                "endSeconds": 9.96
+              }
+            }
+          },
+          {
+            "word": "hop",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t26-w23",
+              "level": 2,
+              "disc": 2,
+              "track": 26,
+              "sourceFile": "OPW_SB2_Disc2_Track26.mp3",
+              "clip": {
+                "startSeconds": 38.65,
+                "endSeconds": 40.24
+              }
+            }
+          },
+          {
+            "word": "log",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t18-w9",
+              "level": 2,
+              "disc": 2,
+              "track": 18,
+              "sourceFile": "OPW_SB2_Disc2_Track18.mp3",
+              "clip": {
+                "startSeconds": 18.63,
+                "endSeconds": 19.58
+              }
+            }
+          }
+        ],
+        "activity": "先逐音拼读，再听一个词，从当天 4 个词中选出听到的词。"
+      },
+      "heartWords": {
+        "new": "my",
+        "review": [
+          "what",
+          "where",
+          "I"
+        ]
+      },
+      "raz": {
+        "focus": "like/love/my 个人表达",
+        "anchorBook": "B-6 My Pet Dinosaur",
+        "supportingBooks": [
+          "B-12 I Love the Earth",
+          "B-56 I Love Art Class"
+        ],
+        "targetWords": [
+          "my",
+          "pet",
+          "love",
+          "like",
+          "the",
+          "earth",
+          "class",
+          "dinosaur"
+        ],
+        "sentenceFrames": [
+          "I love...",
+          "My pet is..."
+        ],
+        "parentTask": "读后让孩子说 2 句自己喜欢的东西。"
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      }
+    },
+    {
+      "day": 6,
+      "focus": "短元音 u：拼读 u 与 -up/-un 词形",
+      "phonics": {
+        "pattern": "short-u",
+        "words": [
+          {
+            "word": "cup",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d1-t5-w23",
+              "level": 1,
+              "disc": 1,
+              "track": 5,
+              "sourceFile": "OPW_SB1_Disc1_Track05.mp3",
+              "clip": {
+                "startSeconds": 34.83,
+                "endSeconds": 36.46
+              }
+            }
+          },
+          {
+            "word": "sun",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d2-t32-w11",
+              "level": 1,
+              "disc": 2,
+              "track": 32,
+              "sourceFile": "OPW_SB1_Disc2_Track32.mp3",
+              "clip": {
+                "startSeconds": 45.47,
+                "endSeconds": 47.32
+              }
+            }
+          },
+          {
+            "word": "up",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d2-t39-w6",
+              "level": 1,
+              "disc": 2,
+              "track": 39,
+              "sourceFile": "OPW_SB1_Disc2_Track39.mp3",
+              "clip": {
+                "startSeconds": 31.13,
+                "endSeconds": 32.16
+              }
+            }
+          },
+          {
+            "word": "run",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t59-w9",
+              "level": 2,
+              "disc": 2,
+              "track": 59,
+              "sourceFile": "OPW_SB2_Disc2_Track59.mp3",
+              "clip": {
+                "startSeconds": 14.13,
+                "endSeconds": 15.1
+              }
+            }
+          }
+        ],
+        "activity": "先逐音拼读，再听一个词，从当天 4 个词中选出听到的词。"
+      },
+      "heartWords": {
+        "new": null,
+        "review": [
+          "my",
+          "what",
+          "where"
+        ]
+      },
+      "raz": {
+        "focus": "第 1 周回收",
+        "anchorBook": "B-38 We Pack a Picnic",
+        "supportingBooks": [
+          "任选本周最喜欢的 3 本"
+        ],
+        "targetWords": [
+          "I",
+          "you",
+          "can",
+          "go",
+          "where",
+          "is",
+          "what",
+          "has",
+          "my",
+          "love"
+        ],
+        "sentenceFrames": [
+          "I can...",
+          "Where is...?",
+          "What has...?"
+        ],
+        "parentTask": "只复习错词，不新增；把犹豫词留到下周一。"
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      }
+    },
+    {
+      "day": 7,
+      "focus": "短元音 a/i/e/o/u 混合辨音",
+      "phonics": {
+        "pattern": "short-vowel-review",
+        "words": [
+          {
+            "word": "cat",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d1-t12-w10",
+              "level": 1,
+              "disc": 1,
+              "track": 12,
+              "sourceFile": "OPW_SB1_Disc1_Track12.mp3",
+              "clip": {
+                "startSeconds": 43.25,
+                "endSeconds": 43.86
+              }
+            }
+          },
+          {
+            "word": "map",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t22-w14",
+              "level": 2,
+              "disc": 1,
+              "track": 22,
+              "sourceFile": "OPW_SB2_Disc1_Track22.mp3",
+              "clip": {
+                "startSeconds": 24.11,
+                "endSeconds": 24.96
+              }
+            }
+          },
+          {
+            "word": "in",
+            "audio": {
+              "status": "unavailable"
+            }
+          },
+          {
+            "word": "pet",
+            "audio": {
+              "status": "unavailable"
+            }
+          },
+          {
+            "word": "dog",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d1-t18-w10",
+              "level": 1,
+              "disc": 1,
+              "track": 18,
+              "sourceFile": "OPW_SB1_Disc1_Track18.mp3",
+              "clip": {
+                "startSeconds": 41.93,
+                "endSeconds": 42.86
+              }
+            }
+          },
+          {
+            "word": "sun",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d2-t32-w11",
+              "level": 1,
+              "disc": 2,
+              "track": 32,
+              "sourceFile": "OPW_SB1_Disc2_Track32.mp3",
+              "clip": {
+                "startSeconds": 45.47,
+                "endSeconds": 47.32
+              }
+            }
+          }
+        ],
+        "activity": "混合播放 6 个词，孩子按短元音声音分到 a/i/e/o/u 五组。"
+      },
+      "heartWords": {
+        "new": null,
+        "review": [
+          "I",
+          "you",
+          "my"
+        ]
+      },
+      "raz": {
+        "focus": "轻松输入",
+        "anchorBook": "孩子自选本周最喜欢的 1 本",
+        "supportingBooks": [
+          "再听 1 本 B 级音频（可选）"
+        ],
+        "targetWords": [],
+        "sentenceFrames": [],
+        "parentTask": "只听或亲子共读，不新增、不要求输出。"
+      },
+      "listening": {
+        "type": "short-vowel-sort",
+        "readiness": "missing-source"
+      }
+    }
+  ]
+}

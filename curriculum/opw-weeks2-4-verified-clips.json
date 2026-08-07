@@ -1,0 +1,552 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-05T10:39:57.709Z",
+  "policy": {
+    "selection": "Only human-verified candidates are eligible; exactly one clip is selected per week and word.",
+    "ranking": "When multiple candidates were verified, prefer the lowest candidate rank, then higher confidence, then the shorter review clip.",
+    "exclusions": "Word errors, boundary errors, skipped candidates, and unresolved words remain unavailable."
+  },
+  "summary": {
+    "reviewedCandidates": 84,
+    "verifiedCandidates": 59,
+    "selectedClips": 24,
+    "redundantVerified": 35
+  },
+  "weeks": [
+    {
+      "week": 2,
+      "reviewedCandidates": 16,
+      "verifiedCandidates": 9,
+      "selectedClips": 3,
+      "redundantVerified": 6,
+      "selectedWords": [
+        "fish",
+        "king",
+        "pink"
+      ],
+      "candidateWordsWithoutVerifiedClip": [
+        "sing",
+        "thin",
+        "which"
+      ],
+      "unresolvedWordsWithoutCandidate": [
+        "bath",
+        "chat",
+        "chin",
+        "dish",
+        "moth",
+        "much",
+        "path",
+        "rich",
+        "ring",
+        "ship",
+        "shop",
+        "when",
+        "whip",
+        "whiz"
+      ]
+    },
+    {
+      "week": 3,
+      "reviewedCandidates": 9,
+      "verifiedCandidates": 8,
+      "selectedClips": 3,
+      "redundantVerified": 5,
+      "selectedWords": [
+        "milk",
+        "nest",
+        "swim"
+      ],
+      "candidateWordsWithoutVerifiedClip": [],
+      "unresolvedWordsWithoutCandidate": [
+        "black",
+        "clap",
+        "crab",
+        "drum",
+        "flag",
+        "frog",
+        "hand",
+        "jump",
+        "plan",
+        "plant",
+        "slip",
+        "spin",
+        "spot",
+        "step",
+        "stop",
+        "trip"
+      ]
+    },
+    {
+      "week": 4,
+      "reviewedCandidates": 59,
+      "verifiedCandidates": 42,
+      "selectedClips": 18,
+      "redundantVerified": 24,
+      "selectedWords": [
+        "bike",
+        "cape",
+        "cube",
+        "cute",
+        "fish",
+        "five",
+        "game",
+        "home",
+        "hope",
+        "kit",
+        "kite",
+        "like",
+        "make",
+        "name",
+        "nose",
+        "rope",
+        "these",
+        "time"
+      ],
+      "candidateWordsWithoutVerifiedClip": [
+        "same",
+        "tune"
+      ],
+      "unresolvedWordsWithoutCandidate": [
+        "frog",
+        "hand",
+        "plan",
+        "ship"
+      ]
+    }
+  ],
+  "selectedClips": [
+    {
+      "week": 2,
+      "word": "fish",
+      "normalizedWord": "fish",
+      "itemId": "l1-d1-t25-w25-r20260805",
+      "candidateRank": 1,
+      "level": 1,
+      "disc": 1,
+      "track": 25,
+      "sourceFile": "OPW_SB1_Disc1_Track25.mp3",
+      "confidence": 0.9937,
+      "clip": {
+        "startSeconds": 43.96,
+        "endSeconds": 44.74
+      },
+      "reviewedAt": "2026-08-05T10:24:20.170Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 2,
+      "word": "king",
+      "normalizedWord": "king",
+      "itemId": "l1-d1-t51-w75-r20260805",
+      "candidateRank": 1,
+      "level": 1,
+      "disc": 1,
+      "track": 51,
+      "sourceFile": "OPW_SB1_Disc1_Track51.mp3",
+      "confidence": 0.9897,
+      "clip": {
+        "startSeconds": 67.26,
+        "endSeconds": 67.82
+      },
+      "reviewedAt": "2026-08-05T10:25:33.232Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 2,
+      "word": "pink",
+      "normalizedWord": "pink",
+      "itemId": "l1-d2-t29-w26-r20260805",
+      "candidateRank": 1,
+      "level": 1,
+      "disc": 2,
+      "track": 29,
+      "sourceFile": "OPW_SB1_Disc2_Track29.mp3",
+      "confidence": 0.9712,
+      "clip": {
+        "startSeconds": 40.7,
+        "endSeconds": 41.46
+      },
+      "reviewedAt": "2026-08-05T10:25:37.886Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 3,
+      "word": "milk",
+      "normalizedWord": "milk",
+      "itemId": "l1-d2-t4-w10-r20260805",
+      "candidateRank": 1,
+      "level": 1,
+      "disc": 2,
+      "track": 4,
+      "sourceFile": "OPW_SB1_Disc2_Track04.mp3",
+      "confidence": 0.979,
+      "clip": {
+        "startSeconds": 18.58,
+        "endSeconds": 19.34
+      },
+      "reviewedAt": "2026-08-05T10:23:54.703Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 3,
+      "word": "nest",
+      "normalizedWord": "nest",
+      "itemId": "l1-d2-t8-w11-r20260805",
+      "candidateRank": 1,
+      "level": 1,
+      "disc": 2,
+      "track": 8,
+      "sourceFile": "OPW_SB1_Disc2_Track08.mp3",
+      "confidence": 0.9844,
+      "clip": {
+        "startSeconds": 15.02,
+        "endSeconds": 15.88
+      },
+      "reviewedAt": "2026-08-05T10:23:59.903Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 3,
+      "word": "swim",
+      "normalizedWord": "swim",
+      "itemId": "l3-d2-t33-w64-r20260805",
+      "candidateRank": 1,
+      "level": 3,
+      "disc": 2,
+      "track": 33,
+      "sourceFile": "OPW_SB3_Disc2_Track33.mp3",
+      "confidence": 0.9985,
+      "clip": {
+        "startSeconds": 78.58,
+        "endSeconds": 79.32
+      },
+      "reviewedAt": "2026-08-05T10:24:06.078Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "bike",
+      "normalizedWord": "bike",
+      "itemId": "l3-d1-t27-w39-r20260805",
+      "candidateRank": 1,
+      "level": 3,
+      "disc": 1,
+      "track": 27,
+      "sourceFile": "OPW_SB3_Disc1_Track27.mp3",
+      "confidence": 0.9883,
+      "clip": {
+        "startSeconds": 47.36,
+        "endSeconds": 48.26
+      },
+      "reviewedAt": "2026-08-05T10:19:50.154Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "cape",
+      "normalizedWord": "cape",
+      "itemId": "l3-d1-t35-w87-r20260805",
+      "candidateRank": 1,
+      "level": 3,
+      "disc": 1,
+      "track": 35,
+      "sourceFile": "OPW_SB3_Disc1_Track35.mp3",
+      "confidence": 0.9951,
+      "clip": {
+        "startSeconds": 79.44,
+        "endSeconds": 80.32
+      },
+      "reviewedAt": "2026-08-05T10:22:49.859Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "cube",
+      "normalizedWord": "cube",
+      "itemId": "l3-d1-t50-w65-r20260805",
+      "candidateRank": 1,
+      "level": 3,
+      "disc": 1,
+      "track": 50,
+      "sourceFile": "OPW_SB3_Disc1_Track50.mp3",
+      "confidence": 0.9517,
+      "clip": {
+        "startSeconds": 60.7,
+        "endSeconds": 61.5
+      },
+      "reviewedAt": "2026-08-05T10:21:10.254Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "cute",
+      "normalizedWord": "cute",
+      "itemId": "l3-d1-t44-w26-r20260805",
+      "candidateRank": 2,
+      "level": 3,
+      "disc": 1,
+      "track": 44,
+      "sourceFile": "OPW_SB3_Disc1_Track44.mp3",
+      "confidence": 0.9648,
+      "clip": {
+        "startSeconds": 45.6,
+        "endSeconds": 46.46
+      },
+      "reviewedAt": "2026-08-05T10:21:20.716Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "fish",
+      "normalizedWord": "fish",
+      "itemId": "l1-d1-t25-w146-r20260805",
+      "candidateRank": 1,
+      "level": 1,
+      "disc": 1,
+      "track": 25,
+      "sourceFile": "OPW_SB1_Disc1_Track25.mp3",
+      "confidence": 0.999,
+      "clip": {
+        "startSeconds": 69.02,
+        "endSeconds": 69.72
+      },
+      "reviewedAt": "2026-08-05T10:23:04.370Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "five",
+      "normalizedWord": "five",
+      "itemId": "l3-d1-t30-w16-r20260805",
+      "candidateRank": 1,
+      "level": 3,
+      "disc": 1,
+      "track": 30,
+      "sourceFile": "OPW_SB3_Disc1_Track30.mp3",
+      "confidence": 0.9658,
+      "clip": {
+        "startSeconds": 39.16,
+        "endSeconds": 39.92
+      },
+      "reviewedAt": "2026-08-05T10:20:12.566Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "game",
+      "normalizedWord": "game",
+      "itemId": "l3-d1-t10-w11-r20260805",
+      "candidateRank": 1,
+      "level": 3,
+      "disc": 1,
+      "track": 10,
+      "sourceFile": "OPW_SB3_Disc1_Track10.mp3",
+      "confidence": 0.9873,
+      "clip": {
+        "startSeconds": 15.3,
+        "endSeconds": 16.1
+      },
+      "reviewedAt": "2026-08-05T10:19:44.379Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "home",
+      "normalizedWord": "home",
+      "itemId": "l3-d1-t50-w57-r20260805",
+      "candidateRank": 1,
+      "level": 3,
+      "disc": 1,
+      "track": 50,
+      "sourceFile": "OPW_SB3_Disc1_Track50.mp3",
+      "confidence": 0.9985,
+      "clip": {
+        "startSeconds": 56.38,
+        "endSeconds": 57.22
+      },
+      "reviewedAt": "2026-08-05T10:20:46.991Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "hope",
+      "normalizedWord": "hope",
+      "itemId": "l3-d1-t49-w15-r20260805",
+      "candidateRank": 1,
+      "level": 3,
+      "disc": 1,
+      "track": 49,
+      "sourceFile": "OPW_SB3_Disc1_Track49.mp3",
+      "confidence": 0.7881,
+      "clip": {
+        "startSeconds": 19.54,
+        "endSeconds": 20.56
+      },
+      "reviewedAt": "2026-08-05T10:20:53.416Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "kit",
+      "normalizedWord": "kit",
+      "itemId": "l3-d1-t21-w9-r20260805",
+      "candidateRank": 1,
+      "level": 3,
+      "disc": 1,
+      "track": 21,
+      "sourceFile": "OPW_SB3_Disc1_Track21.mp3",
+      "confidence": 0.8296,
+      "clip": {
+        "startSeconds": 12.38,
+        "endSeconds": 13
+      },
+      "reviewedAt": "2026-08-05T10:22:55.029Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "kite",
+      "normalizedWord": "kite",
+      "itemId": "l3-d1-t35-w114-r20260805",
+      "candidateRank": 1,
+      "level": 3,
+      "disc": 1,
+      "track": 35,
+      "sourceFile": "OPW_SB3_Disc1_Track35.mp3",
+      "confidence": 0.9766,
+      "clip": {
+        "startSeconds": 102.06,
+        "endSeconds": 102.94
+      },
+      "reviewedAt": "2026-08-05T10:22:59.920Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "like",
+      "normalizedWord": "like",
+      "itemId": "l1-d2-t63-w126-r20260805",
+      "candidateRank": 2,
+      "level": 1,
+      "disc": 2,
+      "track": 63,
+      "sourceFile": "OPW_SB1_Disc2_Track63.mp3",
+      "confidence": 0.9966,
+      "clip": {
+        "startSeconds": 89.76,
+        "endSeconds": 90.54
+      },
+      "reviewedAt": "2026-08-05T10:20:01.208Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "make",
+      "normalizedWord": "make",
+      "itemId": "l2-d2-t62-w57-r20260805",
+      "candidateRank": 3,
+      "level": 2,
+      "disc": 2,
+      "track": 62,
+      "sourceFile": "OPW_SB2_Disc2_Track62.mp3",
+      "confidence": 0.9634,
+      "clip": {
+        "startSeconds": 58.02,
+        "endSeconds": 58.82
+      },
+      "reviewedAt": "2026-08-05T10:19:16.221Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "name",
+      "normalizedWord": "name",
+      "itemId": "l3-d1-t18-w33-r20260805",
+      "candidateRank": 1,
+      "level": 3,
+      "disc": 1,
+      "track": 18,
+      "sourceFile": "OPW_SB3_Disc1_Track18.mp3",
+      "confidence": 0.998,
+      "clip": {
+        "startSeconds": 40,
+        "endSeconds": 40.82
+      },
+      "reviewedAt": "2026-08-05T10:19:18.283Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "nose",
+      "normalizedWord": "nose",
+      "itemId": "l1-d2-t7-w37-r20260805",
+      "candidateRank": 1,
+      "level": 1,
+      "disc": 2,
+      "track": 7,
+      "sourceFile": "OPW_SB1_Disc2_Track07.mp3",
+      "confidence": 0.9316,
+      "clip": {
+        "startSeconds": 51.04,
+        "endSeconds": 51.88
+      },
+      "reviewedAt": "2026-08-05T10:21:04.249Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "rope",
+      "normalizedWord": "rope",
+      "itemId": "l3-d1-t39-w10-r20260805",
+      "candidateRank": 1,
+      "level": 3,
+      "disc": 1,
+      "track": 39,
+      "sourceFile": "OPW_SB3_Disc1_Track39.mp3",
+      "confidence": 0.9927,
+      "clip": {
+        "startSeconds": 16,
+        "endSeconds": 16.84
+      },
+      "reviewedAt": "2026-08-05T10:20:58.600Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "these",
+      "normalizedWord": "these",
+      "itemId": "l2-d2-t61-w42-r20260805",
+      "candidateRank": 1,
+      "level": 2,
+      "disc": 2,
+      "track": 61,
+      "sourceFile": "OPW_SB2_Disc2_Track61.mp3",
+      "confidence": 0.9956,
+      "clip": {
+        "startSeconds": 71.22,
+        "endSeconds": 72.18
+      },
+      "reviewedAt": "2026-08-05T10:21:51.013Z",
+      "verificationSource": "human-review"
+    },
+    {
+      "week": 4,
+      "word": "time",
+      "normalizedWord": "time",
+      "itemId": "l3-d1-t26-w12-r20260805",
+      "candidateRank": 1,
+      "level": 3,
+      "disc": 1,
+      "track": 26,
+      "sourceFile": "OPW_SB3_Disc1_Track26.mp3",
+      "confidence": 0.9893,
+      "clip": {
+        "startSeconds": 16.64,
+        "endSeconds": 17.42
+      },
+      "reviewedAt": "2026-08-05T10:20:06.362Z",
+      "verificationSource": "human-review"
+    }
+  ]
+}

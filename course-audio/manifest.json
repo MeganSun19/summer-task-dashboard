@@ -1,0 +1,1088 @@
+{
+  "schemaVersion": 2,
+  "generatedFrom": "curriculum/english-course.json",
+  "assetCount": 125,
+  "totalBytes": 46152996,
+  "assets": {
+    "opw-l1-d1-track04": {
+      "id": "opw-l1-d1-track04",
+      "kind": "oxford-track",
+      "level": 1,
+      "disc": 1,
+      "track": 4,
+      "filename": "OPW_SB1_Disc1_Track04.mp3",
+      "bytes": 791306,
+      "url": "./course-audio/opw-l1-d1-track04.mp3"
+    },
+    "opw-l1-d1-track12": {
+      "id": "opw-l1-d1-track12",
+      "kind": "oxford-track",
+      "level": 1,
+      "disc": 1,
+      "track": 12,
+      "filename": "OPW_SB1_Disc1_Track12.mp3",
+      "bytes": 1077610,
+      "url": "./course-audio/opw-l1-d1-track12.mp3"
+    },
+    "phonics-word-man": {
+      "id": "phonics-word-man",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "man.mp3",
+      "bytes": 8019,
+      "url": "./course-audio/phonics-word-man.mp3"
+    },
+    "opw-l2-d1-track12": {
+      "id": "opw-l2-d1-track12",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 1,
+      "track": 12,
+      "filename": "OPW_SB2_Disc1_Track12.mp3",
+      "bytes": 1126512,
+      "url": "./course-audio/opw-l2-d1-track12.mp3"
+    },
+    "phonics-word-back": {
+      "id": "phonics-word-back",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "back.mp3",
+      "bytes": 6533,
+      "url": "./course-audio/phonics-word-back.mp3"
+    },
+    "phonics-word-sack": {
+      "id": "phonics-word-sack",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "sack.mp3",
+      "bytes": 8721,
+      "url": "./course-audio/phonics-word-sack.mp3"
+    },
+    "opw-l2-d1-track30": {
+      "id": "opw-l2-d1-track30",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 1,
+      "track": 30,
+      "filename": "OPW_SB2_Disc1_Track30.mp3",
+      "bytes": 1604240,
+      "url": "./course-audio/opw-l2-d1-track30.mp3"
+    },
+    "opw-l2-d1-track22": {
+      "id": "opw-l2-d1-track22",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 1,
+      "track": 22,
+      "filename": "OPW_SB2_Disc1_Track22.mp3",
+      "bytes": 1011573,
+      "url": "./course-audio/opw-l2-d1-track22.mp3"
+    },
+    "opw-l2-d1-track24": {
+      "id": "opw-l2-d1-track24",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 1,
+      "track": 24,
+      "filename": "OPW_SB2_Disc1_Track24.mp3",
+      "bytes": 1239779,
+      "url": "./course-audio/opw-l2-d1-track24.mp3"
+    },
+    "phonics-word-neck": {
+      "id": "phonics-word-neck",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "neck.mp3",
+      "bytes": 7368,
+      "url": "./course-audio/phonics-word-neck.mp3"
+    },
+    "phonics-word-duck": {
+      "id": "phonics-word-duck",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "duck.mp3",
+      "bytes": 7158,
+      "url": "./course-audio/phonics-word-duck.mp3"
+    },
+    "phonics-word-in": {
+      "id": "phonics-word-in",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "in.mp3",
+      "bytes": 7107,
+      "url": "./course-audio/phonics-word-in.mp3"
+    },
+    "phonics-word-it": {
+      "id": "phonics-word-it",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "it.mp3",
+      "bytes": 5595,
+      "url": "./course-audio/phonics-word-it.mp3"
+    },
+    "opw-l2-d2-track13": {
+      "id": "opw-l2-d2-track13",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 2,
+      "track": 13,
+      "filename": "OPW_SB2_Disc2_Track13.mp3",
+      "bytes": 765394,
+      "url": "./course-audio/opw-l2-d2-track13.mp3"
+    },
+    "opw-l2-d2-track31": {
+      "id": "opw-l2-d2-track31",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 2,
+      "track": 31,
+      "filename": "OPW_SB2_Disc2_Track31.mp3",
+      "bytes": 2128778,
+      "url": "./course-audio/opw-l2-d2-track31.mp3"
+    },
+    "phonics-word-quit": {
+      "id": "phonics-word-quit",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "quit.mp3",
+      "bytes": 6532,
+      "url": "./course-audio/phonics-word-quit.mp3"
+    },
+    "phonics-word-quill": {
+      "id": "phonics-word-quill",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "quill.mp3",
+      "bytes": 6794,
+      "url": "./course-audio/phonics-word-quill.mp3"
+    },
+    "opw-l2-d1-track48": {
+      "id": "opw-l2-d1-track48",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 1,
+      "track": 48,
+      "filename": "OPW_SB2_Disc1_Track48.mp3",
+      "bytes": 886603,
+      "url": "./course-audio/opw-l2-d1-track48.mp3"
+    },
+    "phonics-word-pet": {
+      "id": "phonics-word-pet",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "pet.mp3",
+      "bytes": 7263,
+      "url": "./course-audio/phonics-word-pet.mp3"
+    },
+    "opw-l2-d1-track43": {
+      "id": "opw-l2-d1-track43",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 1,
+      "track": 43,
+      "filename": "OPW_SB2_Disc1_Track43.mp3",
+      "bytes": 804265,
+      "url": "./course-audio/opw-l2-d1-track43.mp3"
+    },
+    "opw-l2-d1-track36": {
+      "id": "opw-l2-d1-track36",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 1,
+      "track": 36,
+      "filename": "OPW_SB2_Disc1_Track36.mp3",
+      "bytes": 830179,
+      "url": "./course-audio/opw-l2-d1-track36.mp3"
+    },
+    "phonics-word-fetch": {
+      "id": "phonics-word-fetch",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "fetch.mp3",
+      "bytes": 9139,
+      "url": "./course-audio/phonics-word-fetch.mp3"
+    },
+    "phonics-word-match": {
+      "id": "phonics-word-match",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "match.mp3",
+      "bytes": 8828,
+      "url": "./course-audio/phonics-word-match.mp3"
+    },
+    "opw-l1-d1-track18": {
+      "id": "opw-l1-d1-track18",
+      "kind": "oxford-track",
+      "level": 1,
+      "disc": 1,
+      "track": 18,
+      "filename": "OPW_SB1_Disc1_Track18.mp3",
+      "bytes": 1303726,
+      "url": "./course-audio/opw-l1-d1-track18.mp3"
+    },
+    "opw-l2-d2-track30": {
+      "id": "opw-l2-d2-track30",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 2,
+      "track": 30,
+      "filename": "OPW_SB2_Disc2_Track30.mp3",
+      "bytes": 995271,
+      "url": "./course-audio/opw-l2-d2-track30.mp3"
+    },
+    "opw-l2-d2-track26": {
+      "id": "opw-l2-d2-track26",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 2,
+      "track": 26,
+      "filename": "OPW_SB2_Disc2_Track26.mp3",
+      "bytes": 1065906,
+      "url": "./course-audio/opw-l2-d2-track26.mp3"
+    },
+    "opw-l2-d2-track18": {
+      "id": "opw-l2-d2-track18",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 2,
+      "track": 18,
+      "filename": "OPW_SB2_Disc2_Track18.mp3",
+      "bytes": 798413,
+      "url": "./course-audio/opw-l2-d2-track18.mp3"
+    },
+    "phonics-word-rock": {
+      "id": "phonics-word-rock",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "rock.mp3",
+      "bytes": 7497,
+      "url": "./course-audio/phonics-word-rock.mp3"
+    },
+    "phonics-word-sock": {
+      "id": "phonics-word-sock",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "sock.mp3",
+      "bytes": 9034,
+      "url": "./course-audio/phonics-word-sock.mp3"
+    },
+    "opw-l1-d1-track05": {
+      "id": "opw-l1-d1-track05",
+      "kind": "oxford-track",
+      "level": 1,
+      "disc": 1,
+      "track": 5,
+      "filename": "OPW_SB1_Disc1_Track05.mp3",
+      "bytes": 801337,
+      "url": "./course-audio/opw-l1-d1-track05.mp3"
+    },
+    "opw-l1-d2-track32": {
+      "id": "opw-l1-d2-track32",
+      "kind": "oxford-track",
+      "level": 1,
+      "disc": 2,
+      "track": 32,
+      "filename": "OPW_SB1_Disc2_Track32.mp3",
+      "bytes": 1389826,
+      "url": "./course-audio/opw-l1-d2-track32.mp3"
+    },
+    "opw-l1-d2-track39": {
+      "id": "opw-l1-d2-track39",
+      "kind": "oxford-track",
+      "level": 1,
+      "disc": 2,
+      "track": 39,
+      "filename": "OPW_SB1_Disc2_Track39.mp3",
+      "bytes": 1237689,
+      "url": "./course-audio/opw-l1-d2-track39.mp3"
+    },
+    "opw-l2-d2-track59": {
+      "id": "opw-l2-d2-track59",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 2,
+      "track": 59,
+      "filename": "OPW_SB2_Disc2_Track59.mp3",
+      "bytes": 438132,
+      "url": "./course-audio/opw-l2-d2-track59.mp3"
+    },
+    "phonics-word-phone": {
+      "id": "phonics-word-phone",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "phone.mp3",
+      "bytes": 8306,
+      "url": "./course-audio/phonics-word-phone.mp3"
+    },
+    "phonics-word-graph": {
+      "id": "phonics-word-graph",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "graph.mp3",
+      "bytes": 8203,
+      "url": "./course-audio/phonics-word-graph.mp3"
+    },
+    "phonics-word-ship": {
+      "id": "phonics-word-ship",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "ship.mp3",
+      "bytes": 6896,
+      "url": "./course-audio/phonics-word-ship.mp3"
+    },
+    "phonics-word-shop": {
+      "id": "phonics-word-shop",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "shop.mp3",
+      "bytes": 8408,
+      "url": "./course-audio/phonics-word-shop.mp3"
+    },
+    "opw-l1-d1-track25": {
+      "id": "opw-l1-d1-track25",
+      "kind": "oxford-track",
+      "level": 1,
+      "disc": 1,
+      "track": 25,
+      "filename": "OPW_SB1_Disc1_Track25.mp3",
+      "bytes": 1232673,
+      "url": "./course-audio/opw-l1-d1-track25.mp3"
+    },
+    "phonics-word-dish": {
+      "id": "phonics-word-dish",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "dish.mp3",
+      "bytes": 8047,
+      "url": "./course-audio/phonics-word-dish.mp3"
+    },
+    "phonics-word-rain": {
+      "id": "phonics-word-rain",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "rain.mp3",
+      "bytes": 7002,
+      "url": "./course-audio/phonics-word-rain.mp3"
+    },
+    "phonics-word-tail": {
+      "id": "phonics-word-tail",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "tail.mp3",
+      "bytes": 7941,
+      "url": "./course-audio/phonics-word-tail.mp3"
+    },
+    "phonics-word-chin": {
+      "id": "phonics-word-chin",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "chin.mp3",
+      "bytes": 7551,
+      "url": "./course-audio/phonics-word-chin.mp3"
+    },
+    "phonics-word-chat": {
+      "id": "phonics-word-chat",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "chat.mp3",
+      "bytes": 8202,
+      "url": "./course-audio/phonics-word-chat.mp3"
+    },
+    "phonics-word-much": {
+      "id": "phonics-word-much",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "much.mp3",
+      "bytes": 8358,
+      "url": "./course-audio/phonics-word-much.mp3"
+    },
+    "phonics-word-rich": {
+      "id": "phonics-word-rich",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "rich.mp3",
+      "bytes": 7626,
+      "url": "./course-audio/phonics-word-rich.mp3"
+    },
+    "phonics-word-day": {
+      "id": "phonics-word-day",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "day.mp3",
+      "bytes": 7160,
+      "url": "./course-audio/phonics-word-day.mp3"
+    },
+    "phonics-word-play": {
+      "id": "phonics-word-play",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "play.mp3",
+      "bytes": 8280,
+      "url": "./course-audio/phonics-word-play.mp3"
+    },
+    "phonics-word-thin": {
+      "id": "phonics-word-thin",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "thin.mp3",
+      "bytes": 6847,
+      "url": "./course-audio/phonics-word-thin.mp3"
+    },
+    "phonics-word-bath": {
+      "id": "phonics-word-bath",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "bath.mp3",
+      "bytes": 7290,
+      "url": "./course-audio/phonics-word-bath.mp3"
+    },
+    "phonics-word-moth": {
+      "id": "phonics-word-moth",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "moth.mp3",
+      "bytes": 7786,
+      "url": "./course-audio/phonics-word-moth.mp3"
+    },
+    "phonics-word-path": {
+      "id": "phonics-word-path",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "path.mp3",
+      "bytes": 7967,
+      "url": "./course-audio/phonics-word-path.mp3"
+    },
+    "phonics-word-tree": {
+      "id": "phonics-word-tree",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "tree.mp3",
+      "bytes": 7003,
+      "url": "./course-audio/phonics-word-tree.mp3"
+    },
+    "phonics-word-green": {
+      "id": "phonics-word-green",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "green.mp3",
+      "bytes": 6741,
+      "url": "./course-audio/phonics-word-green.mp3"
+    },
+    "phonics-word-when": {
+      "id": "phonics-word-when",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "when.mp3",
+      "bytes": 7496,
+      "url": "./course-audio/phonics-word-when.mp3"
+    },
+    "phonics-word-whip": {
+      "id": "phonics-word-whip",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "whip.mp3",
+      "bytes": 6430,
+      "url": "./course-audio/phonics-word-whip.mp3"
+    },
+    "phonics-word-whiz": {
+      "id": "phonics-word-whiz",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "whiz.mp3",
+      "bytes": 6949,
+      "url": "./course-audio/phonics-word-whiz.mp3"
+    },
+    "phonics-word-which": {
+      "id": "phonics-word-which",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "which.mp3",
+      "bytes": 7314,
+      "url": "./course-audio/phonics-word-which.mp3"
+    },
+    "phonics-word-team": {
+      "id": "phonics-word-team",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "team.mp3",
+      "bytes": 7941,
+      "url": "./course-audio/phonics-word-team.mp3"
+    },
+    "phonics-word-leaf": {
+      "id": "phonics-word-leaf",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "leaf.mp3",
+      "bytes": 6744,
+      "url": "./course-audio/phonics-word-leaf.mp3"
+    },
+    "phonics-word-ring": {
+      "id": "phonics-word-ring",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "ring.mp3",
+      "bytes": 6845,
+      "url": "./course-audio/phonics-word-ring.mp3"
+    },
+    "phonics-word-sing": {
+      "id": "phonics-word-sing",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "sing.mp3",
+      "bytes": 7758,
+      "url": "./course-audio/phonics-word-sing.mp3"
+    },
+    "opw-l1-d1-track51": {
+      "id": "opw-l1-d1-track51",
+      "kind": "oxford-track",
+      "level": 1,
+      "disc": 1,
+      "track": 51,
+      "filename": "OPW_SB1_Disc1_Track51.mp3",
+      "bytes": 1231419,
+      "url": "./course-audio/opw-l1-d1-track51.mp3"
+    },
+    "opw-l1-d2-track29": {
+      "id": "opw-l1-d2-track29",
+      "kind": "oxford-track",
+      "level": 1,
+      "disc": 2,
+      "track": 29,
+      "filename": "OPW_SB1_Disc2_Track29.mp3",
+      "bytes": 778770,
+      "url": "./course-audio/opw-l1-d2-track29.mp3"
+    },
+    "phonics-word-boat": {
+      "id": "phonics-word-boat",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "boat.mp3",
+      "bytes": 6765,
+      "url": "./course-audio/phonics-word-boat.mp3"
+    },
+    "phonics-word-coat": {
+      "id": "phonics-word-coat",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "coat.mp3",
+      "bytes": 7470,
+      "url": "./course-audio/phonics-word-coat.mp3"
+    },
+    "phonics-word-snow": {
+      "id": "phonics-word-snow",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "snow.mp3",
+      "bytes": 9843,
+      "url": "./course-audio/phonics-word-snow.mp3"
+    },
+    "phonics-word-grow": {
+      "id": "phonics-word-grow",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "grow.mp3",
+      "bytes": 8148,
+      "url": "./course-audio/phonics-word-grow.mp3"
+    },
+    "phonics-word-stop": {
+      "id": "phonics-word-stop",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "stop.mp3",
+      "bytes": 9713,
+      "url": "./course-audio/phonics-word-stop.mp3"
+    },
+    "phonics-word-step": {
+      "id": "phonics-word-step",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "step.mp3",
+      "bytes": 9556,
+      "url": "./course-audio/phonics-word-step.mp3"
+    },
+    "phonics-word-spin": {
+      "id": "phonics-word-spin",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "spin.mp3",
+      "bytes": 9062,
+      "url": "./course-audio/phonics-word-spin.mp3"
+    },
+    "phonics-word-spot": {
+      "id": "phonics-word-spot",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "spot.mp3",
+      "bytes": 9973,
+      "url": "./course-audio/phonics-word-spot.mp3"
+    },
+    "phonics-word-car": {
+      "id": "phonics-word-car",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "car.mp3",
+      "bytes": 7317,
+      "url": "./course-audio/phonics-word-car.mp3"
+    },
+    "phonics-word-star": {
+      "id": "phonics-word-star",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "star.mp3",
+      "bytes": 9401,
+      "url": "./course-audio/phonics-word-star.mp3"
+    },
+    "phonics-word-clap": {
+      "id": "phonics-word-clap",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "clap.mp3",
+      "bytes": 7733,
+      "url": "./course-audio/phonics-word-clap.mp3"
+    },
+    "phonics-word-flag": {
+      "id": "phonics-word-flag",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "flag.mp3",
+      "bytes": 8410,
+      "url": "./course-audio/phonics-word-flag.mp3"
+    },
+    "phonics-word-slip": {
+      "id": "phonics-word-slip",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "slip.mp3",
+      "bytes": 7968,
+      "url": "./course-audio/phonics-word-slip.mp3"
+    },
+    "phonics-word-plan": {
+      "id": "phonics-word-plan",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "plan.mp3",
+      "bytes": 8463,
+      "url": "./course-audio/phonics-word-plan.mp3"
+    },
+    "phonics-word-corn": {
+      "id": "phonics-word-corn",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "corn.mp3",
+      "bytes": 8620,
+      "url": "./course-audio/phonics-word-corn.mp3"
+    },
+    "phonics-word-fork": {
+      "id": "phonics-word-fork",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "fork.mp3",
+      "bytes": 8151,
+      "url": "./course-audio/phonics-word-fork.mp3"
+    },
+    "phonics-word-frog": {
+      "id": "phonics-word-frog",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "frog.mp3",
+      "bytes": 8410,
+      "url": "./course-audio/phonics-word-frog.mp3"
+    },
+    "phonics-word-trip": {
+      "id": "phonics-word-trip",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "trip.mp3",
+      "bytes": 6821,
+      "url": "./course-audio/phonics-word-trip.mp3"
+    },
+    "phonics-word-drum": {
+      "id": "phonics-word-drum",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "drum.mp3",
+      "bytes": 7523,
+      "url": "./course-audio/phonics-word-drum.mp3"
+    },
+    "phonics-word-crab": {
+      "id": "phonics-word-crab",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "crab.mp3",
+      "bytes": 8178,
+      "url": "./course-audio/phonics-word-crab.mp3"
+    },
+    "phonics-word-her": {
+      "id": "phonics-word-her",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "her.mp3",
+      "bytes": 6950,
+      "url": "./course-audio/phonics-word-her.mp3"
+    },
+    "phonics-word-fern": {
+      "id": "phonics-word-fern",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "fern.mp3",
+      "bytes": 8879,
+      "url": "./course-audio/phonics-word-fern.mp3"
+    },
+    "phonics-word-hand": {
+      "id": "phonics-word-hand",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "hand.mp3",
+      "bytes": 8306,
+      "url": "./course-audio/phonics-word-hand.mp3"
+    },
+    "opw-l1-d2-track04": {
+      "id": "opw-l1-d2-track04",
+      "kind": "oxford-track",
+      "level": 1,
+      "disc": 2,
+      "track": 4,
+      "filename": "OPW_SB1_Disc2_Track04.mp3",
+      "bytes": 890781,
+      "url": "./course-audio/opw-l1-d2-track04.mp3"
+    },
+    "phonics-word-jump": {
+      "id": "phonics-word-jump",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "jump.mp3",
+      "bytes": 7862,
+      "url": "./course-audio/phonics-word-jump.mp3"
+    },
+    "opw-l1-d2-track08": {
+      "id": "opw-l1-d2-track08",
+      "kind": "oxford-track",
+      "level": 1,
+      "disc": 2,
+      "track": 8,
+      "filename": "OPW_SB1_Disc2_Track08.mp3",
+      "bytes": 1235597,
+      "url": "./course-audio/opw-l1-d2-track08.mp3"
+    },
+    "phonics-word-bird": {
+      "id": "phonics-word-bird",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "bird.mp3",
+      "bytes": 6482,
+      "url": "./course-audio/phonics-word-bird.mp3"
+    },
+    "phonics-word-girl": {
+      "id": "phonics-word-girl",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "girl.mp3",
+      "bytes": 7265,
+      "url": "./course-audio/phonics-word-girl.mp3"
+    },
+    "phonics-word-black": {
+      "id": "phonics-word-black",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "black.mp3",
+      "bytes": 7104,
+      "url": "./course-audio/phonics-word-black.mp3"
+    },
+    "phonics-word-plant": {
+      "id": "phonics-word-plant",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "plant.mp3",
+      "bytes": 8019,
+      "url": "./course-audio/phonics-word-plant.mp3"
+    },
+    "opw-l3-d2-track33": {
+      "id": "opw-l3-d2-track33",
+      "kind": "oxford-track",
+      "level": 3,
+      "disc": 2,
+      "track": 33,
+      "filename": "OPW_SB3_Disc2_Track33.mp3",
+      "bytes": 2031707,
+      "url": "./course-audio/opw-l3-d2-track33.mp3"
+    },
+    "phonics-word-turn": {
+      "id": "phonics-word-turn",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "turn.mp3",
+      "bytes": 8097,
+      "url": "./course-audio/phonics-word-turn.mp3"
+    },
+    "phonics-word-burn": {
+      "id": "phonics-word-burn",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "burn.mp3",
+      "bytes": 7131,
+      "url": "./course-audio/phonics-word-burn.mp3"
+    },
+    "opw-l2-d2-track62": {
+      "id": "opw-l2-d2-track62",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 2,
+      "track": 62,
+      "filename": "OPW_SB2_Disc2_Track62.mp3",
+      "bytes": 1022021,
+      "url": "./course-audio/opw-l2-d2-track62.mp3"
+    },
+    "opw-l3-d1-track18": {
+      "id": "opw-l3-d1-track18",
+      "kind": "oxford-track",
+      "level": 3,
+      "disc": 1,
+      "track": 18,
+      "filename": "OPW_SB3_Disc1_Track18.mp3",
+      "bytes": 1399118,
+      "url": "./course-audio/opw-l3-d1-track18.mp3"
+    },
+    "phonics-word-same": {
+      "id": "phonics-word-same",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "same.mp3",
+      "bytes": 9400,
+      "url": "./course-audio/phonics-word-same.mp3"
+    },
+    "opw-l3-d1-track10": {
+      "id": "opw-l3-d1-track10",
+      "kind": "oxford-track",
+      "level": 3,
+      "disc": 1,
+      "track": 10,
+      "filename": "OPW_SB3_Disc1_Track10.mp3",
+      "bytes": 721076,
+      "url": "./course-audio/opw-l3-d1-track10.mp3"
+    },
+    "phonics-word-moon": {
+      "id": "phonics-word-moon",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "moon.mp3",
+      "bytes": 6634,
+      "url": "./course-audio/phonics-word-moon.mp3"
+    },
+    "phonics-word-food": {
+      "id": "phonics-word-food",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "food.mp3",
+      "bytes": 7210,
+      "url": "./course-audio/phonics-word-food.mp3"
+    },
+    "opw-l3-d1-track27": {
+      "id": "opw-l3-d1-track27",
+      "kind": "oxford-track",
+      "level": 3,
+      "disc": 1,
+      "track": 27,
+      "filename": "OPW_SB3_Disc1_Track27.mp3",
+      "bytes": 1111388,
+      "url": "./course-audio/opw-l3-d1-track27.mp3"
+    },
+    "opw-l1-d2-track63": {
+      "id": "opw-l1-d2-track63",
+      "kind": "oxford-track",
+      "level": 1,
+      "disc": 2,
+      "track": 63,
+      "filename": "OPW_SB1_Disc2_Track63.mp3",
+      "bytes": 2095760,
+      "url": "./course-audio/opw-l1-d2-track63.mp3"
+    },
+    "opw-l3-d1-track26": {
+      "id": "opw-l3-d1-track26",
+      "kind": "oxford-track",
+      "level": 3,
+      "disc": 1,
+      "track": 26,
+      "filename": "OPW_SB3_Disc1_Track26.mp3",
+      "bytes": 668117,
+      "url": "./course-audio/opw-l3-d1-track26.mp3"
+    },
+    "opw-l3-d1-track30": {
+      "id": "opw-l3-d1-track30",
+      "kind": "oxford-track",
+      "level": 3,
+      "disc": 1,
+      "track": 30,
+      "filename": "OPW_SB3_Disc1_Track30.mp3",
+      "bytes": 734837,
+      "url": "./course-audio/opw-l3-d1-track30.mp3"
+    },
+    "phonics-word-book": {
+      "id": "phonics-word-book",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "book.mp3",
+      "bytes": 6037,
+      "url": "./course-audio/phonics-word-book.mp3"
+    },
+    "phonics-word-foot": {
+      "id": "phonics-word-foot",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "foot.mp3",
+      "bytes": 6687,
+      "url": "./course-audio/phonics-word-foot.mp3"
+    },
+    "opw-l3-d1-track50": {
+      "id": "opw-l3-d1-track50",
+      "kind": "oxford-track",
+      "level": 3,
+      "disc": 1,
+      "track": 50,
+      "filename": "OPW_SB3_Disc1_Track50.mp3",
+      "bytes": 1433729,
+      "url": "./course-audio/opw-l3-d1-track50.mp3"
+    },
+    "opw-l3-d1-track49": {
+      "id": "opw-l3-d1-track49",
+      "kind": "oxford-track",
+      "level": 3,
+      "disc": 1,
+      "track": 49,
+      "filename": "OPW_SB3_Disc1_Track49.mp3",
+      "bytes": 768197,
+      "url": "./course-audio/opw-l3-d1-track49.mp3"
+    },
+    "opw-l3-d1-track39": {
+      "id": "opw-l3-d1-track39",
+      "kind": "oxford-track",
+      "level": 3,
+      "disc": 1,
+      "track": 39,
+      "filename": "OPW_SB3_Disc1_Track39.mp3",
+      "bytes": 558863,
+      "url": "./course-audio/opw-l3-d1-track39.mp3"
+    },
+    "opw-l1-d2-track07": {
+      "id": "opw-l1-d2-track07",
+      "kind": "oxford-track",
+      "level": 1,
+      "disc": 2,
+      "track": 7,
+      "filename": "OPW_SB1_Disc2_Track07.mp3",
+      "bytes": 897886,
+      "url": "./course-audio/opw-l1-d2-track07.mp3"
+    },
+    "phonics-word-out": {
+      "id": "phonics-word-out",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "out.mp3",
+      "bytes": 6897,
+      "url": "./course-audio/phonics-word-out.mp3"
+    },
+    "phonics-word-house": {
+      "id": "phonics-word-house",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "house.mp3",
+      "bytes": 9139,
+      "url": "./course-audio/phonics-word-house.mp3"
+    },
+    "opw-l3-d1-track44": {
+      "id": "opw-l3-d1-track44",
+      "kind": "oxford-track",
+      "level": 3,
+      "disc": 1,
+      "track": 44,
+      "filename": "OPW_SB3_Disc1_Track44.mp3",
+      "bytes": 1271516,
+      "url": "./course-audio/opw-l3-d1-track44.mp3"
+    },
+    "phonics-word-tune": {
+      "id": "phonics-word-tune",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "tune.mp3",
+      "bytes": 7497,
+      "url": "./course-audio/phonics-word-tune.mp3"
+    },
+    "opw-l2-d2-track61": {
+      "id": "opw-l2-d2-track61",
+      "kind": "oxford-track",
+      "level": 2,
+      "disc": 2,
+      "track": 61,
+      "filename": "OPW_SB2_Disc2_Track61.mp3",
+      "bytes": 1566204,
+      "url": "./course-audio/opw-l2-d2-track61.mp3"
+    },
+    "phonics-word-cow": {
+      "id": "phonics-word-cow",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "cow.mp3",
+      "bytes": 7967,
+      "url": "./course-audio/phonics-word-cow.mp3"
+    },
+    "phonics-word-down": {
+      "id": "phonics-word-down",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "down.mp3",
+      "bytes": 7316,
+      "url": "./course-audio/phonics-word-down.mp3"
+    },
+    "opw-l3-d1-track35": {
+      "id": "opw-l3-d1-track35",
+      "kind": "oxford-track",
+      "level": 3,
+      "disc": 1,
+      "track": 35,
+      "filename": "OPW_SB3_Disc1_Track35.mp3",
+      "bytes": 2750198,
+      "url": "./course-audio/opw-l3-d1-track35.mp3"
+    },
+    "opw-l3-d1-track21": {
+      "id": "opw-l3-d1-track21",
+      "kind": "oxford-track",
+      "level": 3,
+      "disc": 1,
+      "track": 21,
+      "filename": "OPW_SB3_Disc1_Track21.mp3",
+      "bytes": 798221,
+      "url": "./course-audio/opw-l3-d1-track21.mp3"
+    },
+    "phonics-word-coin": {
+      "id": "phonics-word-coin",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "coin.mp3",
+      "bytes": 7212,
+      "url": "./course-audio/phonics-word-coin.mp3"
+    },
+    "phonics-word-soil": {
+      "id": "phonics-word-soil",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "soil.mp3",
+      "bytes": 9323,
+      "url": "./course-audio/phonics-word-soil.mp3"
+    },
+    "phonics-word-boy": {
+      "id": "phonics-word-boy",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "boy.mp3",
+      "bytes": 7132,
+      "url": "./course-audio/phonics-word-boy.mp3"
+    },
+    "phonics-word-toy": {
+      "id": "phonics-word-toy",
+      "kind": "phonics-word",
+      "sourceType": "tts",
+      "filename": "toy.mp3",
+      "bytes": 7629,
+      "url": "./course-audio/phonics-word-toy.mp3"
+    }
+  }
+}

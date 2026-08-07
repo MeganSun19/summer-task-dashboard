@@ -5,3 +5,6 @@
 !.env.example
 npm-debug.log*
 .firecrawl/
+tmp/
+*.mp3
+*.zip

@@ -1,0 +1,1034 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-07T08:11:10.313Z",
+  "policy": "Generated TTS is automatically included; human recordings require review.",
+  "summary": {
+    "processed": 0,
+    "applied": 0,
+    "pending": 0,
+    "rejected": 0,
+    "verifiedTotal": 85
+  },
+  "words": {
+    "bath": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-bath",
+      "sourceFile": "bath.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.757
+      }
+    },
+    "black": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-black",
+      "sourceFile": "black.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.792
+      }
+    },
+    "chat": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-chat",
+      "sourceFile": "chat.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.799
+      }
+    },
+    "chin": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-chin",
+      "sourceFile": "chin.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.729
+      }
+    },
+    "clap": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-clap",
+      "sourceFile": "clap.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.819
+      }
+    },
+    "crab": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-crab",
+      "sourceFile": "crab.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.808
+      }
+    },
+    "dish": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-dish",
+      "sourceFile": "dish.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.795
+      }
+    },
+    "drum": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-drum",
+      "sourceFile": "drum.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.824
+      }
+    },
+    "flag": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-flag",
+      "sourceFile": "flag.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.853
+      }
+    },
+    "frog": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-frog",
+      "sourceFile": "frog.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.853
+      }
+    },
+    "hand": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-hand",
+      "sourceFile": "hand.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.799
+      }
+    },
+    "in": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-in",
+      "sourceFile": "in.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.688
+      }
+    },
+    "it": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-it",
+      "sourceFile": "it.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.582
+      }
+    },
+    "jump": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-jump",
+      "sourceFile": "jump.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.853
+      }
+    },
+    "man": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-man",
+      "sourceFile": "man.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.787
+      }
+    },
+    "moth": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-moth",
+      "sourceFile": "moth.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.799
+      }
+    },
+    "much": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-much",
+      "sourceFile": "much.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.857
+      }
+    },
+    "path": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-path",
+      "sourceFile": "path.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.803
+      }
+    },
+    "pet": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-pet",
+      "sourceFile": "pet.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.733
+      }
+    },
+    "plan": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-plan",
+      "sourceFile": "plan.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.803
+      }
+    },
+    "plant": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-plant",
+      "sourceFile": "plant.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.803
+      }
+    },
+    "rich": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-rich",
+      "sourceFile": "rich.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.79
+      }
+    },
+    "ring": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-ring",
+      "sourceFile": "ring.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.743
+      }
+    },
+    "same": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-same",
+      "sourceFile": "same.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.866
+      }
+    },
+    "ship": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-ship",
+      "sourceFile": "ship.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.736
+      }
+    },
+    "shop": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-shop",
+      "sourceFile": "shop.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.829
+      }
+    },
+    "sing": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-sing",
+      "sourceFile": "sing.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.785
+      }
+    },
+    "slip": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-slip",
+      "sourceFile": "slip.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.808
+      }
+    },
+    "spin": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-spin",
+      "sourceFile": "spin.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.854
+      }
+    },
+    "spot": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-spot",
+      "sourceFile": "spot.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.924
+      }
+    },
+    "step": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-step",
+      "sourceFile": "step.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.866
+      }
+    },
+    "stop": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-stop",
+      "sourceFile": "stop.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.889
+      }
+    },
+    "thin": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-thin",
+      "sourceFile": "thin.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.725
+      }
+    },
+    "trip": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-trip",
+      "sourceFile": "trip.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.761
+      }
+    },
+    "tune": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-tune",
+      "sourceFile": "tune.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.785
+      }
+    },
+    "when": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-when",
+      "sourceFile": "when.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.773
+      }
+    },
+    "which": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-which",
+      "sourceFile": "which.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.796
+      }
+    },
+    "whip": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-whip",
+      "sourceFile": "whip.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.692
+      }
+    },
+    "whiz": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "human-review",
+      "reviewedAt": "2026-08-07T02:17:11.220Z",
+      "assetId": "phonics-word-whiz",
+      "sourceFile": "whiz.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.762
+      }
+    },
+    "back": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-back",
+      "sourceFile": "back.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.745
+      }
+    },
+    "bird": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-bird",
+      "sourceFile": "bird.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.676
+      }
+    },
+    "boat": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-boat",
+      "sourceFile": "boat.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.722
+      }
+    },
+    "book": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-book",
+      "sourceFile": "book.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.676
+      }
+    },
+    "boy": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-boy",
+      "sourceFile": "boy.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.757
+      }
+    },
+    "burn": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-burn",
+      "sourceFile": "burn.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.722
+      }
+    },
+    "car": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-car",
+      "sourceFile": "car.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.738
+      }
+    },
+    "coat": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-coat",
+      "sourceFile": "coat.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.796
+      }
+    },
+    "coin": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-coin",
+      "sourceFile": "coin.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.808
+      }
+    },
+    "corn": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-corn",
+      "sourceFile": "corn.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.854
+      }
+    },
+    "cow": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-cow",
+      "sourceFile": "cow.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.808
+      }
+    },
+    "day": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-day",
+      "sourceFile": "day.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.722
+      }
+    },
+    "down": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-down",
+      "sourceFile": "down.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.749
+      }
+    },
+    "duck": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-duck",
+      "sourceFile": "duck.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.737
+      }
+    },
+    "fern": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-fern",
+      "sourceFile": "fern.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.819
+      }
+    },
+    "fetch": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-fetch",
+      "sourceFile": "fetch.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.889
+      }
+    },
+    "food": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-food",
+      "sourceFile": "food.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.807
+      }
+    },
+    "foot": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-foot",
+      "sourceFile": "foot.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.761
+      }
+    },
+    "fork": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-fork",
+      "sourceFile": "fork.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.877
+      }
+    },
+    "girl": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-girl",
+      "sourceFile": "girl.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.68
+      }
+    },
+    "graph": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-graph",
+      "sourceFile": "graph.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.847
+      }
+    },
+    "green": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-green",
+      "sourceFile": "green.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.789
+      }
+    },
+    "grow": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-grow",
+      "sourceFile": "grow.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.835
+      }
+    },
+    "her": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-her",
+      "sourceFile": "her.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.694
+      }
+    },
+    "house": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-house",
+      "sourceFile": "house.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.834
+      }
+    },
+    "leaf": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-leaf",
+      "sourceFile": "leaf.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.798
+      }
+    },
+    "match": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-match",
+      "sourceFile": "match.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.857
+      }
+    },
+    "moon": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-moon",
+      "sourceFile": "moon.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.752
+      }
+    },
+    "neck": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-neck",
+      "sourceFile": "neck.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.755
+      }
+    },
+    "out": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-out",
+      "sourceFile": "out.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.707
+      }
+    },
+    "phone": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-phone",
+      "sourceFile": "phone.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.853
+      }
+    },
+    "play": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-play",
+      "sourceFile": "play.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.814
+      }
+    },
+    "quill": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-quill",
+      "sourceFile": "quill.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.75
+      }
+    },
+    "quit": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-quit",
+      "sourceFile": "quit.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.738
+      }
+    },
+    "rain": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-rain",
+      "sourceFile": "rain.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.755
+      }
+    },
+    "rock": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-rock",
+      "sourceFile": "rock.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.778
+      }
+    },
+    "sack": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-sack",
+      "sourceFile": "sack.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.854
+      }
+    },
+    "snow": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-snow",
+      "sourceFile": "snow.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.912
+      }
+    },
+    "sock": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-sock",
+      "sourceFile": "sock.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.854
+      }
+    },
+    "soil": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-soil",
+      "sourceFile": "soil.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.889
+      }
+    },
+    "star": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-star",
+      "sourceFile": "star.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.843
+      }
+    },
+    "tail": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-tail",
+      "sourceFile": "tail.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.796
+      }
+    },
+    "team": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-team",
+      "sourceFile": "team.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.819
+      }
+    },
+    "toy": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-toy",
+      "sourceFile": "toy.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.819
+      }
+    },
+    "tree": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-tree",
+      "sourceFile": "tree.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.726
+      }
+    },
+    "turn": {
+      "status": "verified",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "reviewedAt": "2026-08-07T03:07:42.768Z",
+      "assetId": "phonics-word-turn",
+      "sourceFile": "turn.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.796
+      }
+    }
+  }
+}

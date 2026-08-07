@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5b942" />
     <title>双星学习岛</title>
-    <link rel="stylesheet" href="./styles.css?v=20260731-7" />
+    <link rel="stylesheet" href="./styles.css?v=20260807-course-2" />
   </head>
   <body>
+    <nav class="side-nav" aria-label="学习岛导航">
+      <div class="side-nav-logo" aria-hidden="true">⭐</div>
+      <button class="side-nav-item active" type="button" data-nav-target="today" aria-current="page">
+        <span>🏠</span><strong>今日</strong>
+      </button>
+      <button class="side-nav-item" type="button" data-nav-target="english">
+        <span>🔤</span><strong>英语岛</strong>
+      </button>
+      <button class="side-nav-item" type="button" data-nav-target="garden">
+        <span>🌻</span><strong>花园</strong>
+      </button>
+      <button class="side-nav-item" type="button" data-nav-target="parent">
+        <span>⚙️</span><strong>家长</strong>
+      </button>
+    </nav>
     <main class="app-shell">
       <header class="topbar">
         <button id="homeButton" class="brand" type="button" aria-label="返回今日">
@@ -48,8 +63,8 @@
         </div>
       </section>
 
-      <section id="kidView" class="view-panel active">
-        <section class="hero-card">
+      <section id="kidView" class="view-panel active" data-section="today">
+        <section id="todaySection" class="hero-card">
           <div id="avatar" class="avatar" aria-hidden="true"></div>
           <div class="hero-copy">
             <p id="dateLabel" class="eyebrow"></p>
@@ -64,11 +79,30 @@
           </div>
         </section>
 
-        <section class="section-heading">
+        <section id="taskSection" class="section-heading">
           <div><p class="eyebrow">按顺序做就好</p><h2>今日任务</h2></div>
           <span id="timeEstimate" class="time-pill"></span>
         </section>
         <div id="taskList" class="task-list"></div>
+
+        <section id="week1CourseCard" class="week1-course-card" aria-labelledby="week1CourseDay" hidden>
+          <div class="section-heading week1-course-heading">
+            <div><p class="eyebrow">孩子端课程</p><h2 id="week1CourseDay">四周英语岛</h2></div>
+            <span id="week1CourseStatus" class="audio-status">0/—</span>
+          </div>
+          <p id="week1CourseFocus" class="week1-course-focus"></p>
+          <div id="week1CourseWords" class="week1-course-words"></div>
+          <button id="week1CourseStart" class="primary-action week1-course-start" type="button">开始今天的英语岛</button>
+          <audio id="week1CoursePlayer" controls preload="metadata" hidden></audio>
+          <div class="week1-course-activity">
+            <div class="sound-lab-progress" aria-label="课程进度"><div id="week1CourseProgressBar"></div></div>
+            <p id="week1CoursePrompt" class="week1-course-prompt">等待开始</p>
+            <div id="week1CourseChoices" class="week1-course-choices"></div>
+            <button id="week1CourseReadDone" class="primary-action week1-read-done" type="button" hidden>我读好了</button>
+            <p id="week1CourseFeedback" class="week1-course-feedback" aria-live="polite"></p>
+            <div id="week1CourseLog" class="sound-lab-answer-log" aria-label="已完成单词"></div>
+          </div>
+        </section>
 
         <section class="world-section" aria-labelledby="worldMapTitle">
           <div class="section-heading world-heading">
@@ -90,7 +124,7 @@
           </div>
         </section>
 
-        <section class="garden-game" aria-labelledby="gardenGameTitle">
+        <section id="gardenSection" class="garden-game" aria-labelledby="gardenGameTitle">
           <div class="section-heading game-heading">
             <div><p id="gardenGameEyebrow" class="eyebrow">兄弟合力，共守 12 波</p><h2 id="gardenGameTitle">双人联合花园防线</h2></div>
             <span id="battleStatus" class="battle-status">0/12 波</span>
@@ -117,7 +151,7 @@
           </div>
         </section>
 
-        <section class="rewards-section">
+        <section id="rewardsSection" class="rewards-section">
           <div class="section-heading reward-heading">
             <div><p class="eyebrow">阳光只累积，永远不扣除</p><h2>阳光植物商店</h2></div>
             <span class="sun-balance"><b id="rewardBalance">0</b> ☀ 累计</span>
@@ -144,36 +178,67 @@
 
         <div id="familyOverview" class="family-overview"></div>
 
-        <div class="plan-tools">
-          <section class="panel plan-tool-panel">
+        <nav class="parent-section-nav" aria-label="家长中心功能">
+          <button type="button" data-parent-section="course"><span>📚</span><strong>长期课程</strong><small>每天默认安排</small></button>
+          <button type="button" data-parent-section="temporary"><span>➕</span><strong>临时任务</strong><small>一次或短周期</small></button>
+          <button class="active" type="button" data-parent-section="today" aria-current="page"><span>✏️</span><strong>今日调整</strong><small>处理当天变化</small></button>
+          <button type="button" data-parent-section="published"><span>🗓️</span><strong>已发布计划</strong><small>查看与取消</small></button>
+        </nav>
+
+        <div class="parent-pane" data-parent-pane="course" hidden>
+          <section class="panel plan-tool-panel parent-workspace-panel">
             <div class="panel-title">
-              <div><p class="eyebrow">长期默认</p><h2>总体任务</h2></div>
+              <div><p class="eyebrow">草稿 → 预览 → 发布</p><h2>长期课程</h2></div>
               <select id="overallKid" aria-label="总体任务适用孩子"></select>
             </div>
-            <p class="plan-help">控制这个孩子以后每天默认出现哪些项目。RAZ 书目、古诗和练习内容仍会按日期自动变化。</p>
-            <form id="overallTaskEditor" class="overall-task-editor"></form>
-            <div class="plan-actions">
-              <button id="saveOverallPlan" class="primary-action" type="button">保存总体任务</button>
-              <button id="resetOverallPlan" class="quiet-action" type="button">恢复原始总体任务</button>
-            </div>
-          </section>
-
-          <section class="panel plan-tool-panel">
-            <div class="panel-title"><div><p class="eyebrow">特殊时期</p><h2>日期区间计划</h2></div></div>
-            <p class="plan-help">一次安排一段日期；区间结束后自动回到总体任务，不影响以前的完成记录。</p>
+            <p class="plan-help">先编辑草稿并预览，再选择生效日期发布。新版本只重建尚未完成的未来日期。</p>
+            <div id="courseReleaseStatus" class="course-release-status"></div>
             <div class="range-grid">
-              <label>适用孩子<select id="rangeKid"><option value="brother">哥哥</option><option value="younger">弟弟</option><option value="both">哥哥和弟弟</option></select></label>
-              <label>计划模板<select id="rangePreset"><option value="hand-recovery">手部休养 · 全部改为口头任务</option><option value="overall">总体任务 · 恢复普通安排</option></select></label>
-              <label>开始日期<input id="rangeStart" type="date"></label>
-              <label>结束日期<input id="rangeEnd" type="date"></label>
+              <label>课程名称<input id="courseDraftTitle" maxlength="50" value="长期课程"></label>
+              <label>生效日期<input id="courseEffectiveDate" type="date"></label>
+              <label>阶段预计结束（可选）<input id="courseStageEndDate" type="date"></label>
             </div>
-            <div id="rangePreview" class="range-preview"></div>
-            <button id="applyRangePlan" class="primary-action" type="button">应用到日期区间</button>
-            <div id="planPeriodList" class="plan-period-list"></div>
+            <label>本阶段目标<textarea id="courseDraftGoal" rows="2" maxlength="200" placeholder="例如：完成基础自然拼读，能够独立拼读 CVC 单词并在句中拼写核心心词"></textarea></label>
+            <form id="overallTaskEditor" class="overall-task-editor"></form>
+            <div class="course-release-actions">
+              <button id="saveCourseDraft" class="quiet-action" type="button">保存草稿</button>
+              <button id="previewCoursePlan" class="quiet-action" type="button">预览版本</button>
+              <button id="saveOverallPlan" class="primary-action" type="button">发布新版本</button>
+              <button id="resetOverallPlan" class="quiet-action" type="button">放弃草稿修改</button>
+            </div>
+            <div id="coursePlanPreview" class="course-plan-preview" hidden></div>
+            <div><p class="eyebrow">版本记录</p><div id="courseReleaseList" class="plan-period-list"></div></div>
           </section>
         </div>
 
-        <div class="parent-layout">
+        <div class="parent-pane" data-parent-pane="temporary" hidden>
+          <section class="panel plan-tool-panel family-task-panel parent-workspace-panel">
+            <div class="panel-title"><div><p class="eyebrow">灵活发布</p><h2>临时任务</h2></div></div>
+            <p class="plan-help">一次性或短周期安排，不改写长期课程；发布前先预览实际日期。</p>
+            <form id="familyTaskForm" class="family-task-form">
+              <div class="range-grid">
+                <label>任务名称<input id="familyTaskTitle" required maxlength="40" placeholder="例如：练习学校舞蹈"></label>
+                <label>适用孩子<select id="familyTaskKid"><option value="brother">哥哥</option><option value="younger">弟弟</option><option value="both">哥哥和弟弟</option></select></label>
+              </div>
+              <label>今天做什么<textarea id="familyTaskDetail" required rows="2" maxlength="160" placeholder="例如：跟着视频练习前半段 20 分钟"></textarea></label>
+              <label>孩子看到的步骤<textarea id="familyTaskInstruction" required rows="2" maxlength="200" placeholder="例如：先热身；播放视频；练习 3 遍；最后完整跳 1 遍"></textarea></label>
+              <div class="family-task-meta-grid">
+                <label>排期方式<select id="familyTaskRecurrence"><option value="once">一次性</option><option value="daily">连续每天</option><option value="alternate">隔一天</option><option value="custom">自选日期</option></select></label>
+                <label>预计分钟<input id="familyTaskMinutes" type="number" min="1" max="180" value="10"></label>
+                <label data-family-date="start">开始日期<input id="familyTaskStart" type="date"></label>
+                <label data-family-date="end">结束日期<input id="familyTaskEnd" type="date"></label>
+              </div>
+              <label id="familyTaskCustomRow" hidden>自选日期<textarea id="familyTaskCustomDates" rows="2" placeholder="每行或逗号分隔，例如：2026-08-10, 2026-08-13"></textarea></label>
+              <div id="familyTaskPreview" class="range-preview"></div>
+              <div class="plan-actions">
+                <button id="publishFamilyTask" class="primary-action" type="submit">发布临时任务</button>
+                <button id="cancelFamilyTaskEdit" class="quiet-action" type="button" hidden>放弃修改</button>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <div class="parent-pane parent-layout" data-parent-pane="today">
           <section class="panel">
             <div class="panel-title"><div><p class="eyebrow">单日微调</p><h2 id="editorTitle">当天任务</h2></div><select id="editorKid"></select></div>
             <form id="taskEditor" class="task-editor"></form>
@@ -187,12 +252,46 @@
           </aside>
         </div>
 
+        <div class="parent-pane published-layout" data-parent-pane="published" hidden>
+          <section class="panel plan-tool-panel">
+            <div class="panel-title"><div><p class="eyebrow">已经生效</p><h2>临时任务安排</h2></div></div>
+            <p class="plan-help">这里集中显示仍在生效的临时任务。可以编辑尚未完成的内容，或取消后续安排。</p>
+            <div id="familyTaskScheduleList" class="plan-period-list"></div>
+          </section>
+
+          <section class="panel plan-tool-panel">
+            <div class="panel-title"><div><p class="eyebrow">特殊时期</p><h2>日期区间计划</h2></div></div>
+            <p class="plan-help">一次安排一段日期；区间结束后自动回到总体任务，不影响以前的完成记录。</p>
+            <div class="range-grid">
+              <label>适用孩子<select id="rangeKid"><option value="brother">哥哥</option><option value="younger">弟弟</option><option value="both">哥哥和弟弟</option></select></label>
+              <label>计划模板<select id="rangePreset"></select></label>
+              <label>开始日期<input id="rangeStart" type="date"></label>
+              <label>结束日期<input id="rangeEnd" type="date"></label>
+            </div>
+            <div id="rangePreview" class="range-preview"></div>
+            <button id="applyRangePlan" class="primary-action" type="button">应用到日期区间</button>
+            <div id="planPeriodList" class="plan-period-list"></div>
+          </section>
+        </div>
+
       </section>
     </main>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script src="./supabase-config.js?v=20260731-1"></script>
+    <script src="./audio-store.js?v=20260805-static-1"></script>
+    <script src="./supabase-config.js?v=20260803-english-1"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="./cloud-store.js?v=20260731-1"></script>
-    <script src="./app.js?v=20260731-7"></script>
+    <script src="./cloud-store.js?v=20260807-cloud-4"></script>
+    <script src="./state-migration-core.js?v=20260807-1"></script>
+    <script src="./curriculum/summer-plan-content.js?v=20260807-1"></script>
+    <script src="./curriculum/learning-module-catalog.js?v=20260807-2"></script>
+    <script src="./learning-modules.js?v=20260807-4"></script>
+    <script src="./family-task-schedules.js?v=20260807-1"></script>
+    <script src="./course-releases.js?v=20260807-3"></script>
+    <script src="./learning-plan-presets.js?v=20260807-1"></script>
+    <script src="./legacy-learning-plan.js?v=20260807-1"></script>
+    <script src="./summer-plan-progress.js?v=20260807-2"></script>
+    <script src="./app.js?v=20260807-summer-plan-3"></script>
+    <script src="./week1-course-core.js?v=20260807-1"></script>
+    <script src="./week1-course-ui.js?v=20260807-2"></script>
   </body>
 </html>

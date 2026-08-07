@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-07T08:11:04.451Z",
+  "policy": {
+    "playback": "Generated TTS is automatically approved for child playback; human recordings still require explicit review.",
+    "sourcePriority": "Existing verified Oxford clip, then reviewed human recording, then automatically approved TTS fallback.",
+    "reviewCriteria": "Human recordings require review; TTS is accepted automatically under the course publishing policy."
+  },
+  "generator": {
+    "engine": "macOS say",
+    "voice": "Samantha",
+    "locale": "en_US",
+    "rate": 145
+  },
+  "summary": {
+    "total": 0,
+    "tts": 0,
+    "humanRecordings": 0,
+    "autoApprovedTts": 0,
+    "pendingHumanRecordings": 0
+  },
+  "items": []
+}

@@ -1,0 +1,4506 @@
+{
+  "schemaVersion": 2,
+  "course": "Oxford Phonics World",
+  "inventoryConfirmedOn": "2026-08-03",
+  "assetPolicy": "family-local-reference-only-do-not-publish",
+  "mappingPolicy": {
+    "sourceAudioPreserved": true,
+    "physicalSplitsCreated": false,
+    "defaultUsableSegment": "complete activity track",
+    "candidateTrimMeaning": "start of final silence detected at -45dB for at least 0.25 seconds; requires listening review before destructive trimming",
+    "wordLevelPolicy": "add timestamps only for exercises that need prompt replay; do not batch-split every MP3"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "subtitle": "The Alphabet",
+      "pdfSource": "../outputs/牛津树自然拼读1教材.pdf",
+      "audioSourceDirectory": "/Users/megsun/Documents/P-files/kids/oxford-phonics-world-level1-disc1",
+      "expectedTrackCount": 60,
+      "sections": [
+        {
+          "id": "unit-1",
+          "kind": "unit",
+          "number": 1,
+          "title": "Aa Bb Cc",
+          "focusPatterns": [
+            "Aa",
+            "Bb",
+            "Cc"
+          ],
+          "pdfPages": [
+            5,
+            12
+          ],
+          "bookPages": [
+            4,
+            11
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            3,
+            14
+          ]
+        },
+        {
+          "id": "unit-2",
+          "kind": "unit",
+          "number": 2,
+          "title": "Dd Ee Ff",
+          "focusPatterns": [
+            "Dd",
+            "Ee",
+            "Ff"
+          ],
+          "pdfPages": [
+            13,
+            20
+          ],
+          "bookPages": [
+            12,
+            19
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            15,
+            28
+          ]
+        },
+        {
+          "id": "review-1",
+          "kind": "review",
+          "number": 1,
+          "title": "Review 1",
+          "focusPatterns": [],
+          "pdfPages": [
+            21,
+            24
+          ],
+          "bookPages": [
+            20,
+            23
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            29,
+            31
+          ]
+        },
+        {
+          "id": "unit-3",
+          "kind": "unit",
+          "number": 3,
+          "title": "Gg Hh Ii",
+          "focusPatterns": [
+            "Gg",
+            "Hh",
+            "Ii"
+          ],
+          "pdfPages": [
+            25,
+            32
+          ],
+          "bookPages": [
+            24,
+            31
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            32,
+            44
+          ]
+        },
+        {
+          "id": "unit-4",
+          "kind": "unit",
+          "number": 4,
+          "title": "Jj Kk Ll",
+          "focusPatterns": [
+            "Jj",
+            "Kk",
+            "Ll"
+          ],
+          "pdfPages": [
+            33,
+            40
+          ],
+          "bookPages": [
+            32,
+            39
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            45,
+            57
+          ]
+        },
+        {
+          "id": "review-2",
+          "kind": "review",
+          "number": 2,
+          "title": "Review 2",
+          "focusPatterns": [],
+          "pdfPages": [
+            41,
+            44
+          ],
+          "bookPages": [
+            40,
+            43
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            58,
+            60
+          ]
+        },
+        {
+          "id": "unit-5",
+          "kind": "unit",
+          "number": 5,
+          "title": "Mm Nn Oo",
+          "focusPatterns": [
+            "Mm",
+            "Nn",
+            "Oo"
+          ],
+          "pdfPages": [
+            45,
+            52
+          ],
+          "bookPages": [
+            44,
+            51
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "unit-6",
+          "kind": "unit",
+          "number": 6,
+          "title": "Pp Qq Rr",
+          "focusPatterns": [
+            "Pp",
+            "Qq",
+            "Rr"
+          ],
+          "pdfPages": [
+            53,
+            60
+          ],
+          "bookPages": [
+            52,
+            59
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "review-3",
+          "kind": "review",
+          "number": 3,
+          "title": "Review 3",
+          "focusPatterns": [],
+          "pdfPages": [
+            61,
+            64
+          ],
+          "bookPages": [
+            60,
+            63
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "unit-7",
+          "kind": "unit",
+          "number": 7,
+          "title": "Ss Tt Uu Vv",
+          "focusPatterns": [
+            "Ss",
+            "Tt",
+            "Uu",
+            "Vv"
+          ],
+          "pdfPages": [
+            65,
+            74
+          ],
+          "bookPages": [
+            64,
+            73
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "unit-8",
+          "kind": "unit",
+          "number": 8,
+          "title": "Ww Xx Yy Zz",
+          "focusPatterns": [
+            "Ww",
+            "Xx",
+            "Yy",
+            "Zz"
+          ],
+          "pdfPages": [
+            75,
+            84
+          ],
+          "bookPages": [
+            74,
+            83
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "review-4",
+          "kind": "review",
+          "number": 4,
+          "title": "Review 4",
+          "focusPatterns": [],
+          "pdfPages": [
+            85,
+            88
+          ],
+          "bookPages": [
+            84,
+            87
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        }
+      ],
+      "disc": 1,
+      "pdfPageCount": 107,
+      "disc1Coverage": "units-1-through-4-and-reviews-1-through-2",
+      "tracks": [
+        {
+          "track": 1,
+          "sourceFile": "OPW_SB1_Disc1_Track01.mp3",
+          "sectionId": "disc-frontmatter",
+          "pdfPage": null,
+          "bookPage": null,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 18.416,
+            "candidateTrimEndSeconds": 14.269,
+            "usability": "available-unassigned-source-track",
+            "listeningReview": "required-before-curriculum-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 2,
+          "sourceFile": "OPW_SB1_Disc1_Track02.mp3",
+          "sectionId": "disc-frontmatter",
+          "pdfPage": 89,
+          "bookPage": 88,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 67.944,
+            "candidateTrimEndSeconds": 64.366,
+            "usability": "usable-supplemental-song",
+            "listeningReview": "required-before-curriculum-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 3,
+          "sourceFile": "OPW_SB1_Disc1_Track03.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 5,
+          "bookPage": 4,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 51.67,
+            "candidateTrimEndSeconds": 48.001,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 4,
+          "sourceFile": "OPW_SB1_Disc1_Track04.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 5,
+          "bookPage": 4,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 49.398,
+            "candidateTrimEndSeconds": 45.383,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 5,
+          "sourceFile": "OPW_SB1_Disc1_Track05.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 6,
+          "bookPage": 5,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 50.024,
+            "candidateTrimEndSeconds": 45.443,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "verified-prompt-sequence"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          },
+          "knownPromptSequence": [
+            "ant",
+            "bear",
+            "apple",
+            "alligator",
+            "cup",
+            "ax"
+          ]
+        },
+        {
+          "track": 6,
+          "sourceFile": "OPW_SB1_Disc1_Track06.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 6,
+          "bookPage": 5,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 64.052,
+            "candidateTrimEndSeconds": 61.957,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 7,
+          "sourceFile": "OPW_SB1_Disc1_Track07.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 7,
+          "bookPage": 6,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 46.184,
+            "candidateTrimEndSeconds": 42.386,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 8,
+          "sourceFile": "OPW_SB1_Disc1_Track08.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 7,
+          "bookPage": 6,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 46.524,
+            "candidateTrimEndSeconds": 42.552,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 9,
+          "sourceFile": "OPW_SB1_Disc1_Track09.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 8,
+          "bookPage": 7,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 66.168,
+            "candidateTrimEndSeconds": 62.395,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 10,
+          "sourceFile": "OPW_SB1_Disc1_Track10.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 9,
+          "bookPage": 8,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 45.793,
+            "candidateTrimEndSeconds": 41.115,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 11,
+          "sourceFile": "OPW_SB1_Disc1_Track11.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 9,
+          "bookPage": 8,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 48.3,
+            "candidateTrimEndSeconds": 43.661,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 12,
+          "sourceFile": "OPW_SB1_Disc1_Track12.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 10,
+          "bookPage": 9,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 67.291,
+            "candidateTrimEndSeconds": 62.961,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 13,
+          "sourceFile": "OPW_SB1_Disc1_Track13.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 11,
+          "bookPage": 10,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 30.145,
+            "candidateTrimEndSeconds": 26.107,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 14,
+          "sourceFile": "OPW_SB1_Disc1_Track14.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 12,
+          "bookPage": 11,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 46.158,
+            "candidateTrimEndSeconds": 42.229,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 15,
+          "sourceFile": "OPW_SB1_Disc1_Track15.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 13,
+          "bookPage": 12,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 50.103,
+            "candidateTrimEndSeconds": 46.485,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 16,
+          "sourceFile": "OPW_SB1_Disc1_Track16.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 13,
+          "bookPage": 12,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 47.569,
+            "candidateTrimEndSeconds": 42.704,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 17,
+          "sourceFile": "OPW_SB1_Disc1_Track17.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 14,
+          "bookPage": 13,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 92.238,
+            "candidateTrimEndSeconds": 88.777,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 18,
+          "sourceFile": "OPW_SB1_Disc1_Track18.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 14,
+          "bookPage": 13,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 81.424,
+            "candidateTrimEndSeconds": 77.827,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 19,
+          "sourceFile": "OPW_SB1_Disc1_Track19.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 15,
+          "bookPage": 14,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 47.882,
+            "candidateTrimEndSeconds": 43.415,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 20,
+          "sourceFile": "OPW_SB1_Disc1_Track20.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 15,
+          "bookPage": 14,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 49.946,
+            "candidateTrimEndSeconds": 44.881,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 21,
+          "sourceFile": "OPW_SB1_Disc1_Track21.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 16,
+          "bookPage": 15,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 58.331,
+            "candidateTrimEndSeconds": 54.817,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 22,
+          "sourceFile": "OPW_SB1_Disc1_Track22.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 16,
+          "bookPage": 15,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 86.152,
+            "candidateTrimEndSeconds": 82.126,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 23,
+          "sourceFile": "OPW_SB1_Disc1_Track23.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 17,
+          "bookPage": 16,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 44.748,
+            "candidateTrimEndSeconds": 40.642,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 24,
+          "sourceFile": "OPW_SB1_Disc1_Track24.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 17,
+          "bookPage": 16,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 48.64,
+            "candidateTrimEndSeconds": 44.526,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 25,
+          "sourceFile": "OPW_SB1_Disc1_Track25.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 18,
+          "bookPage": 17,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 76.983,
+            "candidateTrimEndSeconds": 72.87,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 26,
+          "sourceFile": "OPW_SB1_Disc1_Track26.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 19,
+          "bookPage": 18,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 29.753,
+            "candidateTrimEndSeconds": 25.829,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 27,
+          "sourceFile": "OPW_SB1_Disc1_Track27.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 19,
+          "bookPage": 18,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 32.235,
+            "candidateTrimEndSeconds": 28.405,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 28,
+          "sourceFile": "OPW_SB1_Disc1_Track28.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 20,
+          "bookPage": 19,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 46.55,
+            "candidateTrimEndSeconds": 42.594,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 29,
+          "sourceFile": "OPW_SB1_Disc1_Track29.mp3",
+          "sectionId": "review-1",
+          "pdfPage": 21,
+          "bookPage": 20,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 117.029,
+            "candidateTrimEndSeconds": 113.467,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 30,
+          "sourceFile": "OPW_SB1_Disc1_Track30.mp3",
+          "sectionId": "review-1",
+          "pdfPage": 22,
+          "bookPage": 21,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 46.681,
+            "candidateTrimEndSeconds": 42.448,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 31,
+          "sourceFile": "OPW_SB1_Disc1_Track31.mp3",
+          "sectionId": "review-1",
+          "pdfPage": 23,
+          "bookPage": 22,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 62.224,
+            "candidateTrimEndSeconds": 57.408,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 32,
+          "sourceFile": "OPW_SB1_Disc1_Track32.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 25,
+          "bookPage": 24,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 49.189,
+            "candidateTrimEndSeconds": 44.543,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 33,
+          "sourceFile": "OPW_SB1_Disc1_Track33.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 25,
+          "bookPage": 24,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 50.756,
+            "candidateTrimEndSeconds": 45.406,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 34,
+          "sourceFile": "OPW_SB1_Disc1_Track34.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 26,
+          "bookPage": 25,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 94.903,
+            "candidateTrimEndSeconds": 89.502,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 35,
+          "sourceFile": "OPW_SB1_Disc1_Track35.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 26,
+          "bookPage": 25,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 86.596,
+            "candidateTrimEndSeconds": 83.199,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 36,
+          "sourceFile": "OPW_SB1_Disc1_Track36.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 27,
+          "bookPage": 26,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 43.703,
+            "candidateTrimEndSeconds": 39.708,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 37,
+          "sourceFile": "OPW_SB1_Disc1_Track37.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 27,
+          "bookPage": 26,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 47.726,
+            "candidateTrimEndSeconds": 43.825,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 38,
+          "sourceFile": "OPW_SB1_Disc1_Track38.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 28,
+          "bookPage": 27,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 49.371,
+            "candidateTrimEndSeconds": 46.204,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 39,
+          "sourceFile": "OPW_SB1_Disc1_Track39.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 28,
+          "bookPage": 27,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 81.319,
+            "candidateTrimEndSeconds": 77.94,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 40,
+          "sourceFile": "OPW_SB1_Disc1_Track40.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 29,
+          "bookPage": 28,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 48.797,
+            "candidateTrimEndSeconds": 44.266,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 41,
+          "sourceFile": "OPW_SB1_Disc1_Track41.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 29,
+          "bookPage": 28,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 51.122,
+            "candidateTrimEndSeconds": 45.511,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 42,
+          "sourceFile": "OPW_SB1_Disc1_Track42.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 30,
+          "bookPage": 29,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 76.147,
+            "candidateTrimEndSeconds": 72.852,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 43,
+          "sourceFile": "OPW_SB1_Disc1_Track43.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 31,
+          "bookPage": 30,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 31.869,
+            "candidateTrimEndSeconds": 27.325,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 44,
+          "sourceFile": "OPW_SB1_Disc1_Track44.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 32,
+          "bookPage": 31,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 48.327,
+            "candidateTrimEndSeconds": 44.231,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 45,
+          "sourceFile": "OPW_SB1_Disc1_Track45.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 33,
+          "bookPage": 32,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 49.972,
+            "candidateTrimEndSeconds": 46.003,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 46,
+          "sourceFile": "OPW_SB1_Disc1_Track46.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 33,
+          "bookPage": 32,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 47.673,
+            "candidateTrimEndSeconds": 43.183,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 47,
+          "sourceFile": "OPW_SB1_Disc1_Track47.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 34,
+          "bookPage": 33,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 86.23,
+            "candidateTrimEndSeconds": 82.807,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 48,
+          "sourceFile": "OPW_SB1_Disc1_Track48.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 34,
+          "bookPage": 33,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 48.483,
+            "candidateTrimEndSeconds": 42.554,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 49,
+          "sourceFile": "OPW_SB1_Disc1_Track49.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 35,
+          "bookPage": 34,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 50.678,
+            "candidateTrimEndSeconds": 46.087,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 50,
+          "sourceFile": "OPW_SB1_Disc1_Track50.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 35,
+          "bookPage": 34,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 62.041,
+            "candidateTrimEndSeconds": 57.193,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 51,
+          "sourceFile": "OPW_SB1_Disc1_Track51.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 36,
+          "bookPage": 35,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 76.904,
+            "candidateTrimEndSeconds": 72.908,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 52,
+          "sourceFile": "OPW_SB1_Disc1_Track52.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 37,
+          "bookPage": 36,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 46.681,
+            "candidateTrimEndSeconds": 41.387,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 53,
+          "sourceFile": "OPW_SB1_Disc1_Track53.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 37,
+          "bookPage": 36,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 50.678,
+            "candidateTrimEndSeconds": 45.786,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 54,
+          "sourceFile": "OPW_SB1_Disc1_Track54.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 38,
+          "bookPage": 37,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 82.521,
+            "candidateTrimEndSeconds": 78.652,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 55,
+          "sourceFile": "OPW_SB1_Disc1_Track55.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 39,
+          "bookPage": 38,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 31.53,
+            "candidateTrimEndSeconds": 27.801,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 56,
+          "sourceFile": "OPW_SB1_Disc1_Track56.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 39,
+          "bookPage": 38,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 37.46,
+            "candidateTrimEndSeconds": 32.342,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 57,
+          "sourceFile": "OPW_SB1_Disc1_Track57.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 40,
+          "bookPage": 39,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 48.196,
+            "candidateTrimEndSeconds": 44.372,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 58,
+          "sourceFile": "OPW_SB1_Disc1_Track58.mp3",
+          "sectionId": "review-2",
+          "pdfPage": 41,
+          "bookPage": 40,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 153.469,
+            "candidateTrimEndSeconds": 147.537,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 59,
+          "sourceFile": "OPW_SB1_Disc1_Track59.mp3",
+          "sectionId": "review-2",
+          "pdfPage": 42,
+          "bookPage": 41,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 48.144,
+            "candidateTrimEndSeconds": 44.16,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 60,
+          "sourceFile": "OPW_SB1_Disc1_Track60.mp3",
+          "sectionId": "review-2",
+          "pdfPage": 43,
+          "bookPage": 42,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 51.357,
+            "candidateTrimEndSeconds": 45.28,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "subtitle": "Short Vowels",
+      "pdfSource": "../outputs/Oxford_Phonics_World_2_SB.pdf",
+      "audioSourceDirectory": "../outputs/oxford-phonics-world-level2-disc1",
+      "expectedTrackCount": 65,
+      "sections": [
+        {
+          "id": "unit-1",
+          "kind": "unit",
+          "number": 1,
+          "title": "a am an",
+          "focusPatterns": [
+            "a",
+            "am",
+            "an"
+          ],
+          "pdfPages": [
+            5,
+            12
+          ],
+          "bookPages": [
+            4,
+            11
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            3,
+            16
+          ]
+        },
+        {
+          "id": "unit-2",
+          "kind": "unit",
+          "number": 2,
+          "title": "ad ag ap at",
+          "focusPatterns": [
+            "ad",
+            "ag",
+            "ap",
+            "at"
+          ],
+          "pdfPages": [
+            13,
+            20
+          ],
+          "bookPages": [
+            12,
+            19
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            17,
+            31
+          ]
+        },
+        {
+          "id": "review-1",
+          "kind": "review",
+          "number": 1,
+          "title": "Review 1",
+          "focusPatterns": [],
+          "pdfPages": [
+            21,
+            24
+          ],
+          "bookPages": [
+            20,
+            23
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            32,
+            34
+          ]
+        },
+        {
+          "id": "unit-3",
+          "kind": "unit",
+          "number": 3,
+          "title": "e et en ed",
+          "focusPatterns": [
+            "e",
+            "et",
+            "en",
+            "ed"
+          ],
+          "pdfPages": [
+            25,
+            32
+          ],
+          "bookPages": [
+            24,
+            31
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            35,
+            48
+          ]
+        },
+        {
+          "id": "unit-4",
+          "kind": "unit",
+          "number": 4,
+          "title": "i ip ib id",
+          "focusPatterns": [
+            "i",
+            "ip",
+            "ib",
+            "id"
+          ],
+          "pdfPages": [
+            33,
+            40
+          ],
+          "bookPages": [
+            32,
+            39
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            49,
+            62
+          ]
+        },
+        {
+          "id": "review-2",
+          "kind": "review",
+          "number": 2,
+          "title": "Review 2",
+          "focusPatterns": [],
+          "pdfPages": [
+            41,
+            44
+          ],
+          "bookPages": [
+            40,
+            43
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            63,
+            65
+          ]
+        },
+        {
+          "id": "unit-5",
+          "kind": "unit",
+          "number": 5,
+          "title": "in ig it ix",
+          "focusPatterns": [
+            "in",
+            "ig",
+            "it",
+            "ix"
+          ],
+          "pdfPages": [
+            45,
+            52
+          ],
+          "bookPages": [
+            44,
+            51
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "unit-6",
+          "kind": "unit",
+          "number": 6,
+          "title": "o ot op",
+          "focusPatterns": [
+            "o",
+            "ot",
+            "op"
+          ],
+          "pdfPages": [
+            53,
+            60
+          ],
+          "bookPages": [
+            52,
+            59
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "review-3",
+          "kind": "review",
+          "number": 3,
+          "title": "Review 3",
+          "focusPatterns": [],
+          "pdfPages": [
+            61,
+            64
+          ],
+          "bookPages": [
+            60,
+            63
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "unit-7",
+          "kind": "unit",
+          "number": 7,
+          "title": "u ug ud up",
+          "focusPatterns": [
+            "u",
+            "ug",
+            "ud",
+            "up"
+          ],
+          "pdfPages": [
+            65,
+            72
+          ],
+          "bookPages": [
+            64,
+            71
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "unit-8",
+          "kind": "unit",
+          "number": 8,
+          "title": "ut ub um un",
+          "focusPatterns": [
+            "ut",
+            "ub",
+            "um",
+            "un"
+          ],
+          "pdfPages": [
+            73,
+            80
+          ],
+          "bookPages": [
+            72,
+            79
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "review-4",
+          "kind": "review",
+          "number": 4,
+          "title": "Review 4",
+          "focusPatterns": [],
+          "pdfPages": [
+            81,
+            84
+          ],
+          "bookPages": [
+            80,
+            83
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        }
+      ],
+      "disc": 1,
+      "pdfPageCount": 105,
+      "disc1Coverage": "units-1-through-4-and-reviews-1-through-2",
+      "tracks": [
+        {
+          "track": 1,
+          "sourceFile": "OPW_SB2_Disc1_Track01.mp3",
+          "sectionId": "disc-frontmatter",
+          "pdfPage": null,
+          "bookPage": null,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 18.103,
+            "candidateTrimEndSeconds": 14.596,
+            "usability": "available-unassigned-source-track",
+            "listeningReview": "required-before-curriculum-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 2,
+          "sourceFile": "OPW_SB2_Disc1_Track02.mp3",
+          "sectionId": "disc-frontmatter",
+          "pdfPage": null,
+          "bookPage": null,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 68.754,
+            "candidateTrimEndSeconds": 64.676,
+            "usability": "available-unassigned-source-track",
+            "listeningReview": "required-before-curriculum-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 3,
+          "sourceFile": "OPW_SB2_Disc1_Track03.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 5,
+          "bookPage": 4,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 42.893,
+            "candidateTrimEndSeconds": 39.175,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 4,
+          "sourceFile": "OPW_SB2_Disc1_Track04.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 5,
+          "bookPage": 4,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 52.062,
+            "candidateTrimEndSeconds": 48.888,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 5,
+          "sourceFile": "OPW_SB2_Disc1_Track05.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 6,
+          "bookPage": 5,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 51.566,
+            "candidateTrimEndSeconds": 46.994,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 6,
+          "sourceFile": "OPW_SB2_Disc1_Track06.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 6,
+          "bookPage": 5,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 76.983,
+            "candidateTrimEndSeconds": 72.492,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 7,
+          "sourceFile": "OPW_SB2_Disc1_Track07.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 7,
+          "bookPage": 6,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 29.466,
+            "candidateTrimEndSeconds": 25.542,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 8,
+          "sourceFile": "OPW_SB2_Disc1_Track08.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 7,
+          "bookPage": 6,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 68.754,
+            "candidateTrimEndSeconds": 62.466,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 9,
+          "sourceFile": "OPW_SB2_Disc1_Track09.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 8,
+          "bookPage": 7,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 32.705,
+            "candidateTrimEndSeconds": 27.684,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 10,
+          "sourceFile": "OPW_SB2_Disc1_Track10.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 8,
+          "bookPage": 7,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 60.761,
+            "candidateTrimEndSeconds": 57.04,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 11,
+          "sourceFile": "OPW_SB2_Disc1_Track11.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 9,
+          "bookPage": 8,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 29.623,
+            "candidateTrimEndSeconds": 25.158,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 12,
+          "sourceFile": "OPW_SB2_Disc1_Track12.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 9,
+          "bookPage": 8,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 70.348,
+            "candidateTrimEndSeconds": 66.022,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 13,
+          "sourceFile": "OPW_SB2_Disc1_Track13.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 10,
+          "bookPage": 9,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 34.168,
+            "candidateTrimEndSeconds": 29.522,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 14,
+          "sourceFile": "OPW_SB2_Disc1_Track14.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 10,
+          "bookPage": 9,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 61.571,
+            "candidateTrimEndSeconds": 58.053,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 15,
+          "sourceFile": "OPW_SB2_Disc1_Track15.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 11,
+          "bookPage": 10,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 80.614,
+            "candidateTrimEndSeconds": 75.819,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 16,
+          "sourceFile": "OPW_SB2_Disc1_Track16.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 12,
+          "bookPage": 11,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 57.496,
+            "candidateTrimEndSeconds": 53.364,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 17,
+          "sourceFile": "OPW_SB2_Disc1_Track17.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 13,
+          "bookPage": 12,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 52.376,
+            "candidateTrimEndSeconds": 48.5,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 18,
+          "sourceFile": "OPW_SB2_Disc1_Track18.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 13,
+          "bookPage": 12,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 67.997,
+            "candidateTrimEndSeconds": 62.929,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 19,
+          "sourceFile": "OPW_SB2_Disc1_Track19.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 14,
+          "bookPage": 13,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 36.545,
+            "candidateTrimEndSeconds": 32.487,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 20,
+          "sourceFile": "OPW_SB2_Disc1_Track20.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 14,
+          "bookPage": 13,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 56.059,
+            "candidateTrimEndSeconds": 52.794,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 21,
+          "sourceFile": "OPW_SB2_Disc1_Track21.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 15,
+          "bookPage": 14,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 28.918,
+            "candidateTrimEndSeconds": 24.29,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 22,
+          "sourceFile": "OPW_SB2_Disc1_Track22.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 15,
+          "bookPage": 14,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 63.164,
+            "candidateTrimEndSeconds": 59.514,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 23,
+          "sourceFile": "OPW_SB2_Disc1_Track23.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 16,
+          "bookPage": 15,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 36.127,
+            "candidateTrimEndSeconds": 30.679,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 24,
+          "sourceFile": "OPW_SB2_Disc1_Track24.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 16,
+          "bookPage": 15,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 77.427,
+            "candidateTrimEndSeconds": 73.271,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 25,
+          "sourceFile": "OPW_SB2_Disc1_Track25.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 17,
+          "bookPage": 16,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 29.858,
+            "candidateTrimEndSeconds": 25.845,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 26,
+          "sourceFile": "OPW_SB2_Disc1_Track26.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 17,
+          "bookPage": 16,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 62.668,
+            "candidateTrimEndSeconds": 59.009,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 27,
+          "sourceFile": "OPW_SB2_Disc1_Track27.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 18,
+          "bookPage": 17,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 45.087,
+            "candidateTrimEndSeconds": 41.65,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 28,
+          "sourceFile": "OPW_SB2_Disc1_Track28.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 18,
+          "bookPage": 17,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 33.724,
+            "candidateTrimEndSeconds": 29.43,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 29,
+          "sourceFile": "OPW_SB2_Disc1_Track29.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 18,
+          "bookPage": 17,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 61.701,
+            "candidateTrimEndSeconds": 57.333,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 30,
+          "sourceFile": "OPW_SB2_Disc1_Track30.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 19,
+          "bookPage": 18,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 100.206,
+            "candidateTrimEndSeconds": 96.188,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 31,
+          "sourceFile": "OPW_SB2_Disc1_Track31.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 20,
+          "bookPage": 19,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 68.963,
+            "candidateTrimEndSeconds": 65.59,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 32,
+          "sourceFile": "OPW_SB2_Disc1_Track32.mp3",
+          "sectionId": "review-1",
+          "pdfPage": 21,
+          "bookPage": 20,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 133.042,
+            "candidateTrimEndSeconds": 129.601,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 33,
+          "sourceFile": "OPW_SB2_Disc1_Track33.mp3",
+          "sectionId": "review-1",
+          "pdfPage": 22,
+          "bookPage": 21,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 49.528,
+            "candidateTrimEndSeconds": 44.963,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 34,
+          "sourceFile": "OPW_SB2_Disc1_Track34.mp3",
+          "sectionId": "review-1",
+          "pdfPage": 23,
+          "bookPage": 22,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 35.109,
+            "candidateTrimEndSeconds": 30.791,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 35,
+          "sourceFile": "OPW_SB2_Disc1_Track35.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 25,
+          "bookPage": 24,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 44.408,
+            "candidateTrimEndSeconds": 39.586,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 36,
+          "sourceFile": "OPW_SB2_Disc1_Track36.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 25,
+          "bookPage": 24,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 51.827,
+            "candidateTrimEndSeconds": 47.074,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 37,
+          "sourceFile": "OPW_SB2_Disc1_Track37.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 26,
+          "bookPage": 25,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 49.11,
+            "candidateTrimEndSeconds": 44.668,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 38,
+          "sourceFile": "OPW_SB2_Disc1_Track38.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 26,
+          "bookPage": 25,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 61.336,
+            "candidateTrimEndSeconds": 58.322,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 39,
+          "sourceFile": "OPW_SB2_Disc1_Track39.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 27,
+          "bookPage": 26,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 30.171,
+            "candidateTrimEndSeconds": 26.219,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 40,
+          "sourceFile": "OPW_SB2_Disc1_Track40.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 27,
+          "bookPage": 26,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 67.527,
+            "candidateTrimEndSeconds": 63.544,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 41,
+          "sourceFile": "OPW_SB2_Disc1_Track41.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 28,
+          "bookPage": 27,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 32.418,
+            "candidateTrimEndSeconds": 28.568,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 42,
+          "sourceFile": "OPW_SB2_Disc1_Track42.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 28,
+          "bookPage": 27,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 55.04,
+            "candidateTrimEndSeconds": 51.727,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 43,
+          "sourceFile": "OPW_SB2_Disc1_Track43.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 29,
+          "bookPage": 28,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 50.207,
+            "candidateTrimEndSeconds": 45.99,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 44,
+          "sourceFile": "OPW_SB2_Disc1_Track44.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 29,
+          "bookPage": 28,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 67.396,
+            "candidateTrimEndSeconds": 63.582,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 45,
+          "sourceFile": "OPW_SB2_Disc1_Track45.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 30,
+          "bookPage": 29,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 35.161,
+            "candidateTrimEndSeconds": 30.986,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 46,
+          "sourceFile": "OPW_SB2_Disc1_Track46.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 30,
+          "bookPage": 29,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 61.231,
+            "candidateTrimEndSeconds": 58.01,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 47,
+          "sourceFile": "OPW_SB2_Disc1_Track47.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 31,
+          "bookPage": 30,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 73.273,
+            "candidateTrimEndSeconds": 69.428,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 48,
+          "sourceFile": "OPW_SB2_Disc1_Track48.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 32,
+          "bookPage": 31,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 55.353,
+            "candidateTrimEndSeconds": 51.257,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 49,
+          "sourceFile": "OPW_SB2_Disc1_Track49.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 33,
+          "bookPage": 32,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 43.572,
+            "candidateTrimEndSeconds": 39.961,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 50,
+          "sourceFile": "OPW_SB2_Disc1_Track50.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 33,
+          "bookPage": 32,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 52.114,
+            "candidateTrimEndSeconds": 48.323,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 51,
+          "sourceFile": "OPW_SB2_Disc1_Track51.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 34,
+          "bookPage": 33,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 45.819,
+            "candidateTrimEndSeconds": 42.289,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 52,
+          "sourceFile": "OPW_SB2_Disc1_Track52.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 34,
+          "bookPage": 33,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 62.276,
+            "candidateTrimEndSeconds": 57.917,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 53,
+          "sourceFile": "OPW_SB2_Disc1_Track53.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 35,
+          "bookPage": 34,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 31.66,
+            "candidateTrimEndSeconds": 27.54,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 54,
+          "sourceFile": "OPW_SB2_Disc1_Track54.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 35,
+          "bookPage": 34,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 70.478,
+            "candidateTrimEndSeconds": 66.464,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 55,
+          "sourceFile": "OPW_SB2_Disc1_Track55.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 36,
+          "bookPage": 35,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 46.158,
+            "candidateTrimEndSeconds": 41.618,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 56,
+          "sourceFile": "OPW_SB2_Disc1_Track56.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 36,
+          "bookPage": 35,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 79.464,
+            "candidateTrimEndSeconds": 73.457,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 57,
+          "sourceFile": "OPW_SB2_Disc1_Track57.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 37,
+          "bookPage": 36,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 49.528,
+            "candidateTrimEndSeconds": 45.811,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 58,
+          "sourceFile": "OPW_SB2_Disc1_Track58.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 37,
+          "bookPage": 36,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 68.023,
+            "candidateTrimEndSeconds": 64.108,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 59,
+          "sourceFile": "OPW_SB2_Disc1_Track59.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 38,
+          "bookPage": 37,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 33.802,
+            "candidateTrimEndSeconds": 29.569,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 60,
+          "sourceFile": "OPW_SB2_Disc1_Track60.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 38,
+          "bookPage": 37,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 60.735,
+            "candidateTrimEndSeconds": 57.246,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 61,
+          "sourceFile": "OPW_SB2_Disc1_Track61.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 39,
+          "bookPage": 38,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 63.791,
+            "candidateTrimEndSeconds": 60.043,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 62,
+          "sourceFile": "OPW_SB2_Disc1_Track62.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 40,
+          "bookPage": 39,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 55.928,
+            "candidateTrimEndSeconds": 52.599,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 63,
+          "sourceFile": "OPW_SB2_Disc1_Track63.mp3",
+          "sectionId": "review-2",
+          "pdfPage": 41,
+          "bookPage": 40,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 159.399,
+            "candidateTrimEndSeconds": 153.86,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 64,
+          "sourceFile": "OPW_SB2_Disc1_Track64.mp3",
+          "sectionId": "review-2",
+          "pdfPage": 42,
+          "bookPage": 41,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 45.845,
+            "candidateTrimEndSeconds": 41.87,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 65,
+          "sourceFile": "OPW_SB2_Disc1_Track65.mp3",
+          "sectionId": "review-2",
+          "pdfPage": 43,
+          "bookPage": 42,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 38.792,
+            "candidateTrimEndSeconds": 35.374,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "subtitle": "Long Vowels",
+      "pdfSource": "../outputs/（已压缩）Oxford_Phonics_World_3_SB.pdf",
+      "audioSourceDirectory": "../outputs/oxford-phonics-world-level3-disc1",
+      "expectedTrackCount": 68,
+      "sections": [
+        {
+          "id": "unit-1",
+          "kind": "unit",
+          "number": 1,
+          "title": "a_e ame ake ate ave",
+          "focusPatterns": [
+            "a_e",
+            "ame",
+            "ake",
+            "ate",
+            "ave"
+          ],
+          "pdfPages": [
+            5,
+            12
+          ],
+          "bookPages": [
+            4,
+            11
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            3,
+            18
+          ]
+        },
+        {
+          "id": "unit-2",
+          "kind": "unit",
+          "number": 2,
+          "title": "i_e ime ike ive ine",
+          "focusPatterns": [
+            "i_e",
+            "ime",
+            "ike",
+            "ive",
+            "ine"
+          ],
+          "pdfPages": [
+            13,
+            20
+          ],
+          "bookPages": [
+            12,
+            19
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            19,
+            34
+          ]
+        },
+        {
+          "id": "review-1",
+          "kind": "review",
+          "number": 1,
+          "title": "Review 1",
+          "focusPatterns": [],
+          "pdfPages": [
+            21,
+            24
+          ],
+          "bookPages": [
+            20,
+            23
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            35,
+            36
+          ]
+        },
+        {
+          "id": "unit-3",
+          "kind": "unit",
+          "number": 3,
+          "title": "o_e u_e u_e",
+          "focusPatterns": [
+            "o_e",
+            "u_e /juː/",
+            "u_e /uː/"
+          ],
+          "pdfPages": [
+            25,
+            32
+          ],
+          "bookPages": [
+            24,
+            31
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            37,
+            50
+          ]
+        },
+        {
+          "id": "unit-4",
+          "kind": "unit",
+          "number": 4,
+          "title": "ai ay",
+          "focusPatterns": [
+            "ai",
+            "ay"
+          ],
+          "pdfPages": [
+            33,
+            40
+          ],
+          "bookPages": [
+            32,
+            39
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            51,
+            64
+          ]
+        },
+        {
+          "id": "review-2",
+          "kind": "review",
+          "number": 2,
+          "title": "Review 2",
+          "focusPatterns": [],
+          "pdfPages": [
+            41,
+            44
+          ],
+          "bookPages": [
+            40,
+            43
+          ],
+          "audioAvailability": "available-disc1",
+          "trackRange": [
+            65,
+            68
+          ]
+        },
+        {
+          "id": "unit-5",
+          "kind": "unit",
+          "number": 5,
+          "title": "ee ea y ey",
+          "focusPatterns": [
+            "ee",
+            "ea",
+            "y",
+            "ey"
+          ],
+          "pdfPages": [
+            45,
+            52
+          ],
+          "bookPages": [
+            44,
+            51
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "unit-6",
+          "kind": "unit",
+          "number": 6,
+          "title": "igh ie y",
+          "focusPatterns": [
+            "igh",
+            "ie",
+            "y"
+          ],
+          "pdfPages": [
+            53,
+            60
+          ],
+          "bookPages": [
+            52,
+            59
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "review-3",
+          "kind": "review",
+          "number": 3,
+          "title": "Review 3",
+          "focusPatterns": [],
+          "pdfPages": [
+            61,
+            64
+          ],
+          "bookPages": [
+            60,
+            63
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "unit-7",
+          "kind": "unit",
+          "number": 7,
+          "title": "oa ow",
+          "focusPatterns": [
+            "oa",
+            "ow"
+          ],
+          "pdfPages": [
+            65,
+            72
+          ],
+          "bookPages": [
+            64,
+            71
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "unit-8",
+          "kind": "unit",
+          "number": 8,
+          "title": "ue ui ew oo",
+          "focusPatterns": [
+            "ue",
+            "ui",
+            "ew",
+            "oo"
+          ],
+          "pdfPages": [
+            73,
+            80
+          ],
+          "bookPages": [
+            72,
+            79
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        },
+        {
+          "id": "review-4",
+          "kind": "review",
+          "number": 4,
+          "title": "Review 4",
+          "focusPatterns": [],
+          "pdfPages": [
+            81,
+            84
+          ],
+          "bookPages": [
+            80,
+            83
+          ],
+          "audioAvailability": "unavailable-disc2-not-in-inventory",
+          "trackRange": null
+        }
+      ],
+      "disc": 1,
+      "pdfPageCount": 105,
+      "disc1Coverage": "units-1-through-4-and-reviews-1-through-2",
+      "tracks": [
+        {
+          "track": 1,
+          "sourceFile": "OPW_SB3_Disc1_Track01.mp3",
+          "sectionId": "disc-frontmatter",
+          "pdfPage": null,
+          "bookPage": null,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 18.4,
+            "candidateTrimEndSeconds": 14.211,
+            "usability": "available-unassigned-source-track",
+            "listeningReview": "required-before-curriculum-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 2,
+          "sourceFile": "OPW_SB3_Disc1_Track02.mp3",
+          "sectionId": "disc-frontmatter",
+          "pdfPage": null,
+          "bookPage": null,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 67.867,
+            "candidateTrimEndSeconds": 64.373,
+            "usability": "available-unassigned-source-track",
+            "listeningReview": "required-before-curriculum-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 3,
+          "sourceFile": "OPW_SB3_Disc1_Track03.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 5,
+          "bookPage": 4,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 26.61,
+            "candidateTrimEndSeconds": 23.155,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 4,
+          "sourceFile": "OPW_SB3_Disc1_Track04.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 5,
+          "bookPage": 4,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 59.813,
+            "candidateTrimEndSeconds": 55.477,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 5,
+          "sourceFile": "OPW_SB3_Disc1_Track05.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 6,
+          "bookPage": 5,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 46.678,
+            "candidateTrimEndSeconds": 42.864,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 6,
+          "sourceFile": "OPW_SB3_Disc1_Track06.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 6,
+          "bookPage": 5,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 41.283,
+            "candidateTrimEndSeconds": 37.195,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 7,
+          "sourceFile": "OPW_SB3_Disc1_Track07.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 6,
+          "bookPage": 5,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 76.519,
+            "candidateTrimEndSeconds": 71.401,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 8,
+          "sourceFile": "OPW_SB3_Disc1_Track08.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 7,
+          "bookPage": 6,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 42.56,
+            "candidateTrimEndSeconds": 38.24,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 9,
+          "sourceFile": "OPW_SB3_Disc1_Track09.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 7,
+          "bookPage": 6,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 60.048,
+            "candidateTrimEndSeconds": 56.084,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 10,
+          "sourceFile": "OPW_SB3_Disc1_Track10.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 8,
+          "bookPage": 7,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 45.062,
+            "candidateTrimEndSeconds": 41.094,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 11,
+          "sourceFile": "OPW_SB3_Disc1_Track11.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 8,
+          "bookPage": 7,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 38.781,
+            "candidateTrimEndSeconds": 34.537,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 12,
+          "sourceFile": "OPW_SB3_Disc1_Track12.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 8,
+          "bookPage": 7,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 78.474,
+            "candidateTrimEndSeconds": 74.169,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 13,
+          "sourceFile": "OPW_SB3_Disc1_Track13.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 9,
+          "bookPage": 8,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 41.492,
+            "candidateTrimEndSeconds": 37.476,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 14,
+          "sourceFile": "OPW_SB3_Disc1_Track14.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 9,
+          "bookPage": 8,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 66.564,
+            "candidateTrimEndSeconds": 63.241,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 15,
+          "sourceFile": "OPW_SB3_Disc1_Track15.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 10,
+          "bookPage": 9,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 32.239,
+            "candidateTrimEndSeconds": 29.211,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 16,
+          "sourceFile": "OPW_SB3_Disc1_Track16.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 10,
+          "bookPage": 9,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 73.835,
+            "candidateTrimEndSeconds": 70.067,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 17,
+          "sourceFile": "OPW_SB3_Disc1_Track17.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 11,
+          "bookPage": 10,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 56.764,
+            "candidateTrimEndSeconds": 52.867,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 18,
+          "sourceFile": "OPW_SB3_Disc1_Track18.mp3",
+          "sectionId": "unit-1",
+          "pdfPage": 12,
+          "bookPage": 11,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 87.44,
+            "candidateTrimEndSeconds": 82.496,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 19,
+          "sourceFile": "OPW_SB3_Disc1_Track19.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 13,
+          "bookPage": 12,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 29.868,
+            "candidateTrimEndSeconds": 26.06,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 20,
+          "sourceFile": "OPW_SB3_Disc1_Track20.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 13,
+          "bookPage": 12,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 59.032,
+            "candidateTrimEndSeconds": 54.172,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 21,
+          "sourceFile": "OPW_SB3_Disc1_Track21.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 14,
+          "bookPage": 13,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 49.884,
+            "candidateTrimEndSeconds": 45.865,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 22,
+          "sourceFile": "OPW_SB3_Disc1_Track22.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 14,
+          "bookPage": 13,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 66.538,
+            "candidateTrimEndSeconds": 62.723,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 23,
+          "sourceFile": "OPW_SB3_Disc1_Track23.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 15,
+          "bookPage": 14,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 45.218,
+            "candidateTrimEndSeconds": 40.977,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 24,
+          "sourceFile": "OPW_SB3_Disc1_Track24.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 15,
+          "bookPage": 14,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 65.313,
+            "candidateTrimEndSeconds": 60.932,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 25,
+          "sourceFile": "OPW_SB3_Disc1_Track25.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 16,
+          "bookPage": 15,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 38.077,
+            "candidateTrimEndSeconds": 33.874,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 26,
+          "sourceFile": "OPW_SB3_Disc1_Track26.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 16,
+          "bookPage": 15,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 41.752,
+            "candidateTrimEndSeconds": 35.557,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 27,
+          "sourceFile": "OPW_SB3_Disc1_Track27.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 16,
+          "bookPage": 15,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 69.457,
+            "candidateTrimEndSeconds": 66.036,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 28,
+          "sourceFile": "OPW_SB3_Disc1_Track28.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 17,
+          "bookPage": 16,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 47.434,
+            "candidateTrimEndSeconds": 43.415,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 29,
+          "sourceFile": "OPW_SB3_Disc1_Track29.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 17,
+          "bookPage": 16,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 64.948,
+            "candidateTrimEndSeconds": 60.757,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 30,
+          "sourceFile": "OPW_SB3_Disc1_Track30.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 18,
+          "bookPage": 17,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 45.922,
+            "candidateTrimEndSeconds": 39.884,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 31,
+          "sourceFile": "OPW_SB3_Disc1_Track31.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 18,
+          "bookPage": 17,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 74.617,
+            "candidateTrimEndSeconds": 71.166,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 32,
+          "sourceFile": "OPW_SB3_Disc1_Track32.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 19,
+          "bookPage": 18,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 96.145,
+            "candidateTrimEndSeconds": 91.426,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 33,
+          "sourceFile": "OPW_SB3_Disc1_Track33.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 19,
+          "bookPage": 18,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 42.795,
+            "candidateTrimEndSeconds": 39.429,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 34,
+          "sourceFile": "OPW_SB3_Disc1_Track34.mp3",
+          "sectionId": "unit-2",
+          "pdfPage": 20,
+          "bookPage": 19,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 84.025,
+            "candidateTrimEndSeconds": 80.212,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 35,
+          "sourceFile": "OPW_SB3_Disc1_Track35.mp3",
+          "sectionId": "review-1",
+          "pdfPage": 21,
+          "bookPage": 20,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 171.882,
+            "candidateTrimEndSeconds": 166.873,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 36,
+          "sourceFile": "OPW_SB3_Disc1_Track36.mp3",
+          "sectionId": "review-1",
+          "pdfPage": 22,
+          "bookPage": 21,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 38.39,
+            "candidateTrimEndSeconds": 34.25,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 37,
+          "sourceFile": "OPW_SB3_Disc1_Track37.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 25,
+          "bookPage": 24,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 30.18,
+            "candidateTrimEndSeconds": 26.293,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 38,
+          "sourceFile": "OPW_SB3_Disc1_Track38.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 25,
+          "bookPage": 24,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 65.625,
+            "candidateTrimEndSeconds": 62.009,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 39,
+          "sourceFile": "OPW_SB3_Disc1_Track39.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 26,
+          "bookPage": 25,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 34.924,
+            "candidateTrimEndSeconds": 31.076,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 40,
+          "sourceFile": "OPW_SB3_Disc1_Track40.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 26,
+          "bookPage": 25,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 75.816,
+            "candidateTrimEndSeconds": 70.959,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 41,
+          "sourceFile": "OPW_SB3_Disc1_Track41.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 27,
+          "bookPage": 26,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 28.695,
+            "candidateTrimEndSeconds": 24.744,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 42,
+          "sourceFile": "OPW_SB3_Disc1_Track42.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 27,
+          "bookPage": 26,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 61.872,
+            "candidateTrimEndSeconds": 58.371,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 43,
+          "sourceFile": "OPW_SB3_Disc1_Track43.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 28,
+          "bookPage": 27,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 37.087,
+            "candidateTrimEndSeconds": 32.961,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 44,
+          "sourceFile": "OPW_SB3_Disc1_Track44.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 28,
+          "bookPage": 27,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 79.465,
+            "candidateTrimEndSeconds": 75.231,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 45,
+          "sourceFile": "OPW_SB3_Disc1_Track45.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 29,
+          "bookPage": 28,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 29.398,
+            "candidateTrimEndSeconds": 25.296,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 46,
+          "sourceFile": "OPW_SB3_Disc1_Track46.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 29,
+          "bookPage": 28,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 61.195,
+            "candidateTrimEndSeconds": 56.869,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 47,
+          "sourceFile": "OPW_SB3_Disc1_Track47.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 30,
+          "bookPage": 29,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 34.038,
+            "candidateTrimEndSeconds": 30.02,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 48,
+          "sourceFile": "OPW_SB3_Disc1_Track48.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 30,
+          "bookPage": 29,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 66.772,
+            "candidateTrimEndSeconds": 62.921,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 49,
+          "sourceFile": "OPW_SB3_Disc1_Track49.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 31,
+          "bookPage": 30,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 48.007,
+            "candidateTrimEndSeconds": 44.647,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 50,
+          "sourceFile": "OPW_SB3_Disc1_Track50.mp3",
+          "sectionId": "unit-3",
+          "pdfPage": 32,
+          "bookPage": 31,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 89.603,
+            "candidateTrimEndSeconds": 85.286,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 51,
+          "sourceFile": "OPW_SB3_Disc1_Track51.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 33,
+          "bookPage": 32,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 31.431,
+            "candidateTrimEndSeconds": 27.976,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 52,
+          "sourceFile": "OPW_SB3_Disc1_Track52.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 33,
+          "bookPage": 32,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 61.455,
+            "candidateTrimEndSeconds": 57.346,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 53,
+          "sourceFile": "OPW_SB3_Disc1_Track53.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 34,
+          "bookPage": 33,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 34.793,
+            "candidateTrimEndSeconds": 29.847,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 54,
+          "sourceFile": "OPW_SB3_Disc1_Track54.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 34,
+          "bookPage": 33,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 70.89,
+            "candidateTrimEndSeconds": 67.663,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 55,
+          "sourceFile": "OPW_SB3_Disc1_Track55.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 35,
+          "bookPage": 34,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 26.688,
+            "candidateTrimEndSeconds": 22.763,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 56,
+          "sourceFile": "OPW_SB3_Disc1_Track56.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 35,
+          "bookPage": 34,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 52.907,
+            "candidateTrimEndSeconds": 48.822,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 57,
+          "sourceFile": "OPW_SB3_Disc1_Track57.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 36,
+          "bookPage": 35,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 42.951,
+            "candidateTrimEndSeconds": 39.312,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 58,
+          "sourceFile": "OPW_SB3_Disc1_Track58.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 36,
+          "bookPage": 35,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 42.769,
+            "candidateTrimEndSeconds": 37.187,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 59,
+          "sourceFile": "OPW_SB3_Disc1_Track59.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 36,
+          "bookPage": 35,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 66.381,
+            "candidateTrimEndSeconds": 62.006,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 60,
+          "sourceFile": "OPW_SB3_Disc1_Track60.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 37,
+          "bookPage": 36,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 58.953,
+            "candidateTrimEndSeconds": 55.15,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 61,
+          "sourceFile": "OPW_SB3_Disc1_Track61.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 38,
+          "bookPage": 37,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 66.85,
+            "candidateTrimEndSeconds": 63.139,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 62,
+          "sourceFile": "OPW_SB3_Disc1_Track62.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 39,
+          "bookPage": 38,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 79.803,
+            "candidateTrimEndSeconds": 73.955,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 63,
+          "sourceFile": "OPW_SB3_Disc1_Track63.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 39,
+          "bookPage": 38,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 42.56,
+            "candidateTrimEndSeconds": 38.527,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 64,
+          "sourceFile": "OPW_SB3_Disc1_Track64.mp3",
+          "sectionId": "unit-4",
+          "pdfPage": 40,
+          "bookPage": 39,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 63.619,
+            "candidateTrimEndSeconds": 59.306,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 65,
+          "sourceFile": "OPW_SB3_Disc1_Track65.mp3",
+          "sectionId": "review-2",
+          "pdfPage": 41,
+          "bookPage": 40,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 140.399,
+            "candidateTrimEndSeconds": 135.506,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 66,
+          "sourceFile": "OPW_SB3_Disc1_Track66.mp3",
+          "sectionId": "review-2",
+          "pdfPage": 42,
+          "bookPage": 41,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 72.323,
+            "candidateTrimEndSeconds": 68.445,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 67,
+          "sourceFile": "OPW_SB3_Disc1_Track67.mp3",
+          "sectionId": "review-2",
+          "pdfPage": 42,
+          "bookPage": 41,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 92.131,
+            "candidateTrimEndSeconds": 87.087,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        },
+        {
+          "track": 68,
+          "sourceFile": "OPW_SB3_Disc1_Track68.mp3",
+          "sectionId": "review-2",
+          "pdfPage": 43,
+          "bookPage": 42,
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 100.758,
+            "candidateTrimEndSeconds": 95.977,
+            "usability": "usable-full-activity-track",
+            "listeningReview": "required-before-subtrack-use"
+          },
+          "segmentAvailability": {
+            "fullTrack": true,
+            "tailTrimCandidate": true,
+            "wordOrPromptTimestamps": false
+          }
+        }
+      ]
+    }
+  ]
+}

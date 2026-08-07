@@ -1,18 +1,24 @@
 (function () {
-  const FAMILY_KEY = "summer-task-dashboard-family-v1";
+  const FAMILY_KEY = "summer-task-dashboard-english-family-v1";
+  const LEGACY_FAMILY_KEY = "summer-task-dashboard-family-v1";
+  const AUDIO_BUCKET = "family-audio";
   const SAVE_DELAY_MS = 450;
   let client;
-  let familyId = localStorage.getItem(FAMILY_KEY);
+  let familyId = localStorage.getItem(FAMILY_KEY) || localStorage.getItem(LEGACY_FAMILY_KEY);
   let revision = null;
   let inviteCode = "";
+  let accessRole = "";
   let saveTimer;
   let pendingState;
   let saving = false;
   let subscribedFamilyId;
   let callbacks = {};
+  let audioAssetListPromise;
 
   function emitStatus(status, message) {
-    callbacks.onStatus?.({ status, message, familyId, inviteCode, revision });
+    const detail = { status, message, familyId, inviteCode, revision };
+    callbacks.onStatus?.(detail);
+    window.dispatchEvent(new CustomEvent("cloud-store-status", { detail }));
   }
 
   async function init(nextCallbacks = {}) {
@@ -42,7 +48,11 @@
       }
 
       phase = "读取家庭成员关系";
-      if (!familyId) await restoreFamilyMembership();
+      // Refresh membership metadata on every load. The family id is persisted
+      // locally, but the invite code is intentionally kept in memory only.
+      // Skipping this call after a refresh left connected devices unable to
+      // show the invite code needed by a second device.
+      await restoreFamilyMembership();
       if (!familyId) {
         emitStatus("setup", "等待创建或加入家庭");
         return { available: true, needsSetup: true };
@@ -61,11 +71,25 @@
   }
 
   async function restoreFamilyMembership() {
+    if (familyId) {
+      const [membershipResult, familyResult, stateResult] = await Promise.all([
+        client.from("family_members").select("access_role").eq("family_id", familyId).single(),
+        client.from("families").select("invite_code").eq("id", familyId).single(),
+        client.from("family_states").select("revision").eq("family_id", familyId).single()
+      ]);
+      const error = membershipResult.error || familyResult.error || stateResult.error;
+      if (!error) {
+        setFamily(familyId, familyResult.data.invite_code, stateResult.data.revision, membershipResult.data.access_role);
+        return;
+      }
+      localStorage.removeItem(FAMILY_KEY);
+      familyId = null;
+    }
     const { data, error } = await client.rpc("get_my_families");
     if (error) throw error;
     const family = data?.[0];
     if (!family) return;
-    setFamily(family.family_id, family.invite_code, family.revision);
+    setFamily(family.family_id, family.invite_code, family.revision, family.access_role);
   }
 
   async function createFamily(name, pin, initialState) {
@@ -78,7 +102,7 @@
     if (error) throw error;
     const family = data?.[0];
     if (!family) throw new Error("家庭空间创建失败");
-    setFamily(family.family_id, family.invite_code, family.revision);
+    setFamily(family.family_id, family.invite_code, family.revision, "owner");
     subscribeToRemoteState();
     emitStatus("synced", "本地数据已上传");
     return { familyId, inviteCode, revision };
@@ -93,7 +117,7 @@
     if (error) throw error;
     const family = data?.[0];
     if (!family) throw new Error("没有找到家庭空间");
-    setFamily(family.family_id, family.invite_code, family.revision);
+    setFamily(family.family_id, family.invite_code, family.revision, "device");
     await loadRemoteState();
     subscribeToRemoteState();
     emitStatus("synced", "已加入并载入家庭数据");
@@ -154,6 +178,71 @@
     }
   }
 
+  async function listFamilyAudioAssets(force = false) {
+    requireFamilyCloud();
+    if (force) audioAssetListPromise = null;
+    audioAssetListPromise ||= (async () => {
+      const { data, error } = await client.storage
+        .from(AUDIO_BUCKET)
+        .list(`${familyId}/assets`, { limit: 1000, sortBy: { column: "name", order: "asc" } });
+      if (error) throw error;
+      return (data || []).filter((item) => item.id && item.name.endsWith(".mp3")).map((item) => ({
+        ...item,
+        assetId: item.name.slice(0, -4),
+        bytes: Number(item.metadata?.size) || 0,
+        source: "cloud"
+      }));
+    })();
+    try {
+      return await audioAssetListPromise;
+    } catch (error) {
+      audioAssetListPromise = null;
+      throw error;
+    }
+  }
+
+  async function getFamilyAudioAsset(assetId) {
+    validateAudioAssetId(assetId);
+    const assets = await listFamilyAudioAssets();
+    return assets.find((item) => item.assetId === assetId);
+  }
+
+  async function uploadFamilyAudioAsset(asset) {
+    requireFamilyCloud();
+    validateAudioAssetId(asset?.id);
+    if (!(asset.blob instanceof Blob)) throw new Error("本机音频数据不可用");
+    const { data, error } = await client.storage
+      .from(AUDIO_BUCKET)
+      .upload(`${familyId}/assets/${asset.id}.mp3`, asset.blob, {
+        cacheControl: "3600",
+        contentType: "audio/mpeg",
+        upsert: true
+      });
+    if (error) throw error;
+    audioAssetListPromise = null;
+    return data;
+  }
+
+  async function getFamilyAudioUrl(assetId, expiresIn = 3600) {
+    requireFamilyCloud();
+    validateAudioAssetId(assetId);
+    const { data, error } = await client.storage
+      .from(AUDIO_BUCKET)
+      .createSignedUrl(`${familyId}/assets/${assetId}.mp3`, expiresIn);
+    if (error) throw error;
+    return data.signedUrl;
+  }
+
+  function validateAudioAssetId(assetId) {
+    if (!/^opw-l[1-3]-d[12]-track\d{2,3}$/.test(String(assetId || ""))) {
+      throw new Error("音频资源编号无效");
+    }
+  }
+
+  function requireFamilyCloud() {
+    if (!client || !familyId) throw new Error("请先创建或加入家庭空间");
+  }
+
   function subscribeToRemoteState() {
     if (!client || !familyId || subscribedFamilyId === familyId) return;
     subscribedFamilyId = familyId;
@@ -173,10 +262,11 @@
       .subscribe();
   }
 
-  function setFamily(nextFamilyId, nextInviteCode, nextRevision) {
+  function setFamily(nextFamilyId, nextInviteCode, nextRevision, nextAccessRole) {
     familyId = nextFamilyId;
     inviteCode = nextInviteCode || inviteCode;
     revision = nextRevision ?? revision;
+    accessRole = nextAccessRole || accessRole;
     localStorage.setItem(FAMILY_KEY, familyId);
   }
 
@@ -190,6 +280,8 @@
     const message = String(error?.message || error || "");
     if (message.includes("Anonymous sign-ins are disabled")) return "请先启用 Supabase 匿名登录";
     if (message.includes("Could not find the function") || message.includes("schema cache")) return "请先执行 Supabase 初始化 SQL";
+    if (message.includes("Bucket not found")) return "请先执行家庭音频存储 SQL 补丁";
+    if (message.includes("row-level security") || message.includes("Unauthorized")) return "当前设备没有上传家庭音频的权限";
     if (message.includes("INVALID_INVITE_OR_PIN")) return "邀请码或家长 PIN 不正确";
     if (message.includes("INVALID_PIN")) return "PIN 需要使用 4–8 位数字";
     return diagnosticError(error, phase);
@@ -216,7 +308,11 @@
     joinFamily,
     scheduleSave,
     flushSave,
+    listFamilyAudioAssets,
+    getFamilyAudioAsset,
+    uploadFamilyAudioAsset,
+    getFamilyAudioUrl,
     friendlyError,
-    getInfo: () => ({ familyId, inviteCode, revision, connected: Boolean(client && familyId) })
+    getInfo: () => ({ familyId, inviteCode, revision, accessRole, connected: Boolean(client && familyId) })
   };
 })();

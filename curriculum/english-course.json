@@ -1,0 +1,5402 @@
+{
+  "schemaVersion": 5,
+  "generatedOn": "2026-08-07",
+  "title": "暑假计划 · 英语岛基础阶段",
+  "schedule": {
+    "mode": "starts-when-child-begins",
+    "durationDays": 26,
+    "planningAssumption": "If development finishes on 2026-08-05, the earliest start is 2026-08-06 and 26 consecutive days fit through 2026-08-31.",
+    "omittedLightInputCurriculumDays": [
+      7,
+      14
+    ]
+  },
+  "policy": {
+    "courseOrder": "Short vowels → consonant digraphs → consonant blends → long vowels and silent e, with compact daily extensions for ck/qu/tch/ph, common vowel teams, r-controlled vowels, and oo/ou/ow/oi/oy.",
+    "dailyStructure": "phonics, contextual heart words, RAZ target words, spoken sentence frames, and every explicitly assigned review book",
+    "audioRule": "Existing verified Oxford clips remain valid; generated TTS is automatically playable without human review. Human recordings remain optional replacements and require explicit review. Do not scan Oxford tracks merely to source new course words.",
+    "heartWordRule": "New heart words are copied into an English notebook, then recalled by typing; reviews recur after expanding intervals.",
+    "heartWordSelection": "100 foundational high-frequency words selected from Dolch early-reader words, retaining the course's RAZ anchor words; teaching follows UFLI guidance by decoding regular parts and marking only irregular parts for memory.",
+    "heartWordSources": [
+      "https://ufli.education.ufl.edu/resources/teaching-resources/instructional-activities/irregular-and-high-frequency-words/",
+      "https://sightwords.com/sight-words/dolch/"
+    ],
+    "razSource": "../outputs/raz_bf_catalog/raz_b_to_f_catalog.xlsx · 4-Week Plan"
+  },
+  "summary": {
+    "weeks": 4,
+    "days": 26,
+    "uniquePhonicsWords": 128,
+    "teachingDays": 20,
+    "reviewDays": 6,
+    "heartWords": 100,
+    "razBookAssignments": 93,
+    "laterWeeksAudioStatus": "tts-auto-applied",
+    "verifiedFallbackWords": 85,
+    "extensionPatterns": 24,
+    "extensionWords": 46
+  },
+  "heartWords": {
+    "instruction": "在英文句子中认出标注的心词；新词读 3 遍、写 3 遍，再遮住答案独立拼写；复习词必须拼写正确才能继续。",
+    "words": [
+      {
+        "word": "I",
+        "firstDay": 1,
+        "sentence": "I read a book."
+      },
+      {
+        "word": "a",
+        "firstDay": 1,
+        "sentence": "I read a book."
+      },
+      {
+        "word": "the",
+        "firstDay": 1,
+        "sentence": "I love the earth."
+      },
+      {
+        "word": "and",
+        "firstDay": 1,
+        "sentence": "You and I read."
+      },
+      {
+        "word": "read",
+        "firstDay": 1,
+        "sentence": "Practice read in a sentence."
+      },
+      {
+        "word": "you",
+        "firstDay": 2,
+        "sentence": "You can go."
+      },
+      {
+        "word": "can",
+        "firstDay": 2,
+        "sentence": "I can go."
+      },
+      {
+        "word": "go",
+        "firstDay": 2,
+        "sentence": "Practice go in a sentence."
+      },
+      {
+        "word": "see",
+        "firstDay": 2,
+        "sentence": "Practice see in a sentence."
+      },
+      {
+        "word": "we",
+        "firstDay": 2,
+        "sentence": "Practice we in a sentence."
+      },
+      {
+        "word": "where",
+        "firstDay": 3,
+        "sentence": "Where is water?"
+      },
+      {
+        "word": "is",
+        "firstDay": 3,
+        "sentence": "Where is water?"
+      },
+      {
+        "word": "in",
+        "firstDay": 3,
+        "sentence": "It is in the book."
+      },
+      {
+        "word": "here",
+        "firstDay": 3,
+        "sentence": "Practice here in a sentence."
+      },
+      {
+        "word": "there",
+        "firstDay": 3,
+        "sentence": "The book is there."
+      },
+      {
+        "word": "what",
+        "firstDay": 4,
+        "sentence": "What has these feet?"
+      },
+      {
+        "word": "has",
+        "firstDay": 4,
+        "sentence": "The animal has spots."
+      },
+      {
+        "word": "this",
+        "firstDay": 4,
+        "sentence": "Practice this in a sentence."
+      },
+      {
+        "word": "these",
+        "firstDay": 4,
+        "sentence": "Practice these in a sentence."
+      },
+      {
+        "word": "it",
+        "firstDay": 4,
+        "sentence": "It is here."
+      },
+      {
+        "word": "my",
+        "firstDay": 5,
+        "sentence": "My pet is a dinosaur."
+      },
+      {
+        "word": "like",
+        "firstDay": 5,
+        "sentence": "I like this book."
+      },
+      {
+        "word": "love",
+        "firstDay": 5,
+        "sentence": "Practice love in a sentence."
+      },
+      {
+        "word": "me",
+        "firstDay": 5,
+        "sentence": "Practice me in a sentence."
+      },
+      {
+        "word": "your",
+        "firstDay": 5,
+        "sentence": "Practice your in a sentence."
+      },
+      {
+        "word": "many",
+        "firstDay": 7,
+        "sentence": "How many animals?"
+      },
+      {
+        "word": "one",
+        "firstDay": 7,
+        "sentence": "I see one frog."
+      },
+      {
+        "word": "two",
+        "firstDay": 7,
+        "sentence": "Practice two in a sentence."
+      },
+      {
+        "word": "three",
+        "firstDay": 7,
+        "sentence": "Practice three in a sentence."
+      },
+      {
+        "word": "count",
+        "firstDay": 7,
+        "sentence": "Practice count in a sentence."
+      },
+      {
+        "word": "more",
+        "firstDay": 8,
+        "sentence": "I can see more."
+      },
+      {
+        "word": "have",
+        "firstDay": 8,
+        "sentence": "I have a book."
+      },
+      {
+        "word": "all",
+        "firstDay": 8,
+        "sentence": "Practice all in a sentence."
+      },
+      {
+        "word": "some",
+        "firstDay": 8,
+        "sentence": "Practice some in a sentence."
+      },
+      {
+        "word": "any",
+        "firstDay": 8,
+        "sentence": "Practice any in a sentence."
+      },
+      {
+        "word": "first",
+        "firstDay": 9,
+        "sentence": "First, the frog is an egg."
+      },
+      {
+        "word": "after",
+        "firstDay": 9,
+        "sentence": "Practice after in a sentence."
+      },
+      {
+        "word": "before",
+        "firstDay": 9,
+        "sentence": "Practice before in a sentence."
+      },
+      {
+        "word": "again",
+        "firstDay": 9,
+        "sentence": "Practice again in a sentence."
+      },
+      {
+        "word": "now",
+        "firstDay": 9,
+        "sentence": "Practice now in a sentence."
+      },
+      {
+        "word": "next",
+        "firstDay": 10,
+        "sentence": "Next, it grows legs."
+      },
+      {
+        "word": "up",
+        "firstDay": 10,
+        "sentence": "Practice up in a sentence."
+      },
+      {
+        "word": "down",
+        "firstDay": 10,
+        "sentence": "Practice down in a sentence."
+      },
+      {
+        "word": "away",
+        "firstDay": 10,
+        "sentence": "Practice away in a sentence."
+      },
+      {
+        "word": "around",
+        "firstDay": 10,
+        "sentence": "Practice around in a sentence."
+      },
+      {
+        "word": "then",
+        "firstDay": 11,
+        "sentence": "Then, it can jump."
+      },
+      {
+        "word": "to",
+        "firstDay": 11,
+        "sentence": "I go to school."
+      },
+      {
+        "word": "from",
+        "firstDay": 11,
+        "sentence": "Practice from in a sentence."
+      },
+      {
+        "word": "near",
+        "firstDay": 11,
+        "sentence": "Practice near in a sentence."
+      },
+      {
+        "word": "far",
+        "firstDay": 11,
+        "sentence": "Practice far in a sentence."
+      },
+      {
+        "word": "time",
+        "firstDay": 13,
+        "sentence": "It is time for school."
+      },
+      {
+        "word": "at",
+        "firstDay": 13,
+        "sentence": "I am at school."
+      },
+      {
+        "word": "school",
+        "firstDay": 13,
+        "sentence": "Practice school in a sentence."
+      },
+      {
+        "word": "new",
+        "firstDay": 13,
+        "sentence": "Practice new in a sentence."
+      },
+      {
+        "word": "ready",
+        "firstDay": 13,
+        "sentence": "Practice ready in a sentence."
+      },
+      {
+        "word": "want",
+        "firstDay": 14,
+        "sentence": "I want a new book."
+      },
+      {
+        "word": "do",
+        "firstDay": 14,
+        "sentence": "What do they eat?"
+      },
+      {
+        "word": "not",
+        "firstDay": 14,
+        "sentence": "I did not stop."
+      },
+      {
+        "word": "make",
+        "firstDay": 14,
+        "sentence": "We make food."
+      },
+      {
+        "word": "get",
+        "firstDay": 14,
+        "sentence": "Practice get in a sentence."
+      },
+      {
+        "word": "need",
+        "firstDay": 15,
+        "sentence": "I need an eraser."
+      },
+      {
+        "word": "help",
+        "firstDay": 15,
+        "sentence": "I can help."
+      },
+      {
+        "word": "come",
+        "firstDay": 15,
+        "sentence": "Practice come in a sentence."
+      },
+      {
+        "word": "find",
+        "firstDay": 15,
+        "sentence": "Practice find in a sentence."
+      },
+      {
+        "word": "give",
+        "firstDay": 15,
+        "sentence": "Practice give in a sentence."
+      },
+      {
+        "word": "because",
+        "firstDay": 16,
+        "sentence": "I need it because I use it."
+      },
+      {
+        "word": "for",
+        "firstDay": 16,
+        "sentence": "Practice for in a sentence."
+      },
+      {
+        "word": "of",
+        "firstDay": 16,
+        "sentence": "Practice of in a sentence."
+      },
+      {
+        "word": "but",
+        "firstDay": 16,
+        "sentence": "Practice but in a sentence."
+      },
+      {
+        "word": "so",
+        "firstDay": 16,
+        "sentence": "Practice so in a sentence."
+      },
+      {
+        "word": "with",
+        "firstDay": 17,
+        "sentence": "I am with my friend."
+      },
+      {
+        "word": "he",
+        "firstDay": 17,
+        "sentence": "Practice he in a sentence."
+      },
+      {
+        "word": "she",
+        "firstDay": 17,
+        "sentence": "Practice she in a sentence."
+      },
+      {
+        "word": "they",
+        "firstDay": 17,
+        "sentence": "They can help."
+      },
+      {
+        "word": "them",
+        "firstDay": 17,
+        "sentence": "Practice them in a sentence."
+      },
+      {
+        "word": "who",
+        "firstDay": 20,
+        "sentence": "Who can help?"
+      },
+      {
+        "word": "when",
+        "firstDay": 20,
+        "sentence": "When does school start?"
+      },
+      {
+        "word": "which",
+        "firstDay": 20,
+        "sentence": "Practice which in a sentence."
+      },
+      {
+        "word": "his",
+        "firstDay": 20,
+        "sentence": "Practice his in a sentence."
+      },
+      {
+        "word": "her",
+        "firstDay": 20,
+        "sentence": "Practice her in a sentence."
+      },
+      {
+        "word": "why",
+        "firstDay": 21,
+        "sentence": "Why does it sleep?"
+      },
+      {
+        "word": "was",
+        "firstDay": 21,
+        "sentence": "Practice was in a sentence."
+      },
+      {
+        "word": "were",
+        "firstDay": 21,
+        "sentence": "Practice were in a sentence."
+      },
+      {
+        "word": "are",
+        "firstDay": 21,
+        "sentence": "Practice are in a sentence."
+      },
+      {
+        "word": "am",
+        "firstDay": 21,
+        "sentence": "Practice am in a sentence."
+      },
+      {
+        "word": "how",
+        "firstDay": 22,
+        "sentence": "How do they move?"
+      },
+      {
+        "word": "could",
+        "firstDay": 22,
+        "sentence": "Practice could in a sentence."
+      },
+      {
+        "word": "would",
+        "firstDay": 22,
+        "sentence": "Practice would in a sentence."
+      },
+      {
+        "word": "will",
+        "firstDay": 22,
+        "sentence": "Practice will in a sentence."
+      },
+      {
+        "word": "must",
+        "firstDay": 22,
+        "sentence": "Practice must in a sentence."
+      },
+      {
+        "word": "does",
+        "firstDay": 23,
+        "sentence": "Why does it rain?"
+      },
+      {
+        "word": "did",
+        "firstDay": 23,
+        "sentence": "Practice did in a sentence."
+      },
+      {
+        "word": "had",
+        "firstDay": 23,
+        "sentence": "Practice had in a sentence."
+      },
+      {
+        "word": "been",
+        "firstDay": 23,
+        "sentence": "Practice been in a sentence."
+      },
+      {
+        "word": "be",
+        "firstDay": 23,
+        "sentence": "Practice be in a sentence."
+      },
+      {
+        "word": "said",
+        "firstDay": 24,
+        "sentence": "He said, ‘Try again.’"
+      },
+      {
+        "word": "say",
+        "firstDay": 24,
+        "sentence": "Practice say in a sentence."
+      },
+      {
+        "word": "look",
+        "firstDay": 24,
+        "sentence": "Practice look in a sentence."
+      },
+      {
+        "word": "little",
+        "firstDay": 24,
+        "sentence": "Practice little in a sentence."
+      },
+      {
+        "word": "big",
+        "firstDay": 24,
+        "sentence": "Practice big in a sentence."
+      }
+    ]
+  },
+  "days": [
+    {
+      "day": 1,
+      "focus": "短元音 a：听出 /æ/，从左到右拼 CVC 词｜常见规律拓展：词尾 ck 发 /k/",
+      "phonics": {
+        "pattern": "short-a",
+        "words": [
+          {
+            "word": "ant",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d1-t4-w14",
+              "level": 1,
+              "disc": 1,
+              "track": 4,
+              "sourceFile": "OPW_SB1_Disc1_Track04.mp3",
+              "clip": {
+                "startSeconds": 27.67,
+                "endSeconds": 29.66
+              }
+            }
+          },
+          {
+            "word": "cat",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d1-t12-w10",
+              "level": 1,
+              "disc": 1,
+              "track": 12,
+              "sourceFile": "OPW_SB1_Disc1_Track12.mp3",
+              "clip": {
+                "startSeconds": 43.25,
+                "endSeconds": 43.86
+              }
+            }
+          },
+          {
+            "word": "man",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-man",
+              "sourceFile": "man.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.787
+              }
+            }
+          },
+          {
+            "word": "pan",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t12-w27",
+              "level": 2,
+              "disc": 1,
+              "track": 12,
+              "sourceFile": "OPW_SB2_Disc1_Track12.mp3",
+              "clip": {
+                "startSeconds": 40.67,
+                "endSeconds": 41.72
+              }
+            }
+          },
+          {
+            "word": "back",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-back",
+              "sourceFile": "back.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.745
+              }
+            }
+          },
+          {
+            "word": "sack",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-sack",
+              "sourceFile": "sack.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.854
+              }
+            }
+          }
+        ],
+        "activity": "先逐音拼读，再听一个词，从当天 4 个词中选出听到的词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "final-ck",
+            "focus": "词尾 ck 发 /k/",
+            "words": [
+              "back",
+              "sack"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "I",
+        "review": [],
+        "newWords": [
+          "I",
+          "a",
+          "the",
+          "and",
+          "read"
+        ]
+      },
+      "raz": {
+        "focus": "自我和基础句型",
+        "anchorBook": "B-51 I Read a Book",
+        "supportingBooks": [
+          "B-53 You and I",
+          "B-98 This Turtle"
+        ],
+        "targetWords": [
+          "I",
+          "you",
+          "and",
+          "a",
+          "book",
+          "read",
+          "this",
+          "see"
+        ],
+        "sentenceFrames": [
+          "I read a book.",
+          "You and I see..."
+        ],
+        "parentTask": "读前把目标词写在便签上；读中让孩子每见一次就点一下。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "B-51 I Read a Book",
+            "B-53 You and I",
+            "B-98 This Turtle"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "missing-source"
+      },
+      "week": 1,
+      "dayOfWeek": 1,
+      "curriculumDay": 1
+    },
+    {
+      "day": 2,
+      "focus": "短元音 a：比较 -at 与 -ap 词族｜常见规律拓展：词尾 ck 接在短元音后",
+      "phonics": {
+        "pattern": "short-a-at-ap",
+        "words": [
+          {
+            "word": "hat",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t30-w25",
+              "level": 2,
+              "disc": 1,
+              "track": 30,
+              "sourceFile": "OPW_SB2_Disc1_Track30.mp3",
+              "clip": {
+                "startSeconds": 55.39,
+                "endSeconds": 58.36
+              }
+            }
+          },
+          {
+            "word": "map",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t22-w14",
+              "level": 2,
+              "disc": 1,
+              "track": 22,
+              "sourceFile": "OPW_SB2_Disc1_Track22.mp3",
+              "clip": {
+                "startSeconds": 24.11,
+                "endSeconds": 24.96
+              }
+            }
+          },
+          {
+            "word": "cap",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t24-w11",
+              "level": 2,
+              "disc": 1,
+              "track": 24,
+              "sourceFile": "OPW_SB2_Disc1_Track24.mp3",
+              "clip": {
+                "startSeconds": 57.01,
+                "endSeconds": 57.84
+              }
+            }
+          },
+          {
+            "word": "tap",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t30-w17",
+              "level": 2,
+              "disc": 1,
+              "track": 30,
+              "sourceFile": "OPW_SB2_Disc1_Track30.mp3",
+              "clip": {
+                "startSeconds": 34.09,
+                "endSeconds": 37.5
+              }
+            }
+          },
+          {
+            "word": "neck",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-neck",
+              "sourceFile": "neck.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.755
+              }
+            }
+          },
+          {
+            "word": "duck",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-duck",
+              "sourceFile": "duck.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.737
+              }
+            }
+          }
+        ],
+        "activity": "先逐音拼读，再听一个词，从当天 4 个词中选出听到的词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "final-ck",
+            "focus": "词尾 ck 接在短元音后",
+            "words": [
+              "neck",
+              "duck"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "you",
+        "review": [
+          "I",
+          "a",
+          "the",
+          "and",
+          "read"
+        ],
+        "newWords": [
+          "you",
+          "can",
+          "go",
+          "see",
+          "we"
+        ]
+      },
+      "raz": {
+        "focus": "can/go 动作句型",
+        "anchorBook": "B-81 You Can Go",
+        "supportingBooks": [
+          "B-50 Go Animals Go",
+          "B-19 Animals Can Move"
+        ],
+        "targetWords": [
+          "can",
+          "go",
+          "move",
+          "animals",
+          "fast",
+          "slow",
+          "up",
+          "down"
+        ],
+        "sentenceFrames": [
+          "I can go.",
+          "Animals can move."
+        ],
+        "parentTask": "读后做动作：go, move, up, down，让词和动作连起来。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "B-81 You Can Go",
+            "B-50 Go Animals Go",
+            "B-19 Animals Can Move"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "week": 1,
+      "dayOfWeek": 2,
+      "curriculumDay": 2
+    },
+    {
+      "day": 3,
+      "focus": "短元音 i：拼读 i 与 -in/-it 词形｜常见规律拓展：qu 通常发 /kw/",
+      "phonics": {
+        "pattern": "short-i",
+        "words": [
+          {
+            "word": "in",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-in",
+              "sourceFile": "in.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.688
+              }
+            }
+          },
+          {
+            "word": "it",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-it",
+              "sourceFile": "it.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.582
+              }
+            }
+          },
+          {
+            "word": "hit",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t13-w16",
+              "level": 2,
+              "disc": 2,
+              "track": 13,
+              "sourceFile": "OPW_SB2_Disc2_Track13.mp3",
+              "clip": {
+                "startSeconds": 20.29,
+                "endSeconds": 21.06
+              }
+            }
+          },
+          {
+            "word": "pin",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t31-w58-r2",
+              "level": 2,
+              "disc": 2,
+              "track": 31,
+              "sourceFile": "OPW_SB2_Disc2_Track31.mp3",
+              "clip": {
+                "startSeconds": 63.36,
+                "endSeconds": 64.04
+              }
+            }
+          },
+          {
+            "word": "quit",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-quit",
+              "sourceFile": "quit.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.738
+              }
+            }
+          },
+          {
+            "word": "quill",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-quill",
+              "sourceFile": "quill.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.75
+              }
+            }
+          }
+        ],
+        "activity": "先逐音拼读，再听一个词，从当天 4 个词中选出听到的词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "initial-qu",
+            "focus": "qu 通常发 /kw/",
+            "words": [
+              "quit",
+              "quill"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "where",
+        "review": [
+          "you",
+          "can",
+          "go",
+          "see",
+          "we",
+          "I"
+        ],
+        "newWords": [
+          "where",
+          "is",
+          "in",
+          "here",
+          "there"
+        ]
+      },
+      "raz": {
+        "focus": "is/where/水和地点",
+        "anchorBook": "B-11 Where Is Water?",
+        "supportingBooks": [
+          "B-84 Where?",
+          "C-41 Get In"
+        ],
+        "targetWords": [
+          "where",
+          "is",
+          "water",
+          "in",
+          "here",
+          "there",
+          "get",
+          "it"
+        ],
+        "sentenceFrames": [
+          "Where is...?",
+          "It is in..."
+        ],
+        "parentTask": "家长问 Where is water? 孩子用 It is... 回答，可中英混合。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "B-11 Where Is Water?",
+            "B-84 Where?",
+            "C-41 Get In"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "missing-source"
+      },
+      "week": 1,
+      "dayOfWeek": 3,
+      "curriculumDay": 3
+    },
+    {
+      "day": 4,
+      "focus": "短元音 e：拼读 -en/-et/-ed 词形｜常见规律拓展：词尾 tch 发 /tʃ/",
+      "phonics": {
+        "pattern": "short-e",
+        "words": [
+          {
+            "word": "hen",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t48-w11",
+              "level": 2,
+              "disc": 1,
+              "track": 48,
+              "sourceFile": "OPW_SB2_Disc1_Track48.mp3",
+              "clip": {
+                "startSeconds": 9.81,
+                "endSeconds": 10.96
+              }
+            }
+          },
+          {
+            "word": "pet",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-pet",
+              "sourceFile": "pet.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.733
+              }
+            }
+          },
+          {
+            "word": "red",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t43-w27-r2",
+              "level": 2,
+              "disc": 1,
+              "track": 43,
+              "sourceFile": "OPW_SB2_Disc1_Track43.mp3",
+              "clip": {
+                "startSeconds": 39.62,
+                "endSeconds": 40.82
+              }
+            }
+          },
+          {
+            "word": "ten",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t36-w18",
+              "level": 2,
+              "disc": 1,
+              "track": 36,
+              "sourceFile": "OPW_SB2_Disc1_Track36.mp3",
+              "clip": {
+                "startSeconds": 39.49,
+                "endSeconds": 40.66
+              }
+            }
+          },
+          {
+            "word": "fetch",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-fetch",
+              "sourceFile": "fetch.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.889
+              }
+            }
+          },
+          {
+            "word": "match",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-match",
+              "sourceFile": "match.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.857
+              }
+            }
+          }
+        ],
+        "activity": "先逐音拼读，再听一个词，从当天 4 个词中选出听到的词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "final-tch",
+            "focus": "词尾 tch 发 /tʃ/",
+            "words": [
+              "fetch",
+              "match"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "what",
+        "review": [
+          "where",
+          "is",
+          "in",
+          "here",
+          "there",
+          "I",
+          "a",
+          "the",
+          "and",
+          "read"
+        ],
+        "newWords": [
+          "what",
+          "has",
+          "this",
+          "these",
+          "it"
+        ]
+      },
+      "raz": {
+        "focus": "what/these/动物特征",
+        "anchorBook": "B-15 What Has These Feet?",
+        "supportingBooks": [
+          "B-16 What Has These Stripes?",
+          "B-17 What Has These Spots?"
+        ],
+        "targetWords": [
+          "what",
+          "has",
+          "these",
+          "feet",
+          "stripes",
+          "spots",
+          "animal",
+          "have"
+        ],
+        "sentenceFrames": [
+          "What has these...?",
+          "It has..."
+        ],
+        "parentTask": "不要解释语法，直接让孩子找 these 和 has。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "B-15 What Has These Feet?",
+            "B-16 What Has These Stripes?",
+            "B-17 What Has These Spots?"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "missing-source"
+      },
+      "week": 1,
+      "dayOfWeek": 4,
+      "curriculumDay": 4
+    },
+    {
+      "day": 5,
+      "focus": "短元音 o：拼读 -og/-op/-ox 词形｜常见规律拓展：复习短元音后的 ck",
+      "phonics": {
+        "pattern": "short-o",
+        "words": [
+          {
+            "word": "dog",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d1-t18-w10",
+              "level": 1,
+              "disc": 1,
+              "track": 18,
+              "sourceFile": "OPW_SB1_Disc1_Track18.mp3",
+              "clip": {
+                "startSeconds": 41.93,
+                "endSeconds": 42.86
+              }
+            }
+          },
+          {
+            "word": "fox",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t30-w10",
+              "level": 2,
+              "disc": 2,
+              "track": 30,
+              "sourceFile": "OPW_SB2_Disc2_Track30.mp3",
+              "clip": {
+                "startSeconds": 9.09,
+                "endSeconds": 9.96
+              }
+            }
+          },
+          {
+            "word": "hop",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t26-w23",
+              "level": 2,
+              "disc": 2,
+              "track": 26,
+              "sourceFile": "OPW_SB2_Disc2_Track26.mp3",
+              "clip": {
+                "startSeconds": 38.65,
+                "endSeconds": 40.24
+              }
+            }
+          },
+          {
+            "word": "log",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t18-w9",
+              "level": 2,
+              "disc": 2,
+              "track": 18,
+              "sourceFile": "OPW_SB2_Disc2_Track18.mp3",
+              "clip": {
+                "startSeconds": 18.63,
+                "endSeconds": 19.58
+              }
+            }
+          },
+          {
+            "word": "rock",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-rock",
+              "sourceFile": "rock.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.778
+              }
+            }
+          },
+          {
+            "word": "sock",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-sock",
+              "sourceFile": "sock.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.854
+              }
+            }
+          }
+        ],
+        "activity": "先逐音拼读，再听一个词，从当天 4 个词中选出听到的词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "final-ck-review",
+            "focus": "复习短元音后的 ck",
+            "words": [
+              "rock",
+              "sock"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "my",
+        "review": [
+          "what",
+          "has",
+          "this",
+          "these",
+          "it",
+          "you",
+          "can",
+          "go",
+          "see",
+          "we"
+        ],
+        "newWords": [
+          "my",
+          "like",
+          "love",
+          "me",
+          "your"
+        ]
+      },
+      "raz": {
+        "focus": "like/love/my 个人表达",
+        "anchorBook": "B-6 My Pet Dinosaur",
+        "supportingBooks": [
+          "B-12 I Love the Earth",
+          "B-56 I Love Art Class"
+        ],
+        "targetWords": [
+          "my",
+          "pet",
+          "love",
+          "like",
+          "the",
+          "earth",
+          "class",
+          "dinosaur"
+        ],
+        "sentenceFrames": [
+          "I love...",
+          "My pet is..."
+        ],
+        "parentTask": "读后让孩子说 2 句自己喜欢的东西。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "B-6 My Pet Dinosaur",
+            "B-12 I Love the Earth",
+            "B-56 I Love Art Class"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "week": 1,
+      "dayOfWeek": 5,
+      "curriculumDay": 5
+    },
+    {
+      "day": 6,
+      "focus": "短元音 u：拼读 u 与 -up/-un 词形｜常见规律拓展：ph 发 /f/",
+      "phonics": {
+        "pattern": "short-u",
+        "words": [
+          {
+            "word": "cup",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d1-t5-w23",
+              "level": 1,
+              "disc": 1,
+              "track": 5,
+              "sourceFile": "OPW_SB1_Disc1_Track05.mp3",
+              "clip": {
+                "startSeconds": 34.83,
+                "endSeconds": 36.46
+              }
+            }
+          },
+          {
+            "word": "sun",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d2-t32-w11",
+              "level": 1,
+              "disc": 2,
+              "track": 32,
+              "sourceFile": "OPW_SB1_Disc2_Track32.mp3",
+              "clip": {
+                "startSeconds": 45.47,
+                "endSeconds": 47.32
+              }
+            }
+          },
+          {
+            "word": "up",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d2-t39-w6",
+              "level": 1,
+              "disc": 2,
+              "track": 39,
+              "sourceFile": "OPW_SB1_Disc2_Track39.mp3",
+              "clip": {
+                "startSeconds": 31.13,
+                "endSeconds": 32.16
+              }
+            }
+          },
+          {
+            "word": "run",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t59-w9",
+              "level": 2,
+              "disc": 2,
+              "track": 59,
+              "sourceFile": "OPW_SB2_Disc2_Track59.mp3",
+              "clip": {
+                "startSeconds": 14.13,
+                "endSeconds": 15.1
+              }
+            }
+          },
+          {
+            "word": "phone",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-phone",
+              "sourceFile": "phone.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.853
+              }
+            }
+          },
+          {
+            "word": "graph",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-graph",
+              "sourceFile": "graph.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.847
+              }
+            }
+          }
+        ],
+        "activity": "先逐音拼读，再听一个词，从当天 4 个词中选出听到的词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "initial-ph",
+            "focus": "ph 发 /f/",
+            "words": [
+              "phone",
+              "graph"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": null,
+        "review": [
+          "my",
+          "like",
+          "love",
+          "me",
+          "your",
+          "where",
+          "is",
+          "in",
+          "here",
+          "there"
+        ],
+        "newWords": []
+      },
+      "raz": {
+        "focus": "第 1 周回收",
+        "anchorBook": "B-38 We Pack a Picnic",
+        "supportingBooks": [
+          "任选本周最喜欢的 3 本"
+        ],
+        "targetWords": [
+          "I",
+          "you",
+          "can",
+          "go",
+          "where",
+          "is",
+          "what",
+          "has",
+          "my",
+          "love"
+        ],
+        "sentenceFrames": [
+          "I can...",
+          "Where is...?",
+          "What has...?"
+        ],
+        "parentTask": "只复习错词，不新增；把犹豫词留到下周一。",
+        "assignment": {
+          "mode": "choose",
+          "rule": "任选本周最喜欢的 4 本，再读 B-38 We Pack a Picnic",
+          "fixedBooks": [
+            "B-38 We Pack a Picnic"
+          ],
+          "groups": [
+            {
+              "label": "第 1 周最喜欢的书",
+              "count": 4,
+              "choices": [
+                "B-51 I Read a Book",
+                "B-53 You and I",
+                "B-98 This Turtle",
+                "B-81 You Can Go",
+                "B-50 Go Animals Go",
+                "B-19 Animals Can Move",
+                "B-11 Where Is Water?",
+                "B-84 Where?",
+                "C-41 Get In",
+                "B-15 What Has These Feet?",
+                "B-16 What Has These Stripes?",
+                "B-17 What Has These Spots?",
+                "B-6 My Pet Dinosaur",
+                "B-12 I Love the Earth",
+                "B-56 I Love Art Class"
+              ]
+            }
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "week": 1,
+      "dayOfWeek": 6,
+      "curriculumDay": 6
+    },
+    {
+      "day": 7,
+      "week": 2,
+      "dayOfWeek": 1,
+      "focus": "辅音组合 sh：两个字母发一个声音 /ʃ/｜常见规律拓展：ai 通常发长元音 /eɪ/",
+      "phonics": {
+        "pattern": "digraph-sh",
+        "words": [
+          {
+            "word": "ship",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-ship",
+              "sourceFile": "ship.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.736
+              }
+            }
+          },
+          {
+            "word": "shop",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-shop",
+              "sourceFile": "shop.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.829
+              }
+            }
+          },
+          {
+            "word": "fish",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d1-t25-w25-r20260805",
+              "level": 1,
+              "disc": 1,
+              "track": 25,
+              "sourceFile": "OPW_SB1_Disc1_Track25.mp3",
+              "clip": {
+                "startSeconds": 43.96,
+                "endSeconds": 44.74
+              }
+            }
+          },
+          {
+            "word": "dish",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-dish",
+              "sourceFile": "dish.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.795
+              }
+            }
+          },
+          {
+            "word": "rain",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-rain",
+              "sourceFile": "rain.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.755
+              }
+            }
+          },
+          {
+            "word": "tail",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-tail",
+              "sourceFile": "tail.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.796
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "vowel-team-ai",
+            "focus": "ai 通常发长元音 /eɪ/",
+            "words": [
+              "rain",
+              "tail"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "many",
+        "review": [
+          "what",
+          "has",
+          "this",
+          "these",
+          "it",
+          "where",
+          "my"
+        ],
+        "newWords": [
+          "many",
+          "one",
+          "two",
+          "three",
+          "count"
+        ]
+      },
+      "raz": {
+        "focus": "数量和比较",
+        "anchorBook": "B-28 Ten",
+        "supportingBooks": [
+          "C-12 We Count",
+          "D-31 Less than",
+          "D-32 Greater than"
+        ],
+        "sourceBooks": [
+          "B-28 Ten",
+          "C-12 We Count",
+          "D-31 Less than",
+          "D-32 Greater than"
+        ],
+        "targetWords": [
+          "one",
+          "two",
+          "three",
+          "many",
+          "more",
+          "less",
+          "greater",
+          "than",
+          "count"
+        ],
+        "sentenceFrames": [
+          "How many...?",
+          "More than...",
+          "Less than..."
+        ],
+        "childTask": "用积木或水果摆两组，开口比较 more / less。",
+        "parentTask": "用积木或水果摆两组，开口比较 more / less。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "B-28 Ten",
+            "C-12 We Count",
+            "D-31 Less than",
+            "D-32 Greater than"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 8
+    },
+    {
+      "day": 8,
+      "week": 2,
+      "dayOfWeek": 2,
+      "focus": "辅音组合 ch：听辨 /tʃ/ 并拼读词尾 -ch｜常见规律拓展：词尾 ay 通常发长元音 /eɪ/",
+      "phonics": {
+        "pattern": "digraph-ch",
+        "words": [
+          {
+            "word": "chin",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-chin",
+              "sourceFile": "chin.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.729
+              }
+            }
+          },
+          {
+            "word": "chat",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-chat",
+              "sourceFile": "chat.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.799
+              }
+            }
+          },
+          {
+            "word": "much",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-much",
+              "sourceFile": "much.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.857
+              }
+            }
+          },
+          {
+            "word": "rich",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-rich",
+              "sourceFile": "rich.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.79
+              }
+            }
+          },
+          {
+            "word": "day",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-day",
+              "sourceFile": "day.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.722
+              }
+            }
+          },
+          {
+            "word": "play",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-play",
+              "sourceFile": "play.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.814
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "vowel-team-ay",
+            "focus": "词尾 ay 通常发长元音 /eɪ/",
+            "words": [
+              "day",
+              "play"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "more",
+        "review": [
+          "many",
+          "one",
+          "two",
+          "three",
+          "count",
+          "I",
+          "a",
+          "the",
+          "and",
+          "read"
+        ],
+        "newWords": [
+          "more",
+          "have",
+          "all",
+          "some",
+          "any"
+        ]
+      },
+      "raz": {
+        "focus": "动物吃什么/住哪里",
+        "anchorBook": "C-9 What Animals Eat",
+        "supportingBooks": [
+          "D-5 Where Animals Live",
+          "E-4 Places Plants and Animals Live"
+        ],
+        "sourceBooks": [
+          "C-9 What Animals Eat",
+          "D-5 Where Animals Live",
+          "E-4 Places Plants and Animals Live"
+        ],
+        "targetWords": [
+          "animals",
+          "eat",
+          "live",
+          "place",
+          "food",
+          "water",
+          "where",
+          "what"
+        ],
+        "sentenceFrames": [
+          "Animals eat...",
+          "Animals live..."
+        ],
+        "childTask": "读后口头说两组：一种动物吃什么、住哪里。",
+        "parentTask": "读后口头说两组：一种动物吃什么、住哪里。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "C-9 What Animals Eat",
+            "D-5 Where Animals Live",
+            "E-4 Places Plants and Animals Live"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 9
+    },
+    {
+      "day": 9,
+      "week": 2,
+      "dayOfWeek": 3,
+      "focus": "辅音组合 th：舌尖轻碰牙齿读 /θ/｜常见规律拓展：ee 通常发长元音 /iː/",
+      "phonics": {
+        "pattern": "digraph-th",
+        "words": [
+          {
+            "word": "thin",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-thin",
+              "sourceFile": "thin.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.725
+              }
+            }
+          },
+          {
+            "word": "bath",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-bath",
+              "sourceFile": "bath.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.757
+              }
+            }
+          },
+          {
+            "word": "moth",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-moth",
+              "sourceFile": "moth.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.799
+              }
+            }
+          },
+          {
+            "word": "path",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-path",
+              "sourceFile": "path.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.803
+              }
+            }
+          },
+          {
+            "word": "tree",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-tree",
+              "sourceFile": "tree.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.726
+              }
+            }
+          },
+          {
+            "word": "green",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-green",
+              "sourceFile": "green.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.789
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "vowel-team-ee",
+            "focus": "ee 通常发长元音 /iː/",
+            "words": [
+              "tree",
+              "green"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "first",
+        "review": [
+          "more",
+          "have",
+          "all",
+          "some",
+          "any",
+          "you",
+          "can",
+          "go",
+          "see",
+          "we"
+        ],
+        "newWords": [
+          "first",
+          "after",
+          "before",
+          "again",
+          "now"
+        ]
+      },
+      "raz": {
+        "focus": "生长和变化",
+        "anchorBook": "C-6 How Frogs Grow",
+        "supportingBooks": [
+          "D-1 Grow, Vegetables, Grow!",
+          "D-9 Where Plants Grow"
+        ],
+        "sourceBooks": [
+          "C-6 How Frogs Grow",
+          "D-1 Grow, Vegetables, Grow!",
+          "D-9 Where Plants Grow"
+        ],
+        "targetWords": [
+          "grow",
+          "plant",
+          "frog",
+          "vegetable",
+          "first",
+          "next",
+          "then",
+          "where"
+        ],
+        "sentenceFrames": [
+          "First... Next... Then..."
+        ],
+        "childTask": "看图按 first / next / then 口头复述三个步骤。",
+        "parentTask": "看图按 first / next / then 口头复述三个步骤。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "C-6 How Frogs Grow",
+            "D-1 Grow, Vegetables, Grow!",
+            "D-9 Where Plants Grow"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 10
+    },
+    {
+      "day": 10,
+      "week": 2,
+      "dayOfWeek": 4,
+      "focus": "辅音组合 wh：比较 w 与 wh 的词形｜常见规律拓展：ea 常发长元音 /iː/",
+      "phonics": {
+        "pattern": "digraph-wh",
+        "words": [
+          {
+            "word": "when",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-when",
+              "sourceFile": "when.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.773
+              }
+            }
+          },
+          {
+            "word": "whip",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-whip",
+              "sourceFile": "whip.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.692
+              }
+            }
+          },
+          {
+            "word": "whiz",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-whiz",
+              "sourceFile": "whiz.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.762
+              }
+            }
+          },
+          {
+            "word": "which",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-which",
+              "sourceFile": "which.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.796
+              }
+            }
+          },
+          {
+            "word": "team",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-team",
+              "sourceFile": "team.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.819
+              }
+            }
+          },
+          {
+            "word": "leaf",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-leaf",
+              "sourceFile": "leaf.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.798
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "vowel-team-ea",
+            "focus": "ea 常发长元音 /iː/",
+            "words": [
+              "team",
+              "leaf"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "next",
+        "review": [
+          "first",
+          "after",
+          "before",
+          "again",
+          "now",
+          "where",
+          "is",
+          "in",
+          "here",
+          "there"
+        ],
+        "newWords": [
+          "next",
+          "up",
+          "down",
+          "away",
+          "around"
+        ]
+      },
+      "raz": {
+        "focus": "天气和季节",
+        "anchorBook": "C-14 Snow Falls",
+        "supportingBooks": [
+          "D-10 Fog",
+          "D-11 Clouds",
+          "E-11 The Four Seasons"
+        ],
+        "sourceBooks": [
+          "C-14 Snow Falls",
+          "D-10 Fog",
+          "D-11 Clouds",
+          "E-11 The Four Seasons"
+        ],
+        "targetWords": [
+          "snow",
+          "falls",
+          "fog",
+          "clouds",
+          "season",
+          "weather",
+          "cold",
+          "warm"
+        ],
+        "sentenceFrames": [
+          "The weather is...",
+          "In winter..."
+        ],
+        "childTask": "看窗外，用 The weather is... 说一句。",
+        "parentTask": "看窗外，用 The weather is... 说一句。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "C-14 Snow Falls",
+            "D-10 Fog",
+            "D-11 Clouds",
+            "E-11 The Four Seasons"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 11
+    },
+    {
+      "day": 11,
+      "week": 2,
+      "dayOfWeek": 5,
+      "focus": "词尾组合 ng / nk：听出鼻音结尾｜常见规律拓展：oa 通常发长元音 /oʊ/",
+      "phonics": {
+        "pattern": "final-ng-nk",
+        "words": [
+          {
+            "word": "ring",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-ring",
+              "sourceFile": "ring.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.743
+              }
+            }
+          },
+          {
+            "word": "sing",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-sing",
+              "sourceFile": "sing.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.785
+              }
+            }
+          },
+          {
+            "word": "king",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d1-t51-w75-r20260805",
+              "level": 1,
+              "disc": 1,
+              "track": 51,
+              "sourceFile": "OPW_SB1_Disc1_Track51.mp3",
+              "clip": {
+                "startSeconds": 67.26,
+                "endSeconds": 67.82
+              }
+            }
+          },
+          {
+            "word": "pink",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d2-t29-w26-r20260805",
+              "level": 1,
+              "disc": 2,
+              "track": 29,
+              "sourceFile": "OPW_SB1_Disc2_Track29.mp3",
+              "clip": {
+                "startSeconds": 40.7,
+                "endSeconds": 41.46
+              }
+            }
+          },
+          {
+            "word": "boat",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-boat",
+              "sourceFile": "boat.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.722
+              }
+            }
+          },
+          {
+            "word": "coat",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-coat",
+              "sourceFile": "coat.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.796
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "vowel-team-oa",
+            "focus": "oa 通常发长元音 /oʊ/",
+            "words": [
+              "boat",
+              "coat"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "then",
+        "review": [
+          "next",
+          "up",
+          "down",
+          "away",
+          "around",
+          "what",
+          "has",
+          "this",
+          "these",
+          "it"
+        ],
+        "newWords": [
+          "then",
+          "to",
+          "from",
+          "near",
+          "far"
+        ]
+      },
+      "raz": {
+        "focus": "方位和移动",
+        "anchorBook": "B-80 Near and Far Away",
+        "supportingBooks": [
+          "C-33 Going Away",
+          "D-37 Getting Around the City",
+          "D-88 How We Get to School"
+        ],
+        "sourceBooks": [
+          "B-80 Near and Far Away",
+          "C-33 Going Away",
+          "D-37 Getting Around the City",
+          "D-88 How We Get to School"
+        ],
+        "targetWords": [
+          "near",
+          "far",
+          "away",
+          "around",
+          "to",
+          "from",
+          "school",
+          "city",
+          "get"
+        ],
+        "sentenceFrames": [
+          "I go to...",
+          "It is near/far."
+        ],
+        "childTask": "在家里找一近一远的物品，各说一句 near / far。",
+        "parentTask": "在家里找一近一远的物品，各说一句 near / far。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "B-80 Near and Far Away",
+            "C-33 Going Away",
+            "D-37 Getting Around the City",
+            "D-88 How We Get to School"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 12
+    },
+    {
+      "day": 12,
+      "week": 2,
+      "dayOfWeek": 6,
+      "focus": "第 2 周回收：混合辨认 sh / ch / th / ng｜常见规律拓展：词尾 ow 可发长元音 /oʊ/",
+      "phonics": {
+        "pattern": "digraph-review",
+        "words": [
+          {
+            "word": "ship",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-ship",
+              "sourceFile": "ship.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.736
+              }
+            }
+          },
+          {
+            "word": "chin",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-chin",
+              "sourceFile": "chin.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.729
+              }
+            }
+          },
+          {
+            "word": "thin",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-thin",
+              "sourceFile": "thin.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.725
+              }
+            }
+          },
+          {
+            "word": "ring",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-ring",
+              "sourceFile": "ring.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.743
+              }
+            }
+          },
+          {
+            "word": "snow",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-snow",
+              "sourceFile": "snow.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.912
+              }
+            }
+          },
+          {
+            "word": "grow",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-grow",
+              "sourceFile": "grow.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.835
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "vowel-team-ow-long-o",
+            "focus": "词尾 ow 可发长元音 /oʊ/",
+            "words": [
+              "snow",
+              "grow"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": null,
+        "review": [
+          "then",
+          "to",
+          "from",
+          "near",
+          "far",
+          "my",
+          "like",
+          "love",
+          "me",
+          "your"
+        ],
+        "newWords": []
+      },
+      "raz": {
+        "focus": "第 2 周回收",
+        "anchorBook": "任选数量、动物、天气主题各 1 本",
+        "supportingBooks": [],
+        "sourceBooks": [
+          "任选数量、动物、天气主题各 1 本"
+        ],
+        "targetWords": [
+          "many",
+          "more",
+          "less",
+          "where",
+          "what",
+          "eat",
+          "live",
+          "grow",
+          "then",
+          "away"
+        ],
+        "sentenceFrames": [
+          "What do animals eat?",
+          "Where do they live?"
+        ],
+        "childTask": "只复习犹豫词；能秒认的词直接跳过。",
+        "parentTask": "只复习犹豫词；能秒认的词直接跳过。",
+        "assignment": {
+          "mode": "choose",
+          "rule": "数量、动物、天气主题各选 1 本",
+          "groups": [
+            {
+              "label": "数量主题",
+              "count": 1,
+              "choices": [
+                "B-28 Ten",
+                "C-12 We Count",
+                "D-31 Less than",
+                "D-32 Greater than"
+              ]
+            },
+            {
+              "label": "动物主题",
+              "count": 1,
+              "choices": [
+                "C-9 What Animals Eat",
+                "D-5 Where Animals Live",
+                "E-4 Places Plants and Animals Live"
+              ]
+            },
+            {
+              "label": "天气主题",
+              "count": 1,
+              "choices": [
+                "C-14 Snow Falls",
+                "D-10 Fog",
+                "D-11 Clouds",
+                "E-11 The Four Seasons"
+              ]
+            }
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 13
+    },
+    {
+      "day": 13,
+      "week": 3,
+      "dayOfWeek": 1,
+      "focus": "s 辅音丛：两个声音都要读清楚｜常见规律拓展：ar 是常见 r 控制元音",
+      "phonics": {
+        "pattern": "initial-s-blends",
+        "words": [
+          {
+            "word": "stop",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-stop",
+              "sourceFile": "stop.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.889
+              }
+            }
+          },
+          {
+            "word": "step",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-step",
+              "sourceFile": "step.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.866
+              }
+            }
+          },
+          {
+            "word": "spin",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-spin",
+              "sourceFile": "spin.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.854
+              }
+            }
+          },
+          {
+            "word": "spot",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-spot",
+              "sourceFile": "spot.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.924
+              }
+            }
+          },
+          {
+            "word": "car",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-car",
+              "sourceFile": "car.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.738
+              }
+            }
+          },
+          {
+            "word": "star",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-star",
+              "sourceFile": "star.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.843
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "r-controlled-ar",
+            "focus": "ar 是常见 r 控制元音",
+            "words": [
+              "car",
+              "star"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "time",
+        "review": [
+          "next",
+          "up",
+          "down",
+          "away",
+          "around",
+          "first",
+          "then"
+        ],
+        "newWords": [
+          "time",
+          "at",
+          "school",
+          "new",
+          "ready"
+        ]
+      },
+      "raz": {
+        "focus": "学校和日常",
+        "anchorBook": "B-73 It Is School Time",
+        "supportingBooks": [
+          "C-46 Busy At School",
+          "D-41 My New School",
+          "E-43 Getting Ready for School"
+        ],
+        "sourceBooks": [
+          "B-73 It Is School Time",
+          "C-46 Busy At School",
+          "D-41 My New School",
+          "E-43 Getting Ready for School"
+        ],
+        "targetWords": [
+          "school",
+          "time",
+          "ready",
+          "new",
+          "class",
+          "teacher",
+          "busy",
+          "at"
+        ],
+        "sentenceFrames": [
+          "It is time for...",
+          "I am ready for..."
+        ],
+        "childTask": "联系真实生活，说一句 It is time for...。",
+        "parentTask": "联系真实生活，说一句 It is time for...。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "B-73 It Is School Time",
+            "C-46 Busy At School",
+            "D-41 My New School",
+            "E-43 Getting Ready for School"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 15
+    },
+    {
+      "day": 14,
+      "week": 3,
+      "dayOfWeek": 2,
+      "focus": "l 辅音丛：保留开头两个辅音｜常见规律拓展：or 是常见 r 控制元音",
+      "phonics": {
+        "pattern": "initial-l-blends",
+        "words": [
+          {
+            "word": "clap",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-clap",
+              "sourceFile": "clap.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.819
+              }
+            }
+          },
+          {
+            "word": "flag",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-flag",
+              "sourceFile": "flag.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.853
+              }
+            }
+          },
+          {
+            "word": "slip",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-slip",
+              "sourceFile": "slip.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.808
+              }
+            }
+          },
+          {
+            "word": "plan",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-plan",
+              "sourceFile": "plan.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.803
+              }
+            }
+          },
+          {
+            "word": "corn",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-corn",
+              "sourceFile": "corn.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.854
+              }
+            }
+          },
+          {
+            "word": "fork",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-fork",
+              "sourceFile": "fork.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.877
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "r-controlled-or",
+            "focus": "or 是常见 r 控制元音",
+            "words": [
+              "corn",
+              "fork"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "want",
+        "review": [
+          "time",
+          "at",
+          "school",
+          "new",
+          "ready",
+          "many",
+          "one",
+          "two",
+          "three",
+          "count"
+        ],
+        "newWords": [
+          "want",
+          "do",
+          "not",
+          "make",
+          "get"
+        ]
+      },
+      "raz": {
+        "focus": "需要/想要/拥有",
+        "anchorBook": "C-52 What I Want",
+        "supportingBooks": [
+          "D-54 I Need An Eraser",
+          "F-72 Needs and Wants"
+        ],
+        "sourceBooks": [
+          "C-52 What I Want",
+          "D-54 I Need An Eraser",
+          "F-72 Needs and Wants"
+        ],
+        "targetWords": [
+          "want",
+          "need",
+          "have",
+          "has",
+          "eraser",
+          "thing",
+          "because",
+          "enough"
+        ],
+        "sentenceFrames": [
+          "I want...",
+          "I need... because..."
+        ],
+        "childTask": "从身边物品各选一个 want 和 need，说出理由。",
+        "parentTask": "从身边物品各选一个 want 和 need，说出理由。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "C-52 What I Want",
+            "D-54 I Need An Eraser",
+            "F-72 Needs and Wants"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 16
+    },
+    {
+      "day": 15,
+      "week": 3,
+      "dayOfWeek": 3,
+      "focus": "r 辅音丛：比较 fr / tr / dr / cr｜常见规律拓展：er 常发卷舌元音",
+      "phonics": {
+        "pattern": "initial-r-blends",
+        "words": [
+          {
+            "word": "frog",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-frog",
+              "sourceFile": "frog.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.853
+              }
+            }
+          },
+          {
+            "word": "trip",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-trip",
+              "sourceFile": "trip.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.761
+              }
+            }
+          },
+          {
+            "word": "drum",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-drum",
+              "sourceFile": "drum.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.824
+              }
+            }
+          },
+          {
+            "word": "crab",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-crab",
+              "sourceFile": "crab.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.808
+              }
+            }
+          },
+          {
+            "word": "her",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-her",
+              "sourceFile": "her.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.694
+              }
+            }
+          },
+          {
+            "word": "fern",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-fern",
+              "sourceFile": "fern.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.819
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "r-controlled-er",
+            "focus": "er 常发卷舌元音",
+            "words": [
+              "her",
+              "fern"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "need",
+        "review": [
+          "want",
+          "do",
+          "not",
+          "make",
+          "get",
+          "I",
+          "a",
+          "the",
+          "and",
+          "read"
+        ],
+        "newWords": [
+          "need",
+          "help",
+          "come",
+          "find",
+          "give"
+        ]
+      },
+      "raz": {
+        "focus": "家庭和朋友",
+        "anchorBook": "D-35 A Day for Dad",
+        "supportingBooks": [
+          "E-31 Nothing for Father's Day",
+          "E-71 A Week With Grandpa",
+          "F-12 Best of Friends"
+        ],
+        "sourceBooks": [
+          "D-35 A Day for Dad",
+          "E-31 Nothing for Father's Day",
+          "E-71 A Week With Grandpa",
+          "F-12 Best of Friends"
+        ],
+        "targetWords": [
+          "dad",
+          "father",
+          "grandpa",
+          "friend",
+          "family",
+          "day",
+          "week",
+          "with"
+        ],
+        "sentenceFrames": [
+          "I am with...",
+          "My friend..."
+        ],
+        "childTask": "选一个家庭成员或朋友，说一句和他有关的话。",
+        "parentTask": "选一个家庭成员或朋友，说一句和他有关的话。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "D-35 A Day for Dad",
+            "E-31 Nothing for Father's Day",
+            "E-71 A Week With Grandpa",
+            "F-12 Best of Friends"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 17
+    },
+    {
+      "day": 16,
+      "week": 3,
+      "dayOfWeek": 4,
+      "focus": "词尾辅音丛：结尾两个声音都不丢｜常见规律拓展：ir 常发卷舌元音",
+      "phonics": {
+        "pattern": "final-blends",
+        "words": [
+          {
+            "word": "hand",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-hand",
+              "sourceFile": "hand.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.799
+              }
+            }
+          },
+          {
+            "word": "milk",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d2-t4-w10-r20260805",
+              "level": 1,
+              "disc": 2,
+              "track": 4,
+              "sourceFile": "OPW_SB1_Disc2_Track04.mp3",
+              "clip": {
+                "startSeconds": 18.58,
+                "endSeconds": 19.34
+              }
+            }
+          },
+          {
+            "word": "jump",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-jump",
+              "sourceFile": "jump.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.853
+              }
+            }
+          },
+          {
+            "word": "nest",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d2-t8-w11-r20260805",
+              "level": 1,
+              "disc": 2,
+              "track": 8,
+              "sourceFile": "OPW_SB1_Disc2_Track08.mp3",
+              "clip": {
+                "startSeconds": 15.02,
+                "endSeconds": 15.88
+              }
+            }
+          },
+          {
+            "word": "bird",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-bird",
+              "sourceFile": "bird.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.676
+              }
+            }
+          },
+          {
+            "word": "girl",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-girl",
+              "sourceFile": "girl.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.68
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "r-controlled-ir",
+            "focus": "ir 常发卷舌元音",
+            "words": [
+              "bird",
+              "girl"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "because",
+        "review": [
+          "need",
+          "help",
+          "come",
+          "find",
+          "give",
+          "you",
+          "can",
+          "go",
+          "see",
+          "we"
+        ],
+        "newWords": [
+          "because",
+          "for",
+          "of",
+          "but",
+          "so"
+        ]
+      },
+      "raz": {
+        "focus": "工作和社区",
+        "anchorBook": "B-75 I Am a Community Worker",
+        "supportingBooks": [
+          "D-69 Community Helpers",
+          "D-71 Workers",
+          "F-62 Community Workers"
+        ],
+        "sourceBooks": [
+          "B-75 I Am a Community Worker",
+          "D-69 Community Helpers",
+          "D-71 Workers",
+          "F-62 Community Workers"
+        ],
+        "targetWords": [
+          "worker",
+          "community",
+          "help",
+          "people",
+          "job",
+          "work",
+          "can",
+          "do"
+        ],
+        "sentenceFrames": [
+          "Workers help...",
+          "People can..."
+        ],
+        "childTask": "选一种社区工作，说 Workers help...。",
+        "parentTask": "选一种社区工作，说 Workers help...。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "B-75 I Am a Community Worker",
+            "D-69 Community Helpers",
+            "D-71 Workers",
+            "F-62 Community Workers"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 18
+    },
+    {
+      "day": 17,
+      "week": 3,
+      "dayOfWeek": 5,
+      "focus": "CCVC / CVCC 综合拼读：先分音，再合音｜常见规律拓展：ur 常发卷舌元音",
+      "phonics": {
+        "pattern": "blend-word-review",
+        "words": [
+          {
+            "word": "black",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-black",
+              "sourceFile": "black.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.792
+              }
+            }
+          },
+          {
+            "word": "plant",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-plant",
+              "sourceFile": "plant.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.803
+              }
+            }
+          },
+          {
+            "word": "swim",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d2-t33-w64-r20260805",
+              "level": 3,
+              "disc": 2,
+              "track": 33,
+              "sourceFile": "OPW_SB3_Disc2_Track33.mp3",
+              "clip": {
+                "startSeconds": 78.58,
+                "endSeconds": 79.32
+              }
+            }
+          },
+          {
+            "word": "frog",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-frog",
+              "sourceFile": "frog.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.853
+              }
+            }
+          },
+          {
+            "word": "turn",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-turn",
+              "sourceFile": "turn.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.796
+              }
+            }
+          },
+          {
+            "word": "burn",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-burn",
+              "sourceFile": "burn.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.722
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "r-controlled-ur",
+            "focus": "ur 常发卷舌元音",
+            "words": [
+              "turn",
+              "burn"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "with",
+        "review": [
+          "because",
+          "for",
+          "of",
+          "but",
+          "so",
+          "where",
+          "is",
+          "in",
+          "here",
+          "there"
+        ],
+        "newWords": [
+          "with",
+          "he",
+          "she",
+          "they",
+          "them"
+        ]
+      },
+      "raz": {
+        "focus": "食物和制作",
+        "anchorBook": "B-40 We Make Cookies",
+        "supportingBooks": [
+          "C-27 Yummy, Yummy",
+          "E-27 Let's Make Lemonade",
+          "E-61 Making Pizza"
+        ],
+        "sourceBooks": [
+          "B-40 We Make Cookies",
+          "C-27 Yummy, Yummy",
+          "E-27 Let's Make Lemonade",
+          "E-61 Making Pizza"
+        ],
+        "targetWords": [
+          "make",
+          "made",
+          "food",
+          "yummy",
+          "cookie",
+          "pizza",
+          "lemonade",
+          "eat"
+        ],
+        "sentenceFrames": [
+          "We make...",
+          "I eat...",
+          "It is yummy."
+        ],
+        "childTask": "假装制作一种食物，边做动作边说 make / eat / yummy。",
+        "parentTask": "假装制作一种食物，边做动作边说 make / eat / yummy。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "B-40 We Make Cookies",
+            "C-27 Yummy, Yummy",
+            "E-27 Let's Make Lemonade",
+            "E-61 Making Pizza"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 19
+    },
+    {
+      "day": 18,
+      "week": 3,
+      "dayOfWeek": 6,
+      "focus": "第 3 周回收：开头和结尾辅音丛｜常见规律拓展：对比 ar / ir",
+      "phonics": {
+        "pattern": "blend-review",
+        "words": [
+          {
+            "word": "step",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-step",
+              "sourceFile": "step.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.866
+              }
+            }
+          },
+          {
+            "word": "clap",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-clap",
+              "sourceFile": "clap.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.819
+              }
+            }
+          },
+          {
+            "word": "frog",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-frog",
+              "sourceFile": "frog.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.853
+              }
+            }
+          },
+          {
+            "word": "hand",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-hand",
+              "sourceFile": "hand.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.799
+              }
+            }
+          },
+          {
+            "word": "car",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-car",
+              "sourceFile": "car.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.738
+              }
+            }
+          },
+          {
+            "word": "bird",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-bird",
+              "sourceFile": "bird.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.676
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "r-controlled-review",
+            "focus": "对比 ar / ir",
+            "words": [
+              "car",
+              "bird"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": null,
+        "review": [
+          "with",
+          "he",
+          "she",
+          "they",
+          "them",
+          "what",
+          "has",
+          "this",
+          "these",
+          "it"
+        ],
+        "newWords": []
+      },
+      "raz": {
+        "focus": "第 3 周回收",
+        "anchorBook": "学校、need/want、worker、food 主题各选 1 本",
+        "supportingBooks": [],
+        "sourceBooks": [
+          "学校、need/want、worker、food 主题各选 1 本"
+        ],
+        "targetWords": [
+          "school",
+          "time",
+          "need",
+          "want",
+          "because",
+          "friend",
+          "people",
+          "work",
+          "make"
+        ],
+        "sentenceFrames": [
+          "I need... because...",
+          "Workers help..."
+        ],
+        "childTask": "重点回收 because / people / friend / work。",
+        "parentTask": "重点回收 because / people / friend / work。",
+        "assignment": {
+          "mode": "choose",
+          "rule": "学校、need/want、worker、food 主题各选 1 本",
+          "groups": [
+            {
+              "label": "学校主题",
+              "count": 1,
+              "choices": [
+                "B-73 It Is School Time",
+                "C-46 Busy At School",
+                "D-41 My New School",
+                "E-43 Getting Ready for School"
+              ]
+            },
+            {
+              "label": "need / want 主题",
+              "count": 1,
+              "choices": [
+                "C-52 What I Want",
+                "D-54 I Need An Eraser",
+                "F-72 Needs and Wants"
+              ]
+            },
+            {
+              "label": "worker 主题",
+              "count": 1,
+              "choices": [
+                "B-75 I Am a Community Worker",
+                "D-69 Community Helpers",
+                "D-71 Workers",
+                "F-62 Community Workers"
+              ]
+            },
+            {
+              "label": "food 主题",
+              "count": 1,
+              "choices": [
+                "B-40 We Make Cookies",
+                "C-27 Yummy, Yummy",
+                "E-27 Let's Make Lemonade",
+                "E-61 Making Pizza"
+              ]
+            }
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 20
+    },
+    {
+      "day": 19,
+      "week": 3,
+      "dayOfWeek": 7,
+      "focus": "辅音丛混合复习：流畅读词，不追求速度｜常见规律拓展：对比 or / ur",
+      "phonics": {
+        "pattern": "blend-mixed-review",
+        "words": [
+          {
+            "word": "spin",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-spin",
+              "sourceFile": "spin.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.854
+              }
+            }
+          },
+          {
+            "word": "flag",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-flag",
+              "sourceFile": "flag.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.853
+              }
+            }
+          },
+          {
+            "word": "trip",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-trip",
+              "sourceFile": "trip.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.761
+              }
+            }
+          },
+          {
+            "word": "milk",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d2-t4-w10-r20260805",
+              "level": 1,
+              "disc": 2,
+              "track": 4,
+              "sourceFile": "OPW_SB1_Disc2_Track04.mp3",
+              "clip": {
+                "startSeconds": 18.58,
+                "endSeconds": 19.34
+              }
+            }
+          },
+          {
+            "word": "plant",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-plant",
+              "sourceFile": "plant.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.803
+              }
+            }
+          },
+          {
+            "word": "swim",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d2-t33-w64-r20260805",
+              "level": 3,
+              "disc": 2,
+              "track": 33,
+              "sourceFile": "OPW_SB3_Disc2_Track33.mp3",
+              "clip": {
+                "startSeconds": 78.58,
+                "endSeconds": 79.32
+              }
+            }
+          },
+          {
+            "word": "fork",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-fork",
+              "sourceFile": "fork.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.877
+              }
+            }
+          },
+          {
+            "word": "turn",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-turn",
+              "sourceFile": "turn.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.796
+              }
+            }
+          }
+        ],
+        "activity": "混合复习并按词形分类。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "r-controlled-review",
+            "focus": "对比 or / ur",
+            "words": [
+              "fork",
+              "turn"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": null,
+        "review": [
+          "my",
+          "like",
+          "love",
+          "me",
+          "your",
+          "because",
+          "for",
+          "of",
+          "but",
+          "so"
+        ],
+        "newWords": []
+      },
+      "raz": {
+        "focus": "轻松输入",
+        "anchorBook": "听 D/E 级故事类音频",
+        "supportingBooks": [],
+        "sourceBooks": [
+          "听 D/E 级故事类音频"
+        ],
+        "targetWords": [],
+        "sentenceFrames": [],
+        "childTask": "只保留听力优势，不做纸笔任务。",
+        "parentTask": "只保留听力优势，不做纸笔任务。",
+        "assignment": {
+          "mode": "choose",
+          "rule": "听 1 本 D/E 级故事类音频",
+          "groups": [
+            {
+              "label": "D/E 级故事音频",
+              "count": 1,
+              "choices": [
+                "D-41 My New School",
+                "E-43 Getting Ready for School",
+                "D-54 I Need An Eraser",
+                "D-35 A Day for Dad",
+                "E-31 Nothing for Father's Day",
+                "E-71 A Week With Grandpa",
+                "D-69 Community Helpers",
+                "D-71 Workers",
+                "E-27 Let's Make Lemonade",
+                "E-61 Making Pizza"
+              ]
+            }
+          ]
+        }
+      },
+      "listening": {
+        "type": "review-and-read",
+        "readiness": "ready"
+      },
+      "curriculumDay": 21
+    },
+    {
+      "day": 20,
+      "week": 4,
+      "dayOfWeek": 1,
+      "focus": "长元音 a_e：结尾 e 让 a 说字母音｜常见规律拓展：oo 可发长音 /uː/",
+      "phonics": {
+        "pattern": "silent-e-a",
+        "words": [
+          {
+            "word": "make",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t62-w57-r20260805",
+              "level": 2,
+              "disc": 2,
+              "track": 62,
+              "sourceFile": "OPW_SB2_Disc2_Track62.mp3",
+              "clip": {
+                "startSeconds": 58.02,
+                "endSeconds": 58.82
+              }
+            }
+          },
+          {
+            "word": "name",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t18-w33-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 18,
+              "sourceFile": "OPW_SB3_Disc1_Track18.mp3",
+              "clip": {
+                "startSeconds": 40,
+                "endSeconds": 40.82
+              }
+            }
+          },
+          {
+            "word": "same",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-same",
+              "sourceFile": "same.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.866
+              }
+            }
+          },
+          {
+            "word": "game",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t10-w11-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 10,
+              "sourceFile": "OPW_SB3_Disc1_Track10.mp3",
+              "clip": {
+                "startSeconds": 15.3,
+                "endSeconds": 16.1
+              }
+            }
+          },
+          {
+            "word": "moon",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-moon",
+              "sourceFile": "moon.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.752
+              }
+            }
+          },
+          {
+            "word": "food",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-food",
+              "sourceFile": "food.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.807
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "vowel-team-oo-long",
+            "focus": "oo 可发长音 /uː/",
+            "words": [
+              "moon",
+              "food"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "who",
+        "review": [
+          "time",
+          "at",
+          "school",
+          "new",
+          "ready",
+          "with",
+          "he",
+          "she",
+          "they",
+          "them"
+        ],
+        "newWords": [
+          "who",
+          "when",
+          "which",
+          "his",
+          "her"
+        ]
+      },
+      "raz": {
+        "focus": "疑问词总复习",
+        "anchorBook": "C-91 Who, Who, Who?",
+        "supportingBooks": [
+          "D-27 Who Runs Faster?",
+          "D-30 Why Does an Octopus Need Eight Arms?",
+          "F-10 Who Needs Rain?"
+        ],
+        "sourceBooks": [
+          "C-91 Who, Who, Who?",
+          "D-27 Who Runs Faster?",
+          "D-30 Why Does an Octopus Need Eight Arms?",
+          "F-10 Who Needs Rain?"
+        ],
+        "targetWords": [
+          "who",
+          "what",
+          "where",
+          "when",
+          "why",
+          "how",
+          "does",
+          "do",
+          "they"
+        ],
+        "sentenceFrames": [
+          "Who...?",
+          "Why does...?",
+          "How do they...?"
+        ],
+        "childTask": "只问问题，不讲语法；先用关键词回答，再尝试整句。",
+        "parentTask": "只问问题，不讲语法；先用关键词回答，再尝试整句。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "C-91 Who, Who, Who?",
+            "D-27 Who Runs Faster?",
+            "D-30 Why Does an Octopus Need Eight Arms?",
+            "F-10 Who Needs Rain?"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 22
+    },
+    {
+      "day": 21,
+      "week": 4,
+      "dayOfWeek": 2,
+      "focus": "长元音 i_e：比较短 i 与长 i｜常见规律拓展：oo 也可发短音 /ʊ/",
+      "phonics": {
+        "pattern": "silent-e-i",
+        "words": [
+          {
+            "word": "bike",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t27-w39-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 27,
+              "sourceFile": "OPW_SB3_Disc1_Track27.mp3",
+              "clip": {
+                "startSeconds": 47.36,
+                "endSeconds": 48.26
+              }
+            }
+          },
+          {
+            "word": "like",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d2-t63-w126-r20260805",
+              "level": 1,
+              "disc": 2,
+              "track": 63,
+              "sourceFile": "OPW_SB1_Disc2_Track63.mp3",
+              "clip": {
+                "startSeconds": 89.76,
+                "endSeconds": 90.54
+              }
+            }
+          },
+          {
+            "word": "time",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t26-w12-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 26,
+              "sourceFile": "OPW_SB3_Disc1_Track26.mp3",
+              "clip": {
+                "startSeconds": 16.64,
+                "endSeconds": 17.42
+              }
+            }
+          },
+          {
+            "word": "five",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t30-w16-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 30,
+              "sourceFile": "OPW_SB3_Disc1_Track30.mp3",
+              "clip": {
+                "startSeconds": 39.16,
+                "endSeconds": 39.92
+              }
+            }
+          },
+          {
+            "word": "book",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-book",
+              "sourceFile": "book.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.676
+              }
+            }
+          },
+          {
+            "word": "foot",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-foot",
+              "sourceFile": "foot.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.761
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "vowel-team-oo-short",
+            "focus": "oo 也可发短音 /ʊ/",
+            "words": [
+              "book",
+              "foot"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "why",
+        "review": [
+          "who",
+          "when",
+          "which",
+          "his",
+          "her",
+          "many",
+          "one",
+          "two",
+          "three",
+          "count"
+        ],
+        "newWords": [
+          "why",
+          "was",
+          "were",
+          "are",
+          "am"
+        ]
+      },
+      "raz": {
+        "focus": "不规则高频词",
+        "anchorBook": "C-88 There Is a Mouse in the House",
+        "supportingBooks": [
+          "D-66 I Did Not Give Up!",
+          "E-72 Try, try again",
+          "F-86 Stop It, Zots!"
+        ],
+        "sourceBooks": [
+          "C-88 There Is a Mouse in the House",
+          "D-66 I Did Not Give Up!",
+          "E-72 Try, try again",
+          "F-86 Stop It, Zots!"
+        ],
+        "targetWords": [
+          "there",
+          "is",
+          "did",
+          "not",
+          "give",
+          "again",
+          "stop",
+          "it",
+          "said"
+        ],
+        "sentenceFrames": [
+          "There is...",
+          "I did not...",
+          "Try again."
+        ],
+        "childTask": "把不规则词放进短句整体读，不要求全部靠拼读。",
+        "parentTask": "把不规则词放进短句整体读，不要求全部靠拼读。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "C-88 There Is a Mouse in the House",
+            "D-66 I Did Not Give Up!",
+            "E-72 Try, try again",
+            "F-86 Stop It, Zots!"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 23
+    },
+    {
+      "day": 22,
+      "week": 4,
+      "dayOfWeek": 3,
+      "focus": "长元音 o_e：结尾 e 改变中间元音｜常见规律拓展：ou 常发 /aʊ/",
+      "phonics": {
+        "pattern": "silent-e-o",
+        "words": [
+          {
+            "word": "home",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t50-w57-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 50,
+              "sourceFile": "OPW_SB3_Disc1_Track50.mp3",
+              "clip": {
+                "startSeconds": 56.38,
+                "endSeconds": 57.22
+              }
+            }
+          },
+          {
+            "word": "hope",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t49-w15-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 49,
+              "sourceFile": "OPW_SB3_Disc1_Track49.mp3",
+              "clip": {
+                "startSeconds": 19.54,
+                "endSeconds": 20.56
+              }
+            }
+          },
+          {
+            "word": "rope",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t39-w10-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 39,
+              "sourceFile": "OPW_SB3_Disc1_Track39.mp3",
+              "clip": {
+                "startSeconds": 16,
+                "endSeconds": 16.84
+              }
+            }
+          },
+          {
+            "word": "nose",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d2-t7-w37-r20260805",
+              "level": 1,
+              "disc": 2,
+              "track": 7,
+              "sourceFile": "OPW_SB1_Disc2_Track07.mp3",
+              "clip": {
+                "startSeconds": 51.04,
+                "endSeconds": 51.88
+              }
+            }
+          },
+          {
+            "word": "out",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-out",
+              "sourceFile": "out.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.707
+              }
+            }
+          },
+          {
+            "word": "house",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-house",
+              "sourceFile": "house.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.834
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "diphthong-ou",
+            "focus": "ou 常发 /aʊ/",
+            "words": [
+              "out",
+              "house"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "how",
+        "review": [
+          "why",
+          "was",
+          "were",
+          "are",
+          "am",
+          "I",
+          "a",
+          "the",
+          "and",
+          "read"
+        ],
+        "newWords": [
+          "how",
+          "could",
+          "would",
+          "will",
+          "must"
+        ]
+      },
+      "raz": {
+        "focus": "自然拼读辅助记词",
+        "anchorBook": "D-87 Silent e",
+        "supportingBooks": [
+          "F-27 Princess Prefix",
+          "F-77 Sir Suffix"
+        ],
+        "sourceBooks": [
+          "D-87 Silent e",
+          "F-27 Princess Prefix",
+          "F-77 Sir Suffix"
+        ],
+        "targetWords": [
+          "silent",
+          "e",
+          "prefix",
+          "suffix",
+          "make",
+          "name",
+          "same",
+          "hope"
+        ],
+        "sentenceFrames": [
+          "Silent e changes...",
+          "I can make..."
+        ],
+        "childTask": "轻讲规则，用 make / name / same / hope 验证 silent e。",
+        "parentTask": "轻讲规则，用 make / name / same / hope 验证 silent e。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "D-87 Silent e",
+            "F-27 Princess Prefix",
+            "F-77 Sir Suffix"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 24
+    },
+    {
+      "day": 23,
+      "week": 4,
+      "dayOfWeek": 4,
+      "focus": "长元音 u_e 与 e_e：观察结尾 e｜常见规律拓展：ow 也可发 /aʊ/",
+      "phonics": {
+        "pattern": "silent-e-u-e",
+        "words": [
+          {
+            "word": "cube",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t50-w65-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 50,
+              "sourceFile": "OPW_SB3_Disc1_Track50.mp3",
+              "clip": {
+                "startSeconds": 60.7,
+                "endSeconds": 61.5
+              }
+            }
+          },
+          {
+            "word": "cute",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t44-w26-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 44,
+              "sourceFile": "OPW_SB3_Disc1_Track44.mp3",
+              "clip": {
+                "startSeconds": 45.6,
+                "endSeconds": 46.46
+              }
+            }
+          },
+          {
+            "word": "tune",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-tune",
+              "sourceFile": "tune.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.785
+              }
+            }
+          },
+          {
+            "word": "these",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t61-w42-r20260805",
+              "level": 2,
+              "disc": 2,
+              "track": 61,
+              "sourceFile": "OPW_SB2_Disc2_Track61.mp3",
+              "clip": {
+                "startSeconds": 71.22,
+                "endSeconds": 72.18
+              }
+            }
+          },
+          {
+            "word": "cow",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-cow",
+              "sourceFile": "cow.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.808
+              }
+            }
+          },
+          {
+            "word": "down",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-down",
+              "sourceFile": "down.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.749
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "diphthong-ow",
+            "focus": "ow 也可发 /aʊ/",
+            "words": [
+              "cow",
+              "down"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "does",
+        "review": [
+          "how",
+          "could",
+          "would",
+          "will",
+          "must",
+          "you",
+          "can",
+          "go",
+          "see",
+          "we"
+        ],
+        "newWords": [
+          "does",
+          "did",
+          "had",
+          "been",
+          "be"
+        ]
+      },
+      "raz": {
+        "focus": "信息类综合阅读",
+        "anchorBook": "F-1 The Food Chain",
+        "supportingBooks": [
+          "F-14 Hibernation",
+          "F-18 A Look at Fossils"
+        ],
+        "sourceBooks": [
+          "F-1 The Food Chain",
+          "F-14 Hibernation",
+          "F-18 A Look at Fossils"
+        ],
+        "targetWords": [
+          "food",
+          "chain",
+          "look",
+          "at",
+          "fossil",
+          "winter",
+          "sleep",
+          "animal"
+        ],
+        "sentenceFrames": [
+          "A food chain has...",
+          "Animals sleep..."
+        ],
+        "childTask": "看图口头复述信息，不要求整段英文。",
+        "parentTask": "看图口头复述信息，不要求整段英文。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "F-1 The Food Chain",
+            "F-14 Hibernation",
+            "F-18 A Look at Fossils"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 25
+    },
+    {
+      "day": 24,
+      "week": 4,
+      "dayOfWeek": 5,
+      "focus": "短元音与 Silent e 对比：一个 e 改变读音｜常见规律拓展：oi 常发 /ɔɪ/",
+      "phonics": {
+        "pattern": "silent-e-contrast",
+        "words": [
+          {
+            "word": "cap",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d1-t24-w11",
+              "level": 2,
+              "disc": 1,
+              "track": 24,
+              "sourceFile": "OPW_SB2_Disc1_Track24.mp3",
+              "clip": {
+                "startSeconds": 57.01,
+                "endSeconds": 57.84
+              }
+            }
+          },
+          {
+            "word": "cape",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t35-w87-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 35,
+              "sourceFile": "OPW_SB3_Disc1_Track35.mp3",
+              "clip": {
+                "startSeconds": 79.44,
+                "endSeconds": 80.32
+              }
+            }
+          },
+          {
+            "word": "kit",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t21-w9-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 21,
+              "sourceFile": "OPW_SB3_Disc1_Track21.mp3",
+              "clip": {
+                "startSeconds": 12.38,
+                "endSeconds": 13
+              }
+            }
+          },
+          {
+            "word": "kite",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t35-w114-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 35,
+              "sourceFile": "OPW_SB3_Disc1_Track35.mp3",
+              "clip": {
+                "startSeconds": 102.06,
+                "endSeconds": 102.94
+              }
+            }
+          },
+          {
+            "word": "hop",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t26-w23",
+              "level": 2,
+              "disc": 2,
+              "track": 26,
+              "sourceFile": "OPW_SB2_Disc2_Track26.mp3",
+              "clip": {
+                "startSeconds": 38.65,
+                "endSeconds": 40.24
+              }
+            }
+          },
+          {
+            "word": "hope",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t49-w15-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 49,
+              "sourceFile": "OPW_SB3_Disc1_Track49.mp3",
+              "clip": {
+                "startSeconds": 19.54,
+                "endSeconds": 20.56
+              }
+            }
+          },
+          {
+            "word": "coin",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-coin",
+              "sourceFile": "coin.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.808
+              }
+            }
+          },
+          {
+            "word": "soil",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-soil",
+              "sourceFile": "soil.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.889
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "diphthong-oi",
+            "focus": "oi 常发 /ɔɪ/",
+            "words": [
+              "coin",
+              "soil"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": "said",
+        "review": [
+          "does",
+          "did",
+          "had",
+          "been",
+          "be",
+          "where",
+          "is",
+          "in",
+          "here",
+          "there"
+        ],
+        "newWords": [
+          "said",
+          "say",
+          "look",
+          "little",
+          "big"
+        ]
+      },
+      "raz": {
+        "focus": "故事类综合阅读",
+        "anchorBook": "F-74 The Three Little Pigs",
+        "supportingBooks": [
+          "F-75 The Giant Turnip",
+          "F-76 The Tortoise and the Hare"
+        ],
+        "sourceBooks": [
+          "F-74 The Three Little Pigs",
+          "F-75 The Giant Turnip",
+          "F-76 The Tortoise and the Hare"
+        ],
+        "targetWords": [
+          "little",
+          "three",
+          "big",
+          "help",
+          "pull",
+          "fast",
+          "slow",
+          "hare",
+          "turnip"
+        ],
+        "sentenceFrames": [
+          "The pig is...",
+          "They help...",
+          "Slow and fast."
+        ],
+        "childTask": "选一本最喜欢的故事复述，其余只读。",
+        "parentTask": "选一本最喜欢的故事复述，其余只读。",
+        "assignment": {
+          "mode": "fixed",
+          "books": [
+            "F-74 The Three Little Pigs",
+            "F-75 The Giant Turnip",
+            "F-76 The Tortoise and the Hare"
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 26
+    },
+    {
+      "day": 25,
+      "week": 4,
+      "dayOfWeek": 6,
+      "focus": "四周总复盘：短元音、组合、辅音丛、Silent e｜常见规律拓展：词尾 oy 常发 /ɔɪ/",
+      "phonics": {
+        "pattern": "four-week-review",
+        "words": [
+          {
+            "word": "cat",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d1-t12-w10",
+              "level": 1,
+              "disc": 1,
+              "track": 12,
+              "sourceFile": "OPW_SB1_Disc1_Track12.mp3",
+              "clip": {
+                "startSeconds": 43.25,
+                "endSeconds": 43.86
+              }
+            }
+          },
+          {
+            "word": "ship",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-ship",
+              "sourceFile": "ship.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.736
+              }
+            }
+          },
+          {
+            "word": "frog",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-frog",
+              "sourceFile": "frog.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.853
+              }
+            }
+          },
+          {
+            "word": "hand",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-hand",
+              "sourceFile": "hand.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.799
+              }
+            }
+          },
+          {
+            "word": "make",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t62-w57-r20260805",
+              "level": 2,
+              "disc": 2,
+              "track": 62,
+              "sourceFile": "OPW_SB2_Disc2_Track62.mp3",
+              "clip": {
+                "startSeconds": 58.02,
+                "endSeconds": 58.82
+              }
+            }
+          },
+          {
+            "word": "hope",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t49-w15-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 49,
+              "sourceFile": "OPW_SB3_Disc1_Track49.mp3",
+              "clip": {
+                "startSeconds": 19.54,
+                "endSeconds": 20.56
+              }
+            }
+          },
+          {
+            "word": "boy",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-boy",
+              "sourceFile": "boy.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.757
+              }
+            }
+          },
+          {
+            "word": "toy",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-toy",
+              "sourceFile": "toy.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.819
+              }
+            }
+          }
+        ],
+        "activity": "先分音拼读，再合音读出完整单词。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "diphthong-oy",
+            "focus": "词尾 oy 常发 /ɔɪ/",
+            "words": [
+              "boy",
+              "toy"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": null,
+        "review": [
+          "said",
+          "say",
+          "look",
+          "little",
+          "big",
+          "what",
+          "has",
+          "this",
+          "these",
+          "it"
+        ],
+        "newWords": []
+      },
+      "raz": {
+        "focus": "总复盘",
+        "anchorBook": "从 4 周中每周选 2 本，共 8 本",
+        "supportingBooks": [],
+        "sourceBooks": [
+          "从 4 周中每周选 2 本，共 8 本"
+        ],
+        "targetWords": [
+          "I",
+          "you",
+          "where",
+          "many",
+          "because",
+          "who",
+          "said",
+          "does"
+        ],
+        "sentenceFrames": [
+          "I can...",
+          "There is...",
+          "I need...",
+          "Why does...?"
+        ],
+        "childTask": "把词分成秒认、犹豫、不会三类；只练后两类。",
+        "parentTask": "把词分成秒认、犹豫、不会三类；只练后两类。",
+        "assignment": {
+          "mode": "choose",
+          "rule": "从 4 周中每周选 2 本，共 8 本",
+          "groups": [
+            {
+              "label": "第 1 周",
+              "count": 2,
+              "choices": [
+                "B-51 I Read a Book",
+                "B-53 You and I",
+                "B-98 This Turtle",
+                "B-81 You Can Go",
+                "B-50 Go Animals Go",
+                "B-19 Animals Can Move",
+                "B-11 Where Is Water?",
+                "B-84 Where?",
+                "C-41 Get In",
+                "B-15 What Has These Feet?",
+                "B-16 What Has These Stripes?",
+                "B-17 What Has These Spots?",
+                "B-6 My Pet Dinosaur",
+                "B-12 I Love the Earth",
+                "B-56 I Love Art Class"
+              ]
+            },
+            {
+              "label": "第 2 周",
+              "count": 2,
+              "choices": [
+                "B-28 Ten",
+                "C-12 We Count",
+                "D-31 Less than",
+                "D-32 Greater than",
+                "C-9 What Animals Eat",
+                "D-5 Where Animals Live",
+                "E-4 Places Plants and Animals Live",
+                "C-6 How Frogs Grow",
+                "D-1 Grow, Vegetables, Grow!",
+                "D-9 Where Plants Grow",
+                "C-14 Snow Falls",
+                "D-10 Fog",
+                "D-11 Clouds",
+                "E-11 The Four Seasons",
+                "B-80 Near and Far Away",
+                "C-33 Going Away",
+                "D-37 Getting Around the City",
+                "D-88 How We Get to School"
+              ]
+            },
+            {
+              "label": "第 3 周",
+              "count": 2,
+              "choices": [
+                "B-73 It Is School Time",
+                "C-46 Busy At School",
+                "D-41 My New School",
+                "E-43 Getting Ready for School",
+                "C-52 What I Want",
+                "D-54 I Need An Eraser",
+                "F-72 Needs and Wants",
+                "D-35 A Day for Dad",
+                "E-31 Nothing for Father's Day",
+                "E-71 A Week With Grandpa",
+                "F-12 Best of Friends",
+                "B-75 I Am a Community Worker",
+                "D-69 Community Helpers",
+                "D-71 Workers",
+                "F-62 Community Workers",
+                "B-40 We Make Cookies",
+                "C-27 Yummy, Yummy",
+                "E-27 Let's Make Lemonade",
+                "E-61 Making Pizza"
+              ]
+            },
+            {
+              "label": "第 4 周",
+              "count": 2,
+              "choices": [
+                "C-91 Who, Who, Who?",
+                "D-27 Who Runs Faster?",
+                "D-30 Why Does an Octopus Need Eight Arms?",
+                "F-10 Who Needs Rain?",
+                "C-88 There Is a Mouse in the House",
+                "D-66 I Did Not Give Up!",
+                "E-72 Try, try again",
+                "F-86 Stop It, Zots!",
+                "D-87 Silent e",
+                "F-27 Princess Prefix",
+                "F-77 Sir Suffix",
+                "F-1 The Food Chain",
+                "F-14 Hibernation",
+                "F-18 A Look at Fossils",
+                "F-74 The Three Little Pigs",
+                "F-75 The Giant Turnip",
+                "F-76 The Tortoise and the Hare"
+              ]
+            }
+          ]
+        }
+      },
+      "listening": {
+        "type": "listen-and-choose",
+        "readiness": "ready"
+      },
+      "curriculumDay": 27
+    },
+    {
+      "day": 26,
+      "week": 4,
+      "dayOfWeek": 7,
+      "focus": "轻松展示：选会读的词和书讲给家人听｜常见规律拓展：复习 oo / ow",
+      "phonics": {
+        "pattern": "course-showcase",
+        "words": [
+          {
+            "word": "fish",
+            "audio": {
+              "status": "verified",
+              "itemId": "l1-d1-t25-w146-r20260805",
+              "level": 1,
+              "disc": 1,
+              "track": 25,
+              "sourceFile": "OPW_SB1_Disc1_Track25.mp3",
+              "clip": {
+                "startSeconds": 69.02,
+                "endSeconds": 69.72
+              }
+            }
+          },
+          {
+            "word": "plan",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "human-review",
+              "reviewedAt": "2026-08-07T02:17:11.220Z",
+              "assetId": "phonics-word-plan",
+              "sourceFile": "plan.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.803
+              }
+            }
+          },
+          {
+            "word": "time",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t26-w12-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 26,
+              "sourceFile": "OPW_SB3_Disc1_Track26.mp3",
+              "clip": {
+                "startSeconds": 16.64,
+                "endSeconds": 17.42
+              }
+            }
+          },
+          {
+            "word": "home",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t50-w57-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 50,
+              "sourceFile": "OPW_SB3_Disc1_Track50.mp3",
+              "clip": {
+                "startSeconds": 56.38,
+                "endSeconds": 57.22
+              }
+            }
+          },
+          {
+            "word": "cube",
+            "audio": {
+              "status": "verified",
+              "itemId": "l3-d1-t50-w65-r20260805",
+              "level": 3,
+              "disc": 1,
+              "track": 50,
+              "sourceFile": "OPW_SB3_Disc1_Track50.mp3",
+              "clip": {
+                "startSeconds": 60.7,
+                "endSeconds": 61.5
+              }
+            }
+          },
+          {
+            "word": "these",
+            "audio": {
+              "status": "verified",
+              "itemId": "l2-d2-t61-w42-r20260805",
+              "level": 2,
+              "disc": 2,
+              "track": 61,
+              "sourceFile": "OPW_SB2_Disc2_Track61.mp3",
+              "clip": {
+                "startSeconds": 71.22,
+                "endSeconds": 72.18
+              }
+            }
+          },
+          {
+            "word": "moon",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-moon",
+              "sourceFile": "moon.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.752
+              }
+            }
+          },
+          {
+            "word": "cow",
+            "audio": {
+              "status": "verified",
+              "sourceType": "tts",
+              "verificationSource": "tts-auto-policy",
+              "reviewedAt": "2026-08-07T03:07:42.768Z",
+              "assetId": "phonics-word-cow",
+              "sourceFile": "cow.mp3",
+              "clip": {
+                "startSeconds": 0,
+                "endSeconds": 0.808
+              }
+            }
+          }
+        ],
+        "activity": "混合复习并按词形分类。 核心词完成后，再练 2 个常见规律拓展词。",
+        "extensions": [
+          {
+            "pattern": "common-vowel-review",
+            "focus": "复习 oo / ow",
+            "words": [
+              "moon",
+              "cow"
+            ]
+          }
+        ]
+      },
+      "heartWords": {
+        "new": null,
+        "review": [
+          "my",
+          "like",
+          "love",
+          "me",
+          "your",
+          "does",
+          "did",
+          "had",
+          "been",
+          "be"
+        ],
+        "newWords": []
+      },
+      "raz": {
+        "focus": "轻松展示",
+        "anchorBook": "孩子自选 3 本读给家长听",
+        "supportingBooks": [],
+        "sourceBooks": [
+          "孩子自选 3 本读给家长听"
+        ],
+        "targetWords": [],
+        "sentenceFrames": [],
+        "childTask": "只鼓励流畅阅读，不频繁纠错。",
+        "parentTask": "只鼓励流畅阅读，不频繁纠错。",
+        "assignment": {
+          "mode": "choose",
+          "rule": "孩子自选 3 本读给家长听",
+          "groups": [
+            {
+              "label": "全课程书目",
+              "count": 3,
+              "choices": [
+                "B-51 I Read a Book",
+                "B-53 You and I",
+                "B-98 This Turtle",
+                "B-81 You Can Go",
+                "B-50 Go Animals Go",
+                "B-19 Animals Can Move",
+                "B-11 Where Is Water?",
+                "B-84 Where?",
+                "C-41 Get In",
+                "B-15 What Has These Feet?",
+                "B-16 What Has These Stripes?",
+                "B-17 What Has These Spots?",
+                "B-6 My Pet Dinosaur",
+                "B-12 I Love the Earth",
+                "B-56 I Love Art Class",
+                "B-28 Ten",
+                "C-12 We Count",
+                "D-31 Less than",
+                "D-32 Greater than",
+                "C-9 What Animals Eat",
+                "D-5 Where Animals Live",
+                "E-4 Places Plants and Animals Live",
+                "C-6 How Frogs Grow",
+                "D-1 Grow, Vegetables, Grow!",
+                "D-9 Where Plants Grow",
+                "C-14 Snow Falls",
+                "D-10 Fog",
+                "D-11 Clouds",
+                "E-11 The Four Seasons",
+                "B-80 Near and Far Away",
+                "C-33 Going Away",
+                "D-37 Getting Around the City",
+                "D-88 How We Get to School",
+                "B-73 It Is School Time",
+                "C-46 Busy At School",
+                "D-41 My New School",
+                "E-43 Getting Ready for School",
+                "C-52 What I Want",
+                "D-54 I Need An Eraser",
+                "F-72 Needs and Wants",
+                "D-35 A Day for Dad",
+                "E-31 Nothing for Father's Day",
+                "E-71 A Week With Grandpa",
+                "F-12 Best of Friends",
+                "B-75 I Am a Community Worker",
+                "D-69 Community Helpers",
+                "D-71 Workers",
+                "F-62 Community Workers",
+                "B-40 We Make Cookies",
+                "C-27 Yummy, Yummy",
+                "E-27 Let's Make Lemonade",
+                "E-61 Making Pizza",
+                "C-91 Who, Who, Who?",
+                "D-27 Who Runs Faster?",
+                "D-30 Why Does an Octopus Need Eight Arms?",
+                "F-10 Who Needs Rain?",
+                "C-88 There Is a Mouse in the House",
+                "D-66 I Did Not Give Up!",
+                "E-72 Try, try again",
+                "F-86 Stop It, Zots!",
+                "D-87 Silent e",
+                "F-27 Princess Prefix",
+                "F-77 Sir Suffix",
+                "F-1 The Food Chain",
+                "F-14 Hibernation",
+                "F-18 A Look at Fossils",
+                "F-74 The Three Little Pigs",
+                "F-75 The Giant Turnip",
+                "F-76 The Tortoise and the Hare"
+              ]
+            }
+          ]
+        }
+      },
+      "listening": {
+        "type": "review-and-read",
+        "readiness": "ready"
+      },
+      "curriculumDay": 28
+    }
+  ]
+}
