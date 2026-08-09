@@ -56,6 +56,17 @@ test("daily generation selects the latest effective version for each child and d
   assert.equal(courses.activeRelease(releases, "younger", "2026-08-25").id, "y1");
 });
 
+test("a newer same-day version can add modules to the current learning day", () => {
+  const releases = [
+    { id: "v1", kidId: "brother", version: 1, effectiveDate: "2026-08-09", status: "published", settings: { writing: { enabled: false }, math: { enabled: false } } },
+    { id: "v2", kidId: "brother", version: 2, effectiveDate: "2026-08-09", status: "published", settings: { writing: { enabled: true }, math: { enabled: true } } }
+  ];
+  const current = courses.settingsForDate({ releases }, {}, "brother", "2026-08-09");
+  assert.equal(current.release.id, "v2");
+  assert.equal(current.settings.writing.enabled, true);
+  assert.equal(current.settings.math.enabled, true);
+});
+
 test("legacy overall settings remain the baseline before the first release", () => {
   const plans = { releases: [{ id: "v1", kidId: "brother", version: 1, effectiveDate: "2026-08-10", status: "published", settings }] };
   const legacy = { brother: { poem: { enabled: false } } };

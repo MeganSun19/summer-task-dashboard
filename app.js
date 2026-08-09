@@ -437,7 +437,8 @@ function resolveSummerPlan(kidId) {
     state.days[kidId][today] = preserveDayState(generated, existing);
     saveState();
   } else {
-    const day = getDay(kidId, previousDate);
+    let day = getDay(kidId, previousDate);
+    day = reconcileCurrentCourseDay(kidId, previousDate, today) || day;
     if (!day.planDayNumber) {
       day.planDayNumber = progress.currentDay;
       saveState();
@@ -451,12 +452,12 @@ function planDateForView(kidId, date) {
   return date === today ? resolveSummerPlan(kidId).currentDate : date;
 }
 
-function buildDefaultDay(date, kidId = editorKid, dayIndexOverride = null) {
+function buildDefaultDay(date, kidId = editorKid, dayIndexOverride = null, courseDate = date) {
   if (window.LegacyLearningPlan?.applies(date)) {
     return window.LegacyLearningPlan.buildDay({ date, kidId, createTask: task, dayOffset });
   }
   return {
-    tasks: applyOverallSettings(kidId, buildRawTasks(date, dayIndexOverride, kidId), date),
+    tasks: applyOverallSettings(kidId, buildRawTasks(date, dayIndexOverride, kidId), courseDate),
     mistakes: "",
     note: "",
     planScope: "overall"
@@ -494,6 +495,22 @@ function applyTaskSettings(tasks, settings, release = null) {
       title: settings[item.id]?.title || item.title,
       instruction: settings[item.id]?.instruction || item.instruction
     }));
+}
+
+function reconcileCurrentCourseDay(kidId, date, courseDate) {
+  const existing = state.days[kidId]?.[date];
+  if (!existing || existing.planPeriodId || existing.planScope === "day") return existing;
+  const dayIndex = existing.planDayNumber ? existing.planDayNumber - 1 : null;
+  const generated = buildDefaultDay(date, kidId, dayIndex, courseDate);
+  if (existing.planDayNumber) generated.planDayNumber = existing.planDayNumber;
+  const next = preserveDayState(generated, existing);
+  next.tasks = window.FamilyTaskSchedules.reconcileTasks(next.tasks, state.taskSchedules, kidId, date);
+  if (JSON.stringify(existing) !== JSON.stringify(next)) {
+    state.days[kidId][date] = next;
+    saveState();
+    return next;
+  }
+  return existing;
 }
 
 function task(id, title, detail, tags, instruction, done = false, minutes = null) {
@@ -896,7 +913,7 @@ function renderOverallEditor() {
   refs.overallKid.value = editorKid;
   refs.courseDraftTitle.value = draft?.title || baseRelease?.title || `${profileById(editorKid).name}长期课程`;
   refs.courseDraftGoal.value = draft?.goal || baseRelease?.goal || "";
-  refs.courseEffectiveDate.value = draft?.effectiveDate || latestRelease?.effectiveDate || toISODate(addDays(new Date(), 1));
+  refs.courseEffectiveDate.value = draft?.effectiveDate || [today, latestRelease?.effectiveDate || today].sort().at(-1);
   refs.courseStageEndDate.value = draft?.stageEndDate || "";
   const stageEndLabel = activeRelease?.stageEndDate ? ` · 阶段预计至 ${escapeHTML(activeRelease.stageEndDate)}` : "";
   const awaitingLabel = activeStage.status === "awaiting-next-stage" ? " · 阶段目标已到期，当前课程继续沿用，等待下一阶段" : "";
@@ -967,7 +984,7 @@ function previewCoursePlan() {
   }
   const previewTasks = applyTaskSettings(buildRawTasks(draft.effectiveDate), draft.settings);
   const skipped = Object.entries(state.days[editorKid] || {}).filter(([date, day]) => date >= draft.effectiveDate && day.tasks?.some((item) => item.source !== "parent" && item.done)).length;
-  refs.coursePlanPreview.innerHTML = `<div><p class="eyebrow">发布预览</p><h3>${escapeHTML(draft.title)}</h3><span>${escapeHTML(profileById(editorKid).name)} · ${escapeHTML(draft.effectiveDate)} 起${draft.stageEndDate ? ` · 阶段预计至 ${escapeHTML(draft.stageEndDate)}` : ""} · ${previewTasks.length} 个每日模块</span>${draft.goal ? `<p><strong>阶段目标：</strong>${escapeHTML(draft.goal)}</p>` : ""}${draft.stageEndDate ? "<p>阶段结束后若下一版本尚未发布，当前每日课程会继续沿用，不会产生任务空档。</p>" : ""}</div><ol>${previewTasks.map((item) => `<li><strong>${escapeHTML(item.title)}</strong><span>${escapeHTML(item.instruction)}</span></li>`).join("")}</ol>${skipped ? `<p>已有完成记录的 ${skipped} 个日期将保持原样。</p>` : ""}`;
+  refs.coursePlanPreview.innerHTML = `<div><p class="eyebrow">发布预览</p><h3>${escapeHTML(draft.title)}</h3><span>${escapeHTML(profileById(editorKid).name)} · ${escapeHTML(draft.effectiveDate)} 起${draft.stageEndDate ? ` · 阶段预计至 ${escapeHTML(draft.stageEndDate)}` : ""} · ${previewTasks.length} 个每日模块</span>${draft.goal ? `<p><strong>阶段目标：</strong>${escapeHTML(draft.goal)}</p>` : ""}${draft.stageEndDate ? "<p>阶段结束后若下一版本尚未发布，当前每日课程会继续沿用，不会产生任务空档。</p>" : ""}</div><ol>${previewTasks.map((item) => `<li><strong>${escapeHTML(item.title)}</strong><span>${escapeHTML(item.instruction)}</span></li>`).join("")}</ol>${skipped ? `<p>已有完成记录的 ${skipped} 个日期会保留同名任务的完成状态；当前顺延中的学习日会按生效版本补齐模块。</p>` : ""}`;
   refs.coursePlanPreview.hidden = false;
 }
 
