@@ -31,6 +31,7 @@ const jointSkills = [
 const moduleRegistry = window.LearningModules;
 const planPresetRegistry = window.LearningPlanPresets;
 const summerPlanRegistry = window.SummerPlanProgress;
+const rewardRegistry = window.RewardProgress;
 
 let state = loadState();
 ensureState(state);
@@ -242,6 +243,7 @@ function ensureState(current) {
   current.englishExperiment = current.learningActivities;
   applyAugust2026PlanMigration(current);
   summerPlanRegistry.ensure(current, toISODate(new Date()));
+  rewardRegistry.ensure(current, plants);
 }
 
 function applyAugust2026PlanMigration(current) {
@@ -314,6 +316,7 @@ function applyAugust2026PlanMigration(current) {
 }
 
 function saveState() {
+  rewardRegistry.ensure(state, plants);
   state.activeKid = activeKid;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   window.CloudStore?.scheduleSave(state);
@@ -630,7 +633,7 @@ function renderRewards() {
   const totalSun = earnedSun(activeKid);
   const squad = state.gardens[activeKid];
   refs.rewardList.innerHTML = plants.map((plant) => {
-    const unlocked = totalSun >= plant.unlockAt;
+    const unlocked = rewardRegistry.isPlantUnlocked(state, activeKid, plant.id);
     const planted = squad.includes(plant.id);
     const squadFull = squad.length >= 5;
     return `<article class="reward-card">
@@ -654,7 +657,7 @@ function togglePlant(plantId) {
   const index = squad.indexOf(plantId);
   if (!plant) return;
   if (index >= 0) squad.splice(index, 1);
-  else if (earnedSun(activeKid) >= plant.unlockAt && squad.length < 5) squad.push(plantId);
+  else if (rewardRegistry.isPlantUnlocked(state, activeKid, plantId) && squad.length < 5) squad.push(plantId);
   else return;
   saveState();
   showToast(index >= 0 ? `${plant.name}回到植物商店啦` : `${plant.name}加入小队，阳光没有减少`);
@@ -1421,7 +1424,7 @@ function moveDay(delta) {
 }
 
 function earnedSun(kidId) {
-  return Object.values(state.days[kidId] || {}).reduce((sum, day) => sum + day.tasks.filter((item) => item.done).length * 10, 0);
+  return rewardRegistry.earnedSun(state, kidId);
 }
 
 function availableSun(kidId) {

@@ -50,6 +50,7 @@ for file in \
   learning-plan-presets.js \
   legacy-learning-plan.js \
   summer-plan-progress.js \
+  reward-progress.js \
   cloud-store.js \
   state-migration-core.js \
   audio-store.js \

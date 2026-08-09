@@ -15,6 +15,7 @@ test("legacy dashboard state and English-island progress merge without losing co
       younger: {}
     },
     gardens: { brother: ["sunflower"], younger: [] },
+    rewardProgress: { unlockedPlants: { brother: ["sunflower"], younger: [] } },
     taskSettings: { brother: { math: { enabled: true } }, younger: {} },
     planPeriods: [{ id: "legacy-period" }]
   };
@@ -29,6 +30,7 @@ test("legacy dashboard state and English-island progress merge without losing co
       }
     },
     gardens: { brother: [], younger: [] },
+    rewardProgress: { unlockedPlants: { brother: ["peashooter"], younger: ["sunflower"] } },
     taskSettings: { brother: { englishIsland: { enabled: true } }, younger: {} },
     englishExperiment: { courseStarts: { brother: "2026-08-06", younger: null } }
   };
@@ -39,6 +41,8 @@ test("legacy dashboard state and English-island progress merge without losing co
   assert.equal(merged.days.brother["2026-08-07"].mistakes, "7×8");
   assert.equal(merged.days.brother["2026-08-01"].tasks[0].done, true);
   assert.deepEqual(merged.gardens.brother, ["sunflower"]);
+  assert.deepEqual(merged.rewardProgress.unlockedPlants.brother, ["sunflower", "peashooter"]);
+  assert.deepEqual(merged.rewardProgress.unlockedPlants.younger, ["sunflower"]);
   assert.equal(merged.taskSettings.brother.math.enabled, true);
   assert.equal(merged.taskSettings.brother.englishIsland.enabled, true);
   assert.equal(merged.englishExperiment.courseStarts.brother, "2026-08-06");

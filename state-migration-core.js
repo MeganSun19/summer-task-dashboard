@@ -34,6 +34,19 @@
       brother: current.gardens?.brother?.length ? current.gardens.brother : (legacy.gardens?.brother || []),
       younger: current.gardens?.younger?.length ? current.gardens.younger : (legacy.gardens?.younger || [])
     };
+    merged.rewardProgress = {
+      schemaVersion: 1,
+      unlockedPlants: {
+        brother: [...new Set([
+          ...(legacy.rewardProgress?.unlockedPlants?.brother || []),
+          ...(current.rewardProgress?.unlockedPlants?.brother || [])
+        ])],
+        younger: [...new Set([
+          ...(legacy.rewardProgress?.unlockedPlants?.younger || []),
+          ...(current.rewardProgress?.unlockedPlants?.younger || [])
+        ])]
+      }
+    };
     merged.planPeriods = current.planPeriods?.length ? current.planPeriods : (legacy.planPeriods || []);
     merged.learningActivities = current.learningActivities || current.englishExperiment
       || legacy.learningActivities || legacy.englishExperiment;
