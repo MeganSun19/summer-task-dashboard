@@ -323,6 +323,7 @@ function applyAugust2026PlanMigration(current) {
 function saveState() {
   rewardRegistry.ensure(state, plants);
   state.activeKid = activeKid;
+  state.updatedAt = new Date().toISOString();
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   window.CloudStore?.scheduleSave(state);
 }
@@ -338,11 +339,14 @@ async function initializeCloud() {
 
 function applyRemoteState(remoteState, meta = {}) {
   if (!remoteState?.days || !remoteState?.startDate) return;
-  const needsCompletionRecovery = meta.source === "load" && !remoteState.cloudCompletionRecoveryVersion;
+  const recoveryVersion = 2;
+  const localIsNewer = Boolean(state.updatedAt && (!remoteState.updatedAt || state.updatedAt > remoteState.updatedAt));
+  const needsCompletionRecovery = meta.source === "load"
+    && (Number(remoteState.cloudCompletionRecoveryVersion || 0) < recoveryVersion || localIsNewer);
   state = needsCompletionRecovery
     ? window.TaskStateMigration.mergeStoredStates(state, remoteState)
     : remoteState;
-  if (needsCompletionRecovery) state.cloudCompletionRecoveryVersion = 1;
+  if (needsCompletionRecovery) state.cloudCompletionRecoveryVersion = recoveryVersion;
   const progressRecovered = ensureState(state);
   activeKid = state.activeKid || activeKid;
   editorKid = activeKid;
@@ -591,9 +595,10 @@ function renderKidView() {
   refs.kidName.textContent = profile.name;
   const viewingToday = selectedDate === today;
   const carried = viewingToday && planDate < today;
+  const carriedCompleted = carried && summerPlanRegistry.isDayResolved(day);
   const finished = plan.currentDay === summerPlanRegistry.TOTAL_DAYS && summerPlanRegistry.isDayResolved(day);
   refs.dateLabel.textContent = viewingToday
-    ? `${formatDateLabel(today)} · ${summerPlanRegistry.TITLE}${finished ? "已完成" : `第 ${plan.currentDay}/${summerPlanRegistry.TOTAL_DAYS} 个学习日`}${carried ? ` · 继续 ${formatDateLabel(planDate)} 的内容` : ""}`
+    ? `${formatDateLabel(today)} · ${summerPlanRegistry.TITLE}${finished ? "已完成" : `第 ${plan.currentDay}/${summerPlanRegistry.TOTAL_DAYS} 个学习日`}${carriedCompleted ? ` · 已完成 ${formatDateLabel(planDate)} 的顺延内容，明天进入下一学习日` : carried ? ` · 继续 ${formatDateLabel(planDate)} 的内容` : ""}`
     : `${formatDateLabel(planDate)} · 历史记录`;
   refs.progressText.textContent = `${done}/${total}`;
   refs.progressBar.style.width = `${percent}%`;
