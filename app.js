@@ -242,8 +242,13 @@ function ensureState(current) {
   // Keep the old property during the compatibility window for synced devices on the previous release.
   current.englishExperiment = current.learningActivities;
   applyAugust2026PlanMigration(current);
-  summerPlanRegistry.ensure(current, toISODate(new Date()));
+  const today = toISODate(new Date());
+  summerPlanRegistry.ensure(current, today);
+  const progressRecovered = ["brother", "younger"]
+    .map((kidId) => summerPlanRegistry.recoverLatestResolvedDay(current, kidId, today))
+    .some(Boolean);
   rewardRegistry.ensure(current, plants);
+  return progressRecovered;
 }
 
 function applyAugust2026PlanMigration(current) {
@@ -333,13 +338,18 @@ async function initializeCloud() {
 
 function applyRemoteState(remoteState, meta = {}) {
   if (!remoteState?.days || !remoteState?.startDate) return;
-  state = remoteState;
-  ensureState(state);
+  const needsCompletionRecovery = meta.source === "load" && !remoteState.cloudCompletionRecoveryVersion;
+  state = needsCompletionRecovery
+    ? window.TaskStateMigration.mergeStoredStates(state, remoteState)
+    : remoteState;
+  if (needsCompletionRecovery) state.cloudCompletionRecoveryVersion = 1;
+  const progressRecovered = ensureState(state);
   activeKid = state.activeKid || activeKid;
   editorKid = activeKid;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   renderEditorKidOptions();
   render();
+  if (needsCompletionRecovery || progressRecovered) window.CloudStore?.scheduleSave(state);
   if (meta.source === "realtime") showToast("已同步另一台设备的更新");
 }
 

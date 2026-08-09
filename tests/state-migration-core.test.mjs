@@ -48,3 +48,20 @@ test("legacy dashboard state and English-island progress merge without losing co
   assert.equal(merged.englishExperiment.courseStarts.brother, "2026-08-06");
   assert.equal(merged.learningActivities.courseStarts.brother, "2026-08-06");
 });
+
+test("cloud recovery keeps local completion dates while remote settings stay authoritative", () => {
+  const local = {
+    startDate: "2026-08-01",
+    days: { brother: { "2026-08-09": { tasks: [{ id: "math", done: true, completedOn: "2026-08-09" }] } }, younger: {} },
+    taskSettings: { brother: { math: { title: "本机旧名称" } }, younger: {} }
+  };
+  const remote = {
+    startDate: "2026-08-01",
+    days: { brother: { "2026-08-09": { tasks: [{ id: "math", done: false }] } }, younger: {} },
+    taskSettings: { brother: { math: { title: "云端新名称" } }, younger: {} }
+  };
+  const merged = mergeStoredStates(local, remote);
+  assert.equal(merged.days.brother["2026-08-09"].tasks[0].done, true);
+  assert.equal(merged.days.brother["2026-08-09"].tasks[0].completedOn, "2026-08-09");
+  assert.equal(merged.taskSettings.brother.math.title, "云端新名称");
+});

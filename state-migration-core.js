@@ -17,10 +17,17 @@
         merged.days[kidId][date] = {
           ...oldDay,
           ...newDay,
-          tasks: (newDay.tasks || []).map((item) => ({
-            ...item,
-            done: Boolean(item.done || oldTasks.get(item.id)?.done)
-          })),
+          tasks: (newDay.tasks || []).map((item) => {
+            const oldTask = oldTasks.get(item.id);
+            const done = Boolean(item.done || oldTask?.done);
+            const excused = !done && Boolean(item.excused || oldTask?.excused);
+            const mergedTask = { ...item, done, excused };
+            if (done) mergedTask.completedOn = item.completedOn || oldTask?.completedOn || date;
+            else delete mergedTask.completedOn;
+            if (excused) mergedTask.excusedOn = item.excusedOn || oldTask?.excusedOn || date;
+            else delete mergedTask.excusedOn;
+            return mergedTask;
+          }),
           mistakes: newDay.mistakes || oldDay.mistakes || "",
           note: newDay.note || oldDay.note || ""
         };

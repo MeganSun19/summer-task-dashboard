@@ -81,3 +81,19 @@ test("joint progress matches the same logical learning day across different date
   };
   assert.deepEqual(SummerPlan.completionKeys(state), ["summer:1"]);
 });
+
+test("a later completed calendar day repairs a stale current-day pointer", () => {
+  const state = {
+    days: {
+      brother: {
+        "2026-08-07": { planDayNumber: 1, tasks: [{ done: false }] },
+        "2026-08-09": { planDayNumber: 1, tasks: [{ done: true, completedOn: "2026-08-09" }] }
+      },
+      younger: {}
+    },
+    summerPlan: { kids: { brother: { currentDay: 1, currentDate: "2026-08-07" } } }
+  };
+  assert.equal(SummerPlan.recoverLatestResolvedDay(state, "brother", "2026-08-09"), true);
+  assert.equal(state.summerPlan.kids.brother.currentDate, "2026-08-09");
+  assert.equal(state.summerPlan.kids.brother.currentDay, 1);
+});

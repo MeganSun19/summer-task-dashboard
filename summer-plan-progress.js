@@ -89,6 +89,19 @@
     return state.summerPlan.kids[kidId];
   }
 
+  function recoverLatestResolvedDay(state, kidId, today) {
+    const progress = current(state, kidId, today);
+    const latest = Object.entries(state.days?.[kidId] || {})
+      .filter(([date, day]) => date > progress.currentDate && date <= today && isDayResolved(day))
+      .map(([date, day]) => ({ date, day: clampDay(day.planDayNumber || progress.currentDay) }))
+      .sort((left, right) => right.date.localeCompare(left.date))[0];
+    if (!latest) return false;
+    progress.currentDate = latest.date;
+    progress.currentDay = Math.max(progress.currentDay, latest.day);
+    progress.recoveredOn = today;
+    return true;
+  }
+
   function shouldAdvance(state, kidId, today) {
     const progress = current(state, kidId, today);
     const day = state.days?.[kidId]?.[progress.currentDate];
@@ -152,6 +165,7 @@
   root.SummerPlanProgress = Object.freeze({
     VERSION, TITLE, TOTAL_DAYS, ensure, current, advance, shouldAdvance,
     isTaskResolved, isDayResolved, resolvedCount, dayResolvedOn,
-    setTaskDone, setTaskExcused, completionKeys, dayFromResolvedHistory, addDays
+    setTaskDone, setTaskExcused, completionKeys, dayFromResolvedHistory,
+    recoverLatestResolvedDay, addDays
   });
 })(typeof window === "undefined" ? globalThis : window);
