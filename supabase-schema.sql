@@ -21,6 +21,14 @@ create table if not exists public.family_members (
   primary key (family_id, user_id)
 );
 
+-- 可选的家庭别名层：误建的历史家庭可永久指向一个主家庭；历史状态仍保留。
+create table if not exists public.family_redirects (
+  source_family_id uuid primary key references public.families(id) on delete restrict,
+  target_family_id uuid not null references public.families(id) on delete restrict,
+  created_at timestamptz not null default now(),
+  check (source_family_id <> target_family_id)
+);
+
 -- 迁移阶段的云端事实来源。state 保持和现有 localStorage 相同的数据形状，
 -- 后续可在不影响前端的情况下拆分为任务、完成记录、奖励等细粒度表。
 create table if not exists public.family_states (
@@ -36,6 +44,7 @@ create index if not exists family_members_user_id_idx
 
 alter table public.families enable row level security;
 alter table public.family_members enable row level security;
+alter table public.family_redirects enable row level security;
 alter table public.family_states enable row level security;
 
 create or replace function public.has_family_access(target_family_id uuid)
@@ -136,6 +145,7 @@ as $$
 declare
   current_user_id uuid := auth.uid();
   matched_family public.families%rowtype;
+  effective_family public.families%rowtype;
   state_revision bigint;
 begin
   if current_user_id is null then
@@ -151,18 +161,26 @@ begin
     raise exception 'INVALID_INVITE_OR_PIN';
   end if;
 
+  select target.* into effective_family
+  from public.family_redirects redirect
+  join public.families target on target.id = redirect.target_family_id
+  where redirect.source_family_id = matched_family.id;
+  if effective_family.id is null then
+    effective_family := matched_family;
+  end if;
+
   insert into public.family_members (family_id, user_id, access_role)
-  values (matched_family.id, current_user_id, 'device')
+  values (effective_family.id, current_user_id, 'device')
   -- RETURNS TABLE 也声明了名为 family_id 的输出变量。使用约束名可以避免
   -- PL/pgSQL 将 ON CONFLICT 中的 family_id 解析为不明确引用（SQLSTATE 42702）。
   on conflict on constraint family_members_pkey do nothing;
 
   select family_states.revision into state_revision
   from public.family_states
-  where family_states.family_id = matched_family.id;
+  where family_states.family_id = effective_family.id;
 
   return query
-    select matched_family.id, matched_family.name, matched_family.invite_code, state_revision;
+    select effective_family.id, effective_family.name, effective_family.invite_code, state_revision;
 end;
 $$;
 
@@ -215,12 +233,17 @@ stable
 security definer
 set search_path = public
 as $$
-  select f.id, f.name, f.invite_code, m.access_role, s.revision
-  from public.family_members m
-  join public.families f on f.id = m.family_id
+  select distinct f.id, f.name, f.invite_code, effective_member.access_role, s.revision
+  from public.family_members origin_member
+  left join public.family_redirects redirect
+    on redirect.source_family_id = origin_member.family_id
+  join public.families f
+    on f.id = coalesce(redirect.target_family_id, origin_member.family_id)
+  join public.family_members effective_member
+    on effective_member.family_id = f.id
+   and effective_member.user_id = origin_member.user_id
   join public.family_states s on s.family_id = f.id
-  where m.user_id = (select auth.uid())
-  order by m.joined_at desc;
+  where origin_member.user_id = (select auth.uid());
 $$;
 
 revoke all on function public.create_family(text, text, jsonb) from public;
