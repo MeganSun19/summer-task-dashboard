@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import { test } from "node:test";
 
 await import("../state-migration-core.js");
-const { mergeStoredStates, mergeDeviceProgress } = globalThis.TaskStateMigration;
+const { mergeStoredStates, mergeDeviceProgress, mergeGardenProgress } = globalThis.TaskStateMigration;
+const appSource = await readFile(new URL("../app.js", import.meta.url), "utf8");
 
 test("legacy dashboard state and English-island progress merge without losing completions", () => {
   const legacy = {
@@ -202,4 +204,28 @@ test("a newer cloud garden change beats an older local squad", () => {
     gardenUpdatedAt: { brother: "2026-08-10T11:00:00.000Z", younger: null }
   };
   assert.deepEqual(mergeDeviceProgress(local, remote).gardens.brother, ["peashooter"]);
+});
+
+test("a late stale realtime payload cannot undo a just-saved local squad change", () => {
+  const local = {
+    days: { brother: {}, younger: {} },
+    gardens: { brother: ["sunflower", "melon"], younger: [] },
+    gardenUpdatedAt: { brother: "2026-08-10T12:00:00.000Z", younger: null },
+    taskSettings: { brother: { math: { enabled: true } }, younger: {} }
+  };
+  const staleRealtime = {
+    days: { brother: {}, younger: {} },
+    gardens: { brother: ["sunflower"], younger: [] },
+    gardenUpdatedAt: { brother: "2026-08-10T11:59:00.000Z", younger: null },
+    taskSettings: { brother: { math: { enabled: false } }, younger: {} }
+  };
+  const merged = mergeGardenProgress(local, staleRealtime);
+  assert.deepEqual(merged.gardens.brother, ["sunflower", "melon"]);
+  assert.equal(merged.taskSettings.brother.math.enabled, false);
+});
+
+test("every remote-state path applies garden last-write-wins before rendering", () => {
+  const applyRemote = appSource.slice(appSource.indexOf("function applyRemoteState"), appSource.indexOf("function updateCloudStatus"));
+  assert.match(applyRemote, /mergeGardenProgress\(localStateBeforeRemote, selectedState\)/);
+  assert.match(applyRemote, /progressRecovered \|\| gardenRecovered/);
 });

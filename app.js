@@ -382,21 +382,26 @@ async function initializeCloud() {
 
 function applyRemoteState(remoteState, meta = {}) {
   if (!remoteState?.days || !remoteState?.startDate) return;
+  const localStateBeforeRemote = state;
   const recoveryVersion = 3;
   const localIsNewer = Boolean(state.updatedAt && (!remoteState.updatedAt || state.updatedAt > remoteState.updatedAt));
   const conflictState = ["conflict", "family-switch"].includes(meta.source) ? meta.localState : null;
   const needsDeviceRecovery = meta.source === "load" && localStorage.getItem(DEVICE_SYNC_RECOVERY_KEY) !== "done";
   const needsCompletionRecovery = meta.source === "load"
     && (needsDeviceRecovery || Number(remoteState.cloudCompletionRecoveryVersion || 0) < recoveryVersion || localIsNewer);
-  state = conflictState
+  const selectedState = conflictState
     ? window.TaskStateMigration.mergeDeviceProgress(conflictState, remoteState)
     : needsCompletionRecovery
       ? window.TaskStateMigration.mergeDeviceProgress(state, remoteState)
       : remoteState;
+  state = window.TaskStateMigration.mergeGardenProgress(localStateBeforeRemote, selectedState);
+  const gardenRecovered = JSON.stringify(state.gardens) !== JSON.stringify(selectedState.gardens)
+    || JSON.stringify(state.gardenUpdatedAt) !== JSON.stringify(selectedState.gardenUpdatedAt);
   if (needsCompletionRecovery || conflictState) {
     state.cloudCompletionRecoveryVersion = recoveryVersion;
     state.updatedAt = new Date().toISOString();
   }
+  if (gardenRecovered) state.updatedAt = new Date().toISOString();
   const progressRecovered = ensureState(state);
   activeKid = state.activeKid || activeKid;
   editorKid = activeKid;
@@ -404,7 +409,7 @@ function applyRemoteState(remoteState, meta = {}) {
   if (meta.source === "load") localStorage.setItem(DEVICE_SYNC_RECOVERY_KEY, "done");
   renderEditorKidOptions();
   render();
-  if (needsCompletionRecovery || conflictState || progressRecovered) window.CloudStore?.scheduleSave(state);
+  if (needsCompletionRecovery || conflictState || progressRecovered || gardenRecovered) window.CloudStore?.scheduleSave(state);
   if (meta.source === "realtime") showToast("已同步另一台设备的更新");
 }
 
