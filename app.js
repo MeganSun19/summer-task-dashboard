@@ -10,7 +10,7 @@ const profiles = [
 
 const plants = [
   { id: "sunflower", icon: "🌻", name: "向日葵", unlockAt: 10, power: "给小队加油" },
-  { id: "peashooter", icon: "🫛", name: "豌豆射手", unlockAt: 30, power: "发射豌豆" },
+  { id: "peashooter", icon: "🌿", name: "豌豆射手", unlockAt: 30, power: "发射豌豆" },
   { id: "wallnut", icon: "🌰", name: "坚果墙", unlockAt: 60, power: "守住花园" },
   { id: "snowpea", icon: "❄️", name: "寒冰射手", unlockAt: 100, power: "冻住僵尸" },
   { id: "cherry", icon: "🍒", name: "樱桃炸弹", unlockAt: 160, power: "清理一大片" },

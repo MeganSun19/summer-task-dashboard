@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import { test } from "node:test";
 
 await import("../reward-progress.js");
 const rewards = globalThis.RewardProgress;
+const appSource = await readFile(new URL("../app.js", import.meta.url), "utf8");
 const plants = [
   { id: "sunflower", unlockAt: 10 },
   { id: "peashooter", unlockAt: 30 },
@@ -82,4 +84,9 @@ test("squad repair removes duplicates and unknown plants", () => {
   const repaired = rewards.normalizeSquads(state, plants, 5);
   assert.deepEqual(repaired, ["younger"]);
   assert.deepEqual(state.gardens.younger, ["sunflower", "wallnut"]);
+});
+
+test("the peashooter uses an emoji supported by older Android fonts", () => {
+  assert.match(appSource, /id: "peashooter", icon: "🌿"/);
+  assert.doesNotMatch(appSource, /🫛/);
 });
