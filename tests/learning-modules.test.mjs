@@ -58,6 +58,17 @@ test("the temporary family task remains catalogued but outside the six defaults"
   });
 });
 
+test("long-term settings cannot freeze a dynamic poem title or instruction", () => {
+  const dayTwo = modules.buildDefaultTasks({ dayIndex: 1, contentDayIndexes: { poem: 1 } });
+  const applied = modules.applySettings(dayTwo, {
+    poem: { enabled: true, title: "古诗背诵：春日偶成", instruction: "固定旧步骤" },
+    reading: { enabled: true, title: "家庭阅读" }
+  });
+  assert.equal(applied.find((item) => item.id === "poem").title, "古诗背诵 · 第11周复习");
+  assert.notEqual(applied.find((item) => item.id === "poem").instruction, "固定旧步骤");
+  assert.equal(applied.find((item) => item.id === "reading").title, "家庭阅读");
+});
+
 test("task records retain stable ids while carrying module metadata", () => {
   const task = modules.createTask({
     id: "temporary-dance-1",

@@ -340,6 +340,7 @@ button.garden-slot.filled { border-style: solid; border-color: #b9d9aa; backgrou
 .overall-task-toggle input { width: 18px; height: 18px; margin: 0; accent-color: var(--green); }
 .overall-task-row input { min-width: 0; }
 .overall-task-row.disabled { opacity: .55; }
+.overall-task-row input[readonly] { background: #f3f6fa; color: #53647a; cursor: not-allowed; }
 .course-release-status { display: flex; justify-content: space-between; gap: 10px; padding: 12px 13px; border-radius: 13px; background: var(--green-soft); color: #346249; }
 .course-release-status strong, .course-release-status span { display: block; }
 .course-release-status span { color: #557566; font-size: 11px; text-align: right; }
@@ -440,7 +441,7 @@ textarea { resize: vertical; line-height: 1.5; }
   .date-nav { width: 100%; }
   .date-nav input { flex: 1; }
   .overall-task-row { grid-template-columns: auto 1fr; }
-  .overall-task-row input[data-overall-field="instruction"] { grid-column: 1 / -1; }
+  .overall-task-row input[data-overall-field="instruction"], .overall-task-row input[readonly]:last-child { grid-column: 1 / -1; }
 }
 
 @media (max-width: 390px) {

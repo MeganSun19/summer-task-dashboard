@@ -238,6 +238,7 @@ function ensureState(current) {
   current.coursePlans.drafts.brother ??= null;
   current.coursePlans.drafts.younger ??= null;
   current.coursePlans.releases ||= [];
+  const dynamicSettingsRepaired = repairDynamicContentSettings(current);
   current.learningActivities ||= current.englishExperiment || { version: 1, progress: { brother: {}, younger: {} } };
   current.learningActivities.progress ||= { brother: {}, younger: {} };
   current.learningActivities.progress.brother ||= {};
@@ -259,7 +260,24 @@ function ensureState(current) {
     .map((kidId) => summerPlanRegistry.recoverLatestResolvedDay(current, kidId, today))
     .some(Boolean);
   rewardRegistry.ensure(current, plants);
-  return progressRecovered;
+  return progressRecovered || dynamicSettingsRepaired;
+}
+
+function repairDynamicContentSettings(current) {
+  const version = 1;
+  if (Number(current.dynamicContentSettingsVersion || 0) >= version) return false;
+  const clean = (settings) => {
+    Object.entries(settings || {}).forEach(([moduleId, item]) => {
+      if (!moduleRegistry.isDynamicContent(moduleId) || !item) return;
+      delete item.title;
+      delete item.instruction;
+    });
+  };
+  [current.taskSettings?.brother, current.taskSettings?.younger].forEach(clean);
+  (current.coursePlans?.releases || []).forEach((release) => clean(release.settings));
+  [current.coursePlans?.drafts?.brother?.settings, current.coursePlans?.drafts?.younger?.settings].forEach(clean);
+  current.dynamicContentSettingsVersion = version;
+  return true;
 }
 
 function applyAugust2026PlanMigration(current) {
@@ -583,14 +601,7 @@ function applyOverallSettings(kidId, tasks, date) {
 }
 
 function applyTaskSettings(tasks, settings, release = null) {
-  return tasks
-    .filter((item) => settings[item.id]?.enabled !== false)
-    .map((item) => ({
-      ...item,
-      ...(release ? { scheduleId: release.id, courseVersion: release.version } : {}),
-      title: settings[item.id]?.title || item.title,
-      instruction: settings[item.id]?.instruction || item.instruction
-    }));
+  return moduleRegistry.applySettings(tasks, settings, release);
 }
 
 function reconcileCurrentCourseDay(kidId, date, courseDate) {
@@ -1017,18 +1028,26 @@ function renderOverallEditor() {
   refs.courseReleaseStatus.innerHTML = activeRelease
     ? `<strong>当前版本 v${activeRelease.version} · ${escapeHTML(activeRelease.title)}</strong><span>${escapeHTML(activeRelease.effectiveDate)} 起生效${stageEndLabel}${awaitingLabel}${latestRelease?.id !== activeRelease.id ? ` · v${latestRelease.version} 将于 ${escapeHTML(latestRelease.effectiveDate)} 生效` : ""}${draft ? " · 有未发布草稿" : ""}</span>`
     : `<strong>当前使用历史总体设置</strong><span>${latestRelease ? `v${latestRelease.version} 将于 ${escapeHTML(latestRelease.effectiveDate)} 生效` : (draft ? "已有未发布草稿" : "首次发布后将开始记录课程版本")}</span>`;
-  refs.overallTaskEditor.innerHTML = buildRawTasks(selectedDate).map((item) => {
+  const editorTasks = courseEditorTasks(editorKid);
+  refs.overallTaskEditor.innerHTML = editorTasks.map((item) => {
     const setting = settings[item.id] || {};
     const enabled = setting.enabled !== false;
+    const dynamicContent = moduleRegistry.isDynamicContent(item.id);
     return `<div class="overall-task-row ${enabled ? "" : "disabled"}">
       <label class="overall-task-toggle"><input type="checkbox" data-overall-id="${item.id}" data-overall-field="enabled" ${enabled ? "checked" : ""}><span>显示</span></label>
-      <input data-overall-id="${item.id}" data-overall-field="title" aria-label="${escapeAttr(item.title)}的总体名称" value="${escapeAttr(setting.title || item.title)}">
-      <input data-overall-id="${item.id}" data-overall-field="instruction" aria-label="${escapeAttr(item.title)}的总体步骤" value="${escapeAttr(setting.instruction || item.instruction)}">
+      <input ${dynamicContent ? "readonly" : `data-overall-id="${item.id}" data-overall-field="title"`} aria-label="${escapeAttr(item.title)}的总体名称" value="${escapeAttr(dynamicContent ? item.title : (setting.title || item.title))}" ${dynamicContent ? 'title="按当前学习日自动更新，不能固定修改"' : ""}>
+      <input ${dynamicContent ? "readonly" : `data-overall-id="${item.id}" data-overall-field="instruction"`} aria-label="${escapeAttr(item.title)}的总体步骤" value="${escapeAttr(dynamicContent ? item.instruction : (setting.instruction || item.instruction))}" ${dynamicContent ? 'title="按当前学习日自动更新，不能固定修改"' : ""}>
     </div>`;
   }).join("");
   refs.overallTaskEditor.querySelectorAll('[data-overall-field="enabled"]').forEach((checkbox) => {
     checkbox.addEventListener("change", () => checkbox.closest(".overall-task-row").classList.toggle("disabled", !checkbox.checked));
   });
+}
+
+function courseEditorTasks(kidId) {
+  const today = toISODate(new Date());
+  const planDay = summerPlanRegistry.current(state, kidId, today).currentDay;
+  return buildRawTasks(today, Math.max(0, planDay - 1), kidId);
 }
 
 function collectCourseDraft() {
@@ -1042,8 +1061,9 @@ function collectCourseDraft() {
     showToast("总体任务至少保留一项");
     return null;
   }
-  const defaults = Object.fromEntries(buildRawTasks(selectedDate).map((item) => [item.id, item]));
-  const settings = Object.fromEntries(buildRawTasks(selectedDate).map(({ id }) => {
+  const editorTasks = courseEditorTasks(editorKid);
+  const defaults = Object.fromEntries(editorTasks.map((item) => [item.id, item]));
+  const settings = Object.fromEntries(editorTasks.map(({ id }) => {
     const item = { enabled: draft[id].enabled };
     if (draft[id].title && draft[id].title !== defaults[id].title) item.title = draft[id].title;
     if (draft[id].instruction && draft[id].instruction !== defaults[id].instruction) item.instruction = draft[id].instruction;
@@ -1079,7 +1099,8 @@ function previewCoursePlan() {
     showToast(draft?.stageEndDate && draft.stageEndDate < draft.effectiveDate ? "阶段结束日期不能早于生效日期" : "请先填写完整的课程名称和生效日期");
     return;
   }
-  const previewTasks = applyTaskSettings(buildRawTasks(draft.effectiveDate), draft.settings);
+  const currentPlanDay = summerPlanRegistry.current(state, editorKid, toISODate(new Date())).currentDay;
+  const previewTasks = applyTaskSettings(buildRawTasks(draft.effectiveDate, currentPlanDay - 1, editorKid), draft.settings);
   const skipped = Object.entries(state.days[editorKid] || {}).filter(([date, day]) => date >= draft.effectiveDate && day.tasks?.some((item) => item.source !== "parent" && item.done)).length;
   refs.coursePlanPreview.innerHTML = `<div><p class="eyebrow">发布预览</p><h3>${escapeHTML(draft.title)}</h3><span>${escapeHTML(profileById(editorKid).name)} · ${escapeHTML(draft.effectiveDate)} 起${draft.stageEndDate ? ` · 阶段预计至 ${escapeHTML(draft.stageEndDate)}` : ""} · ${previewTasks.length} 个每日模块</span>${draft.goal ? `<p><strong>阶段目标：</strong>${escapeHTML(draft.goal)}</p>` : ""}${draft.stageEndDate ? "<p>阶段结束后若下一版本尚未发布，当前每日课程会继续沿用，不会产生任务空档。</p>" : ""}</div><ol>${previewTasks.map((item) => `<li><strong>${escapeHTML(item.title)}</strong><span>${escapeHTML(item.instruction)}</span></li>`).join("")}</ol>${skipped ? `<p>已有完成记录的 ${skipped} 个日期会保留同名任务的完成状态；当前顺延中的学习日会按生效版本补齐模块。</p>` : ""}`;
   refs.coursePlanPreview.hidden = false;

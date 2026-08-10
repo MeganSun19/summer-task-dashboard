@@ -74,6 +74,24 @@
     return registry.get(id)?.presentation || auxiliaryPresentations[id] || fallbackPresentation;
   }
 
+  function isDynamicContent(id) {
+    return Boolean(registry.get(id)?.contentKey);
+  }
+
+  function applySettings(tasks, settings = {}, release = null) {
+    return tasks
+      .filter((item) => settings[item.id]?.enabled !== false)
+      .map((item) => {
+        const dynamicContent = isDynamicContent(item.moduleId || item.id);
+        return {
+          ...item,
+          ...(release ? { scheduleId: release.id, courseVersion: release.version } : {}),
+          title: dynamicContent ? item.title : (settings[item.id]?.title || item.title),
+          instruction: dynamicContent ? item.instruction : (settings[item.id]?.instruction || item.instruction)
+        };
+      });
+  }
+
   function list() {
     return definitions.slice();
   }
@@ -83,6 +101,8 @@
     list,
     get,
     getPresentation,
+    isDynamicContent,
+    applySettings,
     createTask,
     buildDefaultTasks
   });
