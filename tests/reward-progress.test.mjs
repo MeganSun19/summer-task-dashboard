@@ -54,3 +54,8 @@ test("excused tasks award no sun and an existing squad is preserved as unlocked"
   assert.equal(rewards.earnedSun(state, "brother"), 0);
   assert.equal(rewards.isPlantUnlocked(state, "brother", "peashooter"), true);
 });
+
+test("an archived completed temporary task keeps its historical sun reward", () => {
+  const state = stateWith([{ id: "dance", source: "parent", done: true, archived: true }]);
+  assert.equal(rewards.earnedSun(state, "brother"), 10);
+});

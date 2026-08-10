@@ -55,12 +55,40 @@ test("finishing a carried day today waits until tomorrow to advance", () => {
   assert.equal(state.summerPlan.kids.brother.currentDate, "2026-08-09");
 });
 
-test("excused tasks unblock a day without counting as done", () => {
+test("legacy excused tasks remain resolved without counting as done", () => {
   const task = { done: false };
   SummerPlan.setTaskExcused(task, true, "2026-08-08");
   assert.equal(task.done, false);
   assert.equal(task.excused, true);
   assert.equal(SummerPlan.isDayResolved({ tasks: [task] }), true);
+});
+
+test("temporary tasks awardable in the UI never block the long-term learning day", () => {
+  const day = { tasks: [
+    { id: "poem", source: "course", done: true, completedOn: "2026-08-10" },
+    { id: "dance", source: "parent", done: false, scheduledDate: "2026-08-10" }
+  ] };
+  assert.equal(SummerPlan.isDayResolved(day), true);
+  assert.equal(SummerPlan.resolvedCount(day), 1);
+});
+
+test("an unfinished temporary task cannot hold back tomorrow's long-term plan", () => {
+  const state = stateWith({ planDayNumber: 1, tasks: [
+    { id: "poem", source: "course", done: true, completedOn: "2026-08-09" },
+    { id: "dance", source: "parent", done: false, scheduledDate: "2026-08-09" }
+  ] }, { summerPlan: { kids: { brother: { currentDay: 1, currentDate: "2026-08-07" } } } });
+  const result = SummerPlan.advance(state, "brother", "2026-08-10");
+  assert.equal(result.changed, true);
+  assert.equal(result.progress.currentDay, 2);
+});
+
+test("archived temporary tasks are omitted from today's visible task count", () => {
+  const day = { tasks: [
+    { id: "reading", source: "course", done: false },
+    { id: "old-dance", source: "parent", done: true, archived: true }
+  ] };
+  assert.deepEqual(SummerPlan.activeTasks(day).map((task) => task.id), ["reading"]);
+  assert.equal(SummerPlan.resolvedCount(day), 0);
 });
 
 test("the final summer-plan day never creates day 27", () => {

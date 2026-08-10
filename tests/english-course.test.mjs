@@ -5,9 +5,10 @@ import test from "node:test";
 await import("../week1-course-core.js");
 const course = JSON.parse(readFileSync(new URL("../curriculum/english-course.json", import.meta.url), "utf8"));
 const phonicsReviewQueue = JSON.parse(readFileSync(new URL("../tts-audio-review/queue.json", import.meta.url), "utf8"));
+const staticAudioManifest = JSON.parse(readFileSync(new URL("../course-audio/manifest.json", import.meta.url), "utf8"));
 
 test("the English course fits the available 26-day window without fixing calendar dates", () => {
-  assert.equal(course.schemaVersion, 5);
+  assert.equal(course.schemaVersion, 6);
   assert.equal(course.days.length, 26);
   assert.equal(course.schedule.mode, "starts-when-child-begins");
   assert.equal(course.schedule.durationDays, 26);
@@ -38,22 +39,33 @@ test("weeks 2 through 4 retain the RAZ plan themes and anchor books", () => {
   assert.equal(course.policy.razSource.includes("4-Week Plan"), true);
 });
 
-test("the expanded course introduces 100 contextual words at five per teaching day", () => {
-  const counts = [1, 2, 3, 4].map((week) => course.days
+test("the expanded course introduces 200 contextual words at ten per teaching day", () => {
+  const coreCounts = [1, 2, 3, 4].map((week) => course.days
     .filter((day) => day.week === week)
     .reduce((total, day) => total + day.heartWords.newWords.length, 0));
-  assert.deepEqual(counts, [25, 25, 25, 25]);
+  const extensionCounts = [1, 2, 3, 4].map((week) => course.days
+    .filter((day) => day.week === week)
+    .reduce((total, day) => total + day.heartWords.extensionWords.length, 0));
+  assert.deepEqual(coreCounts, [25, 25, 25, 25]);
+  assert.deepEqual(extensionCounts, [25, 25, 25, 25]);
   assert.equal(course.days.filter((day) => day.dayOfWeek <= 5).every((day) => day.heartWords.newWords.length === 5), true);
+  assert.equal(course.days.filter((day) => day.dayOfWeek <= 5).every((day) => day.heartWords.extensionWords.length === 5), true);
   assert.equal(course.days.filter((day) => day.dayOfWeek > 5).every((day) => day.heartWords.newWords.length === 0), true);
+  assert.equal(course.days.filter((day) => day.dayOfWeek > 5).every((day) => day.heartWords.extensionWords.length === 0), true);
 });
 
 test("heart-word reviews only use introduced words and include expanding intervals", () => {
   const introduced = new Set();
+  const introducedExtensions = new Set();
   for (const day of course.days) {
     for (const word of day.heartWords.review) {
       assert.equal(introduced.has(word), true, `day ${day.day} reviews unintroduced ${word}`);
     }
     for (const word of day.heartWords.newWords) introduced.add(word);
+    for (const word of day.heartWords.extensionReview) {
+      assert.equal(introducedExtensions.has(word), true, `day ${day.day} reviews unintroduced extension ${word}`);
+    }
+    for (const word of day.heartWords.extensionWords) introducedExtensions.add(word);
   }
   assert.equal(course.days[21].heartWords.review.includes("when"), false);
   assert.deepEqual(course.days[1].heartWords.review, course.days[0].heartWords.newWords);
@@ -69,12 +81,14 @@ test("every day builds a substantial mixed English-island session", () => {
     assert.equal(kinds.has("heart"), true, `day ${day.day}`);
     assert.equal(kinds.has("raz"), true, `day ${day.day}`);
     assert.equal(rounds.length >= 10, true, `day ${day.day} has ${rounds.length} rounds`);
-    assert.equal(["book", "book-choice"].includes(rounds.at(-1).mode), true, `day ${day.day}`);
+    assert.equal(rounds.some((round) => ["book", "book-choice"].includes(round.mode)), true, `day ${day.day}`);
   }
 });
 
 test("the complete heart-word bank and every assigned RAZ book are actionable", () => {
-  assert.equal(course.heartWords.words.length, 100);
+  assert.equal(course.heartWords.words.length, 200);
+  assert.equal(course.heartWords.words.filter((entry) => entry.tier === "core").length, 100);
+  assert.equal(course.heartWords.words.filter((entry) => entry.tier === "extension").length, 100);
   assert.equal(course.heartWords.words.every((entry) => entry.word && entry.sentence), true);
   assert.equal(course.summary.laterWeeksAudioStatus, "tts-auto-applied");
   for (const day of course.days) {
@@ -88,6 +102,31 @@ test("the complete heart-word bank and every assigned RAZ book are actionable", 
       assert.equal(rounds.filter((round) => round.mode === "book-choice").length, requiredChoices, `day ${day.day}`);
       assert.equal(assignment.groups.every((group) => group.choices.every((book) => /^[B-F]-\d+ /.test(book))), true, `day ${day.day}`);
     }
+  }
+});
+
+test("all 200 high-frequency words have playable static pronunciation assets", () => {
+  const heartAssets = course.heartWords.words.map((entry) => entry.audio);
+  assert.equal(heartAssets.every((audio) => audio?.status === "verified" && audio.kind === "heart-word" && audio.assetId), true);
+  assert.equal(new Set(heartAssets.map((audio) => audio.assetId)).size, 200);
+  assert.equal(Object.values(staticAudioManifest.assets).filter((asset) => asset.kind === "heart-word").length, 200);
+  for (const audio of heartAssets) {
+    const staticAsset = staticAudioManifest.assets[audio.assetId];
+    assert.equal(staticAsset?.url, `./course-audio/${audio.assetId}.mp3`);
+    assert.equal(staticAsset?.bytes > 1000, true);
+  }
+});
+
+test("Oxford listening rounds use independent reviewed clips instead of whole tracks", () => {
+  const rounds = course.days.flatMap((day) => OPWWeek1CourseCore.buildRounds(day));
+  const oxfordRounds = rounds.filter((round) => round.mode === "listen" && round.audio?.itemId);
+  assert.equal(oxfordRounds.length > 0, true);
+  for (const round of oxfordRounds) {
+    const staticAsset = staticAudioManifest.assets[round.assetId];
+    assert.equal(staticAsset?.kind, "oxford-clip", `${round.word}:${round.assetId}`);
+    assert.equal(staticAsset?.bytes > 1000, true, `${round.word}:${round.assetId}`);
+    assert.equal(round.audio.clip.startSeconds, 0, `${round.word}:${round.assetId}`);
+    assert.equal(round.audio.clip.endSeconds > 0 && round.audio.clip.endSeconds < 6, true, `${round.word}:${round.assetId}`);
   }
 });
 

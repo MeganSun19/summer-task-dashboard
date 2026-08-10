@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 5,
+  "schemaVersion": 6,
   "generatedOn": "2026-08-07",
   "title": "暑假计划 · 英语岛基础阶段",
   "schedule": {
@@ -16,7 +16,7 @@
     "dailyStructure": "phonics, contextual heart words, RAZ target words, spoken sentence frames, and every explicitly assigned review book",
     "audioRule": "Existing verified Oxford clips remain valid; generated TTS is automatically playable without human review. Human recordings remain optional replacements and require explicit review. Do not scan Oxford tracks merely to source new course words.",
     "heartWordRule": "New heart words are copied into an English notebook, then recalled by typing; reviews recur after expanding intervals.",
-    "heartWordSelection": "100 foundational high-frequency words selected from Dolch early-reader words, retaining the course's RAZ anchor words; teaching follows UFLI guidance by decoding regular parts and marking only irregular parts for memory.",
+    "heartWordSelection": "200 high-frequency words from the Excel master: 100 foundational heart words plus 100 Dolch extension words, taught as 5 core and 5 extension words on each teaching day.",
     "heartWordSources": [
       "https://ufli.education.ufl.edu/resources/teaching-resources/instructional-activities/irregular-and-high-frequency-words/",
       "https://sightwords.com/sight-words/dolch/"
@@ -29,7 +29,7 @@
     "uniquePhonicsWords": 128,
     "teachingDays": 20,
     "reviewDays": 6,
-    "heartWords": 100,
+    "heartWords": 200,
     "razBookAssignments": 93,
     "laterWeeksAudioStatus": "tts-auto-applied",
     "verifiedFallbackWords": 85,
@@ -37,507 +37,3607 @@
     "extensionWords": 46
   },
   "heartWords": {
-    "instruction": "在英文句子中认出标注的心词；新词读 3 遍、写 3 遍，再遮住答案独立拼写；复习词必须拼写正确才能继续。",
+    "instruction": "每个教学日学习 5 个基础心词和 5 个拓展高频词；新词读 3 遍、写 3 遍，再遮住答案独立拼写；复习词必须拼写正确才能继续。",
     "words": [
       {
         "word": "I",
+        "tier": "core",
         "firstDay": 1,
-        "sentence": "I read a book."
+        "sentence": "I read a book.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-i",
+          "sourceFile": "i.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 1.233
+          }
+        }
       },
       {
         "word": "a",
+        "tier": "core",
         "firstDay": 1,
-        "sentence": "I read a book."
+        "sentence": "I read a book.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-a",
+          "sourceFile": "a.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.686
+          }
+        }
       },
       {
         "word": "the",
+        "tier": "core",
         "firstDay": 1,
-        "sentence": "I love the earth."
+        "sentence": "I love the earth.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-the",
+          "sourceFile": "the.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.74
+          }
+        }
       },
       {
         "word": "and",
+        "tier": "core",
         "firstDay": 1,
-        "sentence": "You and I read."
+        "sentence": "You and I read.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-and",
+          "sourceFile": "and.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.744
+          }
+        }
       },
       {
         "word": "read",
+        "tier": "core",
         "firstDay": 1,
-        "sentence": "Practice read in a sentence."
+        "sentence": "Practice read in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-read",
+          "sourceFile": "read.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.743
+          }
+        }
       },
       {
         "word": "you",
+        "tier": "core",
         "firstDay": 2,
-        "sentence": "You can go."
+        "sentence": "You can go.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-you",
+          "sourceFile": "you.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.671
+          }
+        }
       },
       {
         "word": "can",
+        "tier": "core",
         "firstDay": 2,
-        "sentence": "I can go."
+        "sentence": "I can go.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-can",
+          "sourceFile": "can.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.819
+          }
+        }
       },
       {
         "word": "go",
+        "tier": "core",
         "firstDay": 2,
-        "sentence": "Practice go in a sentence."
+        "sentence": "Practice go in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-go",
+          "sourceFile": "go.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.726
+          }
+        }
       },
       {
         "word": "see",
+        "tier": "core",
         "firstDay": 2,
-        "sentence": "Practice see in a sentence."
+        "sentence": "Practice see in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-see",
+          "sourceFile": "see.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.773
+          }
+        }
       },
       {
         "word": "we",
+        "tier": "core",
         "firstDay": 2,
-        "sentence": "Practice we in a sentence."
+        "sentence": "Practice we in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-we",
+          "sourceFile": "we.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.715
+          }
+        }
       },
       {
         "word": "where",
+        "tier": "core",
         "firstDay": 3,
-        "sentence": "Where is water?"
+        "sentence": "Where is water?",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-where",
+          "sourceFile": "where.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.738
+          }
+        }
       },
       {
         "word": "is",
+        "tier": "core",
         "firstDay": 3,
-        "sentence": "Where is water?"
+        "sentence": "Where is water?",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-is",
+          "sourceFile": "is.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.722
+          }
+        }
       },
       {
         "word": "in",
+        "tier": "core",
         "firstDay": 3,
-        "sentence": "It is in the book."
+        "sentence": "It is in the book.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-in",
+          "sourceFile": "in.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.688
+          }
+        }
       },
       {
         "word": "here",
+        "tier": "core",
         "firstDay": 3,
-        "sentence": "Practice here in a sentence."
+        "sentence": "Practice here in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-here",
+          "sourceFile": "here.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.703
+          }
+        }
       },
       {
         "word": "there",
+        "tier": "core",
         "firstDay": 3,
-        "sentence": "The book is there."
+        "sentence": "The book is there.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-there",
+          "sourceFile": "there.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.688
+          }
+        }
       },
       {
         "word": "what",
+        "tier": "core",
         "firstDay": 4,
-        "sentence": "What has these feet?"
+        "sentence": "What has these feet?",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-what",
+          "sourceFile": "what.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.762
+          }
+        }
       },
       {
         "word": "has",
+        "tier": "core",
         "firstDay": 4,
-        "sentence": "The animal has spots."
+        "sentence": "The animal has spots.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-has",
+          "sourceFile": "has.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.822
+          }
+        }
       },
       {
         "word": "this",
+        "tier": "core",
         "firstDay": 4,
-        "sentence": "Practice this in a sentence."
+        "sentence": "Practice this in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-this",
+          "sourceFile": "this.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.734
+          }
+        }
       },
       {
         "word": "these",
+        "tier": "core",
         "firstDay": 4,
-        "sentence": "Practice these in a sentence."
+        "sentence": "Practice these in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-these",
+          "sourceFile": "these.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.804
+          }
+        }
       },
       {
         "word": "it",
+        "tier": "core",
         "firstDay": 4,
-        "sentence": "It is here."
+        "sentence": "It is here.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-it",
+          "sourceFile": "it.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.582
+          }
+        }
       },
       {
         "word": "my",
+        "tier": "core",
         "firstDay": 5,
-        "sentence": "My pet is a dinosaur."
+        "sentence": "My pet is a dinosaur.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-my",
+          "sourceFile": "my.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.787
+          }
+        }
       },
       {
         "word": "like",
+        "tier": "core",
         "firstDay": 5,
-        "sentence": "I like this book."
+        "sentence": "I like this book.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-like",
+          "sourceFile": "like.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.775
+          }
+        }
       },
       {
         "word": "love",
+        "tier": "core",
         "firstDay": 5,
-        "sentence": "Practice love in a sentence."
+        "sentence": "Practice love in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-love",
+          "sourceFile": "love.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.728
+          }
+        }
       },
       {
         "word": "me",
+        "tier": "core",
         "firstDay": 5,
-        "sentence": "Practice me in a sentence."
+        "sentence": "Practice me in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-me",
+          "sourceFile": "me.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.694
+          }
+        }
       },
       {
         "word": "your",
+        "tier": "core",
         "firstDay": 5,
-        "sentence": "Practice your in a sentence."
+        "sentence": "Practice your in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-your",
+          "sourceFile": "your.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.764
+          }
+        }
       },
       {
         "word": "many",
+        "tier": "core",
         "firstDay": 7,
-        "sentence": "How many animals?"
+        "sentence": "How many animals?",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-many",
+          "sourceFile": "many.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.845
+          }
+        }
       },
       {
         "word": "one",
+        "tier": "core",
         "firstDay": 7,
-        "sentence": "I see one frog."
+        "sentence": "I see one frog.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-one",
+          "sourceFile": "one.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.785
+          }
+        }
       },
       {
         "word": "two",
+        "tier": "core",
         "firstDay": 7,
-        "sentence": "Practice two in a sentence."
+        "sentence": "Practice two in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-two",
+          "sourceFile": "two.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.726
+          }
+        }
       },
       {
         "word": "three",
+        "tier": "core",
         "firstDay": 7,
-        "sentence": "Practice three in a sentence."
+        "sentence": "Practice three in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-three",
+          "sourceFile": "three.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.794
+          }
+        }
       },
       {
         "word": "count",
+        "tier": "core",
         "firstDay": 7,
-        "sentence": "Practice count in a sentence."
+        "sentence": "Practice count in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-count",
+          "sourceFile": "count.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.819
+          }
+        }
       },
       {
         "word": "more",
+        "tier": "core",
         "firstDay": 8,
-        "sentence": "I can see more."
+        "sentence": "I can see more.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-more",
+          "sourceFile": "more.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.74
+          }
+        }
       },
       {
         "word": "have",
+        "tier": "core",
         "firstDay": 8,
-        "sentence": "I have a book."
+        "sentence": "I have a book.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-have",
+          "sourceFile": "have.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.741
+          }
+        }
       },
       {
         "word": "all",
+        "tier": "core",
         "firstDay": 8,
-        "sentence": "Practice all in a sentence."
+        "sentence": "Practice all in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-all",
+          "sourceFile": "all.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.774
+          }
+        }
       },
       {
         "word": "some",
+        "tier": "core",
         "firstDay": 8,
-        "sentence": "Practice some in a sentence."
+        "sentence": "Practice some in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-some",
+          "sourceFile": "some.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.878
+          }
+        }
       },
       {
         "word": "any",
+        "tier": "core",
         "firstDay": 8,
-        "sentence": "Practice any in a sentence."
+        "sentence": "Practice any in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-any",
+          "sourceFile": "any.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.721
+          }
+        }
       },
       {
         "word": "first",
+        "tier": "core",
         "firstDay": 9,
-        "sentence": "First, the frog is an egg."
+        "sentence": "First, the frog is an egg.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-first",
+          "sourceFile": "first.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.911
+          }
+        }
       },
       {
         "word": "after",
+        "tier": "core",
         "firstDay": 9,
-        "sentence": "Practice after in a sentence."
+        "sentence": "Practice after in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-after",
+          "sourceFile": "after.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.883
+          }
+        }
       },
       {
         "word": "before",
+        "tier": "core",
         "firstDay": 9,
-        "sentence": "Practice before in a sentence."
+        "sentence": "Practice before in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-before",
+          "sourceFile": "before.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.867
+          }
+        }
       },
       {
         "word": "again",
+        "tier": "core",
         "firstDay": 9,
-        "sentence": "Practice again in a sentence."
+        "sentence": "Practice again in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-again",
+          "sourceFile": "again.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.849
+          }
+        }
       },
       {
         "word": "now",
+        "tier": "core",
         "firstDay": 9,
-        "sentence": "Practice now in a sentence."
+        "sentence": "Practice now in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-now",
+          "sourceFile": "now.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.778
+          }
+        }
       },
       {
         "word": "next",
+        "tier": "core",
         "firstDay": 10,
-        "sentence": "Next, it grows legs."
+        "sentence": "Next, it grows legs.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-next",
+          "sourceFile": "next.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.965
+          }
+        }
       },
       {
         "word": "up",
+        "tier": "core",
         "firstDay": 10,
-        "sentence": "Practice up in a sentence."
+        "sentence": "Practice up in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-up",
+          "sourceFile": "up.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.629
+          }
+        }
       },
       {
         "word": "down",
+        "tier": "core",
         "firstDay": 10,
-        "sentence": "Practice down in a sentence."
+        "sentence": "Practice down in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-down",
+          "sourceFile": "down.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.749
+          }
+        }
       },
       {
         "word": "away",
+        "tier": "core",
         "firstDay": 10,
-        "sentence": "Practice away in a sentence."
+        "sentence": "Practice away in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-away",
+          "sourceFile": "away.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.861
+          }
+        }
       },
       {
         "word": "around",
+        "tier": "core",
         "firstDay": 10,
-        "sentence": "Practice around in a sentence."
+        "sentence": "Practice around in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-around",
+          "sourceFile": "around.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.919
+          }
+        }
       },
       {
         "word": "then",
+        "tier": "core",
         "firstDay": 11,
-        "sentence": "Then, it can jump."
+        "sentence": "Then, it can jump.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-then",
+          "sourceFile": "then.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.746
+          }
+        }
       },
       {
         "word": "to",
+        "tier": "core",
         "firstDay": 11,
-        "sentence": "I go to school."
+        "sentence": "I go to school.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-to",
+          "sourceFile": "to.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.726
+          }
+        }
       },
       {
         "word": "from",
+        "tier": "core",
         "firstDay": 11,
-        "sentence": "Practice from in a sentence."
+        "sentence": "Practice from in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-from",
+          "sourceFile": "from.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.853
+          }
+        }
       },
       {
         "word": "near",
+        "tier": "core",
         "firstDay": 11,
-        "sentence": "Practice near in a sentence."
+        "sentence": "Practice near in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-near",
+          "sourceFile": "near.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.708
+          }
+        }
       },
       {
         "word": "far",
+        "tier": "core",
         "firstDay": 11,
-        "sentence": "Practice far in a sentence."
+        "sentence": "Practice far in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-far",
+          "sourceFile": "far.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.772
+          }
+        }
       },
       {
         "word": "time",
+        "tier": "core",
         "firstDay": 13,
-        "sentence": "It is time for school."
+        "sentence": "It is time for school.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-time",
+          "sourceFile": "time.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.866
+          }
+        }
       },
       {
         "word": "at",
+        "tier": "core",
         "firstDay": 13,
-        "sentence": "I am at school."
+        "sentence": "I am at school.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-at",
+          "sourceFile": "at.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.71
+          }
+        }
       },
       {
         "word": "school",
+        "tier": "core",
         "firstDay": 13,
-        "sentence": "Practice school in a sentence."
+        "sentence": "Practice school in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-school",
+          "sourceFile": "school.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.878
+          }
+        }
       },
       {
         "word": "new",
+        "tier": "core",
         "firstDay": 13,
-        "sentence": "Practice new in a sentence."
+        "sentence": "Practice new in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-new",
+          "sourceFile": "new.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.743
+          }
+        }
       },
       {
         "word": "ready",
+        "tier": "core",
         "firstDay": 13,
-        "sentence": "Practice ready in a sentence."
+        "sentence": "Practice ready in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-ready",
+          "sourceFile": "ready.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.778
+          }
+        }
       },
       {
         "word": "want",
+        "tier": "core",
         "firstDay": 14,
-        "sentence": "I want a new book."
+        "sentence": "I want a new book.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-want",
+          "sourceFile": "want.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.808
+          }
+        }
       },
       {
         "word": "do",
+        "tier": "core",
         "firstDay": 14,
-        "sentence": "What do they eat?"
+        "sentence": "What do they eat?",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-do",
+          "sourceFile": "do.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.703
+          }
+        }
       },
       {
         "word": "not",
+        "tier": "core",
         "firstDay": 14,
-        "sentence": "I did not stop."
+        "sentence": "I did not stop.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-not",
+          "sourceFile": "not.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.767
+          }
+        }
       },
       {
         "word": "make",
+        "tier": "core",
         "firstDay": 14,
-        "sentence": "We make food."
+        "sentence": "We make food.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-make",
+          "sourceFile": "make.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.787
+          }
+        }
       },
       {
         "word": "get",
+        "tier": "core",
         "firstDay": 14,
-        "sentence": "Practice get in a sentence."
+        "sentence": "Practice get in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-get",
+          "sourceFile": "get.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.691
+          }
+        }
       },
       {
         "word": "need",
+        "tier": "core",
         "firstDay": 15,
-        "sentence": "I need an eraser."
+        "sentence": "I need an eraser.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-need",
+          "sourceFile": "need.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.755
+          }
+        }
       },
       {
         "word": "help",
+        "tier": "core",
         "firstDay": 15,
-        "sentence": "I can help."
+        "sentence": "I can help.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-help",
+          "sourceFile": "help.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.776
+          }
+        }
       },
       {
         "word": "come",
+        "tier": "core",
         "firstDay": 15,
-        "sentence": "Practice come in a sentence."
+        "sentence": "Practice come in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-come",
+          "sourceFile": "come.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.842
+          }
+        }
       },
       {
         "word": "find",
+        "tier": "core",
         "firstDay": 15,
-        "sentence": "Practice find in a sentence."
+        "sentence": "Practice find in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-find",
+          "sourceFile": "find.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.9
+          }
+        }
       },
       {
         "word": "give",
+        "tier": "core",
         "firstDay": 15,
-        "sentence": "Practice give in a sentence."
+        "sentence": "Practice give in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-give",
+          "sourceFile": "give.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.691
+          }
+        }
       },
       {
         "word": "because",
+        "tier": "core",
         "firstDay": 16,
-        "sentence": "I need it because I use it."
+        "sentence": "I need it because I use it.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-because",
+          "sourceFile": "because.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 1.006
+          }
+        }
       },
       {
         "word": "for",
+        "tier": "core",
         "firstDay": 16,
-        "sentence": "Practice for in a sentence."
+        "sentence": "Practice for in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-for",
+          "sourceFile": "for.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.772
+          }
+        }
       },
       {
         "word": "of",
+        "tier": "core",
         "firstDay": 16,
-        "sentence": "Practice of in a sentence."
+        "sentence": "Practice of in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-of",
+          "sourceFile": "of.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.617
+          }
+        }
       },
       {
         "word": "but",
+        "tier": "core",
         "firstDay": 16,
-        "sentence": "Practice but in a sentence."
+        "sentence": "Practice but in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-but",
+          "sourceFile": "but.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.722
+          }
+        }
       },
       {
         "word": "so",
+        "tier": "core",
         "firstDay": 16,
-        "sentence": "Practice so in a sentence."
+        "sentence": "Practice so in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-so",
+          "sourceFile": "so.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.854
+          }
+        }
       },
       {
         "word": "with",
+        "tier": "core",
         "firstDay": 17,
-        "sentence": "I am with my friend."
+        "sentence": "I am with my friend.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-with",
+          "sourceFile": "with.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.68
+          }
+        }
       },
       {
         "word": "he",
+        "tier": "core",
         "firstDay": 17,
-        "sentence": "Practice he in a sentence."
+        "sentence": "Practice he in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-he",
+          "sourceFile": "he.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.691
+          }
+        }
       },
       {
         "word": "she",
+        "tier": "core",
         "firstDay": 17,
-        "sentence": "Practice she in a sentence."
+        "sentence": "Practice she in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-she",
+          "sourceFile": "she.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.77
+          }
+        }
       },
       {
         "word": "they",
+        "tier": "core",
         "firstDay": 17,
-        "sentence": "They can help."
+        "sentence": "They can help.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-they",
+          "sourceFile": "they.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.749
+          }
+        }
       },
       {
         "word": "them",
+        "tier": "core",
         "firstDay": 17,
-        "sentence": "Practice them in a sentence."
+        "sentence": "Practice them in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-them",
+          "sourceFile": "them.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.746
+          }
+        }
       },
       {
         "word": "who",
+        "tier": "core",
         "firstDay": 20,
-        "sentence": "Who can help?"
+        "sentence": "Who can help?",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-who",
+          "sourceFile": "who.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.741
+          }
+        }
       },
       {
         "word": "when",
+        "tier": "core",
         "firstDay": 20,
-        "sentence": "When does school start?"
+        "sentence": "When does school start?",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-when",
+          "sourceFile": "when.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.773
+          }
+        }
       },
       {
         "word": "which",
+        "tier": "core",
         "firstDay": 20,
-        "sentence": "Practice which in a sentence."
+        "sentence": "Practice which in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-which",
+          "sourceFile": "which.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.796
+          }
+        }
       },
       {
         "word": "his",
+        "tier": "core",
         "firstDay": 20,
-        "sentence": "Practice his in a sentence."
+        "sentence": "Practice his in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-his",
+          "sourceFile": "his.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.726
+          }
+        }
       },
       {
         "word": "her",
+        "tier": "core",
         "firstDay": 20,
-        "sentence": "Practice her in a sentence."
+        "sentence": "Practice her in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-her",
+          "sourceFile": "her.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.694
+          }
+        }
       },
       {
         "word": "why",
+        "tier": "core",
         "firstDay": 21,
-        "sentence": "Why does it sleep?"
+        "sentence": "Why does it sleep?",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-why",
+          "sourceFile": "why.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.82
+          }
+        }
       },
       {
         "word": "was",
+        "tier": "core",
         "firstDay": 21,
-        "sentence": "Practice was in a sentence."
+        "sentence": "Practice was in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-was",
+          "sourceFile": "was.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.854
+          }
+        }
       },
       {
         "word": "were",
+        "tier": "core",
         "firstDay": 21,
-        "sentence": "Practice were in a sentence."
+        "sentence": "Practice were in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-were",
+          "sourceFile": "were.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.727
+          }
+        }
       },
       {
         "word": "are",
+        "tier": "core",
         "firstDay": 21,
-        "sentence": "Practice are in a sentence."
+        "sentence": "Practice are in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-are",
+          "sourceFile": "are.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.686
+          }
+        }
       },
       {
         "word": "am",
+        "tier": "core",
         "firstDay": 21,
-        "sentence": "Practice am in a sentence."
+        "sentence": "Practice am in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-am",
+          "sourceFile": "am.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.744
+          }
+        }
       },
       {
         "word": "how",
+        "tier": "core",
         "firstDay": 22,
-        "sentence": "How do they move?"
+        "sentence": "How do they move?",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-how",
+          "sourceFile": "how.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.764
+          }
+        }
       },
       {
         "word": "could",
+        "tier": "core",
         "firstDay": 22,
-        "sentence": "Practice could in a sentence."
+        "sentence": "Practice could in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-could",
+          "sourceFile": "could.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.715
+          }
+        }
       },
       {
         "word": "would",
+        "tier": "core",
         "firstDay": 22,
-        "sentence": "Practice would in a sentence."
+        "sentence": "Practice would in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-would",
+          "sourceFile": "would.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.715
+          }
+        }
       },
       {
         "word": "will",
+        "tier": "core",
         "firstDay": 22,
-        "sentence": "Practice will in a sentence."
+        "sentence": "Practice will in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-will",
+          "sourceFile": "will.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.703
+          }
+        }
       },
       {
         "word": "must",
+        "tier": "core",
         "firstDay": 22,
-        "sentence": "Practice must in a sentence."
+        "sentence": "Practice must in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-must",
+          "sourceFile": "must.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.88
+          }
+        }
       },
       {
         "word": "does",
+        "tier": "core",
         "firstDay": 23,
-        "sentence": "Why does it rain?"
+        "sentence": "Why does it rain?",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-does",
+          "sourceFile": "does.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.784
+          }
+        }
       },
       {
         "word": "did",
+        "tier": "core",
         "firstDay": 23,
-        "sentence": "Practice did in a sentence."
+        "sentence": "Practice did in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-did",
+          "sourceFile": "did.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.702
+          }
+        }
       },
       {
         "word": "had",
+        "tier": "core",
         "firstDay": 23,
-        "sentence": "Practice had in a sentence."
+        "sentence": "Practice had in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-had",
+          "sourceFile": "had.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.752
+          }
+        }
       },
       {
         "word": "been",
+        "tier": "core",
         "firstDay": 23,
-        "sentence": "Practice been in a sentence."
+        "sentence": "Practice been in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-been",
+          "sourceFile": "been.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.653
+          }
+        }
       },
       {
         "word": "be",
+        "tier": "core",
         "firstDay": 23,
-        "sentence": "Practice be in a sentence."
+        "sentence": "Practice be in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-be",
+          "sourceFile": "be.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.653
+          }
+        }
       },
       {
         "word": "said",
+        "tier": "core",
         "firstDay": 24,
-        "sentence": "He said, ‘Try again.’"
+        "sentence": "He said, ‘Try again.’",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-said",
+          "sourceFile": "said.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.785
+          }
+        }
       },
       {
         "word": "say",
+        "tier": "core",
         "firstDay": 24,
-        "sentence": "Practice say in a sentence."
+        "sentence": "Practice say in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-say",
+          "sourceFile": "say.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.831
+          }
+        }
       },
       {
         "word": "look",
+        "tier": "core",
         "firstDay": 24,
-        "sentence": "Practice look in a sentence."
+        "sentence": "Practice look in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-look",
+          "sourceFile": "look.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.775
+          }
+        }
       },
       {
         "word": "little",
+        "tier": "core",
         "firstDay": 24,
-        "sentence": "Practice little in a sentence."
+        "sentence": "Practice little in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-little",
+          "sourceFile": "little.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.775
+          }
+        }
       },
       {
         "word": "big",
+        "tier": "core",
         "firstDay": 24,
-        "sentence": "Practice big in a sentence."
+        "sentence": "Practice big in a sentence.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-big",
+          "sourceFile": "big.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.699
+          }
+        }
+      },
+      {
+        "word": "blue",
+        "tier": "extension",
+        "firstDay": 1,
+        "sentence": "The sky is blue.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-blue",
+          "sourceFile": "blue.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.711
+          }
+        }
+      },
+      {
+        "word": "funny",
+        "tier": "extension",
+        "firstDay": 1,
+        "sentence": "That story is funny.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-funny",
+          "sourceFile": "funny.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.83
+          }
+        }
+      },
+      {
+        "word": "jump",
+        "tier": "extension",
+        "firstDay": 1,
+        "sentence": "I can jump high.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-jump",
+          "sourceFile": "jump.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.853
+          }
+        }
+      },
+      {
+        "word": "play",
+        "tier": "extension",
+        "firstDay": 1,
+        "sentence": "We play after school.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-play",
+          "sourceFile": "play.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.814
+          }
+        }
+      },
+      {
+        "word": "red",
+        "tier": "extension",
+        "firstDay": 1,
+        "sentence": "The apple is red.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-red",
+          "sourceFile": "red.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.685
+          }
+        }
+      },
+      {
+        "word": "run",
+        "tier": "extension",
+        "firstDay": 2,
+        "sentence": "We run in the park.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-run",
+          "sourceFile": "run.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.778
+          }
+        }
+      },
+      {
+        "word": "yellow",
+        "tier": "extension",
+        "firstDay": 2,
+        "sentence": "The sun is yellow.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-yellow",
+          "sourceFile": "yellow.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.844
+          }
+        }
+      },
+      {
+        "word": "ate",
+        "tier": "extension",
+        "firstDay": 2,
+        "sentence": "We ate lunch together.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-ate",
+          "sourceFile": "ate.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.709
+          }
+        }
+      },
+      {
+        "word": "black",
+        "tier": "extension",
+        "firstDay": 2,
+        "sentence": "The cat is black.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-black",
+          "sourceFile": "black.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.792
+          }
+        }
+      },
+      {
+        "word": "brown",
+        "tier": "extension",
+        "firstDay": 2,
+        "sentence": "The bear is brown.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-brown",
+          "sourceFile": "brown.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.827
+          }
+        }
+      },
+      {
+        "word": "came",
+        "tier": "extension",
+        "firstDay": 3,
+        "sentence": "She came home early.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-came",
+          "sourceFile": "came.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.831
+          }
+        }
+      },
+      {
+        "word": "eat",
+        "tier": "extension",
+        "firstDay": 3,
+        "sentence": "We eat dinner together.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-eat",
+          "sourceFile": "eat.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.71
+          }
+        }
+      },
+      {
+        "word": "four",
+        "tier": "extension",
+        "firstDay": 3,
+        "sentence": "I see four birds.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-four",
+          "sourceFile": "four.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.772
+          }
+        }
+      },
+      {
+        "word": "good",
+        "tier": "extension",
+        "firstDay": 3,
+        "sentence": "This book is good.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-good",
+          "sourceFile": "good.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.645
+          }
+        }
+      },
+      {
+        "word": "into",
+        "tier": "extension",
+        "firstDay": 3,
+        "sentence": "Put it into the box.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-into",
+          "sourceFile": "into.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.827
+          }
+        }
+      },
+      {
+        "word": "no",
+        "tier": "extension",
+        "firstDay": 4,
+        "sentence": "No, I do not.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-no",
+          "sourceFile": "no.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.778
+          }
+        }
+      },
+      {
+        "word": "on",
+        "tier": "extension",
+        "firstDay": 4,
+        "sentence": "The book is on the desk.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-on",
+          "sourceFile": "on.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.741
+          }
+        }
+      },
+      {
+        "word": "our",
+        "tier": "extension",
+        "firstDay": 4,
+        "sentence": "This is our home.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-our",
+          "sourceFile": "our.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.686
+          }
+        }
+      },
+      {
+        "word": "out",
+        "tier": "extension",
+        "firstDay": 4,
+        "sentence": "We went out to play.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-out",
+          "sourceFile": "out.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.707
+          }
+        }
+      },
+      {
+        "word": "please",
+        "tier": "extension",
+        "firstDay": 4,
+        "sentence": "Please open the door.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-please",
+          "sourceFile": "please.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.861
+          }
+        }
+      },
+      {
+        "word": "pretty",
+        "tier": "extension",
+        "firstDay": 5,
+        "sentence": "The flower is pretty.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-pretty",
+          "sourceFile": "pretty.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.768
+          }
+        }
+      },
+      {
+        "word": "ran",
+        "tier": "extension",
+        "firstDay": 5,
+        "sentence": "He ran very fast.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-ran",
+          "sourceFile": "ran.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.755
+          }
+        }
+      },
+      {
+        "word": "ride",
+        "tier": "extension",
+        "firstDay": 5,
+        "sentence": "I ride my bike.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-ride",
+          "sourceFile": "ride.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.778
+          }
+        }
+      },
+      {
+        "word": "saw",
+        "tier": "extension",
+        "firstDay": 5,
+        "sentence": "I saw a bird.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-saw",
+          "sourceFile": "saw.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.773
+          }
+        }
+      },
+      {
+        "word": "soon",
+        "tier": "extension",
+        "firstDay": 5,
+        "sentence": "We will go soon.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-soon",
+          "sourceFile": "soon.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.82
+          }
+        }
+      },
+      {
+        "word": "that",
+        "tier": "extension",
+        "firstDay": 7,
+        "sentence": "That is my bag.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-that",
+          "sourceFile": "that.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.746
+          }
+        }
+      },
+      {
+        "word": "too",
+        "tier": "extension",
+        "firstDay": 7,
+        "sentence": "I want to go too.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-too",
+          "sourceFile": "too.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.726
+          }
+        }
+      },
+      {
+        "word": "under",
+        "tier": "extension",
+        "firstDay": 7,
+        "sentence": "The cat is under the chair.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-under",
+          "sourceFile": "under.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.777
+          }
+        }
+      },
+      {
+        "word": "well",
+        "tier": "extension",
+        "firstDay": 7,
+        "sentence": "She reads very well.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-well",
+          "sourceFile": "well.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.75
+          }
+        }
+      },
+      {
+        "word": "went",
+        "tier": "extension",
+        "firstDay": 7,
+        "sentence": "We went to school.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-went",
+          "sourceFile": "went.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.773
+          }
+        }
+      },
+      {
+        "word": "white",
+        "tier": "extension",
+        "firstDay": 8,
+        "sentence": "The snow is white.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-white",
+          "sourceFile": "white.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.773
+          }
+        }
+      },
+      {
+        "word": "yes",
+        "tier": "extension",
+        "firstDay": 8,
+        "sentence": "Yes, I can.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-yes",
+          "sourceFile": "yes.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.845
+          }
+        }
+      },
+      {
+        "word": "an",
+        "tier": "extension",
+        "firstDay": 8,
+        "sentence": "I ate an apple.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-an",
+          "sourceFile": "an.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.584
+          }
+        }
+      },
+      {
+        "word": "as",
+        "tier": "extension",
+        "firstDay": 8,
+        "sentence": "Run as fast as you can.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-as",
+          "sourceFile": "as.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.779
+          }
+        }
+      },
+      {
+        "word": "ask",
+        "tier": "extension",
+        "firstDay": 8,
+        "sentence": "Ask me a question.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-ask",
+          "sourceFile": "ask.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.814
+          }
+        }
+      },
+      {
+        "word": "by",
+        "tier": "extension",
+        "firstDay": 9,
+        "sentence": "Please sit by me.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-by",
+          "sourceFile": "by.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.745
+          }
+        }
+      },
+      {
+        "word": "every",
+        "tier": "extension",
+        "firstDay": 9,
+        "sentence": "I read every day.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-every",
+          "sourceFile": "every.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.791
+          }
+        }
+      },
+      {
+        "word": "fly",
+        "tier": "extension",
+        "firstDay": 9,
+        "sentence": "Birds can fly.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-fly",
+          "sourceFile": "fly.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.911
+          }
+        }
+      },
+      {
+        "word": "giving",
+        "tier": "extension",
+        "firstDay": 9,
+        "sentence": "She is giving me a book.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-giving",
+          "sourceFile": "giving.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.765
+          }
+        }
+      },
+      {
+        "word": "him",
+        "tier": "extension",
+        "firstDay": 9,
+        "sentence": "I can help him.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-him",
+          "sourceFile": "him.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.691
+          }
+        }
+      },
+      {
+        "word": "just",
+        "tier": "extension",
+        "firstDay": 10,
+        "sentence": "I just got home.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-just",
+          "sourceFile": "just.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.888
+          }
+        }
+      },
+      {
+        "word": "know",
+        "tier": "extension",
+        "firstDay": 10,
+        "sentence": "I know the answer.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-know",
+          "sourceFile": "know.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.778
+          }
+        }
+      },
+      {
+        "word": "let",
+        "tier": "extension",
+        "firstDay": 10,
+        "sentence": "Let us play outside.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-let",
+          "sourceFile": "let.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.752
+          }
+        }
+      },
+      {
+        "word": "live",
+        "tier": "extension",
+        "firstDay": 10,
+        "sentence": "We live near school.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-live",
+          "sourceFile": "live.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.67
+          }
+        }
+      },
+      {
+        "word": "may",
+        "tier": "extension",
+        "firstDay": 10,
+        "sentence": "May I come in?",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-may",
+          "sourceFile": "may.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.752
+          }
+        }
+      },
+      {
+        "word": "old",
+        "tier": "extension",
+        "firstDay": 11,
+        "sentence": "This book is old.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-old",
+          "sourceFile": "old.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.834
+          }
+        }
+      },
+      {
+        "word": "once",
+        "tier": "extension",
+        "firstDay": 11,
+        "sentence": "Read it once more.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-once",
+          "sourceFile": "once.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.878
+          }
+        }
+      },
+      {
+        "word": "open",
+        "tier": "extension",
+        "firstDay": 11,
+        "sentence": "Please open the book.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-open",
+          "sourceFile": "open.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.822
+          }
+        }
+      },
+      {
+        "word": "over",
+        "tier": "extension",
+        "firstDay": 11,
+        "sentence": "The game is over.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-over",
+          "sourceFile": "over.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.752
+          }
+        }
+      },
+      {
+        "word": "put",
+        "tier": "extension",
+        "firstDay": 11,
+        "sentence": "Put it on the table.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-put",
+          "sourceFile": "put.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.698
+          }
+        }
+      },
+      {
+        "word": "round",
+        "tier": "extension",
+        "firstDay": 13,
+        "sentence": "The ball is round.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-round",
+          "sourceFile": "round.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.813
+          }
+        }
+      },
+      {
+        "word": "stop",
+        "tier": "extension",
+        "firstDay": 13,
+        "sentence": "Stop at the red light.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-stop",
+          "sourceFile": "stop.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.889
+          }
+        }
+      },
+      {
+        "word": "take",
+        "tier": "extension",
+        "firstDay": 13,
+        "sentence": "Take your book with you.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-take",
+          "sourceFile": "take.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.819
+          }
+        }
+      },
+      {
+        "word": "thank",
+        "tier": "extension",
+        "firstDay": 13,
+        "sentence": "Thank you for helping.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-thank",
+          "sourceFile": "thank.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.864
+          }
+        }
+      },
+      {
+        "word": "think",
+        "tier": "extension",
+        "firstDay": 13,
+        "sentence": "I think it is right.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-think",
+          "sourceFile": "think.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.771
+          }
+        }
+      },
+      {
+        "word": "walk",
+        "tier": "extension",
+        "firstDay": 14,
+        "sentence": "We walk to school.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-walk",
+          "sourceFile": "walk.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.808
+          }
+        }
+      },
+      {
+        "word": "always",
+        "tier": "extension",
+        "firstDay": 14,
+        "sentence": "I always brush my teeth.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-always",
+          "sourceFile": "always.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.937
+          }
+        }
+      },
+      {
+        "word": "best",
+        "tier": "extension",
+        "firstDay": 14,
+        "sentence": "This is my best work.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-best",
+          "sourceFile": "best.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.804
+          }
+        }
+      },
+      {
+        "word": "both",
+        "tier": "extension",
+        "firstDay": 14,
+        "sentence": "We both like books.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-both",
+          "sourceFile": "both.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.757
+          }
+        }
+      },
+      {
+        "word": "buy",
+        "tier": "extension",
+        "firstDay": 14,
+        "sentence": "We buy fresh fruit.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-buy",
+          "sourceFile": "buy.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.745
+          }
+        }
+      },
+      {
+        "word": "call",
+        "tier": "extension",
+        "firstDay": 15,
+        "sentence": "Please call my name.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-call",
+          "sourceFile": "call.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.773
+          }
+        }
+      },
+      {
+        "word": "cold",
+        "tier": "extension",
+        "firstDay": 15,
+        "sentence": "The water is cold.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-cold",
+          "sourceFile": "cold.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.808
+          }
+        }
+      },
+      {
+        "word": "don't",
+        "tier": "extension",
+        "firstDay": 15,
+        "sentence": "I don't know the answer.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-dont",
+          "sourceFile": "dont.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.749
+          }
+        }
+      },
+      {
+        "word": "fast",
+        "tier": "extension",
+        "firstDay": 15,
+        "sentence": "The rabbit runs fast.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-fast",
+          "sourceFile": "fast.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.935
+          }
+        }
+      },
+      {
+        "word": "five",
+        "tier": "extension",
+        "firstDay": 15,
+        "sentence": "I have five pencils.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-five",
+          "sourceFile": "five.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.83
+          }
+        }
+      },
+      {
+        "word": "found",
+        "tier": "extension",
+        "firstDay": 16,
+        "sentence": "I found my hat.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-found",
+          "sourceFile": "found.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.865
+          }
+        }
+      },
+      {
+        "word": "gave",
+        "tier": "extension",
+        "firstDay": 16,
+        "sentence": "She gave me a gift.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-gave",
+          "sourceFile": "gave.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.728
+          }
+        }
+      },
+      {
+        "word": "goes",
+        "tier": "extension",
+        "firstDay": 16,
+        "sentence": "He goes to school.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-goes",
+          "sourceFile": "goes.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.785
+          }
+        }
+      },
+      {
+        "word": "green",
+        "tier": "extension",
+        "firstDay": 16,
+        "sentence": "The leaf is green.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-green",
+          "sourceFile": "green.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.789
+          }
+        }
+      },
+      {
+        "word": "its",
+        "tier": "extension",
+        "firstDay": 16,
+        "sentence": "The dog wags its tail.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-its",
+          "sourceFile": "its.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.711
+          }
+        }
+      },
+      {
+        "word": "made",
+        "tier": "extension",
+        "firstDay": 17,
+        "sentence": "We made a cake.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-made",
+          "sourceFile": "made.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.764
+          }
+        }
+      },
+      {
+        "word": "off",
+        "tier": "extension",
+        "firstDay": 17,
+        "sentence": "Turn off the light.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-off",
+          "sourceFile": "off.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.762
+          }
+        }
+      },
+      {
+        "word": "or",
+        "tier": "extension",
+        "firstDay": 17,
+        "sentence": "Would you like tea or water?",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-or",
+          "sourceFile": "or.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.681
+          }
+        }
+      },
+      {
+        "word": "pull",
+        "tier": "extension",
+        "firstDay": 17,
+        "sentence": "Pull the door open.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-pull",
+          "sourceFile": "pull.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.722
+          }
+        }
+      },
+      {
+        "word": "right",
+        "tier": "extension",
+        "firstDay": 17,
+        "sentence": "You got it right.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-right",
+          "sourceFile": "right.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.755
+          }
+        }
+      },
+      {
+        "word": "sing",
+        "tier": "extension",
+        "firstDay": 20,
+        "sentence": "We sing a song.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-sing",
+          "sourceFile": "sing.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.785
+          }
+        }
+      },
+      {
+        "word": "sit",
+        "tier": "extension",
+        "firstDay": 20,
+        "sentence": "Sit next to me.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-sit",
+          "sourceFile": "sit.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.738
+          }
+        }
+      },
+      {
+        "word": "sleep",
+        "tier": "extension",
+        "firstDay": 20,
+        "sentence": "I sleep at night.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-sleep",
+          "sourceFile": "sleep.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.878
+          }
+        }
+      },
+      {
+        "word": "tell",
+        "tier": "extension",
+        "firstDay": 20,
+        "sentence": "Tell me the story.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-tell",
+          "sourceFile": "tell.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.75
+          }
+        }
+      },
+      {
+        "word": "their",
+        "tier": "extension",
+        "firstDay": 20,
+        "sentence": "Their books are here.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-their",
+          "sourceFile": "their.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.688
+          }
+        }
+      },
+      {
+        "word": "those",
+        "tier": "extension",
+        "firstDay": 21,
+        "sentence": "Those are my shoes.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-those",
+          "sourceFile": "those.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.804
+          }
+        }
+      },
+      {
+        "word": "upon",
+        "tier": "extension",
+        "firstDay": 21,
+        "sentence": "Once upon a time, there was a king.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-upon",
+          "sourceFile": "upon.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.942
+          }
+        }
+      },
+      {
+        "word": "us",
+        "tier": "extension",
+        "firstDay": 21,
+        "sentence": "Come and play with us.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-us",
+          "sourceFile": "us.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.71
+          }
+        }
+      },
+      {
+        "word": "use",
+        "tier": "extension",
+        "firstDay": 21,
+        "sentence": "I use a pencil to write.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-use",
+          "sourceFile": "use.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.868
+          }
+        }
+      },
+      {
+        "word": "very",
+        "tier": "extension",
+        "firstDay": 21,
+        "sentence": "It is very hot today.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-very",
+          "sourceFile": "very.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.775
+          }
+        }
+      },
+      {
+        "word": "wash",
+        "tier": "extension",
+        "firstDay": 22,
+        "sentence": "Wash your hands before dinner.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-wash",
+          "sourceFile": "wash.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.878
+          }
+        }
+      },
+      {
+        "word": "wish",
+        "tier": "extension",
+        "firstDay": 22,
+        "sentence": "I wish for sunshine.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-wish",
+          "sourceFile": "wish.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.785
+          }
+        }
+      },
+      {
+        "word": "work",
+        "tier": "extension",
+        "firstDay": 22,
+        "sentence": "We work together.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-work",
+          "sourceFile": "work.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.773
+          }
+        }
+      },
+      {
+        "word": "write",
+        "tier": "extension",
+        "firstDay": 22,
+        "sentence": "Write your name here.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-write",
+          "sourceFile": "write.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.755
+          }
+        }
+      },
+      {
+        "word": "about",
+        "tier": "extension",
+        "firstDay": 22,
+        "sentence": "This book is about space.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-about",
+          "sourceFile": "about.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.838
+          }
+        }
+      },
+      {
+        "word": "better",
+        "tier": "extension",
+        "firstDay": 23,
+        "sentence": "I feel better today.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-better",
+          "sourceFile": "better.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.728
+          }
+        }
+      },
+      {
+        "word": "bring",
+        "tier": "extension",
+        "firstDay": 23,
+        "sentence": "Bring your bag to school.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-bring",
+          "sourceFile": "bring.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.757
+          }
+        }
+      },
+      {
+        "word": "carry",
+        "tier": "extension",
+        "firstDay": 23,
+        "sentence": "I can carry the box.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-carry",
+          "sourceFile": "carry.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.78
+          }
+        }
+      },
+      {
+        "word": "clean",
+        "tier": "extension",
+        "firstDay": 23,
+        "sentence": "Keep your room clean.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-clean",
+          "sourceFile": "clean.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.819
+          }
+        }
+      },
+      {
+        "word": "cut",
+        "tier": "extension",
+        "firstDay": 23,
+        "sentence": "Cut the paper carefully.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-cut",
+          "sourceFile": "cut.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.796
+          }
+        }
+      },
+      {
+        "word": "done",
+        "tier": "extension",
+        "firstDay": 24,
+        "sentence": "I am done with my work.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-done",
+          "sourceFile": "done.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.772
+          }
+        }
+      },
+      {
+        "word": "draw",
+        "tier": "extension",
+        "firstDay": 24,
+        "sentence": "Draw a picture of your family.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-draw",
+          "sourceFile": "draw.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.742
+          }
+        }
+      },
+      {
+        "word": "drink",
+        "tier": "extension",
+        "firstDay": 24,
+        "sentence": "Drink some water.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-drink",
+          "sourceFile": "drink.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.812
+          }
+        }
+      },
+      {
+        "word": "eight",
+        "tier": "extension",
+        "firstDay": 24,
+        "sentence": "I see eight stars.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-eight",
+          "sourceFile": "eight.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.709
+          }
+        }
+      },
+      {
+        "word": "fall",
+        "tier": "extension",
+        "firstDay": 24,
+        "sentence": "Leaves fall in autumn.",
+        "audio": {
+          "status": "verified",
+          "kind": "heart-word",
+          "sourceType": "tts",
+          "verificationSource": "tts-auto-policy",
+          "assetId": "heart-word-fall",
+          "sourceFile": "fall.mp3",
+          "clip": {
+            "startSeconds": 0,
+            "endSeconds": 0.795
+          }
+        }
       }
     ]
   },
@@ -660,7 +3760,27 @@
           "the",
           "and",
           "read"
-        ]
+        ],
+        "extensionWords": [
+          "blue",
+          "funny",
+          "jump",
+          "play",
+          "red"
+        ],
+        "sentences": {
+          "I": "I read a book.",
+          "a": "I read a book.",
+          "the": "I love the earth.",
+          "and": "You and I read.",
+          "read": "Practice read in a sentence.",
+          "blue": "The sky is blue.",
+          "funny": "That story is funny.",
+          "jump": "I can jump high.",
+          "play": "We play after school.",
+          "red": "The apple is red."
+        },
+        "extensionReview": []
       },
       "raz": {
         "focus": "自我和基础句型",
@@ -825,6 +3945,42 @@
           "go",
           "see",
           "we"
+        ],
+        "extensionWords": [
+          "run",
+          "yellow",
+          "ate",
+          "black",
+          "brown"
+        ],
+        "sentences": {
+          "you": "You can go.",
+          "can": "I can go.",
+          "go": "Practice go in a sentence.",
+          "see": "Practice see in a sentence.",
+          "we": "Practice we in a sentence.",
+          "I": "I read a book.",
+          "a": "I read a book.",
+          "the": "I love the earth.",
+          "and": "You and I read.",
+          "read": "Practice read in a sentence.",
+          "run": "We run in the park.",
+          "yellow": "The sun is yellow.",
+          "ate": "We ate lunch together.",
+          "black": "The cat is black.",
+          "brown": "The bear is brown.",
+          "blue": "The sky is blue.",
+          "funny": "That story is funny.",
+          "jump": "I can jump high.",
+          "play": "We play after school.",
+          "red": "The apple is red."
+        },
+        "extensionReview": [
+          "blue",
+          "funny",
+          "jump",
+          "play",
+          "red"
         ]
       },
       "raz": {
@@ -991,6 +4147,43 @@
           "in",
           "here",
           "there"
+        ],
+        "extensionWords": [
+          "came",
+          "eat",
+          "four",
+          "good",
+          "into"
+        ],
+        "sentences": {
+          "where": "Where is water?",
+          "is": "Where is water?",
+          "in": "It is in the book.",
+          "here": "Practice here in a sentence.",
+          "there": "The book is there.",
+          "you": "You can go.",
+          "can": "I can go.",
+          "go": "Practice go in a sentence.",
+          "see": "Practice see in a sentence.",
+          "we": "Practice we in a sentence.",
+          "I": "I read a book.",
+          "came": "She came home early.",
+          "eat": "We eat dinner together.",
+          "four": "I see four birds.",
+          "good": "This book is good.",
+          "into": "Put it into the box.",
+          "run": "We run in the park.",
+          "yellow": "The sun is yellow.",
+          "ate": "We ate lunch together.",
+          "black": "The cat is black.",
+          "brown": "The bear is brown."
+        },
+        "extensionReview": [
+          "run",
+          "yellow",
+          "ate",
+          "black",
+          "brown"
         ]
       },
       "raz": {
@@ -1161,6 +4354,57 @@
           "this",
           "these",
           "it"
+        ],
+        "extensionWords": [
+          "no",
+          "on",
+          "our",
+          "out",
+          "please"
+        ],
+        "sentences": {
+          "what": "What has these feet?",
+          "has": "The animal has spots.",
+          "this": "Practice this in a sentence.",
+          "these": "Practice these in a sentence.",
+          "it": "It is here.",
+          "where": "Where is water?",
+          "is": "Where is water?",
+          "in": "It is in the book.",
+          "here": "Practice here in a sentence.",
+          "there": "The book is there.",
+          "I": "I read a book.",
+          "a": "I read a book.",
+          "the": "I love the earth.",
+          "and": "You and I read.",
+          "read": "Practice read in a sentence.",
+          "no": "No, I do not.",
+          "on": "The book is on the desk.",
+          "our": "This is our home.",
+          "out": "We went out to play.",
+          "please": "Please open the door.",
+          "came": "She came home early.",
+          "eat": "We eat dinner together.",
+          "four": "I see four birds.",
+          "good": "This book is good.",
+          "into": "Put it into the box.",
+          "blue": "The sky is blue.",
+          "funny": "That story is funny.",
+          "jump": "I can jump high.",
+          "play": "We play after school.",
+          "red": "The apple is red."
+        },
+        "extensionReview": [
+          "came",
+          "eat",
+          "four",
+          "good",
+          "into",
+          "blue",
+          "funny",
+          "jump",
+          "play",
+          "red"
         ]
       },
       "raz": {
@@ -1331,6 +4575,57 @@
           "love",
           "me",
           "your"
+        ],
+        "extensionWords": [
+          "pretty",
+          "ran",
+          "ride",
+          "saw",
+          "soon"
+        ],
+        "sentences": {
+          "my": "My pet is a dinosaur.",
+          "like": "I like this book.",
+          "love": "Practice love in a sentence.",
+          "me": "Practice me in a sentence.",
+          "your": "Practice your in a sentence.",
+          "what": "What has these feet?",
+          "has": "The animal has spots.",
+          "this": "Practice this in a sentence.",
+          "these": "Practice these in a sentence.",
+          "it": "It is here.",
+          "you": "You can go.",
+          "can": "I can go.",
+          "go": "Practice go in a sentence.",
+          "see": "Practice see in a sentence.",
+          "we": "Practice we in a sentence.",
+          "pretty": "The flower is pretty.",
+          "ran": "He ran very fast.",
+          "ride": "I ride my bike.",
+          "saw": "I saw a bird.",
+          "soon": "We will go soon.",
+          "no": "No, I do not.",
+          "on": "The book is on the desk.",
+          "our": "This is our home.",
+          "out": "We went out to play.",
+          "please": "Please open the door.",
+          "run": "We run in the park.",
+          "yellow": "The sun is yellow.",
+          "ate": "We ate lunch together.",
+          "black": "The cat is black.",
+          "brown": "The bear is brown."
+        },
+        "extensionReview": [
+          "no",
+          "on",
+          "our",
+          "out",
+          "please",
+          "run",
+          "yellow",
+          "ate",
+          "black",
+          "brown"
         ]
       },
       "raz": {
@@ -1495,7 +4790,42 @@
           "here",
           "there"
         ],
-        "newWords": []
+        "newWords": [],
+        "extensionWords": [],
+        "sentences": {
+          "my": "My pet is a dinosaur.",
+          "like": "I like this book.",
+          "love": "Practice love in a sentence.",
+          "me": "Practice me in a sentence.",
+          "your": "Practice your in a sentence.",
+          "where": "Where is water?",
+          "is": "Where is water?",
+          "in": "It is in the book.",
+          "here": "Practice here in a sentence.",
+          "there": "The book is there.",
+          "pretty": "The flower is pretty.",
+          "ran": "He ran very fast.",
+          "ride": "I ride my bike.",
+          "saw": "I saw a bird.",
+          "soon": "We will go soon.",
+          "came": "She came home early.",
+          "eat": "We eat dinner together.",
+          "four": "I see four birds.",
+          "good": "This book is good.",
+          "into": "Put it into the box."
+        },
+        "extensionReview": [
+          "pretty",
+          "ran",
+          "ride",
+          "saw",
+          "soon",
+          "came",
+          "eat",
+          "four",
+          "good",
+          "into"
+        ]
       },
       "raz": {
         "focus": "第 1 周回收",
@@ -1688,6 +5018,44 @@
           "two",
           "three",
           "count"
+        ],
+        "extensionWords": [
+          "that",
+          "too",
+          "under",
+          "well",
+          "went"
+        ],
+        "sentences": {
+          "many": "How many animals?",
+          "one": "I see one frog.",
+          "two": "Practice two in a sentence.",
+          "three": "Practice three in a sentence.",
+          "count": "Practice count in a sentence.",
+          "what": "What has these feet?",
+          "has": "The animal has spots.",
+          "this": "Practice this in a sentence.",
+          "these": "Practice these in a sentence.",
+          "it": "It is here.",
+          "where": "Where is water?",
+          "my": "My pet is a dinosaur.",
+          "that": "That is my bag.",
+          "too": "I want to go too.",
+          "under": "The cat is under the chair.",
+          "well": "She reads very well.",
+          "went": "We went to school.",
+          "no": "No, I do not.",
+          "on": "The book is on the desk.",
+          "our": "This is our home.",
+          "out": "We went out to play.",
+          "please": "Please open the door."
+        },
+        "extensionReview": [
+          "no",
+          "on",
+          "our",
+          "out",
+          "please"
         ]
       },
       "raz": {
@@ -1869,6 +5237,57 @@
           "all",
           "some",
           "any"
+        ],
+        "extensionWords": [
+          "white",
+          "yes",
+          "an",
+          "as",
+          "ask"
+        ],
+        "sentences": {
+          "more": "I can see more.",
+          "have": "I have a book.",
+          "all": "Practice all in a sentence.",
+          "some": "Practice some in a sentence.",
+          "any": "Practice any in a sentence.",
+          "many": "How many animals?",
+          "one": "I see one frog.",
+          "two": "Practice two in a sentence.",
+          "three": "Practice three in a sentence.",
+          "count": "Practice count in a sentence.",
+          "I": "I read a book.",
+          "a": "I read a book.",
+          "the": "I love the earth.",
+          "and": "You and I read.",
+          "read": "Practice read in a sentence.",
+          "white": "The snow is white.",
+          "yes": "Yes, I can.",
+          "an": "I ate an apple.",
+          "as": "Run as fast as you can.",
+          "ask": "Ask me a question.",
+          "that": "That is my bag.",
+          "too": "I want to go too.",
+          "under": "The cat is under the chair.",
+          "well": "She reads very well.",
+          "went": "We went to school.",
+          "blue": "The sky is blue.",
+          "funny": "That story is funny.",
+          "jump": "I can jump high.",
+          "play": "We play after school.",
+          "red": "The apple is red."
+        },
+        "extensionReview": [
+          "that",
+          "too",
+          "under",
+          "well",
+          "went",
+          "blue",
+          "funny",
+          "jump",
+          "play",
+          "red"
         ]
       },
       "raz": {
@@ -2045,6 +5464,57 @@
           "before",
           "again",
           "now"
+        ],
+        "extensionWords": [
+          "by",
+          "every",
+          "fly",
+          "giving",
+          "him"
+        ],
+        "sentences": {
+          "first": "First, the frog is an egg.",
+          "after": "Practice after in a sentence.",
+          "before": "Practice before in a sentence.",
+          "again": "Practice again in a sentence.",
+          "now": "Practice now in a sentence.",
+          "more": "I can see more.",
+          "have": "I have a book.",
+          "all": "Practice all in a sentence.",
+          "some": "Practice some in a sentence.",
+          "any": "Practice any in a sentence.",
+          "you": "You can go.",
+          "can": "I can go.",
+          "go": "Practice go in a sentence.",
+          "see": "Practice see in a sentence.",
+          "we": "Practice we in a sentence.",
+          "by": "Please sit by me.",
+          "every": "I read every day.",
+          "fly": "Birds can fly.",
+          "giving": "She is giving me a book.",
+          "him": "I can help him.",
+          "white": "The snow is white.",
+          "yes": "Yes, I can.",
+          "an": "I ate an apple.",
+          "as": "Run as fast as you can.",
+          "ask": "Ask me a question.",
+          "run": "We run in the park.",
+          "yellow": "The sun is yellow.",
+          "ate": "We ate lunch together.",
+          "black": "The cat is black.",
+          "brown": "The bear is brown."
+        },
+        "extensionReview": [
+          "white",
+          "yes",
+          "an",
+          "as",
+          "ask",
+          "run",
+          "yellow",
+          "ate",
+          "black",
+          "brown"
         ]
       },
       "raz": {
@@ -2220,6 +5690,57 @@
           "down",
           "away",
           "around"
+        ],
+        "extensionWords": [
+          "just",
+          "know",
+          "let",
+          "live",
+          "may"
+        ],
+        "sentences": {
+          "next": "Next, it grows legs.",
+          "up": "Practice up in a sentence.",
+          "down": "Practice down in a sentence.",
+          "away": "Practice away in a sentence.",
+          "around": "Practice around in a sentence.",
+          "first": "First, the frog is an egg.",
+          "after": "Practice after in a sentence.",
+          "before": "Practice before in a sentence.",
+          "again": "Practice again in a sentence.",
+          "now": "Practice now in a sentence.",
+          "where": "Where is water?",
+          "is": "Where is water?",
+          "in": "It is in the book.",
+          "here": "Practice here in a sentence.",
+          "there": "The book is there.",
+          "just": "I just got home.",
+          "know": "I know the answer.",
+          "let": "Let us play outside.",
+          "live": "We live near school.",
+          "may": "May I come in?",
+          "by": "Please sit by me.",
+          "every": "I read every day.",
+          "fly": "Birds can fly.",
+          "giving": "She is giving me a book.",
+          "him": "I can help him.",
+          "came": "She came home early.",
+          "eat": "We eat dinner together.",
+          "four": "I see four birds.",
+          "good": "This book is good.",
+          "into": "Put it into the box."
+        },
+        "extensionReview": [
+          "by",
+          "every",
+          "fly",
+          "giving",
+          "him",
+          "came",
+          "eat",
+          "four",
+          "good",
+          "into"
         ]
       },
       "raz": {
@@ -2399,6 +5920,57 @@
           "from",
           "near",
           "far"
+        ],
+        "extensionWords": [
+          "old",
+          "once",
+          "open",
+          "over",
+          "put"
+        ],
+        "sentences": {
+          "then": "Then, it can jump.",
+          "to": "I go to school.",
+          "from": "Practice from in a sentence.",
+          "near": "Practice near in a sentence.",
+          "far": "Practice far in a sentence.",
+          "next": "Next, it grows legs.",
+          "up": "Practice up in a sentence.",
+          "down": "Practice down in a sentence.",
+          "away": "Practice away in a sentence.",
+          "around": "Practice around in a sentence.",
+          "what": "What has these feet?",
+          "has": "The animal has spots.",
+          "this": "Practice this in a sentence.",
+          "these": "Practice these in a sentence.",
+          "it": "It is here.",
+          "old": "This book is old.",
+          "once": "Read it once more.",
+          "open": "Please open the book.",
+          "over": "The game is over.",
+          "put": "Put it on the table.",
+          "just": "I just got home.",
+          "know": "I know the answer.",
+          "let": "Let us play outside.",
+          "live": "We live near school.",
+          "may": "May I come in?",
+          "no": "No, I do not.",
+          "on": "The book is on the desk.",
+          "our": "This is our home.",
+          "out": "We went out to play.",
+          "please": "Please open the door."
+        },
+        "extensionReview": [
+          "just",
+          "know",
+          "let",
+          "live",
+          "may",
+          "no",
+          "on",
+          "our",
+          "out",
+          "please"
         ]
       },
       "raz": {
@@ -2573,7 +6145,42 @@
           "me",
           "your"
         ],
-        "newWords": []
+        "newWords": [],
+        "extensionWords": [],
+        "sentences": {
+          "then": "Then, it can jump.",
+          "to": "I go to school.",
+          "from": "Practice from in a sentence.",
+          "near": "Practice near in a sentence.",
+          "far": "Practice far in a sentence.",
+          "my": "My pet is a dinosaur.",
+          "like": "I like this book.",
+          "love": "Practice love in a sentence.",
+          "me": "Practice me in a sentence.",
+          "your": "Practice your in a sentence.",
+          "old": "This book is old.",
+          "once": "Read it once more.",
+          "open": "Please open the book.",
+          "over": "The game is over.",
+          "put": "Put it on the table.",
+          "pretty": "The flower is pretty.",
+          "ran": "He ran very fast.",
+          "ride": "I ride my bike.",
+          "saw": "I saw a bird.",
+          "soon": "We will go soon."
+        },
+        "extensionReview": [
+          "old",
+          "once",
+          "open",
+          "over",
+          "put",
+          "pretty",
+          "ran",
+          "ride",
+          "saw",
+          "soon"
+        ]
       },
       "raz": {
         "focus": "第 2 周回收",
@@ -2770,6 +6377,44 @@
           "school",
           "new",
           "ready"
+        ],
+        "extensionWords": [
+          "round",
+          "stop",
+          "take",
+          "thank",
+          "think"
+        ],
+        "sentences": {
+          "time": "It is time for school.",
+          "at": "I am at school.",
+          "school": "Practice school in a sentence.",
+          "new": "Practice new in a sentence.",
+          "ready": "Practice ready in a sentence.",
+          "next": "Next, it grows legs.",
+          "up": "Practice up in a sentence.",
+          "down": "Practice down in a sentence.",
+          "away": "Practice away in a sentence.",
+          "around": "Practice around in a sentence.",
+          "first": "First, the frog is an egg.",
+          "then": "Then, it can jump.",
+          "round": "The ball is round.",
+          "stop": "Stop at the red light.",
+          "take": "Take your book with you.",
+          "thank": "Thank you for helping.",
+          "think": "I think it is right.",
+          "just": "I just got home.",
+          "know": "I know the answer.",
+          "let": "Let us play outside.",
+          "live": "We live near school.",
+          "may": "May I come in?"
+        },
+        "extensionReview": [
+          "just",
+          "know",
+          "let",
+          "live",
+          "may"
         ]
       },
       "raz": {
@@ -2949,6 +6594,57 @@
           "not",
           "make",
           "get"
+        ],
+        "extensionWords": [
+          "walk",
+          "always",
+          "best",
+          "both",
+          "buy"
+        ],
+        "sentences": {
+          "want": "I want a new book.",
+          "do": "What do they eat?",
+          "not": "I did not stop.",
+          "make": "We make food.",
+          "get": "Practice get in a sentence.",
+          "time": "It is time for school.",
+          "at": "I am at school.",
+          "school": "Practice school in a sentence.",
+          "new": "Practice new in a sentence.",
+          "ready": "Practice ready in a sentence.",
+          "many": "How many animals?",
+          "one": "I see one frog.",
+          "two": "Practice two in a sentence.",
+          "three": "Practice three in a sentence.",
+          "count": "Practice count in a sentence.",
+          "walk": "We walk to school.",
+          "always": "I always brush my teeth.",
+          "best": "This is my best work.",
+          "both": "We both like books.",
+          "buy": "We buy fresh fruit.",
+          "round": "The ball is round.",
+          "stop": "Stop at the red light.",
+          "take": "Take your book with you.",
+          "thank": "Thank you for helping.",
+          "think": "I think it is right.",
+          "that": "That is my bag.",
+          "too": "I want to go too.",
+          "under": "The cat is under the chair.",
+          "well": "She reads very well.",
+          "went": "We went to school."
+        },
+        "extensionReview": [
+          "round",
+          "stop",
+          "take",
+          "thank",
+          "think",
+          "that",
+          "too",
+          "under",
+          "well",
+          "went"
         ]
       },
       "raz": {
@@ -3125,6 +6821,57 @@
           "come",
           "find",
           "give"
+        ],
+        "extensionWords": [
+          "call",
+          "cold",
+          "don't",
+          "fast",
+          "five"
+        ],
+        "sentences": {
+          "need": "I need an eraser.",
+          "help": "I can help.",
+          "come": "Practice come in a sentence.",
+          "find": "Practice find in a sentence.",
+          "give": "Practice give in a sentence.",
+          "want": "I want a new book.",
+          "do": "What do they eat?",
+          "not": "I did not stop.",
+          "make": "We make food.",
+          "get": "Practice get in a sentence.",
+          "I": "I read a book.",
+          "a": "I read a book.",
+          "the": "I love the earth.",
+          "and": "You and I read.",
+          "read": "Practice read in a sentence.",
+          "call": "Please call my name.",
+          "cold": "The water is cold.",
+          "don't": "I don't know the answer.",
+          "fast": "The rabbit runs fast.",
+          "five": "I have five pencils.",
+          "walk": "We walk to school.",
+          "always": "I always brush my teeth.",
+          "best": "This is my best work.",
+          "both": "We both like books.",
+          "buy": "We buy fresh fruit.",
+          "blue": "The sky is blue.",
+          "funny": "That story is funny.",
+          "jump": "I can jump high.",
+          "play": "We play after school.",
+          "red": "The apple is red."
+        },
+        "extensionReview": [
+          "walk",
+          "always",
+          "best",
+          "both",
+          "buy",
+          "blue",
+          "funny",
+          "jump",
+          "play",
+          "red"
         ]
       },
       "raz": {
@@ -3304,6 +7051,57 @@
           "of",
           "but",
           "so"
+        ],
+        "extensionWords": [
+          "found",
+          "gave",
+          "goes",
+          "green",
+          "its"
+        ],
+        "sentences": {
+          "because": "I need it because I use it.",
+          "for": "Practice for in a sentence.",
+          "of": "Practice of in a sentence.",
+          "but": "Practice but in a sentence.",
+          "so": "Practice so in a sentence.",
+          "need": "I need an eraser.",
+          "help": "I can help.",
+          "come": "Practice come in a sentence.",
+          "find": "Practice find in a sentence.",
+          "give": "Practice give in a sentence.",
+          "you": "You can go.",
+          "can": "I can go.",
+          "go": "Practice go in a sentence.",
+          "see": "Practice see in a sentence.",
+          "we": "Practice we in a sentence.",
+          "found": "I found my hat.",
+          "gave": "She gave me a gift.",
+          "goes": "He goes to school.",
+          "green": "The leaf is green.",
+          "its": "The dog wags its tail.",
+          "call": "Please call my name.",
+          "cold": "The water is cold.",
+          "don't": "I don't know the answer.",
+          "fast": "The rabbit runs fast.",
+          "five": "I have five pencils.",
+          "run": "We run in the park.",
+          "yellow": "The sun is yellow.",
+          "ate": "We ate lunch together.",
+          "black": "The cat is black.",
+          "brown": "The bear is brown."
+        },
+        "extensionReview": [
+          "call",
+          "cold",
+          "don't",
+          "fast",
+          "five",
+          "run",
+          "yellow",
+          "ate",
+          "black",
+          "brown"
         ]
       },
       "raz": {
@@ -3483,6 +7281,57 @@
           "she",
           "they",
           "them"
+        ],
+        "extensionWords": [
+          "made",
+          "off",
+          "or",
+          "pull",
+          "right"
+        ],
+        "sentences": {
+          "with": "I am with my friend.",
+          "he": "Practice he in a sentence.",
+          "she": "Practice she in a sentence.",
+          "they": "They can help.",
+          "them": "Practice them in a sentence.",
+          "because": "I need it because I use it.",
+          "for": "Practice for in a sentence.",
+          "of": "Practice of in a sentence.",
+          "but": "Practice but in a sentence.",
+          "so": "Practice so in a sentence.",
+          "where": "Where is water?",
+          "is": "Where is water?",
+          "in": "It is in the book.",
+          "here": "Practice here in a sentence.",
+          "there": "The book is there.",
+          "made": "We made a cake.",
+          "off": "Turn off the light.",
+          "or": "Would you like tea or water?",
+          "pull": "Pull the door open.",
+          "right": "You got it right.",
+          "found": "I found my hat.",
+          "gave": "She gave me a gift.",
+          "goes": "He goes to school.",
+          "green": "The leaf is green.",
+          "its": "The dog wags its tail.",
+          "came": "She came home early.",
+          "eat": "We eat dinner together.",
+          "four": "I see four birds.",
+          "good": "This book is good.",
+          "into": "Put it into the box."
+        },
+        "extensionReview": [
+          "found",
+          "gave",
+          "goes",
+          "green",
+          "its",
+          "came",
+          "eat",
+          "four",
+          "good",
+          "into"
         ]
       },
       "raz": {
@@ -3657,7 +7506,42 @@
           "these",
           "it"
         ],
-        "newWords": []
+        "newWords": [],
+        "extensionWords": [],
+        "sentences": {
+          "with": "I am with my friend.",
+          "he": "Practice he in a sentence.",
+          "she": "Practice she in a sentence.",
+          "they": "They can help.",
+          "them": "Practice them in a sentence.",
+          "what": "What has these feet?",
+          "has": "The animal has spots.",
+          "this": "Practice this in a sentence.",
+          "these": "Practice these in a sentence.",
+          "it": "It is here.",
+          "made": "We made a cake.",
+          "off": "Turn off the light.",
+          "or": "Would you like tea or water?",
+          "pull": "Pull the door open.",
+          "right": "You got it right.",
+          "no": "No, I do not.",
+          "on": "The book is on the desk.",
+          "our": "This is our home.",
+          "out": "We went out to play.",
+          "please": "Please open the door."
+        },
+        "extensionReview": [
+          "made",
+          "off",
+          "or",
+          "pull",
+          "right",
+          "no",
+          "on",
+          "our",
+          "out",
+          "please"
+        ]
       },
       "raz": {
         "focus": "第 3 周回收",
@@ -3890,7 +7774,42 @@
           "but",
           "so"
         ],
-        "newWords": []
+        "newWords": [],
+        "extensionWords": [],
+        "sentences": {
+          "my": "My pet is a dinosaur.",
+          "like": "I like this book.",
+          "love": "Practice love in a sentence.",
+          "me": "Practice me in a sentence.",
+          "your": "Practice your in a sentence.",
+          "because": "I need it because I use it.",
+          "for": "Practice for in a sentence.",
+          "of": "Practice of in a sentence.",
+          "but": "Practice but in a sentence.",
+          "so": "Practice so in a sentence.",
+          "pretty": "The flower is pretty.",
+          "ran": "He ran very fast.",
+          "ride": "I ride my bike.",
+          "saw": "I saw a bird.",
+          "soon": "We will go soon.",
+          "found": "I found my hat.",
+          "gave": "She gave me a gift.",
+          "goes": "He goes to school.",
+          "green": "The leaf is green.",
+          "its": "The dog wags its tail."
+        },
+        "extensionReview": [
+          "pretty",
+          "ran",
+          "ride",
+          "saw",
+          "soon",
+          "found",
+          "gave",
+          "goes",
+          "green",
+          "its"
+        ]
       },
       "raz": {
         "focus": "轻松输入",
@@ -4063,6 +7982,57 @@
           "which",
           "his",
           "her"
+        ],
+        "extensionWords": [
+          "sing",
+          "sit",
+          "sleep",
+          "tell",
+          "their"
+        ],
+        "sentences": {
+          "who": "Who can help?",
+          "when": "When does school start?",
+          "which": "Practice which in a sentence.",
+          "his": "Practice his in a sentence.",
+          "her": "Practice her in a sentence.",
+          "time": "It is time for school.",
+          "at": "I am at school.",
+          "school": "Practice school in a sentence.",
+          "new": "Practice new in a sentence.",
+          "ready": "Practice ready in a sentence.",
+          "with": "I am with my friend.",
+          "he": "Practice he in a sentence.",
+          "she": "Practice she in a sentence.",
+          "they": "They can help.",
+          "them": "Practice them in a sentence.",
+          "sing": "We sing a song.",
+          "sit": "Sit next to me.",
+          "sleep": "I sleep at night.",
+          "tell": "Tell me the story.",
+          "their": "Their books are here.",
+          "round": "The ball is round.",
+          "stop": "Stop at the red light.",
+          "take": "Take your book with you.",
+          "thank": "Thank you for helping.",
+          "think": "I think it is right.",
+          "made": "We made a cake.",
+          "off": "Turn off the light.",
+          "or": "Would you like tea or water?",
+          "pull": "Pull the door open.",
+          "right": "You got it right."
+        },
+        "extensionReview": [
+          "round",
+          "stop",
+          "take",
+          "thank",
+          "think",
+          "made",
+          "off",
+          "or",
+          "pull",
+          "right"
         ]
       },
       "raz": {
@@ -4244,6 +8214,57 @@
           "were",
           "are",
           "am"
+        ],
+        "extensionWords": [
+          "those",
+          "upon",
+          "us",
+          "use",
+          "very"
+        ],
+        "sentences": {
+          "why": "Why does it sleep?",
+          "was": "Practice was in a sentence.",
+          "were": "Practice were in a sentence.",
+          "are": "Practice are in a sentence.",
+          "am": "Practice am in a sentence.",
+          "who": "Who can help?",
+          "when": "When does school start?",
+          "which": "Practice which in a sentence.",
+          "his": "Practice his in a sentence.",
+          "her": "Practice her in a sentence.",
+          "many": "How many animals?",
+          "one": "I see one frog.",
+          "two": "Practice two in a sentence.",
+          "three": "Practice three in a sentence.",
+          "count": "Practice count in a sentence.",
+          "those": "Those are my shoes.",
+          "upon": "Once upon a time, there was a king.",
+          "us": "Come and play with us.",
+          "use": "I use a pencil to write.",
+          "very": "It is very hot today.",
+          "sing": "We sing a song.",
+          "sit": "Sit next to me.",
+          "sleep": "I sleep at night.",
+          "tell": "Tell me the story.",
+          "their": "Their books are here.",
+          "that": "That is my bag.",
+          "too": "I want to go too.",
+          "under": "The cat is under the chair.",
+          "well": "She reads very well.",
+          "went": "We went to school."
+        },
+        "extensionReview": [
+          "sing",
+          "sit",
+          "sleep",
+          "tell",
+          "their",
+          "that",
+          "too",
+          "under",
+          "well",
+          "went"
         ]
       },
       "raz": {
@@ -4425,6 +8446,57 @@
           "would",
           "will",
           "must"
+        ],
+        "extensionWords": [
+          "wash",
+          "wish",
+          "work",
+          "write",
+          "about"
+        ],
+        "sentences": {
+          "how": "How do they move?",
+          "could": "Practice could in a sentence.",
+          "would": "Practice would in a sentence.",
+          "will": "Practice will in a sentence.",
+          "must": "Practice must in a sentence.",
+          "why": "Why does it sleep?",
+          "was": "Practice was in a sentence.",
+          "were": "Practice were in a sentence.",
+          "are": "Practice are in a sentence.",
+          "am": "Practice am in a sentence.",
+          "I": "I read a book.",
+          "a": "I read a book.",
+          "the": "I love the earth.",
+          "and": "You and I read.",
+          "read": "Practice read in a sentence.",
+          "wash": "Wash your hands before dinner.",
+          "wish": "I wish for sunshine.",
+          "work": "We work together.",
+          "write": "Write your name here.",
+          "about": "This book is about space.",
+          "those": "Those are my shoes.",
+          "upon": "Once upon a time, there was a king.",
+          "us": "Come and play with us.",
+          "use": "I use a pencil to write.",
+          "very": "It is very hot today.",
+          "blue": "The sky is blue.",
+          "funny": "That story is funny.",
+          "jump": "I can jump high.",
+          "play": "We play after school.",
+          "red": "The apple is red."
+        },
+        "extensionReview": [
+          "those",
+          "upon",
+          "us",
+          "use",
+          "very",
+          "blue",
+          "funny",
+          "jump",
+          "play",
+          "red"
         ]
       },
       "raz": {
@@ -4601,6 +8673,57 @@
           "had",
           "been",
           "be"
+        ],
+        "extensionWords": [
+          "better",
+          "bring",
+          "carry",
+          "clean",
+          "cut"
+        ],
+        "sentences": {
+          "does": "Why does it rain?",
+          "did": "Practice did in a sentence.",
+          "had": "Practice had in a sentence.",
+          "been": "Practice been in a sentence.",
+          "be": "Practice be in a sentence.",
+          "how": "How do they move?",
+          "could": "Practice could in a sentence.",
+          "would": "Practice would in a sentence.",
+          "will": "Practice will in a sentence.",
+          "must": "Practice must in a sentence.",
+          "you": "You can go.",
+          "can": "I can go.",
+          "go": "Practice go in a sentence.",
+          "see": "Practice see in a sentence.",
+          "we": "Practice we in a sentence.",
+          "better": "I feel better today.",
+          "bring": "Bring your bag to school.",
+          "carry": "I can carry the box.",
+          "clean": "Keep your room clean.",
+          "cut": "Cut the paper carefully.",
+          "wash": "Wash your hands before dinner.",
+          "wish": "I wish for sunshine.",
+          "work": "We work together.",
+          "write": "Write your name here.",
+          "about": "This book is about space.",
+          "run": "We run in the park.",
+          "yellow": "The sun is yellow.",
+          "ate": "We ate lunch together.",
+          "black": "The cat is black.",
+          "brown": "The bear is brown."
+        },
+        "extensionReview": [
+          "wash",
+          "wish",
+          "work",
+          "write",
+          "about",
+          "run",
+          "yellow",
+          "ate",
+          "black",
+          "brown"
         ]
       },
       "raz": {
@@ -4807,6 +8930,57 @@
           "look",
           "little",
           "big"
+        ],
+        "extensionWords": [
+          "done",
+          "draw",
+          "drink",
+          "eight",
+          "fall"
+        ],
+        "sentences": {
+          "said": "He said, ‘Try again.’",
+          "say": "Practice say in a sentence.",
+          "look": "Practice look in a sentence.",
+          "little": "Practice little in a sentence.",
+          "big": "Practice big in a sentence.",
+          "does": "Why does it rain?",
+          "did": "Practice did in a sentence.",
+          "had": "Practice had in a sentence.",
+          "been": "Practice been in a sentence.",
+          "be": "Practice be in a sentence.",
+          "where": "Where is water?",
+          "is": "Where is water?",
+          "in": "It is in the book.",
+          "here": "Practice here in a sentence.",
+          "there": "The book is there.",
+          "done": "I am done with my work.",
+          "draw": "Draw a picture of your family.",
+          "drink": "Drink some water.",
+          "eight": "I see eight stars.",
+          "fall": "Leaves fall in autumn.",
+          "better": "I feel better today.",
+          "bring": "Bring your bag to school.",
+          "carry": "I can carry the box.",
+          "clean": "Keep your room clean.",
+          "cut": "Cut the paper carefully.",
+          "came": "She came home early.",
+          "eat": "We eat dinner together.",
+          "four": "I see four birds.",
+          "good": "This book is good.",
+          "into": "Put it into the box."
+        },
+        "extensionReview": [
+          "better",
+          "bring",
+          "carry",
+          "clean",
+          "cut",
+          "came",
+          "eat",
+          "four",
+          "good",
+          "into"
         ]
       },
       "raz": {
@@ -5009,7 +9183,42 @@
           "these",
           "it"
         ],
-        "newWords": []
+        "newWords": [],
+        "extensionWords": [],
+        "sentences": {
+          "said": "He said, ‘Try again.’",
+          "say": "Practice say in a sentence.",
+          "look": "Practice look in a sentence.",
+          "little": "Practice little in a sentence.",
+          "big": "Practice big in a sentence.",
+          "what": "What has these feet?",
+          "has": "The animal has spots.",
+          "this": "Practice this in a sentence.",
+          "these": "Practice these in a sentence.",
+          "it": "It is here.",
+          "done": "I am done with my work.",
+          "draw": "Draw a picture of your family.",
+          "drink": "Drink some water.",
+          "eight": "I see eight stars.",
+          "fall": "Leaves fall in autumn.",
+          "no": "No, I do not.",
+          "on": "The book is on the desk.",
+          "our": "This is our home.",
+          "out": "We went out to play.",
+          "please": "Please open the door."
+        },
+        "extensionReview": [
+          "done",
+          "draw",
+          "drink",
+          "eight",
+          "fall",
+          "no",
+          "on",
+          "our",
+          "out",
+          "please"
+        ]
       },
       "raz": {
         "focus": "总复盘",
@@ -5297,7 +9506,42 @@
           "been",
           "be"
         ],
-        "newWords": []
+        "newWords": [],
+        "extensionWords": [],
+        "sentences": {
+          "my": "My pet is a dinosaur.",
+          "like": "I like this book.",
+          "love": "Practice love in a sentence.",
+          "me": "Practice me in a sentence.",
+          "your": "Practice your in a sentence.",
+          "does": "Why does it rain?",
+          "did": "Practice did in a sentence.",
+          "had": "Practice had in a sentence.",
+          "been": "Practice been in a sentence.",
+          "be": "Practice be in a sentence.",
+          "pretty": "The flower is pretty.",
+          "ran": "He ran very fast.",
+          "ride": "I ride my bike.",
+          "saw": "I saw a bird.",
+          "soon": "We will go soon.",
+          "better": "I feel better today.",
+          "bring": "Bring your bag to school.",
+          "carry": "I can carry the box.",
+          "clean": "Keep your room clean.",
+          "cut": "Cut the paper carefully."
+        },
+        "extensionReview": [
+          "pretty",
+          "ran",
+          "ride",
+          "saw",
+          "soon",
+          "better",
+          "bring",
+          "carry",
+          "clean",
+          "cut"
+        ]
       },
       "raz": {
         "focus": "轻松展示",

@@ -8,6 +8,8 @@ import { test } from "node:test";
 const projectRoot = new URL("..", import.meta.url);
 const script = new URL("../scripts/generate-course-plan-catalog.py", import.meta.url).pathname;
 const catalogPath = new URL("../curriculum/course-plan-catalog.json", import.meta.url);
+const heartPlanPath = new URL("../curriculum/heart-word-plan.json", import.meta.url);
+await import("../curriculum/course-plan-catalog.js");
 
 function sampleModel(overrides = {}) {
   return {
@@ -27,11 +29,17 @@ test("the Excel master deterministically generates the current course stage", ()
   execFileSync("python3", [script, "--check"], { cwd: projectRoot, encoding: "utf8" });
   const catalog = JSON.parse(readFileSync(catalogPath, "utf8"));
   assert.equal(catalog.schemaVersion, 1);
+  assert.deepEqual(globalThis.COURSE_PLAN_CATALOG, catalog);
   assert.equal(catalog.stages.length, 1);
   assert.deepEqual(catalog.stages[0].kidIds, ["brother", "younger"]);
   assert.deepEqual(catalog.stages[0].modules.map((item) => item.moduleId), [
     "englishIsland", "listening", "math", "poem", "reading", "writing"
   ]);
+  const heartPlan = JSON.parse(readFileSync(heartPlanPath, "utf8"));
+  assert.equal(heartPlan.words.length, 200);
+  assert.equal(heartPlan.words.filter((entry) => entry.tier === "core").length, 100);
+  assert.equal(heartPlan.words.filter((entry) => entry.tier === "extension").length, 100);
+  assert.equal(heartPlan.words.every((entry) => entry.word && entry.sentence && entry.firstDay), true);
 });
 
 test("two children can move through non-overlapping absolute stages", () => {

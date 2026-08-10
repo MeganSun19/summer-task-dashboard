@@ -5,6 +5,8 @@ import { fileURLToPath } from "node:url";
 const projectRoot = fileURLToPath(new URL("..", import.meta.url));
 const curriculumDirectory = join(projectRoot, "curriculum");
 const week1Course = JSON.parse(readFileSync(join(curriculumDirectory, "week1-course.json"), "utf8"));
+const heartWordPlan = JSON.parse(readFileSync(join(curriculumDirectory, "heart-word-plan.json"), "utf8"));
+const heartWordAudio = JSON.parse(readFileSync(join(curriculumDirectory, "heart-word-audio.json"), "utf8"));
 const laterVerifiedClips = JSON.parse(readFileSync(join(curriculumDirectory, "opw-weeks2-4-verified-clips.json"), "utf8"));
 const phonicsWordAudioPath = join(curriculumDirectory, "phonics-word-audio.json");
 const phonicsWordAudio = existsSync(phonicsWordAudioPath)
@@ -39,47 +41,6 @@ const PHONICS_EXTENSIONS_BY_CURRICULUM_DAY = new Map([
   [27, { pattern: "diphthong-oy", focus: "词尾 oy 常发 /ɔɪ/", words: ["boy", "toy"] }],
   [28, { pattern: "common-vowel-review", focus: "复习 oo / ow", words: ["moon", "cow"] }]
 ]);
-const HEART_WORDS_BY_CURRICULUM_DAY = new Map([
-  [1, ["I", "a", "the", "and", "read"]],
-  [2, ["you", "can", "go", "see", "we"]],
-  [3, ["where", "is", "in", "here", "there"]],
-  [4, ["what", "has", "this", "these", "it"]],
-  [5, ["my", "like", "love", "me", "your"]],
-  [8, ["many", "one", "two", "three", "count"]],
-  [9, ["more", "have", "all", "some", "any"]],
-  [10, ["first", "after", "before", "again", "now"]],
-  [11, ["next", "up", "down", "away", "around"]],
-  [12, ["then", "to", "from", "near", "far"]],
-  [15, ["time", "at", "school", "new", "ready"]],
-  [16, ["want", "do", "not", "make", "get"]],
-  [17, ["need", "help", "come", "find", "give"]],
-  [18, ["because", "for", "of", "but", "so"]],
-  [19, ["with", "he", "she", "they", "them"]],
-  [22, ["who", "when", "which", "his", "her"]],
-  [23, ["why", "was", "were", "are", "am"]],
-  [24, ["how", "could", "would", "will", "must"]],
-  [25, ["does", "did", "had", "been", "be"]],
-  [26, ["said", "say", "look", "little", "big"]]
-]);
-const HEART_WORD_SENTENCES = Object.freeze({
-  a: "I read a book.", the: "I love the earth.", is: "Where is water?",
-  I: "I read a book.", you: "You can go.", where: "Where is water?",
-  what: "What has these feet?", my: "My pet is a dinosaur.",
-  many: "How many animals?", more: "I can see more.",
-  first: "First, the frog is an egg.", next: "Next, it grows legs.",
-  then: "Then, it can jump.", time: "It is time for school.",
-  want: "I want a new book.", need: "I need an eraser.",
-  because: "I need it because I use it.", with: "I am with my friend.",
-  who: "Who can help?", why: "Why does it sleep?", how: "How do they move?",
-  does: "Why does it rain?", said: "He said, ‘Try again.’",
-  and: "You and I read.", can: "I can go.", in: "It is in the book.",
-  has: "The animal has spots.", like: "I like this book.", one: "I see one frog.",
-  have: "I have a book.", it: "It is here.", to: "I go to school.",
-  there: "The book is there.", at: "I am at school.", do: "What do they eat?",
-  help: "I can help.", make: "We make food.", when: "When does school start?",
-  they: "They can help.", not: "I did not stop."
-});
-
 const laterWeeks = [
   {
     week: 2,
@@ -355,7 +316,10 @@ const days = curriculumDays
     day: index + 1
   }));
 for (const day of days) {
-  day.heartWords.newWords = [...(HEART_WORDS_BY_CURRICULUM_DAY.get(day.curriculumDay) || [])];
+  const entries = heartWordPlan.words.filter((entry) => entry.firstDay === day.day);
+  day.heartWords.newWords = entries.filter((entry) => entry.tier === "core").map((entry) => entry.word);
+  day.heartWords.extensionWords = entries.filter((entry) => entry.tier === "extension").map((entry) => entry.word);
+  day.heartWords.sentences = Object.fromEntries(entries.map((entry) => [entry.word, entry.sentence]));
 }
 for (const day of days) {
   const assignment = razChoiceAssignments.get(day.curriculumDay);
@@ -366,6 +330,8 @@ for (const day of days) {
   };
 }
 const introducedHeartWords = new Map();
+const introducedExtensionWords = new Map();
+const heartSentenceByWord = new Map(heartWordPlan.words.map((entry) => [entry.word, entry.sentence]));
 const reviewIntervals = new Set([1, 3, 7, 14, 21]);
 for (const day of days) {
   const immediate = [...introducedHeartWords]
@@ -379,20 +345,37 @@ for (const day of days) {
     .filter((word) => !day.heartWords.newWords.includes(word))
     .slice(0, 10);
   for (const word of day.heartWords.newWords) introducedHeartWords.set(word, day.day);
+  const extensionImmediate = [...introducedExtensionWords]
+    .filter(([, introducedDay]) => day.day - introducedDay === 1)
+    .map(([word]) => word);
+  const extensionScheduled = [...introducedExtensionWords]
+    .filter(([, introducedDay]) => reviewIntervals.has(day.day - introducedDay))
+    .map(([word]) => word);
+  day.heartWords.extensionReview = [...new Set([...extensionImmediate, ...extensionScheduled])]
+    .filter((word) => !day.heartWords.extensionWords.includes(word))
+    .slice(0, 10);
+  for (const word of day.heartWords.extensionWords) introducedExtensionWords.set(word, day.day);
+  const assignedWords = [
+    ...day.heartWords.newWords,
+    ...day.heartWords.review,
+    ...day.heartWords.extensionWords,
+    ...day.heartWords.extensionReview
+  ];
+  day.heartWords.sentences = Object.fromEntries(assignedWords.map((word) => [word, heartSentenceByWord.get(word)]));
 }
 const uniquePhonicsWords = new Set(days.flatMap((day) => day.phonics.words.map((entry) => entry.word)));
-const heartWordIntroductions = new Map();
-for (const day of days) {
-  for (const word of day.heartWords.newWords) heartWordIntroductions.set(word, day);
-}
-const heartWordBank = [...heartWordIntroductions].map(([word, introduction]) => ({
+const missingHeartAudio = heartWordPlan.words.filter(({ word }) => heartWordAudio.words?.[word]?.status !== "verified");
+if (missingHeartAudio.length) throw new Error(`Missing heart-word audio: ${missingHeartAudio.map((entry) => entry.word).join(", ")}`);
+const heartWordBank = heartWordPlan.words.map(({ word, tier, firstDay, sentence }) => ({
   word,
-  firstDay: introduction?.day || 0,
-  sentence: HEART_WORD_SENTENCES[word] || `Practice ${word} in a sentence.`
+  tier,
+  firstDay,
+  sentence,
+  audio: heartWordAudio.words[word]
 }));
 
 const course = {
-  schemaVersion: 5,
+  schemaVersion: 6,
   generatedOn: "2026-08-07",
   title: "暑假计划 · 英语岛基础阶段",
   schedule: {
@@ -406,7 +389,7 @@ const course = {
     dailyStructure: "phonics, contextual heart words, RAZ target words, spoken sentence frames, and every explicitly assigned review book",
     audioRule: "Existing verified Oxford clips remain valid; generated TTS is automatically playable without human review. Human recordings remain optional replacements and require explicit review. Do not scan Oxford tracks merely to source new course words.",
     heartWordRule: "New heart words are copied into an English notebook, then recalled by typing; reviews recur after expanding intervals.",
-    heartWordSelection: "100 foundational high-frequency words selected from Dolch early-reader words, retaining the course's RAZ anchor words; teaching follows UFLI guidance by decoding regular parts and marking only irregular parts for memory.",
+    heartWordSelection: "200 high-frequency words from the Excel master: 100 foundational heart words plus 100 Dolch extension words, taught as 5 core and 5 extension words on each teaching day.",
     heartWordSources: [
       "https://ufli.education.ufl.edu/resources/teaching-resources/instructional-activities/irregular-and-high-frequency-words/",
       "https://sightwords.com/sight-words/dolch/"
@@ -431,7 +414,7 @@ const course = {
     extensionWords: new Set([...PHONICS_EXTENSIONS_BY_CURRICULUM_DAY.values()].flatMap((entry) => entry.words)).size
   },
   heartWords: {
-    instruction: "在英文句子中认出标注的心词；新词读 3 遍、写 3 遍，再遮住答案独立拼写；复习词必须拼写正确才能继续。",
+    instruction: "每个教学日学习 5 个基础心词和 5 个拓展高频词；新词读 3 遍、写 3 遍，再遮住答案独立拼写；复习词必须拼写正确才能继续。",
     words: heartWordBank
   },
   days

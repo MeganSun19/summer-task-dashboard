@@ -50,6 +50,12 @@
     be: "I want to __ ready.", say: "What did you __?", look: "__ at the book.",
     little: "I see a __ cat.", big: "I see a __ dog."
   });
+  const COURSE_MODULES = Object.freeze([
+    { id: "soundLab", label: "声音实验室", shortLabel: "拼读" },
+    { id: "coreWords", label: "核心高频词", shortLabel: "核心词" },
+    { id: "raz", label: "RAZ 故事森林", shortLabel: "RAZ" },
+    { id: "extraWords", label: "高频词加餐", shortLabel: "加餐" }
+  ]);
 
   function parseISODate(value) {
     const [year, month, day] = String(value).split("-").map(Number);
@@ -69,11 +75,40 @@
   function assetId(audio) {
     if (!audio || audio.status !== "verified") return null;
     if (audio.assetId) return audio.assetId;
+    if (audio.itemId) return `opw-clip-${String(audio.itemId).replace(/[^a-z0-9-]/gi, "-").toLowerCase()}`;
     return `opw-l${audio.level}-d${audio.disc}-track${String(audio.track).padStart(2, "0")}`;
+  }
+
+  function playbackAudio(audio) {
+    if (!audio?.itemId || audio.assetId || !audio.clip) return audio;
+    const duration = Math.max(0, Number(audio.clip.endSeconds) - Number(audio.clip.startSeconds));
+    return {
+      ...audio,
+      sourceClip: audio.clip,
+      clip: { startSeconds: 0, endSeconds: Number(duration.toFixed(3)) }
+    };
   }
 
   function unique(values) {
     return [...new Set(values.filter(Boolean))];
+  }
+
+  function shuffleWithSeed(values, seedText) {
+    const result = [...values];
+    let state = 2166136261;
+    for (const character of String(seedText)) {
+      state ^= character.charCodeAt(0);
+      state = Math.imul(state, 16777619) >>> 0;
+    }
+    for (let index = result.length - 1; index > 0; index -= 1) {
+      state = (Math.imul(state, 1664525) + 1013904223) >>> 0;
+      const target = state % (index + 1);
+      [result[index], result[target]] = [result[target], result[index]];
+    }
+    if (result.length > 1 && result.every((item, index) => item === values[index])) {
+      result.push(result.shift());
+    }
+    return result;
   }
 
   function choiceSet(answer, candidates, size = 4) {
@@ -87,18 +122,29 @@
     return selected;
   }
 
+  function clozePrompt(day, word) {
+    if (HEART_WORD_CLOZE[word]) return HEART_WORD_CLOZE[word];
+    const sentence = day?.heartWords?.sentences?.[word];
+    if (!sentence) return "遮住英文本，默写刚才学习的高频词。";
+    const escaped = String(word).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return sentence.replace(new RegExp(`\\b${escaped}\\b`, "i"), "__");
+  }
+
   function buildRounds(day) {
     const phonicsWords = day?.phonics?.words || [];
     const phonicsChoices = phonicsWords.map((entry) => entry.word);
-    const rounds = phonicsWords.map((entry) => ({
-      kind: "phonics",
-      label: "声音实验室",
-      word: entry.word,
-      mode: entry.audio?.status === "verified" ? "listen" : "read",
-      audio: entry.audio || { status: "unavailable" },
-      assetId: assetId(entry.audio),
-      choices: phonicsChoices
-    }));
+    const rounds = phonicsWords.map((entry) => {
+      const audio = playbackAudio(entry.audio) || { status: "unavailable" };
+      return {
+        kind: "phonics",
+        label: "声音实验室",
+        word: entry.word,
+        mode: entry.audio?.status === "verified" ? "listen" : "read",
+        audio,
+        assetId: assetId(entry.audio),
+        choices: phonicsChoices
+      };
+    });
 
     const newHeartWords = unique(day?.heartWords?.newWords || [day?.heartWords?.new]);
     const heartWords = unique([...newHeartWords, ...(day?.heartWords?.review || [])]);
@@ -172,7 +218,103 @@
         }
       });
     }
+    const newExtensionWords = unique(day?.heartWords?.extensionWords || []);
+    const extensionWords = unique([...newExtensionWords, ...(day?.heartWords?.extensionReview || [])]);
+    newExtensionWords.forEach((word) => rounds.push({
+      kind: "heart",
+      label: "高频词加餐",
+      mode: "study",
+      word,
+      isExtension: true,
+      prompt: clozePrompt(day, word)
+    }));
+    extensionWords.forEach((word) => rounds.push({
+      kind: "heart",
+      label: "高频词加餐",
+      mode: "spell",
+      word,
+      isNew: newExtensionWords.includes(word),
+      isExtension: true,
+      prompt: clozePrompt(day, word)
+    }));
     return rounds;
+  }
+
+  function moduleIdForRound(round) {
+    if (round?.kind === "phonics") return "soundLab";
+    if (round?.kind === "raz") return "raz";
+    if (round?.label === "高频词加餐") return "extraWords";
+    return "coreWords";
+  }
+
+  function groupRoundsByModule(rounds) {
+    return COURSE_MODULES.map((definition) => ({
+      ...definition,
+      rounds: rounds.filter((round) => moduleIdForRound(round) === definition.id)
+    })).filter((module) => module.rounds.length);
+  }
+
+  function moduleProgressFromSaved(saved, modules, schemaVersion = 6) {
+    const result = Object.fromEntries(modules.map((module) => [module.id, {
+      completedRounds: 0,
+      completedAt: null
+    }]));
+    if (!saved) return result;
+    if (saved.completedAt) {
+      for (const module of modules) {
+        result[module.id] = { completedRounds: module.rounds.length, completedAt: saved.completedAt };
+      }
+      return result;
+    }
+    if (Number(saved.roundSchemaVersion) >= schemaVersion && saved.moduleProgress) {
+      for (const module of modules) {
+        const stored = saved.moduleProgress[module.id] || {};
+        const completedRounds = Math.min(module.rounds.length, Math.max(0, Number(stored.completedRounds) || 0));
+        result[module.id] = {
+          completedRounds,
+          completedAt: stored.completedAt || (completedRounds >= module.rounds.length ? saved.updatedAt || null : null),
+          roundOrderVersion: Number(stored.roundOrderVersion) || 0
+        };
+      }
+      return result;
+    }
+    let remaining = Math.max(0, Number(saved.completedRounds) || 0);
+    for (const module of modules) {
+      const completedRounds = Math.min(module.rounds.length, remaining);
+      result[module.id] = {
+        completedRounds,
+        completedAt: completedRounds >= module.rounds.length ? saved.updatedAt || null : null
+      };
+      remaining -= completedRounds;
+    }
+    return result;
+  }
+
+  function extensionPlanForActivity(heartWords, saved, historyRecords, planVersion = 1) {
+    const activated = Number(saved?.extensionPlanVersion || 0) >= planVersion;
+    const completedBeforeActivation = Boolean(saved?.completedAt) && !activated;
+    if (completedBeforeActivation) {
+      return {
+        active: false,
+        heartWords: { ...heartWords, extensionWords: [], extensionReview: [] }
+      };
+    }
+    const learnedWords = new Set();
+    for (const entry of historyRecords || []) {
+      if (Number(entry.record?.extensionPlanVersion || 0) < planVersion) continue;
+      for (const word of entry.record?.learnedExtensionWords || []) learnedWords.add(word);
+    }
+    if (activated) {
+      for (const word of saved?.learnedExtensionWords || []) learnedWords.add(word);
+    }
+    return {
+      active: true,
+      heartWords: {
+        ...heartWords,
+        extensionWords: unique(heartWords?.extensionWords || []),
+        extensionReview: unique(heartWords?.extensionReview || []).filter((word) => learnedWords.has(word))
+      }
+    };
   }
 
   function activityId(dayNumber) {
@@ -192,7 +334,14 @@
     return round.word || round.label;
   }
 
+  function restoredRoundIndex(saved, roundsLength) {
+    if (saved?.completedAt) return roundsLength;
+    return Math.min(roundsLength, Math.max(0, Number(saved?.completedRounds) || 0));
+  }
+
   root.OPWWeek1CourseCore = {
-    courseDayNumber, assetId, buildRounds, activityId, availabilityLabel, roundSummary
+    COURSE_MODULES, courseDayNumber, assetId, buildRounds, moduleIdForRound, groupRoundsByModule, shuffleWithSeed,
+    moduleProgressFromSaved, extensionPlanForActivity, activityId, availabilityLabel, roundSummary,
+    restoredRoundIndex
   };
 })(typeof window === "undefined" ? globalThis : window);

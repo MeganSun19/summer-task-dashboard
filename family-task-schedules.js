@@ -97,19 +97,32 @@
         return;
       }
       const schedule = scheduleById.get(item.scheduleId);
-      if (item.done) {
-        result.push(item);
-        represented.add(item.scheduleId);
+      if (item.scheduledDate !== date) {
+        result.push({ ...item, archived: true });
+        represented.add(item.id);
         return;
       }
-      if (!applies(schedule, kidId, date)) return;
-      result.push({ ...createInstance(schedule, kidId, date), done: false });
-      represented.add(schedule.id);
+      if (!applies(schedule, kidId, date)) {
+        result.push({ ...item, archived: true });
+        represented.add(item.id);
+        return;
+      }
+      if (item.done || item.excused) {
+        const current = { ...item };
+        delete current.archived;
+        result.push(current);
+        represented.add(item.id);
+        return;
+      }
+      const instance = { ...createInstance(schedule, kidId, date), done: false };
+      result.push(instance);
+      represented.add(instance.id);
     });
 
     (schedules || []).forEach((schedule) => {
-      if (applies(schedule, kidId, date) && !represented.has(schedule.id)) {
-        result.push(createInstance(schedule, kidId, date));
+      const instance = applies(schedule, kidId, date) ? createInstance(schedule, kidId, date) : null;
+      if (instance && !represented.has(instance.id)) {
+        result.push(instance);
       }
     });
     return result;

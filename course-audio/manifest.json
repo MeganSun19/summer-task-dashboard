@@ -1,28 +1,1630 @@
 {
   "schemaVersion": 2,
   "generatedFrom": "curriculum/english-course.json",
-  "assetCount": 125,
-  "totalBytes": 46152996,
+  "assetCount": 329,
+  "totalBytes": 2740839,
   "assets": {
-    "opw-l1-d1-track04": {
-      "id": "opw-l1-d1-track04",
-      "kind": "oxford-track",
+    "heart-word-i": {
+      "id": "heart-word-i",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "i.mp3",
+      "bytes": 12738,
+      "url": "./course-audio/heart-word-i.mp3"
+    },
+    "heart-word-a": {
+      "id": "heart-word-a",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "a.mp3",
+      "bytes": 5908,
+      "url": "./course-audio/heart-word-a.mp3"
+    },
+    "heart-word-the": {
+      "id": "heart-word-the",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "the.mp3",
+      "bytes": 7158,
+      "url": "./course-audio/heart-word-the.mp3"
+    },
+    "heart-word-and": {
+      "id": "heart-word-and",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "and.mp3",
+      "bytes": 7549,
+      "url": "./course-audio/heart-word-and.mp3"
+    },
+    "heart-word-read": {
+      "id": "heart-word-read",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "read.mp3",
+      "bytes": 6794,
+      "url": "./course-audio/heart-word-read.mp3"
+    },
+    "heart-word-you": {
+      "id": "heart-word-you",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "you.mp3",
+      "bytes": 5855,
+      "url": "./course-audio/heart-word-you.mp3"
+    },
+    "heart-word-can": {
+      "id": "heart-word-can",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "can.mp3",
+      "bytes": 8776,
+      "url": "./course-audio/heart-word-can.mp3"
+    },
+    "heart-word-go": {
+      "id": "heart-word-go",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "go.mp3",
+      "bytes": 7105,
+      "url": "./course-audio/heart-word-go.mp3"
+    },
+    "heart-word-see": {
+      "id": "heart-word-see",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "see.mp3",
+      "bytes": 7184,
+      "url": "./course-audio/heart-word-see.mp3"
+    },
+    "heart-word-we": {
+      "id": "heart-word-we",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "we.mp3",
+      "bytes": 6454,
+      "url": "./course-audio/heart-word-we.mp3"
+    },
+    "heart-word-where": {
+      "id": "heart-word-where",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "where.mp3",
+      "bytes": 7003,
+      "url": "./course-audio/heart-word-where.mp3"
+    },
+    "heart-word-is": {
+      "id": "heart-word-is",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "is.mp3",
+      "bytes": 6507,
+      "url": "./course-audio/heart-word-is.mp3"
+    },
+    "heart-word-in": {
+      "id": "heart-word-in",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "in.mp3",
+      "bytes": 7107,
+      "url": "./course-audio/heart-word-in.mp3"
+    },
+    "heart-word-here": {
+      "id": "heart-word-here",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "here.mp3",
+      "bytes": 6482,
+      "url": "./course-audio/heart-word-here.mp3"
+    },
+    "heart-word-there": {
+      "id": "heart-word-there",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "there.mp3",
+      "bytes": 7004,
+      "url": "./course-audio/heart-word-there.mp3"
+    },
+    "heart-word-what": {
+      "id": "heart-word-what",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "what.mp3",
+      "bytes": 7419,
+      "url": "./course-audio/heart-word-what.mp3"
+    },
+    "heart-word-has": {
+      "id": "heart-word-has",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "has.mp3",
+      "bytes": 8776,
+      "url": "./course-audio/heart-word-has.mp3"
+    },
+    "heart-word-this": {
+      "id": "heart-word-this",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "this.mp3",
+      "bytes": 7053,
+      "url": "./course-audio/heart-word-this.mp3"
+    },
+    "heart-word-these": {
+      "id": "heart-word-these",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "these.mp3",
+      "bytes": 7602,
+      "url": "./course-audio/heart-word-these.mp3"
+    },
+    "heart-word-it": {
+      "id": "heart-word-it",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "it.mp3",
+      "bytes": 5595,
+      "url": "./course-audio/heart-word-it.mp3"
+    },
+    "heart-word-my": {
+      "id": "heart-word-my",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "my.mp3",
+      "bytes": 7604,
+      "url": "./course-audio/heart-word-my.mp3"
+    },
+    "heart-word-like": {
+      "id": "heart-word-like",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "like.mp3",
+      "bytes": 6873,
+      "url": "./course-audio/heart-word-like.mp3"
+    },
+    "heart-word-love": {
+      "id": "heart-word-love",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "love.mp3",
+      "bytes": 6793,
+      "url": "./course-audio/heart-word-love.mp3"
+    },
+    "heart-word-me": {
+      "id": "heart-word-me",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "me.mp3",
+      "bytes": 6585,
+      "url": "./course-audio/heart-word-me.mp3"
+    },
+    "heart-word-your": {
+      "id": "heart-word-your",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "your.mp3",
+      "bytes": 7002,
+      "url": "./course-audio/heart-word-your.mp3"
+    },
+    "heart-word-many": {
+      "id": "heart-word-many",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "many.mp3",
+      "bytes": 7602,
+      "url": "./course-audio/heart-word-many.mp3"
+    },
+    "heart-word-one": {
+      "id": "heart-word-one",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "one.mp3",
+      "bytes": 7184,
+      "url": "./course-audio/heart-word-one.mp3"
+    },
+    "heart-word-two": {
+      "id": "heart-word-two",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "two.mp3",
+      "bytes": 6274,
+      "url": "./course-audio/heart-word-two.mp3"
+    },
+    "heart-word-three": {
+      "id": "heart-word-three",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "three.mp3",
+      "bytes": 7472,
+      "url": "./course-audio/heart-word-three.mp3"
+    },
+    "heart-word-count": {
+      "id": "heart-word-count",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "count.mp3",
+      "bytes": 7993,
+      "url": "./course-audio/heart-word-count.mp3"
+    },
+    "heart-word-more": {
+      "id": "heart-word-more",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "more.mp3",
+      "bytes": 6845,
+      "url": "./course-audio/heart-word-more.mp3"
+    },
+    "heart-word-have": {
+      "id": "heart-word-have",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "have.mp3",
+      "bytes": 7420,
+      "url": "./course-audio/heart-word-have.mp3"
+    },
+    "heart-word-all": {
+      "id": "heart-word-all",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "all.mp3",
+      "bytes": 7574,
+      "url": "./course-audio/heart-word-all.mp3"
+    },
+    "heart-word-some": {
+      "id": "heart-word-some",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "some.mp3",
+      "bytes": 8278,
+      "url": "./course-audio/heart-word-some.mp3"
+    },
+    "heart-word-any": {
+      "id": "heart-word-any",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "any.mp3",
+      "bytes": 6558,
+      "url": "./course-audio/heart-word-any.mp3"
+    },
+    "heart-word-first": {
+      "id": "heart-word-first",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "first.mp3",
+      "bytes": 9843,
+      "url": "./course-audio/heart-word-first.mp3"
+    },
+    "heart-word-after": {
+      "id": "heart-word-after",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "after.mp3",
+      "bytes": 9192,
+      "url": "./course-audio/heart-word-after.mp3"
+    },
+    "heart-word-before": {
+      "id": "heart-word-before",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "before.mp3",
+      "bytes": 9010,
+      "url": "./course-audio/heart-word-before.mp3"
+    },
+    "heart-word-again": {
+      "id": "heart-word-again",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "again.mp3",
+      "bytes": 8983,
+      "url": "./course-audio/heart-word-again.mp3"
+    },
+    "heart-word-now": {
+      "id": "heart-word-now",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "now.mp3",
+      "bytes": 7628,
+      "url": "./course-audio/heart-word-now.mp3"
+    },
+    "heart-word-next": {
+      "id": "heart-word-next",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "next.mp3",
+      "bytes": 10235,
+      "url": "./course-audio/heart-word-next.mp3"
+    },
+    "heart-word-up": {
+      "id": "heart-word-up",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "up.mp3",
+      "bytes": 6533,
+      "url": "./course-audio/heart-word-up.mp3"
+    },
+    "heart-word-down": {
+      "id": "heart-word-down",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "down.mp3",
+      "bytes": 7316,
+      "url": "./course-audio/heart-word-down.mp3"
+    },
+    "heart-word-away": {
+      "id": "heart-word-away",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "away.mp3",
+      "bytes": 7812,
+      "url": "./course-audio/heart-word-away.mp3"
+    },
+    "heart-word-around": {
+      "id": "heart-word-around",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "around.mp3",
+      "bytes": 9192,
+      "url": "./course-audio/heart-word-around.mp3"
+    },
+    "heart-word-then": {
+      "id": "heart-word-then",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "then.mp3",
+      "bytes": 7524,
+      "url": "./course-audio/heart-word-then.mp3"
+    },
+    "heart-word-to": {
+      "id": "heart-word-to",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "to.mp3",
+      "bytes": 6274,
+      "url": "./course-audio/heart-word-to.mp3"
+    },
+    "heart-word-from": {
+      "id": "heart-word-from",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "from.mp3",
+      "bytes": 7367,
+      "url": "./course-audio/heart-word-from.mp3"
+    },
+    "heart-word-near": {
+      "id": "heart-word-near",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "near.mp3",
+      "bytes": 6846,
+      "url": "./course-audio/heart-word-near.mp3"
+    },
+    "heart-word-far": {
+      "id": "heart-word-far",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "far.mp3",
+      "bytes": 7419,
+      "url": "./course-audio/heart-word-far.mp3"
+    },
+    "heart-word-time": {
+      "id": "heart-word-time",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "time.mp3",
+      "bytes": 8854,
+      "url": "./course-audio/heart-word-time.mp3"
+    },
+    "heart-word-at": {
+      "id": "heart-word-at",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "at.mp3",
+      "bytes": 6948,
+      "url": "./course-audio/heart-word-at.mp3"
+    },
+    "heart-word-school": {
+      "id": "heart-word-school",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "school.mp3",
+      "bytes": 9086,
+      "url": "./course-audio/heart-word-school.mp3"
+    },
+    "heart-word-new": {
+      "id": "heart-word-new",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "new.mp3",
+      "bytes": 6064,
+      "url": "./course-audio/heart-word-new.mp3"
+    },
+    "heart-word-ready": {
+      "id": "heart-word-ready",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "ready.mp3",
+      "bytes": 7158,
+      "url": "./course-audio/heart-word-ready.mp3"
+    },
+    "heart-word-want": {
+      "id": "heart-word-want",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "want.mp3",
+      "bytes": 6923,
+      "url": "./course-audio/heart-word-want.mp3"
+    },
+    "heart-word-do": {
+      "id": "heart-word-do",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "do.mp3",
+      "bytes": 6197,
+      "url": "./course-audio/heart-word-do.mp3"
+    },
+    "heart-word-not": {
+      "id": "heart-word-not",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "not.mp3",
+      "bytes": 7104,
+      "url": "./course-audio/heart-word-not.mp3"
+    },
+    "heart-word-make": {
+      "id": "heart-word-make",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "make.mp3",
+      "bytes": 7105,
+      "url": "./course-audio/heart-word-make.mp3"
+    },
+    "heart-word-get": {
+      "id": "heart-word-get",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "get.mp3",
+      "bytes": 6820,
+      "url": "./course-audio/heart-word-get.mp3"
+    },
+    "heart-word-need": {
+      "id": "heart-word-need",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "need.mp3",
+      "bytes": 6767,
+      "url": "./course-audio/heart-word-need.mp3"
+    },
+    "heart-word-help": {
+      "id": "heart-word-help",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "help.mp3",
+      "bytes": 8228,
+      "url": "./course-audio/heart-word-help.mp3"
+    },
+    "heart-word-come": {
+      "id": "heart-word-come",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "come.mp3",
+      "bytes": 7654,
+      "url": "./course-audio/heart-word-come.mp3"
+    },
+    "heart-word-find": {
+      "id": "heart-word-find",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "find.mp3",
+      "bytes": 8723,
+      "url": "./course-audio/heart-word-find.mp3"
+    },
+    "heart-word-give": {
+      "id": "heart-word-give",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "give.mp3",
+      "bytes": 6795,
+      "url": "./course-audio/heart-word-give.mp3"
+    },
+    "heart-word-because": {
+      "id": "heart-word-because",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "because.mp3",
+      "bytes": 10679,
+      "url": "./course-audio/heart-word-because.mp3"
+    },
+    "heart-word-for": {
+      "id": "heart-word-for",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "for.mp3",
+      "bytes": 7732,
+      "url": "./course-audio/heart-word-for.mp3"
+    },
+    "heart-word-of": {
+      "id": "heart-word-of",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "of.mp3",
+      "bytes": 6168,
+      "url": "./course-audio/heart-word-of.mp3"
+    },
+    "heart-word-but": {
+      "id": "heart-word-but",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "but.mp3",
+      "bytes": 7184,
+      "url": "./course-audio/heart-word-but.mp3"
+    },
+    "heart-word-so": {
+      "id": "heart-word-so",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "so.mp3",
+      "bytes": 8982,
+      "url": "./course-audio/heart-word-so.mp3"
+    },
+    "heart-word-with": {
+      "id": "heart-word-with",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "with.mp3",
+      "bytes": 6064,
+      "url": "./course-audio/heart-word-with.mp3"
+    },
+    "heart-word-he": {
+      "id": "heart-word-he",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "he.mp3",
+      "bytes": 5881,
+      "url": "./course-audio/heart-word-he.mp3"
+    },
+    "heart-word-she": {
+      "id": "heart-word-she",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "she.mp3",
+      "bytes": 7001,
+      "url": "./course-audio/heart-word-she.mp3"
+    },
+    "heart-word-they": {
+      "id": "heart-word-they",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "they.mp3",
+      "bytes": 6689,
+      "url": "./course-audio/heart-word-they.mp3"
+    },
+    "heart-word-them": {
+      "id": "heart-word-them",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "them.mp3",
+      "bytes": 6898,
+      "url": "./course-audio/heart-word-them.mp3"
+    },
+    "heart-word-who": {
+      "id": "heart-word-who",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "who.mp3",
+      "bytes": 6846,
+      "url": "./course-audio/heart-word-who.mp3"
+    },
+    "heart-word-when": {
+      "id": "heart-word-when",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "when.mp3",
+      "bytes": 7496,
+      "url": "./course-audio/heart-word-when.mp3"
+    },
+    "heart-word-which": {
+      "id": "heart-word-which",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "which.mp3",
+      "bytes": 7314,
+      "url": "./course-audio/heart-word-which.mp3"
+    },
+    "heart-word-his": {
+      "id": "heart-word-his",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "his.mp3",
+      "bytes": 6688,
+      "url": "./course-audio/heart-word-his.mp3"
+    },
+    "heart-word-her": {
+      "id": "heart-word-her",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "her.mp3",
+      "bytes": 6950,
+      "url": "./course-audio/heart-word-her.mp3"
+    },
+    "heart-word-why": {
+      "id": "heart-word-why",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "why.mp3",
+      "bytes": 7890,
+      "url": "./course-audio/heart-word-why.mp3"
+    },
+    "heart-word-was": {
+      "id": "heart-word-was",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "was.mp3",
+      "bytes": 8985,
+      "url": "./course-audio/heart-word-was.mp3"
+    },
+    "heart-word-were": {
+      "id": "heart-word-were",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "were.mp3",
+      "bytes": 7133,
+      "url": "./course-audio/heart-word-were.mp3"
+    },
+    "heart-word-are": {
+      "id": "heart-word-are",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "are.mp3",
+      "bytes": 7160,
+      "url": "./course-audio/heart-word-are.mp3"
+    },
+    "heart-word-am": {
+      "id": "heart-word-am",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "am.mp3",
+      "bytes": 7471,
+      "url": "./course-audio/heart-word-am.mp3"
+    },
+    "heart-word-how": {
+      "id": "heart-word-how",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "how.mp3",
+      "bytes": 7365,
+      "url": "./course-audio/heart-word-how.mp3"
+    },
+    "heart-word-could": {
+      "id": "heart-word-could",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "could.mp3",
+      "bytes": 7214,
+      "url": "./course-audio/heart-word-could.mp3"
+    },
+    "heart-word-would": {
+      "id": "heart-word-would",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "would.mp3",
+      "bytes": 6429,
+      "url": "./course-audio/heart-word-would.mp3"
+    },
+    "heart-word-will": {
+      "id": "heart-word-will",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "will.mp3",
+      "bytes": 7210,
+      "url": "./course-audio/heart-word-will.mp3"
+    },
+    "heart-word-must": {
+      "id": "heart-word-must",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "must.mp3",
+      "bytes": 8881,
+      "url": "./course-audio/heart-word-must.mp3"
+    },
+    "heart-word-does": {
+      "id": "heart-word-does",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "does.mp3",
+      "bytes": 8567,
+      "url": "./course-audio/heart-word-does.mp3"
+    },
+    "heart-word-did": {
+      "id": "heart-word-did",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "did.mp3",
+      "bytes": 7161,
+      "url": "./course-audio/heart-word-did.mp3"
+    },
+    "heart-word-had": {
+      "id": "heart-word-had",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "had.mp3",
+      "bytes": 7420,
+      "url": "./course-audio/heart-word-had.mp3"
+    },
+    "heart-word-been": {
+      "id": "heart-word-been",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "been.mp3",
+      "bytes": 6273,
+      "url": "./course-audio/heart-word-been.mp3"
+    },
+    "heart-word-be": {
+      "id": "heart-word-be",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "be.mp3",
+      "bytes": 5698,
+      "url": "./course-audio/heart-word-be.mp3"
+    },
+    "heart-word-said": {
+      "id": "heart-word-said",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "said.mp3",
+      "bytes": 7810,
+      "url": "./course-audio/heart-word-said.mp3"
+    },
+    "heart-word-say": {
+      "id": "heart-word-say",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "say.mp3",
+      "bytes": 8619,
+      "url": "./course-audio/heart-word-say.mp3"
+    },
+    "heart-word-look": {
+      "id": "heart-word-look",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "look.mp3",
+      "bytes": 7002,
+      "url": "./course-audio/heart-word-look.mp3"
+    },
+    "heart-word-little": {
+      "id": "heart-word-little",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "little.mp3",
+      "bytes": 7524,
+      "url": "./course-audio/heart-word-little.mp3"
+    },
+    "heart-word-big": {
+      "id": "heart-word-big",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "big.mp3",
+      "bytes": 7108,
+      "url": "./course-audio/heart-word-big.mp3"
+    },
+    "heart-word-blue": {
+      "id": "heart-word-blue",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "blue.mp3",
+      "bytes": 6011,
+      "url": "./course-audio/heart-word-blue.mp3"
+    },
+    "heart-word-funny": {
+      "id": "heart-word-funny",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "funny.mp3",
+      "bytes": 8253,
+      "url": "./course-audio/heart-word-funny.mp3"
+    },
+    "heart-word-jump": {
+      "id": "heart-word-jump",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "jump.mp3",
+      "bytes": 7862,
+      "url": "./course-audio/heart-word-jump.mp3"
+    },
+    "heart-word-play": {
+      "id": "heart-word-play",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "play.mp3",
+      "bytes": 8280,
+      "url": "./course-audio/heart-word-play.mp3"
+    },
+    "heart-word-red": {
+      "id": "heart-word-red",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "red.mp3",
+      "bytes": 6638,
+      "url": "./course-audio/heart-word-red.mp3"
+    },
+    "heart-word-run": {
+      "id": "heart-word-run",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "run.mp3",
+      "bytes": 7575,
+      "url": "./course-audio/heart-word-run.mp3"
+    },
+    "heart-word-yellow": {
+      "id": "heart-word-yellow",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "yellow.mp3",
+      "bytes": 8827,
+      "url": "./course-audio/heart-word-yellow.mp3"
+    },
+    "heart-word-ate": {
+      "id": "heart-word-ate",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "ate.mp3",
+      "bytes": 6430,
+      "url": "./course-audio/heart-word-ate.mp3"
+    },
+    "heart-word-black": {
+      "id": "heart-word-black",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "black.mp3",
+      "bytes": 7104,
+      "url": "./course-audio/heart-word-black.mp3"
+    },
+    "heart-word-brown": {
+      "id": "heart-word-brown",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "brown.mp3",
+      "bytes": 8200,
+      "url": "./course-audio/heart-word-brown.mp3"
+    },
+    "heart-word-came": {
+      "id": "heart-word-came",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "came.mp3",
+      "bytes": 8384,
+      "url": "./course-audio/heart-word-came.mp3"
+    },
+    "heart-word-eat": {
+      "id": "heart-word-eat",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "eat.mp3",
+      "bytes": 6533,
+      "url": "./course-audio/heart-word-eat.mp3"
+    },
+    "heart-word-four": {
+      "id": "heart-word-four",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "four.mp3",
+      "bytes": 7732,
+      "url": "./course-audio/heart-word-four.mp3"
+    },
+    "heart-word-good": {
+      "id": "heart-word-good",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "good.mp3",
+      "bytes": 5882,
+      "url": "./course-audio/heart-word-good.mp3"
+    },
+    "heart-word-into": {
+      "id": "heart-word-into",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "into.mp3",
+      "bytes": 7446,
+      "url": "./course-audio/heart-word-into.mp3"
+    },
+    "heart-word-no": {
+      "id": "heart-word-no",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "no.mp3",
+      "bytes": 7471,
+      "url": "./course-audio/heart-word-no.mp3"
+    },
+    "heart-word-on": {
+      "id": "heart-word-on",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "on.mp3",
+      "bytes": 6633,
+      "url": "./course-audio/heart-word-on.mp3"
+    },
+    "heart-word-our": {
+      "id": "heart-word-our",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "our.mp3",
+      "bytes": 7160,
+      "url": "./course-audio/heart-word-our.mp3"
+    },
+    "heart-word-out": {
+      "id": "heart-word-out",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "out.mp3",
+      "bytes": 6897,
+      "url": "./course-audio/heart-word-out.mp3"
+    },
+    "heart-word-please": {
+      "id": "heart-word-please",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "please.mp3",
+      "bytes": 8542,
+      "url": "./course-audio/heart-word-please.mp3"
+    },
+    "heart-word-pretty": {
+      "id": "heart-word-pretty",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "pretty.mp3",
+      "bytes": 7107,
+      "url": "./course-audio/heart-word-pretty.mp3"
+    },
+    "heart-word-ran": {
+      "id": "heart-word-ran",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "ran.mp3",
+      "bytes": 7941,
+      "url": "./course-audio/heart-word-ran.mp3"
+    },
+    "heart-word-ride": {
+      "id": "heart-word-ride",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "ride.mp3",
+      "bytes": 7786,
+      "url": "./course-audio/heart-word-ride.mp3"
+    },
+    "heart-word-saw": {
+      "id": "heart-word-saw",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "saw.mp3",
+      "bytes": 8305,
+      "url": "./course-audio/heart-word-saw.mp3"
+    },
+    "heart-word-soon": {
+      "id": "heart-word-soon",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "soon.mp3",
+      "bytes": 7809,
+      "url": "./course-audio/heart-word-soon.mp3"
+    },
+    "heart-word-that": {
+      "id": "heart-word-that",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "that.mp3",
+      "bytes": 7105,
+      "url": "./course-audio/heart-word-that.mp3"
+    },
+    "heart-word-too": {
+      "id": "heart-word-too",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "too.mp3",
+      "bytes": 6274,
+      "url": "./course-audio/heart-word-too.mp3"
+    },
+    "heart-word-under": {
+      "id": "heart-word-under",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "under.mp3",
+      "bytes": 7629,
+      "url": "./course-audio/heart-word-under.mp3"
+    },
+    "heart-word-well": {
+      "id": "heart-word-well",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "well.mp3",
+      "bytes": 7524,
+      "url": "./course-audio/heart-word-well.mp3"
+    },
+    "heart-word-went": {
+      "id": "heart-word-went",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "went.mp3",
+      "bytes": 7655,
+      "url": "./course-audio/heart-word-went.mp3"
+    },
+    "heart-word-white": {
+      "id": "heart-word-white",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "white.mp3",
+      "bytes": 7081,
+      "url": "./course-audio/heart-word-white.mp3"
+    },
+    "heart-word-yes": {
+      "id": "heart-word-yes",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "yes.mp3",
+      "bytes": 8411,
+      "url": "./course-audio/heart-word-yes.mp3"
+    },
+    "heart-word-an": {
+      "id": "heart-word-an",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "an.mp3",
+      "bytes": 5804,
+      "url": "./course-audio/heart-word-an.mp3"
+    },
+    "heart-word-as": {
+      "id": "heart-word-as",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "as.mp3",
+      "bytes": 8255,
+      "url": "./course-audio/heart-word-as.mp3"
+    },
+    "heart-word-ask": {
+      "id": "heart-word-ask",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "ask.mp3",
+      "bytes": 8826,
+      "url": "./course-audio/heart-word-ask.mp3"
+    },
+    "heart-word-by": {
+      "id": "heart-word-by",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "by.mp3",
+      "bytes": 7262,
+      "url": "./course-audio/heart-word-by.mp3"
+    },
+    "heart-word-every": {
+      "id": "heart-word-every",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "every.mp3",
+      "bytes": 8254,
+      "url": "./course-audio/heart-word-every.mp3"
+    },
+    "heart-word-fly": {
+      "id": "heart-word-fly",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "fly.mp3",
+      "bytes": 8906,
+      "url": "./course-audio/heart-word-fly.mp3"
+    },
+    "heart-word-giving": {
+      "id": "heart-word-giving",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "giving.mp3",
+      "bytes": 7053,
+      "url": "./course-audio/heart-word-giving.mp3"
+    },
+    "heart-word-him": {
+      "id": "heart-word-him",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "him.mp3",
+      "bytes": 6273,
+      "url": "./course-audio/heart-word-him.mp3"
+    },
+    "heart-word-just": {
+      "id": "heart-word-just",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "just.mp3",
+      "bytes": 9322,
+      "url": "./course-audio/heart-word-just.mp3"
+    },
+    "heart-word-know": {
+      "id": "heart-word-know",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "know.mp3",
+      "bytes": 7471,
+      "url": "./course-audio/heart-word-know.mp3"
+    },
+    "heart-word-let": {
+      "id": "heart-word-let",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "let.mp3",
+      "bytes": 7131,
+      "url": "./course-audio/heart-word-let.mp3"
+    },
+    "heart-word-live": {
+      "id": "heart-word-live",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "live.mp3",
+      "bytes": 6168,
+      "url": "./course-audio/heart-word-live.mp3"
+    },
+    "heart-word-may": {
+      "id": "heart-word-may",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "may.mp3",
+      "bytes": 6742,
+      "url": "./course-audio/heart-word-may.mp3"
+    },
+    "heart-word-old": {
+      "id": "heart-word-old",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "old.mp3",
+      "bytes": 7731,
+      "url": "./course-audio/heart-word-old.mp3"
+    },
+    "heart-word-once": {
+      "id": "heart-word-once",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "once.mp3",
+      "bytes": 8802,
+      "url": "./course-audio/heart-word-once.mp3"
+    },
+    "heart-word-open": {
+      "id": "heart-word-open",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "open.mp3",
+      "bytes": 7967,
+      "url": "./course-audio/heart-word-open.mp3"
+    },
+    "heart-word-over": {
+      "id": "heart-word-over",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "over.mp3",
+      "bytes": 7106,
+      "url": "./course-audio/heart-word-over.mp3"
+    },
+    "heart-word-put": {
+      "id": "heart-word-put",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "put.mp3",
+      "bytes": 6506,
+      "url": "./course-audio/heart-word-put.mp3"
+    },
+    "heart-word-round": {
+      "id": "heart-word-round",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "round.mp3",
+      "bytes": 8357,
+      "url": "./course-audio/heart-word-round.mp3"
+    },
+    "heart-word-stop": {
+      "id": "heart-word-stop",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "stop.mp3",
+      "bytes": 9713,
+      "url": "./course-audio/heart-word-stop.mp3"
+    },
+    "heart-word-take": {
+      "id": "heart-word-take",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "take.mp3",
+      "bytes": 8463,
+      "url": "./course-audio/heart-word-take.mp3"
+    },
+    "heart-word-thank": {
+      "id": "heart-word-thank",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "thank.mp3",
+      "bytes": 8930,
+      "url": "./course-audio/heart-word-thank.mp3"
+    },
+    "heart-word-think": {
+      "id": "heart-word-think",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "think.mp3",
+      "bytes": 7317,
+      "url": "./course-audio/heart-word-think.mp3"
+    },
+    "heart-word-walk": {
+      "id": "heart-word-walk",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "walk.mp3",
+      "bytes": 7653,
+      "url": "./course-audio/heart-word-walk.mp3"
+    },
+    "heart-word-always": {
+      "id": "heart-word-always",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "always.mp3",
+      "bytes": 9010,
+      "url": "./course-audio/heart-word-always.mp3"
+    },
+    "heart-word-best": {
+      "id": "heart-word-best",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "best.mp3",
+      "bytes": 8122,
+      "url": "./course-audio/heart-word-best.mp3"
+    },
+    "heart-word-both": {
+      "id": "heart-word-both",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "both.mp3",
+      "bytes": 6872,
+      "url": "./course-audio/heart-word-both.mp3"
+    },
+    "heart-word-buy": {
+      "id": "heart-word-buy",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "buy.mp3",
+      "bytes": 7262,
+      "url": "./course-audio/heart-word-buy.mp3"
+    },
+    "heart-word-call": {
+      "id": "heart-word-call",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "call.mp3",
+      "bytes": 7237,
+      "url": "./course-audio/heart-word-call.mp3"
+    },
+    "heart-word-cold": {
+      "id": "heart-word-cold",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "cold.mp3",
+      "bytes": 7732,
+      "url": "./course-audio/heart-word-cold.mp3"
+    },
+    "heart-word-dont": {
+      "id": "heart-word-dont",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "dont.mp3",
+      "bytes": 6795,
+      "url": "./course-audio/heart-word-dont.mp3"
+    },
+    "heart-word-fast": {
+      "id": "heart-word-fast",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "fast.mp3",
+      "bytes": 10366,
+      "url": "./course-audio/heart-word-fast.mp3"
+    },
+    "heart-word-five": {
+      "id": "heart-word-five",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "five.mp3",
+      "bytes": 7889,
+      "url": "./course-audio/heart-word-five.mp3"
+    },
+    "heart-word-found": {
+      "id": "heart-word-found",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "found.mp3",
+      "bytes": 8775,
+      "url": "./course-audio/heart-word-found.mp3"
+    },
+    "heart-word-gave": {
+      "id": "heart-word-gave",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "gave.mp3",
+      "bytes": 6220,
+      "url": "./course-audio/heart-word-gave.mp3"
+    },
+    "heart-word-goes": {
+      "id": "heart-word-goes",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "goes.mp3",
+      "bytes": 7731,
+      "url": "./course-audio/heart-word-goes.mp3"
+    },
+    "heart-word-green": {
+      "id": "heart-word-green",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "green.mp3",
+      "bytes": 6741,
+      "url": "./course-audio/heart-word-green.mp3"
+    },
+    "heart-word-its": {
+      "id": "heart-word-its",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "its.mp3",
+      "bytes": 7105,
+      "url": "./course-audio/heart-word-its.mp3"
+    },
+    "heart-word-made": {
+      "id": "heart-word-made",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "made.mp3",
+      "bytes": 7186,
+      "url": "./course-audio/heart-word-made.mp3"
+    },
+    "heart-word-off": {
+      "id": "heart-word-off",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "off.mp3",
+      "bytes": 7445,
+      "url": "./course-audio/heart-word-off.mp3"
+    },
+    "heart-word-or": {
+      "id": "heart-word-or",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "or.mp3",
+      "bytes": 6402,
+      "url": "./course-audio/heart-word-or.mp3"
+    },
+    "heart-word-pull": {
+      "id": "heart-word-pull",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "pull.mp3",
+      "bytes": 6820,
+      "url": "./course-audio/heart-word-pull.mp3"
+    },
+    "heart-word-right": {
+      "id": "heart-word-right",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "right.mp3",
+      "bytes": 6949,
+      "url": "./course-audio/heart-word-right.mp3"
+    },
+    "heart-word-sing": {
+      "id": "heart-word-sing",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "sing.mp3",
+      "bytes": 7758,
+      "url": "./course-audio/heart-word-sing.mp3"
+    },
+    "heart-word-sit": {
+      "id": "heart-word-sit",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "sit.mp3",
+      "bytes": 6948,
+      "url": "./course-audio/heart-word-sit.mp3"
+    },
+    "heart-word-sleep": {
+      "id": "heart-word-sleep",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "sleep.mp3",
+      "bytes": 8619,
+      "url": "./course-audio/heart-word-sleep.mp3"
+    },
+    "heart-word-tell": {
+      "id": "heart-word-tell",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "tell.mp3",
+      "bytes": 7942,
+      "url": "./course-audio/heart-word-tell.mp3"
+    },
+    "heart-word-their": {
+      "id": "heart-word-their",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "their.mp3",
+      "bytes": 7004,
+      "url": "./course-audio/heart-word-their.mp3"
+    },
+    "heart-word-those": {
+      "id": "heart-word-those",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "those.mp3",
+      "bytes": 7812,
+      "url": "./course-audio/heart-word-those.mp3"
+    },
+    "heart-word-upon": {
+      "id": "heart-word-upon",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "upon.mp3",
+      "bytes": 8957,
+      "url": "./course-audio/heart-word-upon.mp3"
+    },
+    "heart-word-us": {
+      "id": "heart-word-us",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "us.mp3",
+      "bytes": 7889,
+      "url": "./course-audio/heart-word-us.mp3"
+    },
+    "heart-word-use": {
+      "id": "heart-word-use",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "use.mp3",
+      "bytes": 8200,
+      "url": "./course-audio/heart-word-use.mp3"
+    },
+    "heart-word-very": {
+      "id": "heart-word-very",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "very.mp3",
+      "bytes": 7340,
+      "url": "./course-audio/heart-word-very.mp3"
+    },
+    "heart-word-wash": {
+      "id": "heart-word-wash",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "wash.mp3",
+      "bytes": 9167,
+      "url": "./course-audio/heart-word-wash.mp3"
+    },
+    "heart-word-wish": {
+      "id": "heart-word-wish",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "wish.mp3",
+      "bytes": 7419,
+      "url": "./course-audio/heart-word-wish.mp3"
+    },
+    "heart-word-work": {
+      "id": "heart-word-work",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "work.mp3",
+      "bytes": 7108,
+      "url": "./course-audio/heart-word-work.mp3"
+    },
+    "heart-word-write": {
+      "id": "heart-word-write",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "write.mp3",
+      "bytes": 6949,
+      "url": "./course-audio/heart-word-write.mp3"
+    },
+    "heart-word-about": {
+      "id": "heart-word-about",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "about.mp3",
+      "bytes": 9087,
+      "url": "./course-audio/heart-word-about.mp3"
+    },
+    "heart-word-better": {
+      "id": "heart-word-better",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "better.mp3",
+      "bytes": 7132,
+      "url": "./course-audio/heart-word-better.mp3"
+    },
+    "heart-word-bring": {
+      "id": "heart-word-bring",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "bring.mp3",
+      "bytes": 7183,
+      "url": "./course-audio/heart-word-bring.mp3"
+    },
+    "heart-word-carry": {
+      "id": "heart-word-carry",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "carry.mp3",
+      "bytes": 7916,
+      "url": "./course-audio/heart-word-carry.mp3"
+    },
+    "heart-word-clean": {
+      "id": "heart-word-clean",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "clean.mp3",
+      "bytes": 7002,
+      "url": "./course-audio/heart-word-clean.mp3"
+    },
+    "heart-word-cut": {
+      "id": "heart-word-cut",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "cut.mp3",
+      "bytes": 7837,
+      "url": "./course-audio/heart-word-cut.mp3"
+    },
+    "heart-word-done": {
+      "id": "heart-word-done",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "done.mp3",
+      "bytes": 8072,
+      "url": "./course-audio/heart-word-done.mp3"
+    },
+    "heart-word-draw": {
+      "id": "heart-word-draw",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "draw.mp3",
+      "bytes": 7575,
+      "url": "./course-audio/heart-word-draw.mp3"
+    },
+    "heart-word-drink": {
+      "id": "heart-word-drink",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "drink.mp3",
+      "bytes": 8149,
+      "url": "./course-audio/heart-word-drink.mp3"
+    },
+    "heart-word-eight": {
+      "id": "heart-word-eight",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "eight.mp3",
+      "bytes": 6430,
+      "url": "./course-audio/heart-word-eight.mp3"
+    },
+    "heart-word-fall": {
+      "id": "heart-word-fall",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "filename": "fall.mp3",
+      "bytes": 8331,
+      "url": "./course-audio/heart-word-fall.mp3"
+    },
+    "opw-clip-l1-d1-t4-w14": {
+      "id": "opw-clip-l1-d1-t4-w14",
+      "kind": "oxford-clip",
       "level": 1,
       "disc": 1,
       "track": 4,
+      "itemId": "l1-d1-t4-w14",
       "filename": "OPW_SB1_Disc1_Track04.mp3",
-      "bytes": 791306,
-      "url": "./course-audio/opw-l1-d1-track04.mp3"
+      "bytes": 21309,
+      "url": "./course-audio/opw-clip-l1-d1-t4-w14.mp3"
     },
-    "opw-l1-d1-track12": {
-      "id": "opw-l1-d1-track12",
-      "kind": "oxford-track",
+    "opw-clip-l1-d1-t12-w10": {
+      "id": "opw-clip-l1-d1-t12-w10",
+      "kind": "oxford-clip",
       "level": 1,
       "disc": 1,
       "track": 12,
+      "itemId": "l1-d1-t12-w10",
       "filename": "OPW_SB1_Disc1_Track12.mp3",
-      "bytes": 1077610,
-      "url": "./course-audio/opw-l1-d1-track12.mp3"
+      "bytes": 9358,
+      "url": "./course-audio/opw-clip-l1-d1-t12-w10.mp3"
     },
     "phonics-word-man": {
       "id": "phonics-word-man",
@@ -32,15 +1634,16 @@
       "bytes": 8019,
       "url": "./course-audio/phonics-word-man.mp3"
     },
-    "opw-l2-d1-track12": {
-      "id": "opw-l2-d1-track12",
-      "kind": "oxford-track",
+    "opw-clip-l2-d1-t12-w27": {
+      "id": "opw-clip-l2-d1-t12-w27",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 1,
       "track": 12,
+      "itemId": "l2-d1-t12-w27",
       "filename": "OPW_SB2_Disc1_Track12.mp3",
-      "bytes": 1126512,
-      "url": "./course-audio/opw-l2-d1-track12.mp3"
+      "bytes": 14444,
+      "url": "./course-audio/opw-clip-l2-d1-t12-w27.mp3"
     },
     "phonics-word-back": {
       "id": "phonics-word-back",
@@ -58,35 +1661,49 @@
       "bytes": 8721,
       "url": "./course-audio/phonics-word-sack.mp3"
     },
-    "opw-l2-d1-track30": {
-      "id": "opw-l2-d1-track30",
-      "kind": "oxford-track",
+    "opw-clip-l2-d1-t30-w25": {
+      "id": "opw-clip-l2-d1-t30-w25",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 1,
       "track": 30,
+      "itemId": "l2-d1-t30-w25",
       "filename": "OPW_SB2_Disc1_Track30.mp3",
-      "bytes": 1604240,
-      "url": "./course-audio/opw-l2-d1-track30.mp3"
+      "bytes": 31038,
+      "url": "./course-audio/opw-clip-l2-d1-t30-w25.mp3"
     },
-    "opw-l2-d1-track22": {
-      "id": "opw-l2-d1-track22",
-      "kind": "oxford-track",
+    "opw-clip-l2-d1-t22-w14": {
+      "id": "opw-clip-l2-d1-t22-w14",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 1,
       "track": 22,
+      "itemId": "l2-d1-t22-w14",
       "filename": "OPW_SB2_Disc1_Track22.mp3",
-      "bytes": 1011573,
-      "url": "./course-audio/opw-l2-d1-track22.mp3"
+      "bytes": 11574,
+      "url": "./course-audio/opw-clip-l2-d1-t22-w14.mp3"
     },
-    "opw-l2-d1-track24": {
-      "id": "opw-l2-d1-track24",
-      "kind": "oxford-track",
+    "opw-clip-l2-d1-t24-w11": {
+      "id": "opw-clip-l2-d1-t24-w11",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 1,
       "track": 24,
+      "itemId": "l2-d1-t24-w11",
       "filename": "OPW_SB2_Disc1_Track24.mp3",
-      "bytes": 1239779,
-      "url": "./course-audio/opw-l2-d1-track24.mp3"
+      "bytes": 11888,
+      "url": "./course-audio/opw-clip-l2-d1-t24-w11.mp3"
+    },
+    "opw-clip-l2-d1-t30-w17": {
+      "id": "opw-clip-l2-d1-t30-w17",
+      "kind": "oxford-clip",
+      "level": 2,
+      "disc": 1,
+      "track": 30,
+      "itemId": "l2-d1-t30-w17",
+      "filename": "OPW_SB2_Disc1_Track30.mp3",
+      "bytes": 30743,
+      "url": "./course-audio/opw-clip-l2-d1-t30-w17.mp3"
     },
     "phonics-word-neck": {
       "id": "phonics-word-neck",
@@ -120,25 +1737,27 @@
       "bytes": 5595,
       "url": "./course-audio/phonics-word-it.mp3"
     },
-    "opw-l2-d2-track13": {
-      "id": "opw-l2-d2-track13",
-      "kind": "oxford-track",
+    "opw-clip-l2-d2-t13-w16": {
+      "id": "opw-clip-l2-d2-t13-w16",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 2,
       "track": 13,
+      "itemId": "l2-d2-t13-w16",
       "filename": "OPW_SB2_Disc2_Track13.mp3",
-      "bytes": 765394,
-      "url": "./course-audio/opw-l2-d2-track13.mp3"
+      "bytes": 11470,
+      "url": "./course-audio/opw-clip-l2-d2-t13-w16.mp3"
     },
-    "opw-l2-d2-track31": {
-      "id": "opw-l2-d2-track31",
-      "kind": "oxford-track",
+    "opw-clip-l2-d2-t31-w58-r2": {
+      "id": "opw-clip-l2-d2-t31-w58-r2",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 2,
       "track": 31,
+      "itemId": "l2-d2-t31-w58-r2",
       "filename": "OPW_SB2_Disc2_Track31.mp3",
-      "bytes": 2128778,
-      "url": "./course-audio/opw-l2-d2-track31.mp3"
+      "bytes": 9437,
+      "url": "./course-audio/opw-clip-l2-d2-t31-w58-r2.mp3"
     },
     "phonics-word-quit": {
       "id": "phonics-word-quit",
@@ -156,15 +1775,16 @@
       "bytes": 6794,
       "url": "./course-audio/phonics-word-quill.mp3"
     },
-    "opw-l2-d1-track48": {
-      "id": "opw-l2-d1-track48",
-      "kind": "oxford-track",
+    "opw-clip-l2-d1-t48-w11": {
+      "id": "opw-clip-l2-d1-t48-w11",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 1,
       "track": 48,
+      "itemId": "l2-d1-t48-w11",
       "filename": "OPW_SB2_Disc1_Track48.mp3",
-      "bytes": 886603,
-      "url": "./course-audio/opw-l2-d1-track48.mp3"
+      "bytes": 13844,
+      "url": "./course-audio/opw-clip-l2-d1-t48-w11.mp3"
     },
     "phonics-word-pet": {
       "id": "phonics-word-pet",
@@ -174,25 +1794,27 @@
       "bytes": 7263,
       "url": "./course-audio/phonics-word-pet.mp3"
     },
-    "opw-l2-d1-track43": {
-      "id": "opw-l2-d1-track43",
-      "kind": "oxford-track",
+    "opw-clip-l2-d1-t43-w27-r2": {
+      "id": "opw-clip-l2-d1-t43-w27-r2",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 1,
       "track": 43,
+      "itemId": "l2-d1-t43-w27-r2",
       "filename": "OPW_SB2_Disc1_Track43.mp3",
-      "bytes": 804265,
-      "url": "./course-audio/opw-l2-d1-track43.mp3"
+      "bytes": 16581,
+      "url": "./course-audio/opw-clip-l2-d1-t43-w27-r2.mp3"
     },
-    "opw-l2-d1-track36": {
-      "id": "opw-l2-d1-track36",
-      "kind": "oxford-track",
+    "opw-clip-l2-d1-t36-w18": {
+      "id": "opw-clip-l2-d1-t36-w18",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 1,
       "track": 36,
+      "itemId": "l2-d1-t36-w18",
       "filename": "OPW_SB2_Disc1_Track36.mp3",
-      "bytes": 830179,
-      "url": "./course-audio/opw-l2-d1-track36.mp3"
+      "bytes": 14705,
+      "url": "./course-audio/opw-clip-l2-d1-t36-w18.mp3"
     },
     "phonics-word-fetch": {
       "id": "phonics-word-fetch",
@@ -210,45 +1832,49 @@
       "bytes": 8828,
       "url": "./course-audio/phonics-word-match.mp3"
     },
-    "opw-l1-d1-track18": {
-      "id": "opw-l1-d1-track18",
-      "kind": "oxford-track",
+    "opw-clip-l1-d1-t18-w10": {
+      "id": "opw-clip-l1-d1-t18-w10",
+      "kind": "oxford-clip",
       "level": 1,
       "disc": 1,
       "track": 18,
+      "itemId": "l1-d1-t18-w10",
       "filename": "OPW_SB1_Disc1_Track18.mp3",
-      "bytes": 1303726,
-      "url": "./course-audio/opw-l1-d1-track18.mp3"
+      "bytes": 13583,
+      "url": "./course-audio/opw-clip-l1-d1-t18-w10.mp3"
     },
-    "opw-l2-d2-track30": {
-      "id": "opw-l2-d2-track30",
-      "kind": "oxford-track",
+    "opw-clip-l2-d2-t30-w10": {
+      "id": "opw-clip-l2-d2-t30-w10",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 2,
       "track": 30,
+      "itemId": "l2-d2-t30-w10",
       "filename": "OPW_SB2_Disc2_Track30.mp3",
-      "bytes": 995271,
-      "url": "./course-audio/opw-l2-d2-track30.mp3"
+      "bytes": 12929,
+      "url": "./course-audio/opw-clip-l2-d2-t30-w10.mp3"
     },
-    "opw-l2-d2-track26": {
-      "id": "opw-l2-d2-track26",
-      "kind": "oxford-track",
+    "opw-clip-l2-d2-t26-w23": {
+      "id": "opw-clip-l2-d2-t26-w23",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 2,
       "track": 26,
+      "itemId": "l2-d2-t26-w23",
       "filename": "OPW_SB2_Disc2_Track26.mp3",
-      "bytes": 1065906,
-      "url": "./course-audio/opw-l2-d2-track26.mp3"
+      "bytes": 20130,
+      "url": "./course-audio/opw-clip-l2-d2-t26-w23.mp3"
     },
-    "opw-l2-d2-track18": {
-      "id": "opw-l2-d2-track18",
-      "kind": "oxford-track",
+    "opw-clip-l2-d2-t18-w9": {
+      "id": "opw-clip-l2-d2-t18-w9",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 2,
       "track": 18,
+      "itemId": "l2-d2-t18-w9",
       "filename": "OPW_SB2_Disc2_Track18.mp3",
-      "bytes": 798413,
-      "url": "./course-audio/opw-l2-d2-track18.mp3"
+      "bytes": 13086,
+      "url": "./course-audio/opw-clip-l2-d2-t18-w9.mp3"
     },
     "phonics-word-rock": {
       "id": "phonics-word-rock",
@@ -266,45 +1892,49 @@
       "bytes": 9034,
       "url": "./course-audio/phonics-word-sock.mp3"
     },
-    "opw-l1-d1-track05": {
-      "id": "opw-l1-d1-track05",
-      "kind": "oxford-track",
+    "opw-clip-l1-d1-t5-w23": {
+      "id": "opw-clip-l1-d1-t5-w23",
+      "kind": "oxford-clip",
       "level": 1,
       "disc": 1,
       "track": 5,
+      "itemId": "l1-d1-t5-w23",
       "filename": "OPW_SB1_Disc1_Track05.mp3",
-      "bytes": 801337,
-      "url": "./course-audio/opw-l1-d1-track05.mp3"
+      "bytes": 18527,
+      "url": "./course-audio/opw-clip-l1-d1-t5-w23.mp3"
     },
-    "opw-l1-d2-track32": {
-      "id": "opw-l1-d2-track32",
-      "kind": "oxford-track",
+    "opw-clip-l1-d2-t32-w11": {
+      "id": "opw-clip-l1-d2-t32-w11",
+      "kind": "oxford-clip",
       "level": 1,
       "disc": 2,
       "track": 32,
+      "itemId": "l1-d2-t32-w11",
       "filename": "OPW_SB1_Disc2_Track32.mp3",
-      "bytes": 1389826,
-      "url": "./course-audio/opw-l1-d2-track32.mp3"
+      "bytes": 26907,
+      "url": "./course-audio/opw-clip-l1-d2-t32-w11.mp3"
     },
-    "opw-l1-d2-track39": {
-      "id": "opw-l1-d2-track39",
-      "kind": "oxford-track",
+    "opw-clip-l1-d2-t39-w6": {
+      "id": "opw-clip-l1-d2-t39-w6",
+      "kind": "oxford-clip",
       "level": 1,
       "disc": 2,
       "track": 39,
+      "itemId": "l1-d2-t39-w6",
       "filename": "OPW_SB1_Disc2_Track39.mp3",
-      "bytes": 1237689,
-      "url": "./course-audio/opw-l1-d2-track39.mp3"
+      "bytes": 15276,
+      "url": "./course-audio/opw-clip-l1-d2-t39-w6.mp3"
     },
-    "opw-l2-d2-track59": {
-      "id": "opw-l2-d2-track59",
-      "kind": "oxford-track",
+    "opw-clip-l2-d2-t59-w9": {
+      "id": "opw-clip-l2-d2-t59-w9",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 2,
       "track": 59,
+      "itemId": "l2-d2-t59-w9",
       "filename": "OPW_SB2_Disc2_Track59.mp3",
-      "bytes": 438132,
-      "url": "./course-audio/opw-l2-d2-track59.mp3"
+      "bytes": 13712,
+      "url": "./course-audio/opw-clip-l2-d2-t59-w9.mp3"
     },
     "phonics-word-phone": {
       "id": "phonics-word-phone",
@@ -338,15 +1968,16 @@
       "bytes": 8408,
       "url": "./course-audio/phonics-word-shop.mp3"
     },
-    "opw-l1-d1-track25": {
-      "id": "opw-l1-d1-track25",
-      "kind": "oxford-track",
+    "opw-clip-l1-d1-t25-w25-r20260805": {
+      "id": "opw-clip-l1-d1-t25-w25-r20260805",
+      "kind": "oxford-clip",
       "level": 1,
       "disc": 1,
       "track": 25,
+      "itemId": "l1-d1-t25-w25-r20260805",
       "filename": "OPW_SB1_Disc1_Track25.mp3",
-      "bytes": 1232673,
-      "url": "./course-audio/opw-l1-d1-track25.mp3"
+      "bytes": 11366,
+      "url": "./course-audio/opw-clip-l1-d1-t25-w25-r20260805.mp3"
     },
     "phonics-word-dish": {
       "id": "phonics-word-dish",
@@ -532,25 +2163,27 @@
       "bytes": 7758,
       "url": "./course-audio/phonics-word-sing.mp3"
     },
-    "opw-l1-d1-track51": {
-      "id": "opw-l1-d1-track51",
-      "kind": "oxford-track",
+    "opw-clip-l1-d1-t51-w75-r20260805": {
+      "id": "opw-clip-l1-d1-t51-w75-r20260805",
+      "kind": "oxford-clip",
       "level": 1,
       "disc": 1,
       "track": 51,
+      "itemId": "l1-d1-t51-w75-r20260805",
       "filename": "OPW_SB1_Disc1_Track51.mp3",
-      "bytes": 1231419,
-      "url": "./course-audio/opw-l1-d1-track51.mp3"
+      "bytes": 8601,
+      "url": "./course-audio/opw-clip-l1-d1-t51-w75-r20260805.mp3"
     },
-    "opw-l1-d2-track29": {
-      "id": "opw-l1-d2-track29",
-      "kind": "oxford-track",
+    "opw-clip-l1-d2-t29-w26-r20260805": {
+      "id": "opw-clip-l1-d2-t29-w26-r20260805",
+      "kind": "oxford-clip",
       "level": 1,
       "disc": 2,
       "track": 29,
+      "itemId": "l1-d2-t29-w26-r20260805",
       "filename": "OPW_SB1_Disc2_Track29.mp3",
-      "bytes": 778770,
-      "url": "./course-audio/opw-l1-d2-track29.mp3"
+      "bytes": 9880,
+      "url": "./course-audio/opw-clip-l1-d2-t29-w26-r20260805.mp3"
     },
     "phonics-word-boat": {
       "id": "phonics-word-boat",
@@ -736,15 +2369,16 @@
       "bytes": 8306,
       "url": "./course-audio/phonics-word-hand.mp3"
     },
-    "opw-l1-d2-track04": {
-      "id": "opw-l1-d2-track04",
-      "kind": "oxford-track",
+    "opw-clip-l1-d2-t4-w10-r20260805": {
+      "id": "opw-clip-l1-d2-t4-w10-r20260805",
+      "kind": "oxford-clip",
       "level": 1,
       "disc": 2,
       "track": 4,
+      "itemId": "l1-d2-t4-w10-r20260805",
       "filename": "OPW_SB1_Disc2_Track04.mp3",
-      "bytes": 890781,
-      "url": "./course-audio/opw-l1-d2-track04.mp3"
+      "bytes": 10161,
+      "url": "./course-audio/opw-clip-l1-d2-t4-w10-r20260805.mp3"
     },
     "phonics-word-jump": {
       "id": "phonics-word-jump",
@@ -754,15 +2388,16 @@
       "bytes": 7862,
       "url": "./course-audio/phonics-word-jump.mp3"
     },
-    "opw-l1-d2-track08": {
-      "id": "opw-l1-d2-track08",
-      "kind": "oxford-track",
+    "opw-clip-l1-d2-t8-w11-r20260805": {
+      "id": "opw-clip-l1-d2-t8-w11-r20260805",
+      "kind": "oxford-clip",
       "level": 1,
       "disc": 2,
       "track": 8,
+      "itemId": "l1-d2-t8-w11-r20260805",
       "filename": "OPW_SB1_Disc2_Track08.mp3",
-      "bytes": 1235597,
-      "url": "./course-audio/opw-l1-d2-track08.mp3"
+      "bytes": 12824,
+      "url": "./course-audio/opw-clip-l1-d2-t8-w11-r20260805.mp3"
     },
     "phonics-word-bird": {
       "id": "phonics-word-bird",
@@ -796,15 +2431,16 @@
       "bytes": 8019,
       "url": "./course-audio/phonics-word-plant.mp3"
     },
-    "opw-l3-d2-track33": {
-      "id": "opw-l3-d2-track33",
-      "kind": "oxford-track",
+    "opw-clip-l3-d2-t33-w64-r20260805": {
+      "id": "opw-clip-l3-d2-t33-w64-r20260805",
+      "kind": "oxford-clip",
       "level": 3,
       "disc": 2,
       "track": 33,
+      "itemId": "l3-d2-t33-w64-r20260805",
       "filename": "OPW_SB3_Disc2_Track33.mp3",
-      "bytes": 2031707,
-      "url": "./course-audio/opw-l3-d2-track33.mp3"
+      "bytes": 9851,
+      "url": "./course-audio/opw-clip-l3-d2-t33-w64-r20260805.mp3"
     },
     "phonics-word-turn": {
       "id": "phonics-word-turn",
@@ -822,25 +2458,27 @@
       "bytes": 7131,
       "url": "./course-audio/phonics-word-burn.mp3"
     },
-    "opw-l2-d2-track62": {
-      "id": "opw-l2-d2-track62",
-      "kind": "oxford-track",
+    "opw-clip-l2-d2-t62-w57-r20260805": {
+      "id": "opw-clip-l2-d2-t62-w57-r20260805",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 2,
       "track": 62,
+      "itemId": "l2-d2-t62-w57-r20260805",
       "filename": "OPW_SB2_Disc2_Track62.mp3",
-      "bytes": 1022021,
-      "url": "./course-audio/opw-l2-d2-track62.mp3"
+      "bytes": 11599,
+      "url": "./course-audio/opw-clip-l2-d2-t62-w57-r20260805.mp3"
     },
-    "opw-l3-d1-track18": {
-      "id": "opw-l3-d1-track18",
-      "kind": "oxford-track",
+    "opw-clip-l3-d1-t18-w33-r20260805": {
+      "id": "opw-clip-l3-d1-t18-w33-r20260805",
+      "kind": "oxford-clip",
       "level": 3,
       "disc": 1,
       "track": 18,
+      "itemId": "l3-d1-t18-w33-r20260805",
       "filename": "OPW_SB3_Disc1_Track18.mp3",
-      "bytes": 1399118,
-      "url": "./course-audio/opw-l3-d1-track18.mp3"
+      "bytes": 8932,
+      "url": "./course-audio/opw-clip-l3-d1-t18-w33-r20260805.mp3"
     },
     "phonics-word-same": {
       "id": "phonics-word-same",
@@ -850,15 +2488,16 @@
       "bytes": 9400,
       "url": "./course-audio/phonics-word-same.mp3"
     },
-    "opw-l3-d1-track10": {
-      "id": "opw-l3-d1-track10",
-      "kind": "oxford-track",
+    "opw-clip-l3-d1-t10-w11-r20260805": {
+      "id": "opw-clip-l3-d1-t10-w11-r20260805",
+      "kind": "oxford-clip",
       "level": 3,
       "disc": 1,
       "track": 10,
+      "itemId": "l3-d1-t10-w11-r20260805",
       "filename": "OPW_SB3_Disc1_Track10.mp3",
-      "bytes": 721076,
-      "url": "./course-audio/opw-l3-d1-track10.mp3"
+      "bytes": 9300,
+      "url": "./course-audio/opw-clip-l3-d1-t10-w11-r20260805.mp3"
     },
     "phonics-word-moon": {
       "id": "phonics-word-moon",
@@ -876,45 +2515,49 @@
       "bytes": 7210,
       "url": "./course-audio/phonics-word-food.mp3"
     },
-    "opw-l3-d1-track27": {
-      "id": "opw-l3-d1-track27",
-      "kind": "oxford-track",
+    "opw-clip-l3-d1-t27-w39-r20260805": {
+      "id": "opw-clip-l3-d1-t27-w39-r20260805",
+      "kind": "oxford-clip",
       "level": 3,
       "disc": 1,
       "track": 27,
+      "itemId": "l3-d1-t27-w39-r20260805",
       "filename": "OPW_SB3_Disc1_Track27.mp3",
-      "bytes": 1111388,
-      "url": "./course-audio/opw-l3-d1-track27.mp3"
+      "bytes": 11468,
+      "url": "./course-audio/opw-clip-l3-d1-t27-w39-r20260805.mp3"
     },
-    "opw-l1-d2-track63": {
-      "id": "opw-l1-d2-track63",
-      "kind": "oxford-track",
+    "opw-clip-l1-d2-t63-w126-r20260805": {
+      "id": "opw-clip-l1-d2-t63-w126-r20260805",
+      "kind": "oxford-clip",
       "level": 1,
       "disc": 2,
       "track": 63,
+      "itemId": "l1-d2-t63-w126-r20260805",
       "filename": "OPW_SB1_Disc2_Track63.mp3",
-      "bytes": 2095760,
-      "url": "./course-audio/opw-l1-d2-track63.mp3"
+      "bytes": 11262,
+      "url": "./course-audio/opw-clip-l1-d2-t63-w126-r20260805.mp3"
     },
-    "opw-l3-d1-track26": {
-      "id": "opw-l3-d1-track26",
-      "kind": "oxford-track",
+    "opw-clip-l3-d1-t26-w12-r20260805": {
+      "id": "opw-clip-l3-d1-t26-w12-r20260805",
+      "kind": "oxford-clip",
       "level": 3,
       "disc": 1,
       "track": 26,
+      "itemId": "l3-d1-t26-w12-r20260805",
       "filename": "OPW_SB3_Disc1_Track26.mp3",
-      "bytes": 668117,
-      "url": "./course-audio/opw-l3-d1-track26.mp3"
+      "bytes": 9875,
+      "url": "./course-audio/opw-clip-l3-d1-t26-w12-r20260805.mp3"
     },
-    "opw-l3-d1-track30": {
-      "id": "opw-l3-d1-track30",
-      "kind": "oxford-track",
+    "opw-clip-l3-d1-t30-w16-r20260805": {
+      "id": "opw-clip-l3-d1-t30-w16-r20260805",
+      "kind": "oxford-clip",
       "level": 3,
       "disc": 1,
       "track": 30,
+      "itemId": "l3-d1-t30-w16-r20260805",
       "filename": "OPW_SB3_Disc1_Track30.mp3",
-      "bytes": 734837,
-      "url": "./course-audio/opw-l3-d1-track30.mp3"
+      "bytes": 9849,
+      "url": "./course-audio/opw-clip-l3-d1-t30-w16-r20260805.mp3"
     },
     "phonics-word-book": {
       "id": "phonics-word-book",
@@ -932,45 +2575,49 @@
       "bytes": 6687,
       "url": "./course-audio/phonics-word-foot.mp3"
     },
-    "opw-l3-d1-track50": {
-      "id": "opw-l3-d1-track50",
-      "kind": "oxford-track",
+    "opw-clip-l3-d1-t50-w57-r20260805": {
+      "id": "opw-clip-l3-d1-t50-w57-r20260805",
+      "kind": "oxford-clip",
       "level": 3,
       "disc": 1,
       "track": 50,
+      "itemId": "l3-d1-t50-w57-r20260805",
       "filename": "OPW_SB3_Disc1_Track50.mp3",
-      "bytes": 1433729,
-      "url": "./course-audio/opw-l3-d1-track50.mp3"
+      "bytes": 8615,
+      "url": "./course-audio/opw-clip-l3-d1-t50-w57-r20260805.mp3"
     },
-    "opw-l3-d1-track49": {
-      "id": "opw-l3-d1-track49",
-      "kind": "oxford-track",
+    "opw-clip-l3-d1-t49-w15-r20260805": {
+      "id": "opw-clip-l3-d1-t49-w15-r20260805",
+      "kind": "oxford-clip",
       "level": 3,
       "disc": 1,
       "track": 49,
+      "itemId": "l3-d1-t49-w15-r20260805",
       "filename": "OPW_SB3_Disc1_Track49.mp3",
-      "bytes": 768197,
-      "url": "./course-audio/opw-l3-d1-track49.mp3"
+      "bytes": 9632,
+      "url": "./course-audio/opw-clip-l3-d1-t49-w15-r20260805.mp3"
     },
-    "opw-l3-d1-track39": {
-      "id": "opw-l3-d1-track39",
-      "kind": "oxford-track",
+    "opw-clip-l3-d1-t39-w10-r20260805": {
+      "id": "opw-clip-l3-d1-t39-w10-r20260805",
+      "kind": "oxford-clip",
       "level": 3,
       "disc": 1,
       "track": 39,
+      "itemId": "l3-d1-t39-w10-r20260805",
       "filename": "OPW_SB3_Disc1_Track39.mp3",
-      "bytes": 558863,
-      "url": "./course-audio/opw-l3-d1-track39.mp3"
+      "bytes": 8512,
+      "url": "./course-audio/opw-clip-l3-d1-t39-w10-r20260805.mp3"
     },
-    "opw-l1-d2-track07": {
-      "id": "opw-l1-d2-track07",
-      "kind": "oxford-track",
+    "opw-clip-l1-d2-t7-w37-r20260805": {
+      "id": "opw-clip-l1-d2-t7-w37-r20260805",
+      "kind": "oxford-clip",
       "level": 1,
       "disc": 2,
       "track": 7,
+      "itemId": "l1-d2-t7-w37-r20260805",
       "filename": "OPW_SB1_Disc2_Track07.mp3",
-      "bytes": 897886,
-      "url": "./course-audio/opw-l1-d2-track07.mp3"
+      "bytes": 12040,
+      "url": "./course-audio/opw-clip-l1-d2-t7-w37-r20260805.mp3"
     },
     "phonics-word-out": {
       "id": "phonics-word-out",
@@ -988,15 +2635,27 @@
       "bytes": 9139,
       "url": "./course-audio/phonics-word-house.mp3"
     },
-    "opw-l3-d1-track44": {
-      "id": "opw-l3-d1-track44",
-      "kind": "oxford-track",
+    "opw-clip-l3-d1-t50-w65-r20260805": {
+      "id": "opw-clip-l3-d1-t50-w65-r20260805",
+      "kind": "oxford-clip",
+      "level": 3,
+      "disc": 1,
+      "track": 50,
+      "itemId": "l3-d1-t50-w65-r20260805",
+      "filename": "OPW_SB3_Disc1_Track50.mp3",
+      "bytes": 8826,
+      "url": "./course-audio/opw-clip-l3-d1-t50-w65-r20260805.mp3"
+    },
+    "opw-clip-l3-d1-t44-w26-r20260805": {
+      "id": "opw-clip-l3-d1-t44-w26-r20260805",
+      "kind": "oxford-clip",
       "level": 3,
       "disc": 1,
       "track": 44,
+      "itemId": "l3-d1-t44-w26-r20260805",
       "filename": "OPW_SB3_Disc1_Track44.mp3",
-      "bytes": 1271516,
-      "url": "./course-audio/opw-l3-d1-track44.mp3"
+      "bytes": 11467,
+      "url": "./course-audio/opw-clip-l3-d1-t44-w26-r20260805.mp3"
     },
     "phonics-word-tune": {
       "id": "phonics-word-tune",
@@ -1006,15 +2665,16 @@
       "bytes": 7497,
       "url": "./course-audio/phonics-word-tune.mp3"
     },
-    "opw-l2-d2-track61": {
-      "id": "opw-l2-d2-track61",
-      "kind": "oxford-track",
+    "opw-clip-l2-d2-t61-w42-r20260805": {
+      "id": "opw-clip-l2-d2-t61-w42-r20260805",
+      "kind": "oxford-clip",
       "level": 2,
       "disc": 2,
       "track": 61,
+      "itemId": "l2-d2-t61-w42-r20260805",
       "filename": "OPW_SB2_Disc2_Track61.mp3",
-      "bytes": 1566204,
-      "url": "./course-audio/opw-l2-d2-track61.mp3"
+      "bytes": 14050,
+      "url": "./course-audio/opw-clip-l2-d2-t61-w42-r20260805.mp3"
     },
     "phonics-word-cow": {
       "id": "phonics-word-cow",
@@ -1032,25 +2692,38 @@
       "bytes": 7316,
       "url": "./course-audio/phonics-word-down.mp3"
     },
-    "opw-l3-d1-track35": {
-      "id": "opw-l3-d1-track35",
-      "kind": "oxford-track",
+    "opw-clip-l3-d1-t35-w87-r20260805": {
+      "id": "opw-clip-l3-d1-t35-w87-r20260805",
+      "kind": "oxford-clip",
       "level": 3,
       "disc": 1,
       "track": 35,
+      "itemId": "l3-d1-t35-w87-r20260805",
       "filename": "OPW_SB3_Disc1_Track35.mp3",
-      "bytes": 2750198,
-      "url": "./course-audio/opw-l3-d1-track35.mp3"
+      "bytes": 10764,
+      "url": "./course-audio/opw-clip-l3-d1-t35-w87-r20260805.mp3"
     },
-    "opw-l3-d1-track21": {
-      "id": "opw-l3-d1-track21",
-      "kind": "oxford-track",
+    "opw-clip-l3-d1-t21-w9-r20260805": {
+      "id": "opw-clip-l3-d1-t21-w9-r20260805",
+      "kind": "oxford-clip",
       "level": 3,
       "disc": 1,
       "track": 21,
+      "itemId": "l3-d1-t21-w9-r20260805",
       "filename": "OPW_SB3_Disc1_Track21.mp3",
-      "bytes": 798221,
-      "url": "./course-audio/opw-l3-d1-track21.mp3"
+      "bytes": 7156,
+      "url": "./course-audio/opw-clip-l3-d1-t21-w9-r20260805.mp3"
+    },
+    "opw-clip-l3-d1-t35-w114-r20260805": {
+      "id": "opw-clip-l3-d1-t35-w114-r20260805",
+      "kind": "oxford-clip",
+      "level": 3,
+      "disc": 1,
+      "track": 35,
+      "itemId": "l3-d1-t35-w114-r20260805",
+      "filename": "OPW_SB3_Disc1_Track35.mp3",
+      "bytes": 11260,
+      "url": "./course-audio/opw-clip-l3-d1-t35-w114-r20260805.mp3"
     },
     "phonics-word-coin": {
       "id": "phonics-word-coin",
@@ -1083,6 +2756,17 @@
       "filename": "toy.mp3",
       "bytes": 7629,
       "url": "./course-audio/phonics-word-toy.mp3"
+    },
+    "opw-clip-l1-d1-t25-w146-r20260805": {
+      "id": "opw-clip-l1-d1-t25-w146-r20260805",
+      "kind": "oxford-clip",
+      "level": 1,
+      "disc": 1,
+      "track": 25,
+      "itemId": "l1-d1-t25-w146-r20260805",
+      "filename": "OPW_SB1_Disc1_Track25.mp3",
+      "bytes": 10427,
+      "url": "./course-audio/opw-clip-l1-d1-t25-w146-r20260805.mp3"
     }
   }
 }

@@ -35,6 +35,7 @@ python3 "$PROJECT_DIR/scripts/generate-course-plan-catalog.py" --check
 python3 "$PROJECT_DIR/scripts/generate-summer-plan-content.py" --check
 node "$PROJECT_DIR/scripts/generate-learning-module-catalog.mjs" --check
 if [ "$MODE" = "--full" ]; then
+  node "$PROJECT_DIR/scripts/generate-heart-word-audio.mjs"
   node "$PROJECT_DIR/scripts/build-english-course.mjs"
   node "$PROJECT_DIR/scripts/generate-phonics-word-audio.mjs"
   node "$PROJECT_DIR/scripts/apply-phonics-audio-review.mjs" --auto-approve-tts
@@ -45,6 +46,8 @@ for file in \
   styles.css \
   app.js \
   learning-modules.js \
+  course-plan-runtime.js \
+  task-overrides.js \
   family-task-schedules.js \
   course-releases.js \
   learning-plan-presets.js \
@@ -65,21 +68,22 @@ do
   cp "$PROJECT_DIR/$file" "$DEPLOY_DIR/$file"
 done
 
+mkdir -p "$DEPLOY_DIR/curriculum"
+for file in \
+  learning-module-catalog.js \
+  course-plan-catalog.js \
+  course-plan-catalog.json \
+  summer-plan-content.json \
+  summer-plan-content.js \
+  english-course.json \
+  week1-course.json \
+  opw-week1-review-queue.json
+do
+  cp "$PROJECT_DIR/curriculum/$file" "$DEPLOY_DIR/curriculum/$file"
+done
+
 if [ "$MODE" = "--full" ]; then
   cp -R "$PROJECT_DIR/course-audio" "$DEPLOY_DIR/course-audio"
-
-  mkdir -p "$DEPLOY_DIR/curriculum"
-  for file in \
-    learning-module-catalog.js \
-    course-plan-catalog.json \
-    summer-plan-content.json \
-    summer-plan-content.js \
-    english-course.json \
-    week1-course.json \
-    opw-week1-review-queue.json
-  do
-    cp "$PROJECT_DIR/curriculum/$file" "$DEPLOY_DIR/curriculum/$file"
-  done
 fi
 
 cd "$DEPLOY_DIR"

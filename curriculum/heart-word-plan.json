@@ -1,0 +1,1415 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "type": "xlsx",
+    "file": "../outputs/course-master-foundation-20260807/家庭长期课程总表.xlsx",
+    "sha256": "be9eee0c92041d69261ce085e782e981a1524497396f9598af63f584b75c3257"
+  },
+  "policy": {
+    "teachingDayNewWords": 10,
+    "coreWords": 100,
+    "extensionWords": 100
+  },
+  "words": [
+    {
+      "sequence": 1,
+      "word": "I",
+      "tier": "core",
+      "firstDay": 1,
+      "sentence": "I read a book."
+    },
+    {
+      "sequence": 2,
+      "word": "a",
+      "tier": "core",
+      "firstDay": 1,
+      "sentence": "I read a book."
+    },
+    {
+      "sequence": 3,
+      "word": "the",
+      "tier": "core",
+      "firstDay": 1,
+      "sentence": "I love the earth."
+    },
+    {
+      "sequence": 4,
+      "word": "and",
+      "tier": "core",
+      "firstDay": 1,
+      "sentence": "You and I read."
+    },
+    {
+      "sequence": 5,
+      "word": "read",
+      "tier": "core",
+      "firstDay": 1,
+      "sentence": "Practice read in a sentence."
+    },
+    {
+      "sequence": 6,
+      "word": "you",
+      "tier": "core",
+      "firstDay": 2,
+      "sentence": "You can go."
+    },
+    {
+      "sequence": 7,
+      "word": "can",
+      "tier": "core",
+      "firstDay": 2,
+      "sentence": "I can go."
+    },
+    {
+      "sequence": 8,
+      "word": "go",
+      "tier": "core",
+      "firstDay": 2,
+      "sentence": "Practice go in a sentence."
+    },
+    {
+      "sequence": 9,
+      "word": "see",
+      "tier": "core",
+      "firstDay": 2,
+      "sentence": "Practice see in a sentence."
+    },
+    {
+      "sequence": 10,
+      "word": "we",
+      "tier": "core",
+      "firstDay": 2,
+      "sentence": "Practice we in a sentence."
+    },
+    {
+      "sequence": 11,
+      "word": "where",
+      "tier": "core",
+      "firstDay": 3,
+      "sentence": "Where is water?"
+    },
+    {
+      "sequence": 12,
+      "word": "is",
+      "tier": "core",
+      "firstDay": 3,
+      "sentence": "Where is water?"
+    },
+    {
+      "sequence": 13,
+      "word": "in",
+      "tier": "core",
+      "firstDay": 3,
+      "sentence": "It is in the book."
+    },
+    {
+      "sequence": 14,
+      "word": "here",
+      "tier": "core",
+      "firstDay": 3,
+      "sentence": "Practice here in a sentence."
+    },
+    {
+      "sequence": 15,
+      "word": "there",
+      "tier": "core",
+      "firstDay": 3,
+      "sentence": "The book is there."
+    },
+    {
+      "sequence": 16,
+      "word": "what",
+      "tier": "core",
+      "firstDay": 4,
+      "sentence": "What has these feet?"
+    },
+    {
+      "sequence": 17,
+      "word": "has",
+      "tier": "core",
+      "firstDay": 4,
+      "sentence": "The animal has spots."
+    },
+    {
+      "sequence": 18,
+      "word": "this",
+      "tier": "core",
+      "firstDay": 4,
+      "sentence": "Practice this in a sentence."
+    },
+    {
+      "sequence": 19,
+      "word": "these",
+      "tier": "core",
+      "firstDay": 4,
+      "sentence": "Practice these in a sentence."
+    },
+    {
+      "sequence": 20,
+      "word": "it",
+      "tier": "core",
+      "firstDay": 4,
+      "sentence": "It is here."
+    },
+    {
+      "sequence": 21,
+      "word": "my",
+      "tier": "core",
+      "firstDay": 5,
+      "sentence": "My pet is a dinosaur."
+    },
+    {
+      "sequence": 22,
+      "word": "like",
+      "tier": "core",
+      "firstDay": 5,
+      "sentence": "I like this book."
+    },
+    {
+      "sequence": 23,
+      "word": "love",
+      "tier": "core",
+      "firstDay": 5,
+      "sentence": "Practice love in a sentence."
+    },
+    {
+      "sequence": 24,
+      "word": "me",
+      "tier": "core",
+      "firstDay": 5,
+      "sentence": "Practice me in a sentence."
+    },
+    {
+      "sequence": 25,
+      "word": "your",
+      "tier": "core",
+      "firstDay": 5,
+      "sentence": "Practice your in a sentence."
+    },
+    {
+      "sequence": 26,
+      "word": "many",
+      "tier": "core",
+      "firstDay": 7,
+      "sentence": "How many animals?"
+    },
+    {
+      "sequence": 27,
+      "word": "one",
+      "tier": "core",
+      "firstDay": 7,
+      "sentence": "I see one frog."
+    },
+    {
+      "sequence": 28,
+      "word": "two",
+      "tier": "core",
+      "firstDay": 7,
+      "sentence": "Practice two in a sentence."
+    },
+    {
+      "sequence": 29,
+      "word": "three",
+      "tier": "core",
+      "firstDay": 7,
+      "sentence": "Practice three in a sentence."
+    },
+    {
+      "sequence": 30,
+      "word": "count",
+      "tier": "core",
+      "firstDay": 7,
+      "sentence": "Practice count in a sentence."
+    },
+    {
+      "sequence": 31,
+      "word": "more",
+      "tier": "core",
+      "firstDay": 8,
+      "sentence": "I can see more."
+    },
+    {
+      "sequence": 32,
+      "word": "have",
+      "tier": "core",
+      "firstDay": 8,
+      "sentence": "I have a book."
+    },
+    {
+      "sequence": 33,
+      "word": "all",
+      "tier": "core",
+      "firstDay": 8,
+      "sentence": "Practice all in a sentence."
+    },
+    {
+      "sequence": 34,
+      "word": "some",
+      "tier": "core",
+      "firstDay": 8,
+      "sentence": "Practice some in a sentence."
+    },
+    {
+      "sequence": 35,
+      "word": "any",
+      "tier": "core",
+      "firstDay": 8,
+      "sentence": "Practice any in a sentence."
+    },
+    {
+      "sequence": 36,
+      "word": "first",
+      "tier": "core",
+      "firstDay": 9,
+      "sentence": "First, the frog is an egg."
+    },
+    {
+      "sequence": 37,
+      "word": "after",
+      "tier": "core",
+      "firstDay": 9,
+      "sentence": "Practice after in a sentence."
+    },
+    {
+      "sequence": 38,
+      "word": "before",
+      "tier": "core",
+      "firstDay": 9,
+      "sentence": "Practice before in a sentence."
+    },
+    {
+      "sequence": 39,
+      "word": "again",
+      "tier": "core",
+      "firstDay": 9,
+      "sentence": "Practice again in a sentence."
+    },
+    {
+      "sequence": 40,
+      "word": "now",
+      "tier": "core",
+      "firstDay": 9,
+      "sentence": "Practice now in a sentence."
+    },
+    {
+      "sequence": 41,
+      "word": "next",
+      "tier": "core",
+      "firstDay": 10,
+      "sentence": "Next, it grows legs."
+    },
+    {
+      "sequence": 42,
+      "word": "up",
+      "tier": "core",
+      "firstDay": 10,
+      "sentence": "Practice up in a sentence."
+    },
+    {
+      "sequence": 43,
+      "word": "down",
+      "tier": "core",
+      "firstDay": 10,
+      "sentence": "Practice down in a sentence."
+    },
+    {
+      "sequence": 44,
+      "word": "away",
+      "tier": "core",
+      "firstDay": 10,
+      "sentence": "Practice away in a sentence."
+    },
+    {
+      "sequence": 45,
+      "word": "around",
+      "tier": "core",
+      "firstDay": 10,
+      "sentence": "Practice around in a sentence."
+    },
+    {
+      "sequence": 46,
+      "word": "then",
+      "tier": "core",
+      "firstDay": 11,
+      "sentence": "Then, it can jump."
+    },
+    {
+      "sequence": 47,
+      "word": "to",
+      "tier": "core",
+      "firstDay": 11,
+      "sentence": "I go to school."
+    },
+    {
+      "sequence": 48,
+      "word": "from",
+      "tier": "core",
+      "firstDay": 11,
+      "sentence": "Practice from in a sentence."
+    },
+    {
+      "sequence": 49,
+      "word": "near",
+      "tier": "core",
+      "firstDay": 11,
+      "sentence": "Practice near in a sentence."
+    },
+    {
+      "sequence": 50,
+      "word": "far",
+      "tier": "core",
+      "firstDay": 11,
+      "sentence": "Practice far in a sentence."
+    },
+    {
+      "sequence": 51,
+      "word": "time",
+      "tier": "core",
+      "firstDay": 13,
+      "sentence": "It is time for school."
+    },
+    {
+      "sequence": 52,
+      "word": "at",
+      "tier": "core",
+      "firstDay": 13,
+      "sentence": "I am at school."
+    },
+    {
+      "sequence": 53,
+      "word": "school",
+      "tier": "core",
+      "firstDay": 13,
+      "sentence": "Practice school in a sentence."
+    },
+    {
+      "sequence": 54,
+      "word": "new",
+      "tier": "core",
+      "firstDay": 13,
+      "sentence": "Practice new in a sentence."
+    },
+    {
+      "sequence": 55,
+      "word": "ready",
+      "tier": "core",
+      "firstDay": 13,
+      "sentence": "Practice ready in a sentence."
+    },
+    {
+      "sequence": 56,
+      "word": "want",
+      "tier": "core",
+      "firstDay": 14,
+      "sentence": "I want a new book."
+    },
+    {
+      "sequence": 57,
+      "word": "do",
+      "tier": "core",
+      "firstDay": 14,
+      "sentence": "What do they eat?"
+    },
+    {
+      "sequence": 58,
+      "word": "not",
+      "tier": "core",
+      "firstDay": 14,
+      "sentence": "I did not stop."
+    },
+    {
+      "sequence": 59,
+      "word": "make",
+      "tier": "core",
+      "firstDay": 14,
+      "sentence": "We make food."
+    },
+    {
+      "sequence": 60,
+      "word": "get",
+      "tier": "core",
+      "firstDay": 14,
+      "sentence": "Practice get in a sentence."
+    },
+    {
+      "sequence": 61,
+      "word": "need",
+      "tier": "core",
+      "firstDay": 15,
+      "sentence": "I need an eraser."
+    },
+    {
+      "sequence": 62,
+      "word": "help",
+      "tier": "core",
+      "firstDay": 15,
+      "sentence": "I can help."
+    },
+    {
+      "sequence": 63,
+      "word": "come",
+      "tier": "core",
+      "firstDay": 15,
+      "sentence": "Practice come in a sentence."
+    },
+    {
+      "sequence": 64,
+      "word": "find",
+      "tier": "core",
+      "firstDay": 15,
+      "sentence": "Practice find in a sentence."
+    },
+    {
+      "sequence": 65,
+      "word": "give",
+      "tier": "core",
+      "firstDay": 15,
+      "sentence": "Practice give in a sentence."
+    },
+    {
+      "sequence": 66,
+      "word": "because",
+      "tier": "core",
+      "firstDay": 16,
+      "sentence": "I need it because I use it."
+    },
+    {
+      "sequence": 67,
+      "word": "for",
+      "tier": "core",
+      "firstDay": 16,
+      "sentence": "Practice for in a sentence."
+    },
+    {
+      "sequence": 68,
+      "word": "of",
+      "tier": "core",
+      "firstDay": 16,
+      "sentence": "Practice of in a sentence."
+    },
+    {
+      "sequence": 69,
+      "word": "but",
+      "tier": "core",
+      "firstDay": 16,
+      "sentence": "Practice but in a sentence."
+    },
+    {
+      "sequence": 70,
+      "word": "so",
+      "tier": "core",
+      "firstDay": 16,
+      "sentence": "Practice so in a sentence."
+    },
+    {
+      "sequence": 71,
+      "word": "with",
+      "tier": "core",
+      "firstDay": 17,
+      "sentence": "I am with my friend."
+    },
+    {
+      "sequence": 72,
+      "word": "he",
+      "tier": "core",
+      "firstDay": 17,
+      "sentence": "Practice he in a sentence."
+    },
+    {
+      "sequence": 73,
+      "word": "she",
+      "tier": "core",
+      "firstDay": 17,
+      "sentence": "Practice she in a sentence."
+    },
+    {
+      "sequence": 74,
+      "word": "they",
+      "tier": "core",
+      "firstDay": 17,
+      "sentence": "They can help."
+    },
+    {
+      "sequence": 75,
+      "word": "them",
+      "tier": "core",
+      "firstDay": 17,
+      "sentence": "Practice them in a sentence."
+    },
+    {
+      "sequence": 76,
+      "word": "who",
+      "tier": "core",
+      "firstDay": 20,
+      "sentence": "Who can help?"
+    },
+    {
+      "sequence": 77,
+      "word": "when",
+      "tier": "core",
+      "firstDay": 20,
+      "sentence": "When does school start?"
+    },
+    {
+      "sequence": 78,
+      "word": "which",
+      "tier": "core",
+      "firstDay": 20,
+      "sentence": "Practice which in a sentence."
+    },
+    {
+      "sequence": 79,
+      "word": "his",
+      "tier": "core",
+      "firstDay": 20,
+      "sentence": "Practice his in a sentence."
+    },
+    {
+      "sequence": 80,
+      "word": "her",
+      "tier": "core",
+      "firstDay": 20,
+      "sentence": "Practice her in a sentence."
+    },
+    {
+      "sequence": 81,
+      "word": "why",
+      "tier": "core",
+      "firstDay": 21,
+      "sentence": "Why does it sleep?"
+    },
+    {
+      "sequence": 82,
+      "word": "was",
+      "tier": "core",
+      "firstDay": 21,
+      "sentence": "Practice was in a sentence."
+    },
+    {
+      "sequence": 83,
+      "word": "were",
+      "tier": "core",
+      "firstDay": 21,
+      "sentence": "Practice were in a sentence."
+    },
+    {
+      "sequence": 84,
+      "word": "are",
+      "tier": "core",
+      "firstDay": 21,
+      "sentence": "Practice are in a sentence."
+    },
+    {
+      "sequence": 85,
+      "word": "am",
+      "tier": "core",
+      "firstDay": 21,
+      "sentence": "Practice am in a sentence."
+    },
+    {
+      "sequence": 86,
+      "word": "how",
+      "tier": "core",
+      "firstDay": 22,
+      "sentence": "How do they move?"
+    },
+    {
+      "sequence": 87,
+      "word": "could",
+      "tier": "core",
+      "firstDay": 22,
+      "sentence": "Practice could in a sentence."
+    },
+    {
+      "sequence": 88,
+      "word": "would",
+      "tier": "core",
+      "firstDay": 22,
+      "sentence": "Practice would in a sentence."
+    },
+    {
+      "sequence": 89,
+      "word": "will",
+      "tier": "core",
+      "firstDay": 22,
+      "sentence": "Practice will in a sentence."
+    },
+    {
+      "sequence": 90,
+      "word": "must",
+      "tier": "core",
+      "firstDay": 22,
+      "sentence": "Practice must in a sentence."
+    },
+    {
+      "sequence": 91,
+      "word": "does",
+      "tier": "core",
+      "firstDay": 23,
+      "sentence": "Why does it rain?"
+    },
+    {
+      "sequence": 92,
+      "word": "did",
+      "tier": "core",
+      "firstDay": 23,
+      "sentence": "Practice did in a sentence."
+    },
+    {
+      "sequence": 93,
+      "word": "had",
+      "tier": "core",
+      "firstDay": 23,
+      "sentence": "Practice had in a sentence."
+    },
+    {
+      "sequence": 94,
+      "word": "been",
+      "tier": "core",
+      "firstDay": 23,
+      "sentence": "Practice been in a sentence."
+    },
+    {
+      "sequence": 95,
+      "word": "be",
+      "tier": "core",
+      "firstDay": 23,
+      "sentence": "Practice be in a sentence."
+    },
+    {
+      "sequence": 96,
+      "word": "said",
+      "tier": "core",
+      "firstDay": 24,
+      "sentence": "He said, ‘Try again.’"
+    },
+    {
+      "sequence": 97,
+      "word": "say",
+      "tier": "core",
+      "firstDay": 24,
+      "sentence": "Practice say in a sentence."
+    },
+    {
+      "sequence": 98,
+      "word": "look",
+      "tier": "core",
+      "firstDay": 24,
+      "sentence": "Practice look in a sentence."
+    },
+    {
+      "sequence": 99,
+      "word": "little",
+      "tier": "core",
+      "firstDay": 24,
+      "sentence": "Practice little in a sentence."
+    },
+    {
+      "sequence": 100,
+      "word": "big",
+      "tier": "core",
+      "firstDay": 24,
+      "sentence": "Practice big in a sentence."
+    },
+    {
+      "sequence": 101,
+      "word": "blue",
+      "tier": "extension",
+      "firstDay": 1,
+      "sentence": "The sky is blue."
+    },
+    {
+      "sequence": 102,
+      "word": "funny",
+      "tier": "extension",
+      "firstDay": 1,
+      "sentence": "That story is funny."
+    },
+    {
+      "sequence": 103,
+      "word": "jump",
+      "tier": "extension",
+      "firstDay": 1,
+      "sentence": "I can jump high."
+    },
+    {
+      "sequence": 104,
+      "word": "play",
+      "tier": "extension",
+      "firstDay": 1,
+      "sentence": "We play after school."
+    },
+    {
+      "sequence": 105,
+      "word": "red",
+      "tier": "extension",
+      "firstDay": 1,
+      "sentence": "The apple is red."
+    },
+    {
+      "sequence": 106,
+      "word": "run",
+      "tier": "extension",
+      "firstDay": 2,
+      "sentence": "We run in the park."
+    },
+    {
+      "sequence": 107,
+      "word": "yellow",
+      "tier": "extension",
+      "firstDay": 2,
+      "sentence": "The sun is yellow."
+    },
+    {
+      "sequence": 108,
+      "word": "ate",
+      "tier": "extension",
+      "firstDay": 2,
+      "sentence": "We ate lunch together."
+    },
+    {
+      "sequence": 109,
+      "word": "black",
+      "tier": "extension",
+      "firstDay": 2,
+      "sentence": "The cat is black."
+    },
+    {
+      "sequence": 110,
+      "word": "brown",
+      "tier": "extension",
+      "firstDay": 2,
+      "sentence": "The bear is brown."
+    },
+    {
+      "sequence": 111,
+      "word": "came",
+      "tier": "extension",
+      "firstDay": 3,
+      "sentence": "She came home early."
+    },
+    {
+      "sequence": 112,
+      "word": "eat",
+      "tier": "extension",
+      "firstDay": 3,
+      "sentence": "We eat dinner together."
+    },
+    {
+      "sequence": 113,
+      "word": "four",
+      "tier": "extension",
+      "firstDay": 3,
+      "sentence": "I see four birds."
+    },
+    {
+      "sequence": 114,
+      "word": "good",
+      "tier": "extension",
+      "firstDay": 3,
+      "sentence": "This book is good."
+    },
+    {
+      "sequence": 115,
+      "word": "into",
+      "tier": "extension",
+      "firstDay": 3,
+      "sentence": "Put it into the box."
+    },
+    {
+      "sequence": 116,
+      "word": "no",
+      "tier": "extension",
+      "firstDay": 4,
+      "sentence": "No, I do not."
+    },
+    {
+      "sequence": 117,
+      "word": "on",
+      "tier": "extension",
+      "firstDay": 4,
+      "sentence": "The book is on the desk."
+    },
+    {
+      "sequence": 118,
+      "word": "our",
+      "tier": "extension",
+      "firstDay": 4,
+      "sentence": "This is our home."
+    },
+    {
+      "sequence": 119,
+      "word": "out",
+      "tier": "extension",
+      "firstDay": 4,
+      "sentence": "We went out to play."
+    },
+    {
+      "sequence": 120,
+      "word": "please",
+      "tier": "extension",
+      "firstDay": 4,
+      "sentence": "Please open the door."
+    },
+    {
+      "sequence": 121,
+      "word": "pretty",
+      "tier": "extension",
+      "firstDay": 5,
+      "sentence": "The flower is pretty."
+    },
+    {
+      "sequence": 122,
+      "word": "ran",
+      "tier": "extension",
+      "firstDay": 5,
+      "sentence": "He ran very fast."
+    },
+    {
+      "sequence": 123,
+      "word": "ride",
+      "tier": "extension",
+      "firstDay": 5,
+      "sentence": "I ride my bike."
+    },
+    {
+      "sequence": 124,
+      "word": "saw",
+      "tier": "extension",
+      "firstDay": 5,
+      "sentence": "I saw a bird."
+    },
+    {
+      "sequence": 125,
+      "word": "soon",
+      "tier": "extension",
+      "firstDay": 5,
+      "sentence": "We will go soon."
+    },
+    {
+      "sequence": 126,
+      "word": "that",
+      "tier": "extension",
+      "firstDay": 7,
+      "sentence": "That is my bag."
+    },
+    {
+      "sequence": 127,
+      "word": "too",
+      "tier": "extension",
+      "firstDay": 7,
+      "sentence": "I want to go too."
+    },
+    {
+      "sequence": 128,
+      "word": "under",
+      "tier": "extension",
+      "firstDay": 7,
+      "sentence": "The cat is under the chair."
+    },
+    {
+      "sequence": 129,
+      "word": "well",
+      "tier": "extension",
+      "firstDay": 7,
+      "sentence": "She reads very well."
+    },
+    {
+      "sequence": 130,
+      "word": "went",
+      "tier": "extension",
+      "firstDay": 7,
+      "sentence": "We went to school."
+    },
+    {
+      "sequence": 131,
+      "word": "white",
+      "tier": "extension",
+      "firstDay": 8,
+      "sentence": "The snow is white."
+    },
+    {
+      "sequence": 132,
+      "word": "yes",
+      "tier": "extension",
+      "firstDay": 8,
+      "sentence": "Yes, I can."
+    },
+    {
+      "sequence": 133,
+      "word": "an",
+      "tier": "extension",
+      "firstDay": 8,
+      "sentence": "I ate an apple."
+    },
+    {
+      "sequence": 134,
+      "word": "as",
+      "tier": "extension",
+      "firstDay": 8,
+      "sentence": "Run as fast as you can."
+    },
+    {
+      "sequence": 135,
+      "word": "ask",
+      "tier": "extension",
+      "firstDay": 8,
+      "sentence": "Ask me a question."
+    },
+    {
+      "sequence": 136,
+      "word": "by",
+      "tier": "extension",
+      "firstDay": 9,
+      "sentence": "Please sit by me."
+    },
+    {
+      "sequence": 137,
+      "word": "every",
+      "tier": "extension",
+      "firstDay": 9,
+      "sentence": "I read every day."
+    },
+    {
+      "sequence": 138,
+      "word": "fly",
+      "tier": "extension",
+      "firstDay": 9,
+      "sentence": "Birds can fly."
+    },
+    {
+      "sequence": 139,
+      "word": "giving",
+      "tier": "extension",
+      "firstDay": 9,
+      "sentence": "She is giving me a book."
+    },
+    {
+      "sequence": 140,
+      "word": "him",
+      "tier": "extension",
+      "firstDay": 9,
+      "sentence": "I can help him."
+    },
+    {
+      "sequence": 141,
+      "word": "just",
+      "tier": "extension",
+      "firstDay": 10,
+      "sentence": "I just got home."
+    },
+    {
+      "sequence": 142,
+      "word": "know",
+      "tier": "extension",
+      "firstDay": 10,
+      "sentence": "I know the answer."
+    },
+    {
+      "sequence": 143,
+      "word": "let",
+      "tier": "extension",
+      "firstDay": 10,
+      "sentence": "Let us play outside."
+    },
+    {
+      "sequence": 144,
+      "word": "live",
+      "tier": "extension",
+      "firstDay": 10,
+      "sentence": "We live near school."
+    },
+    {
+      "sequence": 145,
+      "word": "may",
+      "tier": "extension",
+      "firstDay": 10,
+      "sentence": "May I come in?"
+    },
+    {
+      "sequence": 146,
+      "word": "old",
+      "tier": "extension",
+      "firstDay": 11,
+      "sentence": "This book is old."
+    },
+    {
+      "sequence": 147,
+      "word": "once",
+      "tier": "extension",
+      "firstDay": 11,
+      "sentence": "Read it once more."
+    },
+    {
+      "sequence": 148,
+      "word": "open",
+      "tier": "extension",
+      "firstDay": 11,
+      "sentence": "Please open the book."
+    },
+    {
+      "sequence": 149,
+      "word": "over",
+      "tier": "extension",
+      "firstDay": 11,
+      "sentence": "The game is over."
+    },
+    {
+      "sequence": 150,
+      "word": "put",
+      "tier": "extension",
+      "firstDay": 11,
+      "sentence": "Put it on the table."
+    },
+    {
+      "sequence": 151,
+      "word": "round",
+      "tier": "extension",
+      "firstDay": 13,
+      "sentence": "The ball is round."
+    },
+    {
+      "sequence": 152,
+      "word": "stop",
+      "tier": "extension",
+      "firstDay": 13,
+      "sentence": "Stop at the red light."
+    },
+    {
+      "sequence": 153,
+      "word": "take",
+      "tier": "extension",
+      "firstDay": 13,
+      "sentence": "Take your book with you."
+    },
+    {
+      "sequence": 154,
+      "word": "thank",
+      "tier": "extension",
+      "firstDay": 13,
+      "sentence": "Thank you for helping."
+    },
+    {
+      "sequence": 155,
+      "word": "think",
+      "tier": "extension",
+      "firstDay": 13,
+      "sentence": "I think it is right."
+    },
+    {
+      "sequence": 156,
+      "word": "walk",
+      "tier": "extension",
+      "firstDay": 14,
+      "sentence": "We walk to school."
+    },
+    {
+      "sequence": 157,
+      "word": "always",
+      "tier": "extension",
+      "firstDay": 14,
+      "sentence": "I always brush my teeth."
+    },
+    {
+      "sequence": 158,
+      "word": "best",
+      "tier": "extension",
+      "firstDay": 14,
+      "sentence": "This is my best work."
+    },
+    {
+      "sequence": 159,
+      "word": "both",
+      "tier": "extension",
+      "firstDay": 14,
+      "sentence": "We both like books."
+    },
+    {
+      "sequence": 160,
+      "word": "buy",
+      "tier": "extension",
+      "firstDay": 14,
+      "sentence": "We buy fresh fruit."
+    },
+    {
+      "sequence": 161,
+      "word": "call",
+      "tier": "extension",
+      "firstDay": 15,
+      "sentence": "Please call my name."
+    },
+    {
+      "sequence": 162,
+      "word": "cold",
+      "tier": "extension",
+      "firstDay": 15,
+      "sentence": "The water is cold."
+    },
+    {
+      "sequence": 163,
+      "word": "don't",
+      "tier": "extension",
+      "firstDay": 15,
+      "sentence": "I don't know the answer."
+    },
+    {
+      "sequence": 164,
+      "word": "fast",
+      "tier": "extension",
+      "firstDay": 15,
+      "sentence": "The rabbit runs fast."
+    },
+    {
+      "sequence": 165,
+      "word": "five",
+      "tier": "extension",
+      "firstDay": 15,
+      "sentence": "I have five pencils."
+    },
+    {
+      "sequence": 166,
+      "word": "found",
+      "tier": "extension",
+      "firstDay": 16,
+      "sentence": "I found my hat."
+    },
+    {
+      "sequence": 167,
+      "word": "gave",
+      "tier": "extension",
+      "firstDay": 16,
+      "sentence": "She gave me a gift."
+    },
+    {
+      "sequence": 168,
+      "word": "goes",
+      "tier": "extension",
+      "firstDay": 16,
+      "sentence": "He goes to school."
+    },
+    {
+      "sequence": 169,
+      "word": "green",
+      "tier": "extension",
+      "firstDay": 16,
+      "sentence": "The leaf is green."
+    },
+    {
+      "sequence": 170,
+      "word": "its",
+      "tier": "extension",
+      "firstDay": 16,
+      "sentence": "The dog wags its tail."
+    },
+    {
+      "sequence": 171,
+      "word": "made",
+      "tier": "extension",
+      "firstDay": 17,
+      "sentence": "We made a cake."
+    },
+    {
+      "sequence": 172,
+      "word": "off",
+      "tier": "extension",
+      "firstDay": 17,
+      "sentence": "Turn off the light."
+    },
+    {
+      "sequence": 173,
+      "word": "or",
+      "tier": "extension",
+      "firstDay": 17,
+      "sentence": "Would you like tea or water?"
+    },
+    {
+      "sequence": 174,
+      "word": "pull",
+      "tier": "extension",
+      "firstDay": 17,
+      "sentence": "Pull the door open."
+    },
+    {
+      "sequence": 175,
+      "word": "right",
+      "tier": "extension",
+      "firstDay": 17,
+      "sentence": "You got it right."
+    },
+    {
+      "sequence": 176,
+      "word": "sing",
+      "tier": "extension",
+      "firstDay": 20,
+      "sentence": "We sing a song."
+    },
+    {
+      "sequence": 177,
+      "word": "sit",
+      "tier": "extension",
+      "firstDay": 20,
+      "sentence": "Sit next to me."
+    },
+    {
+      "sequence": 178,
+      "word": "sleep",
+      "tier": "extension",
+      "firstDay": 20,
+      "sentence": "I sleep at night."
+    },
+    {
+      "sequence": 179,
+      "word": "tell",
+      "tier": "extension",
+      "firstDay": 20,
+      "sentence": "Tell me the story."
+    },
+    {
+      "sequence": 180,
+      "word": "their",
+      "tier": "extension",
+      "firstDay": 20,
+      "sentence": "Their books are here."
+    },
+    {
+      "sequence": 181,
+      "word": "those",
+      "tier": "extension",
+      "firstDay": 21,
+      "sentence": "Those are my shoes."
+    },
+    {
+      "sequence": 182,
+      "word": "upon",
+      "tier": "extension",
+      "firstDay": 21,
+      "sentence": "Once upon a time, there was a king."
+    },
+    {
+      "sequence": 183,
+      "word": "us",
+      "tier": "extension",
+      "firstDay": 21,
+      "sentence": "Come and play with us."
+    },
+    {
+      "sequence": 184,
+      "word": "use",
+      "tier": "extension",
+      "firstDay": 21,
+      "sentence": "I use a pencil to write."
+    },
+    {
+      "sequence": 185,
+      "word": "very",
+      "tier": "extension",
+      "firstDay": 21,
+      "sentence": "It is very hot today."
+    },
+    {
+      "sequence": 186,
+      "word": "wash",
+      "tier": "extension",
+      "firstDay": 22,
+      "sentence": "Wash your hands before dinner."
+    },
+    {
+      "sequence": 187,
+      "word": "wish",
+      "tier": "extension",
+      "firstDay": 22,
+      "sentence": "I wish for sunshine."
+    },
+    {
+      "sequence": 188,
+      "word": "work",
+      "tier": "extension",
+      "firstDay": 22,
+      "sentence": "We work together."
+    },
+    {
+      "sequence": 189,
+      "word": "write",
+      "tier": "extension",
+      "firstDay": 22,
+      "sentence": "Write your name here."
+    },
+    {
+      "sequence": 190,
+      "word": "about",
+      "tier": "extension",
+      "firstDay": 22,
+      "sentence": "This book is about space."
+    },
+    {
+      "sequence": 191,
+      "word": "better",
+      "tier": "extension",
+      "firstDay": 23,
+      "sentence": "I feel better today."
+    },
+    {
+      "sequence": 192,
+      "word": "bring",
+      "tier": "extension",
+      "firstDay": 23,
+      "sentence": "Bring your bag to school."
+    },
+    {
+      "sequence": 193,
+      "word": "carry",
+      "tier": "extension",
+      "firstDay": 23,
+      "sentence": "I can carry the box."
+    },
+    {
+      "sequence": 194,
+      "word": "clean",
+      "tier": "extension",
+      "firstDay": 23,
+      "sentence": "Keep your room clean."
+    },
+    {
+      "sequence": 195,
+      "word": "cut",
+      "tier": "extension",
+      "firstDay": 23,
+      "sentence": "Cut the paper carefully."
+    },
+    {
+      "sequence": 196,
+      "word": "done",
+      "tier": "extension",
+      "firstDay": 24,
+      "sentence": "I am done with my work."
+    },
+    {
+      "sequence": 197,
+      "word": "draw",
+      "tier": "extension",
+      "firstDay": 24,
+      "sentence": "Draw a picture of your family."
+    },
+    {
+      "sequence": 198,
+      "word": "drink",
+      "tier": "extension",
+      "firstDay": 24,
+      "sentence": "Drink some water."
+    },
+    {
+      "sequence": 199,
+      "word": "eight",
+      "tier": "extension",
+      "firstDay": 24,
+      "sentence": "I see eight stars."
+    },
+    {
+      "sequence": 200,
+      "word": "fall",
+      "tier": "extension",
+      "firstDay": 24,
+      "sentence": "Leaves fall in autumn."
+    }
+  ]
+}

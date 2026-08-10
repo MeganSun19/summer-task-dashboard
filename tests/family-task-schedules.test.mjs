@@ -50,6 +50,40 @@ test("editing or cancelling a schedule updates pending instances but preserves c
   assert.equal(schedules.reconcileTasks([pending], [edited], "brother", "2026-08-10")[0].title, "练习完整舞蹈");
 
   const completed = { ...pending, done: true };
-  assert.deepEqual(schedules.reconcileTasks([completed], [{ ...edited, status: "cancelled" }], "brother", "2026-08-10"), [completed]);
-  assert.deepEqual(schedules.reconcileTasks([pending], [{ ...edited, status: "cancelled" }], "brother", "2026-08-10"), []);
+  assert.deepEqual(schedules.reconcileTasks([completed], [{ ...edited, status: "cancelled" }], "brother", "2026-08-10"), [{ ...completed, archived: true }]);
+  assert.deepEqual(schedules.reconcileTasks([pending], [{ ...edited, status: "cancelled" }], "brother", "2026-08-10"), [{ ...pending, archived: true }]);
+});
+
+test("a carried course day loads temporary tasks by the actual calendar date", () => {
+  const daily = sample({ recurrence: "daily", startDate: "2026-08-10", endDate: "2026-08-11" });
+  const courseTasks = [{ id: "poem", source: "course", done: false }];
+  const onActualDate = schedules.reconcileTasks(courseTasks, [daily], "brother", "2026-08-11");
+  assert.deepEqual(onActualDate.map((item) => item.id), [
+    "poem",
+    "instance-task-dance-brother-2026-08-11"
+  ]);
+});
+
+test("a recurring schedule archives yesterday's completion and creates today's simple instance", () => {
+  const daily = sample({ recurrence: "daily", startDate: "2026-08-10", endDate: "2026-08-11" });
+  const completedYesterday = { ...schedules.createInstance(daily, "brother", "2026-08-10"), done: true };
+  const result = schedules.reconcileTasks([completedYesterday], [daily], "brother", "2026-08-11");
+  assert.deepEqual(result.map((item) => item.id), [
+    "instance-task-dance-brother-2026-08-10",
+    "instance-task-dance-brother-2026-08-11"
+  ]);
+  assert.equal(result[0].archived, true);
+  assert.equal(result[1].archived, undefined);
+});
+
+test("an unfinished temporary task expires without deletion while today's instance is added", () => {
+  const daily = sample({ recurrence: "daily", startDate: "2026-08-10", endDate: "2026-08-11" });
+  const overdue = schedules.createInstance(daily, "brother", "2026-08-10");
+  const result = schedules.reconcileTasks([overdue], [daily], "brother", "2026-08-11");
+  assert.deepEqual(result.map((item) => item.id), [
+    "instance-task-dance-brother-2026-08-10",
+    "instance-task-dance-brother-2026-08-11"
+  ]);
+  assert.equal(result[0].done, false);
+  assert.equal(result[0].archived, true);
 });

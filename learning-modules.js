@@ -52,14 +52,20 @@
 
   function buildDefaultTasks(context) {
     const dayIndex = Number(context?.dayIndex) || 0;
-    return definitions.filter((definition) => !definition.scheduledOnly).map((definition) => {
+    const planDay = dayIndex + 1;
+    return definitions.filter((definition) => {
+      if (definition.scheduledOnly) return false;
+      const course = root.CoursePlanRuntime?.moduleFor(context?.kidId || "brother", planDay, definition.id);
+      return !course?.governed || Boolean(course.module?.enabled);
+    }).map((definition) => {
+      const courseModule = root.CoursePlanRuntime?.moduleFor(context?.kidId || "brother", planDay, definition.id)?.module;
       const daily = dailyContentFor(definition, dayIndex, context?.contentDayIndexes);
       return createTask({
         moduleId: definition.id,
-        title: daily?.title || definition.title,
+        title: daily?.title || courseModule?.title || definition.title,
         detail: daily?.detail || detailFor(definition, dayIndex),
         tags: daily?.tags || definition.tags,
-        instruction: daily?.instruction || definition.instruction,
+        instruction: daily?.instruction || courseModule?.instruction || definition.instruction,
         minutes: daily?.minutes || definition.presentation.minutes,
         metadata: daily?.metadata
       });

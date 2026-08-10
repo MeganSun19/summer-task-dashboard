@@ -115,7 +115,26 @@ h2 { margin-bottom: 0; font-size: 24px; }
 .week1-course-card { margin-top: 16px; padding: 22px; border: 1px solid #bedbc9; border-radius: 24px; background: linear-gradient(145deg, #f1fff7, #fff7d8); box-shadow: var(--shadow); }
 .week1-course-heading { margin-top: 0; }
 .week1-course-focus { margin: -3px 0 13px; color: #455d58; font-size: 14px; font-weight: 800; line-height: 1.55; }
+.week1-course-notice { margin: 0 0 14px; padding: 10px 13px; border-radius: 12px; background: rgba(255,255,255,.72); color: #526079; font-size: 13px; font-weight: 800; line-height: 1.5; }
+.week1-course-notice.good { background: #e5f8ec; color: #277856; }
 .week1-course-words { display: grid; gap: 10px; margin-bottom: 16px; }
+.english-module-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+.english-module-card { display: grid; align-content: start; gap: 12px; min-width: 0; padding: 15px; border: 1px solid #cfe0ed; border-radius: 18px; background: rgba(255,255,255,.76); }
+.english-module-card.complete { border-color: #91d0ad; box-shadow: inset 0 0 0 1px rgba(74,168,121,.12); }
+.english-module-card header { display: grid; grid-template-columns: 38px minmax(0, 1fr) auto; align-items: center; gap: 9px; }
+.english-module-icon { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: #e8f3ff; color: #315b88; font-size: 15px; font-weight: 1000; }
+.english-module-card h3 { margin: 0; color: #25334f; font-size: 17px; }
+.english-module-card header p { margin: 3px 0 0; color: #748097; font-size: 11px; line-height: 1.35; }
+.english-module-state { padding: 5px 8px; border-radius: 99px; background: #edf1f5; color: #657188; font-size: 10px; font-weight: 900; white-space: nowrap; }
+.english-module-card.complete .english-module-state { background: #def4e7; color: #277856; }
+.english-module-content { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 7px; min-height: 74px; }
+.english-module-action { min-height: 42px; margin-top: auto; border: 0; border-radius: 12px; background: #243451; color: white; font-weight: 900; cursor: pointer; }
+.english-module-card.complete .english-module-action { background: #367b5d; }
+.module-coreWords .english-module-icon, .module-extraWords .english-module-icon { background: #ffe8f0; color: #984764; }
+.module-raz .english-module-icon { background: #eee5fa; color: #694b91; }
+.module-raz-books { display: grid; width: 100%; gap: 4px; padding: 9px 11px; border-radius: 11px; background: #f2eaff; color: #694b91; font-weight: 900; }
+.module-raz-books > span { padding-bottom: 4px; border-bottom: 1px dashed rgba(105,75,145,.18); }
+.module-raz-books small { color: #7d6a98; font-size: 10px; }
 .week1-overview-group { display: grid; grid-template-columns: 104px 1fr; align-items: start; gap: 8px; }
 .week1-overview-group > b { padding-top: 7px; color: #526079; font-size: 12px; }
 .week1-overview-group > div { display: flex; flex-wrap: wrap; gap: 7px; }
@@ -126,6 +145,11 @@ h2 { margin-bottom: 0; font-size: 24px; }
 .week1-word-chip { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border-radius: 11px; background: #e7f5ff; color: #315b88; font-weight: 900; }
 .week1-word-chip.read { background: #fff0d7; color: #93601d; }
 .week1-word-chip.heart { background: #ffe9f1; color: #9b4966; }
+.week1-word-chip.audio-word-chip { border: 0; font: inherit; cursor: pointer; }
+.week1-word-chip.audio-word-chip:focus-visible, .heart-audio-button:focus-visible { outline: 3px solid rgba(75,143,213,.35); outline-offset: 2px; }
+.audio-play-icon { display: inline-grid; place-items: center; flex: 0 0 auto; width: 24px; height: 24px; border-radius: 50%; background: #fff; color: transparent; font-size: 0; box-shadow: 0 1px 4px rgba(37,51,79,.16); }
+.audio-play-icon::before { content: ""; width: 0; height: 0; margin-left: 2px; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 8px solid #315b88; }
+.week1-word-chip.heart .audio-play-icon::before, .heart-audio-button .audio-play-icon::before { border-left-color: #984764; }
 .week1-word-chip small { padding: 2px 5px; border-radius: 99px; background: rgba(255,255,255,.8); font-size: 9px; }
 .heart-word-bank { padding: 11px 13px; border: 1px solid #efbdd0; border-radius: 13px; background: rgba(255,255,255,.7); }
 .heart-word-bank summary { cursor: pointer; color: #8e3e60; font-weight: 900; }
@@ -135,8 +159,11 @@ h2 { margin-bottom: 0; font-size: 24px; }
 .all-heart-word mark { font-weight: 900; }
 .week1-course-start, .week1-read-done { min-height: 46px; border: 0; border-radius: 14px; }
 .week1-course-card audio { width: 100%; margin-top: 14px; }
+.week1-course-audio-play { width: 100%; min-height: 48px; margin-top: 14px; background: #35699f; }
 .week1-course-activity { margin-top: 16px; }
 .week1-course-prompt { display: grid; justify-items: center; gap: 7px; margin: 14px 0 11px; text-align: center; font-size: 18px; font-weight: 900; }
+.heart-audio-button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 38px; padding: 8px 14px; border: 1px solid #efbdd0; border-radius: 11px; background: #fff5f8; color: #8e3e60; font-weight: 900; cursor: pointer; }
+.heart-audio-button .audio-play-icon { width: 21px; height: 21px; }
 .week1-stage { padding: 4px 10px; border-radius: 99px; background: #e9f3ee; color: #3d735a; font-size: 11px; letter-spacing: .04em; }
 .week1-course-prompt strong { display: inline-block; margin-left: 6px; color: #9a5d17; font-size: 32px; }
 .week1-course-prompt em { color: #66708a; font-size: 14px; font-style: normal; line-height: 1.5; }
@@ -422,6 +449,9 @@ textarea { resize: vertical; line-height: 1.5; }
   .sound-lab-card { padding: 17px; }
   .week1-course-card { padding: 17px; }
   .week1-course-heading { align-items: start; gap: 8px; }
+  .english-module-grid { grid-template-columns: 1fr; }
+  .english-module-card header { grid-template-columns: 38px minmax(0, 1fr); }
+  .english-module-state { grid-column: 2; justify-self: start; }
   .week1-overview-group { grid-template-columns: 1fr; gap: 2px; }
   .week1-overview-group > b { padding-top: 0; }
   .week1-course-choices { grid-template-columns: repeat(2, 1fr); }

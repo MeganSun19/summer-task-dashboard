@@ -120,7 +120,7 @@ refs.familyChoiceList.addEventListener("click", selectJoinedFamily);
 window.LearningActivityProgress = Object.freeze({
   getContext() {
     const date = planDateForView(activeKid, selectedDate);
-    const day = getDay(activeKid, date);
+    const day = getDay(activeKid, date, selectedDate);
     const planDay = day.planDayNumber || summerPlanRegistry.current(state, activeKid, toISODate(new Date())).currentDay;
     return {
       kidId: activeKid,
@@ -152,6 +152,11 @@ window.LearningActivityProgress = Object.freeze({
   get(activityId) {
     const date = planDateForView(activeKid, selectedDate);
     return state.learningActivities?.progress?.[activeKid]?.[date]?.[activityId] || null;
+  },
+  getHistory() {
+    return Object.entries(state.learningActivities?.progress?.[activeKid] || {}).flatMap(([date, activities]) => (
+      Object.entries(activities || {}).map(([activityId, record]) => ({ date, activityId, record }))
+    ));
   },
   save(activityId, record) {
     const date = planDateForView(activeKid, selectedDate);
@@ -518,14 +523,14 @@ function setCloudFormsDisabled(disabled) {
   });
 }
 
-function getDay(kidId, date) {
+function getDay(kidId, date, scheduleDate = date) {
   state.days[kidId] ||= {};
   if (!state.days[kidId][date]) {
     state.days[kidId][date] = buildDefaultDay(date, kidId);
     saveState();
   }
   const currentTasks = state.days[kidId][date].tasks || [];
-  const nextTasks = window.FamilyTaskSchedules.reconcileTasks(currentTasks, state.taskSchedules, kidId, date);
+  const nextTasks = window.FamilyTaskSchedules.reconcileTasks(currentTasks, state.taskSchedules, kidId, scheduleDate);
   if (JSON.stringify(currentTasks) !== JSON.stringify(nextTasks)) {
     state.days[kidId][date].tasks = nextTasks;
     saveState();
@@ -551,7 +556,7 @@ function resolveSummerPlan(kidId) {
     state.days[kidId][today] = preserveDayState(generated, existing);
     saveState();
   } else {
-    let day = getDay(kidId, previousDate);
+    let day = getDay(kidId, previousDate, today);
     day = reconcileCurrentCourseDay(kidId, previousDate, today) || day;
     if (!day.planDayNumber) {
       day.planDayNumber = progress.currentDay;
@@ -584,6 +589,7 @@ function buildRawTasks(date, dayIndexOverride = null, kidId = editorKid) {
   const poemAnchor = state.curriculumAnchors?.poem?.[kidId] || 1;
   return moduleRegistry.buildDefaultTasks({
     date,
+    kidId,
     dayIndex: index,
     contentDayIndexes: { poem: Math.max(0, planDay - poemAnchor) }
   });
@@ -606,12 +612,12 @@ function applyTaskSettings(tasks, settings, release = null) {
 
 function reconcileCurrentCourseDay(kidId, date, courseDate) {
   const existing = state.days[kidId]?.[date];
-  if (!existing || existing.planPeriodId || existing.planScope === "day") return existing;
+  if (!existing || existing.planPeriodId) return existing;
   const dayIndex = existing.planDayNumber ? existing.planDayNumber - 1 : null;
   const generated = buildDefaultDay(date, kidId, dayIndex, courseDate);
   if (existing.planDayNumber) generated.planDayNumber = existing.planDayNumber;
   const next = preserveDayState(generated, existing);
-  next.tasks = window.FamilyTaskSchedules.reconcileTasks(next.tasks, state.taskSchedules, kidId, date);
+  next.tasks = window.FamilyTaskSchedules.reconcileTasks(next.tasks, state.taskSchedules, kidId, courseDate);
   if (JSON.stringify(existing) !== JSON.stringify(next)) {
     state.days[kidId][date] = next;
     saveState();
@@ -675,9 +681,10 @@ function renderKidView() {
   const today = toISODate(new Date());
   const planDate = planDateForView(activeKid, selectedDate);
   const plan = summerPlanRegistry.current(state, activeKid, today);
-  const day = getDay(activeKid, planDate);
+  const day = getDay(activeKid, planDate, selectedDate);
+  const visibleTasks = summerPlanRegistry.activeTasks(day);
   const done = summerPlanRegistry.resolvedCount(day);
-  const total = day.tasks.length;
+  const total = visibleTasks.length;
   const percent = Math.round((done / total) * 100);
   document.documentElement.style.setProperty("--kid-color", profile.color);
   document.documentElement.style.setProperty("--kid-soft", profile.soft);
@@ -695,7 +702,7 @@ function renderKidView() {
   refs.sunCount.textContent = availableSun(activeKid);
   refs.rewardBalance.textContent = availableSun(activeKid);
   refs.streakCount.textContent = streakFor(activeKid, today);
-  refs.timeEstimate.textContent = `大约 ${day.tasks.reduce((sum, item) => sum + (item.minutes || moduleRegistry.getPresentation(item.moduleId || item.id).minutes), 0)} 分钟`;
+  refs.timeEstimate.textContent = `大约 ${visibleTasks.reduce((sum, item) => sum + (item.minutes || moduleRegistry.getPresentation(item.moduleId || item.id).minutes), 0)} 分钟`;
   refs.encouragement.textContent = encouragement(done, total);
   refs.finishCard.hidden = done !== total;
   renderTasks(day);
@@ -706,7 +713,7 @@ function renderKidView() {
 
 function renderTasks(day) {
   refs.taskList.innerHTML = "";
-  day.tasks.forEach((item, index) => {
+  summerPlanRegistry.activeTasks(day).forEach((item, index) => {
     const category = moduleRegistry.getPresentation(item.moduleId || item.id);
     const card = document.createElement("article");
     card.className = `task-card ${summerPlanRegistry.isTaskResolved(item) ? "done" : ""}`;
@@ -721,7 +728,7 @@ function renderTasks(day) {
         <p class="how-to"><strong>怎么做：</strong>${escapeHTML(item.instruction || "完成后点右边的按钮。")}</p>
         <div class="word-row">${(item.tags || []).map((tag) => `<span class="word-chip">${escapeHTML(tag)}</span>`).join("")}</div>
       </div>
-      <button class="complete-button" type="button" ${item.excused ? "disabled" : ""}>${item.excused ? "家长已免除" : item.done ? "✓ 已完成" : `完成 +10☀`}</button>`;
+      <button class="complete-button" type="button" ${item.excused ? "disabled" : ""}>${item.excused ? "历史免除" : item.done ? "✓ 已完成" : `完成 +10☀`}</button>`;
     card.querySelector(".complete-button").addEventListener("click", () => toggleTask(item));
     refs.taskList.appendChild(card);
   });
@@ -803,12 +810,12 @@ function renderBattle() {
 }
 
 function sharedBattleProgress(date) {
-  const brotherDay = getDay("brother", planDateForView("brother", date));
-  const youngerDay = getDay("younger", planDateForView("younger", date));
+  const brotherDay = getDay("brother", planDateForView("brother", date), date);
+  const youngerDay = getDay("younger", planDateForView("younger", date), date);
   const brotherDone = summerPlanRegistry.resolvedCount(brotherDay);
   const youngerDone = summerPlanRegistry.resolvedCount(youngerDay);
-  const brotherTotal = brotherDay.tasks.length;
-  const youngerTotal = youngerDay.tasks.length;
+  const brotherTotal = summerPlanRegistry.activeTasks(brotherDay).length;
+  const youngerTotal = summerPlanRegistry.activeTasks(youngerDay).length;
   return { brotherDone, youngerDone, brotherTotal, youngerTotal, done: brotherDone + youngerDone, total: brotherTotal + youngerTotal };
 }
 
@@ -852,10 +859,12 @@ function renderSharedWorld() {
   const jointDates = jointCompletionDates();
   const litCount = Math.min(countryCodes.length, jointDates.length * COUNTRIES_PER_JOINT_DAY);
   const percent = Math.round(litCount / countryCodes.length * 100);
-  const brotherDay = getDay("brother", planDateForView("brother", selectedDate));
-  const youngerDay = getDay("younger", planDateForView("younger", selectedDate));
+  const brotherDay = getDay("brother", planDateForView("brother", selectedDate), selectedDate);
+  const youngerDay = getDay("younger", planDateForView("younger", selectedDate), selectedDate);
   const brotherDone = summerPlanRegistry.resolvedCount(brotherDay);
   const youngerDone = summerPlanRegistry.resolvedCount(youngerDay);
+  const brotherTotal = summerPlanRegistry.activeTasks(brotherDay).length;
+  const youngerTotal = summerPlanRegistry.activeTasks(youngerDay).length;
   const brotherComplete = isDayComplete(brotherDay);
   const youngerComplete = isDayComplete(youngerDay);
   const samePlanDay = Boolean(brotherDay.planDayNumber && brotherDay.planDayNumber === youngerDay.planDayNumber);
@@ -881,11 +890,11 @@ function renderSharedWorld() {
   } else if (brotherComplete && youngerComplete) {
     refs.worldMessage.textContent = `哥哥在暑假计划第 ${brotherDay.planDayNumber} 天，弟弟在第 ${youngerDay.planDayNumber} 天；各自完成当前学习日后继续前进。`;
   } else if (brotherComplete) {
-    refs.worldMessage.textContent = `哥哥已就位，弟弟再完成 ${youngerDay.tasks.length - youngerDone} 项就能一起点亮世界。`;
+    refs.worldMessage.textContent = `哥哥已就位，弟弟再完成 ${youngerTotal - youngerDone} 项就能一起点亮世界。`;
   } else if (youngerComplete) {
-    refs.worldMessage.textContent = `弟弟已就位，哥哥再完成 ${brotherDay.tasks.length - brotherDone} 项就能一起点亮世界。`;
+    refs.worldMessage.textContent = `弟弟已就位，哥哥再完成 ${brotherTotal - brotherDone} 项就能一起点亮世界。`;
   } else {
-    refs.worldMessage.textContent = `哥哥完成 ${brotherDone}/${brotherDay.tasks.length}，弟弟完成 ${youngerDone}/${youngerDay.tasks.length}；两人都完成就点亮 1 个国家。`;
+    refs.worldMessage.textContent = `哥哥完成 ${brotherDone}/${brotherTotal}，弟弟完成 ${youngerDone}/${youngerTotal}；两人都完成长期课程就点亮 1 个国家。`;
   }
 
   const upcomingCode = countryCodes[litCount];
@@ -974,14 +983,15 @@ function isDayComplete(day) {
 function renderFamilyOverview() {
   refs.familyOverview.innerHTML = profiles.map((profile) => {
     const date = planDateForView(profile.id, selectedDate);
-    const day = getDay(profile.id, date);
+    const day = getDay(profile.id, date, selectedDate);
     const done = summerPlanRegistry.resolvedCount(day);
-    const percent = Math.round(done / day.tasks.length * 100);
-    const status = done === day.tasks.length ? "今日完成" : done ? `还剩 ${day.tasks.length - done} 项` : "尚未开始";
+    const total = summerPlanRegistry.activeTasks(day).length;
+    const percent = total ? Math.round(done / total * 100) : 0;
+    const status = done === total ? "今日完成" : done ? `还剩 ${total - done} 项` : "尚未开始";
     return `<article class="overview-card" style="--kid-color:${profile.color};--kid-soft:${profile.soft}">
       <div class="overview-top"><span class="overview-name"><span class="kid-mini"><img src="${profile.avatar}" data-kid="${profile.id}" alt=""></span>${profile.name}</span><span class="overview-status">${status}</span></div>
       <div class="overview-progress"><div style="width:${percent}%"></div></div>
-      <div class="overview-meta"><span>${done}/${day.tasks.length} 项</span><span>${earnedSun(profile.id)} 累计阳光</span></div>
+      <div class="overview-meta"><span>${done}/${total} 项</span><span>${earnedSun(profile.id)} 累计阳光</span></div>
     </article>`;
   }).join("");
 }
@@ -989,15 +999,16 @@ function renderFamilyOverview() {
 function renderEditor() {
   const profile = profileById(editorKid);
   const date = planDateForView(editorKid, selectedDate);
-  const day = getDay(editorKid, date);
+  const day = getDay(editorKid, date, selectedDate);
+  const visibleTasks = summerPlanRegistry.activeTasks(day);
   refs.editorKid.value = editorKid;
   refs.editorTitle.textContent = `${profile.name} · ${formatDateLabel(date)}${date !== selectedDate ? ` · ${summerPlanRegistry.TITLE}顺延内容` : ""}`;
-  refs.taskEditor.innerHTML = day.tasks.map((item, index) => `
+  refs.taskEditor.innerHTML = visibleTasks.map((item, index) => `
     <details class="edit-row">
       <summary>${escapeHTML(item.title)} · ${item.excused ? "已免除" : item.done ? "已完成" : "未完成"}</summary>
       <div class="edit-fields">
         <label class="completion-check"><input type="checkbox" data-field="done" data-index="${index}" ${item.done ? "checked" : ""}><span>这项已完成（可用于登记补做）</span></label>
-        <label class="completion-check excused-check"><input type="checkbox" data-field="excused" data-index="${index}" ${item.excused ? "checked" : ""}><span>特殊情况免除（不奖励阳光，但允许计划继续）</span></label>
+        ${item.excused ? '<p class="legacy-status-note">历史记录：该任务曾按旧规则免除，现有进度保持不变。</p>' : ""}
         <div class="edit-grid">
           <label>任务名称<input data-field="title" data-index="${index}" value="${escapeAttr(item.title)}"></label>
           <label>关键词<input data-field="tags" data-index="${index}" value="${escapeAttr((item.tags || []).join(", "))}"></label>
@@ -1297,12 +1308,6 @@ function cancelFamilyTaskSchedule(scheduleId) {
   render();
 }
 
-function completedFamilyTaskCount(scheduleId) {
-  return Object.values(state.days).reduce((total, days) => total + Object.values(days || {}).reduce((kidTotal, day) => (
-    kidTotal + (day.tasks || []).filter((item) => item.scheduleId === scheduleId && item.done).length
-  ), 0), 0);
-}
-
 function renderFamilyTaskSchedules() {
   const schedules = state.taskSchedules.filter((schedule) => schedule.status === "published").slice().reverse();
   if (!schedules.length) {
@@ -1311,9 +1316,8 @@ function renderFamilyTaskSchedules() {
   }
   refs.familyTaskScheduleList.innerHTML = schedules.map((schedule) => {
     const kids = schedule.kidIds.map((kidId) => profileById(kidId).name).join("和");
-    const completed = completedFamilyTaskCount(schedule.id);
     const total = schedule.dates.length * schedule.kidIds.length;
-    return `<div class="plan-period-item family-task-schedule-item"><div><strong>${escapeHTML(schedule.title)} · ${escapeHTML(kids)}</strong><span>${schedule.dates.length} 个日期 · 当前排期 ${total} 条 · 已完成历史 ${completed} 条 · ${escapeHTML(displayDateRange(schedule.startDate, schedule.endDate))}</span></div><div class="schedule-actions"><button type="button" data-edit-family-task="${escapeAttr(schedule.id)}">编辑</button><button type="button" data-cancel-family-task="${escapeAttr(schedule.id)}">取消</button></div></div>`;
+    return `<div class="plan-period-item family-task-schedule-item"><div><strong>${escapeHTML(schedule.title)} · ${escapeHTML(kids)}</strong><span>${schedule.dates.length} 个日期 · 共发布 ${total} 条 · ${escapeHTML(displayDateRange(schedule.startDate, schedule.endDate))} · 不影响长期课程进度</span></div><div class="schedule-actions"><button type="button" data-edit-family-task="${escapeAttr(schedule.id)}">编辑</button><button type="button" data-cancel-family-task="${escapeAttr(schedule.id)}">取消</button></div></div>`;
   }).join("");
   refs.familyTaskScheduleList.querySelectorAll("[data-edit-family-task]").forEach((button) => {
     button.addEventListener("click", () => editFamilyTaskSchedule(button.dataset.editFamilyTask));
@@ -1368,8 +1372,8 @@ function applyRangePlan() {
   render();
 }
 
-function buildPresetDay(presetId, date, kidId, dayIndexOverride = null) {
-  const base = applyOverallSettings(kidId, buildRawTasks(date, dayIndexOverride), date);
+function buildPresetDay(presetId, date, kidId, dayIndexOverride = null, courseDate = date) {
+  const base = applyOverallSettings(kidId, buildRawTasks(date, dayIndexOverride, kidId), courseDate);
   const tasks = planPresetRegistry.apply(presetId, base, { createTask: task, date, kidId });
   return { tasks, mistakes: "", note: "", planScope: "range" };
 }
@@ -1407,6 +1411,13 @@ function removePlanPeriod(periodId) {
 
 function preserveDayState(next, existing) {
   if (!existing) return next;
+  const ignoredLegacyIds = moduleRegistry.list().filter((item) => moduleRegistry.isDynamicContent(item.id)).map((item) => item.id);
+  const overrides = existing.taskOverrides || (existing.planScope === "day"
+    ? window.TaskOverrides.derive(existing.tasks, next.tasks, { ignoredIds: ignoredLegacyIds })
+    : {});
+  next.tasks = window.TaskOverrides.apply(next.tasks, overrides);
+  if (Object.keys(overrides).length) next.taskOverrides = structuredClone(overrides);
+  else delete next.taskOverrides;
   const existingTasks = new Map(existing.tasks.map((item) => [item.id, item]));
   next.tasks.forEach((item) => {
     const previous = existingTasks.get(item.id);
@@ -1414,6 +1425,7 @@ function preserveDayState(next, existing) {
     item.excused = Boolean(previous?.excused);
     if (previous?.completedOn) item.completedOn = previous.completedOn;
     if (previous?.excusedOn) item.excusedOn = previous.excusedOn;
+    if (previous?.statusUpdatedAt) item.statusUpdatedAt = previous.statusUpdatedAt;
   });
   existing.tasks.filter((item) => item.source === "parent").forEach((item) => {
     if (!next.tasks.some((candidate) => candidate.id === item.id)) next.tasks.push(item);
@@ -1447,20 +1459,31 @@ function displayDateRange(start, end) {
 
 function saveParentEdits() {
   const date = planDateForView(editorKid, selectedDate);
-  const day = getDay(editorKid, date);
+  const day = getDay(editorKid, date, selectedDate);
+  const visibleTasks = summerPlanRegistry.activeTasks(day);
   refs.taskEditor.querySelectorAll("[data-field]").forEach((field) => {
-    const item = day.tasks[Number(field.dataset.index)];
+    const item = visibleTasks[Number(field.dataset.index)];
     if (!item) return;
     if (field.dataset.field === "done") summerPlanRegistry.setTaskDone(item, field.checked, toISODate(new Date()));
-    else if (field.dataset.field === "excused") summerPlanRegistry.setTaskExcused(item, field.checked, toISODate(new Date()));
     else item[field.dataset.field] = field.dataset.field === "tags"
         ? field.value.split(",").map((value) => value.trim()).filter(Boolean)
         : field.value.trim();
   });
   day.mistakes = refs.mistakeBox.value.trim();
   day.note = refs.parentNote.value.trim();
-  day.planScope = "day";
-  delete day.planPeriodId;
+  const planDayIndex = day.planDayNumber ? day.planDayNumber - 1 : null;
+  const period = day.planPeriodId ? state.planPeriods.find((item) => item.id === day.planPeriodId) : null;
+  const baseline = period?.preset && period.preset !== "overall"
+    ? buildPresetDay(period.preset, date, editorKid, planDayIndex, selectedDate)
+    : buildDefaultDay(date, editorKid, planDayIndex, selectedDate);
+  const ignoredLegacyIds = day.planScope === "day" && !day.taskOverrides
+    ? moduleRegistry.list().filter((item) => moduleRegistry.isDynamicContent(item.id)).map((item) => item.id)
+    : [];
+  const overrides = window.TaskOverrides.derive(day.tasks, baseline.tasks, { ignoredIds: ignoredLegacyIds });
+  if (Object.keys(overrides).length) day.taskOverrides = overrides;
+  else delete day.taskOverrides;
+  day.planScope = baseline.planScope;
+  if (!period) delete day.planPeriodId;
   saveState();
   showToast("当天计划与补做状态已保存");
   render();
@@ -1469,9 +1492,13 @@ function saveParentEdits() {
 function resetCurrentDay() {
   const date = planDateForView(editorKid, selectedDate);
   const planDay = state.days[editorKid][date]?.planDayNumber;
-  const generated = buildDefaultDay(date, editorKid, planDay ? planDay - 1 : null);
+  const generated = buildDefaultDay(date, editorKid, planDay ? planDay - 1 : null, selectedDate);
   if (planDay) generated.planDayNumber = planDay;
-  state.days[editorKid][date] = preserveDayState(generated, state.days[editorKid][date]);
+  const existing = structuredClone(state.days[editorKid][date] || {});
+  delete existing.taskOverrides;
+  existing.planScope = generated.planScope;
+  delete existing.planPeriodId;
+  state.days[editorKid][date] = preserveDayState(generated, existing);
   saveState();
   showToast("已恢复默认任务");
   render();

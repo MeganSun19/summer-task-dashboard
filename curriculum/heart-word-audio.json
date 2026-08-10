@@ -1,0 +1,2418 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-10T10:12:22.511Z",
+  "generator": {
+    "engine": "macOS say",
+    "voice": "Samantha",
+    "locale": "en_US",
+    "rate": 140
+  },
+  "policy": "High-frequency word TTS is automatically included for pronunciation support.",
+  "summary": {
+    "total": 200,
+    "generated": 0,
+    "reused": 200
+  },
+  "words": {
+    "I": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-i",
+      "sourceFile": "i.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 1.233
+      }
+    },
+    "a": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-a",
+      "sourceFile": "a.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.686
+      }
+    },
+    "the": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-the",
+      "sourceFile": "the.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.74
+      }
+    },
+    "and": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-and",
+      "sourceFile": "and.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.744
+      }
+    },
+    "read": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-read",
+      "sourceFile": "read.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.743
+      }
+    },
+    "you": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-you",
+      "sourceFile": "you.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.671
+      }
+    },
+    "can": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-can",
+      "sourceFile": "can.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.819
+      }
+    },
+    "go": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-go",
+      "sourceFile": "go.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.726
+      }
+    },
+    "see": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-see",
+      "sourceFile": "see.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.773
+      }
+    },
+    "we": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-we",
+      "sourceFile": "we.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.715
+      }
+    },
+    "where": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-where",
+      "sourceFile": "where.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.738
+      }
+    },
+    "is": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-is",
+      "sourceFile": "is.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.722
+      }
+    },
+    "in": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-in",
+      "sourceFile": "in.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.688
+      }
+    },
+    "here": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-here",
+      "sourceFile": "here.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.703
+      }
+    },
+    "there": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-there",
+      "sourceFile": "there.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.688
+      }
+    },
+    "what": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-what",
+      "sourceFile": "what.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.762
+      }
+    },
+    "has": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-has",
+      "sourceFile": "has.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.822
+      }
+    },
+    "this": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-this",
+      "sourceFile": "this.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.734
+      }
+    },
+    "these": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-these",
+      "sourceFile": "these.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.804
+      }
+    },
+    "it": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-it",
+      "sourceFile": "it.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.582
+      }
+    },
+    "my": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-my",
+      "sourceFile": "my.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.787
+      }
+    },
+    "like": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-like",
+      "sourceFile": "like.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.775
+      }
+    },
+    "love": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-love",
+      "sourceFile": "love.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.728
+      }
+    },
+    "me": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-me",
+      "sourceFile": "me.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.694
+      }
+    },
+    "your": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-your",
+      "sourceFile": "your.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.764
+      }
+    },
+    "many": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-many",
+      "sourceFile": "many.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.845
+      }
+    },
+    "one": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-one",
+      "sourceFile": "one.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.785
+      }
+    },
+    "two": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-two",
+      "sourceFile": "two.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.726
+      }
+    },
+    "three": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-three",
+      "sourceFile": "three.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.794
+      }
+    },
+    "count": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-count",
+      "sourceFile": "count.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.819
+      }
+    },
+    "more": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-more",
+      "sourceFile": "more.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.74
+      }
+    },
+    "have": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-have",
+      "sourceFile": "have.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.741
+      }
+    },
+    "all": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-all",
+      "sourceFile": "all.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.774
+      }
+    },
+    "some": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-some",
+      "sourceFile": "some.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.878
+      }
+    },
+    "any": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-any",
+      "sourceFile": "any.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.721
+      }
+    },
+    "first": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-first",
+      "sourceFile": "first.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.911
+      }
+    },
+    "after": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-after",
+      "sourceFile": "after.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.883
+      }
+    },
+    "before": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-before",
+      "sourceFile": "before.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.867
+      }
+    },
+    "again": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-again",
+      "sourceFile": "again.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.849
+      }
+    },
+    "now": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-now",
+      "sourceFile": "now.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.778
+      }
+    },
+    "next": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-next",
+      "sourceFile": "next.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.965
+      }
+    },
+    "up": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-up",
+      "sourceFile": "up.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.629
+      }
+    },
+    "down": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-down",
+      "sourceFile": "down.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.749
+      }
+    },
+    "away": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-away",
+      "sourceFile": "away.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.861
+      }
+    },
+    "around": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-around",
+      "sourceFile": "around.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.919
+      }
+    },
+    "then": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-then",
+      "sourceFile": "then.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.746
+      }
+    },
+    "to": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-to",
+      "sourceFile": "to.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.726
+      }
+    },
+    "from": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-from",
+      "sourceFile": "from.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.853
+      }
+    },
+    "near": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-near",
+      "sourceFile": "near.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.708
+      }
+    },
+    "far": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-far",
+      "sourceFile": "far.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.772
+      }
+    },
+    "time": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-time",
+      "sourceFile": "time.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.866
+      }
+    },
+    "at": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-at",
+      "sourceFile": "at.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.71
+      }
+    },
+    "school": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-school",
+      "sourceFile": "school.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.878
+      }
+    },
+    "new": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-new",
+      "sourceFile": "new.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.743
+      }
+    },
+    "ready": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-ready",
+      "sourceFile": "ready.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.778
+      }
+    },
+    "want": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-want",
+      "sourceFile": "want.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.808
+      }
+    },
+    "do": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-do",
+      "sourceFile": "do.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.703
+      }
+    },
+    "not": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-not",
+      "sourceFile": "not.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.767
+      }
+    },
+    "make": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-make",
+      "sourceFile": "make.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.787
+      }
+    },
+    "get": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-get",
+      "sourceFile": "get.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.691
+      }
+    },
+    "need": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-need",
+      "sourceFile": "need.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.755
+      }
+    },
+    "help": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-help",
+      "sourceFile": "help.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.776
+      }
+    },
+    "come": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-come",
+      "sourceFile": "come.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.842
+      }
+    },
+    "find": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-find",
+      "sourceFile": "find.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.9
+      }
+    },
+    "give": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-give",
+      "sourceFile": "give.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.691
+      }
+    },
+    "because": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-because",
+      "sourceFile": "because.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 1.006
+      }
+    },
+    "for": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-for",
+      "sourceFile": "for.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.772
+      }
+    },
+    "of": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-of",
+      "sourceFile": "of.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.617
+      }
+    },
+    "but": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-but",
+      "sourceFile": "but.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.722
+      }
+    },
+    "so": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-so",
+      "sourceFile": "so.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.854
+      }
+    },
+    "with": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-with",
+      "sourceFile": "with.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.68
+      }
+    },
+    "he": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-he",
+      "sourceFile": "he.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.691
+      }
+    },
+    "she": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-she",
+      "sourceFile": "she.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.77
+      }
+    },
+    "they": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-they",
+      "sourceFile": "they.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.749
+      }
+    },
+    "them": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-them",
+      "sourceFile": "them.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.746
+      }
+    },
+    "who": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-who",
+      "sourceFile": "who.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.741
+      }
+    },
+    "when": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-when",
+      "sourceFile": "when.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.773
+      }
+    },
+    "which": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-which",
+      "sourceFile": "which.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.796
+      }
+    },
+    "his": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-his",
+      "sourceFile": "his.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.726
+      }
+    },
+    "her": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-her",
+      "sourceFile": "her.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.694
+      }
+    },
+    "why": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-why",
+      "sourceFile": "why.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.82
+      }
+    },
+    "was": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-was",
+      "sourceFile": "was.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.854
+      }
+    },
+    "were": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-were",
+      "sourceFile": "were.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.727
+      }
+    },
+    "are": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-are",
+      "sourceFile": "are.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.686
+      }
+    },
+    "am": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-am",
+      "sourceFile": "am.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.744
+      }
+    },
+    "how": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-how",
+      "sourceFile": "how.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.764
+      }
+    },
+    "could": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-could",
+      "sourceFile": "could.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.715
+      }
+    },
+    "would": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-would",
+      "sourceFile": "would.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.715
+      }
+    },
+    "will": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-will",
+      "sourceFile": "will.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.703
+      }
+    },
+    "must": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-must",
+      "sourceFile": "must.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.88
+      }
+    },
+    "does": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-does",
+      "sourceFile": "does.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.784
+      }
+    },
+    "did": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-did",
+      "sourceFile": "did.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.702
+      }
+    },
+    "had": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-had",
+      "sourceFile": "had.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.752
+      }
+    },
+    "been": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-been",
+      "sourceFile": "been.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.653
+      }
+    },
+    "be": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-be",
+      "sourceFile": "be.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.653
+      }
+    },
+    "said": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-said",
+      "sourceFile": "said.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.785
+      }
+    },
+    "say": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-say",
+      "sourceFile": "say.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.831
+      }
+    },
+    "look": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-look",
+      "sourceFile": "look.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.775
+      }
+    },
+    "little": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-little",
+      "sourceFile": "little.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.775
+      }
+    },
+    "big": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-big",
+      "sourceFile": "big.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.699
+      }
+    },
+    "blue": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-blue",
+      "sourceFile": "blue.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.711
+      }
+    },
+    "funny": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-funny",
+      "sourceFile": "funny.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.83
+      }
+    },
+    "jump": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-jump",
+      "sourceFile": "jump.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.853
+      }
+    },
+    "play": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-play",
+      "sourceFile": "play.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.814
+      }
+    },
+    "red": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-red",
+      "sourceFile": "red.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.685
+      }
+    },
+    "run": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-run",
+      "sourceFile": "run.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.778
+      }
+    },
+    "yellow": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-yellow",
+      "sourceFile": "yellow.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.844
+      }
+    },
+    "ate": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-ate",
+      "sourceFile": "ate.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.709
+      }
+    },
+    "black": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-black",
+      "sourceFile": "black.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.792
+      }
+    },
+    "brown": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-brown",
+      "sourceFile": "brown.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.827
+      }
+    },
+    "came": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-came",
+      "sourceFile": "came.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.831
+      }
+    },
+    "eat": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-eat",
+      "sourceFile": "eat.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.71
+      }
+    },
+    "four": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-four",
+      "sourceFile": "four.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.772
+      }
+    },
+    "good": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-good",
+      "sourceFile": "good.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.645
+      }
+    },
+    "into": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-into",
+      "sourceFile": "into.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.827
+      }
+    },
+    "no": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-no",
+      "sourceFile": "no.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.778
+      }
+    },
+    "on": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-on",
+      "sourceFile": "on.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.741
+      }
+    },
+    "our": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-our",
+      "sourceFile": "our.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.686
+      }
+    },
+    "out": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-out",
+      "sourceFile": "out.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.707
+      }
+    },
+    "please": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-please",
+      "sourceFile": "please.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.861
+      }
+    },
+    "pretty": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-pretty",
+      "sourceFile": "pretty.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.768
+      }
+    },
+    "ran": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-ran",
+      "sourceFile": "ran.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.755
+      }
+    },
+    "ride": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-ride",
+      "sourceFile": "ride.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.778
+      }
+    },
+    "saw": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-saw",
+      "sourceFile": "saw.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.773
+      }
+    },
+    "soon": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-soon",
+      "sourceFile": "soon.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.82
+      }
+    },
+    "that": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-that",
+      "sourceFile": "that.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.746
+      }
+    },
+    "too": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-too",
+      "sourceFile": "too.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.726
+      }
+    },
+    "under": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-under",
+      "sourceFile": "under.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.777
+      }
+    },
+    "well": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-well",
+      "sourceFile": "well.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.75
+      }
+    },
+    "went": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-went",
+      "sourceFile": "went.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.773
+      }
+    },
+    "white": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-white",
+      "sourceFile": "white.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.773
+      }
+    },
+    "yes": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-yes",
+      "sourceFile": "yes.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.845
+      }
+    },
+    "an": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-an",
+      "sourceFile": "an.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.584
+      }
+    },
+    "as": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-as",
+      "sourceFile": "as.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.779
+      }
+    },
+    "ask": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-ask",
+      "sourceFile": "ask.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.814
+      }
+    },
+    "by": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-by",
+      "sourceFile": "by.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.745
+      }
+    },
+    "every": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-every",
+      "sourceFile": "every.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.791
+      }
+    },
+    "fly": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-fly",
+      "sourceFile": "fly.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.911
+      }
+    },
+    "giving": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-giving",
+      "sourceFile": "giving.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.765
+      }
+    },
+    "him": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-him",
+      "sourceFile": "him.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.691
+      }
+    },
+    "just": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-just",
+      "sourceFile": "just.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.888
+      }
+    },
+    "know": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-know",
+      "sourceFile": "know.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.778
+      }
+    },
+    "let": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-let",
+      "sourceFile": "let.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.752
+      }
+    },
+    "live": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-live",
+      "sourceFile": "live.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.67
+      }
+    },
+    "may": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-may",
+      "sourceFile": "may.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.752
+      }
+    },
+    "old": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-old",
+      "sourceFile": "old.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.834
+      }
+    },
+    "once": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-once",
+      "sourceFile": "once.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.878
+      }
+    },
+    "open": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-open",
+      "sourceFile": "open.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.822
+      }
+    },
+    "over": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-over",
+      "sourceFile": "over.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.752
+      }
+    },
+    "put": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-put",
+      "sourceFile": "put.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.698
+      }
+    },
+    "round": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-round",
+      "sourceFile": "round.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.813
+      }
+    },
+    "stop": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-stop",
+      "sourceFile": "stop.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.889
+      }
+    },
+    "take": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-take",
+      "sourceFile": "take.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.819
+      }
+    },
+    "thank": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-thank",
+      "sourceFile": "thank.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.864
+      }
+    },
+    "think": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-think",
+      "sourceFile": "think.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.771
+      }
+    },
+    "walk": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-walk",
+      "sourceFile": "walk.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.808
+      }
+    },
+    "always": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-always",
+      "sourceFile": "always.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.937
+      }
+    },
+    "best": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-best",
+      "sourceFile": "best.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.804
+      }
+    },
+    "both": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-both",
+      "sourceFile": "both.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.757
+      }
+    },
+    "buy": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-buy",
+      "sourceFile": "buy.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.745
+      }
+    },
+    "call": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-call",
+      "sourceFile": "call.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.773
+      }
+    },
+    "cold": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-cold",
+      "sourceFile": "cold.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.808
+      }
+    },
+    "don't": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-dont",
+      "sourceFile": "dont.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.749
+      }
+    },
+    "fast": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-fast",
+      "sourceFile": "fast.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.935
+      }
+    },
+    "five": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-five",
+      "sourceFile": "five.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.83
+      }
+    },
+    "found": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-found",
+      "sourceFile": "found.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.865
+      }
+    },
+    "gave": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-gave",
+      "sourceFile": "gave.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.728
+      }
+    },
+    "goes": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-goes",
+      "sourceFile": "goes.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.785
+      }
+    },
+    "green": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-green",
+      "sourceFile": "green.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.789
+      }
+    },
+    "its": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-its",
+      "sourceFile": "its.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.711
+      }
+    },
+    "made": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-made",
+      "sourceFile": "made.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.764
+      }
+    },
+    "off": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-off",
+      "sourceFile": "off.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.762
+      }
+    },
+    "or": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-or",
+      "sourceFile": "or.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.681
+      }
+    },
+    "pull": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-pull",
+      "sourceFile": "pull.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.722
+      }
+    },
+    "right": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-right",
+      "sourceFile": "right.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.755
+      }
+    },
+    "sing": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-sing",
+      "sourceFile": "sing.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.785
+      }
+    },
+    "sit": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-sit",
+      "sourceFile": "sit.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.738
+      }
+    },
+    "sleep": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-sleep",
+      "sourceFile": "sleep.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.878
+      }
+    },
+    "tell": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-tell",
+      "sourceFile": "tell.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.75
+      }
+    },
+    "their": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-their",
+      "sourceFile": "their.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.688
+      }
+    },
+    "those": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-those",
+      "sourceFile": "those.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.804
+      }
+    },
+    "upon": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-upon",
+      "sourceFile": "upon.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.942
+      }
+    },
+    "us": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-us",
+      "sourceFile": "us.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.71
+      }
+    },
+    "use": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-use",
+      "sourceFile": "use.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.868
+      }
+    },
+    "very": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-very",
+      "sourceFile": "very.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.775
+      }
+    },
+    "wash": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-wash",
+      "sourceFile": "wash.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.878
+      }
+    },
+    "wish": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-wish",
+      "sourceFile": "wish.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.785
+      }
+    },
+    "work": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-work",
+      "sourceFile": "work.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.773
+      }
+    },
+    "write": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-write",
+      "sourceFile": "write.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.755
+      }
+    },
+    "about": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-about",
+      "sourceFile": "about.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.838
+      }
+    },
+    "better": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-better",
+      "sourceFile": "better.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.728
+      }
+    },
+    "bring": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-bring",
+      "sourceFile": "bring.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.757
+      }
+    },
+    "carry": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-carry",
+      "sourceFile": "carry.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.78
+      }
+    },
+    "clean": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-clean",
+      "sourceFile": "clean.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.819
+      }
+    },
+    "cut": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-cut",
+      "sourceFile": "cut.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.796
+      }
+    },
+    "done": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-done",
+      "sourceFile": "done.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.772
+      }
+    },
+    "draw": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-draw",
+      "sourceFile": "draw.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.742
+      }
+    },
+    "drink": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-drink",
+      "sourceFile": "drink.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.812
+      }
+    },
+    "eight": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-eight",
+      "sourceFile": "eight.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.709
+      }
+    },
+    "fall": {
+      "status": "verified",
+      "kind": "heart-word",
+      "sourceType": "tts",
+      "verificationSource": "tts-auto-policy",
+      "assetId": "heart-word-fall",
+      "sourceFile": "fall.mp3",
+      "clip": {
+        "startSeconds": 0,
+        "endSeconds": 0.795
+      }
+    }
+  }
+}

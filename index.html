@@ -2,10 +2,13 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5b942" />
     <title>双星学习岛</title>
-    <link rel="stylesheet" href="./styles.css?v=20260810-dynamic-course-3" />
+    <link rel="stylesheet" href="./styles.css?v=20260810-unified-audio-3" />
   </head>
   <body>
     <nav class="side-nav" aria-label="学习岛导航">
@@ -106,10 +109,12 @@
             <span id="week1CourseStatus" class="audio-status">0/—</span>
           </div>
           <p id="week1CourseFocus" class="week1-course-focus"></p>
+          <p id="week1CourseNotice" class="week1-course-notice" aria-live="polite"></p>
           <div id="week1CourseWords" class="week1-course-words"></div>
           <button id="week1CourseStart" class="primary-action week1-course-start" type="button">开始今天的英语岛</button>
-          <audio id="week1CoursePlayer" controls preload="metadata" hidden></audio>
-          <div class="week1-course-activity">
+          <audio id="week1CoursePlayer" preload="none" hidden></audio>
+          <button id="week1CourseAudioPlay" class="primary-action week1-course-audio-play" type="button" hidden>▶ 播放本题音频</button>
+          <div id="week1CourseActivity" class="week1-course-activity">
             <div class="sound-lab-progress" aria-label="课程进度"><div id="week1CourseProgressBar"></div></div>
             <p id="week1CoursePrompt" class="week1-course-prompt">等待开始</p>
             <div id="week1CourseChoices" class="week1-course-choices"></div>
@@ -229,7 +234,7 @@
         <div class="parent-pane" data-parent-pane="temporary" hidden>
           <section class="panel plan-tool-panel family-task-panel parent-workspace-panel">
             <div class="panel-title"><div><p class="eyebrow">灵活发布</p><h2>临时任务</h2></div></div>
-            <p class="plan-help">一次性或短周期安排，不改写长期课程；发布前先预览实际日期。</p>
+            <p class="plan-help">按指定日期发布；完成可获得阳光，但不顺延，也不影响长期学习日、连续天数和地图。</p>
             <form id="familyTaskForm" class="family-task-form">
               <div class="range-grid">
                 <label>任务名称<input id="familyTaskTitle" required maxlength="40" placeholder="例如：练习学校舞蹈"></label>
@@ -270,7 +275,7 @@
         <div class="parent-pane published-layout" data-parent-pane="published" hidden>
           <section class="panel plan-tool-panel">
             <div class="panel-title"><div><p class="eyebrow">已经生效</p><h2>临时任务安排</h2></div></div>
-            <p class="plan-help">这里集中显示仍在生效的临时任务。可以编辑尚未完成的内容，或取消后续安排。</p>
+            <p class="plan-help">这里只管理发布安排。临时任务到期后自然退出，不作为长期课程追踪。</p>
             <div id="familyTaskScheduleList" class="plan-period-list"></div>
           </section>
 
@@ -292,23 +297,26 @@
       </section>
     </main>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script src="./audio-store.js?v=20260805-static-1"></script>
+    <script src="./audio-store.js?v=20260810-audio-rollback-1"></script>
     <script src="./supabase-config.js?v=20260803-english-1"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="./family-sync-core.js?v=20260810-family-sync-2"></script>
     <script src="./cloud-store.js?v=20260810-family-sync-2"></script>
     <script src="./state-migration-core.js?v=20260810-sync-1"></script>
     <script src="./reward-progress.js?v=20260809-1"></script>
+    <script src="./curriculum/course-plan-catalog.js?v=20260810-excel-runtime-1"></script>
+    <script src="./course-plan-runtime.js?v=20260810-excel-runtime-1"></script>
     <script src="./curriculum/summer-plan-content.js?v=20260807-1"></script>
     <script src="./curriculum/learning-module-catalog.js?v=20260807-2"></script>
-    <script src="./learning-modules.js?v=20260810-dynamic-course-3"></script>
-    <script src="./family-task-schedules.js?v=20260807-1"></script>
+    <script src="./learning-modules.js?v=20260810-plan-policy-1"></script>
+    <script src="./task-overrides.js?v=20260810-day-overrides-1"></script>
+    <script src="./family-task-schedules.js?v=20260810-plan-policy-1"></script>
     <script src="./course-releases.js?v=20260807-3"></script>
     <script src="./learning-plan-presets.js?v=20260807-1"></script>
     <script src="./legacy-learning-plan.js?v=20260807-1"></script>
-    <script src="./summer-plan-progress.js?v=20260810-sync-1"></script>
-    <script src="./app.js?v=20260810-dynamic-course-3"></script>
-    <script src="./week1-course-core.js?v=20260807-1"></script>
-    <script src="./week1-course-ui.js?v=20260807-2"></script>
+    <script src="./summer-plan-progress.js?v=20260810-plan-policy-1"></script>
+    <script src="./app.js?v=20260810-english-modules-1"></script>
+    <script src="./week1-course-core.js?v=20260810-unified-audio-3"></script>
+    <script src="./week1-course-ui.js?v=20260810-unified-audio-3"></script>
   </body>
 </html>

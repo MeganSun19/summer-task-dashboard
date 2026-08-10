@@ -1,7 +1,7 @@
 (function (root) {
   const VERSION = 1;
-  const TITLE = "暑假计划";
-  const TOTAL_DAYS = 26;
+  const TITLE = root.CoursePlanRuntime?.title("暑假计划") || "暑假计划";
+  const TOTAL_DAYS = root.CoursePlanRuntime?.totalDays(26) || 26;
   const KIDS = ["brother", "younger"];
 
   function clampDay(value) {
@@ -27,17 +27,30 @@
     return Boolean(task?.done || task?.excused);
   }
 
+  function isCourseTask(task) {
+    return Boolean(task && task.source !== "parent");
+  }
+
+  function activeTasks(day) {
+    return (day?.tasks || []).filter((task) => !task.archived);
+  }
+
+  function courseTasks(day) {
+    return activeTasks(day).filter(isCourseTask);
+  }
+
   function isDayResolved(day) {
-    return Boolean(day?.tasks?.length && day.tasks.every(isTaskResolved));
+    const tasks = courseTasks(day);
+    return Boolean(tasks.length && tasks.every(isTaskResolved));
   }
 
   function resolvedCount(day) {
-    return (day?.tasks || []).filter(isTaskResolved).length;
+    return activeTasks(day).filter(isTaskResolved).length;
   }
 
   function dayResolvedOn(day, fallbackDate) {
     if (!isDayResolved(day)) return null;
-    const dates = day.tasks.map((task) => task.completedOn || task.excusedOn || fallbackDate).filter(Boolean).sort();
+    const dates = courseTasks(day).map((task) => task.completedOn || task.excusedOn || fallbackDate).filter(Boolean).sort();
     return dates.at(-1) || fallbackDate;
   }
 
@@ -179,7 +192,7 @@
 
   root.SummerPlanProgress = Object.freeze({
     VERSION, TITLE, TOTAL_DAYS, ensure, current, advance, shouldAdvance,
-    isTaskResolved, isDayResolved, resolvedCount, dayResolvedOn,
+    isTaskResolved, isCourseTask, activeTasks, courseTasks, isDayResolved, resolvedCount, dayResolvedOn,
     setTaskDone, setTaskExcused, completionKeys, dayFromResolvedHistory,
     recoverLatestResolvedDay, streak, addDays
   });
