@@ -58,7 +58,7 @@ const refs = Object.fromEntries([
   "publishFamilyTask", "cancelFamilyTaskEdit", "familyTaskScheduleList",
   "toast", "cloudStatus", "cloudSetup", "closeCloudSetup", "cloudSetupMessage", "cloudSetupForms",
   "createFamilyForm", "joinFamilyForm", "familyName", "createFamilyPin", "familyInviteCode", "joinFamilyPin",
-  "cloudConnectedInfo", "connectedInviteCode"
+  "cloudConnectedInfo", "connectedInviteCode", "switchFamilyDetails", "switchFamilyForm", "switchFamilyCode", "switchFamilyPin"
 ].map((id) => [id, document.getElementById(id)]));
 
 document.getElementById("parentEntry").addEventListener("click", () => setView(currentView === "parent" ? "kid" : "parent"));
@@ -113,6 +113,7 @@ refs.closeCloudSetup.addEventListener("click", () => {
 });
 refs.createFamilyForm.addEventListener("submit", createCloudFamily);
 refs.joinFamilyForm.addEventListener("submit", joinCloudFamily);
+refs.switchFamilyForm.addEventListener("submit", switchCloudFamily);
 
 window.LearningActivityProgress = Object.freeze({
   getContext() {
@@ -349,7 +350,7 @@ function applyRemoteState(remoteState, meta = {}) {
   if (!remoteState?.days || !remoteState?.startDate) return;
   const recoveryVersion = 3;
   const localIsNewer = Boolean(state.updatedAt && (!remoteState.updatedAt || state.updatedAt > remoteState.updatedAt));
-  const conflictState = meta.source === "conflict" ? meta.localState : null;
+  const conflictState = ["conflict", "family-switch"].includes(meta.source) ? meta.localState : null;
   const needsDeviceRecovery = meta.source === "load" && localStorage.getItem(DEVICE_SYNC_RECOVERY_KEY) !== "done";
   const needsCompletionRecovery = meta.source === "load"
     && (needsDeviceRecovery || Number(remoteState.cloudCompletionRecoveryVersion || 0) < recoveryVersion || localIsNewer);
@@ -426,6 +427,25 @@ async function joinCloudFamily(event) {
     showToast("已加入家庭空间");
   } catch (error) {
     refs.cloudSetupMessage.textContent = window.CloudStore.friendlyError(error);
+  } finally {
+    setCloudFormsDisabled(false);
+  }
+}
+
+async function switchCloudFamily(event) {
+  event.preventDefault();
+  const code = refs.switchFamilyCode.value.trim().toUpperCase();
+  const pin = refs.switchFamilyPin.value;
+  setCloudFormsDisabled(true);
+  try {
+    const info = await window.CloudStore.switchFamily(code, pin, state);
+    await window.CloudStore.flushSave();
+    refs.switchFamilyPin.value = "";
+    refs.connectedInviteCode.textContent = info.inviteCode;
+    refs.switchFamilyDetails.open = false;
+    showToast("家庭已切换，本机与云端学习记录已合并");
+  } catch (error) {
+    refs.cloudSetupMessage.textContent = window.CloudStore.friendlyError(error, "切换并合并家庭");
   } finally {
     setCloudFormsDisabled(false);
   }

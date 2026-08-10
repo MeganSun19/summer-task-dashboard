@@ -60,6 +60,11 @@ button { cursor: pointer; }
 .cloud-connected-info span, .cloud-connected-info small { display: block; color: var(--muted); }
 .cloud-connected-info strong { display: block; margin: 5px 0; color: var(--blue); font-size: 28px; letter-spacing: .16em; }
 .cloud-connected-info small { font-size: 12px; }
+.switch-family-details { margin-top: 14px; text-align: left; }
+.switch-family-details summary { cursor: pointer; color: var(--blue); font-weight: 800; text-align: center; }
+.switch-family-form { display: grid; gap: 10px; margin-top: 12px; padding: 14px; border-radius: 14px; background: var(--blue-soft); }
+.switch-family-form p { margin: 0; color: var(--muted); font-size: 13px; }
+.switch-family-form label { display: grid; gap: 5px; color: var(--ink); font-size: 13px; font-weight: 700; }
 .kid-switcher { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 500px; margin-bottom: 16px; }
 .kid-tab { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 2px solid transparent; border-radius: 17px; background: rgba(255,255,255,.75); color: var(--muted); font-weight: 800; text-align: left; }
 .kid-tab.active { border-color: var(--kid-color); background: white; color: var(--ink); box-shadow: 0 7px 20px rgba(54,68,93,.09); }

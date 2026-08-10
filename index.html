@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5b942" />
     <title>双星学习岛</title>
-    <link rel="stylesheet" href="./styles.css?v=20260807-course-2" />
+    <link rel="stylesheet" href="./styles.css?v=20260810-family-merge-1" />
   </head>
   <body>
     <nav class="side-nav" aria-label="学习岛导航">
@@ -60,6 +60,15 @@
         <div id="cloudConnectedInfo" class="cloud-connected-info" hidden>
           <span>家庭邀请码</span><strong id="connectedInviteCode">—</strong>
           <small>在其他手机上输入这个邀请码和家长 PIN，即可载入同一份数据。</small>
+          <details id="switchFamilyDetails" class="switch-family-details">
+            <summary>连接错了家庭？切换并合并</summary>
+            <form id="switchFamilyForm" class="switch-family-form">
+              <p>本机学习记录会与目标家庭合并，原家庭数据不会删除。</p>
+              <label>目标家庭邀请码<input id="switchFamilyCode" required maxlength="8" autocapitalize="characters" placeholder="8 位邀请码"></label>
+              <label>目标家庭家长 PIN<input id="switchFamilyPin" required type="password" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" placeholder="4–8 位数字"></label>
+              <button class="primary-action" type="submit">切换并合并学习记录</button>
+            </form>
+          </details>
         </div>
       </section>
 
@@ -280,7 +289,7 @@
     <script src="./audio-store.js?v=20260805-static-1"></script>
     <script src="./supabase-config.js?v=20260803-english-1"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="./cloud-store.js?v=20260810-sync-1"></script>
+    <script src="./cloud-store.js?v=20260810-family-merge-1"></script>
     <script src="./state-migration-core.js?v=20260810-sync-1"></script>
     <script src="./reward-progress.js?v=20260809-1"></script>
     <script src="./curriculum/summer-plan-content.js?v=20260807-1"></script>
@@ -291,7 +300,7 @@
     <script src="./learning-plan-presets.js?v=20260807-1"></script>
     <script src="./legacy-learning-plan.js?v=20260807-1"></script>
     <script src="./summer-plan-progress.js?v=20260810-sync-1"></script>
-    <script src="./app.js?v=20260810-sync-1"></script>
+    <script src="./app.js?v=20260810-family-merge-1"></script>
     <script src="./week1-course-core.js?v=20260807-1"></script>
     <script src="./week1-course-ui.js?v=20260807-2"></script>
   </body>

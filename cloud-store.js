@@ -12,6 +12,7 @@
   let pendingState;
   let saving = false;
   let subscribedFamilyId;
+  let stateChannel;
   let callbacks = {};
   let audioAssetListPromise;
 
@@ -121,6 +122,22 @@
     await loadRemoteState();
     subscribeToRemoteState();
     emitStatus("synced", "已加入并载入家庭数据");
+    return { familyId, inviteCode, revision };
+  }
+
+  async function switchFamily(code, pin, localState) {
+    emitStatus("syncing", "正在切换并合并家庭数据…");
+    const { data, error } = await client.rpc("join_family", {
+      supplied_invite_code: code,
+      parent_pin: pin
+    });
+    if (error) throw error;
+    const family = data?.[0];
+    if (!family) throw new Error("没有找到目标家庭空间");
+    setFamily(family.family_id, family.invite_code, family.revision, "device");
+    await loadRemoteState("family-switch", stateForCloud(localState));
+    subscribeToRemoteState();
+    emitStatus("syncing", "学习记录已合并，正在保存…");
     return { familyId, inviteCode, revision };
   }
 
@@ -245,8 +262,9 @@
 
   function subscribeToRemoteState() {
     if (!client || !familyId || subscribedFamilyId === familyId) return;
+    if (stateChannel) client.removeChannel(stateChannel);
     subscribedFamilyId = familyId;
-    client
+    stateChannel = client
       .channel(`family-state-${familyId}`)
       .on(
         "postgres_changes",
@@ -311,6 +329,7 @@
     init,
     createFamily,
     joinFamily,
+    switchFamily,
     scheduleSave,
     flushSave,
     listFamilyAudioAssets,
