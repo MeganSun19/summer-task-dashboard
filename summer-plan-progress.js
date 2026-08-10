@@ -123,8 +123,9 @@
     return { changed: true, progress };
   }
 
-  function setTaskDone(task, done, actualDate) {
+  function setTaskDone(task, done, actualDate, statusUpdatedAt = new Date().toISOString()) {
     task.done = Boolean(done);
+    task.statusUpdatedAt = statusUpdatedAt;
     if (task.done) {
       task.completedOn ||= actualDate;
       task.excused = false;
@@ -134,8 +135,9 @@
     }
   }
 
-  function setTaskExcused(task, excused, actualDate) {
+  function setTaskExcused(task, excused, actualDate, statusUpdatedAt = new Date().toISOString()) {
     task.excused = Boolean(excused);
+    task.statusUpdatedAt = statusUpdatedAt;
     if (task.excused) {
       task.done = false;
       task.excusedOn ||= actualDate;
@@ -162,10 +164,23 @@
     });
   }
 
+  function streak(state, kidId, today) {
+    const completionDates = new Set(Object.entries(state.days?.[kidId] || {}).map(([plannedDate, day]) => (
+      dayResolvedOn(day, plannedDate)
+    )).filter(Boolean));
+    let cursor = completionDates.has(today) ? today : addDays(today, -1);
+    let count = 0;
+    while (completionDates.has(cursor) && count < 365) {
+      count += 1;
+      cursor = addDays(cursor, -1);
+    }
+    return count;
+  }
+
   root.SummerPlanProgress = Object.freeze({
     VERSION, TITLE, TOTAL_DAYS, ensure, current, advance, shouldAdvance,
     isTaskResolved, isDayResolved, resolvedCount, dayResolvedOn,
     setTaskDone, setTaskExcused, completionKeys, dayFromResolvedHistory,
-    recoverLatestResolvedDay, addDays
+    recoverLatestResolvedDay, streak, addDays
   });
 })(typeof window === "undefined" ? globalThis : window);

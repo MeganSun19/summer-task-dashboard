@@ -97,3 +97,14 @@ test("a later completed calendar day repairs a stale current-day pointer", () =>
   assert.equal(state.summerPlan.kids.brother.currentDate, "2026-08-09");
   assert.equal(state.summerPlan.kids.brother.currentDay, 1);
 });
+
+test("streak keeps yesterday's run until today's tasks are resolved", () => {
+  const state = {
+    days: { brother: {
+      "2026-08-09": { tasks: [{ done: true, completedOn: "2026-08-09" }] }
+    } }
+  };
+  assert.equal(SummerPlan.streak(state, "brother", "2026-08-10"), 1);
+  state.days.brother["2026-08-10"] = { tasks: [{ done: true, completedOn: "2026-08-10" }] };
+  assert.equal(SummerPlan.streak(state, "brother", "2026-08-10"), 2);
+});

@@ -124,7 +124,7 @@
     return { familyId, inviteCode, revision };
   }
 
-  async function loadRemoteState() {
+  async function loadRemoteState(source = "load", localState = null) {
     const { data, error } = await client
       .from("family_states")
       .select("state, revision")
@@ -132,7 +132,7 @@
       .single();
     if (error) throw error;
     revision = data.revision;
-    callbacks.onRemoteState?.(data.state, { revision, source: "load" });
+    callbacks.onRemoteState?.(data.state, { revision, source, localState });
     return data.state;
   }
 
@@ -157,8 +157,8 @@
       });
       if (error) {
         if (String(error.message).includes("SYNC_CONFLICT")) {
-          await loadRemoteState();
-          emitStatus("conflict", "发现其他设备的新数据，已重新载入");
+          await loadRemoteState("conflict", stateToSave);
+          emitStatus("conflict", "发现其他设备的新数据，已合并后重试");
           return;
         }
         throw error;
@@ -254,8 +254,13 @@
         (payload) => {
           if (!payload.new || payload.new.revision <= (revision || 0)) return;
           revision = payload.new.revision;
+          const localState = pendingState;
           pendingState = null;
-          callbacks.onRemoteState?.(payload.new.state, { revision, source: "realtime" });
+          callbacks.onRemoteState?.(payload.new.state, {
+            revision,
+            source: localState ? "conflict" : "realtime",
+            localState
+          });
           emitStatus("synced", "已收到其他设备的更新");
         }
       )

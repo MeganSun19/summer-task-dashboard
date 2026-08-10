@@ -1,5 +1,6 @@
 (function (root) {
-  function mergeStoredStates(legacy, current) {
+  function mergeStoredStates(legacy, current, options = {}) {
+    const mergeLegacyExcused = options.mergeLegacyExcused !== false;
     const merged = { ...legacy, ...current };
     merged.days = { brother: {}, younger: {} };
     ["brother", "younger"].forEach((kidId) => {
@@ -14,20 +15,33 @@
           return;
         }
         const oldTasks = new Map((oldDay.tasks || []).map((item) => [item.id, item]));
+        const nextTasks = (newDay.tasks || []).map((item) => {
+          const oldTask = oldTasks.get(item.id);
+          const oldUpdatedAt = oldTask?.statusUpdatedAt || "";
+          const newUpdatedAt = item.statusUpdatedAt || "";
+          const authoritative = oldUpdatedAt && oldUpdatedAt > newUpdatedAt ? oldTask : item;
+          const hasTimestamp = Boolean(oldUpdatedAt || newUpdatedAt);
+          const done = hasTimestamp ? Boolean(authoritative?.done) : Boolean(item.done || oldTask?.done);
+          const excused = !done && (hasTimestamp
+            ? Boolean(authoritative?.excused)
+            : Boolean(item.excused || (mergeLegacyExcused && oldTask?.excused)));
+          const mergedTask = { ...item, done, excused };
+          mergedTask.statusUpdatedAt = authoritative?.statusUpdatedAt || oldUpdatedAt || newUpdatedAt || undefined;
+          if (done) mergedTask.completedOn = authoritative?.completedOn || item.completedOn || oldTask?.completedOn || date;
+          else delete mergedTask.completedOn;
+          if (excused) mergedTask.excusedOn = authoritative?.excusedOn || item.excusedOn || oldTask?.excusedOn || date;
+          else delete mergedTask.excusedOn;
+          if (!mergedTask.statusUpdatedAt) delete mergedTask.statusUpdatedAt;
+          return mergedTask;
+        });
+        const nextTaskIds = new Set(nextTasks.map((item) => item.id));
+        const preservedLocalTasks = (oldDay.tasks || []).filter((item) => (
+          !nextTaskIds.has(item.id) && (item.done || item.excused || item.source === "parent")
+        ));
         merged.days[kidId][date] = {
           ...oldDay,
           ...newDay,
-          tasks: (newDay.tasks || []).map((item) => {
-            const oldTask = oldTasks.get(item.id);
-            const done = Boolean(item.done || oldTask?.done);
-            const excused = !done && Boolean(item.excused || oldTask?.excused);
-            const mergedTask = { ...item, done, excused };
-            if (done) mergedTask.completedOn = item.completedOn || oldTask?.completedOn || date;
-            else delete mergedTask.completedOn;
-            if (excused) mergedTask.excusedOn = item.excusedOn || oldTask?.excusedOn || date;
-            else delete mergedTask.excusedOn;
-            return mergedTask;
-          }),
+          tasks: [...nextTasks, ...preservedLocalTasks],
           mistakes: newDay.mistakes || oldDay.mistakes || "",
           note: newDay.note || oldDay.note || ""
         };
@@ -55,11 +69,54 @@
       }
     };
     merged.planPeriods = current.planPeriods?.length ? current.planPeriods : (legacy.planPeriods || []);
-    merged.learningActivities = current.learningActivities || current.englishExperiment
-      || legacy.learningActivities || legacy.englishExperiment;
+    merged.learningActivities = mergeLearningActivities(
+      legacy.learningActivities || legacy.englishExperiment,
+      current.learningActivities || current.englishExperiment
+    );
     merged.englishExperiment = merged.learningActivities;
+    merged.updatedAt = [legacy.updatedAt, current.updatedAt].filter(Boolean).sort().at(-1);
     return merged;
   }
 
-  root.TaskStateMigration = Object.freeze({ mergeStoredStates });
+  function mergeDeviceProgress(local, remote) {
+    const merged = mergeStoredStates(local, remote, { mergeLegacyExcused: false });
+    if (!local.summerPlan && !remote.summerPlan) return merged;
+    merged.summerPlan ||= structuredClone(local.summerPlan || remote.summerPlan);
+    merged.summerPlan.kids ||= {};
+    ["brother", "younger"].forEach((kidId) => {
+      const candidates = [local.summerPlan?.kids?.[kidId], remote.summerPlan?.kids?.[kidId]].filter(Boolean);
+      merged.summerPlan.kids[kidId] = candidates.sort((left, right) => (
+        Number(right.currentDay || 0) - Number(left.currentDay || 0)
+        || String(right.currentDate || "").localeCompare(String(left.currentDate || ""))
+      ))[0] || merged.summerPlan.kids[kidId];
+    });
+    return merged;
+  }
+
+  function mergeLearningActivities(local = {}, remote = {}) {
+    const merged = { ...local, ...remote, progress: {}, moduleStarts: {} };
+    ["brother", "younger"].forEach((kidId) => {
+      merged.progress[kidId] = {};
+      const localProgress = local.progress?.[kidId] || {};
+      const remoteProgress = remote.progress?.[kidId] || {};
+      const dates = new Set([...Object.keys(localProgress), ...Object.keys(remoteProgress)]);
+      dates.forEach((date) => {
+        merged.progress[kidId][date] = { ...(localProgress[date] || {}), ...(remoteProgress[date] || {}) };
+        Object.keys(merged.progress[kidId][date]).forEach((activityId) => {
+          const localRecord = localProgress[date]?.[activityId];
+          const remoteRecord = remoteProgress[date]?.[activityId];
+          if (localRecord?.updatedAt > (remoteRecord?.updatedAt || "")) {
+            merged.progress[kidId][date][activityId] = localRecord;
+          }
+        });
+      });
+      merged.moduleStarts[kidId] = {
+        ...(local.moduleStarts?.[kidId] || {}),
+        ...(remote.moduleStarts?.[kidId] || {})
+      };
+    });
+    return merged;
+  }
+
+  root.TaskStateMigration = Object.freeze({ mergeStoredStates, mergeDeviceProgress });
 })(typeof window === "undefined" ? globalThis : window);

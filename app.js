@@ -1,5 +1,6 @@
 const STORAGE_KEY = "summer-task-dashboard-english-v1";
 const LEGACY_STORAGE_KEY = "summer-task-dashboard-v1";
+const DEVICE_SYNC_RECOVERY_KEY = "summer-task-dashboard-device-sync-recovery-v3";
 
 
 const profiles = [
@@ -189,13 +190,20 @@ function loadState() {
     const currentValid = current?.days && current?.startDate;
     const legacyValid = legacy?.days && legacy?.startDate;
     if (currentValid && legacyValid) {
-      const merged = window.TaskStateMigration.mergeStoredStates(legacy, current);
+      const merged = window.TaskStateMigration.mergeDeviceProgress(legacy, current);
+      merged.legacyStateImported = true;
       localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+      localStorage.removeItem(LEGACY_STORAGE_KEY);
       return merged;
     }
-    if (currentValid) return current;
+    if (currentValid) {
+      localStorage.removeItem(LEGACY_STORAGE_KEY);
+      return current;
+    }
     if (legacyValid) {
+      legacy.legacyStateImported = true;
       localStorage.setItem(STORAGE_KEY, JSON.stringify(legacy));
+      localStorage.removeItem(LEGACY_STORAGE_KEY);
       return legacy;
     }
   } catch {
@@ -339,21 +347,29 @@ async function initializeCloud() {
 
 function applyRemoteState(remoteState, meta = {}) {
   if (!remoteState?.days || !remoteState?.startDate) return;
-  const recoveryVersion = 2;
+  const recoveryVersion = 3;
   const localIsNewer = Boolean(state.updatedAt && (!remoteState.updatedAt || state.updatedAt > remoteState.updatedAt));
+  const conflictState = meta.source === "conflict" ? meta.localState : null;
+  const needsDeviceRecovery = meta.source === "load" && localStorage.getItem(DEVICE_SYNC_RECOVERY_KEY) !== "done";
   const needsCompletionRecovery = meta.source === "load"
-    && (Number(remoteState.cloudCompletionRecoveryVersion || 0) < recoveryVersion || localIsNewer);
-  state = needsCompletionRecovery
-    ? window.TaskStateMigration.mergeStoredStates(state, remoteState)
-    : remoteState;
-  if (needsCompletionRecovery) state.cloudCompletionRecoveryVersion = recoveryVersion;
+    && (needsDeviceRecovery || Number(remoteState.cloudCompletionRecoveryVersion || 0) < recoveryVersion || localIsNewer);
+  state = conflictState
+    ? window.TaskStateMigration.mergeDeviceProgress(conflictState, remoteState)
+    : needsCompletionRecovery
+      ? window.TaskStateMigration.mergeDeviceProgress(state, remoteState)
+      : remoteState;
+  if (needsCompletionRecovery || conflictState) {
+    state.cloudCompletionRecoveryVersion = recoveryVersion;
+    state.updatedAt = new Date().toISOString();
+  }
   const progressRecovered = ensureState(state);
   activeKid = state.activeKid || activeKid;
   editorKid = activeKid;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  if (meta.source === "load") localStorage.setItem(DEVICE_SYNC_RECOVERY_KEY, "done");
   renderEditorKidOptions();
   render();
-  if (needsCompletionRecovery || progressRecovered) window.CloudStore?.scheduleSave(state);
+  if (needsCompletionRecovery || conflictState || progressRecovered) window.CloudStore?.scheduleSave(state);
   if (meta.source === "realtime") showToast("已同步另一台设备的更新");
 }
 
@@ -1447,17 +1463,7 @@ function availableSun(kidId) {
 }
 
 function streakFor(kidId, date) {
-  let cursor = parseISODate(date);
-  let streak = 0;
-  const completionDates = new Set(Object.entries(state.days[kidId] || {}).map(([plannedDate, day]) => (
-    summerPlanRegistry.dayResolvedOn(day, plannedDate)
-  )).filter(Boolean));
-  for (let index = 0; index < 365; index += 1) {
-    if (!completionDates.has(toISODate(cursor))) break;
-    streak += 1;
-    cursor = addDays(cursor, -1);
-  }
-  return streak;
+  return summerPlanRegistry.streak(state, kidId, date);
 }
 
 function encouragement(done, total) {
