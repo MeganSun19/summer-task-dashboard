@@ -58,7 +58,8 @@ const refs = Object.fromEntries([
   "publishFamilyTask", "cancelFamilyTaskEdit", "familyTaskScheduleList",
   "toast", "cloudStatus", "cloudSetup", "closeCloudSetup", "cloudSetupMessage", "cloudSetupForms",
   "createFamilyForm", "joinFamilyForm", "familyName", "createFamilyPin", "familyInviteCode", "joinFamilyPin",
-  "cloudConnectedInfo", "connectedInviteCode", "switchFamilyDetails", "switchFamilyForm", "switchFamilyCode", "switchFamilyPin"
+  "familyChoice", "familyChoiceList", "cloudConnectedInfo", "connectedInviteCode", "joinedFamilyList",
+  "switchFamilyDetails", "switchFamilyForm", "switchFamilyCode", "switchFamilyPin"
 ].map((id) => [id, document.getElementById(id)]));
 
 document.getElementById("parentEntry").addEventListener("click", () => setView(currentView === "parent" ? "kid" : "parent"));
@@ -114,6 +115,7 @@ refs.closeCloudSetup.addEventListener("click", () => {
 refs.createFamilyForm.addEventListener("submit", createCloudFamily);
 refs.joinFamilyForm.addEventListener("submit", joinCloudFamily);
 refs.switchFamilyForm.addEventListener("submit", switchCloudFamily);
+refs.familyChoiceList.addEventListener("click", selectJoinedFamily);
 
 window.LearningActivityProgress = Object.freeze({
   getContext() {
@@ -343,7 +345,7 @@ async function initializeCloud() {
     onRemoteState: applyRemoteState,
     onStatus: updateCloudStatus
   });
-  if (result.needsSetup || (result.error && result.error.code !== "CLIENT_NOT_READY")) refs.cloudSetup.hidden = false;
+  if (result.needsSetup || result.needsFamilyChoice || (result.error && result.error.code !== "CLIENT_NOT_READY")) refs.cloudSetup.hidden = false;
 }
 
 function applyRemoteState(remoteState, meta = {}) {
@@ -378,26 +380,42 @@ function updateCloudStatus(info) {
   const labels = {
     local: "● 本地模式",
     setup: "● 等待启用云端",
+    choice: "● 请选择家庭",
     syncing: "● 正在同步",
     synced: "● 云端已同步",
     offline: "● 离线保存",
     conflict: "● 已载入新数据"
   };
   refs.cloudStatus.className = `cloud-status ${info.status}`;
-  refs.cloudStatus.textContent = labels[info.status] || "● 本地模式";
+  const shortCode = window.FamilySyncCore.shortInviteCode(info.inviteCode);
+  refs.cloudStatus.textContent = `${labels[info.status] || "● 本地模式"}${shortCode ? ` · ${shortCode}` : ""}`;
   refs.cloudStatus.title = info.message || "";
   refs.cloudSetupMessage.textContent = info.message || "第一次使用请创建家庭空间；其他手机用邀请码和家长 PIN 加入。";
 
+  const families = info.families || [];
   const connected = Boolean(info.familyId);
-  refs.cloudSetupForms.hidden = connected;
+  const needsChoice = !connected && families.length > 1;
+  refs.familyChoice.hidden = !needsChoice;
+  refs.cloudSetupForms.hidden = connected || needsChoice;
   refs.cloudConnectedInfo.hidden = !connected;
-  if (connected) refs.connectedInviteCode.textContent = info.inviteCode || "刷新后显示";
+  refs.familyChoiceList.innerHTML = needsChoice ? families.map((family) => `
+    <button type="button" data-select-family="${escapeAttr(family.familyId)}">
+      <span><strong>${escapeHTML(family.familyName)}</strong><small>${escapeHTML(family.accessRole === "owner" ? "创建者设备" : "已加入设备")}</small></span>
+      <b>${escapeHTML(family.inviteCode)}</b>
+    </button>`).join("") : "";
+  if (connected) {
+    refs.connectedInviteCode.textContent = info.inviteCode || "刷新后显示";
+    refs.joinedFamilyList.innerHTML = families.length > 1
+      ? `<p>此设备共加入过 ${families.length} 个家庭；当前主家庭为 <b>${escapeHTML(info.inviteCode)}</b>。旧家庭不会自动参与同步。</p>`
+      : "";
+  }
 }
 
 async function createCloudFamily(event) {
   event.preventDefault();
   const name = refs.familyName.value.trim();
   const pin = refs.createFamilyPin.value;
+  if (!window.confirm("只有家里第一台设备才应创建新家庭。其他手机应加入已有家庭。\n\n确定创建一个全新、彼此独立的家庭空间吗？")) return;
   setCloudFormsDisabled(true);
   try {
     const info = await window.CloudStore.createFamily(name, pin, state);
@@ -417,9 +435,11 @@ async function joinCloudFamily(event) {
   event.preventDefault();
   const code = refs.familyInviteCode.value.trim().toUpperCase();
   const pin = refs.joinFamilyPin.value;
+  if (!window.confirm(`确认加入家庭 ${code}？\n\n本机学习记录会与该家庭无损合并；所有设备必须显示同一个家庭码。`)) return;
   setCloudFormsDisabled(true);
   try {
-    const info = await window.CloudStore.joinFamily(code, pin);
+    const info = await window.CloudStore.joinFamily(code, pin, state);
+    await window.CloudStore.flushSave();
     refs.joinFamilyPin.value = "";
     refs.connectedInviteCode.textContent = info.inviteCode;
     refs.cloudSetupForms.hidden = true;
@@ -436,6 +456,12 @@ async function switchCloudFamily(event) {
   event.preventDefault();
   const code = refs.switchFamilyCode.value.trim().toUpperCase();
   const pin = refs.switchFamilyPin.value;
+  const currentCode = window.CloudStore.getInfo().inviteCode;
+  if (code === currentCode) {
+    refs.cloudSetupMessage.textContent = "这已经是当前家庭，无需切换。";
+    return;
+  }
+  if (!window.confirm(`确认从家庭 ${currentCode || "当前家庭"} 切换到 ${code}？\n\n本机记录会与目标家庭无损合并，旧家庭不会删除，但以后只同步目标家庭。`)) return;
   setCloudFormsDisabled(true);
   try {
     const info = await window.CloudStore.switchFamily(code, pin, state);
@@ -446,6 +472,23 @@ async function switchCloudFamily(event) {
     showToast("家庭已切换，本机与云端学习记录已合并");
   } catch (error) {
     refs.cloudSetupMessage.textContent = window.CloudStore.friendlyError(error, "切换并合并家庭");
+  } finally {
+    setCloudFormsDisabled(false);
+  }
+}
+
+async function selectJoinedFamily(event) {
+  const button = event.target.closest("[data-select-family]");
+  if (!button) return;
+  const target = window.CloudStore.getInfo().families.find((family) => family.familyId === button.dataset.selectFamily);
+  if (!target || !window.confirm(`选择 ${target.inviteCode} 作为这台设备的主家庭？\n\n本机学习记录会先与该家庭无损合并。`)) return;
+  setCloudFormsDisabled(true);
+  try {
+    await window.CloudStore.selectExistingFamily(target.familyId, state);
+    await window.CloudStore.flushSave();
+    showToast(`已选择家庭 ${target.inviteCode}`);
+  } catch (error) {
+    refs.cloudSetupMessage.textContent = window.CloudStore.friendlyError(error, "选择主家庭");
   } finally {
     setCloudFormsDisabled(false);
   }

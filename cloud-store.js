@@ -8,6 +8,7 @@
   let revision = null;
   let inviteCode = "";
   let accessRole = "";
+  let availableFamilies = [];
   let saveTimer;
   let pendingState;
   let saving = false;
@@ -15,9 +16,10 @@
   let stateChannel;
   let callbacks = {};
   let audioAssetListPromise;
+  let activeSavePromise;
 
   function emitStatus(status, message) {
-    const detail = { status, message, familyId, inviteCode, revision };
+    const detail = { status, message, familyId, inviteCode, revision, accessRole, families: availableFamilies };
     callbacks.onStatus?.(detail);
     window.dispatchEvent(new CustomEvent("cloud-store-status", { detail }));
   }
@@ -55,8 +57,11 @@
       // show the invite code needed by a second device.
       await restoreFamilyMembership();
       if (!familyId) {
-        emitStatus("setup", "等待创建或加入家庭");
-        return { available: true, needsSetup: true };
+        const needsFamilyChoice = availableFamilies.length > 1;
+        emitStatus(needsFamilyChoice ? "choice" : "setup", needsFamilyChoice
+          ? "检测到多个家庭空间，请先选择主家庭"
+          : "等待创建或加入家庭");
+        return { available: true, needsSetup: !needsFamilyChoice, needsFamilyChoice, families: availableFamilies };
       }
 
       phase = "载入家庭数据";
@@ -72,28 +77,23 @@
   }
 
   async function restoreFamilyMembership() {
-    if (familyId) {
-      const [membershipResult, familyResult, stateResult] = await Promise.all([
-        client.from("family_members").select("access_role").eq("family_id", familyId).single(),
-        client.from("families").select("invite_code").eq("id", familyId).single(),
-        client.from("family_states").select("revision").eq("family_id", familyId).single()
-      ]);
-      const error = membershipResult.error || familyResult.error || stateResult.error;
-      if (!error) {
-        setFamily(familyId, familyResult.data.invite_code, stateResult.data.revision, membershipResult.data.access_role);
-        return;
-      }
-      localStorage.removeItem(FAMILY_KEY);
-      familyId = null;
-    }
     const { data, error } = await client.rpc("get_my_families");
     if (error) throw error;
-    const family = data?.[0];
-    if (!family) return;
-    setFamily(family.family_id, family.invite_code, family.revision, family.access_role);
+    const choice = window.FamilySyncCore.chooseActiveFamily(data, familyId);
+    availableFamilies = choice.families;
+    if (!choice.activeFamily) {
+      localStorage.removeItem(FAMILY_KEY);
+      familyId = null;
+      inviteCode = "";
+      revision = null;
+      accessRole = "";
+      return;
+    }
+    setFamilyFromMembership(choice.activeFamily);
   }
 
   async function createFamily(name, pin, initialState) {
+    await prepareFamilyChange();
     emitStatus("syncing", "正在创建家庭空间…");
     const { data, error } = await client.rpc("create_family", {
       family_name: name,
@@ -104,12 +104,14 @@
     const family = data?.[0];
     if (!family) throw new Error("家庭空间创建失败");
     setFamily(family.family_id, family.invite_code, family.revision, "owner");
+    await refreshAvailableFamilies();
     subscribeToRemoteState();
     emitStatus("synced", "本地数据已上传");
     return { familyId, inviteCode, revision };
   }
 
-  async function joinFamily(code, pin) {
+  async function joinFamily(code, pin, localState) {
+    await prepareFamilyChange();
     emitStatus("syncing", "正在加入家庭空间…");
     const { data, error } = await client.rpc("join_family", {
       supplied_invite_code: code,
@@ -119,13 +121,17 @@
     const family = data?.[0];
     if (!family) throw new Error("没有找到家庭空间");
     setFamily(family.family_id, family.invite_code, family.revision, "device");
-    await loadRemoteState();
+    await refreshAvailableFamilies();
+    await loadRemoteState(localState ? "family-switch" : "load", localState ? stateForCloud(localState) : null);
     subscribeToRemoteState();
     emitStatus("synced", "已加入并载入家庭数据");
     return { familyId, inviteCode, revision };
   }
 
   async function switchFamily(code, pin, localState) {
+    const normalizedCode = String(code || "").trim().toUpperCase();
+    if (normalizedCode && normalizedCode === inviteCode) throw new Error("ALREADY_CURRENT_FAMILY");
+    await prepareFamilyChange();
     emitStatus("syncing", "正在切换并合并家庭数据…");
     const { data, error } = await client.rpc("join_family", {
       supplied_invite_code: code,
@@ -135,10 +141,30 @@
     const family = data?.[0];
     if (!family) throw new Error("没有找到目标家庭空间");
     setFamily(family.family_id, family.invite_code, family.revision, "device");
+    await refreshAvailableFamilies();
     await loadRemoteState("family-switch", stateForCloud(localState));
     subscribeToRemoteState();
     emitStatus("syncing", "学习记录已合并，正在保存…");
     return { familyId, inviteCode, revision };
+  }
+
+  async function selectExistingFamily(targetFamilyId, localState) {
+    const target = availableFamilies.find((family) => family.familyId === targetFamilyId);
+    if (!target) throw new Error("FAMILY_MEMBERSHIP_NOT_FOUND");
+    if (target.familyId === familyId) return { familyId, inviteCode, revision };
+    await prepareFamilyChange();
+    emitStatus("syncing", `正在切换到家庭 ${target.inviteCode}…`);
+    setFamilyFromMembership(target);
+    await loadRemoteState("family-switch", stateForCloud(localState));
+    subscribeToRemoteState();
+    emitStatus("syncing", "学习记录已合并，正在保存…");
+    return { familyId, inviteCode, revision };
+  }
+
+  async function refreshAvailableFamilies() {
+    const { data, error } = await client.rpc("get_my_families");
+    if (error) throw error;
+    availableFamilies = window.FamilySyncCore.normalizeFamilies(data);
   }
 
   async function loadRemoteState(source = "load", localState = null) {
@@ -161,12 +187,13 @@
     emitStatus("syncing", "正在保存…");
   }
 
-  async function flushSave() {
-    if (saving || !pendingState || !client || !familyId) return;
+  function flushSave() {
+    if (saving) return activeSavePromise;
+    if (!pendingState || !client || !familyId) return Promise.resolve();
     saving = true;
     const stateToSave = pendingState;
     pendingState = null;
-    try {
+    activeSavePromise = (async () => { try {
       const { data, error } = await client.rpc("save_family_state", {
         target_family_id: familyId,
         next_state: stateToSave,
@@ -192,7 +219,16 @@
         clearTimeout(saveTimer);
         saveTimer = setTimeout(flushSave, SAVE_DELAY_MS);
       }
-    }
+    } })();
+    return activeSavePromise;
+  }
+
+  async function prepareFamilyChange() {
+    clearTimeout(saveTimer);
+    if (saving) await activeSavePromise;
+    // The caller supplies the current local state for merging into the target.
+    // Cancel any old-family debounce so it can never run with the new family id.
+    pendingState = null;
   }
 
   async function listFamilyAudioAssets(force = false) {
@@ -293,6 +329,10 @@
     localStorage.setItem(FAMILY_KEY, familyId);
   }
 
+  function setFamilyFromMembership(family) {
+    setFamily(family.familyId, family.inviteCode, family.revision, family.accessRole);
+  }
+
   function stateForCloud(state) {
     const nextState = structuredClone(state);
     delete nextState.activeKid;
@@ -307,6 +347,8 @@
     if (message.includes("row-level security") || message.includes("Unauthorized")) return "当前设备没有上传家庭音频的权限";
     if (message.includes("INVALID_INVITE_OR_PIN")) return "邀请码或家长 PIN 不正确";
     if (message.includes("INVALID_PIN")) return "PIN 需要使用 4–8 位数字";
+    if (message.includes("ALREADY_CURRENT_FAMILY")) return "这已经是当前家庭，无需切换";
+    if (message.includes("FAMILY_MEMBERSHIP_NOT_FOUND")) return "当前设备尚未加入这个家庭，请使用邀请码和 PIN 加入";
     return diagnosticError(error, phase);
   }
 
@@ -330,6 +372,7 @@
     createFamily,
     joinFamily,
     switchFamily,
+    selectExistingFamily,
     scheduleSave,
     flushSave,
     listFamilyAudioAssets,
@@ -337,6 +380,6 @@
     uploadFamilyAudioAsset,
     getFamilyAudioUrl,
     friendlyError,
-    getInfo: () => ({ familyId, inviteCode, revision, accessRole, connected: Boolean(client && familyId) })
+    getInfo: () => ({ familyId, inviteCode, revision, accessRole, families: availableFamilies, connected: Boolean(client && familyId) })
   };
 })();

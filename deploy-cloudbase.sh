@@ -51,6 +51,7 @@ for file in \
   legacy-learning-plan.js \
   summer-plan-progress.js \
   reward-progress.js \
+  family-sync-core.js \
   cloud-store.js \
   state-migration-core.js \
   audio-store.js \

@@ -86,6 +86,24 @@ test("device recovery keeps legacy completions without resurrecting a stale exem
   assert.equal(merged.days.brother["2026-08-10"].tasks[1].excused, false);
 });
 
+test("device recovery preserves a valid date-specific exemption", () => {
+  const local = {
+    startDate: "2026-08-01",
+    days: { brother: { "2026-08-09": { tasks: [
+      { id: "writing", done: false, excused: true, excusedOn: "2026-08-09" }
+    ] } }, younger: {} }
+  };
+  const remote = {
+    startDate: "2026-08-01",
+    days: { brother: { "2026-08-09": { tasks: [
+      { id: "writing", done: false, excused: false }
+    ] } }, younger: {} }
+  };
+  const merged = mergeDeviceProgress(local, remote);
+  assert.equal(merged.days.brother["2026-08-09"].tasks[0].excused, true);
+  assert.equal(merged.days.brother["2026-08-09"].tasks[0].excusedOn, "2026-08-09");
+});
+
 test("newer task status wins when two devices conflict", () => {
   const local = {
     startDate: "2026-08-01",

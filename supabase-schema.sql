@@ -220,8 +220,7 @@ as $$
   join public.families f on f.id = m.family_id
   join public.family_states s on s.family_id = f.id
   where m.user_id = (select auth.uid())
-  order by m.joined_at
-  limit 1;
+  order by m.joined_at desc;
 $$;
 
 revoke all on function public.create_family(text, text, jsonb) from public;

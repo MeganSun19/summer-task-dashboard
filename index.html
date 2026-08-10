@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5b942" />
     <title>双星学习岛</title>
-    <link rel="stylesheet" href="./styles.css?v=20260810-family-merge-1" />
+    <link rel="stylesheet" href="./styles.css?v=20260810-family-sync-2" />
   </head>
   <body>
     <nav class="side-nav" aria-label="学习岛导航">
@@ -42,24 +42,30 @@
           <div><p class="eyebrow">多设备同步</p><h2>连接家庭空间</h2></div>
           <button id="closeCloudSetup" class="quiet-action" type="button">关闭</button>
         </div>
-        <p id="cloudSetupMessage" class="cloud-setup-message">第一次使用请创建家庭空间；其他手机用邀请码和家长 PIN 加入。</p>
+        <p id="cloudSetupMessage" class="cloud-setup-message">其他手机应加入已有家庭；只有第一台设备需要创建新家庭。</p>
+        <div id="familyChoice" class="family-choice" hidden>
+          <strong>这台设备加入过多个家庭，请明确选择主家庭</strong>
+          <p>选择前请核对邀请码。系统不会再自动进入某一个旧家庭。</p>
+          <div id="familyChoiceList" class="family-choice-list"></div>
+        </div>
         <div id="cloudSetupForms" class="cloud-setup-grid">
-          <form id="createFamilyForm" class="cloud-form">
-            <h3>这台是第一台设备</h3>
-            <label>家庭名称<input id="familyName" required maxlength="40" value="双星学习岛"></label>
-            <label>设置家长 PIN<input id="createFamilyPin" required type="password" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" placeholder="4–8 位数字"></label>
-            <button class="primary-action" type="submit">创建并上传本地数据</button>
-          </form>
           <form id="joinFamilyForm" class="cloud-form">
-            <h3>这台是其他设备</h3>
+            <h3>加入已有家庭（推荐）</h3>
             <label>家庭邀请码<input id="familyInviteCode" required maxlength="8" autocapitalize="characters" placeholder="8 位邀请码"></label>
             <label>家长 PIN<input id="joinFamilyPin" required type="password" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" placeholder="4–8 位数字"></label>
-            <button class="primary-action" type="submit">加入并载入家庭数据</button>
+            <button class="primary-action" type="submit">加入并合并本机记录</button>
+          </form>
+          <form id="createFamilyForm" class="cloud-form cloud-form-create">
+            <h3>仅第一台设备：创建新家庭</h3>
+            <label>家庭名称<input id="familyName" required maxlength="40" value="双星学习岛"></label>
+            <label>设置家长 PIN<input id="createFamilyPin" required type="password" inputmode="numeric" pattern="[0-9]{4,8}" minlength="4" maxlength="8" placeholder="4–8 位数字"></label>
+            <button class="quiet-action" type="submit">创建全新独立家庭</button>
           </form>
         </div>
         <div id="cloudConnectedInfo" class="cloud-connected-info" hidden>
           <span>家庭邀请码</span><strong id="connectedInviteCode">—</strong>
-          <small>在其他手机上输入这个邀请码和家长 PIN，即可载入同一份数据。</small>
+          <small>所有设备必须显示同一个邀请码，才会同步同一份数据。</small>
+          <div id="joinedFamilyList" class="joined-family-list"></div>
           <details id="switchFamilyDetails" class="switch-family-details">
             <summary>连接错了家庭？切换并合并</summary>
             <form id="switchFamilyForm" class="switch-family-form">
@@ -289,7 +295,8 @@
     <script src="./audio-store.js?v=20260805-static-1"></script>
     <script src="./supabase-config.js?v=20260803-english-1"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="./cloud-store.js?v=20260810-family-merge-1"></script>
+    <script src="./family-sync-core.js?v=20260810-family-sync-2"></script>
+    <script src="./cloud-store.js?v=20260810-family-sync-2"></script>
     <script src="./state-migration-core.js?v=20260810-sync-1"></script>
     <script src="./reward-progress.js?v=20260809-1"></script>
     <script src="./curriculum/summer-plan-content.js?v=20260807-1"></script>
@@ -300,7 +307,7 @@
     <script src="./learning-plan-presets.js?v=20260807-1"></script>
     <script src="./legacy-learning-plan.js?v=20260807-1"></script>
     <script src="./summer-plan-progress.js?v=20260810-sync-1"></script>
-    <script src="./app.js?v=20260810-family-merge-1"></script>
+    <script src="./app.js?v=20260810-family-sync-2"></script>
     <script src="./week1-course-core.js?v=20260807-1"></script>
     <script src="./week1-course-ui.js?v=20260807-2"></script>
   </body>

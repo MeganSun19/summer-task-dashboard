@@ -22,9 +22,10 @@
           const authoritative = oldUpdatedAt && oldUpdatedAt > newUpdatedAt ? oldTask : item;
           const hasTimestamp = Boolean(oldUpdatedAt || newUpdatedAt);
           const done = hasTimestamp ? Boolean(authoritative?.done) : Boolean(item.done || oldTask?.done);
+          const validExcuse = (task) => Boolean(task?.excused && task.excusedOn === date);
           const excused = !done && (hasTimestamp
-            ? Boolean(authoritative?.excused)
-            : Boolean(item.excused || (mergeLegacyExcused && oldTask?.excused)));
+            ? validExcuse(authoritative)
+            : Boolean(validExcuse(item) || (mergeLegacyExcused && validExcuse(oldTask))));
           const mergedTask = { ...item, done, excused };
           mergedTask.statusUpdatedAt = authoritative?.statusUpdatedAt || oldUpdatedAt || newUpdatedAt || undefined;
           if (done) mergedTask.completedOn = authoritative?.completedOn || item.completedOn || oldTask?.completedOn || date;
@@ -79,7 +80,10 @@
   }
 
   function mergeDeviceProgress(local, remote) {
-    const merged = mergeStoredStates(local, remote, { mergeLegacyExcused: false });
+    // A valid exemption belongs to one exact calendar date. Preserve it just
+    // like a completion; the date check in mergeStoredStates prevents an old
+    // recurring-task exemption from leaking into later days.
+    const merged = mergeStoredStates(local, remote, { mergeLegacyExcused: true });
     if (!local.summerPlan && !remote.summerPlan) return merged;
     merged.summerPlan ||= structuredClone(local.summerPlan || remote.summerPlan);
     merged.summerPlan.kids ||= {};
