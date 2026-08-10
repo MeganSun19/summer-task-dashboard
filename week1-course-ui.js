@@ -29,8 +29,10 @@
   let currentContextKey = "";
   let practiceShuffleSerial = 0;
   let activeChoiceSeed = "";
+  let heartWordBankPage = 0;
   const ROUND_SCHEMA_VERSION = 6;
   const EXTENSION_PLAN_VERSION = 1;
+  const HEART_WORD_BANK_PAGE_SIZE = 40;
   refs.week1CoursePlayer.setAttribute("playsinline", "");
   refs.week1CoursePlayer.setAttribute("webkit-playsinline", "");
 
@@ -70,6 +72,7 @@
     if (activeModule && currentContextKey === nextContextKey) return;
     running = false;
     activeModule = null;
+    heartWordBankPage = 0;
     currentContextKey = nextContextKey;
     const moduleContext = context?.modules?.find((item) => item.activity?.renderer === "english-course");
     if (!moduleContext) {
@@ -142,16 +145,30 @@
     )).join("");
     const assignment = day.raz.assignment;
     const books = assignment?.mode === "fixed" ? assignment.books : (assignment?.fixedBooks || []);
-    const heartWordBank = (course.heartWords?.words || []).map((entry) => (
-      heartWordChip(entry.word, `${entry.tier === "extension" ? "拓展" : "基础"} · ${entry.firstDay ? `第${entry.firstDay}天` : "开课前"}`, true)
-    )).join("");
     return `<div class="english-module-grid">
       ${moduleCard("soundLab", "Aa", "声音实验室", "听音辨词与自然拼读", phonics)}
       ${moduleCard("coreWords", "词", "核心高频词", "认读、书写与独立拼写", heart)}
       ${moduleCard("raz", "读", "RAZ 故事森林", "目标词、句型与今日书目", `<div class="module-raz-books">${books.map((book, index) => `<span>${index + 1}. ${highlightHeartWords(book)}</span>`).join("")}${assignment?.mode === "choose" ? `<span class="raz-choice-rule">${escapeHTML(assignment.rule)}</span>` : ""}<small>${escapeHTML(day.raz.focus)}</small></div>`)}
       ${extension ? moduleCard("extraWords", "+", "高频词加餐", "拓展高频词与间隔复习", extension) : ""}
       </div>
-      <details class="heart-word-bank"><summary>本期高频词总表 · ${course.heartWords?.words?.length || 0} 词</summary><p>${escapeHTML(course.heartWords?.instruction || "")}</p><div>${heartWordBank}</div></details>`;
+      <details class="heart-word-bank"><summary>本期高频词总表 · ${course.heartWords?.words?.length || 0} 词</summary><p>${escapeHTML(course.heartWords?.instruction || "")}</p><div data-heart-word-bank-content>${heartWordBankMarkup()}</div></details>`;
+  }
+
+  function heartWordBankMarkup() {
+    const words = course.heartWords?.words || [];
+    const pageCount = Math.max(1, Math.ceil(words.length / HEART_WORD_BANK_PAGE_SIZE));
+    heartWordBankPage = Math.min(Math.max(0, heartWordBankPage), pageCount - 1);
+    const start = heartWordBankPage * HEART_WORD_BANK_PAGE_SIZE;
+    const visibleWords = words.slice(start, start + HEART_WORD_BANK_PAGE_SIZE);
+    const chips = visibleWords.map((entry) => (
+      heartWordChip(entry.word, `${entry.tier === "extension" ? "拓展" : "基础"} · ${entry.firstDay ? `第${entry.firstDay}天` : "开课前"}`, true)
+    )).join("");
+    return `<div class="heart-word-bank-chips">${chips}</div>
+      <nav class="heart-word-bank-pages" aria-label="高频词总表分页">
+        <button type="button" data-heart-word-page="-1" ${heartWordBankPage === 0 ? "disabled" : ""}>上一页</button>
+        <span>第 ${start + 1}–${Math.min(start + HEART_WORD_BANK_PAGE_SIZE, words.length)} 词 · ${heartWordBankPage + 1}/${pageCount} 页</span>
+        <button type="button" data-heart-word-page="1" ${heartWordBankPage >= pageCount - 1 ? "disabled" : ""}>下一页</button>
+      </nav>`;
   }
 
   function moduleCard(id, icon, title, description, content) {
@@ -189,6 +206,13 @@
   }
 
   function handleOverviewClick(event) {
+    const pageButton = event.target.closest("[data-heart-word-page]");
+    if (pageButton) {
+      heartWordBankPage += Number(pageButton.dataset.heartWordPage) || 0;
+      const container = refs.week1CourseWords.querySelector("[data-heart-word-bank-content]");
+      if (container) container.innerHTML = heartWordBankMarkup();
+      return;
+    }
     const moduleButton = event.target.closest("[data-course-module]");
     if (moduleButton) return startCourseModule(moduleButton.dataset.courseModule);
     if (event.target.closest("[data-phonics-audio]")) return playPhonicsWord(event);

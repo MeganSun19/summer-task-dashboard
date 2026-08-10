@@ -159,3 +159,47 @@ test("device recovery keeps the newest English activity record from either devic
   const merged = mergeDeviceProgress(local, remote);
   assert.equal(merged.learningActivities.progress.brother["2026-08-10"].phonics.score, 5);
 });
+
+test("newer local garden removal is not resurrected by an older cloud squad", () => {
+  const local = {
+    days: { brother: {}, younger: {} },
+    gardens: { brother: ["sunflower", "peashooter", "wallnut", "snowpea", "cherry"], younger: [] },
+    gardenUpdatedAt: { brother: "2026-08-10T10:00:00.000Z", younger: null }
+  };
+  const remote = {
+    days: { brother: {}, younger: {} },
+    gardens: { brother: ["sunflower", "peashooter", "wallnut", "snowpea", "cherry", "melon"], younger: [] },
+    gardenUpdatedAt: { brother: "2026-08-10T09:00:00.000Z", younger: null }
+  };
+  const merged = mergeDeviceProgress(local, remote);
+  assert.deepEqual(merged.gardens.brother, local.gardens.brother);
+  assert.equal(merged.gardenUpdatedAt.brother, local.gardenUpdatedAt.brother);
+});
+
+test("a newer explicit empty squad wins over stale nonempty garden data", () => {
+  const local = {
+    days: { brother: {}, younger: {} },
+    gardens: { brother: [], younger: [] },
+    gardenUpdatedAt: { brother: "2026-08-10T11:00:00.000Z", younger: null }
+  };
+  const remote = {
+    days: { brother: {}, younger: {} },
+    gardens: { brother: ["sunflower"], younger: [] },
+    gardenUpdatedAt: { brother: "2026-08-10T10:00:00.000Z", younger: null }
+  };
+  assert.deepEqual(mergeDeviceProgress(local, remote).gardens.brother, []);
+});
+
+test("a newer cloud garden change beats an older local squad", () => {
+  const local = {
+    days: { brother: {}, younger: {} },
+    gardens: { brother: ["sunflower"], younger: [] },
+    gardenUpdatedAt: { brother: "2026-08-10T10:00:00.000Z", younger: null }
+  };
+  const remote = {
+    days: { brother: {}, younger: {} },
+    gardens: { brother: ["peashooter"], younger: [] },
+    gardenUpdatedAt: { brother: "2026-08-10T11:00:00.000Z", younger: null }
+  };
+  assert.deepEqual(mergeDeviceProgress(local, remote).gardens.brother, ["peashooter"]);
+});

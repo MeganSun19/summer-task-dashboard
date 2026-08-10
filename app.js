@@ -16,6 +16,7 @@ const plants = [
   { id: "cherry", icon: "🍒", name: "樱桃炸弹", unlockAt: 160, power: "清理一大片" },
   { id: "melon", icon: "🍉", name: "西瓜投手", unlockAt: 240, power: "投出大西瓜" }
 ];
+const GARDEN_SQUAD_LIMIT = 5;
 
 const countryCodes = (`CN MN KP KR JP RU KZ KG TJ UZ TM AF PK IN NP BT BD LK MV MM LA VN KH TH MY SG ID BN PH TL IR IQ TR GE AM AZ SY LB IL PS JO SA YE OM AE QA BH KW UA BY MD RO BG GR MK RS BA ME AL HR SI HU SK PL LT LV EE FI SE NO DK DE CZ AT IT CH LI FR BE NL LU GB IE ES PT AD MC SM VA IS MT CY EG LY TN DZ MA MR ML NE TD SD SS ER DJ ET SO KE UG RW BI TZ CD CG GA GQ CM NG BJ TG GH BF CI LR SL GN GW GM SN CV CF AO ZM MW MZ ZW BW NA ZA LS SZ MG KM MU SC ST PG AU NZ FJ SB VU WS TO TV KI NR PW FM MH CA US MX GT BZ SV HN NI CR PA CO VE GY SR BR EC PE BO PY CL AR UY CU JM HT DO BS KN AG DM LC VC BB GD TT`).split(" ");
 
@@ -227,6 +228,9 @@ function ensureState(current) {
   current.gardens ||= { brother: [], younger: [] };
   current.gardens.brother ||= [];
   current.gardens.younger ||= [];
+  current.gardenUpdatedAt ||= { brother: null, younger: null };
+  current.gardenUpdatedAt.brother ||= null;
+  current.gardenUpdatedAt.younger ||= null;
   current.taskSettings ||= { brother: {}, younger: {} };
   current.taskSettings.brother ||= {};
   current.taskSettings.younger ||= {};
@@ -265,7 +269,12 @@ function ensureState(current) {
     .map((kidId) => summerPlanRegistry.recoverLatestResolvedDay(current, kidId, today))
     .some(Boolean);
   rewardRegistry.ensure(current, plants);
-  return progressRecovered || dynamicSettingsRepaired;
+  const repairedGardenKidIds = rewardRegistry.normalizeSquads(current, plants, GARDEN_SQUAD_LIMIT);
+  if (repairedGardenKidIds.length) {
+    const repairedAt = new Date().toISOString();
+    repairedGardenKidIds.forEach((kidId) => { current.gardenUpdatedAt[kidId] = repairedAt; });
+  }
+  return progressRecovered || dynamicSettingsRepaired || repairedGardenKidIds.length > 0;
 }
 
 function repairDynamicContentSettings(current) {
@@ -747,7 +756,7 @@ function renderRewards() {
   refs.rewardList.innerHTML = plants.map((plant) => {
     const unlocked = rewardRegistry.isPlantUnlocked(state, activeKid, plant.id);
     const planted = squad.includes(plant.id);
-    const squadFull = squad.length >= 5;
+    const squadFull = squad.length >= GARDEN_SQUAD_LIMIT;
     return `<article class="reward-card">
       <div class="reward-icon">${plant.icon}</div>
       <h3>${escapeHTML(plant.name)}</h3>
@@ -769,8 +778,9 @@ function togglePlant(plantId) {
   const index = squad.indexOf(plantId);
   if (!plant) return;
   if (index >= 0) squad.splice(index, 1);
-  else if (rewardRegistry.isPlantUnlocked(state, activeKid, plantId) && squad.length < 5) squad.push(plantId);
+  else if (rewardRegistry.isPlantUnlocked(state, activeKid, plantId) && squad.length < GARDEN_SQUAD_LIMIT) squad.push(plantId);
   else return;
+  state.gardenUpdatedAt[activeKid] = new Date().toISOString();
   saveState();
   showToast(index >= 0 ? `${plant.name}回到植物商店啦` : `${plant.name}加入小队，阳光没有减少`);
   render();

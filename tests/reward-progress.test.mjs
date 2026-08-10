@@ -59,3 +59,27 @@ test("an archived completed temporary task keeps its historical sun reward", () 
   const state = stateWith([{ id: "dance", source: "parent", done: true, archived: true }]);
   assert.equal(rewards.earnedSun(state, "brother"), 10);
 });
+
+test("legacy over-cap squads are repaired without losing permanent unlocks", () => {
+  const catalog = [
+    ...plants,
+    { id: "snowpea", unlockAt: 100 },
+    { id: "cherry", unlockAt: 160 },
+    { id: "melon", unlockAt: 240 }
+  ];
+  const state = stateWith();
+  state.gardens.brother = ["sunflower", "peashooter", "wallnut", "snowpea", "cherry", "melon"];
+  rewards.ensure(state, catalog);
+  const repaired = rewards.normalizeSquads(state, catalog, 5);
+  assert.deepEqual(repaired, ["brother"]);
+  assert.deepEqual(state.gardens.brother, ["sunflower", "peashooter", "wallnut", "snowpea", "cherry"]);
+  assert.equal(rewards.isPlantUnlocked(state, "brother", "melon"), true);
+});
+
+test("squad repair removes duplicates and unknown plants", () => {
+  const state = stateWith();
+  state.gardens.younger = ["sunflower", "sunflower", "unknown", "wallnut"];
+  const repaired = rewards.normalizeSquads(state, plants, 5);
+  assert.deepEqual(repaired, ["younger"]);
+  assert.deepEqual(state.gardens.younger, ["sunflower", "wallnut"]);
+});

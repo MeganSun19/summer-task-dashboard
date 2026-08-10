@@ -24,9 +24,24 @@
     return state.rewardProgress;
   }
 
+  function normalizeSquads(state, plantCatalog, limit = 5) {
+    state.gardens ||= { brother: [], younger: [] };
+    const validPlantIds = new Set(plantCatalog.map((plant) => plant.id));
+    const repairedKidIds = [];
+    KID_IDS.forEach((kidId) => {
+      const original = Array.isArray(state.gardens[kidId]) ? state.gardens[kidId] : [];
+      const normalized = [...new Set(original)]
+        .filter((plantId) => validPlantIds.has(plantId))
+        .slice(0, limit);
+      if (JSON.stringify(original) !== JSON.stringify(normalized)) repairedKidIds.push(kidId);
+      state.gardens[kidId] = normalized;
+    });
+    return repairedKidIds;
+  }
+
   function isPlantUnlocked(state, kidId, plantId) {
     return Boolean(state.rewardProgress?.unlockedPlants?.[kidId]?.includes(plantId));
   }
 
-  root.RewardProgress = Object.freeze({ earnedSun, ensure, isPlantUnlocked });
+  root.RewardProgress = Object.freeze({ earnedSun, ensure, normalizeSquads, isPlantUnlocked });
 })(typeof window === "undefined" ? globalThis : window);

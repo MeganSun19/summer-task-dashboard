@@ -47,3 +47,11 @@ test("sound-lab rounds and answer positions are shuffled without shifting legacy
   assert.match(ui, /shuffleWithSeed\(round\.choices, `\$\{activeChoiceSeed\}\|\$\{round\.word\}\|choices`\)/);
   assert.match(ui, /roundOrderVersion: 1/);
 });
+
+test("the 200-word bank renders one lightweight page at a time", () => {
+  assert.match(ui, /const HEART_WORD_BANK_PAGE_SIZE = 40/);
+  assert.match(ui, /words\.slice\(start, start \+ HEART_WORD_BANK_PAGE_SIZE\)/);
+  assert.match(ui, /data-heart-word-page="-1"/);
+  assert.match(ui, /data-heart-word-page="1"/);
+  assert.doesNotMatch(ui, /course\.heartWords\?\.words \|\| \[\]\)\.map/);
+});

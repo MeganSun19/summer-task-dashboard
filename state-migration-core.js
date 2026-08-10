@@ -1,4 +1,17 @@
 (function (root) {
+  function mergeGardenSquad(legacy, current, kidId) {
+    const legacyUpdatedAt = legacy.gardenUpdatedAt?.[kidId] || "";
+    const currentUpdatedAt = current.gardenUpdatedAt?.[kidId] || "";
+    if (legacyUpdatedAt || currentUpdatedAt) {
+      return structuredClone(legacyUpdatedAt > currentUpdatedAt
+        ? (legacy.gardens?.[kidId] || [])
+        : (current.gardens?.[kidId] || []));
+    }
+    return structuredClone(current.gardens?.[kidId]?.length
+      ? current.gardens[kidId]
+      : (legacy.gardens?.[kidId] || []));
+  }
+
   function mergeStoredStates(legacy, current, options = {}) {
     const mergeLegacyExcused = options.mergeLegacyExcused !== false;
     const merged = { ...legacy, ...current };
@@ -53,8 +66,12 @@
       younger: { ...(legacy.taskSettings?.younger || {}), ...(current.taskSettings?.younger || {}) }
     };
     merged.gardens = {
-      brother: current.gardens?.brother?.length ? current.gardens.brother : (legacy.gardens?.brother || []),
-      younger: current.gardens?.younger?.length ? current.gardens.younger : (legacy.gardens?.younger || [])
+      brother: mergeGardenSquad(legacy, current, "brother"),
+      younger: mergeGardenSquad(legacy, current, "younger")
+    };
+    merged.gardenUpdatedAt = {
+      brother: [legacy.gardenUpdatedAt?.brother, current.gardenUpdatedAt?.brother].filter(Boolean).sort().at(-1) || null,
+      younger: [legacy.gardenUpdatedAt?.younger, current.gardenUpdatedAt?.younger].filter(Boolean).sort().at(-1) || null
     };
     merged.rewardProgress = {
       schemaVersion: 1,
