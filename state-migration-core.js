@@ -22,7 +22,85 @@
       brother: [local.gardenUpdatedAt?.brother, remote.gardenUpdatedAt?.brother].filter(Boolean).sort().at(-1) || null,
       younger: [local.gardenUpdatedAt?.younger, remote.gardenUpdatedAt?.younger].filter(Boolean).sort().at(-1) || null
     };
+    merged.rewardProgress ||= {};
+    merged.rewardProgress.bonusEvents = mergeBonusEvents(local, remote);
+    merged.grammarIsland = mergeGrammarIslandStates(local.grammarIsland, remote.grammarIsland);
     return merged;
+  }
+
+  function mergeBonusEvents(local, remote) {
+    return {
+      brother: {
+        ...(local.rewardProgress?.bonusEvents?.brother || {}),
+        ...(remote.rewardProgress?.bonusEvents?.brother || {})
+      },
+      younger: {
+        ...(local.rewardProgress?.bonusEvents?.younger || {}),
+        ...(remote.rewardProgress?.bonusEvents?.younger || {})
+      }
+    };
+  }
+
+  function mergeGrammarIslandStates(local, remote) {
+    if (!local && !remote) return null;
+    const result = { version: 1, kids: {} };
+    ["brother", "younger"].forEach((kidId) => {
+      const localKid = local?.kids?.[kidId] || {};
+      const remoteKid = remote?.kids?.[kidId] || {};
+      const localSchedule = localKid.schedule || null;
+      const remoteSchedule = remoteKid.schedule || null;
+      const schedule = !localSchedule ? remoteSchedule
+        : !remoteSchedule ? localSchedule
+          : String(localSchedule.updatedAt || "") > String(remoteSchedule.updatedAt || "") ? localSchedule : remoteSchedule;
+      const lessons = {};
+      const lessonIds = new Set([
+        ...Object.keys(localKid.lessons || {}),
+        ...Object.keys(remoteKid.lessons || {})
+      ]);
+      lessonIds.forEach((lessonId) => {
+        const left = localKid.lessons?.[lessonId];
+        const right = remoteKid.lessons?.[lessonId];
+        if (!left || !right) {
+          lessons[lessonId] = structuredClone(right || left);
+          return;
+        }
+        const latestDeletion = [left.deletedAt, right.deletedAt].filter(Boolean).sort().at(-1) || "";
+        const latestCompletion = [left.latestAt || left.completedAt, right.latestAt || right.completedAt].filter(Boolean).sort().at(-1) || "";
+        if (latestDeletion && latestDeletion >= latestCompletion) {
+          lessons[lessonId] = { deletedAt: latestDeletion };
+          return;
+        }
+        if (left.deletedAt && !right.completedAt) {
+          lessons[lessonId] = structuredClone(left);
+          return;
+        }
+        if (right.deletedAt && !left.completedAt) {
+          lessons[lessonId] = structuredClone(right);
+          return;
+        }
+        const latestIsRight = String(right.latestAt || right.completedAt || "") >= String(left.latestAt || left.completedAt || "");
+        const latest = latestIsRight ? right : left;
+        const attempts = [...(left.attempts || []), ...(right.attempts || [])]
+          .filter((attempt, index, values) => values.findIndex((candidate) => (
+            candidate.completedAt === attempt.completedAt
+            && candidate.percent === attempt.percent
+          )) === index)
+          .sort((a, b) => String(a.completedAt || "").localeCompare(String(b.completedAt || "")))
+          .slice(-5);
+        lessons[lessonId] = {
+          ...structuredClone(latest),
+          completedAt: [left.completedAt, right.completedAt].filter(Boolean).sort()[0] || latest.completedAt,
+          latestAt: [left.latestAt, right.latestAt].filter(Boolean).sort().at(-1) || latest.latestAt,
+          bestPercent: Math.max(Number(left.bestPercent || 0), Number(right.bestPercent || 0)),
+          attemptCount: Math.max(Number(left.attemptCount || left.attempts?.length || 0), Number(right.attemptCount || right.attempts?.length || 0), attempts.length),
+          attempts
+        };
+      });
+      result.kids[kidId] = { lessons, schedule: schedule ? structuredClone(schedule) : null };
+    });
+    const latestUpdatedAt = [local?.updatedAt, remote?.updatedAt].filter(Boolean).sort().at(-1);
+    if (latestUpdatedAt) result.updatedAt = latestUpdatedAt;
+    return result;
   }
 
   function mergeStoredStates(legacy, current, options = {}) {
@@ -82,7 +160,7 @@
     merged.gardens = mergedGarden.gardens;
     merged.gardenUpdatedAt = mergedGarden.gardenUpdatedAt;
     merged.rewardProgress = {
-      schemaVersion: 1,
+      schemaVersion: 2,
       unlockedPlants: {
         brother: [...new Set([
           ...(legacy.rewardProgress?.unlockedPlants?.brother || []),
@@ -92,8 +170,10 @@
           ...(legacy.rewardProgress?.unlockedPlants?.younger || []),
           ...(current.rewardProgress?.unlockedPlants?.younger || [])
         ])]
-      }
+      },
+      bonusEvents: mergeBonusEvents(legacy, current)
     };
+    merged.grammarIsland = mergeGrammarIslandStates(legacy.grammarIsland, current.grammarIsland);
     merged.planPeriods = current.planPeriods?.length ? current.planPeriods : (legacy.planPeriods || []);
     merged.learningActivities = mergeLearningActivities(
       legacy.learningActivities || legacy.englishExperiment,
@@ -147,5 +227,5 @@
     return merged;
   }
 
-  root.TaskStateMigration = Object.freeze({ mergeStoredStates, mergeDeviceProgress, mergeGardenProgress });
+  root.TaskStateMigration = Object.freeze({ mergeStoredStates, mergeDeviceProgress, mergeGardenProgress, mergeGrammarIslandStates });
 })(typeof window === "undefined" ? globalThis : window);

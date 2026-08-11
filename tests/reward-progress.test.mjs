@@ -27,6 +27,31 @@ test("both children start with the same zero sun balance", () => {
   assert.equal(rewards.earnedSun(state, "younger"), 0);
 });
 
+test("grammar bonus rewards add to the wallet without creating daily tasks", () => {
+  const state = stateWith([{ done: true }]);
+  const beforeTasks = structuredClone(state.days);
+  assert.equal(rewards.addBonusReward(state, "brother", {
+    id: "grammar:brother:w1-a-an",
+    amount: 5,
+    source: "grammar-island",
+    earnedAt: "2026-08-11T08:00:00.000Z"
+  }), true);
+
+  assert.equal(rewards.taskSun(state, "brother"), 10);
+  assert.equal(rewards.bonusSun(state, "brother"), 5);
+  assert.equal(rewards.earnedSun(state, "brother"), 15);
+  assert.deepEqual(state.days, beforeTasks);
+});
+
+test("the same grammar lesson reward cannot be claimed twice", () => {
+  const state = stateWith();
+  const reward = { id: "grammar:younger:w1-a-an", amount: 5, source: "grammar-island" };
+  assert.equal(rewards.addBonusReward(state, "younger", reward), true);
+  assert.equal(rewards.addBonusReward(state, "younger", reward), false);
+  assert.equal(rewards.bonusSun(state, "younger"), 5);
+  assert.equal(Object.keys(state.rewardProgress.bonusEvents.younger).length, 1);
+});
+
 test("upgrade preserves current sun and seeds each child's permanent unlocks", () => {
   const state = stateWith(
     [{ done: true }, { done: true }, { done: true }],
@@ -89,4 +114,10 @@ test("squad repair removes duplicates and unknown plants", () => {
 test("the peashooter uses an emoji supported by older Android fonts", () => {
   assert.match(appSource, /id: "peashooter", icon: "🌿"/);
   assert.doesNotMatch(appSource, /🫛/);
+});
+
+test("the app bridges grammar completion into the independent bonus ledger", () => {
+  assert.match(appSource, /grammar-island-reward-earned/);
+  assert.match(appSource, /grammar:\$\{kidId\}:\$\{lessonId\}/);
+  assert.match(appSource, /GRAMMAR_LESSON_BONUS_SUN = 5/);
 });

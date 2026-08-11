@@ -17,6 +17,7 @@ const plants = [
   { id: "melon", icon: "🍉", name: "西瓜投手", unlockAt: 240, power: "投出大西瓜" }
 ];
 const GARDEN_SQUAD_LIMIT = 5;
+const GRAMMAR_LESSON_BONUS_SUN = 5;
 
 const countryCodes = (`CN MN KP KR JP RU KZ KG TJ UZ TM AF PK IN NP BT BD LK MV MM LA VN KH TH MY SG ID BN PH TL IR IQ TR GE AM AZ SY LB IL PS JO SA YE OM AE QA BH KW UA BY MD RO BG GR MK RS BA ME AL HR SI HU SK PL LT LV EE FI SE NO DK DE CZ AT IT CH LI FR BE NL LU GB IE ES PT AD MC SM VA IS MT CY EG LY TN DZ MA MR ML NE TD SD SS ER DJ ET SO KE UG RW BI TZ CD CG GA GQ CM NG BJ TG GH BF CI LR SL GN GW GM SN CV CF AO ZM MW MZ ZW BW NA ZA LS SZ MG KM MU SC ST PG AU NZ FJ SB VU WS TO TV KI NR PW FM MH CA US MX GT BZ SV HN NI CR PA CO VE GY SR BR EC PE BO PY CL AR UY CU JM HT DO BS KN AG DM LC VC BB GD TT`).split(" ");
 
@@ -110,6 +111,7 @@ refs.rangeEnd.addEventListener("change", renderRangePreview);
 refs.cloudStatus.addEventListener("click", () => {
   refs.cloudSetup.hidden = !refs.cloudSetup.hidden;
 });
+window.addEventListener("grammar-island-reward-earned", handleGrammarIslandReward);
 refs.closeCloudSetup.addEventListener("click", () => {
   refs.cloudSetup.hidden = true;
 });
@@ -176,6 +178,18 @@ window.LearningActivityProgress = Object.freeze({
     delete day[activityId];
     if (!Object.keys(day).length) delete state.learningActivities.progress[activeKid][date];
     saveState();
+  }
+});
+window.GrammarIslandSync = Object.freeze({
+  getState() {
+    return state.grammarIsland ? structuredClone(state.grammarIsland) : null;
+  },
+  save(nextGrammarState) {
+    const merged = window.TaskStateMigration.mergeGrammarIslandStates(state.grammarIsland, nextGrammarState);
+    if (JSON.stringify(merged) === JSON.stringify(state.grammarIsland)) return structuredClone(state.grammarIsland);
+    state.grammarIsland = merged;
+    saveState();
+    return structuredClone(state.grammarIsland);
   }
 });
 // Compatibility alias for progress already stored by the first English-course UI.
@@ -397,11 +411,15 @@ function applyRemoteState(remoteState, meta = {}) {
   state = window.TaskStateMigration.mergeGardenProgress(localStateBeforeRemote, selectedState);
   const gardenRecovered = JSON.stringify(state.gardens) !== JSON.stringify(selectedState.gardens)
     || JSON.stringify(state.gardenUpdatedAt) !== JSON.stringify(selectedState.gardenUpdatedAt);
+  const bonusRewardsRecovered = JSON.stringify(state.rewardProgress?.bonusEvents || {})
+    !== JSON.stringify(selectedState.rewardProgress?.bonusEvents || {});
+  const grammarIslandRecovered = JSON.stringify(state.grammarIsland || null)
+    !== JSON.stringify(selectedState.grammarIsland || null);
   if (needsCompletionRecovery || conflictState) {
     state.cloudCompletionRecoveryVersion = recoveryVersion;
     state.updatedAt = new Date().toISOString();
   }
-  if (gardenRecovered) state.updatedAt = new Date().toISOString();
+  if (gardenRecovered || bonusRewardsRecovered || grammarIslandRecovered) state.updatedAt = new Date().toISOString();
   const progressRecovered = ensureState(state);
   activeKid = state.activeKid || activeKid;
   editorKid = activeKid;
@@ -409,7 +427,7 @@ function applyRemoteState(remoteState, meta = {}) {
   if (meta.source === "load") localStorage.setItem(DEVICE_SYNC_RECOVERY_KEY, "done");
   renderEditorKidOptions();
   render();
-  if (needsCompletionRecovery || conflictState || progressRecovered || gardenRecovered) window.CloudStore?.scheduleSave(state);
+  if (needsCompletionRecovery || conflictState || progressRecovered || gardenRecovered || bonusRewardsRecovered || grammarIslandRecovered) window.CloudStore?.scheduleSave(state);
   if (meta.source === "realtime") showToast("已同步另一台设备的更新");
 }
 
@@ -753,6 +771,25 @@ function toggleTask(item) {
   saveState();
   showToast(item.done ? "做得好！获得 10 阳光 ☀" : "已取消完成");
   render();
+}
+
+function handleGrammarIslandReward(event) {
+  const detail = event.detail || {};
+  const kidId = detail.kidId === "younger" ? "younger" : detail.kidId === "brother" ? "brother" : null;
+  const lessonId = /^[a-z0-9-]+$/.test(detail.lessonId || "") ? detail.lessonId : null;
+  if (!kidId || !lessonId) return;
+  const awarded = rewardRegistry.addBonusReward(state, kidId, {
+    id: `grammar:${kidId}:${lessonId}`,
+    amount: GRAMMAR_LESSON_BONUS_SUN,
+    source: "grammar-island",
+    earnedAt: detail.earnedAt || new Date().toISOString()
+  });
+  detail.awarded = awarded;
+  detail.amount = GRAMMAR_LESSON_BONUS_SUN;
+  if (!awarded) return;
+  saveState();
+  render();
+  if (!detail.silent) showToast(`额外学习奖励：获得 ${GRAMMAR_LESSON_BONUS_SUN} 阳光 ☀`);
 }
 
 function renderRewards() {

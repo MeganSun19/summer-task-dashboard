@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { test } from "node:test";
 
 await import("../state-migration-core.js");
-const { mergeStoredStates, mergeDeviceProgress, mergeGardenProgress } = globalThis.TaskStateMigration;
+const { mergeStoredStates, mergeDeviceProgress, mergeGardenProgress, mergeGrammarIslandStates } = globalThis.TaskStateMigration;
 const appSource = await readFile(new URL("../app.js", import.meta.url), "utf8");
 
 test("legacy dashboard state and English-island progress merge without losing completions", () => {
@@ -49,6 +49,91 @@ test("legacy dashboard state and English-island progress merge without losing co
   assert.equal(merged.taskSettings.brother.englishIsland.enabled, true);
   assert.equal(merged.englishExperiment.courseStarts.brother, "2026-08-06");
   assert.equal(merged.learningActivities.courseStarts.brother, "2026-08-06");
+});
+
+test("cloud merging unions idempotent grammar reward events from both devices", () => {
+  const local = {
+    days: { brother: {}, younger: {} },
+    rewardProgress: { bonusEvents: { brother: {
+      "grammar:brother:w1-a-an": { id: "grammar:brother:w1-a-an", amount: 5, source: "grammar-island" }
+    }, younger: {} } }
+  };
+  const remote = {
+    days: { brother: {}, younger: {} },
+    rewardProgress: { bonusEvents: { brother: {
+      "grammar:brother:w1-plurals": { id: "grammar:brother:w1-plurals", amount: 5, source: "grammar-island" }
+    }, younger: {
+      "grammar:younger:w1-a-an": { id: "grammar:younger:w1-a-an", amount: 5, source: "grammar-island" }
+    } } }
+  };
+
+  const merged = mergeStoredStates(local, remote);
+  assert.deepEqual(Object.keys(merged.rewardProgress.bonusEvents.brother).sort(), [
+    "grammar:brother:w1-a-an", "grammar:brother:w1-plurals"
+  ]);
+  assert.deepEqual(Object.keys(merged.rewardProgress.bonusEvents.younger), ["grammar:younger:w1-a-an"]);
+});
+
+test("a stale realtime payload cannot erase a just-earned local grammar reward", () => {
+  const local = {
+    gardens: { brother: [], younger: [] },
+    rewardProgress: { bonusEvents: { brother: {
+      "grammar:brother:w1-a-an": { id: "grammar:brother:w1-a-an", amount: 5, source: "grammar-island" }
+    }, younger: {} } }
+  };
+  const staleRealtime = {
+    gardens: { brother: [], younger: [] },
+    rewardProgress: { bonusEvents: { brother: {}, younger: {} } }
+  };
+
+  const merged = mergeGardenProgress(local, staleRealtime);
+  assert.equal(merged.rewardProgress.bonusEvents.brother["grammar:brother:w1-a-an"].amount, 5);
+});
+
+test("grammar progress and schedules merge across devices without losing either child's records", () => {
+  const local = { version: 1, kids: {
+    brother: { schedule: { weekdays: [2, 5], startDate: "2026-08-11", updatedAt: "2026-08-11T01:00:00.000Z" }, lessons: {
+      "w1-a-an": { completedAt: "2026-08-11T01:00:00.000Z", latestAt: "2026-08-11T01:00:00.000Z", bestPercent: 83, attemptCount: 1, attempts: [] }
+    } },
+    younger: { schedule: null, lessons: {} }
+  } };
+  const remote = { version: 1, kids: {
+    brother: { schedule: { weekdays: [1, 3, 6], startDate: "2026-08-12", updatedAt: "2026-08-11T02:00:00.000Z" }, lessons: {
+      "w1-plurals": { completedAt: "2026-08-11T02:00:00.000Z", latestAt: "2026-08-11T02:00:00.000Z", bestPercent: 100, attemptCount: 1, attempts: [] }
+    } },
+    younger: { schedule: { weekdays: [4], startDate: "2026-08-13", updatedAt: "2026-08-11T02:00:00.000Z" }, lessons: {
+      "w1-a-an": { completedAt: "2026-08-11T02:00:00.000Z", latestAt: "2026-08-11T02:00:00.000Z", bestPercent: 100, attemptCount: 1, attempts: [] }
+    } }
+  } };
+
+  const merged = mergeGrammarIslandStates(local, remote);
+  assert.deepEqual(merged.kids.brother.schedule.weekdays, [1, 3, 6]);
+  assert.deepEqual(Object.keys(merged.kids.brother.lessons).sort(), ["w1-a-an", "w1-plurals"]);
+  assert.equal(merged.kids.younger.lessons["w1-a-an"].bestPercent, 100);
+});
+
+test("a newer grammar reset tombstone prevents an older device from resurrecting a lesson", () => {
+  const completed = { version: 1, kids: {
+    brother: { schedule: null, lessons: { "w1-a-an": {
+      completedAt: "2026-08-11T01:00:00.000Z", latestAt: "2026-08-11T01:00:00.000Z", bestPercent: 100, attempts: []
+    } } }, younger: { schedule: null, lessons: {} }
+  } };
+  const reset = { version: 1, kids: {
+    brother: { schedule: null, lessons: { "w1-a-an": { deletedAt: "2026-08-11T03:00:00.000Z" } } },
+    younger: { schedule: null, lessons: {} }
+  } };
+
+  const merged = mergeGrammarIslandStates(completed, reset);
+  assert.equal(merged.kids.brother.lessons["w1-a-an"].completedAt, undefined);
+  assert.equal(merged.kids.brother.lessons["w1-a-an"].deletedAt, "2026-08-11T03:00:00.000Z");
+});
+
+test("merging identical grammar state is a stable no-op", () => {
+  const state = { version: 1, updatedAt: "2026-08-11T03:00:00.000Z", kids: {
+    brother: { schedule: { weekdays: [2, 5], startDate: "2026-08-11", updatedAt: "2026-08-11T02:00:00.000Z" }, lessons: {} },
+    younger: { schedule: null, lessons: {} }
+  } };
+  assert.deepEqual(mergeGrammarIslandStates(state, state), state);
 });
 
 test("cloud recovery keeps local completion dates while remote settings stay authoritative", () => {

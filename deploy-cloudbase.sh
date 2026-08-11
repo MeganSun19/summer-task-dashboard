@@ -60,6 +60,8 @@ for file in \
   audio-store.js \
   week1-course-core.js \
   week1-course-ui.js \
+  grammar-island-core.js \
+  grammar-island-ui.js \
   supabase-config.js \
   world-map.svg \
   乌龙头像.png \
@@ -77,6 +79,7 @@ for file in \
   summer-plan-content.js \
   english-course.json \
   week1-course.json \
+  grammar-island-course.js \
   opw-week1-review-queue.json
 do
   cp "$PROJECT_DIR/curriculum/$file" "$DEPLOY_DIR/curriculum/$file"

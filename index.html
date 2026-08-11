@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5b942" />
     <title>双星学习岛</title>
-    <link rel="stylesheet" href="./styles.css?v=20260810-garden-wordbank-1" />
+    <link rel="stylesheet" href="./styles.css?v=20260811-grammar-island-7" />
   </head>
   <body>
     <nav class="side-nav" aria-label="学习岛导航">
@@ -124,6 +124,22 @@
           </div>
         </section>
 
+        <section id="grammarIslandCard" class="grammar-island-card" aria-labelledby="grammarIslandTitle">
+          <div class="grammar-island-heading">
+            <div>
+              <p class="eyebrow">独立长期课程 · 不计入今日进度</p>
+              <h2 id="grammarIslandTitle">语法小岛 · 蓝书基础</h2>
+            </div>
+            <span id="grammarIslandStatus" class="grammar-island-status">0/9 课</span>
+          </div>
+          <p id="grammarIslandNotice" class="grammar-island-notice">每周学习日由家长自由选择，每次约 15–22 分钟。先开口，再听示范，最后做小检测。</p>
+          <div class="grammar-island-progress-meta"><span>蓝书课程总进度</span><strong id="grammarIslandProgressText">0/9 课（0%）</strong></div>
+          <div class="grammar-island-progress" aria-labelledby="grammarIslandProgressText"><div id="grammarIslandProgressBar"></div></div>
+          <div id="grammarIslandDashboard"></div>
+          <div id="grammarIslandLesson" hidden></div>
+          <p id="grammarIslandLive" class="sr-only" aria-live="polite"></p>
+        </section>
+
         <section class="world-section" aria-labelledby="worldMapTitle">
           <div class="section-heading world-heading">
             <div><p class="eyebrow">两个人都完成，世界就亮一点</p><h2 id="worldMapTitle">双星世界地图</h2></div>
@@ -229,6 +245,11 @@
             <div id="coursePlanPreview" class="course-plan-preview" hidden></div>
             <div><p class="eyebrow">版本记录</p><div id="courseReleaseList" class="plan-period-list"></div></div>
           </section>
+          <section class="panel plan-tool-panel parent-workspace-panel grammar-parent-panel">
+            <div class="panel-title"><div><p class="eyebrow">独立模块 · 每周频率</p><h2>语法小岛排课</h2></div></div>
+            <p class="plan-help">在这里自由选择每周学习日。语法小岛不加入当前26日任务，不影响连续天数或地图。</p>
+            <div id="grammarIslandParentSchedule"></div>
+          </section>
         </div>
 
         <div class="parent-pane" data-parent-pane="temporary" hidden>
@@ -302,8 +323,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="./family-sync-core.js?v=20260810-family-sync-2"></script>
     <script src="./cloud-store.js?v=20260810-family-sync-2"></script>
-    <script src="./state-migration-core.js?v=20260810-garden-sync-2"></script>
-    <script src="./reward-progress.js?v=20260810-garden-wordbank-1"></script>
+    <script src="./state-migration-core.js?v=20260811-grammar-sync-2"></script>
+    <script src="./reward-progress.js?v=20260811-grammar-reward-1"></script>
     <script src="./curriculum/course-plan-catalog.js?v=20260810-excel-runtime-1"></script>
     <script src="./course-plan-runtime.js?v=20260810-excel-runtime-1"></script>
     <script src="./curriculum/summer-plan-content.js?v=20260807-1"></script>
@@ -315,8 +336,11 @@
     <script src="./learning-plan-presets.js?v=20260807-1"></script>
     <script src="./legacy-learning-plan.js?v=20260807-1"></script>
     <script src="./summer-plan-progress.js?v=20260810-plan-policy-1"></script>
-    <script src="./app.js?v=20260810-garden-icon-1"></script>
+    <script src="./app.js?v=20260811-grammar-sync-2"></script>
     <script src="./week1-course-core.js?v=20260810-unified-audio-3"></script>
     <script src="./week1-course-ui.js?v=20260810-garden-wordbank-1"></script>
+    <script src="./grammar-island-core.js?v=20260811-grammar-island-10"></script>
+    <script src="./curriculum/grammar-island-course.js?v=20260811-grammar-island-7"></script>
+    <script src="./grammar-island-ui.js?v=20260811-grammar-island-10"></script>
   </body>
 </html>
