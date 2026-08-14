@@ -202,6 +202,19 @@
     return merged;
   }
 
+  function mergeRemoteProgress(local, remote) {
+    const recovered = mergeDeviceProgress(local, remote);
+    const merged = structuredClone(remote);
+    merged.days = recovered.days;
+    if (recovered.summerPlan) merged.summerPlan = recovered.summerPlan;
+    if (recovered.learningActivities) {
+      merged.learningActivities = recovered.learningActivities;
+      merged.englishExperiment = recovered.learningActivities;
+    }
+    merged.updatedAt = [local?.updatedAt, remote?.updatedAt].filter(Boolean).sort().at(-1);
+    return merged;
+  }
+
   function mergeLearningActivities(local = {}, remote = {}) {
     const merged = { ...local, ...remote, progress: {}, moduleStarts: {} };
     ["brother", "younger"].forEach((kidId) => {
@@ -227,5 +240,11 @@
     return merged;
   }
 
-  root.TaskStateMigration = Object.freeze({ mergeStoredStates, mergeDeviceProgress, mergeGardenProgress, mergeGrammarIslandStates });
+  root.TaskStateMigration = Object.freeze({
+    mergeStoredStates,
+    mergeDeviceProgress,
+    mergeRemoteProgress,
+    mergeGardenProgress,
+    mergeGrammarIslandStates
+  });
 })(typeof window === "undefined" ? globalThis : window);

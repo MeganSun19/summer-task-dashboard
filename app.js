@@ -398,16 +398,17 @@ function applyRemoteState(remoteState, meta = {}) {
   if (!remoteState?.days || !remoteState?.startDate) return;
   const localStateBeforeRemote = state;
   const recoveryVersion = 3;
-  const localIsNewer = Boolean(state.updatedAt && (!remoteState.updatedAt || state.updatedAt > remoteState.updatedAt));
   const conflictState = ["conflict", "family-switch"].includes(meta.source) ? meta.localState : null;
   const needsDeviceRecovery = meta.source === "load" && localStorage.getItem(DEVICE_SYNC_RECOVERY_KEY) !== "done";
   const needsCompletionRecovery = meta.source === "load"
-    && (needsDeviceRecovery || Number(remoteState.cloudCompletionRecoveryVersion || 0) < recoveryVersion || localIsNewer);
-  const selectedState = conflictState
-    ? window.TaskStateMigration.mergeDeviceProgress(conflictState, remoteState)
-    : needsCompletionRecovery
-      ? window.TaskStateMigration.mergeDeviceProgress(state, remoteState)
-      : remoteState;
+    && (needsDeviceRecovery || Number(remoteState.cloudCompletionRecoveryVersion || 0) < recoveryVersion);
+  const selectedState = window.TaskStateMigration.mergeRemoteProgress(
+    conflictState || localStateBeforeRemote,
+    remoteState
+  );
+  const completionRecovered = JSON.stringify(selectedState.days || {}) !== JSON.stringify(remoteState.days || {})
+    || JSON.stringify(selectedState.summerPlan || null) !== JSON.stringify(remoteState.summerPlan || null)
+    || JSON.stringify(selectedState.learningActivities || null) !== JSON.stringify(remoteState.learningActivities || null);
   state = window.TaskStateMigration.mergeGardenProgress(localStateBeforeRemote, selectedState);
   const gardenRecovered = JSON.stringify(state.gardens) !== JSON.stringify(selectedState.gardens)
     || JSON.stringify(state.gardenUpdatedAt) !== JSON.stringify(selectedState.gardenUpdatedAt);
@@ -415,7 +416,7 @@ function applyRemoteState(remoteState, meta = {}) {
     !== JSON.stringify(selectedState.rewardProgress?.bonusEvents || {});
   const grammarIslandRecovered = JSON.stringify(state.grammarIsland || null)
     !== JSON.stringify(selectedState.grammarIsland || null);
-  if (needsCompletionRecovery || conflictState) {
+  if (needsCompletionRecovery || conflictState || completionRecovered) {
     state.cloudCompletionRecoveryVersion = recoveryVersion;
     state.updatedAt = new Date().toISOString();
   }
@@ -427,7 +428,7 @@ function applyRemoteState(remoteState, meta = {}) {
   if (meta.source === "load") localStorage.setItem(DEVICE_SYNC_RECOVERY_KEY, "done");
   renderEditorKidOptions();
   render();
-  if (needsCompletionRecovery || conflictState || progressRecovered || gardenRecovered || bonusRewardsRecovered || grammarIslandRecovered) window.CloudStore?.scheduleSave(state);
+  if (needsCompletionRecovery || conflictState || completionRecovered || progressRecovered || gardenRecovered || bonusRewardsRecovered || grammarIslandRecovered) window.CloudStore?.scheduleSave(state);
   if (meta.source === "realtime") showToast("已同步另一台设备的更新");
 }
 

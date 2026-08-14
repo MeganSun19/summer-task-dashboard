@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { test } from "node:test";
 
 await import("../state-migration-core.js");
-const { mergeStoredStates, mergeDeviceProgress, mergeGardenProgress, mergeGrammarIslandStates } = globalThis.TaskStateMigration;
+const { mergeStoredStates, mergeDeviceProgress, mergeRemoteProgress, mergeGardenProgress, mergeGrammarIslandStates } = globalThis.TaskStateMigration;
 const appSource = await readFile(new URL("../app.js", import.meta.url), "utf8");
 
 test("legacy dashboard state and English-island progress merge without losing completions", () => {
@@ -230,6 +230,57 @@ test("device recovery keeps the furthest learning day and completed local-only t
   assert.equal(merged.days.brother["2026-08-10"].tasks.filter((task) => task.done).length, 2);
 });
 
+test("normal remote loads preserve newer local task completion without restoring stale settings", () => {
+  const local = {
+    startDate: "2026-08-01",
+    updatedAt: "2026-08-14T03:00:00.000Z",
+    days: { brother: { "2026-08-14": { tasks: [{
+      id: "reading", done: true, completedOn: "2026-08-14", statusUpdatedAt: "2026-08-14T02:59:00.000Z"
+    }] } }, younger: {} },
+    taskSettings: { brother: { math: { title: "本机旧设置" } }, younger: {} },
+    summerPlan: { kids: { brother: { currentDay: 6, currentDate: "2026-08-14" } } }
+  };
+  const remote = {
+    startDate: "2026-08-01",
+    updatedAt: "2026-08-14T02:00:00.000Z",
+    days: { brother: { "2026-08-14": { tasks: [{ id: "reading", done: false }] } }, younger: {} },
+    taskSettings: { brother: { math: { title: "云端当前设置" } }, younger: {} },
+    summerPlan: { kids: { brother: { currentDay: 6, currentDate: "2026-08-14" } } }
+  };
+  const merged = mergeRemoteProgress(local, remote);
+  assert.equal(merged.days.brother["2026-08-14"].tasks[0].done, true);
+  assert.equal(merged.days.brother["2026-08-14"].tasks[0].completedOn, "2026-08-14");
+  assert.equal(merged.taskSettings.brother.math.title, "云端当前设置");
+});
+
+test("remote progress merges a variable-sized day task by task across separate study sessions", () => {
+  const taskIds = ["phonics", "words", "raz", "math", "poem", "listening", "parent-extra"];
+  const makeTask = (id, done, statusUpdatedAt) => ({
+    id,
+    done,
+    ...(done ? { completedOn: "2026-08-14" } : {}),
+    statusUpdatedAt
+  });
+  const local = {
+    startDate: "2026-08-01",
+    updatedAt: "2026-08-14T12:00:00.000Z",
+    days: { brother: { "2026-08-14": { tasks: taskIds.map((id, index) => (
+      makeTask(id, index < 5, index < 5 ? `2026-08-14T${String(index + 7).padStart(2, "0")}:00:00.000Z` : "2026-08-14T06:00:00.000Z")
+    )) } }, younger: {} }
+  };
+  const remote = {
+    startDate: "2026-08-01",
+    updatedAt: "2026-08-14T13:00:00.000Z",
+    days: { brother: { "2026-08-14": { tasks: taskIds.map((id, index) => (
+      makeTask(id, index >= 5, index >= 5 ? `2026-08-14T${index + 7}:00:00.000Z` : "2026-08-14T06:00:00.000Z")
+    )) } }, younger: {} }
+  };
+
+  const merged = mergeRemoteProgress(local, remote);
+  assert.equal(merged.days.brother["2026-08-14"].tasks.length, 7);
+  assert.deepEqual(merged.days.brother["2026-08-14"].tasks.map((task) => task.done), Array(7).fill(true));
+});
+
 test("device recovery keeps the newest English activity record from either device", () => {
   const local = {
     startDate: "2026-08-01", days: { brother: {}, younger: {} },
@@ -311,6 +362,8 @@ test("a late stale realtime payload cannot undo a just-saved local squad change"
 
 test("every remote-state path applies garden last-write-wins before rendering", () => {
   const applyRemote = appSource.slice(appSource.indexOf("function applyRemoteState"), appSource.indexOf("function updateCloudStatus"));
+  assert.match(applyRemote, /mergeRemoteProgress\(\s*conflictState \|\| localStateBeforeRemote,\s*remoteState\s*\)/);
+  assert.match(applyRemote, /completionRecovered/);
   assert.match(applyRemote, /mergeGardenProgress\(localStateBeforeRemote, selectedState\)/);
-  assert.match(applyRemote, /progressRecovered \|\| gardenRecovered/);
+  assert.match(applyRemote, /completionRecovered \|\| progressRecovered \|\| gardenRecovered/);
 });
