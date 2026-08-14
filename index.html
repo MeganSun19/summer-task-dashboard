@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5b942" />
     <title>双星学习岛</title>
-    <link rel="stylesheet" href="./styles.css?v=20260811-grammar-island-7" />
+    <link rel="stylesheet" href="./styles.css?v=20260814-family-task-validation-1" />
   </head>
   <body>
     <nav class="side-nav" aria-label="学习岛导航">
@@ -256,7 +256,7 @@
           <section class="panel plan-tool-panel family-task-panel parent-workspace-panel">
             <div class="panel-title"><div><p class="eyebrow">灵活发布</p><h2>临时任务</h2></div></div>
             <p class="plan-help">按指定日期发布；完成可获得阳光，但不顺延，也不影响长期学习日、连续天数和地图。</p>
-            <form id="familyTaskForm" class="family-task-form">
+            <form id="familyTaskForm" class="family-task-form" novalidate>
               <div class="range-grid">
                 <label>任务名称<input id="familyTaskTitle" required maxlength="40" placeholder="例如：练习学校舞蹈"></label>
                 <label>适用孩子<select id="familyTaskKid"><option value="brother">哥哥</option><option value="younger">弟弟</option><option value="both">哥哥和弟弟</option></select></label>
@@ -270,7 +270,7 @@
                 <label data-family-date="end">结束日期<input id="familyTaskEnd" type="date"></label>
               </div>
               <label id="familyTaskCustomRow" hidden>自选日期<textarea id="familyTaskCustomDates" rows="2" placeholder="每行或逗号分隔，例如：2026-08-10, 2026-08-13"></textarea></label>
-              <div id="familyTaskPreview" class="range-preview"></div>
+              <div id="familyTaskPreview" class="range-preview" aria-live="polite"></div>
               <div class="plan-actions">
                 <button id="publishFamilyTask" class="primary-action" type="submit">发布临时任务</button>
                 <button id="cancelFamilyTaskEdit" class="quiet-action" type="button" hidden>放弃修改</button>
@@ -324,7 +324,7 @@
     <script src="./family-sync-core.js?v=20260810-family-sync-2"></script>
     <script src="./cloud-store.js?v=20260810-family-sync-2"></script>
     <script src="./state-migration-core.js?v=20260814-completion-sync-1"></script>
-    <script src="./reward-progress.js?v=20260811-grammar-reward-1"></script>
+    <script src="./reward-progress.js?v=20260814-grammar-reward-10"></script>
     <script src="./curriculum/course-plan-catalog.js?v=20260810-excel-runtime-1"></script>
     <script src="./course-plan-runtime.js?v=20260810-excel-runtime-1"></script>
     <script src="./curriculum/summer-plan-content.js?v=20260807-1"></script>
@@ -336,11 +336,11 @@
     <script src="./learning-plan-presets.js?v=20260807-1"></script>
     <script src="./legacy-learning-plan.js?v=20260807-1"></script>
     <script src="./summer-plan-progress.js?v=20260810-plan-policy-1"></script>
-    <script src="./app.js?v=20260814-completion-sync-1"></script>
+    <script src="./app.js?v=20260814-family-task-validation-1"></script>
     <script src="./week1-course-core.js?v=20260810-unified-audio-3"></script>
     <script src="./week1-course-ui.js?v=20260810-garden-wordbank-1"></script>
     <script src="./grammar-island-core.js?v=20260811-grammar-island-10"></script>
     <script src="./curriculum/grammar-island-course.js?v=20260811-grammar-island-7"></script>
-    <script src="./grammar-island-ui.js?v=20260811-grammar-island-10"></script>
+    <script src="./grammar-island-ui.js?v=20260814-grammar-reward-10"></script>
   </body>
 </html>

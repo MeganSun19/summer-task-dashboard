@@ -17,7 +17,7 @@ const plants = [
   { id: "melon", icon: "🍉", name: "西瓜投手", unlockAt: 240, power: "投出大西瓜" }
 ];
 const GARDEN_SQUAD_LIMIT = 5;
-const GRAMMAR_LESSON_BONUS_SUN = 5;
+const GRAMMAR_LESSON_BONUS_SUN = 10;
 
 const countryCodes = (`CN MN KP KR JP RU KZ KG TJ UZ TM AF PK IN NP BT BD LK MV MM LA VN KH TH MY SG ID BN PH TL IR IQ TR GE AM AZ SY LB IL PS JO SA YE OM AE QA BH KW UA BY MD RO BG GR MK RS BA ME AL HR SI HU SK PL LT LV EE FI SE NO DK DE CZ AT IT CH LI FR BE NL LU GB IE ES PT AD MC SM VA IS MT CY EG LY TN DZ MA MR ML NE TD SD SS ER DJ ET SO KE UG RW BI TZ CD CG GA GQ CM NG BJ TG GH BF CI LR SL GN GW GM SN CV CF AO ZM MW MZ ZW BW NA ZA LS SZ MG KM MU SC ST PG AU NZ FJ SB VU WS TO TV KI NR PW FM MH CA US MX GT BZ SV HN NI CR PA CO VE GY SR BR EC PE BO PY CL AR UY CU JM HT DO BS KN AG DM LC VC BB GD TT`).split(" ");
 
@@ -1256,6 +1256,7 @@ function familyTaskDraft() {
 
 function renderFamilyTaskPreview() {
   if (!refs.familyTaskPreview) return;
+  refs.familyTaskPreview.classList.remove("form-error");
   const recurrence = refs.familyTaskRecurrence.value;
   const custom = recurrence === "custom";
   refs.familyTaskCustomRow.hidden = !custom;
@@ -1271,6 +1272,13 @@ function renderFamilyTaskPreview() {
   refs.familyTaskPreview.textContent = `${target} · 共 ${dates.length} 次：${sample}`;
 }
 
+function showFamilyTaskFormError(message, target) {
+  refs.familyTaskPreview.textContent = message;
+  refs.familyTaskPreview.classList.add("form-error");
+  showToast(message);
+  target?.focus();
+}
+
 function createRecordId(prefix) {
   const suffix = globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
   return `${prefix}-${suffix}`;
@@ -1279,16 +1287,29 @@ function createRecordId(prefix) {
 function publishFamilyTask(event) {
   event.preventDefault();
   const dates = window.FamilyTaskSchedules.expandDates(familyTaskDraft());
-  if (!refs.familyTaskTitle.value.trim() || !refs.familyTaskDetail.value.trim() || !refs.familyTaskInstruction.value.trim()) {
-    showToast("请填写任务名称、内容和执行步骤");
+  const missingField = [refs.familyTaskTitle, refs.familyTaskDetail, refs.familyTaskInstruction]
+    .find((field) => !field.value.trim());
+  if (missingField) {
+    showFamilyTaskFormError("请填写任务名称、内容和执行步骤", missingField);
     return;
   }
   if (!dates.length) {
-    showToast("请先选择有效的执行日期");
+    const recurrence = refs.familyTaskRecurrence.value;
+    if (recurrence === "custom") {
+      showFamilyTaskFormError("请填写至少一个有效的自选日期", refs.familyTaskCustomDates);
+    } else if (!refs.familyTaskStart.value) {
+      showFamilyTaskFormError("请选择开始日期", refs.familyTaskStart);
+    } else if (recurrence !== "once" && !refs.familyTaskEnd.value) {
+      showFamilyTaskFormError("请选择结束日期", refs.familyTaskEnd);
+    } else if (recurrence !== "once" && refs.familyTaskEnd.value < refs.familyTaskStart.value) {
+      showFamilyTaskFormError("结束日期不能早于开始日期", refs.familyTaskEnd);
+    } else {
+      showFamilyTaskFormError("请先选择有效的执行日期", refs.familyTaskStart);
+    }
     return;
   }
   if (dates.length > 62) {
-    showToast("临时任务一次最多安排 62 次");
+    showFamilyTaskFormError("临时任务一次最多安排 62 次", refs.familyTaskEnd);
     return;
   }
   const existing = state.taskSchedules.find((schedule) => schedule.id === editingFamilyTaskScheduleId);

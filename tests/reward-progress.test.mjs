@@ -52,6 +52,17 @@ test("the same grammar lesson reward cannot be claimed twice", () => {
   assert.equal(Object.keys(state.rewardProgress.bonusEvents.younger).length, 1);
 });
 
+test("a raised grammar reward upgrades the stable event once without duplicating it", () => {
+  const state = stateWith();
+  const oldReward = { id: "grammar:younger:w1-a-an", amount: 5, source: "grammar-island" };
+  const newReward = { ...oldReward, amount: 10 };
+  assert.equal(rewards.addBonusReward(state, "younger", oldReward), true);
+  assert.equal(rewards.addBonusReward(state, "younger", newReward), true);
+  assert.equal(rewards.addBonusReward(state, "younger", newReward), false);
+  assert.equal(state.rewardProgress.bonusEvents.younger[oldReward.id].amount, 10);
+  assert.equal(Object.keys(state.rewardProgress.bonusEvents.younger).length, 1);
+});
+
 test("upgrade preserves current sun and seeds each child's permanent unlocks", () => {
   const state = stateWith(
     [{ done: true }, { done: true }, { done: true }],
@@ -119,5 +130,5 @@ test("the peashooter uses an emoji supported by older Android fonts", () => {
 test("the app bridges grammar completion into the independent bonus ledger", () => {
   assert.match(appSource, /grammar-island-reward-earned/);
   assert.match(appSource, /grammar:\$\{kidId\}:\$\{lessonId\}/);
-  assert.match(appSource, /GRAMMAR_LESSON_BONUS_SUN = 5/);
+  assert.match(appSource, /GRAMMAR_LESSON_BONUS_SUN = 10/);
 });

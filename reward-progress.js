@@ -20,7 +20,16 @@
   function addBonusReward(state, kidId, event) {
     if (!KID_IDS.includes(kidId) || !event?.id || Number(event.amount) <= 0) return false;
     ensureRewardState(state);
-    if (state.rewardProgress.bonusEvents[kidId][event.id]) return false;
+    const existing = state.rewardProgress.bonusEvents[kidId][event.id];
+    if (existing) {
+      const upgradedAmount = Math.max(Number(existing.amount || 0), Number(event.amount));
+      if (upgradedAmount === Number(existing.amount || 0)) return false;
+      state.rewardProgress.bonusEvents[kidId][event.id] = {
+        ...existing,
+        amount: upgradedAmount
+      };
+      return true;
+    }
     state.rewardProgress.bonusEvents[kidId][event.id] = {
       id: String(event.id),
       amount: Number(event.amount),

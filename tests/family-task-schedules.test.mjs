@@ -1,8 +1,11 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import { test } from "node:test";
 
 await import("../family-task-schedules.js");
 const schedules = globalThis.FamilyTaskSchedules;
+const appSource = await readFile(new URL("../app.js", import.meta.url), "utf8");
+const indexSource = await readFile(new URL("../index.html", import.meta.url), "utf8");
 
 function sample(overrides = {}) {
   return schedules.normalizeSchedule({
@@ -29,6 +32,14 @@ test("expands one-time, daily, alternate and custom schedules", () => {
   assert.deepEqual(schedules.expandDates({ recurrence: "custom", customDates: ["2026-08-13", "bad", "2026-08-11", "2026-08-13"] }), [
     "2026-08-11", "2026-08-13"
   ]);
+});
+
+test("temporary-task submission uses visible in-app validation on every mobile browser", () => {
+  assert.match(indexSource, /id="familyTaskForm"[^>]*novalidate/);
+  assert.match(indexSource, /id="familyTaskPreview"[^>]*aria-live="polite"/);
+  assert.match(appSource, /function showFamilyTaskFormError/);
+  assert.match(appSource, /结束日期不能早于开始日期/);
+  assert.match(appSource, /请填写至少一个有效的自选日期/);
 });
 
 test("creates traceable daily instances only for scheduled children and dates", () => {

@@ -522,6 +522,7 @@ button.garden-slot.filled { border-style: solid; border-color: #b9d9aa; backgrou
 .plan-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .range-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
 .range-preview { padding: 11px 12px; border-radius: 12px; background: var(--sun-soft); color: #76551b; font-size: 12px; line-height: 1.55; }
+.range-preview.form-error { background: #fff0ee; color: #9b2f28; border: 1px solid #efb5ae; }
 .plan-period-list { display: grid; gap: 8px; }
 .plan-period-list:empty { display: none; }
 .empty-plan-state { margin: 0; padding: 13px; border: 1px dashed var(--line); border-radius: 12px; color: var(--muted); font-size: 12px; text-align: center; }

@@ -30,6 +30,7 @@
   let checkFeedback = null;
   let latestResult = null;
   let latestRewardEarned = false;
+  let latestRewardAmount = 0;
   let scheduleMessage = "";
 
   refs.grammarIslandDashboard.addEventListener("click", handleDashboardClick);
@@ -218,6 +219,7 @@
     checkFeedback = null;
     latestResult = null;
     latestRewardEarned = false;
+    latestRewardAmount = 0;
     render();
     refs.grammarIslandCard.scrollIntoView({ behavior: "smooth", block: "start" });
   }
@@ -306,7 +308,7 @@
       <h3>${escapeHTML(activeLesson.title)}</h3>
       <div class="grammar-score-ring">${latestResult.percent}%</div>
       <p>首次检测答对 ${latestResult.correct}/${latestResult.total} 题 · 口头直接会说 ${canSay} 句 · 重练后会说 ${afterRetry} 句</p>
-      <p class="grammar-reward-result ${latestRewardEarned ? "earned" : "claimed"}">${latestRewardEarned ? "☀ 额外学习奖励 +5 阳光（不计入今日任务）" : "本课首次完成奖励已领取；重练不会重复发放。"}</p>
+      <p class="grammar-reward-result ${latestRewardEarned ? "earned" : "claimed"}">${latestRewardEarned ? `☀ 额外学习奖励 +${latestRewardAmount} 阳光（不计入今日任务）` : "本课首次完成奖励已领取；重练不会重复发放。"}</p>
       <p class="grammar-recommendation">${escapeHTML(recommendation.text)}<br><strong>辅助打印（可选）：</strong>蓝书第 ${activeLesson.printPages.join("、")} 页</p>
       <div class="grammar-result-actions">
         <button class="grammar-back" type="button" data-grammar-action="retry">再练本课</button>
@@ -464,10 +466,12 @@
         state = persistGrammarState(completed.state);
         latestResult = completed.result;
         latestRewardEarned = false;
+        latestRewardAmount = 0;
         if (completed.firstCompletion) {
           const rewardDetail = { kidId, lessonId: activeLesson.id, earnedAt: latestResult.completedAt, awarded: false, amount: 0 };
           window.dispatchEvent(new CustomEvent("grammar-island-reward-earned", { detail: rewardDetail }));
           latestRewardEarned = rewardDetail.awarded === true;
+          latestRewardAmount = Number(rewardDetail.amount || 0);
         }
         stage = "result";
         refs.grammarIslandLive.textContent = `本课完成，检测得分 ${latestResult.percent}%`;
