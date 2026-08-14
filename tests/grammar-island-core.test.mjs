@@ -29,7 +29,8 @@ test("the foundation release contains eight teaching lessons and one checkpoint"
   assert.equal(course.lessons.at(-1).oralPrompts.length >= 8, true);
   assert.equal(course.lessons.every((lesson) => lesson.printPages.length >= 3), true);
   assert.match(course.policy.source, /Common English Grammar/);
-  assert.match(course.policy.paperRole, /Optional reinforcement/);
+  assert.match(course.policy.paperRole, /three selected workbook pages/);
+  assert.match(course.note, /10 阳光/);
 });
 
 test("oral practice uses varied prompts with a scaffold for every retry", () => {
@@ -222,6 +223,7 @@ test("an unsaved parent schedule draft survives unrelated app renders", () => {
 
 test("the CloudBase bundle includes every grammar-island runtime file", () => {
   assert.match(deploySource, /grammar-island-core\.js/);
+  assert.match(deploySource, /grammar-paper-practice\.js/);
   assert.match(deploySource, /grammar-island-ui\.js/);
   assert.match(deploySource, /grammar-island-course\.js/);
 });

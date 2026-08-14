@@ -54,6 +54,20 @@ test("creates traceable daily instances only for scheduled children and dates", 
   assert.equal(item.moduleId, "familyTask");
 });
 
+test("a one-time grammar print task keeps its lesson and page metadata", () => {
+  const schedule = sample({
+    moduleId: "grammarPaper",
+    recurrence: "once",
+    startDate: "2026-08-15",
+    grammarLessonId: "w1-a-an",
+    printPages: [1, 7, 20]
+  });
+  const item = schedules.createInstance(schedule, "brother", "2026-08-15");
+  assert.equal(item.moduleId, "grammarPaper");
+  assert.equal(item.grammarLessonId, "w1-a-an");
+  assert.deepEqual(item.printPages, [1, 7, 20]);
+});
+
 test("editing or cancelling a schedule updates pending instances but preserves completed history", () => {
   const original = sample({ recurrence: "once", startDate: "2026-08-10" });
   const pending = schedules.createInstance(original, "brother", "2026-08-10");

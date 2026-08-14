@@ -61,6 +61,7 @@ for file in \
   week1-course-core.js \
   week1-course-ui.js \
   grammar-island-core.js \
+  grammar-paper-practice.js \
   grammar-island-ui.js \
   supabase-config.js \
   world-map.svg \

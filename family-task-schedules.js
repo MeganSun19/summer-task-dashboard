@@ -42,7 +42,7 @@
 
   function normalizeSchedule(input) {
     const dates = expandDates(input);
-    return {
+    const normalized = {
       id: input.id,
       taskId: input.taskId,
       source: "parent",
@@ -61,6 +61,10 @@
       createdAt: input.createdAt,
       updatedAt: input.updatedAt
     };
+    if (input.grammarLessonId) normalized.grammarLessonId = String(input.grammarLessonId);
+    const printPages = [...new Set((input.printPages || []).map(Number).filter(Number.isFinite))];
+    if (printPages.length) normalized.printPages = printPages;
+    return normalized;
   }
 
   function applies(schedule, kidId, date) {
@@ -70,7 +74,7 @@
   }
 
   function createInstance(schedule, kidId, date) {
-    return {
+    const instance = {
       id: `instance-${schedule.taskId}-${kidId}-${date}`,
       taskId: schedule.taskId,
       scheduleId: schedule.id,
@@ -84,6 +88,9 @@
       scheduledDate: date,
       done: false
     };
+    if (schedule.grammarLessonId) instance.grammarLessonId = schedule.grammarLessonId;
+    if (schedule.printPages?.length) instance.printPages = [...schedule.printPages];
+    return instance;
   }
 
   function reconcileTasks(tasks, schedules, kidId, date) {

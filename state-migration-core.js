@@ -25,6 +25,26 @@
     merged.rewardProgress ||= {};
     merged.rewardProgress.bonusEvents = mergeBonusEvents(local, remote);
     merged.grammarIsland = mergeGrammarIslandStates(local.grammarIsland, remote.grammarIsland);
+    merged.grammarPaperPractice = mergeGrammarPaperPractice(local.grammarPaperPractice, remote.grammarPaperPractice);
+    return merged;
+  }
+
+  function mergeGrammarPaperPractice(local, remote) {
+    if (!local && !remote) return null;
+    const merged = { version: 1, kids: {} };
+    ["brother", "younger"].forEach((kidId) => {
+      const left = local?.kids?.[kidId] || null;
+      const right = remote?.kids?.[kidId] || null;
+      if (!left || !right) {
+        merged.kids[kidId] = structuredClone(right || left);
+        return;
+      }
+      merged.kids[kidId] = structuredClone(
+        String(left.updatedAt || "") > String(right.updatedAt || "") ? left : right
+      );
+    });
+    merged.updatedAt = [local?.updatedAt, remote?.updatedAt].filter(Boolean).sort().at(-1);
+    if (!merged.updatedAt) delete merged.updatedAt;
     return merged;
   }
 
@@ -174,6 +194,7 @@
       bonusEvents: mergeBonusEvents(legacy, current)
     };
     merged.grammarIsland = mergeGrammarIslandStates(legacy.grammarIsland, current.grammarIsland);
+    merged.grammarPaperPractice = mergeGrammarPaperPractice(legacy.grammarPaperPractice, current.grammarPaperPractice);
     merged.planPeriods = current.planPeriods?.length ? current.planPeriods : (legacy.planPeriods || []);
     merged.learningActivities = mergeLearningActivities(
       legacy.learningActivities || legacy.englishExperiment,
@@ -245,6 +266,7 @@
     mergeDeviceProgress,
     mergeRemoteProgress,
     mergeGardenProgress,
-    mergeGrammarIslandStates
+    mergeGrammarIslandStates,
+    mergeGrammarPaperPractice
   });
 })(typeof window === "undefined" ? globalThis : window);

@@ -98,6 +98,15 @@ test("an archived completed temporary task keeps its historical sun reward", () 
   assert.equal(rewards.earnedSun(state, "brother"), 10);
 });
 
+test("grammar paper practice earns one normal task reward without touching bonus events", () => {
+  const state = stateWith([{ id: "grammar-paper", source: "parent", moduleId: "grammarPaper", done: true }]);
+  rewards.ensure(state, plants);
+  const beforeBonus = structuredClone(state.rewardProgress.bonusEvents);
+  assert.equal(rewards.taskSun(state, "brother"), 10);
+  assert.equal(rewards.earnedSun(state, "brother"), 10);
+  assert.deepEqual(state.rewardProgress.bonusEvents, beforeBonus);
+});
+
 test("legacy over-cap squads are repaired without losing permanent unlocks", () => {
   const catalog = [
     ...plants,

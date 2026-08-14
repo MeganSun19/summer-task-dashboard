@@ -38,13 +38,13 @@
   }
 
   function normalizeSchedule(input, fallbackDate = localISODate()) {
-    const weekdays = [...new Set((input?.weekdays || [2, 5]).map(Number))]
+    const weekdays = [...new Set((input?.weekdays || [1, 3, 5]).map(Number))]
       .filter((day) => Number.isInteger(day) && day >= 0 && day <= 6)
       .sort((a, b) => a - b);
     const normalized = {
       frequency: "weekly-selected-days",
       startDate: /^\d{4}-\d{2}-\d{2}$/.test(input?.startDate || "") ? input.startDate : fallbackDate,
-      weekdays: weekdays.length ? weekdays : [2, 5]
+      weekdays: weekdays.length ? weekdays : [1, 3, 5]
     };
     if (input?.updatedAt) normalized.updatedAt = String(input.updatedAt);
     return normalized;

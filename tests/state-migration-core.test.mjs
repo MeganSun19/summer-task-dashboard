@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { test } from "node:test";
 
 await import("../state-migration-core.js");
-const { mergeStoredStates, mergeDeviceProgress, mergeRemoteProgress, mergeGardenProgress, mergeGrammarIslandStates } = globalThis.TaskStateMigration;
+const { mergeStoredStates, mergeDeviceProgress, mergeRemoteProgress, mergeGardenProgress, mergeGrammarIslandStates, mergeGrammarPaperPractice } = globalThis.TaskStateMigration;
 const appSource = await readFile(new URL("../app.js", import.meta.url), "utf8");
 
 test("legacy dashboard state and English-island progress merge without losing completions", () => {
@@ -110,6 +110,20 @@ test("grammar progress and schedules merge across devices without losing either 
   assert.deepEqual(merged.kids.brother.schedule.weekdays, [1, 3, 6]);
   assert.deepEqual(Object.keys(merged.kids.brother.lessons).sort(), ["w1-a-an", "w1-plurals"]);
   assert.equal(merged.kids.younger.lessons["w1-a-an"].bestPercent, 100);
+});
+
+test("grammar paper schedules merge per child by their own update time", () => {
+  const local = { version: 1, kids: {
+    brother: { startDate: "2026-08-18", weekdays: [2, 4, 6], updatedAt: "2026-08-14T03:00:00.000Z" },
+    younger: { startDate: "2026-08-18", weekdays: [2, 4, 6], updatedAt: "2026-08-14T01:00:00.000Z" }
+  } };
+  const remote = { version: 1, kids: {
+    brother: { startDate: "2026-08-20", weekdays: [4], updatedAt: "2026-08-14T02:00:00.000Z" },
+    younger: { startDate: "2026-08-20", weekdays: [4], updatedAt: "2026-08-14T04:00:00.000Z" }
+  } };
+  const merged = mergeGrammarPaperPractice(local, remote);
+  assert.deepEqual(merged.kids.brother.weekdays, [2, 4, 6]);
+  assert.deepEqual(merged.kids.younger.weekdays, [4]);
 });
 
 test("a newer grammar reset tombstone prevents an older device from resurrecting a lesson", () => {

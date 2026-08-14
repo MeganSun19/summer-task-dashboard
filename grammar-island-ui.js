@@ -175,6 +175,7 @@
     const today = core.localISODate();
     const schedule = core.scheduleFor(state, parentScheduleKid, today);
     const weekdayLabels = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+    const paperSchedule = window.GrammarPaperPracticeSync?.getSchedule?.(parentScheduleKid);
     const parentKidName = parentScheduleKid === "younger" ? "弟弟" : "哥哥";
     const summary = core.summary(state, parentScheduleKid, course.lessons);
     const scheduleDraft = parentScheduleDraft?.kidId === parentScheduleKid ? parentScheduleDraft : null;
@@ -194,6 +195,7 @@
         ${scheduleMessage ? `<p class="grammar-schedule-message">${escapeHTML(scheduleMessage)}</p>` : ""}
         <button class="grammar-primary" type="submit">保存语法小岛排课</button>
       </form>
+      ${paperSchedule ? `<div class="grammar-paper-schedule-summary"><strong>蓝书纸面巩固</strong><span>${escapeHTML(paperSchedule.startDate)} 起，每周 ${paperSchedule.weekdays.map((day) => weekdayLabels[day]).join("、")}；自动对应最近学完且尚未完成纸面的语法课，每次 3 页、完成 +10 阳光。</span></div>` : ""}
       <section class="grammar-parent-records" aria-label="两个孩子的语法学习记录">
         <div class="grammar-parent-records-heading"><div><strong>语法学习记录 · 两个孩子</strong><span>记录始终同时显示；排课下拉框只控制上面的排课表。</span></div></div>
         <div class="grammar-parent-kid-records">${["brother", "younger"].map(parentRecordBlock).join("")}</div>

@@ -192,6 +192,11 @@ window.GrammarIslandSync = Object.freeze({
     return structuredClone(state.grammarIsland);
   }
 });
+window.GrammarPaperPracticeSync = Object.freeze({
+  getSchedule(kidId) {
+    return window.GrammarPaperPractice?.scheduleFor(state.grammarPaperPractice, kidId) || null;
+  }
+});
 // Compatibility alias for progress already stored by the first English-course UI.
 window.EnglishExperimentProgress = window.LearningActivityProgress;
 
@@ -416,11 +421,13 @@ function applyRemoteState(remoteState, meta = {}) {
     !== JSON.stringify(selectedState.rewardProgress?.bonusEvents || {});
   const grammarIslandRecovered = JSON.stringify(state.grammarIsland || null)
     !== JSON.stringify(selectedState.grammarIsland || null);
+  const grammarPaperRecovered = JSON.stringify(state.grammarPaperPractice || null)
+    !== JSON.stringify(selectedState.grammarPaperPractice || null);
   if (needsCompletionRecovery || conflictState || completionRecovered) {
     state.cloudCompletionRecoveryVersion = recoveryVersion;
     state.updatedAt = new Date().toISOString();
   }
-  if (gardenRecovered || bonusRewardsRecovered || grammarIslandRecovered) state.updatedAt = new Date().toISOString();
+  if (gardenRecovered || bonusRewardsRecovered || grammarIslandRecovered || grammarPaperRecovered) state.updatedAt = new Date().toISOString();
   const progressRecovered = ensureState(state);
   activeKid = state.activeKid || activeKid;
   editorKid = activeKid;
@@ -428,7 +435,7 @@ function applyRemoteState(remoteState, meta = {}) {
   if (meta.source === "load") localStorage.setItem(DEVICE_SYNC_RECOVERY_KEY, "done");
   renderEditorKidOptions();
   render();
-  if (needsCompletionRecovery || conflictState || completionRecovered || progressRecovered || gardenRecovered || bonusRewardsRecovered || grammarIslandRecovered) window.CloudStore?.scheduleSave(state);
+  if (needsCompletionRecovery || conflictState || completionRecovered || progressRecovered || gardenRecovered || bonusRewardsRecovered || grammarIslandRecovered || grammarPaperRecovered) window.CloudStore?.scheduleSave(state);
   if (meta.source === "realtime") showToast("已同步另一台设备的更新");
 }
 
@@ -563,12 +570,25 @@ function getDay(kidId, date, scheduleDate = date) {
     saveState();
   }
   const currentTasks = state.days[kidId][date].tasks || [];
-  const nextTasks = window.FamilyTaskSchedules.reconcileTasks(currentTasks, state.taskSchedules, kidId, scheduleDate);
+  const nextTasks = reconcileSupplementalTasks(currentTasks, kidId, scheduleDate);
   if (JSON.stringify(currentTasks) !== JSON.stringify(nextTasks)) {
     state.days[kidId][date].tasks = nextTasks;
     saveState();
   }
   return state.days[kidId][date];
+}
+
+function reconcileSupplementalTasks(tasks, kidId, scheduleDate) {
+  const familyTasks = window.FamilyTaskSchedules.reconcileTasks(tasks, state.taskSchedules, kidId, scheduleDate);
+  if (!window.GrammarPaperPractice || !window.GRAMMAR_ISLAND_COURSE) return familyTasks;
+  return window.GrammarPaperPractice.reconcileTasks(familyTasks, {
+    kidId,
+    date: scheduleDate,
+    scheduleState: state.grammarPaperPractice,
+    grammarState: state.grammarIsland,
+    lessons: window.GRAMMAR_ISLAND_COURSE.lessons,
+    days: state.days
+  });
 }
 
 function resolveSummerPlan(kidId) {
@@ -650,7 +670,7 @@ function reconcileCurrentCourseDay(kidId, date, courseDate) {
   const generated = buildDefaultDay(date, kidId, dayIndex, courseDate);
   if (existing.planDayNumber) generated.planDayNumber = existing.planDayNumber;
   const next = preserveDayState(generated, existing);
-  next.tasks = window.FamilyTaskSchedules.reconcileTasks(next.tasks, state.taskSchedules, kidId, courseDate);
+  next.tasks = reconcileSupplementalTasks(next.tasks, kidId, courseDate);
   if (JSON.stringify(existing) !== JSON.stringify(next)) {
     state.days[kidId][date] = next;
     saveState();
@@ -1318,7 +1338,7 @@ function publishFamilyTask(event) {
     ...familyTaskDraft(),
     id: existing?.id || createRecordId("schedule"),
     taskId: existing?.taskId || createRecordId("task"),
-    moduleId: "familyTask",
+    moduleId: existing?.moduleId || "familyTask",
     title: refs.familyTaskTitle.value,
     detail: refs.familyTaskDetail.value,
     instruction: refs.familyTaskInstruction.value,
@@ -1329,6 +1349,8 @@ function publishFamilyTask(event) {
     createdAt: existing?.createdAt || now,
     updatedAt: now
   };
+  if (existing?.grammarLessonId) input.grammarLessonId = existing.grammarLessonId;
+  if (existing?.printPages?.length) input.printPages = [...existing.printPages];
   const schedule = window.FamilyTaskSchedules.normalizeSchedule(input);
   if (existing) state.taskSchedules[state.taskSchedules.indexOf(existing)] = schedule;
   else state.taskSchedules.push(schedule);

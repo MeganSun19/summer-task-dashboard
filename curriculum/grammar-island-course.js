@@ -56,12 +56,12 @@
     version: 1,
     title: "语法小岛 · 蓝书基础",
     rhythm: "每周学习日由家长自由选择 · 每次约 15–22 分钟",
-    note: "独立长期课程，不计入今日任务、连续天数、地图或四周英语岛进度；每课首次完成奖励 5 阳光。",
+    note: "独立长期课程，不计入今日任务、连续天数、地图或四周英语岛进度；每课首次完成奖励 10 阳光。",
     policy: {
       source: "Common English Grammar blue workbook selected pages",
       exerciseDesign: "Adapt the workbook's classify, transform, fill-in, rewrite, error-correction, and picture-position formats for oral-first online practice.",
       vocabulary: "Use familiar course words for explaining the grammar; allow limited concrete workbook words as supported vocabulary expansion, but never score an unknown noun as a grammar error.",
-      paperRole: "Optional reinforcement after the online rule has been corrected and spoken successfully."
+      paperRole: "After each online lesson, schedule three selected workbook pages on the next available paper-practice day."
     },
     lessons: [
       lesson("w1-a-an", 1, 1, "a / an", "听首音，选择 a 或 an", "蓝书 1–20", [1, 7, 20], [

@@ -220,6 +220,9 @@ h2 { margin-bottom: 0; font-size: 24px; }
 .grammar-schedule-form input[type="date"] { min-height: 43px; padding: 8px 11px; border: 1px solid #d8cbe5; border-radius: 11px; background: white; }
 .grammar-schedule-form fieldset { margin: 0; padding: 11px; border: 1px solid #ded3e8; border-radius: 12px; }
 .grammar-schedule-form legend { padding: 0 5px; color: #594867; font-size: 12px; font-weight: 900; }
+.grammar-paper-schedule-summary { display: grid; gap: 4px; margin: 0 15px 15px; padding: 11px 12px; border: 1px solid #cbe4d2; border-radius: 12px; background: #f1fbf4; }
+.grammar-paper-schedule-summary strong { color: #2f7046; }
+.grammar-paper-schedule-summary span { color: #557360; font-size: 12px; line-height: 1.5; }
 .grammar-weekday-options { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
 .grammar-weekday-options label { display: grid; min-height: 48px; place-items: center; gap: 3px; padding: 5px 2px; border-radius: 9px; background: #f6f1fa; color: #665575; font-size: 10px; font-weight: 800; }
 .grammar-weekday-options input { margin: 0; accent-color: #73549a; }

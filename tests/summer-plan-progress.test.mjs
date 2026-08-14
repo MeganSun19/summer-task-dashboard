@@ -72,6 +72,15 @@ test("temporary tasks awardable in the UI never block the long-term learning day
   assert.equal(SummerPlan.resolvedCount(day), 1);
 });
 
+test("grammar paper practice is rewarded but remains outside long-term completion and streak", () => {
+  const day = { tasks: [
+    { id: "englishIsland", source: "course", done: true },
+    { id: "grammar-paper", source: "parent", moduleId: "grammarPaper", done: false, scheduledDate: "2026-08-10" }
+  ] };
+  assert.equal(SummerPlan.isDayResolved(day), true);
+  assert.equal(SummerPlan.resolvedCount(day), 1);
+});
+
 test("an unfinished temporary task cannot hold back tomorrow's long-term plan", () => {
   const state = stateWith({ planDayNumber: 1, tasks: [
     { id: "poem", source: "course", done: true, completedOn: "2026-08-09" },
