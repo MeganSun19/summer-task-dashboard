@@ -7,4 +7,10 @@ npm-debug.log*
 .firecrawl/
 tmp/
 *.mp3
+!grammar-media/
+!grammar-media/*.mp3
+!grammar-media/english/
+!grammar-media/english/*.mp3
+!phonics-media/
+!phonics-media/*.mp3
 *.zip

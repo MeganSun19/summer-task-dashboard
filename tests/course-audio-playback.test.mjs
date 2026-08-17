@@ -34,11 +34,32 @@ test("audio uses independently published static MP3 clips", () => {
   assert.match(ui, /course-audio\/\$\{encodeURIComponent\(assetId\)\}\.mp3/);
 });
 
-test("same-day cloud refreshes cannot close an active course module", () => {
+test("same-day cloud refreshes cannot interrupt an active module or playing audio", () => {
   assert.match(ui, /const nextContextKey = `\$\{context\?\.kidId[\s\S]*?\$\{context\?\.planDay/);
-  assert.match(ui, /if \(activeModule && currentContextKey === nextContextKey\) return;/);
+  assert.match(ui, /const audioPlaying = !refs\.week1CoursePlayer\.paused && !refs\.week1CoursePlayer\.ended/);
+  assert.match(ui, /if \(currentContextKey === nextContextKey && \(activeModule \|\| phonicsLessonButton \|\| audioPlaying\)\) return;/);
+  const contextRender = ui.slice(ui.indexOf("function renderForContext"), ui.indexOf("function buildOverview"));
+  assert.equal(contextRender.indexOf("audioPlaying") < contextRender.indexOf("stopCourseAudio();"), true);
   assert.doesNotMatch(ui, /Promise\.all\(allRounds|AudioStore\.getAsset\(round\.assetId\)/);
   assert.match(ui, /availableAssetIds = new Set\(allRounds\.map/);
+});
+
+test("phonics animation pause resumes from the same position", () => {
+  const playback = ui.slice(ui.indexOf("function playPhonicsLesson"), ui.indexOf("function resetPhonicsLessonButton"));
+  assert.match(playback, /player\.pause\(\);[\s\S]*?▶ 继续动画/);
+  assert.match(playback, /!player\.ended && player\.currentTime > 0/);
+  assert.match(playback, /player\.play\(\)/);
+  const resumeBranch = playback.slice(playback.indexOf("if (phonicsLessonButton === button"), playback.indexOf("stopCourseAudio();"));
+  assert.doesNotMatch(resumeBranch, /currentTime\s*=\s*0|resetPhonicsLessonButton/);
+});
+
+test("a selected module is locked before first-start persistence can rerender the page", () => {
+  const startModule = ui.slice(ui.indexOf("async function startCourseModule"), ui.indexOf("function returnToDashboard"));
+  assert.match(startModule, /activeModule = selected/);
+  assert.equal(startModule.indexOf("activeModule = selected") < startModule.indexOf("LearningActivityProgress?.startModule"), true);
+  for (const moduleId of ["soundLab", "coreWords", "raz", "extraWords"]) {
+    assert.match(ui, new RegExp(`moduleCard\\("${moduleId}"`));
+  }
 });
 
 test("sound-lab rounds and answer positions are shuffled without shifting legacy partial progress", () => {

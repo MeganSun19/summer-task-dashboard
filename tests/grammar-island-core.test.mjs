@@ -1,14 +1,22 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 
 await import("../grammar-island-core.js");
 await import("../curriculum/grammar-island-course.js");
+await import("../curriculum/phonics-lesson-content.js");
+await import("../curriculum/english-word-meanings.js");
 
 const core = globalThis.GrammarIslandCore;
 const course = globalThis.GRAMMAR_ISLAND_COURSE;
+const phonicsLessons = globalThis.PHONICS_LESSON_CONTENT;
+const wordMeanings = globalThis.ENGLISH_WORD_MEANINGS;
+const englishCourse = JSON.parse(await readFile(new URL("../curriculum/english-course.json", import.meta.url), "utf8"));
 const grammarUiSource = await readFile(new URL("../grammar-island-ui.js", import.meta.url), "utf8");
 const deploySource = await readFile(new URL("../deploy-cloudbase.sh", import.meta.url), "utf8");
+const stylesSource = await readFile(new URL("../styles.css", import.meta.url), "utf8");
+const indexSource = await readFile(new URL("../index.html", import.meta.url), "utf8");
+const englishUiSource = await readFile(new URL("../week1-course-ui.js", import.meta.url), "utf8");
 
 function fakeStorage(seed = {}) {
   const entries = new Map(Object.entries(seed));
@@ -50,6 +58,98 @@ test("every lesson records its workbook exercise formats and supported vocabular
   assert.equal(course.lessons.find((lesson) => lesson.id === "w1-plurals").sourceFormats.some((item) => item.includes("词形转换")), true);
   assert.equal(course.lessons.find((lesson) => lesson.id === "w4-have-has").sourceFormats.some((item) => item.includes("找错并改正")), true);
   assert.equal(course.lessons.find((lesson) => lesson.id === "w4-prepositions").sourceFormats.some((item) => item.includes("看图")), true);
+});
+
+test("every micro lesson teaches transfer with examples not reused by its practice", () => {
+  for (const lesson of course.lessons) {
+    assert.equal(lesson.microLesson.scenes.length, 5, `${lesson.id}: scenes`);
+    assert.match(lesson.microLesson.audio, new RegExp(`grammar-media/${lesson.id}-narration\\.mp3`));
+    assert.equal(lesson.microLesson.durationSeconds >= 45 && lesson.microLesson.durationSeconds <= 100, true, `${lesson.id}: duration`);
+    assert.equal(lesson.microLesson.scenes.every((scene, index, scenes) => scene.narration && (index === 0 || scene.at > scenes[index - 1].at)), true, `${lesson.id}: timeline`);
+    const practiceText = [
+      ...lesson.oralPrompts.flatMap((prompt) => [prompt.cue, prompt.answer, prompt.scaffold]),
+      ...lesson.checks.flatMap((check) => [check.prompt, ...check.choices]),
+      ...lesson.vocabularySupport.flatMap((entry) => [entry.word, entry.zh])
+    ].join(" ").toLowerCase();
+    for (const exampleWord of lesson.microLesson.exampleWords) {
+      assert.equal(new RegExp(`\\b${exampleWord}\\b`, "i").test(practiceText), false, `${lesson.id}: ${exampleWord} leaked into practice`);
+    }
+  }
+});
+
+test("every grammar narration, vocabulary word, and model answer has a static neural audio file", async () => {
+  const urls = course.lessons.flatMap((lesson) => [
+    lesson.microLesson.audio,
+    ...lesson.vocabularySupport.map((entry) => entry.audio),
+    ...lesson.oralPrompts.map((prompt) => prompt.audio)
+  ]);
+  for (const url of new Set(urls)) {
+    const relativePath = url.split("?")[0].replace(/^\.\//, "");
+    const info = await stat(new URL(`../${relativePath}`, import.meta.url));
+    assert.equal(info.size > 500, true, relativePath);
+  }
+  assert.match(grammarUiSource, /new Audio\(audioUrl\)/);
+  assert.match(grammarUiSource, /speakEnglishWithBrowser/);
+});
+
+test("the plural y-rule stacks safely on narrow Android viewports", () => {
+  assert.match(stylesSource, /@media \(max-width: 520px\)[\s\S]*?\.grammar-y-comparison \{ grid-template-columns: 1fr;/);
+  assert.match(stylesSource, /\.grammar-y-comparison > div \{[^}]*min-width: 0;/);
+  assert.match(indexSource, /styles\.css\?v=20260817-transfer-examples-1/);
+});
+
+test("the child-facing English island removes product rationale and keeps short actions", () => {
+  assert.doesNotMatch(indexSource, /孩子端课程|独立长期课程 · 不计入今日进度|蓝书课程总进度/);
+  assert.doesNotMatch(grammarUiSource, /本课沿用的蓝书题型|内容范围：|动画示例和后续练习|额外学习奖励/);
+  assert.doesNotMatch(englishUiSource, /模块可以自由选择，首次全部完成后|本期高频词总表/);
+  assert.match(englishUiSource, /选一项开始吧/);
+  assert.match(grammarUiSource, /还不懂？再看几个例子/);
+});
+
+test("all 26 phonics days have synchronized neural teacher animations", async () => {
+  for (let day = 1; day <= 26; day += 1) {
+    const filename = `day-${String(day).padStart(2, "0")}-lesson.mp3`;
+    const info = await stat(new URL(`../phonics-media/${filename}`, import.meta.url));
+    assert.equal(info.size > 500, true, filename);
+  }
+  assert.match(englishUiSource, /data-phonics-lesson-audio/);
+  assert.match(englishUiSource, /data-phonics-lesson-stage/);
+  assert.match(englishUiSource, /timeupdate", syncPhonicsLessonAnimation/);
+  assert.match(englishUiSource, /▶ 播放动画/);
+  assert.match(deploySource, /phonics-media\/\."/);
+});
+
+test("phonics animation examples transfer the rule without repeating any course practice word", () => {
+  const practiceWords = new Set(englishCourse.days.flatMap((day) => day.phonics.words.map((entry) => entry.word.toLowerCase())));
+  assert.equal(phonicsLessons.length, 26);
+  for (const lesson of phonicsLessons) {
+    const examples = [...lesson.mainExamples, ...lesson.extensionExamples];
+    assert.equal(examples.length >= 5, true, `day ${lesson.day}`);
+    assert.equal(examples.every((word) => !practiceWords.has(word.toLowerCase())), true, `day ${lesson.day}`);
+    assert.equal(examples.every((word) => lesson.narration.join(" ").toLowerCase().includes(word.toLowerCase())), true, `day ${lesson.day}: narration`);
+  }
+});
+
+test("every phonics, heart and animation word has a compact Chinese meaning", () => {
+  const words = [
+    ...englishCourse.days.flatMap((day) => day.phonics.words.map((entry) => entry.word)),
+    ...englishCourse.heartWords.words.map((entry) => entry.word),
+    ...phonicsLessons.flatMap((lesson) => [...lesson.mainExamples, ...lesson.extensionExamples])
+  ];
+  assert.equal(words.every((word) => Boolean(wordMeanings[word.toLowerCase()])), true);
+  assert.match(englishUiSource, /中文提示：/);
+  assert.match(englishUiSource, /activeModuleFocus\(moduleId\)/);
+});
+
+test("completed phonics lessons appear in a read-only history review", () => {
+  assert.match(englishUiSource, /复习以前学过的声音/);
+  assert.match(englishUiSource, /lessonDay\.day < currentDayNumber/);
+  assert.match(englishUiSource, /record\?\.moduleProgress\?\.soundLab\?\.completedAt/);
+  const historyHandler = englishUiSource.slice(
+    englishUiSource.indexOf("function showHistoricalPhonicsLesson"),
+    englishUiSource.indexOf("function stopCourseAudio")
+  );
+  assert.doesNotMatch(historyHandler, /saveProgress|LearningActivityProgress\?\.save|startCourseModule/);
 });
 
 test("high-value rule families receive at least three oral variations", () => {
@@ -215,6 +315,15 @@ test("the grammar UI mirrors its isolated local state into family cloud sync", (
   assert.match(grammarUiSource, /persistGrammarState/);
 });
 
+test("same-child cloud refreshes cannot rebuild an active grammar lesson", () => {
+  const contextRender = grammarUiSource.slice(
+    grammarUiSource.indexOf("function renderForContext"),
+    grammarUiSource.indexOf("function mergeGrammarStates")
+  );
+  assert.match(contextRender, /if \(nextKidId === kidId && activeLesson\) return;/);
+  assert.equal(contextRender.indexOf("activeLesson) return") < contextRender.indexOf("render();"), true);
+});
+
 test("an unsaved parent schedule draft survives unrelated app renders", () => {
   assert.match(grammarUiSource, /parentScheduleDraft/);
   assert.match(grammarUiSource, /云端刷新不会覆盖当前选择/);
@@ -226,4 +335,5 @@ test("the CloudBase bundle includes every grammar-island runtime file", () => {
   assert.match(deploySource, /grammar-paper-practice\.js/);
   assert.match(deploySource, /grammar-island-ui\.js/);
   assert.match(deploySource, /grammar-island-course\.js/);
+  assert.match(deploySource, /grammar-media\/\.\"/);
 });

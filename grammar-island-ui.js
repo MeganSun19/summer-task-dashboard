@@ -32,6 +32,7 @@
   let latestRewardEarned = false;
   let latestRewardAmount = 0;
   let scheduleMessage = "";
+  let grammarSpeechAudio = null;
 
   refs.grammarIslandDashboard.addEventListener("click", handleDashboardClick);
   refs.grammarIslandLesson.addEventListener("click", handleLessonClick);
@@ -42,13 +43,19 @@
   state = persistGrammarState(state);
   renderForContext();
   backfillCompletedLessonRewards();
+  const localPreviewLessonId = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
+    ? new URLSearchParams(window.location.search).get("grammar-preview")
+    : null;
+  if (localPreviewLessonId && course.lessons.some((lesson) => lesson.id === localPreviewLessonId)) startLesson(localPreviewLessonId);
 
   function renderForContext() {
     const context = window.LearningActivityProgress?.getContext?.();
     const nextKidId = context?.kidId || "brother";
+    if (nextKidId === kidId && activeLesson) return;
     if (nextKidId !== kidId) {
       activeLesson = null;
       stage = "dashboard";
+      stopEnglishAudio();
       scheduleMessage = "";
       window.speechSynthesis?.cancel();
     }
@@ -98,10 +105,10 @@
   function renderHeader() {
     const summary = core.summary(state, kidId, course.lessons);
     const schedule = core.scheduleFor(state, kidId, core.localISODate());
-    refs.grammarIslandStatus.textContent = `${kidName} ${summary.completed}/${summary.total} 课`;
-    refs.grammarIslandProgressText.textContent = `${summary.completed}/${summary.total} 课（${summary.percent}%）`;
+    refs.grammarIslandStatus.textContent = `${summary.completed}/${summary.total} 课`;
+    refs.grammarIslandProgressText.textContent = `${summary.completed}/${summary.total} 课`;
     refs.grammarIslandProgressBar.style.width = `${summary.percent}%`;
-    refs.grammarIslandNotice.textContent = `每周 ${schedule.weekdays.length} 天 · 每次约 15–22 分钟。${course.note}`;
+    refs.grammarIslandNotice.textContent = "";
   }
 
   function renderDashboard() {
@@ -115,9 +122,6 @@
     const completedLessonToday = course.lessons.find((lesson) => records[lesson.id]?.latestSessionDate === today) || null;
     const nextDate = core.nextScheduledDate(today, schedule, false);
     refs.grammarIslandDashboard.innerHTML = `
-      <div class="grammar-island-rule">
-        <span>① 看懂规则</span><span>② 先开口</span><span>③ 听示范自评</span><span>④ 小检测</span><span>暂不需要开麦</span>
-      </div>
       ${nextLesson == null ? courseCompleteCard() : completedLessonToday ? completedTodayCard(completedLessonToday, nextLesson, nextDate) : scheduledToday ? dueLessonCard(nextLesson) : waitingCard(nextLesson, nextDate)}
       ${completedLessonsPanel(records)}
     `;
@@ -125,29 +129,26 @@
 
   function dueLessonCard(lesson) {
     return `<section class="grammar-today-card due">
-      <span class="grammar-today-badge">今天第 ${lesson.week} 周 · 第 ${lesson.session} 次</span>
+      <span class="grammar-today-badge">今天学这个</span>
       <h3>${escapeHTML(lesson.title)}</h3>
       <p>${escapeHTML(lesson.focus)}</p>
-      <div class="grammar-source-note"><span>辅助打印（可选）：第 ${lesson.printPages.join("、")} 页</span><span>约 15–22 分钟</span></div>
-      <button class="grammar-primary" type="button" data-grammar-lesson="${escapeAttr(lesson.id)}">开始今天的语法小岛</button>
+      <button class="grammar-primary" type="button" data-grammar-lesson="${escapeAttr(lesson.id)}">开始</button>
     </section>`;
   }
 
   function waitingCard(lesson, nextDate) {
     return `<section class="grammar-today-card waiting">
       <span class="grammar-today-badge">今天不排语法</span>
-      <h3>下一次：${escapeHTML(formatShortDate(nextDate))}</h3>
-      <p>届时只会出现“${escapeHTML(lesson.title)}”这一课，不会一次展示全部目录。</p>
-      <div class="grammar-source-note"><span>辅助打印（可选）：第 ${lesson.printPages.join("、")} 页</span></div>
+      <h3>今天没有新的语法课</h3>
+      <p>可以从下面挑一课再练习。</p>
     </section>`;
   }
 
   function completedTodayCard(completedLesson, nextLesson, nextDate) {
     return `<section class="grammar-today-card complete">
       <span class="grammar-today-badge">✓ 今天已经完成</span>
-      <h3>本次语法学习结束</h3>
-      <p>下一课是“${escapeHTML(nextLesson.title)}”，将在 ${escapeHTML(formatShortDate(nextDate))} 出现。</p>
-      <button class="grammar-primary" type="button" data-grammar-lesson="${escapeAttr(completedLesson.id)}">再练今天这课</button>
+      <h3>今天的语法完成啦！</h3>
+      <button class="grammar-primary" type="button" data-grammar-lesson="${escapeAttr(completedLesson.id)}">再练一次</button>
     </section>`;
   }
 
@@ -155,7 +156,7 @@
     return `<section class="grammar-today-card complete">
       <span class="grammar-today-badge">✓ 基础阶段完成</span>
       <h3>9 课已经全部完成</h3>
-      <p>可以根据检测记录决定是否进入下一阶段，不需要继续刷蓝书。</p>
+      <p>真棒，所有课程都学完了！</p>
     </section>`;
   }
 
@@ -163,10 +164,9 @@
     const completed = course.lessons.filter((lesson) => records[lesson.id]?.completedAt);
     if (!completed.length) return "";
     return `<details class="grammar-completed-lessons">
-      <summary>已学课程 · ${completed.length} 课（可随时查看和重练）</summary>
+      <summary>再练学过的课程</summary>
       <div>${completed.map((lesson) => {
-        const record = records[lesson.id];
-        return `<button type="button" data-grammar-lesson="${escapeAttr(lesson.id)}"><span><strong>${escapeHTML(lesson.title)}</strong><small>最佳首次正确率 ${record.bestPercent}%</small></span><b>重练</b></button>`;
+        return `<button type="button" data-grammar-lesson="${escapeAttr(lesson.id)}"><span><strong>${escapeHTML(lesson.title)}</strong></span><b>重练</b></button>`;
       }).join("")}</div>
     </details>`;
   }
@@ -204,6 +204,7 @@
   }
 
   function startLesson(lessonId) {
+    stopEnglishAudio();
     activeLesson = course.lessons.find((lesson) => lesson.id === lessonId);
     if (!activeLesson) return;
     stage = "explain";
@@ -231,12 +232,13 @@
     refs.grammarIslandLesson.hidden = false;
     refs.grammarIslandLesson.innerHTML = `<div class="grammar-lesson-shell">
       <div class="grammar-lesson-toolbar">
-        <button class="grammar-back" type="button" data-grammar-action="dashboard">← 返回本周安排</button>
-        <span class="grammar-step-label">第 ${activeLesson.week} 周 · 第 ${activeLesson.session} 次</span>
+        <button class="grammar-back" type="button" data-grammar-action="dashboard">← 返回语法小岛</button>
+        <span class="grammar-step-label">${escapeHTML(activeLesson.title)}</span>
       </div>
       ${stageTrack()}
       ${stage === "explain" ? explainStage() : stage === "oral" ? oralStage() : stage === "check" ? checkStage() : resultStage()}
     </div>`;
+    if (stage === "explain") setupMicroLesson();
   }
 
   function stageTrack() {
@@ -251,12 +253,158 @@
       <span class="grammar-stage-tag">第 1 步 · 讲解</span>
       <h3>${escapeHTML(activeLesson.title)}</h3>
       <p class="grammar-stage-lead">${escapeHTML(activeLesson.focus)}</p>
-      <ul class="grammar-explain-list">${activeLesson.explanation.map((item) => `<li>${escapeHTML(item)}</li>`).join("")}</ul>
-      <div class="grammar-source-formats"><strong>本课沿用的蓝书题型</strong>${activeLesson.sourceFormats.map((item) => `<span>${escapeHTML(item)}</span>`).join("")}</div>
-      ${vocabularySupportHTML(activeLesson.vocabularySupport, "本课可能出现的新词 · 点击可听")}
-      <div class="grammar-source-note"><span>内容范围：${escapeHTML(activeLesson.sourcePages)}</span><span>辅助打印（可选）：第 ${activeLesson.printPages.join("、")} 页</span></div>
+      ${activeLesson.microLesson ? microLessonHTML(activeLesson.microLesson) : explanationListHTML(activeLesson.explanation)}
+      ${extraExamplesHTML(activeLesson.microLesson?.extraExamples)}
+      ${activeLesson.microLesson ? `<details class="grammar-text-backup"><summary>想再看一遍文字规则</summary>${explanationListHTML(activeLesson.explanation)}</details>` : ""}
+      ${vocabularySupportHTML(activeLesson.vocabularySupport, "新词 · 点一下可以听")}
       <button class="grammar-primary" type="button" data-grammar-action="start-oral">我看懂了，开始开口练习</button>
     </section>`;
+  }
+
+  function explanationListHTML(items) {
+    return `<ul class="grammar-explain-list">${items.map((item) => `<li>${escapeHTML(item)}</li>`).join("")}</ul>`;
+  }
+
+  function extraExamplesHTML(examples) {
+    if (!examples?.length) return "";
+    return `<details class="grammar-extra-examples">
+      <summary>还不懂？再看几个例子</summary>
+      <div>${examples.map((example) => `<article>
+        <b>${escapeHTML(example.icon)}</b>
+        <span><strong>${escapeHTML(example.title)}</strong>${example.steps.map((step) => `<small>${escapeHTML(step)}</small>`).join("")}<em>${escapeHTML(example.answer)}</em></span>
+      </article>`).join("")}</div>
+    </details>`;
+  }
+
+  function microLessonHTML(microLesson) {
+    return `<div class="grammar-micro-lesson" data-grammar-micro-lesson>
+      <div class="grammar-micro-heading">
+        <div><span>🎞️ 有声小动画</span><strong>${escapeHTML(microLesson.title)}</strong></div>
+        <b>${escapeHTML(microLesson.durationLabel)}</b>
+      </div>
+      <div class="grammar-micro-screen" data-grammar-micro-screen aria-live="polite">
+        ${microSceneHTML(microLesson.scenes[0])}
+      </div>
+      <audio data-grammar-micro-audio preload="metadata" src="${escapeAttr(microLesson.audio)}"></audio>
+      <div class="grammar-micro-progress" aria-hidden="true"><span data-grammar-micro-progress></span></div>
+      <div class="grammar-micro-controls">
+        <button type="button" data-grammar-micro-action="toggle">▶ 开始讲解</button>
+        <span data-grammar-micro-time>0:00 / ${formatMicroTime(microLesson.durationSeconds)}</span>
+      </div>
+      <div class="grammar-micro-scenes" aria-label="讲解分段">
+        ${microLesson.scenes.map((scene, index) => `<button type="button" class="${index === 0 ? "active" : ""}" data-grammar-micro-scene="${index}" aria-label="跳到第 ${index + 1} 段"><span></span><small>${escapeHTML(scene.eyebrow)}</small></button>`).join("")}
+      </div>
+    </div>`;
+  }
+
+  function microSceneHTML(scene) {
+    if (scene.kind === "cards") {
+      return `<div class="grammar-micro-scene cards">
+        <span class="grammar-micro-eyebrow">${escapeHTML(scene.eyebrow)}</span>
+        <div class="grammar-concept-cards count-${Math.min(scene.cards.length, 3)}">${scene.cards.map(([icon, label, example, note]) => `<div>
+          <b>${escapeHTML(icon)}</b>
+          <strong>${escapeHTML(label)}</strong>
+          <span>${escapeHTML(example)}</span>
+          ${note ? `<small>${escapeHTML(note)}</small>` : ""}
+        </div>`).join("")}</div>
+        <p>${escapeHTML(scene.caption)}</p>
+      </div>`;
+    }
+    if (scene.kind === "quantity") {
+      return `<div class="grammar-micro-scene quantity">
+        <span class="grammar-micro-eyebrow">${escapeHTML(scene.eyebrow)}</span>
+        <div class="grammar-quantity-compare">
+          <div><b>${escapeHTML(scene.singular.icon)}</b><strong>${escapeHTML(scene.singular.text)}</strong></div>
+          <span>→</span>
+          <div><b>${escapeHTML(scene.plural.icons)}</b><strong>${highlightSuffix(scene.plural.text, "s")}</strong></div>
+        </div>
+        <p>${escapeHTML(scene.caption)}</p>
+      </div>`;
+    }
+    if (scene.kind === "suffix") {
+      return `<div class="grammar-micro-scene suffix">
+        <span class="grammar-micro-eyebrow">${escapeHTML(scene.eyebrow)}</span>
+        ${scene.endings ? `<div class="grammar-ending-chips">${scene.endings.map((ending) => `<b>${escapeHTML(ending)}</b>`).join("")}</div>` : ""}
+        <div class="grammar-word-transformations">${scene.examples.map(([from, to, icon]) => `<div><span>${escapeHTML(icon)}</span><strong>${escapeHTML(from)}</strong><i>→</i><strong>${highlightChangedEnding(from, to)}</strong></div>`).join("")}</div>
+        <p>${escapeHTML(scene.caption)}</p>
+      </div>`;
+    }
+    if (scene.kind === "y-rule") {
+      return `<div class="grammar-micro-scene y-rule">
+        <span class="grammar-micro-eyebrow">${escapeHTML(scene.eyebrow)}</span>
+        <div class="grammar-y-comparison">
+          ${microWordChangeHTML(scene.change, "换掉 y")}
+          ${microWordChangeHTML(scene.contrast, "保留 y")}
+        </div>
+        <p>${escapeHTML(scene.caption)}</p>
+      </div>`;
+    }
+    return `<div class="grammar-micro-scene recap">
+      <span class="grammar-micro-eyebrow">${escapeHTML(scene.eyebrow)}</span>
+      <div class="grammar-recap-grid">${scene.examples.map(([text, icons]) => `<div><b>${escapeHTML(icons)}</b><strong>${highlightPluralEnding(text)}</strong></div>`).join("")}</div>
+      <p>${escapeHTML(scene.caption)}</p>
+    </div>`;
+  }
+
+  function microWordChangeHTML([from, to, icon], label) {
+    return `<div><small>${escapeHTML(label)}</small><b>${escapeHTML(icon)}</b><span><strong>${escapeHTML(from)}</strong><i>→</i><strong>${highlightChangedEnding(from, to)}</strong></span></div>`;
+  }
+
+  function highlightChangedEnding(from, to) {
+    let prefixLength = 0;
+    while (prefixLength < from.length && prefixLength < to.length && from[prefixLength] === to[prefixLength]) prefixLength += 1;
+    return `${escapeHTML(to.slice(0, prefixLength))}<em>${escapeHTML(to.slice(prefixLength))}</em>`;
+  }
+
+  function highlightSuffix(text, suffix) {
+    const escaped = escapeHTML(text);
+    return escaped.endsWith(suffix) ? `${escaped.slice(0, -suffix.length)}<em>${escapeHTML(suffix)}</em>` : escaped;
+  }
+
+  function highlightPluralEnding(text) {
+    const word = String(text).split(" ").at(-1);
+    const suffix = word.endsWith("ies") ? "ies" : word.endsWith("es") ? "es" : "s";
+    return highlightSuffix(text, suffix);
+  }
+
+  function setupMicroLesson() {
+    const container = refs.grammarIslandLesson.querySelector("[data-grammar-micro-lesson]");
+    const audio = container?.querySelector("[data-grammar-micro-audio]");
+    if (!container || !audio || !activeLesson?.microLesson) return;
+    const refresh = () => updateMicroLesson(container, audio);
+    ["loadedmetadata", "timeupdate", "play", "pause", "ended"].forEach((eventName) => audio.addEventListener(eventName, refresh));
+    audio.addEventListener("error", () => {
+      container.classList.add("audio-error");
+      const button = container.querySelector('[data-grammar-micro-action="toggle"]');
+      if (button) button.textContent = "旁白暂时无法播放，请看文字规则";
+    });
+    refresh();
+  }
+
+  function updateMicroLesson(container, audio) {
+    const microLesson = activeLesson.microLesson;
+    const duration = Number.isFinite(audio.duration) ? audio.duration : Number(microLesson.durationSeconds || 85);
+    const currentTime = Math.min(Number(audio.currentTime || 0), duration);
+    const sceneIndex = microLesson.scenes.reduce((result, scene, index) => currentTime >= scene.at ? index : result, 0);
+    const previousSceneIndex = Number(container.dataset.activeScene || -1);
+    if (sceneIndex !== previousSceneIndex) {
+      container.dataset.activeScene = String(sceneIndex);
+      container.querySelector("[data-grammar-micro-screen]").innerHTML = microSceneHTML(microLesson.scenes[sceneIndex]);
+      container.querySelectorAll("[data-grammar-micro-scene]").forEach((button, index) => button.classList.toggle("active", index === sceneIndex));
+    }
+    const progress = container.querySelector("[data-grammar-micro-progress]");
+    if (progress) progress.style.width = `${duration ? (currentTime / duration) * 100 : 0}%`;
+    const time = container.querySelector("[data-grammar-micro-time]");
+    if (time) time.textContent = `${formatMicroTime(currentTime)} / ${formatMicroTime(duration)}`;
+    const toggle = container.querySelector('[data-grammar-micro-action="toggle"]');
+    if (toggle && !container.classList.contains("audio-error")) {
+      toggle.textContent = audio.ended ? "↻ 再听一遍" : !audio.paused ? "❚❚ 暂停" : currentTime < 0.25 ? "▶ 开始讲解" : "▶ 继续讲解";
+    }
+  }
+
+  function formatMicroTime(seconds) {
+    const safeSeconds = Math.max(0, Math.round(Number(seconds) || 0));
+    return `${Math.floor(safeSeconds / 60)}:${String(safeSeconds % 60).padStart(2, "0")}`;
   }
 
   function oralStage() {
@@ -264,9 +412,8 @@
     return `<section class="grammar-stage">
       <span class="grammar-stage-tag">第 2 步 · 口头操练 ${oralIndex + 1}/${activeOralPrompts.length}</span>
       <h3>先自己说，再听示范</h3>
-      ${prompt.skill ? `<p class="grammar-skill-label">本题练习：${escapeHTML(prompt.skill)}</p>` : ""}
       <div class="grammar-oral-cue">${escapeHTML(prompt.cue)}</div>
-      ${vocabularySupportHTML(vocabularyForText(activeLesson, `${prompt.cue} ${prompt.answer}`), "词义支架 · 不计入语法判断")}
+      ${vocabularySupportHTML(vocabularyForText(activeLesson, `${prompt.cue} ${prompt.answer}`), "不认识？点一下听")}
       ${oralRevealed ? `
         <div class="grammar-model-answer"><span>示范句</span><strong>${escapeHTML(prompt.answer)}</strong></div>
         <button class="grammar-primary" type="button" data-grammar-action="listen-again">▶ 再听一次示范</button>
@@ -289,7 +436,7 @@
       <span class="grammar-stage-tag">第 3 步 · 小检测 ${checkIndex + 1}/${activeLesson.checks.length}</span>
       <h3>选出最合适的答案</h3>
       <div class="grammar-check-prompt">${escapeHTML(check.prompt)}</div>
-      ${vocabularySupportHTML(vocabularyForText(activeLesson, `${check.prompt} ${check.choices.join(" ")}`), "不认识这个词？先看词义或点读；本题只判断语法")}
+      ${vocabularySupportHTML(vocabularyForText(activeLesson, `${check.prompt} ${check.choices.join(" ")}`), "不认识？点一下听")}
       <div class="grammar-choice-grid">${check.choices.map((choice) => {
         const selectedClass = selected === choice ? (resolved ? "correct" : "wrong") : "";
         return `<button class="grammar-choice ${selectedClass}" type="button" data-grammar-choice="${escapeAttr(choice)}" ${resolved ? "disabled" : ""}>${escapeHTML(choice)}</button>`;
@@ -309,12 +456,12 @@
       <span class="grammar-stage-tag">本课完成</span>
       <h3>${escapeHTML(activeLesson.title)}</h3>
       <div class="grammar-score-ring">${latestResult.percent}%</div>
-      <p>首次检测答对 ${latestResult.correct}/${latestResult.total} 题 · 口头直接会说 ${canSay} 句 · 重练后会说 ${afterRetry} 句</p>
-      <p class="grammar-reward-result ${latestRewardEarned ? "earned" : "claimed"}">${latestRewardEarned ? `☀ 额外学习奖励 +${latestRewardAmount} 阳光（不计入今日任务）` : "本课首次完成奖励已领取；重练不会重复发放。"}</p>
-      <p class="grammar-recommendation">${escapeHTML(recommendation.text)}<br><strong>辅助打印（可选）：</strong>蓝书第 ${activeLesson.printPages.join("、")} 页</p>
+      <p>答对 ${latestResult.correct}/${latestResult.total} 题 · 会说 ${canSay + afterRetry} 句</p>
+      <p class="grammar-reward-result ${latestRewardEarned ? "earned" : "claimed"}">${latestRewardEarned ? `☀ +${latestRewardAmount} 阳光` : "这次也练完啦！"}</p>
+      <p class="grammar-recommendation">${escapeHTML(recommendation.text)}</p>
       <div class="grammar-result-actions">
         <button class="grammar-back" type="button" data-grammar-action="retry">再练本课</button>
-        <button class="grammar-primary" type="button" data-grammar-action="dashboard">完成并返回安排</button>
+        <button class="grammar-primary" type="button" data-grammar-action="dashboard">回到语法小岛</button>
       </div>
     </section>`;
   }
@@ -403,11 +550,34 @@
 
   function handleLessonClick(event) {
     const action = event.target.closest("[data-grammar-action]")?.dataset.grammarAction;
+    const microAction = event.target.closest("[data-grammar-micro-action]")?.dataset.grammarMicroAction;
+    const microScene = event.target.closest("[data-grammar-micro-scene]")?.dataset.grammarMicroScene;
     const rating = event.target.closest("[data-oral-rating]")?.dataset.oralRating;
     const choice = event.target.closest("[data-grammar-choice]")?.dataset.grammarChoice;
-    const vocabularyWord = event.target.closest("[data-grammar-vocab]")?.dataset.grammarVocab;
+    const vocabularyButton = event.target.closest("[data-grammar-vocab]");
+    const vocabularyWord = vocabularyButton?.dataset.grammarVocab;
+    const microAudio = refs.grammarIslandLesson.querySelector("[data-grammar-micro-audio]");
+    if (microAction === "toggle" && microAudio) {
+      stopEnglishAudio();
+      if (microAudio.ended) microAudio.currentTime = 0;
+      if (microAudio.paused) microAudio.play().catch(() => {
+        refs.grammarIslandLive.textContent = "旁白没有成功播放，请再点一次播放，或展开文字规则。";
+      });
+      else microAudio.pause();
+      return;
+    }
+    if (microScene != null && microAudio && activeLesson?.microLesson) {
+      stopEnglishAudio();
+      const scene = activeLesson.microLesson.scenes[Number(microScene)];
+      if (scene) {
+        microAudio.currentTime = scene.at;
+        microAudio.play().catch(() => {});
+      }
+      return;
+    }
     if (vocabularyWord) {
-      speakEnglish(vocabularyWord);
+      microAudio?.pause();
+      speakEnglish(vocabularyWord, vocabularyButton.dataset.grammarAudio);
       return;
     }
     if (choice != null && stage === "check") {
@@ -429,6 +599,7 @@
       return;
     }
     if (rating && stage === "oral") {
+      stopEnglishAudio();
       if (rating === "again") {
         oralRetryCounts[oralIndex] = Number(oralRetryCounts[oralIndex] || 0) + 1;
         oralRetrying = true;
@@ -444,19 +615,23 @@
       return;
     }
     if (action === "dashboard") {
+      microAudio?.pause();
       activeLesson = null;
       stage = "dashboard";
+      stopEnglishAudio();
       window.speechSynthesis?.cancel();
       render();
     } else if (action === "start-oral") {
+      microAudio?.pause();
+      stopEnglishAudio();
       stage = "oral";
       renderLesson();
     } else if (action === "reveal-model") {
       oralRevealed = true;
       renderLesson();
-      speakEnglish(activeOralPrompts[oralIndex].answer);
+      speakEnglish(activeOralPrompts[oralIndex].answer, activeOralPrompts[oralIndex].audio);
     } else if (action === "listen-again") {
-      speakEnglish(activeOralPrompts[oralIndex].answer);
+      speakEnglish(activeOralPrompts[oralIndex].answer, activeOralPrompts[oralIndex].audio);
     } else if (action === "next-check") {
       if (!checkResolved[checkIndex]) return;
       if (checkIndex < activeLesson.checks.length - 1) {
@@ -484,12 +659,38 @@
     }
   }
 
-  function speakEnglish(text) {
+  function speakEnglish(text, audioUrl) {
+    stopEnglishAudio();
+    window.speechSynthesis?.cancel();
+    if (audioUrl && typeof Audio !== "undefined") {
+      const audio = new Audio(audioUrl);
+      grammarSpeechAudio = audio;
+      audio.preload = "auto";
+      audio.addEventListener("ended", () => {
+        if (grammarSpeechAudio === audio) grammarSpeechAudio = null;
+      }, { once: true });
+      audio.play().catch(() => {
+        if (grammarSpeechAudio !== audio) return;
+        grammarSpeechAudio = null;
+        speakEnglishWithBrowser(text);
+      });
+      return;
+    }
+    speakEnglishWithBrowser(text);
+  }
+
+  function stopEnglishAudio() {
+    if (!grammarSpeechAudio) return;
+    grammarSpeechAudio.pause();
+    grammarSpeechAudio.currentTime = 0;
+    grammarSpeechAudio = null;
+  }
+
+  function speakEnglishWithBrowser(text) {
     if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
       refs.grammarIslandLive.textContent = "当前浏览器暂不支持示范语音，请家长读出屏幕上的示范句。";
       return;
     }
-    window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = "en-US";
     utterance.rate = 0.78;
@@ -551,7 +752,7 @@
 
   function vocabularySupportHTML(items, label) {
     if (!items?.length) return "";
-    return `<div class="grammar-vocab-support"><strong>${escapeHTML(label)}</strong><div>${items.map((entry) => `<button type="button" data-grammar-vocab="${escapeAttr(entry.word)}"><span>▶ ${escapeHTML(entry.word)}</span><small>${escapeHTML(entry.zh)}</small></button>`).join("")}</div></div>`;
+    return `<div class="grammar-vocab-support"><strong>${escapeHTML(label)}</strong><div>${items.map((entry) => `<button type="button" data-grammar-vocab="${escapeAttr(entry.word)}" data-grammar-audio="${escapeAttr(entry.audio || "")}"><span>▶ ${escapeHTML(entry.word)}</span><small>${escapeHTML(entry.zh)}</small></button>`).join("")}</div></div>`;
   }
 
   function escapeHTML(value) {

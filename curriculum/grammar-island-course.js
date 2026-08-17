@@ -45,11 +45,100 @@
     ]
   });
 
+  const microLesson = (id, title, durationSeconds, exampleWords, scenes, extraExamples = []) => ({
+    title,
+    durationLabel: `约 ${Math.round(durationSeconds)} 秒`,
+    durationSeconds,
+    audio: `./grammar-media/${id}-narration.mp3?v=20260817-3`,
+    exampleWords,
+    scenes,
+    extraExamples
+  });
+
+  const MICRO_LESSONS = Object.freeze({
+    "w1-a-an": microLesson("w1-a-an", "先听声音，再选 a 或 an", 57.3, ["moon", "zebra", "owl", "elephant", "astronaut"], [
+      { at: 0, kind: "cards", eyebrow: "一个东西，需要小帮手", caption: "a 和 an 都放在一个可数名词前。", cards: [["🧩", "a / an", "一个东西的小帮手", "先听开头的声音"]], narration: "英语里说一个东西，名词前常常需要一个小帮手，a 或 an。先别急着只看字母，要先听单词开头的声音。" },
+      { at: 11.6, kind: "cards", eyebrow: "辅音音素开头：用 a", caption: "听到 /m/、/z/ 这样的开头音，通常用 a。", cards: [["🌙", "a", "a moon", "开头音 /m/"], ["🦓", "a", "a zebra", "开头音 /z/"]], narration: "如果开头是辅音音素，通常用 a。a moon。a zebra。听到的是 m 和 z 这样的辅音开头。" },
+      { at: 22.5, kind: "cards", eyebrow: "元音音素开头：用 an", caption: "听到元音开头，为了读得顺，通常用 an。", cards: [["🦉", "an", "an owl", "元音开头"], ["🐘", "an", "an elephant", "元音开头"]], narration: "如果开头是元音音素，通常用 an。an owl。an elephant。多出来的 n，会让两个词连接得更顺。" },
+      { at: 33.4, kind: "cards", eyebrow: "把词组读出来再判断", caption: "astronaut 开头是元音音素，所以选择 an。", cards: [["👂", "先听", "astronaut", "开头是元音音素"], ["🚀", "再选", "an astronaut", "读起来更顺"]], narration: "判断时，把后面的单词读出来。astronaut 开头是元音音素，所以不是 a astronaut，而是 an astronaut。" },
+      { at: 44.5, kind: "cards", eyebrow: "最后快速过一遍", caption: "不是只看首字母，而是听单词开头的声音。", cards: [["🌙", "a", "a moon", "辅音开头"], ["🦉", "an", "an owl", "元音开头"]], narration: "最后快速过一遍。a moon，a zebra；an owl，an elephant。记住，要听开头的声音。现在换一批新单词试试看。" }
+    ]),
+    "w1-plurals": microLesson("w1-plurals", "一个变多个，词尾会变身", 85.4, ["star", "pen", "fox", "brush", "watch", "candy", "key", "robot", "peach", "monkey"], [
+      { at: 0, kind: "quantity", eyebrow: "先看数量", caption: "一个用单数；两个或更多，名词通常要变成复数。", singular: { icon: "⭐", text: "one star" }, plural: { icons: "⭐⭐⭐", text: "three stars" }, narration: "先看数量。这里有一颗星星，英语说 one star。现在变成三颗，变成 three stars。一个用单数，两个或更多，名词通常要变成复数。" },
+      { at: 15.2, kind: "suffix", eyebrow: "最常见：加 -s", caption: "多数单词直接在词尾加 -s。", examples: [["star", "stars", "⭐"], ["pen", "pens", "🖊️"]], narration: "最常见的办法，是在单词后面加字母 S。one star, three stars。one pen, two pens。看见两个或更多，先想一想，词尾是不是要多一个 S。" },
+      { at: 30.9, kind: "suffix", eyebrow: "这些词尾：加 -es", caption: "以 s、x、sh、ch 结尾，通常加 -es。", endings: ["s", "x", "sh", "ch"], examples: [["fox", "foxes", "🦊"], ["brush", "brushes", "🖌️"], ["watch", "watches", "⌚"]], narration: "有些词尾发音挤在一起，只加 S 不好读。以字母 S、X，或者字母组合 S H、C H 结尾，通常加 E S。one fox, two foxes。one brush, three brushes。one watch, two watches。" },
+      { at: 51.4, kind: "y-rule", eyebrow: "辅音字母 + y：变成 -ies", caption: "candy 变 candies；但 key 只需要直接加 -s。", change: ["candy", "candies", "🍬"], contrast: ["key", "keys", "🔑"], narration: "如果单词是辅音字母加 Y 结尾，通常把 Y 变成 I，再加 E S。one candy, two candies。可是元音字母加 Y，不用换 Y。one key, two keys。" },
+      { at: 67, kind: "recap", eyebrow: "最后快速过一遍", caption: "先看数量，再看词尾；接下来换一批新单词练习。", examples: [["four stars", "⭐⭐⭐⭐"], ["two foxes", "🦊🦊"], ["three candies", "🍬🍬🍬"]], narration: "最后挑战一下。四颗星，是 four stars。两只狐狸，是 two foxes。三块糖，是 three candies。记住：先看数量，再看词尾。现在轮到你用新的单词练习了。" }
+    ], [
+      { icon: "🤖🤖", title: "两个机器人", steps: ["先看数量：two", "robot 是普通词尾：加 -s"], answer: "two robots" },
+      { icon: "🍑🍑🍑", title: "三颗桃子", steps: ["先看数量：three", "peach 以 ch 结尾：加 -es"], answer: "three peaches" },
+      { icon: "🐒🐒", title: "容易弄错", steps: ["monkey 的 y 前面是元音 e", "保留 y，直接加 -s"], answer: "two monkeys ✓" }
+    ]),
+    "w2-pronouns": microLesson("w2-pronouns", "名字太长，代词来接棒", 64.4, ["leo", "nina", "turtle", "parrots", "coach"], [
+      { at: 0, kind: "cards", eyebrow: "说自己和对方", caption: "I 指自己；you 指正在说话的对方。", cards: [["🙋", "I", "I am here.", "我"], ["👉", "you", "You are here.", "你／你们"]], narration: "代词可以代替名字，让句子更短。说自己时用 I。对正在说话的人，用 you。I am here。You are here。" },
+      { at: 12.5, kind: "cards", eyebrow: "一个男孩或一个女孩", caption: "he 指男性，she 指女性。", cards: [["👦", "he", "Leo is kind. He smiles.", "男孩或男人"], ["👧", "she", "Nina runs. She is fast.", "女孩或女人"]], narration: "说一个男孩或男人，用 he。Leo is kind。He smiles。说一个女孩或女人，用 she。Nina runs。She is fast。" },
+      { at: 26, kind: "cards", eyebrow: "一个动物或物品", caption: "不知道或不强调性别时，一个动物、物品常用 it。", cards: [["🐢", "it", "The turtle is slow. It rests.", "一个动物"], ["⏰", "it", "It is loud.", "一个物品"]], narration: "说一个动物或物品，常常用 it。The turtle is slow。It rests。一个闹钟也可以说，It is loud。" },
+      { at: 36.9, kind: "cards", eyebrow: "两个或更多", caption: "they 指多个对象；we 包括说话的自己。", cards: [["🦜🦜", "they", "They can fly.", "多个对象"], ["🧑‍🤝‍🧑", "we", "We are a team.", "包括自己"]], narration: "说两个或更多的人、动物或物品，用 they。The parrots can fly。They can fly。如果一群人里包括自己，就用 we。We are a team。" },
+      { at: 51, kind: "cards", eyebrow: "先找对象，再换代词", caption: "看清楚是谁、几个、包不包括自己。", cards: [["👦", "Leo", "he", "一个男孩"], ["🐢", "turtle", "it", "一个动物"], ["🦜🦜", "parrots", "they", "多个对象"]], narration: "最后记住，先找句子说的是谁，再看有几个。Leo 换成 he，turtle 换成 it，parrots 换成 they。现在轮到你判断。" }
+    ]),
+    "w2-possessives": microLesson("w2-possessives", "东西到底是谁的", 66.7, ["coat", "scarf", "camera", "nest", "helmet", "noah", "lily"], [
+      { at: 0, kind: "cards", eyebrow: "我的和你的", caption: "my 是我的，your 是你的或你们的。", cards: [["🧥", "my", "my coat", "我的"], ["🧣", "your", "your scarf", "你的／你们的"]], narration: "这些词告诉我们，东西属于谁。说我的，用 my，my coat。对别人说你的，用 your，your scarf。" },
+      { at: 10.7, kind: "cards", eyebrow: "他的和她的", caption: "his 跟男性主人，her 跟女性主人。", cards: [["👦📷", "his", "Noah's camera → his camera", "他的"], ["👧⛑️", "her", "Lily's helmet → her helmet", "她的"]], narration: "东西属于一个男孩或男人，用 his。Noah's camera，可以换成 his camera。属于一个女孩或女人，用 her。Lily's helmet，可以换成 her helmet。" },
+      { at: 25.8, kind: "cards", eyebrow: "动物或物品自己的", caption: "its 表示“它的”，中间没有撇号。", cards: [["🐦🪹", "its", "its nest", "它的"], ["🤖🔋", "its", "its battery", "它的"]], narration: "动物或物品自己的东西，常用 its。小鸟的巢，可以说 its nest。机器人的电池，可以说 its battery。注意，its 中间没有撇号。" },
+      { at: 40.5, kind: "cards", eyebrow: "后面通常要跟名词", caption: "不能只说 my、your；要说清楚是什么东西。", cards: [["✅", "my coat", "完整", "所有词 + 名词"], ["✅", "her helmet", "完整", "所有词 + 名词"]], narration: "my、your、his、her、its 后面通常要跟一个名词。不是只说 my，而是 my coat。不是只说 her，而是 her helmet。" },
+      { at: 53.3, kind: "cards", eyebrow: "先找主人，再选词", caption: "判断主人是我、你、他、她，还是它。", cards: [["🙋", "I", "my coat", "我"], ["👦", "Noah", "his camera", "他"], ["🐦", "bird", "its nest", "它"]], narration: "最后先找主人。主人是我，用 my；是 Noah，用 his；是一只小鸟，用 its。找清楚属于谁，再换一批新东西练习。" }
+    ]),
+    "w3-be": microLesson("w3-be", "主语带着 be 动词找朋友", 59.5, ["hungry", "nora", "teacher", "sky", "cloudy", "park"], [
+      { at: 0, kind: "cards", eyebrow: "I 只和 am 配对", caption: "看到 I，优先想到 am。", cards: [["🙋", "I + am", "I am hungry.", "固定搭档"]], narration: "am、is、are 都是 be 动词，但它们有不同的搭档。看到 I，就用 am。I am hungry。" },
+      { at: 10.2, kind: "cards", eyebrow: "一个人或一个东西：is", caption: "he、she、it 和单数名字通常用 is。", cards: [["👩‍🏫", "Nora + is", "Nora is a teacher.", "一个人"], ["☁️", "sky + is", "The sky is cloudy.", "一个东西"]], narration: "说一个人或一个东西，通常用 is。Nora is a teacher。The sky is cloudy。he、she、it，也都和 is 配对。" },
+      { at: 22.5, kind: "cards", eyebrow: "you 和多个对象：are", caption: "you、we、they 和复数名词通常用 are。", cards: [["👉", "you + are", "You are clever.", "你／你们"], ["🧑‍🤝‍🧑", "we + are", "We are at the park.", "包括自己"], ["👥", "they + are", "They are here.", "多个对象"]], narration: "看到 you、we、they，通常用 are。You are clever。We are at the park。They are here。复数名词也用 are。" },
+      { at: 34.7, kind: "cards", eyebrow: "先圈主语", caption: "不要只看后面的形容词，先找句子在说谁。", cards: [["①", "找主语", "Nora", "一个人"], ["②", "选搭档", "is", "Nora is ..."]], narration: "做题时，先圈出主语，再选 be 动词。看到 Nora，是一个人，所以选 is。不要只盯着后面的词。" },
+      { at: 45.8, kind: "cards", eyebrow: "三组搭档", caption: "I—am；单数—is；you 和复数—are。", cards: [["🙋", "I", "am", ""], ["1️⃣", "单数", "is", ""], ["👥", "you／复数", "are", ""]], narration: "最后记住三组搭档。I am。一个人或东西用 is。you、we、they 和多个对象用 are。现在开始换句子练习。" }
+    ]),
+    "w3-demonstratives": microLesson("w3-demonstratives", "远近和数量一起看", 61.3, ["cookie", "tower", "grapes", "mountains", "drums"], [
+      { at: 0, kind: "cards", eyebrow: "近处一个：this", caption: "离自己近，而且只有一个，用 this。", cards: [["🍪", "this", "this cookie", "近处 · 一个"]], narration: "选择指示词，要同时看远近和数量。离自己近，而且只有一个，用 this。this cookie。如果它跑到远处，就不能再用 this。" },
+      { at: 14.1, kind: "cards", eyebrow: "远处一个：that", caption: "离自己远，而且只有一个，用 that。", cards: [["🗼", "that", "that tower", "远处 · 一个"]], narration: "离自己远，而且只有一个，用 that。看远处的塔，可以说 that tower。" },
+      { at: 22, kind: "cards", eyebrow: "近处多个：these", caption: "离自己近，而且有两个或更多，用 these。", cards: [["🍇🍇🍇", "these", "these grapes", "近处 · 多个"]], narration: "离自己近，而且有两个或更多，用 these。手边的几串葡萄，可以说 these grapes。these 后面的名词要用复数。" },
+      { at: 34.3, kind: "cards", eyebrow: "远处多个：those", caption: "离自己远，而且有两个或更多，用 those。", cards: [["⛰️⛰️", "those", "those mountains", "远处 · 多个"]], narration: "离自己远，而且有两个或更多，用 those。远处的几座山，可以说 those mountains。those 后面的名词也要用复数。" },
+      { at: 46.5, kind: "cards", eyebrow: "两步判断", caption: "先看一个还是多个，再看近处还是远处。", cards: [["🥁", "this drum", "近处一个", "this"], ["🥁🥁", "those drums", "远处多个", "those"]], narration: "最后分两步。先看一个还是多个，再看近处还是远处。近处一个鼓，用 this drum；远处多个鼓，用 those drums。现在轮到你判断。" }
+    ]),
+    "w4-have-has": microLesson("w4-have-has", "谁拥有，决定 have 还是 has", 56.7, ["sandwich", "crayons", "wings", "helmet", "camera", "noah"], [
+      { at: 0, kind: "cards", eyebrow: "I 和 you：用 have", caption: "I have；you have。", cards: [["🥪", "I have", "I have a sandwich.", "我有"], ["🖍️", "You have", "You have crayons.", "你有"]], narration: "have 和 has 都表示有。先看是谁拥有东西。主语是 I 或 you，用 have。I have a sandwich。You have crayons。" },
+      { at: 12.7, kind: "cards", eyebrow: "we 和 they：也用 have", caption: "包括自己或多个对象，通常用 have。", cards: [["🧑‍🤝‍🧑", "We have", "We have a camera.", "我们有"], ["🦋🦋", "They have", "They have wings.", "它们有"]], narration: "主语是 we 或 they，也用 have。We have a camera。They have wings。" },
+      { at: 20, kind: "cards", eyebrow: "he、she、it：用 has", caption: "第三人称单数通常和 has 配对。", cards: [["👦", "He has", "He has a helmet.", "他有"], ["🦋", "It has", "It has wings.", "它有"]], narration: "主语是 he、she、it，通常用 has。He has a helmet。It has wings。这里的 has 词尾有一个 S。" },
+      { at: 31.6, kind: "cards", eyebrow: "一个名字也用 has", caption: "Noah 是一个人，所以和 has 配对。", cards: [["👦📷", "Noah has", "Noah has a camera.", "一个人名"]], narration: "一个人的名字，也是第三人称单数。Noah has a camera。看到 Noah，不要被名字挡住，它和 he 一样用 has。" },
+      { at: 43.2, kind: "cards", eyebrow: "先找主语", caption: "I、you、we、they—have；he、she、it 和单数—has。", cards: [["👥", "I／you／we／they", "have", ""], ["1️⃣", "he／she／it／单数", "has", ""]], narration: "最后先找主语。I、you、we、they 用 have。he、she、it 和一个人或东西用 has。现在去找句子里的主人。" }
+    ]),
+    "w4-prepositions": microLesson("w4-prepositions", "东西藏在哪里", 58.9, ["coin", "pocket", "lamp", "shelf", "mouse", "bridge"], [
+      { at: 0, kind: "cards", eyebrow: "在里面：in", caption: "一个东西被空间包住，用 in。", cards: [["🪙", "in", "The coin is in the pocket.", "在里面"]], narration: "位置词告诉我们东西在哪里。一个东西被空间包在里面，用 in。想象口袋从四周包住硬币。The coin is in the pocket。" },
+      { at: 13.2, kind: "cards", eyebrow: "在表面上：on", caption: "一个东西接触另一个东西的上表面，用 on。", cards: [["💡", "on", "The lamp is on the shelf.", "在上面"]], narration: "一个东西接触另一个东西的上表面，用 on。灯和架子的表面接触。The lamp is on the shelf。" },
+      { at: 23.4, kind: "cards", eyebrow: "在下方：under", caption: "一个东西位于另一个东西下方，用 under。", cards: [["🐭", "under", "The mouse is under the bridge.", "在下面"]], narration: "一个东西位于另一个东西下方，用 under。小老鼠没有被桥包住，只是在桥的下方。The mouse is under the bridge。" },
+      { at: 34.9, kind: "cards", eyebrow: "看关系，不只看高低", caption: "接触上表面才用 on；被包在空间里才用 in。", cards: [["🪙👖", "in", "被口袋包住", "coin in pocket"], ["💡▰", "on", "接触架子表面", "lamp on shelf"]], narration: "判断时要看两个东西的关系。被口袋包住，是 in。接触架子的上表面，是 on。只看高低还不够。" },
+      { at: 46.6, kind: "cards", eyebrow: "三个位置", caption: "in 在里面；on 在上面；under 在下面。", cards: [["📥", "in", "里面", ""], ["🔝", "on", "上面", ""], ["⬇️", "under", "下面", ""]], narration: "最后记住三个位置。in，在里面；on，在上面；under，在下面。接下来换成生活里的新物品来判断。" }
+    ]),
+    "w5-checkpoint": microLesson("w5-checkpoint", "五步找线索，完成综合判断", 66, ["moon", "stars", "leo", "scarf", "parrots", "crayons", "coin", "pocket"], [
+      { at: 0, kind: "cards", eyebrow: "第一步：听声音、看数量", caption: "a/an 看开头音；单复数先看数量。", cards: [["🌙", "a moon", "辅音开头", "a"], ["⭐⭐⭐", "three stars", "多个", "-s"]], narration: "综合题不要着急。第一步，听开头声音、看数量。moon 是辅音开头，用 a moon。三颗星是多个，用 three stars。" },
+      { at: 13.2, kind: "cards", eyebrow: "第二步：找对象和 be 动词", caption: "先用代词替换，再选择 am、is、are。", cards: [["👦", "Leo → he", "He is here.", "一个男孩"], ["🦜🦜", "parrots → they", "They are here.", "多个对象"]], narration: "第二步，找句子说的是谁。Leo 可以换成 he，所以说 He is here。parrots 是多个，可以换成 they，所以说 They are here。" },
+      { at: 25.7, kind: "cards", eyebrow: "第三步：东西属于谁", caption: "先找主人，再选 my、your、his、her、its。", cards: [["👦🧣", "Leo's scarf", "his scarf", "他的"], ["🙋🧣", "my scarf", "我的", "my"]], narration: "第三步，找东西属于谁。Leo 的围巾，可以说 his scarf。自己的围巾，可以说 my scarf。" },
+      { at: 36.2, kind: "cards", eyebrow: "第四步：远近、数量和拥有", caption: "指示词看远近数量；have/has 看主语。", cards: [["🖍️🖍️", "these crayons", "近处多个", "these"], ["👦🖍️", "Leo has crayons.", "一个人", "has"]], narration: "第四步，看远近和数量，再看主语。近处多支蜡笔，用 these crayons。Leo 是一个人，所以说 Leo has crayons。" },
+      { at: 48.7, kind: "cards", eyebrow: "第五步：看位置关系", caption: "圈出主语、数量、远近、主人或位置，再做选择。", cards: [["🪙👖", "in", "The coin is in the pocket.", "在里面"], ["✅", "一次找一个线索", "再完整读一遍", "检查"]], narration: "第五步，看位置关系。The coin is in the pocket。做综合题时，一次只找一个线索：主语、数量、远近、主人或位置。选好以后，再把完整句子读一遍。" }
+    ])
+  });
+
+  const grammarAudioSlug = (value) => String(value).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   const lesson = (id, week, session, title, focus, sourcePages, printPages, explanation, oralPrompts, checks) => ({
     id, week, session, title, focus, sourcePages, printPages,
     sourceFormats: SOURCE_FORMATS[id] || [],
-    vocabularySupport: (VOCABULARY_SUPPORT[id] || []).map(([word, zh]) => ({ word, zh })),
-    explanation, oralPrompts, checks
+    vocabularySupport: (VOCABULARY_SUPPORT[id] || []).map(([word, zh]) => ({
+      word, zh, audio: `./grammar-media/english/vocab-${grammarAudioSlug(word)}.mp3?v=20260817-1`
+    })),
+    microLesson: MICRO_LESSONS[id] || null,
+    explanation,
+    oralPrompts: oralPrompts.map((prompt, index) => ({
+      ...prompt,
+      audio: `./grammar-media/english/model-${id}-${index + 1}.mp3?v=20260817-1`
+    })),
+    checks
   });
 
   return Object.freeze({

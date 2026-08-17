@@ -1,11 +1,13 @@
 (function () {
+  const phonicsLessonContent = window.PHONICS_LESSON_CONTENT;
+  const wordMeanings = window.ENGLISH_WORD_MEANINGS;
   const refs = Object.fromEntries([
     "week1CourseCard", "week1CourseDay", "week1CourseStatus", "week1CourseFocus", "week1CourseNotice", "week1CourseWords",
     "week1CourseStart", "week1CoursePlayer", "week1CourseAudioPlay", "week1CourseProgressBar", "week1CoursePrompt",
     "week1CourseChoices", "week1CourseReadDone", "week1CourseFeedback", "week1CourseLog", "week1CourseActivity"
   ].map((id) => [id, document.getElementById(id)]));
 
-  if (!window.AudioStore || !window.OPWWeek1CourseCore || Object.values(refs).some((element) => !element)) return;
+  if (!window.AudioStore || !window.OPWWeek1CourseCore || !Array.isArray(phonicsLessonContent) || !wordMeanings || Object.values(refs).some((element) => !element)) return;
 
   let course = null;
   let day = null;
@@ -30,11 +32,17 @@
   let practiceShuffleSerial = 0;
   let activeChoiceSeed = "";
   let heartWordBankPage = 0;
+  let phonicsLessonButton = null;
+  let phonicsLessonStage = null;
+  let completedPhonicsDays = [];
   const ROUND_SCHEMA_VERSION = 6;
   const EXTENSION_PLAN_VERSION = 1;
   const HEART_WORD_BANK_PAGE_SIZE = 40;
   refs.week1CoursePlayer.setAttribute("playsinline", "");
   refs.week1CoursePlayer.setAttribute("webkit-playsinline", "");
+  refs.week1CoursePlayer.addEventListener("ended", resetPhonicsLessonButton);
+  refs.week1CoursePlayer.addEventListener("timeupdate", syncPhonicsLessonAnimation);
+  refs.week1CoursePlayer.addEventListener("loadedmetadata", syncPhonicsLessonAnimation);
 
   refs.week1CourseStart.addEventListener("click", returnToDashboard);
   refs.week1CourseChoices.addEventListener("click", chooseWord);
@@ -69,7 +77,9 @@
     if (!course) return;
     const context = window.LearningActivityProgress?.getContext();
     const nextContextKey = `${context?.kidId || ""}|${context?.date || ""}|${context?.planDay || ""}`;
-    if (activeModule && currentContextKey === nextContextKey) return;
+    const audioPlaying = !refs.week1CoursePlayer.paused && !refs.week1CoursePlayer.ended;
+    if (currentContextKey === nextContextKey && (activeModule || phonicsLessonButton || audioPlaying)) return;
+    stopCourseAudio();
     running = false;
     activeModule = null;
     heartWordBankPage = 0;
@@ -89,6 +99,7 @@
     if (!day) return;
 
     const history = window.LearningActivityProgress?.getHistory?.() || [];
+    completedPhonicsDays = completedCourseDays(history, dayNumber);
     const stored = window.LearningActivityProgress?.get(window.OPWWeek1CourseCore.activityId(dayNumber));
     const extensionPlan = window.OPWWeek1CourseCore.extensionPlanForActivity(
       day.heartWords,
@@ -121,8 +132,8 @@
       : [];
     wrongAttempts = Math.max(0, Number(stored?.wrongAttempts) || 0);
 
-    refs.week1CourseDay.textContent = `${context?.planTitle || "暑假计划"} · 英语岛 · 第 ${day.day}/${course.days.length} 个学习日`;
-    refs.week1CourseFocus.textContent = `${day.focus}｜${modules.length} 个模块可以自由选择，首次全部完成后点亮今日英语岛；完成后仍可重复练习。`;
+    refs.week1CourseDay.textContent = `英语岛 · 第 ${day.day} 天`;
+    refs.week1CourseFocus.textContent = childFriendlyFocus(day.focus);
     renderDashboard();
   }
 
@@ -130,10 +141,9 @@
     const phonics = day.phonics.words.map((entry) => {
       const round = allRounds.find((item) => item.kind === "phonics" && item.word === entry.word);
       const playable = round.mode === "listen" && availableAssetIds.has(round.assetId);
-      const label = window.OPWWeek1CourseCore.availabilityLabel(round, playable);
       return playable
-        ? `<button class="week1-word-chip audio-word-chip listen" type="button" data-phonics-audio="${escapeAttr(entry.word)}" aria-label="播放 ${escapeAttr(entry.word)} 的发音"><span class="audio-play-icon" aria-hidden="true">▶</span><span>${escapeHTML(entry.word)}</span><small>${label}</small></button>`
-        : `<span class="week1-word-chip read"><span>${escapeHTML(entry.word)}</span><small>${label}</small></span>`;
+        ? `<button class="week1-word-chip audio-word-chip listen" type="button" data-phonics-audio="${escapeAttr(entry.word)}" aria-label="播放 ${escapeAttr(entry.word)} 的发音"><span class="audio-play-icon" aria-hidden="true">▶</span>${wordWithMeaning(entry.word)}</button>`
+        : `<span class="week1-word-chip read">${wordWithMeaning(entry.word)}</span>`;
     }).join("");
     const newHeartWords = day.heartWords.newWords || [day.heartWords.new].filter(Boolean);
     const heart = [...newHeartWords, ...day.heartWords.review].filter(Boolean).map((word) => (
@@ -145,13 +155,68 @@
     )).join("");
     const assignment = day.raz.assignment;
     const books = assignment?.mode === "fixed" ? assignment.books : (assignment?.fixedBooks || []);
+    const phonicsTeacher = phonicsLessonMarkup(day);
     return `<div class="english-module-grid">
-      ${moduleCard("soundLab", "Aa", "声音实验室", "听音辨词与自然拼读", phonics)}
-      ${moduleCard("coreWords", "词", "核心高频词", "认读、书写与独立拼写", heart)}
-      ${moduleCard("raz", "读", "RAZ 故事森林", "目标词、句型与今日书目", `<div class="module-raz-books">${books.map((book, index) => `<span>${index + 1}. ${highlightHeartWords(book)}</span>`).join("")}${assignment?.mode === "choose" ? `<span class="raz-choice-rule">${escapeHTML(assignment.rule)}</span>` : ""}<small>${escapeHTML(day.raz.focus)}</small></div>`)}
-      ${extension ? moduleCard("extraWords", "+", "高频词加餐", "拓展高频词与间隔复习", extension) : ""}
+      ${moduleCard("soundLab", "Aa", "声音实验室", "先看动画，再拼单词", `${phonicsTeacher}${phonics}`)}
+      ${moduleCard("coreWords", "词", "核心高频词", "读一读，写一写", heart)}
+      ${moduleCard("raz", "读", "RAZ 故事森林", "读今天的书", `<div class="module-raz-books">${books.map((book, index) => `<span>${index + 1}. ${highlightHeartWords(book)}</span>`).join("")}${assignment?.mode === "choose" ? `<span class="raz-choice-rule">${escapeHTML(assignment.rule)}</span>` : ""}<small>${escapeHTML(day.raz.focus)}</small></div>`)}
+      ${extension ? moduleCard("extraWords", "+", "高频词加餐", "再学几个词", extension) : ""}
+      </div>${phonicsHistoryMarkup()}`;
+  }
+
+  function phonicsLessonMarkup(lessonDay, historical = false) {
+    const lessonExamples = phonicsLessonContent.find((entry) => entry.day === lessonDay.day);
+    const mainWords = lessonExamples?.mainExamples || [];
+    const extraWords = lessonExamples?.extensionExamples || [];
+    const [mainFocus = "今天的声音", extensionFocus = "再认一个常见组合"] = String(lessonDay.focus || "").split("｜常见规律拓展：");
+    const [mainTitle, mainTip = "先分音，再把声音连起来"] = mainFocus.split("：");
+    const sceneWords = (words) => words.map((word) => `<span><b>${escapeHTML(word)}</b><small>${escapeHTML(wordMeaning(word))}</small></span>`).join("");
+    const label = historical ? `第 ${lessonDay.day} 天复习动画` : "今天的自然拼读动画";
+    return `<section class="phonics-mini-lesson" data-phonics-lesson-stage="${lessonDay.day}" aria-label="${escapeAttr(label)}">
+      <div class="phonics-mini-screen">
+        <div class="phonics-mini-scene active" data-phonics-scene="0">
+          <span class="phonics-scene-kicker">先看声音</span>
+          <strong class="phonics-sound-mark">${escapeHTML(phonicsSoundMark(lessonDay.phonics.pattern, mainTitle))}</strong>
+          <p>${escapeHTML(mainTitle)}</p><small>${escapeHTML(mainTip)}</small>
+        </div>
+        <div class="phonics-mini-scene" data-phonics-scene="1">
+          <span class="phonics-scene-kicker">一起拼一拼</span>
+          <div class="phonics-scene-words">${sceneWords(mainWords)}</div>
+          <small>从左到右，声音不断开</small>
+        </div>
+        <div class="phonics-mini-scene" data-phonics-scene="2">
+          <span class="phonics-scene-kicker">再发现一个规律</span>
+          <p>${escapeHTML(extensionFocus)}</p>
+          <div class="phonics-scene-words extra">${sceneWords(extraWords)}</div>
+        </div>
       </div>
-      <details class="heart-word-bank"><summary>本期高频词总表 · ${course.heartWords?.words?.length || 0} 词</summary><p>${escapeHTML(course.heartWords?.instruction || "")}</p><div data-heart-word-bank-content>${heartWordBankMarkup()}</div></details>`;
+      <div class="phonics-mini-progress" aria-hidden="true"><div data-phonics-animation-progress></div></div>
+      <div class="phonics-mini-controls">
+        <button class="phonics-lesson-audio" type="button" data-phonics-lesson-audio="${escapeAttr(phonicsLessonAudioUrl(lessonDay.day))}" data-phonics-lesson-day="${lessonDay.day}">▶ 播放动画</button>
+        <span class="phonics-scene-dots" aria-hidden="true"><i class="active"></i><i></i><i></i></span>
+      </div>
+    </section>`;
+  }
+
+  function phonicsHistoryMarkup() {
+    if (!completedPhonicsDays.length) return "";
+    const buttons = completedPhonicsDays.map((lessonDay) => (
+      `<button type="button" data-phonics-history-day="${lessonDay.day}"><b>第 ${lessonDay.day} 天</b><span>${escapeHTML(phonicsSoundMark(lessonDay.phonics.pattern, lessonDay.focus))}</span></button>`
+    )).join("");
+    return `<details class="phonics-history">
+      <summary>复习以前学过的声音 <span>${completedPhonicsDays.length} 课</span></summary>
+      <div class="phonics-history-days">${buttons}</div>
+      <div class="phonics-history-preview" data-phonics-history-preview></div>
+    </details>`;
+  }
+
+  function completedCourseDays(history, currentDayNumber) {
+    const completedIds = new Set((history || []).filter(({ record }) => (
+      record?.completedAt || record?.moduleProgress?.soundLab?.completedAt
+    )).map(({ activityId }) => activityId));
+    return course.days.filter((lessonDay) => (
+      lessonDay.day < currentDayNumber && completedIds.has(window.OPWWeek1CourseCore.activityId(lessonDay.day))
+    ));
   }
 
   function heartWordBankMarkup() {
@@ -177,21 +242,23 @@
     const progress = moduleProgress[id] || { completedRounds: 0, completedAt: null };
     const complete = Boolean(progress.completedAt);
     const started = progress.completedRounds > 0;
-    const stateLabel = complete ? "已完成 · 可再练" : started ? `${progress.completedRounds}/${module.rounds.length}` : "未开始";
-    const actionLabel = complete ? "再练一次" : started ? "继续这个模块" : "进入这个模块";
+    const stateLabel = complete ? "✓ 完成" : started ? `${progress.completedRounds}/${module.rounds.length}` : "";
+    const actionLabel = complete ? "再练一次" : started ? "继续" : "开始";
     return `<article class="english-module-card module-${id} ${complete ? "complete" : ""}">
-      <header><span class="english-module-icon">${escapeHTML(icon)}</span><div><h3>${escapeHTML(title)}</h3><p>${escapeHTML(description)}</p></div><span class="english-module-state">${escapeHTML(stateLabel)}</span></header>
+      <header><span class="english-module-icon">${escapeHTML(icon)}</span><div><h3>${escapeHTML(title)}</h3><p>${escapeHTML(description)}</p></div>${stateLabel ? `<span class="english-module-state">${escapeHTML(stateLabel)}</span>` : ""}</header>
       <div class="english-module-content">${content}</div>
       <button class="english-module-action" type="button" data-course-module="${escapeAttr(id)}">${escapeHTML(actionLabel)}</button>
     </article>`;
   }
 
   function renderDashboard(message = "") {
+    stopCourseAudio();
     refs.week1CoursePlayer.hidden = true;
     refs.week1CourseAudioPlay.hidden = true;
     running = false;
     activeModule = null;
     activeRounds = [];
+    refs.week1CourseFocus.textContent = childFriendlyFocus(day.focus);
     refs.week1CourseWords.hidden = false;
     refs.week1CourseWords.innerHTML = buildOverview();
     refs.week1CourseNotice.hidden = false;
@@ -199,13 +266,17 @@
     refs.week1CourseStart.hidden = true;
     const completedCount = modules.filter((module) => moduleProgress[module.id]?.completedAt).length;
     const complete = completedCount === modules.length;
-    refs.week1CourseStatus.textContent = complete ? "✓ 今日已完成" : `${completedCount}/${modules.length} 模块`;
+    refs.week1CourseStatus.textContent = complete ? "✓ 今日完成" : `完成 ${completedCount}/${modules.length}`;
     refs.week1CourseStatus.classList.toggle("ready", complete);
-    refs.week1CourseNotice.textContent = message || (complete ? `${modules.length} 个模块首次学习已完成；想巩固哪一项都可以再练。` : "今天先学哪一项都可以，完成后也能随时再练。");
+    refs.week1CourseNotice.textContent = message || (complete ? "今天都完成啦！想练哪一项都可以再来一次。" : "选一项开始吧！");
     refs.week1CourseNotice.className = `week1-course-notice${complete ? " good" : ""}`;
   }
 
   function handleOverviewClick(event) {
+    const historyButton = event.target.closest("[data-phonics-history-day]");
+    if (historyButton) return showHistoricalPhonicsLesson(Number(historyButton.dataset.phonicsHistoryDay), historyButton);
+    const lessonAudioButton = event.target.closest("[data-phonics-lesson-audio]");
+    if (lessonAudioButton) return playPhonicsLesson(lessonAudioButton);
     const pageButton = event.target.closest("[data-heart-word-page]");
     if (pageButton) {
       heartWordBankPage += Number(pageButton.dataset.heartWordPage) || 0;
@@ -219,13 +290,80 @@
     return playHeartWord(event);
   }
 
+  function playPhonicsLesson(button) {
+    const player = refs.week1CoursePlayer;
+    const audioUrl = new URL(button.dataset.phonicsLessonAudio, document.baseURI).href;
+    if (phonicsLessonButton === button && player.src === audioUrl) {
+      if (!player.paused) {
+        player.pause();
+        button.textContent = "▶ 继续动画";
+        return;
+      }
+      if (!player.ended && player.currentTime > 0) {
+        button.textContent = "❚❚ 暂停动画";
+        player.play().catch(() => {
+          button.textContent = "▶ 继续动画";
+          refs.week1CourseNotice.textContent = "讲解没有继续播放，请再点一次。";
+        });
+        return;
+      }
+    }
+    stopCourseAudio();
+    phonicsLessonButton = button;
+    phonicsLessonStage = button.closest("[data-phonics-lesson-stage]");
+    button.textContent = "❚❚ 暂停动画";
+    player.src = audioUrl;
+    player.currentTime = 0;
+    player.play().catch(() => {
+      resetPhonicsLessonButton();
+      refs.week1CourseNotice.textContent = "讲解没有播放，请再点一次。";
+      refs.week1CourseNotice.className = "week1-course-notice";
+    });
+  }
+
+  function resetPhonicsLessonButton() {
+    if (phonicsLessonButton) phonicsLessonButton.textContent = "▶ 播放动画";
+    phonicsLessonButton = null;
+    phonicsLessonStage = null;
+  }
+
+  function syncPhonicsLessonAnimation() {
+    if (!phonicsLessonStage || !phonicsLessonButton) return;
+    const player = refs.week1CoursePlayer;
+    const duration = Number.isFinite(player.duration) && player.duration > 0 ? player.duration : 21;
+    const ratio = Math.min(1, Math.max(0, player.currentTime / duration));
+    const sceneIndex = ratio < .31 ? 0 : ratio < .7 ? 1 : 2;
+    phonicsLessonStage.querySelectorAll("[data-phonics-scene]").forEach((scene, index) => scene.classList.toggle("active", index === sceneIndex));
+    phonicsLessonStage.querySelectorAll(".phonics-scene-dots i").forEach((dot, index) => dot.classList.toggle("active", index === sceneIndex));
+    const progress = phonicsLessonStage.querySelector("[data-phonics-animation-progress]");
+    if (progress) progress.style.width = `${ratio * 100}%`;
+  }
+
+  function showHistoricalPhonicsLesson(historyDayNumber, button) {
+    const lessonDay = course.days.find((item) => item.day === historyDayNumber);
+    const preview = refs.week1CourseWords.querySelector("[data-phonics-history-preview]");
+    if (!lessonDay || !preview) return;
+    stopCourseAudio();
+    refs.week1CourseWords.querySelectorAll("[data-phonics-history-day]").forEach((item) => item.classList.toggle("active", item === button));
+    preview.innerHTML = phonicsLessonMarkup(lessonDay, true);
+    preview.querySelector("[data-phonics-lesson-audio]")?.focus();
+  }
+
+  function stopCourseAudio() {
+    const player = refs.week1CoursePlayer;
+    if (!player.paused) player.pause();
+    resetPhonicsLessonButton();
+  }
+
   async function startCourseModule(moduleId) {
     const selected = modules.find((module) => module.id === moduleId);
     if (!selected) return;
+    stopCourseAudio();
+    activeModule = selected;
+    refs.week1CourseFocus.textContent = activeModuleFocus(moduleId);
     const context = window.LearningActivityProgress?.getContext();
     const moduleContext = context?.modules?.find((item) => item.activity?.renderer === "english-course");
     if (!moduleContext?.startDate) window.LearningActivityProgress?.startModule(moduleContext?.id || "englishIsland");
-    activeModule = selected;
     practiceMode = Boolean(moduleProgress[moduleId]?.completedAt);
     const savedModuleProgress = moduleProgress[moduleId] || { completedRounds: 0, completedAt: null };
     roundIndex = practiceMode ? 0 : savedModuleProgress.completedRounds || 0;
@@ -279,11 +417,11 @@
 
     if (complete) {
       running = false;
-      const completedMessage = practiceMode ? `${activeModule.label}重复练习完成` : `${activeModule.label}首次完成`;
+      const completedMessage = `${activeModule.label}完成啦！`;
       refs.week1CoursePrompt.textContent = completedMessage;
       refs.week1CourseStart.hidden = false;
       refs.week1CourseStart.textContent = "返回模块选择";
-      refs.week1CourseFeedback.textContent = practiceMode ? "这次巩固完成了，不会重复计算今日奖励。" : "这个模块完成了，可以返回选择下一项。";
+      refs.week1CourseFeedback.textContent = "做得好，回去选下一项吧。";
       refs.week1CourseFeedback.className = "week1-course-feedback good";
       if (!practiceMode) {
         moduleProgress[activeModule.id] = {
@@ -340,7 +478,7 @@
   }
 
   function showSpellingRound(round) {
-    refs.week1CoursePrompt.innerHTML += `<strong class="week1-cloze">${escapeHTML(round.prompt)}</strong><em>${round.isNew ? "合上英语本，凭记忆输入刚写过的心词。" : "不看词卡，输入空格里缺少的心词。"}</em>`;
+    refs.week1CoursePrompt.innerHTML += `<strong class="week1-cloze">${escapeHTML(round.prompt)}</strong><span class="week1-target-meaning">中文提示：${escapeHTML(wordMeaning(round.word))}</span><em>${round.isNew ? "合上英语本，凭记忆输入刚写过的心词。" : "不看词卡，输入空格里缺少的心词。"}</em>`;
     refs.week1CourseChoices.innerHTML = `<form class="week1-spelling-form" data-week1-spelling-form>
       <label for="week1SpellingInput">拼写答案</label>
       <input id="week1SpellingInput" name="spelling" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" inputmode="text" aria-label="输入心词拼写">
@@ -358,11 +496,11 @@
     let button = "我完成了";
     let feedback = round.prompt || "完成后继续。";
     if (round.mode === "read") {
-      content = `看词拼读：<strong>${escapeHTML(round.word)}</strong>`;
+      content = `看词拼读：<strong>${escapeHTML(round.word)}</strong><span class="week1-target-meaning">${escapeHTML(wordMeaning(round.word))}</span>`;
       button = "我读好了";
     } else if (round.mode === "study") {
       const studySentence = String(round.prompt).replace("__", round.word);
-      content = `今天的新心词：<strong><mark class="heart-word-mark">${escapeHTML(round.word)}</mark></strong><button class="heart-audio-button" type="button" data-heart-audio="${escapeAttr(round.word)}"><span class="audio-play-icon" aria-hidden="true">▶</span>播放发音</button><em>请把标出的心词写在英语本上：${highlightHeartWords(studySentence)}</em>`;
+      content = `今天的新心词：<strong><mark class="heart-word-mark">${escapeHTML(round.word)}</mark></strong><span class="week1-target-meaning">${escapeHTML(wordMeaning(round.word))}</span><button class="heart-audio-button" type="button" data-heart-audio="${escapeAttr(round.word)}"><span class="audio-play-icon" aria-hidden="true">▶</span>播放发音</button><em>请把标出的心词写在英语本上：${highlightHeartWords(studySentence)}</em>`;
       button = "已读 3 遍并写 3 遍";
       feedback = "先大声读三遍，再在英语本上认真写三遍；下一轮会合上答案默写。";
     } else if (round.mode === "word-bank") {
@@ -384,7 +522,7 @@
 
   function renderChoices(choices) {
     refs.week1CourseChoices.innerHTML = choices.map((word) => (
-      `<button class="week1-choice" type="button" data-week1-word="${escapeAttr(word)}">${escapeHTML(word)}</button>`
+      `<button class="week1-choice" type="button" data-week1-word="${escapeAttr(word)}"><b>${escapeHTML(word)}</b><small>${escapeHTML(wordMeaning(word))}</small></button>`
     )).join("");
   }
 
@@ -394,9 +532,10 @@
 
   function heartWordChip(word, label, marked = false) {
     const content = marked ? `<mark>${escapeHTML(word)}</mark>` : escapeHTML(word);
+    const copy = `<span class="week1-chip-copy"><b>${content}</b><small>${escapeHTML(wordMeaning(word))} · ${escapeHTML(label)}</small></span>`;
     const playable = Boolean(heartWordEntry(word)?.audio?.assetId);
-    if (!playable) return `<span class="week1-word-chip heart${marked ? " all-heart-word" : ""}">${content}<small>${escapeHTML(label)}</small></span>`;
-    return `<button class="week1-word-chip audio-word-chip heart${marked ? " all-heart-word" : ""}" type="button" data-heart-audio="${escapeAttr(word)}" aria-label="播放 ${escapeAttr(word)} 的发音"><span class="audio-play-icon" aria-hidden="true">▶</span><span>${content}</span><small>${escapeHTML(label)}</small></button>`;
+    if (!playable) return `<span class="week1-word-chip heart${marked ? " all-heart-word" : ""}">${copy}</span>`;
+    return `<button class="week1-word-chip audio-word-chip heart${marked ? " all-heart-word" : ""}" type="button" data-heart-audio="${escapeAttr(word)}" aria-label="播放 ${escapeAttr(word)} 的发音"><span class="audio-play-icon" aria-hidden="true">▶</span>${copy}</button>`;
   }
 
   async function playPhonicsWord(event) {
@@ -429,6 +568,7 @@
   function playAudioAsset(assetId, clip, label) {
     const player = refs.week1CoursePlayer;
     const audioUrl = staticCourseAudioUrl(assetId);
+    resetPhonicsLessonButton();
     if (!player.paused) player.pause();
     if (player.src !== audioUrl) player.src = audioUrl;
     else if (player.ended || player.currentTime > 0) player.currentTime = 0;
@@ -558,6 +698,43 @@
 
   function staticCourseAudioUrl(assetId) {
     return new URL(`./course-audio/${encodeURIComponent(assetId)}.mp3`, document.baseURI).href;
+  }
+
+  function phonicsLessonAudioUrl(number) {
+    return `./phonics-media/day-${String(number).padStart(2, "0")}-lesson.mp3?v=20260817-transfer-1`;
+  }
+
+  function phonicsSoundMark(pattern, fallback) {
+    const marks = {
+      "short-a": "a", "short-a-at-ap": "a", "short-i": "i", "short-e": "e", "short-o": "o", "short-u": "u",
+      "digraph-sh": "sh", "digraph-ch": "ch", "digraph-th": "th", "digraph-wh": "wh", "final-ng-nk": "ng · nk",
+      "digraph-review": "sh · ch · th · ng", "initial-s-blends": "s + 辅音", "initial-l-blends": "辅音 + l",
+      "initial-r-blends": "辅音 + r", "final-blends": "词尾双辅音", "blend-word-review": "CCVC · CVCC",
+      "blend-review": "辅音丛", "blend-mixed-review": "顺滑拼读", "silent-e-a": "a_e", "silent-e-i": "i_e",
+      "silent-e-o": "o_e", "silent-e-u-e": "u_e · e_e", "silent-e-contrast": "短元音 ↔ e",
+      "four-week-review": "找熟悉的声音", "course-showcase": "我会拼读"
+    };
+    return marks[pattern] || String(fallback || "今天的声音").split(/[：｜]/)[0];
+  }
+
+  function childFriendlyFocus(value) {
+    return String(value || "").replace("｜常见规律拓展：", "；再学：");
+  }
+
+  function activeModuleFocus(moduleId) {
+    if (moduleId === "soundLab") return childFriendlyFocus(day.focus);
+    if (moduleId === "coreWords") return "核心高频词：先懂意思，再读、写和默写";
+    if (moduleId === "extraWords") return "高频词加餐：先懂意思，再把新词放进句子里";
+    if (moduleId === "raz") return `RAZ 故事森林：${day.raz.focus}`;
+    return "完成今天的英语练习";
+  }
+
+  function wordMeaning(word) {
+    return wordMeanings[String(word || "").toLocaleLowerCase("en")] || "";
+  }
+
+  function wordWithMeaning(word) {
+    return `<span class="week1-chip-copy"><b>${escapeHTML(word)}</b><small>${escapeHTML(wordMeaning(word))}</small></span>`;
   }
 
   function escapeHTML(value) {

@@ -79,12 +79,20 @@ for file in \
   summer-plan-content.json \
   summer-plan-content.js \
   english-course.json \
+  english-word-meanings.js \
   week1-course.json \
   grammar-island-course.js \
+  phonics-lesson-content.js \
   opw-week1-review-queue.json
 do
   cp "$PROJECT_DIR/curriculum/$file" "$DEPLOY_DIR/curriculum/$file"
 done
+
+mkdir -p "$DEPLOY_DIR/grammar-media"
+cp -R "$PROJECT_DIR/grammar-media/." "$DEPLOY_DIR/grammar-media/"
+
+mkdir -p "$DEPLOY_DIR/phonics-media"
+cp -R "$PROJECT_DIR/phonics-media/." "$DEPLOY_DIR/phonics-media/"
 
 if [ "$MODE" = "--full" ]; then
   cp -R "$PROJECT_DIR/course-audio" "$DEPLOY_DIR/course-audio"
