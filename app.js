@@ -414,6 +414,8 @@ function applyRemoteState(remoteState, meta = {}) {
   const completionRecovered = JSON.stringify(selectedState.days || {}) !== JSON.stringify(remoteState.days || {})
     || JSON.stringify(selectedState.summerPlan || null) !== JSON.stringify(remoteState.summerPlan || null)
     || JSON.stringify(selectedState.learningActivities || null) !== JSON.stringify(remoteState.learningActivities || null);
+  const taskSchedulesRecovered = JSON.stringify(selectedState.taskSchedules || [])
+    !== JSON.stringify(remoteState.taskSchedules || []);
   state = window.TaskStateMigration.mergeGardenProgress(localStateBeforeRemote, selectedState);
   const gardenRecovered = JSON.stringify(state.gardens) !== JSON.stringify(selectedState.gardens)
     || JSON.stringify(state.gardenUpdatedAt) !== JSON.stringify(selectedState.gardenUpdatedAt);
@@ -423,7 +425,7 @@ function applyRemoteState(remoteState, meta = {}) {
     !== JSON.stringify(selectedState.grammarIsland || null);
   const grammarPaperRecovered = JSON.stringify(state.grammarPaperPractice || null)
     !== JSON.stringify(selectedState.grammarPaperPractice || null);
-  if (needsCompletionRecovery || conflictState || completionRecovered) {
+  if (needsCompletionRecovery || conflictState || completionRecovered || taskSchedulesRecovered) {
     state.cloudCompletionRecoveryVersion = recoveryVersion;
     state.updatedAt = new Date().toISOString();
   }
@@ -435,7 +437,7 @@ function applyRemoteState(remoteState, meta = {}) {
   if (meta.source === "load") localStorage.setItem(DEVICE_SYNC_RECOVERY_KEY, "done");
   renderEditorKidOptions();
   render();
-  if (needsCompletionRecovery || conflictState || completionRecovered || progressRecovered || gardenRecovered || bonusRewardsRecovered || grammarIslandRecovered || grammarPaperRecovered) window.CloudStore?.scheduleSave(state);
+  if (needsCompletionRecovery || conflictState || completionRecovered || progressRecovered || gardenRecovered || taskSchedulesRecovered || bonusRewardsRecovered || grammarIslandRecovered || grammarPaperRecovered) window.CloudStore?.scheduleSave(state);
   if (meta.source === "realtime") showToast("已同步另一台设备的更新");
 }
 

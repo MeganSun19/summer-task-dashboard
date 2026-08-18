@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { test } from "node:test";
 
 await import("../state-migration-core.js");
-const { mergeStoredStates, mergeDeviceProgress, mergeRemoteProgress, mergeGardenProgress, mergeGrammarIslandStates, mergeGrammarPaperPractice } = globalThis.TaskStateMigration;
+const { mergeStoredStates, mergeDeviceProgress, mergeRemoteProgress, mergeGardenProgress, mergeGrammarIslandStates, mergeGrammarPaperPractice, mergeTaskSchedules } = globalThis.TaskStateMigration;
 const appSource = await readFile(new URL("../app.js", import.meta.url), "utf8");
 
 test("legacy dashboard state and English-island progress merge without losing completions", () => {
@@ -72,6 +72,69 @@ test("cloud merging unions idempotent grammar reward events from both devices", 
     "grammar:brother:w1-a-an", "grammar:brother:w1-plurals"
   ]);
   assert.deepEqual(Object.keys(merged.rewardProgress.bonusEvents.younger), ["grammar:younger:w1-a-an"]);
+});
+
+test("temporary-task schedules created on separate devices are both preserved", () => {
+  const localSchedule = {
+    id: "schedule-martial-arts",
+    taskId: "task-martial-arts",
+    title: "武术练习",
+    status: "published",
+    createdAt: "2026-08-14T11:15:32.931Z",
+    updatedAt: "2026-08-14T11:15:32.931Z"
+  };
+  const remoteSchedule = {
+    id: "schedule-dance",
+    taskId: "task-dance",
+    title: "舞蹈练习",
+    status: "published",
+    createdAt: "2026-08-14T12:00:00.000Z",
+    updatedAt: "2026-08-14T12:00:00.000Z"
+  };
+  const merged = mergeRemoteProgress(
+    { startDate: "2026-08-01", days: { brother: {}, younger: {} }, taskSchedules: [localSchedule] },
+    { startDate: "2026-08-01", days: { brother: {}, younger: {} }, taskSchedules: [remoteSchedule] }
+  );
+  assert.deepEqual(merged.taskSchedules.map((schedule) => schedule.id), [
+    "schedule-martial-arts", "schedule-dance"
+  ]);
+});
+
+test("the newest temporary-task edit wins regardless of which device holds it", () => {
+  const older = {
+    id: "schedule-martial-arts",
+    title: "武术练习",
+    detail: "练一遍",
+    updatedAt: "2026-08-17T01:00:00.000Z"
+  };
+  const newer = {
+    ...older,
+    detail: "跟视频练两遍",
+    updatedAt: "2026-08-17T02:00:00.000Z"
+  };
+  assert.equal(mergeTaskSchedules([newer], [older])[0].detail, "跟视频练两遍");
+  assert.equal(mergeTaskSchedules([older], [newer])[0].detail, "跟视频练两遍");
+});
+
+test("a newer cancellation tombstone cannot be resurrected by stale published state", () => {
+  const published = {
+    id: "schedule-martial-arts",
+    status: "published",
+    updatedAt: "2026-08-17T01:00:00.000Z"
+  };
+  const cancelled = {
+    ...published,
+    status: "cancelled",
+    updatedAt: "2026-08-17T03:00:00.000Z"
+  };
+  assert.equal(mergeTaskSchedules([cancelled], [published])[0].status, "cancelled");
+  assert.equal(mergeTaskSchedules([published], [cancelled])[0].status, "cancelled");
+});
+
+test("remote-state recovery persists locally recovered temporary-task schedules", () => {
+  const applyRemote = appSource.slice(appSource.indexOf("function applyRemoteState"), appSource.indexOf("function updateCloudStatus"));
+  assert.match(applyRemote, /taskSchedulesRecovered/);
+  assert.match(applyRemote, /if \([^\n]*taskSchedulesRecovered[^\n]*\) window\.CloudStore\?\.scheduleSave\(state\)/);
 });
 
 test("a stale realtime payload cannot erase a just-earned local grammar reward", () => {

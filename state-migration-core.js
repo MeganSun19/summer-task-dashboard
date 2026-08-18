@@ -61,6 +61,29 @@
     };
   }
 
+  function mergeTaskSchedules(local = [], remote = []) {
+    const keyFor = (schedule) => schedule?.id || schedule?.taskId || [
+      schedule?.title,
+      schedule?.startDate,
+      schedule?.endDate,
+      schedule?.createdAt
+    ].map((value) => String(value || "")).join("|");
+    const localByKey = new Map((local || []).map((schedule) => [keyFor(schedule), schedule]));
+    const remoteByKey = new Map((remote || []).map((schedule) => [keyFor(schedule), schedule]));
+    const keys = new Set([...localByKey.keys(), ...remoteByKey.keys()]);
+    return [...keys].map((key) => {
+      const left = localByKey.get(key);
+      const right = remoteByKey.get(key);
+      if (!left || !right) return structuredClone(right || left);
+      return structuredClone(
+        String(left.updatedAt || "") > String(right.updatedAt || "") ? left : right
+      );
+    }).sort((left, right) => (
+      String(left.createdAt || left.updatedAt || "").localeCompare(String(right.createdAt || right.updatedAt || ""))
+      || String(keyFor(left)).localeCompare(String(keyFor(right)))
+    ));
+  }
+
   function mergeGrammarIslandStates(local, remote) {
     if (!local && !remote) return null;
     const result = { version: 1, kids: {} };
@@ -195,6 +218,10 @@
     };
     merged.grammarIsland = mergeGrammarIslandStates(legacy.grammarIsland, current.grammarIsland);
     merged.grammarPaperPractice = mergeGrammarPaperPractice(legacy.grammarPaperPractice, current.grammarPaperPractice);
+    // Temporary-task schedules are independent records. Merge them by stable
+    // identity so a stale whole-state payload cannot erase another device's
+    // new schedule, newer edit, or cancellation tombstone.
+    merged.taskSchedules = mergeTaskSchedules(legacy.taskSchedules, current.taskSchedules);
     merged.planPeriods = current.planPeriods?.length ? current.planPeriods : (legacy.planPeriods || []);
     merged.learningActivities = mergeLearningActivities(
       legacy.learningActivities || legacy.englishExperiment,
@@ -227,6 +254,7 @@
     const recovered = mergeDeviceProgress(local, remote);
     const merged = structuredClone(remote);
     merged.days = recovered.days;
+    merged.taskSchedules = recovered.taskSchedules;
     if (recovered.summerPlan) merged.summerPlan = recovered.summerPlan;
     if (recovered.learningActivities) {
       merged.learningActivities = recovered.learningActivities;
@@ -267,6 +295,7 @@
     mergeRemoteProgress,
     mergeGardenProgress,
     mergeGrammarIslandStates,
-    mergeGrammarPaperPractice
+    mergeGrammarPaperPractice,
+    mergeTaskSchedules
   });
 })(typeof window === "undefined" ? globalThis : window);
