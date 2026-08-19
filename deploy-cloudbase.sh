@@ -34,6 +34,7 @@ trap cleanup EXIT INT TERM
 python3 "$PROJECT_DIR/scripts/generate-course-plan-catalog.py" --check
 python3 "$PROJECT_DIR/scripts/generate-summer-plan-content.py" --check
 node "$PROJECT_DIR/scripts/generate-learning-module-catalog.mjs" --check
+node "$PROJECT_DIR/scripts/validate-phonics-audio-sources.mjs" --release
 if [ "$MODE" = "--full" ]; then
   node "$PROJECT_DIR/scripts/generate-heart-word-audio.mjs"
   node "$PROJECT_DIR/scripts/build-english-course.mjs"
@@ -83,6 +84,8 @@ for file in \
   week1-course.json \
   grammar-island-course.js \
   phonics-lesson-content.js \
+  phonics-audio-sources.js \
+  phonics-audio-timings.js \
   opw-week1-review-queue.json
 do
   cp "$PROJECT_DIR/curriculum/$file" "$DEPLOY_DIR/curriculum/$file"

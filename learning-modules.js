@@ -4,7 +4,8 @@
   const auxiliaryPresentations = {
     raz: { icon: "Aa", color: "#4f83d1", soft: "#eaf2ff", minutes: 30 },
     retelling: { icon: "说", color: "#48a978", soft: "#e6f6ec", minutes: 15 },
-    speaking: { icon: "Talk", color: "#df746e", soft: "#ffedeb", minutes: 15 }
+    speaking: { icon: "Talk", color: "#df746e", soft: "#ffedeb", minutes: 15 },
+    grammarPaper: { icon: "卷", color: "#7654a6", soft: "#f2ebff", minutes: 20 }
   };
   const registry = new Map(definitions.map((definition) => [definition.id, Object.freeze(definition)]));
   const fallbackPresentation = Object.freeze({ icon: "✓", color: "#7e69c8", soft: "#f0edff", minutes: 10 });

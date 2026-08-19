@@ -4,12 +4,15 @@ import test from "node:test";
 
 await import("../grammar-island-core.js");
 await import("../curriculum/grammar-island-course.js");
+await import("../curriculum/phonics-audio-sources.js");
+await import("../curriculum/phonics-audio-timings.js");
 await import("../curriculum/phonics-lesson-content.js");
 await import("../curriculum/english-word-meanings.js");
 
 const core = globalThis.GrammarIslandCore;
 const course = globalThis.GRAMMAR_ISLAND_COURSE;
 const phonicsLessons = globalThis.PHONICS_LESSON_CONTENT;
+const phonicsAudioSources = globalThis.PHONICS_AUDIO_SOURCES;
 const wordMeanings = globalThis.ENGLISH_WORD_MEANINGS;
 const englishCourse = JSON.parse(await readFile(new URL("../curriculum/english-course.json", import.meta.url), "utf8"));
 const grammarUiSource = await readFile(new URL("../grammar-island-ui.js", import.meta.url), "utf8");
@@ -17,6 +20,8 @@ const deploySource = await readFile(new URL("../deploy-cloudbase.sh", import.met
 const stylesSource = await readFile(new URL("../styles.css", import.meta.url), "utf8");
 const indexSource = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const englishUiSource = await readFile(new URL("../week1-course-ui.js", import.meta.url), "utf8");
+const phonicsAudioGeneratorSource = await readFile(new URL("../scripts/generate-phonics-lesson-audio.mjs", import.meta.url), "utf8");
+const phonemeGeneratorSource = await readFile(new URL("../scripts/generate-phonics-phoneme-audio.mjs", import.meta.url), "utf8");
 
 function fakeStorage(seed = {}) {
   const entries = new Map(Object.entries(seed));
@@ -95,7 +100,8 @@ test("every grammar narration, vocabulary word, and model answer has a static ne
 test("the plural y-rule stacks safely on narrow Android viewports", () => {
   assert.match(stylesSource, /@media \(max-width: 520px\)[\s\S]*?\.grammar-y-comparison \{ grid-template-columns: 1fr;/);
   assert.match(stylesSource, /\.grammar-y-comparison > div \{[^}]*min-width: 0;/);
-  assert.match(indexSource, /styles\.css\?v=20260817-transfer-examples-1/);
+  assert.match(indexSource, /styles\.css\?v=20260819-stage-review-2/);
+  assert.match(indexSource, /app\.js\?v=20260819-day12-review-1/);
 });
 
 test("the child-facing English island removes product rationale and keeps short actions", () => {
@@ -115,8 +121,123 @@ test("all 26 phonics days have synchronized neural teacher animations", async ()
   assert.match(englishUiSource, /data-phonics-lesson-audio/);
   assert.match(englishUiSource, /data-phonics-lesson-stage/);
   assert.match(englishUiSource, /timeupdate", syncPhonicsLessonAnimation/);
-  assert.match(englishUiSource, /▶ 播放动画/);
+  assert.match(englishUiSource, /▶ 播放全部/);
   assert.match(deploySource, /phonics-media\/\."/);
+});
+
+test("every phonics lesson uses one paced audio track per visible rule scene", async () => {
+  const phonemeAssets = new Set();
+  for (const lesson of phonicsLessons) {
+    assert.equal(lesson.animationScenes.length >= 2, true, `day ${lesson.day}: scenes`);
+    assert.equal(lesson.audioSegments.length, lesson.animationScenes.length, `day ${lesson.day}: audio scene count`);
+    assert.equal(lesson.sceneStarts.length, lesson.animationScenes.length, `day ${lesson.day}: timeline count`);
+    assert.equal(lesson.sceneStarts.every((start, index, starts) => index === 0 || start > starts[index - 1]), true, `day ${lesson.day}: timeline order`);
+    lesson.animationScenes.forEach((scene, index) => {
+      assert.equal(typeof scene.pronunciation, "string", `day ${lesson.day}: pronunciation type`);
+      assert.equal(scene.pronunciation.trim().length > 0, true, `day ${lesson.day}: pronunciation present`);
+      assert.equal(scene.soundModels.length > 0, true, `day ${lesson.day}: target sound model present`);
+      const englishText = lesson.audioSegments[index].filter((segment) => segment.language === "en").map((segment) => segment.text).join(" ").toLowerCase();
+      scene.words.forEach((word) => assert.equal((englishText.match(new RegExp(`\\b${word.toLowerCase()}\\b`, "g")) || []).length, 3, `day ${lesson.day}: ${word}`));
+      const phonemes = lesson.audioSegments[index].filter((segment) => segment.language === "phoneme");
+      assert.equal(phonemes.length, scene.soundModels.length * 3, `day ${lesson.day}: every target sound repeats three times`);
+      phonemes.forEach((segment) => phonemeAssets.add(segment.asset));
+    });
+    for (let index = 0; index < lesson.animationScenes.length; index += 1) {
+      const sceneFilename = `day-${String(lesson.day).padStart(2, "0")}-scene-${String(index + 1).padStart(2, "0")}.mp3`;
+      const sceneInfo = await stat(new URL(`../phonics-media/scenes/${sceneFilename}`, import.meta.url));
+      assert.equal(sceneInfo.size > 500, true, sceneFilename);
+    }
+  }
+  for (const asset of phonemeAssets) {
+    const info = await stat(new URL(`../${asset}`, import.meta.url));
+    assert.equal(info.size > 500, true, asset);
+  }
+  assert.match(phonicsAudioGeneratorSource, /sceneDefinitions = lesson\.audioSegments\?\.length/);
+  assert.match(phonicsAudioGeneratorSource, /sceneDefinitions\.map/);
+  assert.match(phonicsAudioGeneratorSource, /sceneOutputDirectory/);
+});
+
+test("animation scene boundaries are generated from the rebuilt audio", () => {
+  assert.match(indexSource, /phonics-audio-timings\.js/);
+  assert.match(phonicsAudioGeneratorSource, /generatedTimings\[lesson\.day\] = sceneStarts/);
+  assert.match(phonicsAudioGeneratorSource, /writeFileSync\(timingsPath/);
+  assert.deepEqual(phonicsLessons.find((lesson) => lesson.day === 13).sceneStarts, [0, 22.1, 43.9, 59.4, 75]);
+});
+
+test("all target sounds have traceable sources and release is gated on human listening", () => {
+  assert.equal(phonicsAudioSources.length, 47);
+  assert.equal(new Set(phonicsAudioSources.map((source) => source.id)).size, 47);
+  const sourceIds = new Set(phonicsAudioSources.map((source) => source.id));
+  const referencedIds = new Set(phonicsLessons.flatMap((lesson) => lesson.animationScenes).flatMap((scene) => scene.soundModels).map((sound) => sound.asset.split("/").pop().replace(/\.mp3$/, "")));
+  referencedIds.forEach((id) => assert.equal(sourceIds.has(id), true, id));
+  assert.equal(phonicsAudioSources.every((source) => source.sourceLabel && source.riskNote && source.reviewStatus), true);
+  assert.match(deploySource, /validate-phonics-audio-sources\.mjs" --release/);
+  assert.match(indexSource, /curriculum\/phonics-audio-sources\.js/);
+  assert.match(phonemeGeneratorSource, /PHONICS_AUDIO_SOURCES/);
+});
+
+test("vowel candidates no longer retain the consonants from eight, eat, out, oil, ooze, it or odd", () => {
+  const byId = Object.fromEntries(phonicsAudioSources.map((source) => [source.id, source]));
+  assert.equal(byId["long-a"].source, "A");
+  assert.equal(byId["long-e"].source, "E");
+  assert.equal(byId["long-i"].source, "I");
+  assert.equal(byId["long-oo"].source, "ooh");
+  assert.equal(byId.ow.source, "ow");
+  assert.equal(byId.oy.source, "oy");
+  assert.equal(byId["short-i"].end <= 0.42, true);
+  assert.equal(byId["short-o"].end <= 0.52, true);
+  assert.equal(["eight", "eat", "out", "oil", "ooze"].some((word) => phonicsAudioSources.some((source) => source.source === word)), false);
+});
+
+test("reported phoneme regressions use bounded speech cuts and distinguish both oo sounds", () => {
+  const byId = Object.fromEntries(phonicsAudioSources.map((source) => [source.id, source]));
+  assert.equal(byId.k.sourceFile, "audio-sources/phonics-words/back.mp3");
+  assert.equal(byId.f.sourceFile, "audio-sources/phonics-words/graph.mp3");
+  assert.equal(byId.er.sourceFile, "audio-sources/phonics-words/her.mp3");
+  assert.equal(byId["short-oo"].sourceFile, "audio-sources/phonics-words/book.mp3");
+  assert.equal(byId["short-oo"].end <= 0.34, true);
+  for (const id of ["nt", "mp", "nd", "ft", "lt"]) {
+    assert.equal(typeof byId[id].start, "number", id);
+    assert.equal(typeof byId[id].end, "number", id);
+    assert.equal(byId[id].start < byId[id].end && byId[id].end < 1, true, id);
+    assert.equal("fromEndStart" in byId[id] || "fromEndEnd" in byId[id], false, id);
+  }
+  assert.equal(byId["long-oo"].displayLabel, "oo 长音");
+  assert.equal(byId["short-oo"].displayLabel, "oo 短音");
+});
+
+test("day 15 follows the original fr tr dr cr plan while later gr remains review", () => {
+  const day15 = phonicsLessons.find((lesson) => lesson.day === 15);
+  const day18 = phonicsLessons.find((lesson) => lesson.day === 18);
+  assert.deepEqual(day15.animationScenes.map((scene) => scene.mark), ["fr", "dr", "tr", "cr", "er"]);
+  assert.equal(day15.animationScenes[0].words.includes("fresh"), true);
+  assert.equal(day18.animationScenes.some((scene) => scene.mark === "gr"), true);
+});
+
+test("st and sk explain unaspirated voiceless stops instead of relabeling them d and g", () => {
+  const day13 = phonicsLessons.find((lesson) => lesson.day === 13);
+  const st = day13.animationScenes.find((scene) => scene.mark === "st");
+  const sk = day13.animationScenes.find((scene) => scene.mark === "sk");
+  assert.equal(st.pronunciation, "/st/");
+  assert.equal(sk.pronunciation, "/sk/");
+  assert.match(st.tip, /仍是 t，不是 d/);
+  assert.match(sk.tip, /仍是 k，不是 g/);
+  assert.match(day13.audioSegments[0][0].text, /少送气/);
+  assert.match(day13.audioSegments[1][0].text, /少送气/);
+});
+
+test("ck uses its own final-sound asset and every visible scene prints its pronunciation", async () => {
+  const day1 = phonicsLessons.find((lesson) => lesson.day === 1);
+  const ckSceneIndex = day1.animationScenes.findIndex((scene) => scene.mark === "ck");
+  assert.equal(day1.animationScenes[ckSceneIndex].pronunciation, "/k/");
+  assert.deepEqual(day1.audioSegments[ckSceneIndex].filter((segment) => segment.asset).map((segment) => segment.asset), Array(3).fill("phonics-media/phonemes/ck.mp3"));
+  const ckAsset = await stat(new URL("../phonics-media/phonemes/ck.mp3", import.meta.url));
+  assert.equal(ckAsset.size > 500, true);
+  for (const token of ["a /æ/ ↔ a_e /eɪ/", "i /ɪ/ ↔ i_e /aɪ/", "o /ɑ/ ↔ o_e /oʊ/"]) {
+    assert.equal(phonicsLessons.flatMap((lesson) => lesson.animationScenes).some((scene) => scene.pronunciation === token), true, token);
+  }
+  assert.match(englishUiSource, /phonics-pronunciation/);
+  assert.match(englishUiSource, /发音 \$\{escapeHTML\(scene\.pronunciation\)\}/);
 });
 
 test("phonics animation examples transfer the rule without repeating any course practice word", () => {
@@ -128,6 +249,41 @@ test("phonics animation examples transfer the rule without repeating any course 
     assert.equal(examples.every((word) => !practiceWords.has(word.toLowerCase())), true, `day ${lesson.day}`);
     assert.equal(examples.every((word) => lesson.narration.join(" ").toLowerCase().includes(word.toLowerCase())), true, `day ${lesson.day}: narration`);
   }
+});
+
+test("day 11 teaches ng, nk and oa as three paced scenes with triple sound and word models", async () => {
+  const lesson = phonicsLessons.find((entry) => entry.day === 11);
+  assert.deepEqual(lesson.animationScenes.map((scene) => scene.mark), ["ng", "nk", "oa"]);
+  assert.equal(lesson.sceneStarts.length, 3);
+  assert.equal(lesson.sceneStarts.every((start, index, starts) => index === 0 || start > starts[index - 1]), true);
+  assert.equal(lesson.audioSegments.flat().some((segment) => segment.language === "zh"), true);
+  assert.equal(lesson.audioSegments.flat().some((segment) => segment.language === "en"), true);
+  assert.deepEqual(lesson.audioSegments.flat().filter((segment) => segment.asset).map((segment) => segment.asset), [
+    ...Array(3).fill("phonics-media/phonemes/ng.mp3"),
+    ...Array(3).fill("phonics-media/phonemes/nk.mp3"),
+    ...Array(3).fill("phonics-media/phonemes/long-o.mp3")
+  ]);
+  for (const filename of ["ng.mp3", "nk.mp3", "long-o.mp3"]) {
+    const info = await stat(new URL(`../phonics-media/phonemes/${filename}`, import.meta.url));
+    assert.equal(info.size > 500, true, filename);
+  }
+  for (const token of ["ng", "song", "wing", "nk", "bank", "sink", "oa", "goat", "road"]) {
+    assert.equal((lesson.narration.join(" ").match(new RegExp(`\\b${token}\\b`, "gi")) || []).length, 3, token);
+  }
+  assert.match(englishUiSource, /data-phonics-scene-starts/);
+  assert.match(englishUiSource, /split\(","\)\.filter\(Boolean\)\.map\(Number\)/);
+  assert.match(phonicsAudioGeneratorSource, /zh-CN-XiaoxiaoNeural/);
+  assert.match(phonicsAudioGeneratorSource, /en-US-JennyNeural/);
+  assert.match(phonicsAudioGeneratorSource, /mixedLanguageSegments\(narration\)/);
+});
+
+test("review lessons expose every reviewed sound instead of jumping straight to whole words", () => {
+  const day25 = phonicsLessons.find((entry) => entry.day === 25);
+  const day26 = phonicsLessons.find((entry) => entry.day === 26);
+  assert.deepEqual(day25.animationScenes.map((scene) => scene.mark), ["a", "sh", "cl", "a_e", "o_e", "oy"]);
+  assert.deepEqual(day26.animationScenes.map((scene) => scene.mark), ["sh", "gl", "i_e", "o_e", "u_e", "e_e", "oo 长音", "ow"]);
+  assert.equal(day25.animationScenes.every((scene) => scene.soundModels.length > 0), true);
+  assert.equal(day26.animationScenes.every((scene) => scene.soundModels.length > 0), true);
 });
 
 test("every phonics, heart and animation word has a compact Chinese meaning", () => {
@@ -142,7 +298,7 @@ test("every phonics, heart and animation word has a compact Chinese meaning", ()
 });
 
 test("completed phonics lessons appear in a read-only history review", () => {
-  assert.match(englishUiSource, /复习以前学过的声音/);
+  assert.match(englishUiSource, /已学自然拼读 · \$\{completedPhonicsDays\.length\} 课/);
   assert.match(englishUiSource, /lessonDay\.day < currentDayNumber/);
   assert.match(englishUiSource, /record\?\.moduleProgress\?\.soundLab\?\.completedAt/);
   const historyHandler = englishUiSource.slice(
@@ -313,6 +469,13 @@ test("the grammar UI mirrors its isolated local state into family cloud sync", (
   assert.match(grammarUiSource, /GrammarIslandSync/);
   assert.match(grammarUiSource, /learning-activity-context-change/);
   assert.match(grammarUiSource, /persistGrammarState/);
+});
+
+test("paper days show an actionable worksheet card instead of saying grammar is not scheduled", () => {
+  assert.match(grammarUiSource, /GrammarPaperPracticeSync\?\.getTask/);
+  assert.match(grammarUiSource, /今天做练习卷/);
+  assert.match(grammarUiSource, /做完后回到今日任务，点击“完成 \+10☀”/);
+  assert.equal(grammarUiSource.indexOf("paperTaskCard(paperTask)") < grammarUiSource.indexOf("waitingCard(nextLesson, nextDate)"), true);
 });
 
 test("same-child cloud refreshes cannot rebuild an active grammar lesson", () => {

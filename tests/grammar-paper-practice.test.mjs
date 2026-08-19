@@ -45,6 +45,9 @@ test("paper practice only appears on configured Tuesday, Thursday and Saturday a
   assert.deepEqual(tasks[0].printPages, [1, 7, 20]);
   assert.equal(tasks[0].source, "parent");
   assert.equal(tasks[0].moduleId, "grammarPaper");
+  assert.equal(tasks[0].title, "完成语法练习卷 · a / an（3页）");
+  assert.match(tasks[0].detail, /请完成.*练习卷.*第 1、7、20 页/);
+  assert.match(tasks[0].instruction, /点击“完成 \+10☀”/);
 });
 
 test("disabled paper scheduling leaves every existing task and completion field unchanged", () => {
@@ -94,7 +97,23 @@ test("every generated teaching task uses exactly three pages from its course les
     assert.deepEqual(task.printPages, lesson.printPages.slice(0, 3));
     assert.equal(task.printPages.length, 3);
     assert.match(task.detail, new RegExp(task.printPages.join("、")));
+    assert.match(task.title, /完成语法练习卷.*（3页）/);
   });
+});
+
+test("an existing same-day paper task receives the clearer child-facing wording without losing completion", () => {
+  const oldTask = {
+    ...reconcile({ date: "2026-08-18" })[0],
+    title: "语法纸面巩固 · a / an",
+    done: true,
+    completedOn: "2026-08-18",
+    statusUpdatedAt: "2026-08-18T01:45:01.943Z"
+  };
+  const refreshed = reconcile({ date: "2026-08-18", tasks: [oldTask] })[0];
+  assert.equal(refreshed.title, "完成语法练习卷 · a / an（3页）");
+  assert.equal(refreshed.done, true);
+  assert.equal(refreshed.completedOn, "2026-08-18");
+  assert.equal(refreshed.statusUpdatedAt, "2026-08-18T01:45:01.943Z");
 });
 
 test("the dashboard loads paper-course data before app startup and reconciles both normal and carried days", () => {
@@ -102,4 +121,19 @@ test("the dashboard loads paper-course data before app startup and reconciles bo
   assert.ok(indexSource.indexOf("grammar-island-course.js") < indexSource.indexOf("app.js?v="));
   assert.equal((appSource.match(/reconcileSupplementalTasks\(/g) || []).length >= 3, true);
   assert.match(appSource, /grammarPaperRecovered/);
+  assert.match(appSource, /item\.moduleId === "grammarPaper" \? " · 语法练习卷"/);
+});
+
+test("the local day-12 whole-page preview is read-only and shows the third grammar worksheet", () => {
+  assert.match(appSource, /params\.get\("plan-preview"\)/);
+  assert.match(appSource, /params\.get\("preview-date"\)/);
+  assert.match(appSource, /if \(localPlanPreview\) return null;/);
+  assert.match(appSource, /if \(localPlanPreview\) return;/);
+  assert.match(appSource, /item\.id === "w2-pronouns"/);
+  assert.match(appSource, /generated\.tasks\.push\(paperTask\)/);
+});
+
+test("only plan day 12 removes RAZ wording while day 13 keeps the normal task presentation", () => {
+  assert.match(appSource, /if \(planDay !== 12 \|\| \(item\.moduleId \|\| item\.id\) !== "englishIsland"\) return item;/);
+  assert.match(appSource, /今天不安排 RAZ/);
 });

@@ -13,4 +13,8 @@ tmp/
 !grammar-media/english/*.mp3
 !phonics-media/
 !phonics-media/*.mp3
+!phonics-media/phonemes/
+!phonics-media/phonemes/*.mp3
+!phonics-media/scenes/
+!phonics-media/scenes/*.mp3
 *.zip

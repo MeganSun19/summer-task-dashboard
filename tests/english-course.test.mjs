@@ -73,6 +73,35 @@ test("heart-word reviews only use introduced words and include expanding interva
   assert.equal(course.days[25].heartWords.review.includes("my"), true);
 });
 
+test("day 12 is a measurable stage review of the first eleven days", () => {
+  const review = course.days.find((day) => day.day === 12).stageReview;
+  assert.deepEqual(review.lessonDays, Array.from({ length: 11 }, (_, index) => index + 1));
+  assert.equal(review.phonicsQuiz.length, 20);
+  assert.equal(review.phonicsQuiz.filter((item) => item.mode === "listen").length, 12);
+  assert.equal(review.phonicsQuiz.filter((item) => item.mode === "spell").length, 8);
+  assert.equal(review.coreWords.length, 15);
+  assert.equal(review.extensionWords.length, 15);
+  assert.equal(review.skipRaz, true);
+  for (const item of review.phonicsQuiz) {
+    const sourceDay = course.days.find((day) => day.day === item.sourceDay);
+    const sourceWord = sourceDay.phonics.words.find((entry) => entry.word === item.word);
+    assert.equal(sourceWord?.audio?.status, "verified", `${item.sourceDay}:${item.word}`);
+  }
+});
+
+test("later teaching days mix new words with familiar spaced reviews", () => {
+  for (const day of course.days.filter((entry) => entry.day >= 13 && entry.heartWords.newWords.length)) {
+    assert.equal(day.heartWords.review.length >= 7, true, `day ${day.day}: core review`);
+    assert.equal(day.heartWords.extensionReview.length >= 5, true, `day ${day.day}: extension review`);
+  }
+  for (const dayNumber of [18, 19, 25, 26]) {
+    const day = course.days.find((entry) => entry.day === dayNumber);
+    assert.equal(day.heartWords.newWords.length, 0, `day ${dayNumber}: no core new words`);
+    assert.equal(day.heartWords.extensionWords.length, 0, `day ${dayNumber}: no extension new words`);
+    assert.equal(day.heartWords.review.length + day.heartWords.extensionReview.length, 20, `day ${dayNumber}: review total`);
+  }
+});
+
 test("every day builds a substantial mixed English-island session", () => {
   for (const day of course.days) {
     const rounds = OPWWeek1CourseCore.buildRounds(day);

@@ -363,6 +363,36 @@ for (const day of days) {
   ];
   day.heartWords.sentences = Object.fromEntries(assignedWords.map((word) => [word, heartSentenceByWord.get(word)]));
 }
+const stageReviewDay = days.find((day) => day.day === 12);
+if (!stageReviewDay) throw new Error("Missing plan day 12 for the stage review");
+stageReviewDay.stageReview = {
+  lessonDays: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+  phonicsQuiz: [
+    { sourceDay: 2, word: "cap", mode: "spell" },
+    { sourceDay: 3, word: "hit", mode: "listen" },
+    { sourceDay: 4, word: "pet", mode: "listen" },
+    { sourceDay: 5, word: "fox", mode: "listen" },
+    { sourceDay: 6, word: "sun", mode: "listen" },
+    { sourceDay: 1, word: "back", mode: "spell" },
+    { sourceDay: 3, word: "quit", mode: "spell" },
+    { sourceDay: 4, word: "fetch", mode: "listen" },
+    { sourceDay: 6, word: "graph", mode: "spell" },
+    { sourceDay: 7, word: "fish", mode: "spell" },
+    { sourceDay: 7, word: "rain", mode: "listen" },
+    { sourceDay: 8, word: "chin", mode: "spell" },
+    { sourceDay: 8, word: "day", mode: "listen" },
+    { sourceDay: 9, word: "bath", mode: "spell" },
+    { sourceDay: 9, word: "tree", mode: "listen" },
+    { sourceDay: 10, word: "when", mode: "listen" },
+    { sourceDay: 10, word: "leaf", mode: "listen" },
+    { sourceDay: 11, word: "ring", mode: "listen" },
+    { sourceDay: 11, word: "pink", mode: "spell" },
+    { sourceDay: 11, word: "boat", mode: "listen" }
+  ],
+  coreWords: ["I", "the", "and", "you", "can", "where", "is", "what", "this", "my", "one", "have", "first", "next", "then"],
+  extensionWords: ["blue", "jump", "run", "black", "eat", "good", "pretty", "went", "yes", "ask", "know", "live", "old", "open", "put"],
+  skipRaz: true
+};
 const uniquePhonicsWords = new Set(days.flatMap((day) => day.phonics.words.map((entry) => entry.word)));
 const missingHeartAudio = heartWordPlan.words.filter(({ word }) => heartWordAudio.words?.[word]?.status !== "verified");
 if (missingHeartAudio.length) throw new Error(`Missing heart-word audio: ${missingHeartAudio.map((entry) => entry.word).join(", ")}`);

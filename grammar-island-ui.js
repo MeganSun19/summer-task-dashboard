@@ -104,7 +104,7 @@
 
   function renderHeader() {
     const summary = core.summary(state, kidId, course.lessons);
-    const schedule = core.scheduleFor(state, kidId, core.localISODate());
+    const schedule = core.scheduleFor(state, kidId, activeCourseDate());
     refs.grammarIslandStatus.textContent = `${summary.completed}/${summary.total} 课`;
     refs.grammarIslandProgressText.textContent = `${summary.completed}/${summary.total} 课`;
     refs.grammarIslandProgressBar.style.width = `${summary.percent}%`;
@@ -116,15 +116,33 @@
     refs.grammarIslandLesson.hidden = true;
     const records = state.kids[kidId].lessons;
     const nextLesson = course.lessons.find((lesson) => !records[lesson.id]?.completedAt) || null;
-    const today = core.localISODate();
+    const today = activeCourseDate();
     const schedule = core.scheduleFor(state, kidId, today);
     const scheduledToday = core.isScheduledDate(today, schedule);
     const completedLessonToday = course.lessons.find((lesson) => records[lesson.id]?.latestSessionDate === today) || null;
+    const context = window.LearningActivityProgress?.getContext?.();
+    const previewPaperTask = window.LocalPlanPreview
+      ? context?.modules?.find((item) => item.id === "grammarPaper")?.task
+      : null;
+    const paperTask = previewPaperTask || window.GrammarPaperPracticeSync?.getTask?.(kidId, today) || null;
     const nextDate = core.nextScheduledDate(today, schedule, false);
+    const todayCard = completedLessonToday
+      ? completedTodayCard(completedLessonToday, nextLesson, nextDate)
+      : scheduledToday && nextLesson
+        ? dueLessonCard(nextLesson)
+        : paperTask
+          ? paperTaskCard(paperTask)
+          : nextLesson == null
+            ? courseCompleteCard()
+            : waitingCard(nextLesson, nextDate);
     refs.grammarIslandDashboard.innerHTML = `
-      ${nextLesson == null ? courseCompleteCard() : completedLessonToday ? completedTodayCard(completedLessonToday, nextLesson, nextDate) : scheduledToday ? dueLessonCard(nextLesson) : waitingCard(nextLesson, nextDate)}
+      ${todayCard}
       ${completedLessonsPanel(records)}
     `;
+  }
+
+  function activeCourseDate() {
+    return window.LocalPlanPreview?.date || core.localISODate();
   }
 
   function dueLessonCard(lesson) {
@@ -141,6 +159,22 @@
       <span class="grammar-today-badge">今天不排语法</span>
       <h3>今天没有新的语法课</h3>
       <p>可以从下面挑一课再练习。</p>
+    </section>`;
+  }
+
+  function paperTaskCard(task) {
+    if (task.done) {
+      return `<section class="grammar-today-card complete paper">
+        <span class="grammar-today-badge">✓ 今天练习卷已完成</span>
+        <h3>${escapeHTML(task.title)}</h3>
+        <p>3 页已经完成啦！</p>
+      </section>`;
+    }
+    return `<section class="grammar-today-card due paper">
+      <span class="grammar-today-badge">今天做练习卷</span>
+      <h3>${escapeHTML(task.title)}</h3>
+      <p>${escapeHTML(task.detail)}</p>
+      <p>做完后回到今日任务，点击“完成 +10☀”。</p>
     </section>`;
   }
 

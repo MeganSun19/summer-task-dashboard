@@ -51,6 +51,7 @@
     little: "I see a __ cat.", big: "I see a __ dog."
   });
   const COURSE_MODULES = Object.freeze([
+    { id: "reviewLessons", label: "讲解回看", shortLabel: "回看" },
     { id: "soundLab", label: "声音实验室", shortLabel: "拼读" },
     { id: "coreWords", label: "核心高频词", shortLabel: "核心词" },
     { id: "raz", label: "RAZ 故事森林", shortLabel: "RAZ" },
@@ -133,18 +134,25 @@
   function buildRounds(day) {
     const phonicsWords = day?.phonics?.words || [];
     const phonicsChoices = phonicsWords.map((entry) => entry.word);
-    const rounds = phonicsWords.map((entry) => {
+    const rounds = (day?.stageReview?.lessonDays || []).map((lessonDay) => ({
+      kind: "phonics-review",
+      label: "讲解回看",
+      mode: "watch",
+      lessonDay
+    }));
+    rounds.push(...phonicsWords.map((entry) => {
       const audio = playbackAudio(entry.audio) || { status: "unavailable" };
       return {
         kind: "phonics",
         label: "声音实验室",
         word: entry.word,
-        mode: entry.audio?.status === "verified" ? "listen" : "read",
+        mode: entry.reviewMode === "spell" ? "spell" : entry.audio?.status === "verified" ? "listen" : "read",
         audio,
         assetId: assetId(entry.audio),
-        choices: phonicsChoices
+        choices: choiceSet(entry.word, phonicsChoices, 4),
+        stageReview: Boolean(day?.stageReview)
       };
-    });
+    }));
 
     const newHeartWords = unique(day?.heartWords?.newWords || [day?.heartWords?.new]);
     const heartWords = unique([...newHeartWords, ...(day?.heartWords?.review || [])]);
@@ -159,10 +167,11 @@
     });
     heartWords.forEach((word) => rounds.push({
       kind: "heart",
-      label: "心词锻造屋",
+      label: day?.stageReview ? "高频词阶段测验" : "心词锻造屋",
       mode: "spell",
       word,
       isNew: newHeartWords.includes(word),
+      stageReview: Boolean(day?.stageReview),
       prompt: HEART_WORD_CLOZE[word] || "遮住英文本，默写刚才学习的核心高频词。"
     }));
 
@@ -230,19 +239,22 @@
     }));
     extensionWords.forEach((word) => rounds.push({
       kind: "heart",
-      label: "高频词加餐",
+      label: day?.stageReview ? "高频词阶段测验" : "高频词加餐",
       mode: "spell",
       word,
       isNew: newExtensionWords.includes(word),
       isExtension: true,
+      stageReview: Boolean(day?.stageReview),
       prompt: clozePrompt(day, word)
     }));
     return rounds;
   }
 
   function moduleIdForRound(round) {
+    if (round?.kind === "phonics-review") return "reviewLessons";
     if (round?.kind === "phonics") return "soundLab";
     if (round?.kind === "raz") return "raz";
+    if (round?.stageReview && round?.kind === "heart") return "coreWords";
     if (round?.label === "高频词加餐") return "extraWords";
     return "coreWords";
   }

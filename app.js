@@ -38,7 +38,18 @@ const rewardRegistry = window.RewardProgress;
 
 let state = loadState();
 ensureState(state);
-let selectedDate = toISODate(new Date());
+const localPlanPreview = (() => {
+  if (!/^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)) return null;
+  const params = new URLSearchParams(window.location.search);
+  const planDay = Number(params.get("plan-preview"));
+  const date = params.get("preview-date") || "";
+  if (!Number.isInteger(planDay) || planDay < 1 || planDay > summerPlanRegistry.TOTAL_DAYS) return null;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
+  return Object.freeze({ planDay, date });
+})();
+window.LocalPlanPreview = localPlanPreview;
+const localPlanPreviewDays = {};
+let selectedDate = localPlanPreview?.date || toISODate(new Date());
 let activeKid = state.activeKid || "brother";
 let editorKid = activeKid;
 let currentView = "kid";
@@ -136,12 +147,14 @@ window.LearningActivityProgress = Object.freeze({
       modules: day.tasks.map((item) => ({
         id: item.moduleId || item.id,
         activity: item.activity || moduleRegistry.get(item.moduleId || item.id)?.activity || null,
+        task: localPlanPreview ? structuredClone(item) : null,
         startDate: state.learningActivities?.moduleStarts?.[activeKid]?.[item.moduleId || item.id] || null,
         planDay
       }))
     };
   },
   startModule(moduleId) {
+    if (localPlanPreview) return localPlanPreview.date;
     const starts = state.learningActivities.moduleStarts[activeKid];
     if (!starts[moduleId]) {
       starts[moduleId] = planDateForView(activeKid, selectedDate);
@@ -153,15 +166,18 @@ window.LearningActivityProgress = Object.freeze({
     return this.startModule("englishIsland");
   },
   get(activityId) {
+    if (localPlanPreview) return null;
     const date = planDateForView(activeKid, selectedDate);
     return state.learningActivities?.progress?.[activeKid]?.[date]?.[activityId] || null;
   },
   getHistory() {
+    if (localPlanPreview) return [];
     return Object.entries(state.learningActivities?.progress?.[activeKid] || {}).flatMap(([date, activities]) => (
       Object.entries(activities || {}).map(([activityId, record]) => ({ date, activityId, record }))
     ));
   },
   save(activityId, record) {
+    if (localPlanPreview) return;
     const date = planDateForView(activeKid, selectedDate);
     const progress = state.learningActivities.progress[activeKid];
     progress[date] ||= {};
@@ -172,6 +188,7 @@ window.LearningActivityProgress = Object.freeze({
     saveState();
   },
   reset(activityId) {
+    if (localPlanPreview) return;
     const date = planDateForView(activeKid, selectedDate);
     const day = state.learningActivities?.progress?.[activeKid]?.[date];
     if (!day?.[activityId]) return;
@@ -195,6 +212,11 @@ window.GrammarIslandSync = Object.freeze({
 window.GrammarPaperPracticeSync = Object.freeze({
   getSchedule(kidId) {
     return window.GrammarPaperPractice?.scheduleFor(state.grammarPaperPractice, kidId) || null;
+  },
+  getTask(kidId, date = toISODate(new Date())) {
+    const task = Object.values(state.days?.[kidId] || {}).flatMap((day) => day.tasks || [])
+      .find((item) => item.moduleId === "grammarPaper" && item.scheduledDate === date);
+    return task ? structuredClone(task) : null;
   }
 });
 // Compatibility alias for progress already stored by the first English-course UI.
@@ -566,6 +588,7 @@ function setCloudFormsDisabled(disabled) {
 }
 
 function getDay(kidId, date, scheduleDate = date) {
+  if (localPlanPreview && date === localPlanPreview.date) return buildLocalPlanPreviewDay(kidId);
   state.days[kidId] ||= {};
   if (!state.days[kidId][date]) {
     state.days[kidId][date] = buildDefaultDay(date, kidId);
@@ -642,12 +665,36 @@ function buildRawTasks(date, dayIndexOverride = null, kidId = editorKid) {
   const index = dayIndexOverride == null ? dayOffset(state.startDate, date) : dayIndexOverride;
   const planDay = index + 1;
   const poemAnchor = state.curriculumAnchors?.poem?.[kidId] || 1;
-  return moduleRegistry.buildDefaultTasks({
+  const tasks = moduleRegistry.buildDefaultTasks({
     date,
     kidId,
     dayIndex: index,
     contentDayIndexes: { poem: Math.max(0, planDay - poemAnchor) }
   });
+  return tasks.map((item) => {
+    if (planDay !== 12 || (item.moduleId || item.id) !== "englishIsland") return item;
+    return {
+      ...item,
+      detail: "前 11 天阶段复习：回看讲解 + 自然拼读测验 + 高频词测验",
+      tags: ["回看11课", "自拼测验", "高频词测验"],
+      instruction: "进入英语岛完成三个阶段复习模块；今天不安排 RAZ。"
+    };
+  });
+}
+
+function buildLocalPlanPreviewDay(kidId) {
+  if (!localPlanPreview) return null;
+  if (localPlanPreviewDays[kidId]) return localPlanPreviewDays[kidId];
+  const generated = buildDefaultDay(localPlanPreview.date, kidId, localPlanPreview.planDay - 1, localPlanPreview.date);
+  generated.planDayNumber = localPlanPreview.planDay;
+  generated.tasks = reconcileSupplementalTasks(generated.tasks || [], kidId, localPlanPreview.date);
+  if (localPlanPreview.planDay === 12 && !generated.tasks.some((item) => item.moduleId === "grammarPaper")) {
+    const lesson = window.GRAMMAR_ISLAND_COURSE?.lessons?.find((item) => item.id === "w2-pronouns");
+    const paperTask = lesson && window.GrammarPaperPractice?.createTask(lesson, kidId, localPlanPreview.date);
+    if (paperTask) generated.tasks.push(paperTask);
+  }
+  localPlanPreviewDays[kidId] = generated;
+  return generated;
 }
 
 function applyOverallSettings(kidId, tasks, date) {
@@ -745,11 +792,13 @@ function renderKidView() {
   document.documentElement.style.setProperty("--kid-soft", profile.soft);
   refs.avatar.innerHTML = `<img src="${profile.avatar}" data-kid="${profile.id}" alt="${profile.character}">`;
   refs.kidName.textContent = profile.name;
-  const viewingToday = selectedDate === today;
+  const viewingToday = !localPlanPreview && selectedDate === today;
   const carried = viewingToday && planDate < today;
   const carriedCompleted = carried && summerPlanRegistry.isDayResolved(day);
   const finished = plan.currentDay === summerPlanRegistry.TOTAL_DAYS && summerPlanRegistry.isDayResolved(day);
-  refs.dateLabel.textContent = viewingToday
+  refs.dateLabel.textContent = localPlanPreview
+    ? `${formatDateLabel(localPlanPreview.date)} · 第 ${localPlanPreview.planDay}/${summerPlanRegistry.TOTAL_DAYS} 个学习日 · 本地只读预览`
+    : viewingToday
     ? `${formatDateLabel(today)} · ${summerPlanRegistry.TITLE}${finished ? "已完成" : `第 ${plan.currentDay}/${summerPlanRegistry.TOTAL_DAYS} 个学习日`}${carriedCompleted ? ` · 已完成 ${formatDateLabel(planDate)} 的顺延内容，明天进入下一学习日` : carried ? ` · 继续 ${formatDateLabel(planDate)} 的内容` : ""}`
     : `${formatDateLabel(planDate)} · 历史记录`;
   refs.progressText.textContent = `${done}/${total}`;
@@ -777,14 +826,14 @@ function renderTasks(day) {
     card.innerHTML = `
       <div class="task-icon">${category.icon}</div>
       <div>
-        <span class="task-order">第 ${index + 1} 项 · ${item.minutes || category.minutes} 分钟${item.source === "parent" ? " · 家长临时任务" : ""}</span>
+        <span class="task-order">第 ${index + 1} 项 · ${item.minutes || category.minutes} 分钟${item.moduleId === "grammarPaper" ? " · 语法练习卷" : item.source === "parent" ? " · 家长临时任务" : ""}</span>
         <h3 class="task-title">${escapeHTML(item.title)}</h3>
         <p class="task-detail">${escapeHTML(item.detail)}</p>
         <p class="how-to"><strong>怎么做：</strong>${escapeHTML(item.instruction || "完成后点右边的按钮。")}</p>
         <div class="word-row">${(item.tags || []).map((tag) => `<span class="word-chip">${escapeHTML(tag)}</span>`).join("")}</div>
       </div>
-      <button class="complete-button" type="button" ${item.excused ? "disabled" : ""}>${item.excused ? "历史免除" : item.done ? "✓ 已完成" : `完成 +10☀`}</button>`;
-    card.querySelector(".complete-button").addEventListener("click", () => toggleTask(item));
+      <button class="complete-button" type="button" ${localPlanPreview || item.excused ? "disabled" : ""}>${localPlanPreview ? "只读预览" : item.excused ? "历史免除" : item.done ? "✓ 已完成" : `完成 +10☀`}</button>`;
+    if (!localPlanPreview) card.querySelector(".complete-button").addEventListener("click", () => toggleTask(item));
     refs.taskList.appendChild(card);
   });
 }

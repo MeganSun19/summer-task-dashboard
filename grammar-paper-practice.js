@@ -72,10 +72,10 @@
       moduleId: "grammarPaper",
       grammarLessonId: lesson.id,
       printPages: pages,
-      title: `语法纸面巩固 · ${lesson.title}`,
-      detail: `完成蓝书《Common English Grammar》本课对应的第 ${pages.join("、")} 页。`,
-      instruction: "先口头复习本课规则；独立完成 3 页打印资料；家长检查后订正错题；最后点击完成。",
-      tags: ["语法巩固", "蓝书", lesson.title, "打印资料"],
+      title: `完成语法练习卷 · ${lesson.title}（3页）`,
+      detail: `请完成《${lesson.title}》练习卷：蓝书第 ${pages.join("、")} 页。`,
+      instruction: "先说一遍本课规则，再独立完成 3 页；检查并订正后，点击“完成 +10☀”。",
+      tags: ["练习卷", "3页", lesson.title],
       minutes: 20,
       scheduledDate: date,
       done: false
@@ -90,9 +90,19 @@
     const result = current.map((task) => {
       if (task.moduleId !== "grammarPaper") return task;
       if (task.scheduledDate === date) {
-        hasCurrentPaperTask = true;
+        const lesson = (lessons || []).find((candidate) => candidate.id === task.grammarLessonId);
+        const presentation = lesson ? createTask(lesson, kidId, date) : null;
         const active = { ...task };
+        if (presentation) {
+          active.title = presentation.title;
+          active.detail = presentation.detail;
+          active.instruction = presentation.instruction;
+          active.tags = presentation.tags;
+          active.minutes = presentation.minutes;
+          active.printPages = presentation.printPages;
+        }
         delete active.archived;
+        hasCurrentPaperTask = true;
         return active;
       }
       return { ...task, archived: true };

@@ -129,12 +129,20 @@ h2 { margin-bottom: 0; font-size: 24px; }
 .english-module-state { padding: 5px 8px; border-radius: 99px; background: #edf1f5; color: #657188; font-size: 10px; font-weight: 900; white-space: nowrap; }
 .english-module-card.complete .english-module-state { background: #def4e7; color: #277856; }
 .english-module-content { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 7px; min-height: 74px; }
+.stage-review-summary { width: 100%; margin: 0; padding: 12px; border-radius: 12px; background: #eef7ff; color: #315b88; font-size: 13px; font-weight: 900; line-height: 1.5; }
+.stage-review-result { margin: 14px 0 0; padding: 13px 15px; border: 1px solid #edc98f; border-radius: 14px; background: #fff8e8; color: #865923; font-size: 13px; font-weight: 900; line-height: 1.6; }
+.stage-review-meaning { display: inline-block; padding: 8px 13px; border: 2px solid #f1c457; border-radius: 12px; background: #fff2a8; color: #6f4c00; font-size: 16px; font-weight: 1000; }
+.spelling-answer-button { border: 1px solid #d8c7a2; border-radius: 11px; background: #fffaf0; color: #84662c; font-weight: 900; }
+.spelling-answer-button.revealed { border-color: #e1b45e; background: #fff0bf; color: #6e4900; }
+.module-reviewLessons .english-module-icon { background: #e2f5e9; color: #2d7055; }
+.phonics-preview-mode #grammarIslandCard { display: none !important; }
 .phonics-mini-lesson { flex: 1 0 100%; min-width: 0; padding: 10px; border: 1px solid #cbdff0; border-radius: 15px; background: linear-gradient(145deg, #edf8ff, #fff9df); }
-.phonics-mini-screen { position: relative; min-height: 174px; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,.82); box-shadow: inset 0 0 0 1px rgba(49,95,136,.08); }
+.phonics-mini-screen { position: relative; min-height: 260px; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,.82); box-shadow: inset 0 0 0 1px rgba(49,95,136,.08); }
 .phonics-mini-scene { position: absolute; inset: 0; display: grid; align-content: center; justify-items: center; gap: 8px; padding: 16px; opacity: 0; transform: translateX(18px) scale(.98); transition: opacity .35s ease, transform .35s ease; pointer-events: none; text-align: center; }
 .phonics-mini-scene.active { opacity: 1; transform: translateX(0) scale(1); }
 .phonics-scene-kicker { color: #64819d; font-size: 10px; font-weight: 900; letter-spacing: .08em; }
 .phonics-sound-mark { display: grid; min-width: 76px; min-height: 60px; padding: 7px 16px; place-items: center; border-radius: 18px; background: #315f88; color: #fff; font-size: clamp(30px, 6vw, 44px); line-height: 1; box-shadow: 0 8px 18px rgba(49,95,136,.2); }
+.phonics-pronunciation { padding: 4px 10px; border-radius: 99px; background: #e7f1fa; color: #244d70; font-size: 13px; font-weight: 1000; line-height: 1.35; }
 .phonics-mini-scene p { margin: 0; color: #294b68; font-size: 15px; font-weight: 1000; line-height: 1.35; }
 .phonics-mini-scene small { color: #718094; font-size: 11px; font-weight: 800; line-height: 1.45; }
 .phonics-scene-words { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; }
@@ -146,9 +154,27 @@ h2 { margin-bottom: 0; font-size: 24px; }
 .phonics-mini-progress > div { width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #3e86bc, #e4a94a); transition: width .12s linear; }
 .phonics-mini-controls { display: flex; align-items: center; gap: 10px; }
 .phonics-lesson-audio { flex: 1 1 auto; min-height: 42px; padding: 9px 13px; border: 0; border-radius: 12px; background: #315f88; color: white; font-size: 13px; font-weight: 900; }
-.phonics-scene-dots { display: flex; gap: 5px; }
-.phonics-scene-dots i { width: 7px; height: 7px; border-radius: 50%; background: #cbd6df; transition: width .25s, background .25s; }
-.phonics-scene-dots i.active { width: 17px; border-radius: 99px; background: #3e86bc; }
+.phonics-scene-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); gap: 7px; margin-top: 8px; }
+.phonics-scene-controls button { min-height: 36px; padding: 7px 8px; border: 1px solid #b9d3e7; border-radius: 10px; background: rgba(255,255,255,.78); color: #315f88; font-size: 11px; font-weight: 900; }
+.phonics-scene-controls button.active { border-color: #3e86bc; background: #dcefff; box-shadow: inset 0 0 0 1px #3e86bc; }
+.phonics-audit-panel { display: grid; gap: 14px; }
+.phonics-audit-panel > h3 { margin: 8px 0 0; color: #233b5d; font-size: 18px; }
+.phonics-audit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 9px; }
+.phonics-audit-source { display: grid; gap: 7px; padding: 11px; border: 1px solid #d8c9a5; border-radius: 13px; background: #fffdf5; }
+.phonics-audit-source header { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; align-items: baseline; }
+.phonics-audit-source header strong { color: #27496a; font-size: 17px; }
+.phonics-audit-source header span { color: #27496a; font-weight: 900; }
+.phonics-audit-source header em { grid-column: 1 / -1; color: #a05c21; font-size: 11px; font-style: normal; font-weight: 900; }
+.phonics-audit-source.approved header em { color: #23805f; }
+.phonics-audit-source button { min-height: 36px; border: 0; border-radius: 10px; background: #315f88; color: #fff; font-weight: 900; }
+.phonics-audit-source p, .phonics-audit-source small { margin: 0; color: #617086; line-height: 1.4; }
+.phonics-audit-source p { font-size: 12px; font-weight: 800; }
+.phonics-audit-source small { font-size: 11px; }
+.phonics-audit-lessons { display: grid; gap: 10px; }
+.phonics-audit-lesson { padding: 8px; border: 1px solid #cadced; border-radius: 14px; background: rgba(255,255,255,.72); }
+.phonics-audit-lesson > summary { cursor: pointer; color: #294b68; font-weight: 1000; }
+.phonics-audit-lesson > summary span { margin-left: 6px; color: #718094; font-size: 12px; }
+.phonics-audit-lesson[open] > summary { margin-bottom: 8px; }
 .phonics-history { padding: 13px; border: 1px solid #b9d9c7; border-radius: 16px; background: rgba(255,255,255,.68); }
 .phonics-history summary { cursor: pointer; color: #2d7055; font-size: 14px; font-weight: 1000; }
 .phonics-history summary span { margin-left: 5px; color: #78867f; font-size: 11px; }

@@ -28,7 +28,7 @@
     "rich":"富有的", "day":"天；白天", "thin":"瘦的；薄的", "bath":"洗澡", "moth":"飞蛾", "path":"小路", "tree":"树", "whip":"鞭子", "whiz":"飞驰；高手",
     "team":"队伍", "leaf":"叶子", "ring":"戒指；铃声", "king":"国王", "pink":"粉色的", "boat":"小船", "coat":"外套", "snow":"雪", "grow":"生长", "step":"脚步；迈步",
     "spin":"旋转", "spot":"斑点；地点", "car":"汽车", "star":"星星", "clap":"拍手", "flag":"旗子", "slip":"滑倒", "plan":"计划", "corn":"玉米", "fork":"叉子",
-    "frog":"青蛙", "trip":"旅行；绊倒", "drum":"鼓", "crab":"螃蟹", "fern":"蕨类植物", "hand":"手", "milk":"牛奶", "nest":"鸟巢", "bird":"鸟", "girl":"女孩",
+    "frog":"青蛙", "trip":"旅行；绊倒", "drum":"鼓", "crab":"螃蟹", "fern":"蕨类植物", "fresh":"新鲜的", "hand":"手", "milk":"牛奶", "nest":"鸟巢", "bird":"鸟", "girl":"女孩",
     "plant":"植物；种植", "swim":"游泳", "turn":"转动；轮到", "burn":"燃烧", "name":"名字", "same":"相同的", "game":"游戏", "moon":"月亮", "food":"食物", "bike":"自行车",
     "book":"书", "foot":"脚", "home":"家", "hope":"希望", "rope":"绳子", "nose":"鼻子", "house":"房子", "cube":"立方体", "cute":"可爱的", "tune":"曲调",
     "cow":"奶牛", "cape":"斗篷", "kit":"工具包", "kite":"风筝", "coin":"硬币", "soil":"土壤", "boy":"男孩", "toy":"玩具",

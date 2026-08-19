@@ -52,6 +52,25 @@ test("verified words become listening rounds and excluded words become reading r
   assert.deepEqual(rounds[0].choices, ["red", "pet"]);
 });
 
+test("stage review separates watched lessons, phonics testing, and one combined word test", () => {
+  const rounds = OPWWeek1CourseCore.buildRounds({
+    stageReview: { lessonDays: [1, 2] },
+    phonics: { words: [
+      { word: "cat", reviewMode: "listen", audio: { status: "verified", assetId: "cat" } },
+      { word: "back", reviewMode: "spell", audio: { status: "verified", assetId: "back" } }
+    ] },
+    heartWords: { newWords: [], review: ["the"], extensionWords: [], extensionReview: ["blue"] },
+    raz: { targetWords: [], sentenceFrames: [], sourceBooks: [], assignment: null }
+  });
+  const modules = OPWWeek1CourseCore.groupRoundsByModule(rounds);
+  assert.deepEqual(modules.map((module) => [module.id, module.rounds.length]), [
+    ["reviewLessons", 2], ["soundLab", 2], ["coreWords", 2]
+  ]);
+  assert.deepEqual(rounds.slice(0, 2).map((round) => round.mode), ["watch", "watch"]);
+  assert.deepEqual(rounds.filter((round) => round.kind === "phonics").map((round) => round.mode), ["listen", "spell"]);
+  assert.equal(rounds.filter((round) => round.kind === "raz").length, 0);
+});
+
 test("a full day combines phonics, typed heart-word recall, RAZ targets, speaking, and a book", () => {
   const rounds = OPWWeek1CourseCore.buildRounds({
     phonics: { words: [{ word: "cat", audio: { status: "unavailable" } }] },
