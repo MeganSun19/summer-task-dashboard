@@ -30,7 +30,7 @@
     "teachingDays": 20,
     "reviewDays": 6,
     "heartWords": 200,
-    "razBookAssignments": 93,
+    "razBookAssignments": 90,
     "laterWeeksAudioStatus": "tts-auto-applied",
     "verifiedFallbackWords": 85,
     "extensionPatterns": 24,
@@ -6186,62 +6186,12 @@
         "focus": "第 2 周回收",
         "anchorBook": "任选数量、动物、天气主题各 1 本",
         "supportingBooks": [],
-        "sourceBooks": [
-          "任选数量、动物、天气主题各 1 本"
-        ],
-        "targetWords": [
-          "many",
-          "more",
-          "less",
-          "where",
-          "what",
-          "eat",
-          "live",
-          "grow",
-          "then",
-          "away"
-        ],
-        "sentenceFrames": [
-          "What do animals eat?",
-          "Where do they live?"
-        ],
+        "sourceBooks": [],
+        "targetWords": [],
+        "sentenceFrames": [],
         "childTask": "只复习犹豫词；能秒认的词直接跳过。",
         "parentTask": "只复习犹豫词；能秒认的词直接跳过。",
-        "assignment": {
-          "mode": "choose",
-          "rule": "数量、动物、天气主题各选 1 本",
-          "groups": [
-            {
-              "label": "数量主题",
-              "count": 1,
-              "choices": [
-                "B-28 Ten",
-                "C-12 We Count",
-                "D-31 Less than",
-                "D-32 Greater than"
-              ]
-            },
-            {
-              "label": "动物主题",
-              "count": 1,
-              "choices": [
-                "C-9 What Animals Eat",
-                "D-5 Where Animals Live",
-                "E-4 Places Plants and Animals Live"
-              ]
-            },
-            {
-              "label": "天气主题",
-              "count": 1,
-              "choices": [
-                "C-14 Snow Falls",
-                "D-10 Fog",
-                "D-11 Clouds",
-                "E-11 The Four Seasons"
-              ]
-            }
-          ]
-        }
+        "assignment": null
       },
       "listening": {
         "type": "listen-and-choose",

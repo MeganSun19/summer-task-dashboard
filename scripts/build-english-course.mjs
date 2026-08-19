@@ -393,6 +393,14 @@ stageReviewDay.stageReview = {
   extensionWords: ["blue", "jump", "run", "black", "eat", "good", "pretty", "went", "yes", "ask", "know", "live", "old", "open", "put"],
   skipRaz: true
 };
+stageReviewDay.raz = {
+  ...stageReviewDay.raz,
+  targetWords: [],
+  sentenceFrames: [],
+  sourceBooks: [],
+  supportingBooks: [],
+  assignment: null
+};
 const uniquePhonicsWords = new Set(days.flatMap((day) => day.phonics.words.map((entry) => entry.word)));
 const missingHeartAudio = heartWordPlan.words.filter(({ word }) => heartWordAudio.words?.[word]?.status !== "verified");
 if (missingHeartAudio.length) throw new Error(`Missing heart-word audio: ${missingHeartAudio.map((entry) => entry.word).join(", ")}`);
@@ -434,9 +442,11 @@ const course = {
     reviewDays: days.filter((day) => day.dayOfWeek > 5).length,
     heartWords: heartWordBank.length,
     razBookAssignments: days.reduce((total, day) => total + (
-      day.raz.assignment.mode === "fixed"
+      day.raz.assignment?.mode === "fixed"
         ? day.raz.assignment.books.length
-        : (day.raz.assignment.fixedBooks?.length || 0) + day.raz.assignment.groups.reduce((sum, group) => sum + group.count, 0)
+        : day.raz.assignment?.mode === "choose"
+          ? (day.raz.assignment.fixedBooks?.length || 0) + day.raz.assignment.groups.reduce((sum, group) => sum + group.count, 0)
+          : 0
     ), 0),
     laterWeeksAudioStatus: "tts-auto-applied",
     verifiedFallbackWords: Object.keys(phonicsWordAudio.words || {}).length,

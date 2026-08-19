@@ -74,7 +74,8 @@ test("heart-word reviews only use introduced words and include expanding interva
 });
 
 test("day 12 is a measurable stage review of the first eleven days", () => {
-  const review = course.days.find((day) => day.day === 12).stageReview;
+  const reviewDay = course.days.find((day) => day.day === 12);
+  const review = reviewDay.stageReview;
   assert.deepEqual(review.lessonDays, Array.from({ length: 11 }, (_, index) => index + 1));
   assert.equal(review.phonicsQuiz.length, 20);
   assert.equal(review.phonicsQuiz.filter((item) => item.mode === "listen").length, 12);
@@ -82,6 +83,9 @@ test("day 12 is a measurable stage review of the first eleven days", () => {
   assert.equal(review.coreWords.length, 15);
   assert.equal(review.extensionWords.length, 15);
   assert.equal(review.skipRaz, true);
+  assert.equal(reviewDay.raz.assignment, null);
+  assert.deepEqual(reviewDay.raz.targetWords, []);
+  assert.deepEqual(reviewDay.raz.sentenceFrames, []);
   for (const item of review.phonicsQuiz) {
     const sourceDay = course.days.find((day) => day.day === item.sourceDay);
     const sourceWord = sourceDay.phonics.words.find((entry) => entry.word === item.word);
@@ -108,10 +112,19 @@ test("every day builds a substantial mixed English-island session", () => {
     const kinds = new Set(rounds.map((round) => round.kind));
     assert.equal(kinds.has("phonics"), true, `day ${day.day}`);
     assert.equal(kinds.has("heart"), true, `day ${day.day}`);
-    assert.equal(kinds.has("raz"), true, `day ${day.day}`);
+    assert.equal(kinds.has("raz"), day.day !== 12, `day ${day.day}`);
     assert.equal(rounds.length >= 10, true, `day ${day.day} has ${rounds.length} rounds`);
-    assert.equal(rounds.some((round) => ["book", "book-choice"].includes(round.mode)), true, `day ${day.day}`);
+    assert.equal(rounds.some((round) => ["book", "book-choice"].includes(round.mode)), day.day !== 12, `day ${day.day}`);
   }
+});
+
+test("only day 12 has the three stage-review modules and day 13 restores all four normal modules", () => {
+  const moduleIds = (dayNumber) => OPWWeek1CourseCore.groupRoundsByModule(
+    OPWWeek1CourseCore.buildRounds(course.days.find((day) => day.day === dayNumber))
+  ).map((module) => module.id);
+  assert.deepEqual(moduleIds(11), ["soundLab", "coreWords", "raz", "extraWords"]);
+  assert.deepEqual(moduleIds(12), ["reviewLessons", "soundLab", "coreWords"]);
+  assert.deepEqual(moduleIds(13), ["soundLab", "coreWords", "raz", "extraWords"]);
 });
 
 test("the complete heart-word bank and every assigned RAZ book are actionable", () => {
@@ -123,7 +136,10 @@ test("the complete heart-word bank and every assigned RAZ book are actionable", 
   for (const day of course.days) {
     const rounds = OPWWeek1CourseCore.buildRounds(day);
     const assignment = day.raz.assignment;
-    if (assignment.mode === "fixed") {
+    if (!assignment) {
+      assert.equal(day.day, 12);
+      assert.equal(rounds.some((round) => round.kind === "raz"), false);
+    } else if (assignment.mode === "fixed") {
       assert.equal(rounds.filter((round) => round.mode === "book").length, assignment.books.length, `day ${day.day}`);
     } else {
       const requiredChoices = assignment.groups.reduce((sum, group) => sum + group.count, 0);
@@ -161,7 +177,7 @@ test("Oxford listening rounds use independent reviewed clips instead of whole tr
 
 test("Excel review-day choice rules are preserved instead of replaced with invented fixed books", () => {
   assert.equal(course.days.find((day) => day.curriculumDay === 6).raz.assignment.rule, "任选本周最喜欢的 4 本，再读 B-38 We Pack a Picnic");
-  assert.equal(course.days.find((day) => day.curriculumDay === 13).raz.assignment.groups.length, 3);
+  assert.equal(course.days.find((day) => day.curriculumDay === 13).raz.assignment, null);
   assert.equal(course.days.find((day) => day.curriculumDay === 20).raz.assignment.groups.length, 4);
   assert.deepEqual(course.days.find((day) => day.curriculumDay === 27).raz.assignment.groups.map((group) => group.count), [2, 2, 2, 2]);
   assert.equal(course.days.find((day) => day.curriculumDay === 28).raz.assignment.groups[0].count, 3);

@@ -82,6 +82,38 @@ test("finishing one paper lesson advances to the next completed online lesson on
   assert.deepEqual(next[1].printPages, [40, 45, 50]);
 });
 
+test("day 12 advances to the third pronoun worksheet after the first two paper lessons are complete", () => {
+  const first = { ...paper.createTask(lessons.find((lesson) => lesson.id === "w1-a-an"), "brother", "2026-08-15"), done: true, completedOn: "2026-08-15" };
+  const second = { ...paper.createTask(lessons.find((lesson) => lesson.id === "w1-plurals"), "brother", "2026-08-18"), done: true, completedOn: "2026-08-18" };
+  const result = paper.reconcileTasks([], {
+    kidId: "brother",
+    date: "2026-08-20",
+    scheduleState,
+    grammarState: {
+      version: 1,
+      kids: {
+        brother: { lessons: {
+          "w1-a-an": { completedAt: "2026-08-14T01:00:00.000Z" },
+          "w1-plurals": { completedAt: "2026-08-17T01:00:00.000Z" },
+          "w2-pronouns": { completedAt: "2026-08-19T01:00:00.000Z" }
+        } },
+        younger: { lessons: {} }
+      }
+    },
+    lessons,
+    days: {
+      brother: {
+        "2026-08-15": { tasks: [first] },
+        "2026-08-18": { tasks: [second] }
+      },
+      younger: {}
+    }
+  });
+  assert.equal(result.length, 1);
+  assert.equal(result[0].grammarLessonId, "w2-pronouns");
+  assert.deepEqual(result[0].printPages, [80, 90, 100]);
+});
+
 test("completing today's paper task cannot generate a second rewardable task on the same date", () => {
   const current = { ...reconcile({ date: "2026-08-18" })[0], done: true, completedOn: "2026-08-18" };
   const days = { brother: { "2026-08-18": { tasks: [current] } }, younger: {} };
