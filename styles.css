@@ -130,7 +130,7 @@ h2 { margin-bottom: 0; font-size: 24px; }
 .english-module-card.complete .english-module-state { background: #def4e7; color: #277856; }
 .english-module-content { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 7px; min-height: 74px; }
 .stage-review-summary { width: 100%; margin: 0; padding: 12px; border-radius: 12px; background: #eef7ff; color: #315b88; font-size: 13px; font-weight: 900; line-height: 1.5; }
-.stage-review-result { margin: 14px 0 0; padding: 13px 15px; border: 1px solid #edc98f; border-radius: 14px; background: #fff8e8; color: #865923; font-size: 13px; font-weight: 900; line-height: 1.6; }
+.stage-review-result { width: 100%; box-sizing: border-box; margin: 3px 0 0; padding: 11px 12px; border: 1px solid #edc98f; border-radius: 12px; background: #fff8e8; color: #865923; font-size: 12px; font-weight: 900; line-height: 1.6; }
 .stage-review-meaning { display: inline-block; padding: 8px 13px; border: 2px solid #f1c457; border-radius: 12px; background: #fff2a8; color: #6f4c00; font-size: 16px; font-weight: 1000; }
 .spelling-answer-button { border: 1px solid #d8c7a2; border-radius: 11px; background: #fffaf0; color: #84662c; font-weight: 900; }
 .spelling-answer-button.revealed { border-color: #e1b45e; background: #fff0bf; color: #6e4900; }
@@ -175,7 +175,7 @@ h2 { margin-bottom: 0; font-size: 24px; }
 .phonics-audit-lesson > summary { cursor: pointer; color: #294b68; font-weight: 1000; }
 .phonics-audit-lesson > summary span { margin-left: 6px; color: #718094; font-size: 12px; }
 .phonics-audit-lesson[open] > summary { margin-bottom: 8px; }
-.phonics-history { padding: 13px; border: 1px solid #b9d9c7; border-radius: 16px; background: rgba(255,255,255,.68); }
+.phonics-history { width: 100%; box-sizing: border-box; padding: 13px; border: 1px solid #b9d9c7; border-radius: 16px; background: rgba(255,255,255,.68); }
 .phonics-history summary { cursor: pointer; color: #2d7055; font-size: 14px; font-weight: 1000; }
 .phonics-history summary span { margin-left: 5px; color: #78867f; font-size: 11px; }
 .phonics-history-days { display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 7px; margin-top: 12px; }

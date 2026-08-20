@@ -118,7 +118,9 @@
     if (!day) return;
 
     const history = phonicsPreviewMode ? [] : window.LearningActivityProgress?.getHistory?.() || [];
-    completedPhonicsDays = completedCourseDays(history, dayNumber);
+    completedPhonicsDays = planPreviewDay
+      ? course.days.filter((lessonDay) => lessonDay.day < dayNumber)
+      : completedCourseDays(history, dayNumber);
     const stored = phonicsPreviewMode
       ? null
       : window.LearningActivityProgress?.get(window.OPWWeek1CourseCore.activityId(dayNumber));
@@ -216,6 +218,11 @@
 
   function buildOverview() {
     const stageReview = Boolean(day.stageReview);
+    const heartReviewWords = new Set([
+      ...(day.heartWords.review || []),
+      ...(day.heartWords.extensionReview || [])
+    ]);
+    const heartReviewMistakes = [...reviewMistakes].filter((word) => heartReviewWords.has(word));
     const phonics = stageReview ? `<p class="stage-review-summary">20 道题 · 听音选词和直接拼写</p>` : day.phonics.words.map((entry) => {
       const round = allRounds.find((item) => item.kind === "phonics" && item.word === entry.word);
       const playable = round.mode === "listen" && availableAssetIds.has(round.assetId);
@@ -234,16 +241,16 @@
     const assignment = day.raz.assignment;
     const books = assignment?.mode === "fixed" ? assignment.books : (assignment?.fixedBooks || []);
     const phonicsTeacher = stageReview ? "" : phonicsLessonMarkup(day);
-    const reviewResult = stageReview && reviewMistakes.size
-      ? `<p class="stage-review-result">需要再练：${[...reviewMistakes].map((word) => escapeHTML(word)).join(" · ")}</p>`
+    const heartReviewResult = stageReview && heartReviewMistakes.length
+      ? `<p class="stage-review-result">高频词需要再练：${heartReviewMistakes.map((word) => escapeHTML(word)).join(" · ")}</p>`
       : "";
     return `<div class="english-module-grid">
       ${stageReview ? moduleCard("reviewLessons", "▶", "回看 11 课", "完整听完以前的讲解", `<p class="stage-review-summary">约 9 分钟 · 自动记录已听课程</p>`) : ""}
-      ${moduleCard("soundLab", "Aa", stageReview ? "自然拼读测验" : "声音实验室", stageReview ? "听音选词，再直接拼写" : "先看动画，再拼单词", `${phonicsTeacher}${phonics}`)}
-      ${moduleCard("coreWords", "词", stageReview ? "高频词阶段测验" : "核心高频词", stageReview ? "30 个熟词，看看记得多牢" : "读一读，写一写", heart)}
+      ${moduleCard("soundLab", "Aa", stageReview ? "自然拼读测验" : "声音实验室", stageReview ? "听音选词，再直接拼写" : "先看动画，再拼单词", `${phonicsTeacher}${phonics}${phonicsHistoryMarkup()}`)}
+      ${moduleCard("coreWords", "词", stageReview ? "高频词阶段测验" : "核心高频词", stageReview ? "30 个熟词，看看记得多牢" : "读一读，写一写", `${heart}${heartReviewResult}`)}
       ${moduleCard("raz", "读", "RAZ 故事森林", "读今天的书", `<div class="module-raz-books">${books.map((book, index) => `<span>${index + 1}. ${highlightHeartWords(book)}</span>`).join("")}${assignment?.mode === "choose" ? `<span class="raz-choice-rule">${escapeHTML(assignment.rule)}</span>` : ""}<small>${escapeHTML(day.raz.focus)}</small></div>`)}
       ${extension ? moduleCard("extraWords", "+", "高频词加餐", "再学几个词", extension) : ""}
-      </div>${reviewResult}${phonicsHistoryMarkup()}`;
+      </div>`;
   }
 
   function phonicsLessonMarkup(lessonDay, historical = false) {
@@ -612,7 +619,9 @@
       const testedWords = activeRounds.map((round) => round.word).filter(Boolean);
       const mistakeCount = new Set(testedWords.filter((word) => reviewMistakes.has(word))).size;
       refs.week1CourseFeedback.textContent = day.stageReview && testedWords.length
-        ? `首次答对 ${testedWords.length - mistakeCount}/${testedWords.length}；做错的词已经留下来，可以回到首页查看。`
+        ? activeModule.id === "soundLab"
+          ? `首次答对 ${testedWords.length - mistakeCount}/${testedWords.length}；这里练的是听音和拼读，不需要背这些单词。`
+          : `首次答对 ${testedWords.length - mistakeCount}/${testedWords.length}；没记牢的词已经放到“高频词需要再练”。`
         : "做得好，回去选下一项吧。";
       refs.week1CourseFeedback.className = "week1-course-feedback good";
       if (!practiceMode) {

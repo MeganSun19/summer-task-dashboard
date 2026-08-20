@@ -100,7 +100,7 @@ test("every grammar narration, vocabulary word, and model answer has a static ne
 test("the plural y-rule stacks safely on narrow Android viewports", () => {
   assert.match(stylesSource, /@media \(max-width: 520px\)[\s\S]*?\.grammar-y-comparison \{ grid-template-columns: 1fr;/);
   assert.match(stylesSource, /\.grammar-y-comparison > div \{[^}]*min-width: 0;/);
-  assert.match(indexSource, /styles\.css\?v=20260819-stage-review-2/);
+  assert.match(indexSource, /styles\.css\?v=20260820-review-feedback-1/);
   assert.match(indexSource, /app\.js\?v=20260819-day12-review-1/);
 });
 
@@ -299,13 +299,24 @@ test("every phonics, heart and animation word has a compact Chinese meaning", ()
 
 test("completed phonics lessons appear in a read-only history review", () => {
   assert.match(englishUiSource, /已学自然拼读 · \$\{completedPhonicsDays\.length\} 课/);
+  assert.match(englishUiSource, /moduleCard\("soundLab"[\s\S]*?\$\{phonicsHistoryMarkup\(\)\}/);
+  assert.doesNotMatch(englishUiSource, /<\/div>\$\{[^}]*phonicsHistoryMarkup\(\)\}/);
   assert.match(englishUiSource, /lessonDay\.day < currentDayNumber/);
   assert.match(englishUiSource, /record\?\.moduleProgress\?\.soundLab\?\.completedAt/);
+  assert.match(englishUiSource, /planPreviewDay\s*\? course\.days\.filter\(\(lessonDay\) => lessonDay\.day < dayNumber\)/);
   const historyHandler = englishUiSource.slice(
     englishUiSource.indexOf("function showHistoricalPhonicsLesson"),
     englishUiSource.indexOf("function stopCourseAudio")
   );
   assert.doesNotMatch(historyHandler, /saveProgress|LearningActivityProgress\?\.save|startCourseModule/);
+});
+
+test("stage review only labels missed heart words as needing memorisation", () => {
+  assert.match(englishUiSource, /heartReviewWords = new Set/);
+  assert.match(englishUiSource, /heartReviewMistakes = \[\.\.\.reviewMistakes\]\.filter\(\(word\) => heartReviewWords\.has\(word\)\)/);
+  assert.match(englishUiSource, /高频词需要再练：/);
+  assert.doesNotMatch(englishUiSource, /<p class="stage-review-result">需要再练：/);
+  assert.match(englishUiSource, /这里练的是听音和拼读，不需要背这些单词/);
 });
 
 test("high-value rule families receive at least three oral variations", () => {
