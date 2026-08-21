@@ -19,6 +19,7 @@ const grammarUiSource = await readFile(new URL("../grammar-island-ui.js", import
 const deploySource = await readFile(new URL("../deploy-cloudbase.sh", import.meta.url), "utf8");
 const stylesSource = await readFile(new URL("../styles.css", import.meta.url), "utf8");
 const indexSource = await readFile(new URL("../index.html", import.meta.url), "utf8");
+const appSource = await readFile(new URL("../app.js", import.meta.url), "utf8");
 const englishUiSource = await readFile(new URL("../week1-course-ui.js", import.meta.url), "utf8");
 const phonicsAudioGeneratorSource = await readFile(new URL("../scripts/generate-phonics-lesson-audio.mjs", import.meta.url), "utf8");
 const phonemeGeneratorSource = await readFile(new URL("../scripts/generate-phonics-phoneme-audio.mjs", import.meta.url), "utf8");
@@ -100,8 +101,8 @@ test("every grammar narration, vocabulary word, and model answer has a static ne
 test("the plural y-rule stacks safely on narrow Android viewports", () => {
   assert.match(stylesSource, /@media \(max-width: 520px\)[\s\S]*?\.grammar-y-comparison \{ grid-template-columns: 1fr;/);
   assert.match(stylesSource, /\.grammar-y-comparison > div \{[^}]*min-width: 0;/);
-  assert.match(indexSource, /styles\.css\?v=20260820-review-feedback-1/);
-  assert.match(indexSource, /app\.js\?v=20260819-day12-review-1/);
+  assert.match(indexSource, /styles\.css\?v=20260821-cloud-bootstrap-1/);
+  assert.match(indexSource, /app\.js\?v=20260821-cloud-bootstrap-1/);
 });
 
 test("the child-facing English island removes product rationale and keeps short actions", () => {
@@ -510,4 +511,14 @@ test("the CloudBase bundle includes every grammar-island runtime file", () => {
   assert.match(deploySource, /grammar-island-ui\.js/);
   assert.match(deploySource, /grammar-island-course\.js/);
   assert.match(deploySource, /grammar-media\/\.\"/);
+});
+
+test("cloud bootstrap is same-origin and never presents empty progress as day one", () => {
+  assert.match(indexSource, /\.\/vendor\/supabase-js-2\.112\.3\.js\?v=20260821-cloud-bootstrap-1/);
+  assert.doesNotMatch(indexSource, /cdn\.jsdelivr\.net\/npm\/@supabase/);
+  assert.match(deploySource, /vendor\/supabase-js-2\.112\.3\.js/);
+  assert.match(indexSource, /id="cloudProgressGate"/);
+  assert.match(appSource, /cloud-progress-unverified/);
+  assert.match(appSource, /连接前不会显示空的第1天/);
+  assert.match(appSource, /setCloudProgressReady\(true\);/);
 });

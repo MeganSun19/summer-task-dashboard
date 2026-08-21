@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5b942" />
     <title>双星学习岛</title>
-    <link rel="stylesheet" href="./styles.css?v=20260820-review-feedback-1" />
+    <link rel="stylesheet" href="./styles.css?v=20260821-cloud-bootstrap-1" />
   </head>
   <body>
     <nav class="side-nav" aria-label="学习岛导航">
@@ -78,6 +78,14 @@
               <button class="primary-action" type="submit">切换并合并学习记录</button>
             </form>
           </details>
+        </div>
+      </section>
+
+      <section id="cloudProgressGate" class="cloud-progress-gate" hidden aria-live="polite">
+        <span aria-hidden="true">☁️</span>
+        <div>
+          <strong id="cloudProgressGateTitle">正在载入家庭进度…</strong>
+          <p id="cloudProgressGateMessage">请稍等，不会从第1天重新开始。</p>
         </div>
       </section>
 
@@ -320,9 +328,9 @@
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
     <script src="./audio-store.js?v=20260810-audio-rollback-1"></script>
     <script src="./supabase-config.js?v=20260803-english-1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="./family-sync-core.js?v=20260810-family-sync-2"></script>
-    <script src="./cloud-store.js?v=20260810-family-sync-2"></script>
+    <script src="./vendor/supabase-js-2.112.3.js?v=20260821-cloud-bootstrap-1"></script>
+    <script src="./family-sync-core.js?v=20260821-cloud-bootstrap-1"></script>
+    <script src="./cloud-store.js?v=20260821-cloud-bootstrap-1"></script>
     <script src="./state-migration-core.js?v=20260818-family-task-sync-1"></script>
     <script src="./reward-progress.js?v=20260814-grammar-reward-10"></script>
     <script src="./curriculum/course-plan-catalog.js?v=20260810-excel-runtime-1"></script>
@@ -339,7 +347,7 @@
     <script src="./grammar-island-core.js?v=20260814-grammar-paper-1"></script>
     <script src="./curriculum/grammar-island-course.js?v=20260817-child-focus-1"></script>
     <script src="./grammar-paper-practice.js?v=20260819-grammar-paper-copy-1"></script>
-    <script src="./app.js?v=20260819-day12-review-1"></script>
+    <script src="./app.js?v=20260821-cloud-bootstrap-1"></script>
     <script src="./week1-course-core.js?v=20260819-stage-review-1"></script>
     <script src="./curriculum/english-word-meanings.js?v=20260817-word-meanings-1"></script>
     <script src="./curriculum/phonics-audio-sources.js?v=20260819-phonics-audit-2"></script>

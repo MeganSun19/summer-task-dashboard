@@ -49,6 +49,7 @@ const localPlanPreview = (() => {
 })();
 window.LocalPlanPreview = localPlanPreview;
 const localPlanPreviewDays = {};
+let cloudProgressReady = Boolean(localPlanPreview || window.FamilySyncCore.hasMeaningfulProgress(state));
 let selectedDate = localPlanPreview?.date || toISODate(new Date());
 let activeKid = state.activeKid || "brother";
 let editorKid = activeKid;
@@ -70,6 +71,7 @@ const refs = Object.fromEntries([
   "familyTaskMinutes", "familyTaskStart", "familyTaskEnd", "familyTaskCustomRow", "familyTaskCustomDates", "familyTaskPreview",
   "publishFamilyTask", "cancelFamilyTaskEdit", "familyTaskScheduleList",
   "toast", "cloudStatus", "cloudSetup", "closeCloudSetup", "cloudSetupMessage", "cloudSetupForms",
+  "cloudProgressGate", "cloudProgressGateTitle", "cloudProgressGateMessage",
   "createFamilyForm", "joinFamilyForm", "familyName", "createFamilyPin", "familyInviteCode", "joinFamilyPin",
   "familyChoice", "familyChoiceList", "cloudConnectedInfo", "connectedInviteCode", "joinedFamilyList",
   "switchFamilyDetails", "switchFamilyForm", "switchFamilyCode", "switchFamilyPin"
@@ -229,6 +231,7 @@ refs.rangeEnd.value = toISODate(addDays(new Date(), 10));
 refs.familyTaskStart.value = toISODate(new Date());
 refs.familyTaskEnd.value = toISODate(new Date());
 refs.courseEffectiveDate.value = toISODate(addDays(new Date(), 1));
+setCloudProgressReady(cloudProgressReady);
 render();
 loadWorldMap();
 initializeCloud();
@@ -418,7 +421,27 @@ async function initializeCloud() {
     onRemoteState: applyRemoteState,
     onStatus: updateCloudStatus
   });
-  if (result.needsSetup || result.needsFamilyChoice || (result.error && result.error.code !== "CLIENT_NOT_READY")) refs.cloudSetup.hidden = false;
+  if (result.connected) {
+    setCloudProgressReady(true);
+    return;
+  }
+  if (result.needsSetup || result.needsFamilyChoice || result.error) refs.cloudSetup.hidden = false;
+  if (cloudProgressReady) return;
+  if (result.needsFamilyChoice) {
+    setCloudProgressReady(false, "请选择主家庭", "这台手机加入过多个家庭。选对邀请码后，原来的学习进度会自动回来。");
+  } else if (result.needsSetup) {
+    setCloudProgressReady(false, "这台手机还没有连接家庭", "请用原来的家庭邀请码和家长 PIN 加入；连接前不会显示空的第1天。");
+  } else {
+    setCloudProgressReady(false, "家庭进度没有载入", "请检查网络后刷新，或点右上角云端状态查看原因。为了保护进度，暂不显示本机空数据。");
+  }
+}
+
+function setCloudProgressReady(ready, title = "正在载入家庭进度…", message = "请稍等，不会从第1天重新开始。") {
+  cloudProgressReady = Boolean(ready || localPlanPreview);
+  document.body.classList.toggle("cloud-progress-unverified", !cloudProgressReady);
+  refs.cloudProgressGate.hidden = cloudProgressReady;
+  refs.cloudProgressGateTitle.textContent = title;
+  refs.cloudProgressGateMessage.textContent = message;
 }
 
 function applyRemoteState(remoteState, meta = {}) {
@@ -455,6 +478,7 @@ function applyRemoteState(remoteState, meta = {}) {
   const progressRecovered = ensureState(state);
   activeKid = state.activeKid || activeKid;
   editorKid = activeKid;
+  setCloudProgressReady(true);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   if (meta.source === "load") localStorage.setItem(DEVICE_SYNC_RECOVERY_KEY, "done");
   renderEditorKidOptions();

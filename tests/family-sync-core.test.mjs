@@ -32,3 +32,20 @@ test("normalizes duplicate membership rows and status code", () => {
   assert.equal(families.length, 2);
   assert.equal(globalThis.FamilySyncCore.shortInviteCode("67690f58"), "0F58");
 });
+
+test("recognizes trusted cached progress without treating an empty generated schedule as progress", () => {
+  const empty = {
+    summerPlan: { kids: { brother: { currentDay: 1 }, younger: { currentDay: 1 } } },
+    days: { brother: { "2026-08-21": { tasks: [{ id: "englishIsland", done: false }] } }, younger: {} },
+    learningActivities: { progress: { brother: {}, younger: {} } }
+  };
+  assert.equal(globalThis.FamilySyncCore.hasMeaningfulProgress(empty), false);
+  assert.equal(globalThis.FamilySyncCore.hasMeaningfulProgress({
+    ...empty,
+    days: { ...empty.days, brother: { "2026-08-20": { tasks: [{ id: "englishIsland", done: true }] } } }
+  }), true);
+  assert.equal(globalThis.FamilySyncCore.hasMeaningfulProgress({
+    ...empty,
+    summerPlan: { kids: { ...empty.summerPlan.kids, brother: { currentDay: 13 } } }
+  }), true);
+});

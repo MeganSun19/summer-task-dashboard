@@ -28,5 +28,18 @@
     return code ? code.slice(-4) : "";
   }
 
-  root.FamilySyncCore = Object.freeze({ normalizeFamilies, chooseActiveFamily, shortInviteCode });
+  function hasMeaningfulProgress(state) {
+    return ["brother", "younger"].some((kidId) => {
+      if (Number(state?.summerPlan?.kids?.[kidId]?.currentDay) > 1) return true;
+      const hasResolvedTask = Object.values(state?.days?.[kidId] || {}).some((day) => (
+        (day?.tasks || []).some((task) => task?.done || task?.excused)
+      ));
+      if (hasResolvedTask) return true;
+      return Object.values(state?.learningActivities?.progress?.[kidId] || {}).some((activities) => (
+        activities && Object.keys(activities).length > 0
+      ));
+    });
+  }
+
+  root.FamilySyncCore = Object.freeze({ normalizeFamilies, chooseActiveFamily, shortInviteCode, hasMeaningfulProgress });
 })(typeof window === "undefined" ? globalThis : window);

@@ -50,6 +50,12 @@ button { cursor: pointer; }
 .cloud-status.syncing { background: var(--blue-soft); color: #356aa8; }
 .cloud-status.offline, .cloud-status.conflict { background: var(--sun-soft); color: #8b641e; }
 .cloud-setup { margin-bottom: 16px; padding: 22px; border: 1px solid #d6e2f3; border-radius: 23px; background: rgba(246,250,255,.97); box-shadow: var(--shadow); }
+.cloud-progress-gate { display: flex; align-items: center; gap: 13px; margin-bottom: 16px; padding: 20px; border: 1px solid #cbdced; border-radius: 22px; background: rgba(246,250,255,.97); box-shadow: var(--shadow); }
+.cloud-progress-gate[hidden] { display: none; }
+.cloud-progress-gate > span { font-size: 30px; }
+.cloud-progress-gate strong { color: #294b68; font-size: 17px; }
+.cloud-progress-gate p { margin: 5px 0 0; color: #64758b; font-size: 13px; line-height: 1.5; }
+.cloud-progress-unverified #kidView { display: none !important; }
 .cloud-setup-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .cloud-setup-heading .quiet-action { padding: 8px 12px; border-radius: 11px; }
 .cloud-setup-message { margin: 10px 0 16px; color: #61718a; font-size: 13px; }

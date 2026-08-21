@@ -72,6 +72,9 @@ do
   cp "$PROJECT_DIR/$file" "$DEPLOY_DIR/$file"
 done
 
+mkdir -p "$DEPLOY_DIR/vendor"
+cp "$PROJECT_DIR/vendor/supabase-js-2.112.3.js" "$DEPLOY_DIR/vendor/supabase-js-2.112.3.js"
+
 mkdir -p "$DEPLOY_DIR/curriculum"
 for file in \
   learning-module-catalog.js \
