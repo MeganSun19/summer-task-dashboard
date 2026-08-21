@@ -103,7 +103,7 @@ test("the plural y-rule stacks safely on narrow Android viewports", () => {
   assert.match(stylesSource, /@media \(max-width: 520px\)[\s\S]*?\.grammar-y-comparison \{ grid-template-columns: 1fr;/);
   assert.match(stylesSource, /\.grammar-y-comparison > div \{[^}]*min-width: 0;/);
   assert.match(indexSource, /styles\.css\?v=20260821-cloud-bootstrap-1/);
-  assert.match(indexSource, /app\.js\?v=20260821-cloud-bootstrap-1/);
+  assert.match(indexSource, /app\.js\?v=20260821-family-rejoin-gate-1/);
 });
 
 test("the child-facing English island removes product rationale and keeps short actions", () => {
@@ -531,4 +531,14 @@ test("WeChat cloud startup bypasses orphaned Web Locks and cannot wait forever",
   assert.match(cloudStoreSource, /authOptions\.lock = async \(_name, _timeout, fn\) => fn\(\)/);
   assert.match(cloudStoreSource, /CLOUD_INIT_TIMEOUT_MS = 12000/);
   assert.match(cloudStoreSource, /withTimeout\(client\.auth\.getSession\(\), phase\)/);
+});
+
+test("an authenticated device without family membership never exposes stale day-one cache", () => {
+  assert.match(indexSource, /app\.js\?v=20260821-family-rejoin-gate-1/);
+  const choiceBranch = appSource.indexOf("if (result.needsFamilyChoice)");
+  const cachedProgressBranch = appSource.indexOf("else if (cloudProgressReady)", choiceBranch);
+  assert.ok(choiceBranch >= 0);
+  assert.ok(cachedProgressBranch > choiceBranch);
+  assert.match(appSource.slice(choiceBranch, cachedProgressBranch), /result\.needsSetup/);
+  assert.match(appSource.slice(choiceBranch, cachedProgressBranch), /setCloudProgressReady\(false, "这台手机还没有连接家庭"/);
 });

@@ -426,11 +426,12 @@ async function initializeCloud() {
     return;
   }
   if (result.needsSetup || result.needsFamilyChoice || result.error) refs.cloudSetup.hidden = false;
-  if (cloudProgressReady) return;
   if (result.needsFamilyChoice) {
     setCloudProgressReady(false, "请选择主家庭", "这台手机加入过多个家庭。选对邀请码后，原来的学习进度会自动回来。");
   } else if (result.needsSetup) {
     setCloudProgressReady(false, "这台手机还没有连接家庭", "请用原来的家庭邀请码和家长 PIN 加入；连接前不会显示空的第1天。");
+  } else if (cloudProgressReady) {
+    return;
   } else {
     setCloudProgressReady(false, "家庭进度没有载入", "请检查网络后刷新，或点右上角云端状态查看原因。为了保护进度，暂不显示本机空数据。");
   }
