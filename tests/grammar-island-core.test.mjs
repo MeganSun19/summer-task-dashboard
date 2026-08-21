@@ -20,6 +20,7 @@ const deploySource = await readFile(new URL("../deploy-cloudbase.sh", import.met
 const stylesSource = await readFile(new URL("../styles.css", import.meta.url), "utf8");
 const indexSource = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const appSource = await readFile(new URL("../app.js", import.meta.url), "utf8");
+const cloudStoreSource = await readFile(new URL("../cloud-store.js", import.meta.url), "utf8");
 const englishUiSource = await readFile(new URL("../week1-course-ui.js", import.meta.url), "utf8");
 const phonicsAudioGeneratorSource = await readFile(new URL("../scripts/generate-phonics-lesson-audio.mjs", import.meta.url), "utf8");
 const phonemeGeneratorSource = await readFile(new URL("../scripts/generate-phonics-phoneme-audio.mjs", import.meta.url), "utf8");
@@ -521,4 +522,13 @@ test("cloud bootstrap is same-origin and never presents empty progress as day on
   assert.match(appSource, /cloud-progress-unverified/);
   assert.match(appSource, /连接前不会显示空的第1天/);
   assert.match(appSource, /setCloudProgressReady\(true\);/);
+});
+
+test("WeChat cloud startup bypasses orphaned Web Locks and cannot wait forever", () => {
+  assert.match(indexSource, /family-sync-core\.js\?v=20260821-wechat-cloud-lock-1/);
+  assert.match(indexSource, /cloud-store\.js\?v=20260821-wechat-cloud-lock-1/);
+  assert.match(cloudStoreSource, /isWeChatWebView\(navigator\.userAgent\)/);
+  assert.match(cloudStoreSource, /authOptions\.lock = async \(_name, _timeout, fn\) => fn\(\)/);
+  assert.match(cloudStoreSource, /CLOUD_INIT_TIMEOUT_MS = 12000/);
+  assert.match(cloudStoreSource, /withTimeout\(client\.auth\.getSession\(\), phase\)/);
 });

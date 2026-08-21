@@ -41,5 +41,15 @@
     });
   }
 
-  root.FamilySyncCore = Object.freeze({ normalizeFamilies, chooseActiveFamily, shortInviteCode, hasMeaningfulProgress });
+  function isWeChatWebView(userAgent = "") {
+    return /MicroMessenger/i.test(String(userAgent));
+  }
+
+  root.FamilySyncCore = Object.freeze({
+    normalizeFamilies,
+    chooseActiveFamily,
+    shortInviteCode,
+    hasMeaningfulProgress,
+    isWeChatWebView
+  });
 })(typeof window === "undefined" ? globalThis : window);

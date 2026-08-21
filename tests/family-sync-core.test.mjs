@@ -49,3 +49,11 @@ test("recognizes trusted cached progress without treating an empty generated sch
     summerPlan: { kids: { ...empty.summerPlan.kids, brother: { currentDay: 13 } } }
   }), true);
 });
+
+test("only WeChat WebViews use the embedded-browser auth compatibility path", () => {
+  const detect = globalThis.FamilySyncCore.isWeChatWebView;
+  assert.equal(detect("Mozilla/5.0 Android MicroMessenger/8.0.60"), true);
+  assert.equal(detect("Mozilla/5.0 iPhone MicroMessenger/8.0.60"), true);
+  assert.equal(detect("Mozilla/5.0 Android Chrome/139.0 Mobile Safari/537.36"), false);
+  assert.equal(detect("Mozilla/5.0 iPhone CriOS/139.0 Mobile"), false);
+});

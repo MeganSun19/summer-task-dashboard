@@ -3,6 +3,7 @@
   const LEGACY_FAMILY_KEY = "summer-task-dashboard-family-v1";
   const AUDIO_BUCKET = "family-audio";
   const SAVE_DELAY_MS = 450;
+  const CLOUD_INIT_TIMEOUT_MS = 12000;
   let client;
   let familyId = localStorage.getItem(FAMILY_KEY) || localStorage.getItem(LEGACY_FAMILY_KEY);
   let revision = null;
@@ -35,17 +36,24 @@
       return { available: false, error, phase: "加载云端组件" };
     }
 
-    client = window.supabase.createClient(config.url, config.publishableKey, {
-      auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false }
-    });
+    const isWeChat = window.FamilySyncCore?.isWeChatWebView(navigator.userAgent);
+    const authOptions = { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false };
+    if (isWeChat) {
+      // Android WeChat's long-lived WebView can retain an orphaned Web Lock.
+      // Supabase auth then waits forever before issuing any network request.
+      // WeChat does not share this session with ordinary browser tabs, so a
+      // process-local lock is sufficient and avoids the broken navigator lock.
+      authOptions.lock = async (_name, _timeout, fn) => fn();
+    }
+    client = window.supabase.createClient(config.url, config.publishableKey, { auth: authOptions });
 
     let phase = "读取登录状态";
     try {
-      let { data: sessionData, error: sessionError } = await client.auth.getSession();
+      let { data: sessionData, error: sessionError } = await withTimeout(client.auth.getSession(), phase);
       if (sessionError) throw sessionError;
       if (!sessionData.session) {
         phase = "匿名登录";
-        const result = await client.auth.signInAnonymously();
+        const result = await withTimeout(client.auth.signInAnonymously(), phase);
         if (result.error) throw result.error;
         sessionData = { session: result.data.session };
       }
@@ -55,7 +63,7 @@
       // locally, but the invite code is intentionally kept in memory only.
       // Skipping this call after a refresh left connected devices unable to
       // show the invite code needed by a second device.
-      await restoreFamilyMembership();
+      await withTimeout(restoreFamilyMembership(), phase);
       if (!familyId) {
         const needsFamilyChoice = availableFamilies.length > 1;
         emitStatus(needsFamilyChoice ? "choice" : "setup", needsFamilyChoice
@@ -65,7 +73,7 @@
       }
 
       phase = "载入家庭数据";
-      await loadRemoteState();
+      await withTimeout(loadRemoteState(), phase);
       subscribeToRemoteState();
       emitStatus("synced", "云端已同步");
       return { available: true, connected: true, familyId, inviteCode, revision };
@@ -74,6 +82,16 @@
       emitStatus("local", friendlyError(error, phase));
       return { available: false, error, phase };
     }
+  }
+
+  function withTimeout(promise, phase) {
+    let timer;
+    const timeout = new Promise((_, reject) => {
+      timer = setTimeout(() => reject(Object.assign(new Error(`${phase}超时，请关闭微信页面后重新打开`), {
+        code: "CLOUD_INIT_TIMEOUT"
+      })), CLOUD_INIT_TIMEOUT_MS);
+    });
+    return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
   }
 
   async function restoreFamilyMembership() {
